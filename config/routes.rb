@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'example#index'
 
   # short-circuit rails routes and hand control off to angular:
   get 'example' => 'example#index'
