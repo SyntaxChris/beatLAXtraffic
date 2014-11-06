@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  # short-circuit rails routes and hand control off to angular:
+  get 'example' => 'example#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
