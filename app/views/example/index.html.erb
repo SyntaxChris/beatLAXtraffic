@@ -1,20 +1,24 @@
 <div ng-app='app.exampleApp' ng-controller='ExampleCtrl'>
+  <div class="large-12 medium-12 small-12 columns">
+    <div class="quiz" ng-show="quizRunning">
+      <ul ng-repeat="q in surveyQuestions">
+        <div ng-show="currentQuestion === q.id">
+          <h3>{{ q.question }}</h3>
+          <ul>
+            <li><a href="#" ng-click="advanceQuestion(q.id)">{{ q.answer_1 }}</a></li>
+            <li><a href="#" ng-click="advanceQuestion(q.id)">{{ q.answer_2 }}</a></li>
+          </ul>
+        </div>
+      </ul>
+    </div>
 
-  <div class="quiz" ng-show="quizRunning">
-    <ul ng-repeat="q in surveyQuestions">
-      <div ng-show="currentQuestion === q.id">
-        <li >{{ q.question }}</li>
-        <ul>
-          <li><a href="#" ng-click="advanceQuestion(q.id)">{{ q.answer_1 }}</a></li>
-          <li><a href="#" ng-click="advanceQuestion(q.id)">{{ q.answer_2 }}</a></li>
-        </ul>
-      </div>
-    </ul>
+    <div class="summary" ng-hide="quizRunning">
+      <p>You have finished the quiz.</p>
+      <p><a href="#" ng-click="restartQuiz()">Retry?</a>
+    </div>
   </div>
-
-  <div class="summary" ng-hide="quizRunning">
-    <p>You have finished the quiz.</p>
-    <p><a href="#" ng-click="restartQuiz()">Retry?</a>
-  </div>
-
 </div>
+   
+
+
+

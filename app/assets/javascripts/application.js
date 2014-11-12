@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require angular
 //= require angular-rails-templates
 
@@ -23,3 +24,5 @@
 //= require_tree ./angular/models
 //= require_tree ./angular/services
 //= require_tree ./angular/controllers
+
+$(function(){ $(document).foundation(); });
