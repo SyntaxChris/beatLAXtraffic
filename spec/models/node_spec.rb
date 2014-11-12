@@ -2,14 +2,20 @@ require 'rails_helper'
 
 describe Node do
   describe "Attributes" do
-    let(:node) { FactoryGirl.build(:node) }
+    let(:node) {
+      FactoryGirl.build(
+        :node,
+        nickname: "E1",
+        is_decision_point: false
+      )
+    }
 
     it "has a nickname" do
       expect(node.nickname).to eq "E1"
     end
 
     it "can be a decision point or not" do
-      expect(node.is_decision_point).to eq true || false
+      expect(node.is_decision_point).to eq false
     end
   end
 
@@ -27,6 +33,11 @@ describe Node do
 
     it "belongs to a branch" do
       expect(question_node).to belong_to(:branch)
+    end
+
+    it "has many responses" do
+      expect(question_node).to have_many(:responses)
+      expect(decision_point_node).to have_many(:responses)
     end
   end
 end
