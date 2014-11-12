@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Respondent do
+RSpec.describe Question, :type => :model do
   describe "Attributes" do
   end
 
