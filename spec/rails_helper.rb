@@ -40,4 +40,22 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
+  # Includes factory girl methods
+  config.include FactoryGirl::Syntax::Methods
+
+  # Includes custom json helper
+  config.include Requests::JsonHelpers, :type => :request
+
+  # Database Cleaner setup
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
 end

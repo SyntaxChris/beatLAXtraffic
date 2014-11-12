@@ -3,11 +3,12 @@ development:
   encoding: unicode
   database: lawa_develoment
   pool: 5
-  username: Chris
+  username: YOUR-USERNAME
 
 test:
   adapter: postgresql
   encoding: unicode
   database: lawa_development
   pool: 5
-  username: Chris
+  username: YOUR-USERNAME
+
