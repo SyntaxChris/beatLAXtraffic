@@ -17,6 +17,24 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'guard'
+  gem 'guard-rspec', require: false
+  gem 'pry'
+  gem 'database_cleaner'
+  gem 'simplecov', '~> 0.9.0', :require => false
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+end
+
+group :development do
+  gem 'guard-livereload', '~> 2.1.1', require: false
+  gem 'rack-livereload'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
 # Use Zurb Foundation
 gem 'foundation-rails'
 
