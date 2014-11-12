@@ -1,0 +1,56 @@
+div#plane { 
+    position: absolute;
+    animation: plane 25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation: plane 25s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;  
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes plane {
+    0%   {left:110%; top:15%;}
+    10%  {left:10%; top:-25%;}
+    100% {left:0%; top:-45%;}
+}
+
+/* Standard syntax */
+@keyframes plane {
+    0%   {left:0px; top:0px;}
+    // 25%  {left:20px; top:0px;}
+    // 50%  {left:20px; top:20px;}
+    // 75%  {left:0px; top:20px;}
+    100% {left:0px; top:0px;}
+}
+
+div#landing-plane { 
+    position: absolute;
+    animation: landing 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation: landing 7s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes landing {
+    0%   {left:110%; top:30%;}
+    100% {left:-90%; top: 80%;}
+}
+
+/* Standard syntax */
+@keyframes landing {
+    0%   {left:0px; top:0px;}
+    100% {left:0px; top:0px;}
+}
+
+
+

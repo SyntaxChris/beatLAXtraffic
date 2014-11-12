@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require 'plane'
 //= require angular
 //= require angular-rails-templates
 
