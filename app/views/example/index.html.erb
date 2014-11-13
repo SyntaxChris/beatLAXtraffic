@@ -1,30 +1,60 @@
 <div ng-app='app.exampleApp' ng-controller='ExampleCtrl'>
-  <div class="large-12 medium-12 small-12 columns">
-    <div class="quiz" ng-show="quizRunning">
-      <ul ng-repeat="q in surveyQuestions">
-      <div class="large-5 medium-5 small-5 larged-centered medium-centered small-centered columns">
-        <div class="row"></div>
-          <div ng-show="currentQuestion === q.id">
-            <h3>{{ q.question }}</h3>
-            <ul>
-              <li><a href="#" ng-click="advanceQuestion(q.id)">{{ q.answer_1 }}</a></li>
-              <li><a href="#" ng-click="advanceQuestion(q.id)">{{ q.answer_2 }}</a></li>
+  <div class="quiz" ng-show="quizRunning">
+    <div class="row">
+      <div class="large-12 medium-12 small-12 columns" style="padding-top: 40px">
+        <div class="row">
+          <div class="large-5 medium-5 small-12 large-centered medium-centered small-centered columns">
+            
+            <ul ng-repeat="q in surveyQuestions">
+        
+            <div ng-show="currentQuestion === q.id">
+              <h3>{{ q.question }}</h3>
+              <ul>
+                <li><a href="#" ng-click="advanceQuestion(q.id)">{{ q.answer_1 }}</a></li>
+                <li><a href="#" ng-click="advanceQuestion(q.id)">{{ q.answer_2 }}</a></li>
+              </ul>
+            </div>
+     
             </ul>
+
+          </div>
+        </div>
+        <div class="row" style="text-align: center">
+          <button id="land">LAND ZE PLANE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="large-12 medium-12 small-12 columns" style="padding-top: 40px">
+      <div class="row">
+        <div class="large-5 medium-5 small-12 large-centered medium centered columns">
+          <div class="summary" ng-hide="quizRunning">
+            <p>You have finished the quiz.</p>
+            <p><a href="#" ng-click="restartQuiz()">Retry?</a>
           </div>
         </div>
       </div>
-      </ul>
-      <div class="row" style="text-align: center">
-        <button id="land">LAND ZE PLANE</button>
-      </div>
     </div>
-
-    <div class="summary" ng-hide="quizRunning">
-      <p>You have finished the quiz.</p>
-      <p><a href="#" ng-click="restartQuiz()">Retry?</a>
-    </div>
-    
   </div>
+  <div class="row">
+    <div style="height: 70px; width: 250px; margin-left: auto; margin-right: auto"></div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dash">
+    <div style="height: 45px; width: 200px; margin-left: auto; margin-right: auto; padding-top: 20px">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="55px" viewBox="0 0 200 55" enable-background="new 0 0 200 55" xml:space="preserve"><path opacity="0.9" fill="#FFFFFF" d="M199.375,55H0.625C0.625,55,25.25,7.5,100,7.5S199.375,55,199.375,55z"/></svg>
+    </div>
+    <div id="dash-left"><br></div>
+    <div id="dash-middle"><br></div>
+    <div id="dash-right"><br></div>
+  </div> 
+  <!-- END DASHBOARD -->
+
+
 </div>
    
 
