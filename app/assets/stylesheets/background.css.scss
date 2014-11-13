@@ -1,0 +1,73 @@
+div#plane { 
+    position: absolute;
+    animation: plane 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 5s;  
+    -webkit-animation: plane 20s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 5s; 
+    
+}
+
+.land-ze-plane { 
+    position: absolute;
+    animation: landing 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation: landing 7s; 
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+
+}
+
+div#far-plane { 
+    position: absolute;
+    animation: far 25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation: far 25s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+@keyframes plane {
+    0%   {left:0px; top:0px;}
+    100% {left:0px; top:0px;}
+}
+
+@keyframes landing {
+    0%   {left:0px; top:0px;}
+    100% {left:0px; top:0px;}
+}
+
+@keyframes far {
+    0%   {left:0%; top:15%;}
+    30%  {left:20%; top: 5%;}
+    100% {left:30%; top:-45%;}
+}
+
+@-webkit-keyframes plane {
+    0%   {left:110%; top:15%;}
+    8%  {left:10%; top:-25%;}
+    100% {left:0%; top:-25%;}
+}
+
+@-webkit-keyframes landing {
+    0%   {left:110%; top:-20%;}
+    100% {left:-90%; top: 70%;}
+}
+
+@-webkit-keyframes far {
+    0%   {left:-20%; top:15%;}
+    40%  {left:110%; top: 5%;}
+    100% {left:120%; top:-15%;}
+}
+
+
+
