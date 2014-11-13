@@ -5,6 +5,11 @@ RSpec.describe Response, :type => :model do
     let(:response) { FactoryGirl.build(:response) }
 
     it "can have a freeform answer" do
+      answer = FactoryGirl.build(
+        :answer,
+        answer: "other"
+      )
+      response.answer = answer
       response.freeform_answer = "I have other reasons"
 
       expect(response.freeform_answer).to eq "I have other reasons"
@@ -24,11 +29,13 @@ RSpec.describe Response, :type => :model do
     end
 
     it "can belong to an answer" do
-      pending "should it -belong- to answer? how to represent the answer chosen?"
+      puts "for below, should it -belong- to answer? how to represent the answer chosen?"
+      expect(response).to belong_to(:answer)
     end
 
     it "can belong to a decision" do
-      pending "should it -belong- to decision? how to represent the decision chosen?"
+      puts "for below, should it -belong- to decision? how to represent the decision chosen?"
+      expect(response).to belong_to(:decision)
     end
   end
 end
