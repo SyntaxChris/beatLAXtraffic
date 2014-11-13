@@ -5,7 +5,21 @@ development:
   pool: 5
   username: Chris
 
+staging:
+  adapter: postgresql
+  encoding: unicode
+  database: lawa_staging
+  pool: 5
+  username: Chris
+
 test:
+  adapter: postgresql
+  encoding: unicode
+  database: lawa_development
+  pool: 5
+  username: Chris
+
+production:
   adapter: postgresql
   encoding: unicode
   database: lawa_development
