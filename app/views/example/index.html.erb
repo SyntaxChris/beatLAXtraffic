@@ -36,59 +36,62 @@
     </div>
   <!-- end questions header -->
 
-    <!-- tiles 640px and up -->
-    <div id="tiles" class="row">
+    
+    <div class="row">
       <div class="large-12 medium-12 small-12 large-centered medium-centered small-centered columns">
         <div class="row" style="margin-top: 20px">
-          <div class="large-4 medium-4 small-4 columns">
-            <%= render 'phone' %>
-            <div class="row" style="text-align: center; color: white">
-              On my phone
+          <!-- tiles 640px and up -->
+          <div id="tiles-large">
+            <div class="large-4 medium-4 small-4 columns">
+              <%= render 'phone' %>
+              <div class="row" style="text-align: center; color: white">
+                On my phone
+              </div>
+            </div>
+            <div class="large-4 medium-4 small-4 columns">
+              <%= render 'shop' %>
+              <div class="row" style="text-align: center; color: white">
+                Shop in the terminal
+              </div>
+            </div>
+            <div class="large-4 medium-4 small-4 columns">
+              <%= render 'hangout' %>
+              <div class="row" style="text-align: center; color: white">
+                Hang out
+              </div>
             </div>
           </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <%= render 'shop' %>
-            <div class="row" style="text-align: center; color: white">
-              Shop in the terminal
+          <div class="row" style="margin-top: 10px;">
+            <div class="large-4 medium-4 small-4 columns">
+              <%= render 'eat' %>
+              <div class="row" style="text-align: center; color: white">
+                Eat or drink
+              </div>
             </div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <%= render 'hangout' %>
-            <div class="row" style="text-align: center; color: white">
-              Hang out
+            <div class="large-4 medium-4 small-4 columns">
+              <%= render 'other' %>
+              <div class="row" style="text-align: center; color: white">
+                Other
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="row" style="margin-top: 10px;">
-          <div class="large-4 medium-4 small-4 columns">
-            <%= render 'eat' %>
-            <div class="row" style="text-align: center; color: white">
-              Eat or drink
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <%= render 'other' %>
-            <div class="row" style="text-align: center; color: white">
-              Other
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="row" style="padding:0">
-              <div class="large-12 medium-12 small-12 columns">
-                <div id="user-text-input">
-                  <div class="arrow-left" style="position:absolute; z-index: 1;"></div>
-                  <div class="row" style="text-align: center; color: #AA75D3;">
-                    Please write here
+            <div class="large-4 medium-4 small-4 columns">
+              <div class="row" style="padding:0">
+                <div class="large-12 medium-12 small-12 columns">
+                  <div id="user-text-input">
+                    <div class="arrow-left" style="position:absolute; z-index: 1;"></div>
+                    <div class="row" style="text-align: center; color: #AA75D3;">
+                      Please write here
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            
           </div>
+          <!-- end tiles 640px and up -->
         </div>
       </div>    
     </div>
-    <!-- end tiles 640px and up -->
+    
 
   </div>
 </div>
@@ -121,7 +124,7 @@
   <div id="dash-middle"><br></div>
   <div id="dash-right"><br></div>
 </div> 
-<!-- END DASHBOARD -->
+ <!-- END DASHBOARD -->
 
 
 
