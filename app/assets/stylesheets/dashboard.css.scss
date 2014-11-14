@@ -34,6 +34,68 @@
 	background-color: rgba(255, 255, 255, 0.9);
 }
 
+#speedo {
+	height: 195px;
+	width: 200px;
+	position: fixed;
+	z-index: 31;
+	margin-left: auto; 
+	margin-right: auto;
+	
+	#circle {
+		height: 187px;
+		width: 187px;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: 100%;
+		background-color: #CDD1D0;
+        -moz-animation: speedo-spin 10s linear infinite;
+        -webkit-animation: speedo-spin 10s linear infinite;
+        #arrow{
+        	position:relative; 
+        	top:0; 
+        	left: 40%; 
+        	height: 30px; 
+        	width:30px; 
+        	border-left: 20px solid transparent;
+	        border-right: 20px solid transparent; 
+	        border-bottom: 30px solid red; 
+        }
+
+	}
+}
+
+	// position:fixed; 
+	// bottom: 36%;
+	// left: -15px;
+	// z-index: 1;
+	// width: 0; 
+	// height: 0; 
+	// border-top: 20px solid transparent;
+	// border-bottom: 20px solid transparent; 
+	// border-right: 30px solid white; 
+
+@-moz-keyframes speedo-spin {
+    from{
+        -moz-transform:rotate(0deg);
+    }       
+    to{
+        -moz-transform:rotate(360deg);
+    }                       
+}
+
+@-webkit-keyframes speedo-spin {
+    from{
+        -webkit-transform:rotate(0deg);
+    }       
+    to{
+        -webkit-transform:rotate(360deg);
+    }                       
+}
+
+
+
+// MEDIA QUERIES
 @media screen and (max-width: 639px) {
 	#dash {
 		position: fixed;
