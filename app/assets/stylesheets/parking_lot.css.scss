@@ -1,6 +1,6 @@
 #parking-lot {
 	position: fixed;
-	z-index: 1;
+	z-index: -1;
 	bottom:0;
 	width: 100%;
 	height: 360px;
@@ -52,11 +52,11 @@
 
 @media screen and (max-width: 640px) {
 	div#parking-lot div#lines svg {
-		width: 460px;
+		width: 700px;
 	}
 
 	div#parking-lot div#cars svg {
-		width: 460px;
+		width: 700px;
 	}
 
 }
