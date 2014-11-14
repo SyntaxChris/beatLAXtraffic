@@ -21,5 +21,9 @@ RSpec.describe Decision, :type => :model do
     it "belongs to a decision point" do
       expect(decision).to belong_to(:decision_point)
     end
+
+    it "has a destination node associated with it" do
+      expect(decision).to have_one(:node)
+    end
   end
 end

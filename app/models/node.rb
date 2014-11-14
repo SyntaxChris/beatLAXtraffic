@@ -3,4 +3,5 @@ class Node < ActiveRecord::Base
   has_one :decision_point
   has_many :responses
   belongs_to :branch
+  belongs_to :decision
 end
