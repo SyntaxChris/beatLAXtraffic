@@ -1,0 +1,62 @@
+#parking-lot {
+	position: fixed;
+	z-index: -1;
+	bottom:0;
+	width: 100%;
+	height: 360px;
+	background-color: #98E0CA;
+}
+
+#lines{
+	position: absolute;
+	z-index: 1.1;
+}
+
+#cars {
+	position: absolute;
+	z-index: 1.2;
+}
+
+@media screen and (max-width: 1920px) {
+	div#parking-lot div#lines svg {
+		width: 1660px;
+	}
+
+	div#parking-lot div#cars svg {
+		width: 1660px;
+	}
+
+}
+
+@media screen and (max-width: 1440px) {
+	div#parking-lot div#lines svg {
+		width: 1260px;
+	}
+
+	div#parking-lot div#cars svg {
+		width: 1260px;
+	}
+
+}
+
+@media screen and (max-width: 960px) {
+	div#parking-lot div#lines svg {
+		width: 900px;
+	}
+
+	div#parking-lot div#cars svg {
+		width: 900px;
+	}
+
+}
+
+@media screen and (max-width: 640px) {
+	div#parking-lot div#lines svg {
+		width: 700px;
+	}
+
+	div#parking-lot div#cars svg {
+		width: 700px;
+	}
+
+}

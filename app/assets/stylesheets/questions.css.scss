@@ -1,0 +1,94 @@
+div#question-header {
+	text-align:center; 
+	font-size: 35px; 
+	#main {
+		color: white;
+		padding-bottom: 20px;	
+	}
+	#foot {
+		font-size: 20px;
+		color: #008CBA;
+	}
+}
+
+div#phone,
+div#shop,
+div#hang-out,
+div#eat,
+div#other {
+	width: 125px; 
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto;
+	padding: 0;
+}
+
+
+div#phone svg a:hover {
+	#phone-background{
+		fill: #EF8E4B;
+	}
+	#phone-shadow {
+		fill: #FC9C52;
+	}
+}
+
+div#shop svg a:hover {
+	#shop-background{
+		fill: #F2A700;
+	}
+	#shop-shadow {
+		fill: #F7C001;
+	}
+}
+
+div#hang-out svg a:hover {
+	#hang-out-background{
+		fill: #3AB1D6;
+	}
+	#hang-out-shadow {
+		fill: #39BAD8;
+	}
+}
+
+div#eat svg a:hover {
+	#eat-background{
+		fill: #4983C9;
+	}
+	#eat-shadow {
+		fill: #558AD8;
+	}
+}
+
+div#other svg a:hover {
+	#other-background{
+		fill: #9663C6;
+	}
+	#other-shadow {
+		fill: #AA75D3;
+	}
+}
+
+#user-text-input {
+	display: none;
+	width: 100%; 
+	height: 125px; 
+	background-color: white; 
+	border-radius: 15px; 
+	padding:0;
+}
+
+.arrow-left {
+	position:fixed; 
+	bottom: 36%;
+	left: -15px;
+	z-index: 1;
+	width: 0; 
+	height: 0; 
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent; 
+	border-right: 30px solid white; 
+}
+
+
+

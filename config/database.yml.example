@@ -11,4 +11,3 @@ test:
   database: lawa_test
   pool: 5
   username: YOUR-USERNAME
-

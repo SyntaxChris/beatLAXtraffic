@@ -1,5 +1,6 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
+<<<<<<< HEAD
 
 guard 'livereload' do
   watch(%r{app/views/.+\.(erb|haml|slim)$})
@@ -40,3 +41,5 @@ guard :rspec, cmd: 'bundle exec rspec --format doc' do
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
 
+=======
+>>>>>>> develop
