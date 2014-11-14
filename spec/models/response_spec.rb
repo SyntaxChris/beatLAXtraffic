@@ -4,7 +4,7 @@ RSpec.describe Response, :type => :model do
   describe "Attributes" do
     let(:response) { FactoryGirl.build(:response) }
 
-    it "can have a freeform answer" do
+    it "can have a freeform answer text" do
       answer = FactoryGirl.build(
         :answer,
         answer: "other"

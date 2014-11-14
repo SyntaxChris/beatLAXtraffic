@@ -2,6 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Question, :type => :model do
   describe "Attributes" do
+    let(:question) {
+      FactoryGirl.create(
+        :question,
+        question: "what year is it?"
+      )
+    }
+
+    it "has a 'question' text content" do
+      expect(question.question).to eq "what year is it?"
+    end
   end
 
   describe "Associations" do
