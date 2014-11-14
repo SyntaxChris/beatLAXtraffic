@@ -7,7 +7,7 @@ div#question-header {
 	}
 	#foot {
 		font-size: 20px;
-		color: #008CBA;
+		color: #558AD8;
 	}
 }
 
@@ -22,6 +22,28 @@ div#other {
 	margin-right: auto;
 	padding: 0;
 }
+
+div#phone:hover {
+	-webkit-transform: rotate(10deg);
+}
+
+div#shop:hover {
+	-webkit-transform: rotate(350deg);
+}
+
+div#hang-out:hover {
+	-webkit-transform: rotate(10deg);
+}
+
+div#eat:hover {
+	-webkit-transform: rotate(350deg);
+}
+
+div#other:hover {
+	-webkit-transform: rotate(10deg);
+}
+
+
 
 
 div#phone svg a:hover {
