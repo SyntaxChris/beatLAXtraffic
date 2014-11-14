@@ -6,11 +6,18 @@
 	height: 195px;
 }
 
+#curve {
+	height: 45px; 
+	width: 200px; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+
 #dash-left {
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	width: 40%;
+	width: 50%;
 	height: 150px;
 	margin-top: 75px;
 	margin-left: 0;
@@ -21,23 +28,102 @@
 	position: fixed;
 	bottom:0;
 	right: 0;
-	width: 40%;
+	width: 50%;
 	height: 150px;
 	margin-top: 75px;
 	background-color: rgba(255, 255, 255, 0.9);
 }
 
-#dash-middle {
-	position: fixed;
-	bottom: 0;
-	left: 40%;
-	right: 40%;
-	width: 20%;
-	height: 150px;
-	background-color: rgba(255, 255, 255, 0.9);
+@media screen and (max-width: 639px) {
+	#dash {
+		position: fixed;
+		z-index: 30;
+		bottom:0;
+		width: 100%;
+		height: 140px;
+	}
+
+	#curve {
+		height: 35px; 
+		width: 10px; 
+		margin-left: 0%; 
+		margin-right: auto;
+		
+	}
+
+	div#dash div#curve svg {
+		height: 35px;
+		width: 180px;
+	}
+
+	#dash-left {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+		height: 105px;
+		margin-top: 75px;
+		margin-left: 0;
+		background-color: rgba(255, 255, 255, 0.9);
+	}
+
+	#dash-right {
+		position: fixed;
+		bottom:0;
+		right: 0;
+		width: 100%;
+		height: 105px;
+		margin-top: 75px;
+		background-color: rgba(255, 255, 255, 0.9);
+	}
 	
 }
 
 
+
+@media screen and (max-width: 320px) {
+	#dash {
+		position: fixed;
+		z-index: 30;
+		bottom:0;
+		width: 100%;
+		height: 115px;
+	}
+
+	#curve {
+		height: 25px; 
+		width: 110px; 
+		margin-left: 0%; 
+		margin-right: auto;
+		
+	}
+
+	div#dash div#curve svg {
+		height: 25px;
+		width: 150px;
+	}
+
+	#dash-left {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 0%;
+		height: 105px;
+		margin-top: 75px;
+		margin-left: 0;
+		background-color: rgba(255, 255, 255, 0.9);
+	}
+
+	#dash-right {
+		position: fixed;
+		bottom:0;
+		right: 0;
+		width: 100%;
+		height: 90px;
+		margin-top: 75px;
+		background-color: rgba(255, 255, 255, 0.9);
+	}
+
+}
 
 
