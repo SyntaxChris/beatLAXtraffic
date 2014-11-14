@@ -13,6 +13,8 @@
  *= require 'main'
  *= require 'background'
  *= require 'dashboard'
+ *= require 'parking_lot'
+ *= require 'questions'
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides

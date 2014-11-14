@@ -1,52 +1,100 @@
-<div ng-app='app.exampleApp' ng-controller='ExampleCtrl'>
-  <div class="quiz" ng-show="quizRunning">
-    <div class="row">
-      <div class="large-12 medium-12 small-12 columns" style="padding-top: 40px">
-        <div class="row">
-          <div class="large-5 medium-5 small-12 large-centered medium-centered small-centered columns">
-            
-            <ul ng-repeat="q in surveyQuestions">
+<!-- <div ng-app='app.exampleApp' ng-controller='ExampleCtrl'> -->
+  <!-- <div class="quiz" ng-show="quizRunning"> -->
+  <!-- <ul ng-repeat="q in surveyQuestions"> -->
         
-            <div ng-show="currentQuestion === q.id">
+            <!-- <div ng-show="currentQuestion === q.id">
               <h3>{{ q.question }}</h3>
               <ul>
                 <li><a href="#" ng-click="advanceQuestion(q.id)">{{ q.answer_1 }}</a></li>
                 <li><a href="#" ng-click="advanceQuestion(q.id)">{{ q.answer_2 }}</a></li>
               </ul>
-            </div>
+            </div> -->
      
-            </ul>
+            <!-- </ul> -->
 
-          </div>
-        </div>
-        <div class="row" style="text-align: center">
-          <button id="land">LAND ZE PLANE</button>
+            <!-- <div class="summary" ng-hide="quizRunning"> -->
+            <!-- <p>You have finished the quiz.</p> -->
+            <!-- <p><a href="#" ng-click="restartQuiz()">Retry?</a> -->
+ <!-- </div> -->
+        
+<button id="land" style="position: absolute; z-index: 35; bottom: 0">LAND ZE PLANE</button>
+
+
+<!-- QUESTIONS FORMAT -->
+<div class="row" style="margin-top: 25px">
+  <div class="large-12 medium-12 small-12 columns">
+
+  <!-- questions header -->
+    <div class="row" id="question-container">
+      <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
+        <div id="question-header">
+            <div id="main">What are you doing while you wait?</div>
+            <div id="foot">Select all that apply</div>
         </div>
       </div>
     </div>
-  </div>
+  <!-- end questions header -->
 
-
-  <div class="row">
-    <div class="large-12 medium-12 small-12 columns" style="padding-top: 40px">
-      <div class="row">
-        <div class="large-5 medium-5 small-12 large-centered medium centered columns">
-          <div class="summary" ng-hide="quizRunning">
-            <p>You have finished the quiz.</p>
-            <p><a href="#" ng-click="restartQuiz()">Retry?</a>
+    <!-- tiles -->
+    <div class="row">
+      <div class="large-12 medium-12 small-12 large-centered medium-centered small-centered columns">
+        <div class="row" >
+          <div class="large-4 medium-4 small-4 columns">
+              <%= render 'phone' %>
+          </div>
+          <div class="large-4 medium-4 small-4 columns">
+              <%= render 'shop' %>
+          </div>
+          <div class="large-4 medium-4 small-4 columns">
+              <%= render 'hangout' %>
           </div>
         </div>
-      </div>
+        <div class="row">
+          <div class="large-4 medium-4 small-4 columns">
+            <%= render 'eat' %>
+          </div>
+          <div class="large-4 medium-4 small-4 columns">
+            <%= render 'other' %>
+          </div>
+          <div class="large-4 medium-4 small-4 columns">
+            <div class="row">
+              <div class="large-12 medium-12 small-12 columns" style="padding-top: 5px">
+                <div style="width: 100%; height: 170px; background-color: white; border-radius: 25px; padding:0">
+                  <div class="arrow-left" style="position:absolute; z-index: 1;"></div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>    
     </div>
+    <!-- end tiles -->
+
   </div>
-  <div class="row">
-    <div style="height: 70px; width: 250px; margin-left: auto; margin-right: auto"></div>
+</div>
+<!-- END QUESTION FORMAT -->
+
+
+            
+        
+   
+
+ 
+          
+   
+
+  <!-- PARKING LOT -->
+  <div id="parking-lot">
+    <%= render 'lines' %>
+    <%= render 'cars' %>
   </div>
+  <!-- END PARKING LOT -->
 
   <!-- DASHBOARD -->
   <div id="dash">
-    <div style="height: 45px; width: 200px; margin-left: auto; margin-right: auto; padding-top: 20px">
-      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="200px" height="55px" viewBox="0 0 200 55" enable-background="new 0 0 200 55" xml:space="preserve"><path opacity="0.9" fill="#FFFFFF" d="M199.375,55H0.625C0.625,55,25.25,7.5,100,7.5S199.375,55,199.375,55z"/></svg>
+    <div style="height: 45px; width: 200px; margin-left: auto; margin-right: auto">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="200px" height="45px" viewBox="0 0 200 45" enable-background="new 0 0 200 45" xml:space="preserve"><path opacity="0.9" fill="#FFFFFF" d="M199.375,45H0.625C0.625,45,32.5,0,100,0S199.375,45,199.375,45z"/></svg>
     </div>
     <div id="dash-left"><br></div>
     <div id="dash-middle"><br></div>
@@ -55,7 +103,7 @@
   <!-- END DASHBOARD -->
 
 
-</div>
+<!-- </div> -->
    
 
 
