@@ -11,9 +11,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20141114162158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "question_id"
+    t.text     "answer"
+  end
+
+  create_table "branches", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
+
+  create_table "decision_points", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "node_id"
+    t.string   "nickname"
+  end
+
+  create_table "decisions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "decision_point_id"
+    t.text     "decision"
+  end
+
+  create_table "nodes", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "nickname"
+    t.boolean  "is_decision_point"
+    t.integer  "branch_id"
+    t.integer  "decision_id"
+  end
+
+  create_table "questions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "node_id"
+    t.text     "question"
+  end
+
+  create_table "respondents", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "unique_identifier"
+  end
+
+  create_table "responses", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "node_id"
+    t.integer  "respondent_id"
+    t.text     "freeform_answer"
+    t.integer  "answer_id"
+    t.integer  "decision_id"
+  end
 
 end
