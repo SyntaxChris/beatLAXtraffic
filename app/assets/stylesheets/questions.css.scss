@@ -11,6 +11,17 @@ div#question-header {
 	}
 }
 
+div#cars,
+div#eat,
+div#hang-out,
+div#lines,
+div#over {
+	width: 170px; 
+	display: block; 
+	margin-left: auto; 
+	margin-right: auto;
+}
+
 .arrow-left {
 	position:fixed; 
 	bottom: 36%;
