@@ -24,23 +24,43 @@ div#other {
 }
 
 div#phone:hover {
+	transform: rotate(10deg);
 	-webkit-transform: rotate(10deg);
+	-moz-transform: rotate(10deg);
+	-o-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
 }
 
 div#shop:hover {
+	transform: rotate(350deg);
 	-webkit-transform: rotate(350deg);
+	-moz-transform: rotate(350deg);
+	-o-transform: rotate(350deg);
+	-ms-transform: rotate(350deg);
 }
 
 div#hang-out:hover {
+	transform: rotate(10deg);
 	-webkit-transform: rotate(10deg);
+	-moz-transform: rotate(10deg);
+	-o-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
 }
 
 div#eat:hover {
+	transform: rotate(350deg);
 	-webkit-transform: rotate(350deg);
+	-moz-transform: rotate(350deg);
+	-o-transform: rotate(350deg);
+	-ms-transform: rotate(350deg);
 }
 
 div#other:hover {
+	transform: rotate(10deg);
 	-webkit-transform: rotate(10deg);
+	-moz-transform: rotate(10deg);
+	-o-transform: rotate(10deg);
+	-ms-transform: rotate(10deg);
 }
 
 
