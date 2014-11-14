@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: lawa_development
+  pool: 5
+  username: YOUR-USERNAME
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: lawa_test
+  pool: 5
+  username: YOUR-USERNAME

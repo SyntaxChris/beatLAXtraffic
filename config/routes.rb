@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/superadmin', as: 'rails_admin'
   root 'example#index'
 
   # short-circuit rails routes and hand control off to angular:
