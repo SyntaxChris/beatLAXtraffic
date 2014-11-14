@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require 'plane'
+//= require 'questions'
 //= require angular
 //= require angular-rails-templates
 

@@ -17,11 +17,12 @@
             <!-- <p><a href="#" ng-click="restartQuiz()">Retry?</a> -->
  <!-- </div> -->
         
-<button id="land" style="position: absolute; z-index: 35; bottom: 0">LAND ZE PLANE</button>
+
+
 
 
 <!-- QUESTIONS FORMAT -->
-<div class="row" style="margin-top: 25px">
+<div class="row" style="margin-top: 20px">
   <div class="large-12 medium-12 small-12 columns">
 
   <!-- questions header -->
@@ -29,38 +30,56 @@
       <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
         <div id="question-header">
             <div id="main">What are you doing while you wait?</div>
-            <div id="foot">Select all that apply</div>
+            <div id="foot">Select all that apply</div> 
         </div>
       </div>
     </div>
   <!-- end questions header -->
 
-    <!-- tiles -->
-    <div class="row">
+    <!-- tiles 640px and up -->
+    <div id="tiles" class="row">
       <div class="large-12 medium-12 small-12 large-centered medium-centered small-centered columns">
-        <div class="row" >
+        <div class="row" style="margin-top: 20px">
           <div class="large-4 medium-4 small-4 columns">
-              <%= render 'phone' %>
+            <%= render 'phone' %>
+            <div class="row" style="text-align: center; color: white">
+              On my phone
+            </div>
           </div>
           <div class="large-4 medium-4 small-4 columns">
-              <%= render 'shop' %>
+            <%= render 'shop' %>
+            <div class="row" style="text-align: center; color: white">
+              Shop in the terminal
+            </div>
           </div>
           <div class="large-4 medium-4 small-4 columns">
-              <%= render 'hangout' %>
+            <%= render 'hangout' %>
+            <div class="row" style="text-align: center; color: white">
+              Hang out
+            </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-top: 10px;">
           <div class="large-4 medium-4 small-4 columns">
             <%= render 'eat' %>
+            <div class="row" style="text-align: center; color: white">
+              Eat or drink
+            </div>
           </div>
           <div class="large-4 medium-4 small-4 columns">
             <%= render 'other' %>
+            <div class="row" style="text-align: center; color: white">
+              Other
+            </div>
           </div>
           <div class="large-4 medium-4 small-4 columns">
-            <div class="row">
-              <div class="large-12 medium-12 small-12 columns" style="padding-top: 5px">
-                <div style="width: 100%; height: 170px; background-color: white; border-radius: 25px; padding:0">
+            <div class="row" style="padding:0">
+              <div class="large-12 medium-12 small-12 columns">
+                <div id="user-text-input">
                   <div class="arrow-left" style="position:absolute; z-index: 1;"></div>
+                  <div class="row" style="text-align: center; color: #AA75D3;">
+                    Please write here
+                  </div>
                 </div>
               </div>
             </div>
@@ -69,42 +88,42 @@
         </div>
       </div>    
     </div>
-    <!-- end tiles -->
+    <!-- end tiles 640px and up -->
 
   </div>
 </div>
 <!-- END QUESTION FORMAT -->
 
 
-            
-        
-   
 
- 
-          
-   
 
-  <!-- PARKING LOT -->
-  <div id="parking-lot">
-    <%= render 'lines' %>
-    <%= render 'cars' %>
+
+<!-- SCENES -->
+
+<!-- parking lot -->
+<div id="parking-lot">
+  <%= render 'lines' %>
+  <%= render 'cars' %>
+</div>
+<!-- end parking lot -->
+
+<!-- END SCENES -->
+
+
+
+
+<!-- DASHBOARD -->
+<div id="dash">
+  <div style="height: 45px; width: 200px; margin-left: auto; margin-right: auto">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="200px" height="45px" viewBox="0 0 200 45" enable-background="new 0 0 200 45" xml:space="preserve"><path opacity="0.9" fill="#FFFFFF" d="M199.375,45H0.625C0.625,45,32.5,0,100,0S199.375,45,199.375,45z"/></svg>
   </div>
-  <!-- END PARKING LOT -->
-
-  <!-- DASHBOARD -->
-  <div id="dash">
-    <div style="height: 45px; width: 200px; margin-left: auto; margin-right: auto">
-      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"width="200px" height="45px" viewBox="0 0 200 45" enable-background="new 0 0 200 45" xml:space="preserve"><path opacity="0.9" fill="#FFFFFF" d="M199.375,45H0.625C0.625,45,32.5,0,100,0S199.375,45,199.375,45z"/></svg>
-    </div>
-    <div id="dash-left"><br></div>
-    <div id="dash-middle"><br></div>
-    <div id="dash-right"><br></div>
-  </div> 
-  <!-- END DASHBOARD -->
-
-
-<!-- </div> -->
-   
+  <div id="dash-left"><br></div>
+  <div id="dash-middle"><br></div>
+  <div id="dash-right"><br></div>
+</div> 
+<!-- END DASHBOARD -->
 
 
 
+
+<button id="land" style="position: absolute; z-index: 35; bottom: 0">LAND ZE PLANE</button>
