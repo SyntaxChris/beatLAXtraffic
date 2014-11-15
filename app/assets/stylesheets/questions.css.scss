@@ -192,5 +192,43 @@ div#other svg a:hover {
 	div.row.small-tile-label {
 		font-size: 12px;
 	}	
+
+	div#phone,
+	div#shop,
+	div#hang-out,
+	div#eat,
+	div#other {
+		width: 90px; 
+		display: block; 
+		margin-left: auto; 
+		margin-right: auto;
+		padding: 0;
+	}
+
+	div#phone svg {
+		width: 90px;
+		height: 90px;
+	}
+
+	div#shop svg {
+		width: 90px;
+		height: 90px;
+	}
+
+	div#hang-out svg {
+		width: 90px;
+		height: 90px;
+	}
+
+	div#eat svg {
+		width: 90px;
+		height: 90px;
+	}
+    
+    div#other svg {
+		width: 90px;
+		height: 90px;
+	}	
 }
+
 
