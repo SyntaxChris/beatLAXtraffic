@@ -2,3 +2,13 @@ body, html {
     overflow-x: hidden; 
     overflow-y: auto;
 }
+
+#app-top-margin {
+	margin-top: 20px;
+}
+
+@media screen and (max-width: 320px) {
+	#app-top-margin {
+		margin-top: 0;
+	}
+}
