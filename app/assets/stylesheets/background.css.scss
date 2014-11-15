@@ -1,3 +1,8 @@
+
+
+
+
+
 div#plane { 
     position: absolute;
     animation: plane 20s;
@@ -159,6 +164,9 @@ div#far-plane {
 
 
 @media screen and (max-width: 640px) {
+    
+
+
     div#plane { 
         position: absolute;
         animation: plane 20s;
@@ -319,8 +327,6 @@ div#far-plane {
 }
 
 
-
-
 @media screen and (max-width: 640px) {
     @keyframes plane {
         0%   {left:110%; top:15%;}
@@ -349,6 +355,156 @@ div#far-plane {
         15%  {left:-20%; top:-15%;}
         100% {left:0%; top:-25%;}
     }
-  
+
+    @keyframes landing {
+        0%   {left:110%; top:-25%;}
+        70% {left:-90%; top: 25%;}
+        100% {left:-91%; top: 25%;}
+    }
+
+    @-webkit-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        70% {left:-90%; top: 25%;}
+        100% {left:-91%; top: 25%;}
+    }
+
+    @-moz-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        70% {left:-90%; top: 25%;}
+        100% {left:-91%; top: 25%;}
+    }
+
+    @-o-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        70% {left:-90%; top: 25%;}
+        100% {left:-91%; top: 25%;}
+    }
+
+    @-ms-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        70% {left:-90%; top: 25%;}
+        100% {left:-91%; top: 25%;}
+    } 
+}
+
+@media screen and (max-width: 320px) {
+    #cloud-1 svg {
+        height: 320px;
+        width: 100px;
+    }
+
+    #cloud-2 svg {
+        height: 350px;
+        width: 120px;
+    }
+
+    #cloud-3 svg {
+        height: 350px;
+        width: 120px;
+    }
+
+    #cloud-4 svg {
+        height: 350px;
+        width: 120px;
+    }
+
+    #cloud-5 svg {
+        height: 350px;
+        width: 120px;
+    }
+
+    #cloud-6 svg {
+        height: 320px;
+        width: 100px;
+    }
+
+    @keyframes plane {
+        0%   {left:110%; top:15%;}
+        8%  {left:-20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
+
+    @-webkit-keyframes plane {
+        0%   {left:110%; top:15%;}
+        8%  {left:-20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
+
+    @-moz-keyframes plane {
+        0%   {left:110%; top:15%;}
+        8%  {left:-20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
+    @-o-keyframes plane {
+        0%   {left:110%; top:15%;}
+        8%  {left:-20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
+    @-ms-keyframes plane {
+        0%   {left:110%; top:15%;}
+        8%  {left:-20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
+
+    @keyframes landing {
+        0%   {left:110%; top:-25%;}
+        40% {left:-120%; top: 25%;}
+        100% {left:-120%; top: 25%;}
+    }
+
+    @-webkit-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        40% {left:-120%; top: 25%;}
+        100% {left:-120%; top: 25%;}
+    }
+
+    @-moz-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        40% {left:-120%; top: 25%;}
+        100% {left:-120%; top: 25%;}
+    }
+
+    @-o-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        40% {left:-120%; top: 25%;}
+        100% {left:-120%; top: 25%;}
+    }
+
+    @-ms-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        40% {left:-120%; top: 25%;}
+        100% {left:-120%; top: 25%;}
+    }
+
+    @keyframes far {
+        0%   {left:-30%; top:15%;}
+        10%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
+
+    @-webkit-keyframes far {
+        0%   {left:-30%; top:15%;}
+        10%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
+
+    @-moz-keyframes far {
+        0%   {left:-30%; top:15%;}
+        10%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
+
+    @-o-keyframes far {
+        0%   {left:-30%; top:15%;}
+        10%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
+
+    @-ms-keyframes far {
+        0%   {left:-30%; top:15%;}
+        10%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
+
 }
 
