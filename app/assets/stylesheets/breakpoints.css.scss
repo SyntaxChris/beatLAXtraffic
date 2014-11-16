@@ -37,29 +37,29 @@
 
     @keyframes plane {
         0%   {left:110%; top:15%;}
-        8%  {left:-20%; top:-15%;}
+        8%  {left:0%; top:-15%;}
         100% {left:0%; top:-25%;}
     }
 
     @-webkit-keyframes plane {
         0%   {left:110%; top:15%;}
-        8%  {left:-20%; top:-15%;}
+        8%  {left:0%; top:-15%;}
         100% {left:0%; top:-25%;}
     }
 
     @-moz-keyframes plane {
         0%   {left:110%; top:15%;}
-        8%  {left:-20%; top:-15%;}
+        8%  {left:0%; top:-15%;}
         100% {left:0%; top:-25%;}
     }
     @-o-keyframes plane {
         0%   {left:110%; top:15%;}
-        8%  {left:-20%; top:-15%;}
+        8%  {left:0%; top:-15%;}
         100% {left:0%; top:-25%;}
     }
     @-ms-keyframes plane {
         0%   {left:110%; top:15%;}
-        8%  {left:-20%; top:-15%;}
+        8%  {left:0%; top:-15%;}
         100% {left:0%; top:-25%;}
     }
 
@@ -385,6 +385,10 @@
 // END BACKGROUND
 
 // ==================================================
+
+
+
+
 
 
 
