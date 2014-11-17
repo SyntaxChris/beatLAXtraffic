@@ -171,17 +171,17 @@ div#other-landscape:hover, div#other-landscape:active {
 }
 
 div#small-other:hover, div#small-other:active {
-		#other-background{
+	#other-background{
 		fill: #9663C6;
 	}
 	#other-shadow {
 		fill: #AA75D3;
 	}
-	transform: rotate(10deg);
-	-webkit-transform: rotate(10deg);
-	-moz-transform: rotate(10deg);
-	-o-transform: rotate(10deg);
-	-ms-transform: rotate(10deg);
+	transform: rotate(-10deg);
+	-webkit-transform: rotate(-10deg);
+	-moz-transform: rotate(-10deg);
+	-o-transform: rotate(-10deg);
+	-ms-transform: rotate(-10deg);
 }
 
 #user-text-input {
