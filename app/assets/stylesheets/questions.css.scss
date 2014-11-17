@@ -1,3 +1,19 @@
+div#question-header {
+	margin-top: 20px;
+	text-align:center;
+	// margin-bottom: 50px; 
+	#main {
+		font-size: 18px; 
+		color: white;
+		padding-bottom: 0;	
+	}
+	#foot {
+		color: #008CBA;
+		font-size: 14px;
+	}
+}
+
+
 div#phone {
 	-webkit-transition: all 0.3s ease 0s;
 	-moz-transition: all 0.3s ease 0s;
@@ -187,10 +203,19 @@ div#small-other:hover, div#small-other:active {
 #user-text-input {
 	display: none;
 	width: 100%; 
-	height: 125px; 
+	height: 150px; 
 	background-color: white; 
 	border-radius: 15px; 
 	padding:0;
+	#other-info {
+		margin-left: auto;
+		margin-right: auto;
+		width:80%;
+		border: none;
+		appearance: caret;
+		-webkit-appearance: caret;
+		-moz-appearance: caret; 
+	}
 }
 
 .arrow-left {
@@ -204,139 +229,8 @@ div#small-other:hover, div#small-other:active {
 	border-bottom: 20px solid transparent; 
 	border-right: 30px solid white; 
 }
-// END TILES
 
 
-
-
-
-// MEDIA QUERIES
-// @media screen and (min-width: 640px) {
-// 	div#tiles-small {
-// 		display: none;
-// 	}
-// }
-
-// @media screen and (max-width: 639px) {
-// 	div#tiles-large {
-// 		display: none;
-// 	}
-
-// 	div#phone,
-// 	div#shop,
-// 	div#hang-out,
-// 	div#eat,
-// 	div#other {
-// 		width: 100px; 
-// 		display: block; 
-// 		margin-left: auto; 
-// 		margin-right: auto;
-// 		padding: 0;
-// 	}
-
-// 	div#phone svg {
-// 		width: 100px;
-// 		height: 100px;
-// 	}
-
-// 	div#shop svg {
-// 		width: 100px;
-// 		height: 100px;
-// 	}
-
-// 	div#hang-out svg {
-// 		width: 100px;
-// 		height: 100px;
-// 	}
-
-// 	div#eat svg {
-// 		width: 100px;
-// 		height: 100px;
-// 	}
-    
-//     div#other svg {
-// 		width: 100px;
-// 		height: 100px;
-// 	}
-// }
-
-// @media screen and (max-width: 320px) {
-
-// 	div#question-header {
-// 		text-align:center; 
-// 		#main {
-// 			font-size: 18px; 
-// 			color: white;
-// 			padding-bottom: 0;	
-// 		}
-// 		#foot {
-// 			font-size: 14px;
-// 		}
-// 	}
-
-// 	div#parking-lot {
-// 		display: none;
-// 	}
-
-// 	div.row.small-tile-label {
-// 		font-size: 12px;
-// 	}	
-
-// 	div#phone,
-// 	div#shop,
-// 	div#hang-out,
-// 	div#eat,
-// 	div#other {
-// 		width: 90px; 
-// 		display: block; 
-// 		margin-left: auto; 
-// 		margin-right: auto;
-// 		padding: 0;
-// 	}
-
-// 	div#phone svg {
-// 		width: 90px;
-// 		height: 90px;
-// 	}
-
-// 	div#shop svg {
-// 		width: 90px;
-// 		height: 90px;
-// 	}
-
-// 	div#hang-out svg {
-// 		width: 90px;
-// 		height: 90px;
-// 	}
-
-// 	div#eat svg {
-// 		width: 90px;
-// 		height: 90px;
-// 	}
-    
-//     div#other svg {
-// 		width: 90px;
-// 		height: 90px;
-// 	}	
-// }
-
-
-// // LANDSCAPE VIEW
-// @media screen and (max-width: 480px) {
-
-// }
-
-// @media screen and (max-width: 568px) {
-
-// }
-
-// @media screen and (max-width: 667px) {
-
-// }
-
-// @media screen and (max-width: 736px) {
-
-// }
 
 
 

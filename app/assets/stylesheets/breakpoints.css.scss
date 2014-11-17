@@ -444,7 +444,7 @@
 @media screen and (max-width: 1441px) and (min-width: 1251px) {
 	div#lines,
 	div#cars {
-		padding-top: 50px;
+		padding-top: 5px;
 	}
 	div#parking-lot div#lines svg {
 		width: 1200px;
@@ -504,97 +504,480 @@
 
 
 // DASHBOARD
-@media screen and (max-width: 639px) {
-	#dash {
-		position: fixed;
-		z-index: 30;
-		bottom:0;
-		width: 100%;
-		height: 140px;
-	}
 
-	#curve {
-		height: 35px; 
-		width: 10px; 
-		margin-left: 0%; 
-		margin-right: auto;
+// @media screen and (max-width: 568px){
+// 	#dash {
+// 		position: fixed;
+// 		z-index: 30;
+// 		bottom:0;
+// 		width: 100%;
+// 		height: 100px;
+// 	}
+
+// 	#curve {
+// 		height: 25px; 
+// 		width: 110px; 
+// 		margin-left: 0%; 
+// 		margin-right: auto;
 		
-	}
+// 	}
 
-	div#dash div#curve svg {
-		height: 35px;
-		width: 180px;
-	}
+// 	div#dash div#curve svg {
+// 		height: 25px;
+// 		width: 150px;
+// 	}
 
-	#dash-left {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 0%;
-		height: 105px;
-		margin-top: 75px;
-		margin-left: 0;
-		background-color: rgba(255, 255, 255, 0.9);
-	}
+// 	#dashboard {
+// 		position: fixed;
+// 		bottom:0;
+// 		width: 100%;
+// 		height: 75px;
+// 		margin-top: 75px;
+// 		background-color: rgba(255, 255, 255, 0.9);
+// 	}
 
-	#dash-right {
-		position: fixed;
-		bottom:0;
-		right: 0;
-		width: 100%;
-		height: 105px;
-		margin-top: 75px;
-		background-color: rgba(255, 255, 255, 0.9);
-	}
-	
-}
-
-
-
-@media screen and (max-width: 320px) {
-	#dash {
-		position: fixed;
-		z-index: 30;
-		bottom:0;
-		width: 100%;
-		height: 100px;
-	}
-
-	#curve {
-		height: 25px; 
-		width: 110px; 
-		margin-left: 0%; 
-		margin-right: auto;
+// 	#speedo {
+// 		height: 100px;
+// 		width: 100px;
+// 		position: fixed;
+// 		z-index: 31;
+// 		margin-top: 15px;
+// 		margin-left: 0; 
+// 		margin-right: auto;
 		
-	}
+// 		#top-circle {
+// 			position: absolute;
+// 			z-index: 32;
+// 			height: 100px;
+// 			width: 100px;
+// 			margin-left: 24% ;
+// 			border-radius: 100%;
+// 			animation: speedo-spin 20s linear infinite;
+// 	        -moz-animation: speedo-spin 20s linear infinite;
+// 	        -webkit-animation: speedo-spin 20s linear infinite;
+// 	         -o-animation: speedo-spin 20s linear infinite;
+// 	        -ms-animation: speedo-spin 20s linear infinite;
+// 	        #long-arrow {
+// 	        	position:relative; 
+// 	        	top:0; 
+// 	        	left: 48px; 
+// 	        	height: 45px; 
+// 	        	width:4px;
+// 	        	margin-top: 5px;
+// 	        	opacity: 0.2;
+// 	        	background-color: #C40E17;
+// 	        }
+// 		}
 
-	div#dash div#curve svg {
-		height: 25px;
-		width: 150px;
-	}
+// 		#bottom-circle {
+// 			position: absolute;
+// 			z-index: 31;
+// 			height: 100px;
+// 			width: 100px;
+// 			margin-left: 24% ;
+// 			border-radius: 100%;
+// 			opacity: 0.8;
+// 			background-color: #839DB7;
+// 			animation: speedo-spin 60s linear infinite;
+// 	        -moz-animation: speedo-spin 60s linear infinite;
+// 	        -webkit-animation: speedo-spin 60s linear infinite;
+// 	         -o-animation: speedo-spin 60s linear infinite;
+// 	        -ms-animation: speedo-spin 60s linear infinite;
+// 	        #short-arrow {
+// 	        	position:relative; 
+// 	        	top:0; 
+// 	        	left: 48px;
+// 	        	margin-top: 20px; 
+// 	        	height: 30px; 
+// 	        	width:4px;
+// 	        	opacity: 0.3;
+// 	        	background-color: #C40E17;
+// 	        }
+// 		}
 
-	#dash-left {
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 0%;
-		height: 90px;
-		margin-top: 75px;
-		margin-left: 0;
-		background-color: rgba(255, 255, 255, 0.9);
-	}
+// 		#timer {
+// 			position: absolute;
+// 			z-index: 33;
+// 			height: 60px;
+// 			width: 100px;
+// 			margin-left: 23%;
+// 			margin-top: 20px;
+// 			#min,#min-footer{
+// 				color: white;
+// 			}
+// 			#min{
+// 				font-size: 25px;
+// 				padding-top:10px;
+// 			}
+// 			#min-footer {
+// 				text-align: center;
+// 				font-size: 12px;
+// 			}
+			
+// 		}
+// 	}
+// }
 
-	#dash-right {
-		position: fixed;
-		bottom:0;
-		right: 0;
-		width: 100%;
-		height: 75px;
-		margin-top: 75px;
-		background-color: rgba(255, 255, 255, 0.9);
-	}
 
-}
+// @media screen and (max-width: 667px) and (min-width: 569px){
+// 	#dash {
+// 		position: fixed;
+// 		z-index: 30;
+// 		bottom:0;
+// 		width: 100%;
+// 		height: 100px;
+// 	}
+
+// 	#curve {
+// 		height: 25px; 
+// 		width: 150px; 
+// 		margin-left: auto; 
+// 		margin-right: auto;
+		
+// 	}
+
+// 	div#dash div#curve svg {
+// 		height: 25px;
+// 		width: 150px;
+
+// 	}
+
+// 	#dashboard {
+// 		position: fixed;
+// 		bottom:0;
+// 		width: 100%;
+// 		height: 75px;
+// 		margin-top: 75px;
+// 		background-color: rgba(255, 255, 255, 0.9);
+// 	}
+
+// 	#speedo {
+// 		height: 100px;
+// 		width: 100px;
+// 		position: fixed;
+// 		z-index: 31;
+// 		margin-top: 15px;
+// 		margin-left: 3.5%; 
+// 		margin-right: auto;
+		
+// 		#top-circle {
+// 			position: absolute;
+// 			z-index: 32;
+// 			height: 100px;
+// 			width: 100px;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			border-radius: 100%;
+// 			animation: speedo-spin 20s linear infinite;
+// 	        -moz-animation: speedo-spin 20s linear infinite;
+// 	        -webkit-animation: speedo-spin 20s linear infinite;
+// 	         -o-animation: speedo-spin 20s linear infinite;
+// 	        -ms-animation: speedo-spin 20s linear infinite;
+// 	        #long-arrow {
+// 	        	position:relative; 
+// 	        	top:0; 
+// 	        	left: 48px; 
+// 	        	height: 45px; 
+// 	        	width:4px;
+// 	        	margin-top: 5px;
+// 	        	opacity: 0.2;
+// 	        	background-color: #C40E17;
+// 	        }
+// 		}
+
+// 		#bottom-circle {
+// 			position: absolute;
+// 			z-index: 31;
+// 			height: 100px;
+// 			width: 100px;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			border-radius: 100%;
+// 			opacity: 0.8;
+// 			background-color: #839DB7;
+// 			animation: speedo-spin 60s linear infinite;
+// 	        -moz-animation: speedo-spin 60s linear infinite;
+// 	        -webkit-animation: speedo-spin 60s linear infinite;
+// 	         -o-animation: speedo-spin 60s linear infinite;
+// 	        -ms-animation: speedo-spin 60s linear infinite;
+// 	        #short-arrow {
+// 	        	position:relative; 
+// 	        	top:0; 
+// 	        	left: 48px;
+// 	        	margin-top: 20px; 
+// 	        	height: 30px; 
+// 	        	width:4px;
+// 	        	opacity: 0.3;
+// 	        	background-color: #C40E17;
+// 	        }
+// 		}
+
+// 		#timer {
+// 			position: absolute;
+// 			z-index: 33;
+// 			height: 60px;
+// 			width: 100px;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			margin-top: 20px;
+// 			#min,#min-footer{
+// 				color: white;
+// 			}
+// 			#min{
+// 				font-size: 25px;
+// 				padding-top:10px;
+// 			}
+// 			#min-footer {
+// 				text-align: center;
+// 				font-size: 12px;
+// 			}
+			
+// 		}
+// 	}
+// }
+
+
+
+
+
+
+
+
+
+
+// @media screen and (max-width: 1024px) and (min-width: 668px){
+// 	#dash {
+// 		position: fixed;
+// 		z-index: 30;
+// 		bottom:0;
+// 		width: 100%;
+// 		height: 100px;
+// 	}
+
+// 	#curve {
+// 		height: 25px; 
+// 		width: 150px; 
+// 		margin-left: auto; 
+// 		margin-right: auto;
+		
+// 	}
+
+// 	div#dash div#curve svg {
+// 		height: 25px;
+// 		width: 150px;
+
+// 	}
+
+// 	#dashboard {
+// 		position: fixed;
+// 		bottom:0;
+// 		width: 100%;
+// 		height: 75px;
+// 		margin-top: 75px;
+// 		background-color: rgba(255, 255, 255, 0.9);
+// 	}
+
+// 	#speedo {
+// 		height: 100px;
+// 		width: 100px;
+// 		position: fixed;
+// 		z-index: 31;
+// 		margin-top: 15px;
+// 		margin-left: 3.5%; 
+// 		margin-right: auto;
+		
+// 		#top-circle {
+// 			position: absolute;
+// 			z-index: 32;
+// 			height: 100px;
+// 			width: 100px;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			border-radius: 100%;
+// 			animation: speedo-spin 20s linear infinite;
+// 	        -moz-animation: speedo-spin 20s linear infinite;
+// 	        -webkit-animation: speedo-spin 20s linear infinite;
+// 	         -o-animation: speedo-spin 20s linear infinite;
+// 	        -ms-animation: speedo-spin 20s linear infinite;
+// 	        #long-arrow {
+// 	        	position:relative; 
+// 	        	top:0; 
+// 	        	left: 48px; 
+// 	        	height: 45px; 
+// 	        	width:4px;
+// 	        	margin-top: 5px;
+// 	        	opacity: 0.2;
+// 	        	background-color: #C40E17;
+// 	        }
+// 		}
+
+// 		#bottom-circle {
+// 			position: absolute;
+// 			z-index: 31;
+// 			height: 100px;
+// 			width: 100px;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			border-radius: 100%;
+// 			opacity: 0.8;
+// 			background-color: #839DB7;
+// 			animation: speedo-spin 60s linear infinite;
+// 	        -moz-animation: speedo-spin 60s linear infinite;
+// 	        -webkit-animation: speedo-spin 60s linear infinite;
+// 	         -o-animation: speedo-spin 60s linear infinite;
+// 	        -ms-animation: speedo-spin 60s linear infinite;
+// 	        #short-arrow {
+// 	        	position:relative; 
+// 	        	top:0; 
+// 	        	left: 48px;
+// 	        	margin-top: 20px; 
+// 	        	height: 30px; 
+// 	        	width:4px;
+// 	        	opacity: 0.3;
+// 	        	background-color: #C40E17;
+// 	        }
+// 		}
+
+// 		#timer {
+// 			position: absolute;
+// 			z-index: 33;
+// 			height: 60px;
+// 			width: 100px;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			margin-top: 20px;
+// 			#min,#min-footer{
+// 				color: white;
+// 			}
+// 			#min{
+// 				font-size: 25px;
+// 				padding-top:10px;
+// 			}
+// 			#min-footer {
+// 				text-align: center;
+// 				font-size: 12px;
+// 			}
+			
+// 		}
+// 	}
+// }
+
+
+
+
+
+
+
+
+
+
+// @media screen and (min-width: 1025px) {
+// 	#dash {
+// 		position: fixed;
+// 		z-index: 30;
+// 		bottom:0;
+// 		width: 100%;
+// 		height: 185px;
+// 	}
+
+// 	#curve {
+// 		height: 45px; 
+// 		width: 200px; 
+// 		margin-left: auto; 
+// 		margin-right: auto;
+// 	}
+
+// 	#dashboard {
+// 		position: fixed;
+// 		bottom: 0;
+// 		left: 0;
+// 		width: 100%;
+// 		height: 140px;
+// 		margin-top: 75px;
+// 		margin-left: 0;
+// 		background-color: rgba(255, 255, 255, 0.9);
+// 	}
+
+// 	#speedo {
+// 		height: 195px;
+// 		width: 200px;
+// 		position: fixed;
+// 		z-index: 31;
+// 		margin-top: 27px;
+// 		margin-left: auto; 
+// 		margin-right: auto;
+		
+// 		#top-circle {
+// 			position: absolute;
+// 			z-index: 32;
+// 			height: 180px;
+// 			width: 180px;
+// 			margin-left: 5% ;
+// 			border-radius: 100%;
+// 			animation: speedo-spin 20s linear infinite;
+// 	        -moz-animation: speedo-spin 20s linear infinite;
+// 	        -webkit-animation: speedo-spin 20s linear infinite;
+// 	         -o-animation: speedo-spin 20s linear infinite;
+// 	        -ms-animation: speedo-spin 20s linear infinite;
+// 	        #long-arrow {
+// 	        	position:relative; 
+// 	        	top:0; 
+// 	        	left: 88px; 
+// 	        	height: 80px; 
+// 	        	width:4px;
+// 	        	margin-top: 10px;
+// 	        	opacity: 0.2;
+// 	        	background-color: #C40E17;
+// 	        }
+// 		}
+
+// 		#bottom-circle {
+// 			position: absolute;
+// 			z-index: 31;
+// 			height: 180px;
+// 			width: 180px;
+// 			margin-left: 5% ;
+// 			border-radius: 100%;
+// 			opacity: 0.8;
+// 			background-color: #839DB7;
+// 			animation: speedo-spin 60s linear infinite;
+// 	        -moz-animation: speedo-spin 60s linear infinite;
+// 	        -webkit-animation: speedo-spin 60s linear infinite;
+// 	         -o-animation: speedo-spin 60s linear infinite;
+// 	        -ms-animation: speedo-spin 60s linear infinite;
+// 	        #short-arrow {
+// 	        	position:relative; 
+// 	        	top:0; 
+// 	        	left: 88px;
+// 	        	margin-top: 40px; 
+// 	        	height: 50px; 
+// 	        	width:4px;
+// 	        	opacity: 0.3;
+// 	        	background-color: #C40E17;
+// 	        }
+// 		}
+
+// 		#timer {
+// 			position: absolute;
+// 			z-index: 33;
+// 			height: 60px;
+// 			width: 180px;
+// 			margin-left: 5%;
+// 			margin-top: 50px;
+// 			#min,#min-footer{
+// 				color: white;
+// 			}
+// 			#min{
+// 				font-size: 45px;
+// 				padding-top:18px;
+// 			}
+// 			#min-footer {
+// 				padding-top: 10px;
+// 			}
+			
+// 		}
+// 	}
+// }
 // END DASHBOARD
 
 
@@ -618,7 +1001,7 @@
 
 
 
-// ==============================================
+
 
 
 // TILES
@@ -1037,11 +1420,13 @@
     div#other-landscape svg {
 		width: 150px;
 		height: 150px;
-	}
-	
-	
+	}	
 }
 // end landscape views
+
+
+
+
 
 // portait views
 @media screen and (max-width: 320px) {
@@ -1305,7 +1690,7 @@
 	div#hang-out,
 	div#eat,
 	div#other {
-		width: 170px; 
+		width: 150px; 
 		display: block; 
 		margin-left: auto; 
 		margin-right: auto;
@@ -1330,28 +1715,28 @@
 	}
 
 	div#phone svg {
-		width: 170px;
-		height: 170px;
+		width: 150px;
+		height: 150px;
 	}
 
 	div#shop svg {
-		width: 170px;
-		height: 170px;
+		width: 150px;
+		height: 150px;
 	}
 
 	div#hang-out svg {
-		width: 170px;
-		height: 170px;
+		width: 150px;
+		height: 150px;
 	}
 
 	div#eat svg {
-		width: 170px;
-		height: 170px;
+		width: 150px;
+		height: 150px;
 	}
     
     div#other svg {
-		width: 170px;
-		height: 170px;
+		width: 150px;
+		height: 150px;
 	}	
 }
 // end portait views

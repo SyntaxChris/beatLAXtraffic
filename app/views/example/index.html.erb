@@ -73,6 +73,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="row" style="margin-top: 10px;">
                 <div class="large-4 medium-4 small-4 columns">
                   <%= render 'eat' %>
@@ -91,9 +92,13 @@
                     <div class="large-12 medium-12 small-12 columns">
                       <div id="user-text-input">
                         <div class="arrow-left" style="position:absolute; z-index: 1;"></div>
-                        <div class="row" style="text-align: center; color: #AA75D3;">
+                        <div class="row" style="text-align: center; color: #AA75D3; padding-bottom: 5px">
                           Please write here
                         </div>
+                        <div class="row" style="padding-bottom:0">
+                          <textarea id="other-info" cols="1" rows="4" maxlength="150"></textarea> 
+                        </div>
+                        <div class="row" id="char-count" style="text-align:center; color: #B2C4D4"></div>
                       </div>
                     </div>
                   </div>
@@ -216,28 +221,30 @@
 
 
 <!-- DASHBOARD -->
-<div id="dash">
-  <div id="curve">
-    <div id="speedo" style="text-align: center">
-      <div id="bottom-circle">
+<div id="dashboard">
+  <div class="row">
+    <div class="large-3 medium-3 small-3 columns"><br></div>
+    <div class="large-3 medium-3 small-3 columns"><br></div>
+    <div class="large-3 medium-3 small-3 columns"><br></div>
+    <div class="large-3 medium-3 small-3 columns"><br></div>
+  </div>
+</div>
+
+    <!-- <div id="speedo" style="text-align: center"> -->
+      <!-- <div id="bottom-circle">
         <div id="short-arrow"></div>
       </div>
       <div id="top-circle">
         <div id="long-arrow"></div>
       </div>
       <div id="timer">
-        <div id="min">15 min</div>
-        <div id="min-footer">until landing</div>    
-      </div>
-    </div>
+        <div id="min" style="text-align: center">15 min</div>
+        <div id="min-footer" style="text-align: center">until landing</div>    
+      </div> -->
 
-    <%= render 'curve' %>
-  </div>
-  <div id="dash-left"></div>
-  <div id="dash-right"></div>
-</div> 
+ 
  <!-- END DASHBOARD -->
 
 
 
-<button id="land" style="position: absolute; z-index: 35; bottom: 0; right:0">LAND ZE PLANE</button>
+<!-- <button id="land" style="position: absolute; z-index: 35; bottom: 0; right:0">LAND ZE PLANE</button> -->
