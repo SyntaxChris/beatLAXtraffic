@@ -24,6 +24,16 @@ RSpec.describe Response, :type => :model do
       response.time_remaining = 30
       expect(response.time_remaining).to eq 30
     end
+
+    it "tracks when a user skips the question" do
+      response.skipped = true
+      expect(response.skipped).to eq true
+    end
+
+    it "tracks when a user hasn't see a certain node" do
+      response.seen = false
+      expect(response.seen).to eq false
+    end
   end
 
   describe "Associations" do
@@ -57,6 +67,16 @@ RSpec.describe Response, :type => :model do
 
     pending "if there is no time left at a decision point, it logs '1' as the "\
             "amount of time remaining"
+
+    pending "when a question is NOT skipped, marks the response as not skipped and "\
+            "associates the proper answer"
+
+    pending "when a question IS skipped, marks the response as skipped and records "\
+            "answer of 1"
+
+    pending "at the end of the experience, create a response for each node that "\
+            "wasn't encountered and mark it as unseen, with answer of 0, and note "\
+            "that it was not skipped"
   end
 
 end

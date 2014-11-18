@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118171658) do
+ActiveRecord::Schema.define(version: 20141118172919) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 20141118171658) do
     t.integer  "decision_id"
     t.integer  "times_seen",      default: 1
     t.integer  "time_remaining"
+    t.boolean  "seen"
+    t.boolean  "skipped"
   end
 
 end
