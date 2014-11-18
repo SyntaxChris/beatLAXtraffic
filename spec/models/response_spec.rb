@@ -15,6 +15,10 @@ RSpec.describe Response, :type => :model do
       expect(response.freeform_answer).to eq "I have other reasons"
       expect(response.answer.answer).to eq "other"
     end
+
+    it "keeps track of 'times seen' for this session and this node, defaults to 1" do
+      expect(response.times_seen).to eq 1
+    end
   end
 
   describe "Associations" do
@@ -37,5 +41,10 @@ RSpec.describe Response, :type => :model do
       puts "for below, should it -belong- to decision? how to represent the decision chosen?"
       expect(response).to belong_to(:decision)
     end
+  end
+
+  describe "Features" do
+    pending "it checks to see if this user has responded to this node before, "\
+            "if so, how many times, and increases times_seen accordingly"
   end
 end
