@@ -34,6 +34,11 @@ RSpec.describe Response, :type => :model do
       response.seen = false
       expect(response.seen).to eq false
     end
+
+    it "can have a rank, for multiple select questions" do
+      response.rank = 3
+      expect(response.rank).to eq 3
+    end
   end
 
   describe "Associations" do
@@ -93,6 +98,79 @@ RSpec.describe Response, :type => :model do
       end
 
       expect(question_ids_from_responses.uniq.size).to eq 1
+    end
+
+    it "for ranked answers, there are multiple responses to one question and each "\
+       "response has a rank" do
+
+      node_1 = FactoryGirl.create(:node)
+      question_1 = FactoryGirl.create(:question, node_id: node_1.id)
+      answer_a = FactoryGirl.create(
+        :answer,
+        question: question_1,
+        answer: 'answer a'
+      )
+      answer_b = FactoryGirl.create(
+        :answer,
+        question: question_1,
+        answer: 'answer b'
+      )
+      answer_c = FactoryGirl.create(
+        :answer,
+        question: question_1,
+        answer: 'answer c'
+      )
+      answer_d = FactoryGirl.create(
+        :answer,
+        question: question_1,
+        answer: 'answer d'
+      )
+      answer_e = FactoryGirl.create(
+        :answer,
+        question: question_1,
+        answer: 'answer e'
+      )
+
+      response_1 = FactoryGirl.create(
+        :response,
+        node_id: node_1.id,
+        answer_id: answer_a.id,
+        rank: 1
+      )
+      response_2 = FactoryGirl.create(
+        :response,
+        node_id: node_1.id,
+        answer_id: answer_b.id,
+        rank: 2
+      )
+      response_3 = FactoryGirl.create(
+        :response,
+        node_id: node_1.id,
+        answer_id: answer_c.id,
+        rank: 3
+      )
+      response_4 = FactoryGirl.create(
+        :response,
+        node_id: node_1.id,
+        answer_id: answer_d.id,
+        rank: 0
+      )
+      response_5 = FactoryGirl.create(
+        :response,
+        node_id: node_1.id,
+        answer_id: answer_d.id,
+        rank: 0
+      )
+
+      question_ids_from_responses = [
+        response_1, response_2, response_3, response_4, response_5
+      ].collect do |response|
+        response.node.question.id
+      end
+
+      expect(question_ids_from_responses.uniq.size).to eq 1
+      expect(response_1.rank).to eq 1
+      expect(response_5.rank).to eq 0
     end
 
     it "can belong to a decision" do
