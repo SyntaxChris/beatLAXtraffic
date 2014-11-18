@@ -17,6 +17,8 @@
             <!-- <p><a href="#" ng-click="restartQuiz()">Retry?</a> -->
  <!-- </div> -->
 
+
+
 <!-- QUESTIONS FORMAT -->
 <div class="row">
   <div class="large-12 medium-12 small-12 columns">
@@ -73,6 +75,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="row" style="margin-top: 10px;">
                 <div class="large-4 medium-4 small-4 columns">
                   <%= render 'eat' %>
@@ -91,9 +94,13 @@
                     <div class="large-12 medium-12 small-12 columns">
                       <div id="user-text-input">
                         <div class="arrow-left" style="position:absolute; z-index: 1;"></div>
-                        <div class="row" style="text-align: center; color: #AA75D3;">
+                        <div class="row" style="text-align: center; color: #AA75D3; padding-bottom: 5px">
                           Please write here
                         </div>
+                        <div class="row" style="padding-bottom:0">
+                          <textarea id="other-info" cols="1" rows="4" maxlength="150"></textarea> 
+                        </div>
+                        <div class="row" id="char-count" style="text-align:center; color: #B2C4D4"></div>
                       </div>
                     </div>
                   </div>
@@ -216,21 +223,58 @@
 
 
 <!-- DASHBOARD -->
-<!-- <div id="dash">
-  <div id="curve"> -->
-<!--     <div id="speedo">
-    <br>
-      <div id="circle">
-        <div id="arrow"></div>
+<div id="dashboard">
+  <div id="gradient-1"></div>
+  <div id="gradient-2"></div>
+  <div id="gradient-3"></div>
+  <div id="gradient-4"></div>
+
+  <div id="progress-bar">
+    <div id="ord">
+      <div class="tag">ORD</div>
+    </div>
+    <div id="bar-back">
+      <div id="plane-bar"></div>
+      <div id="plane-bar-filler">
+        <div id="circular-plane"><%= render 'progressplane' %></div>
       </div>
-    </div> -->
-<!--     <%= render 'curve' %>
+      <div id="arrow"></div>
+    </div>
+    <div id="lax">
+      <div class="tag">LAX</div>  
+    </div>
   </div>
-  <div id="dash-left"></div>
-  <div id="dash-right"></div>
-</div> --> 
- <!-- END DASHBOARD -->
+
+  <div id="flight-status"></div>
+  <div id="suitcase"></div>
+  <div id="colleagues"></div>
+  <div id="time-spent">
+    <div id="clock">
+      <div class="hash"></div>
+      <div class="hash"></div>
+      <div class="hash"></div>
+      <div class="hash"></div>
+      <div class="hash"></div>
+      <div class="hash"></div>
+      <div class="hash"></div>
+      <div class="hash"></div>
+    </div>
+    <div id="time-spent-description"></div>
+  </div>
+</div>
+<!-- END DASHBOARD -->
 
 
 
-<button id="land" style="position: absolute; z-index: 35; bottom: 0; right:0">LAND ZE PLANE</button>
+<!-- <button id="land" style="position: absolute; z-index: 35; bottom: 0; right:0">LAND ZE PLANE</button> -->
+
+
+
+
+<!-- DATA PASSED FROM FRAMEWORKS -->
+<div id="plane-progress" data-plane-progress=60></div>
+<div id="timer-progress" data-timer-progress=></div>
+<!-- END DATA PASSED FROM FRAMEWORKS -->
+
+
+
