@@ -17,6 +17,8 @@
             <!-- <p><a href="#" ng-click="restartQuiz()">Retry?</a> -->
  <!-- </div> -->
 
+
+
 <!-- QUESTIONS FORMAT -->
 <div class="row">
   <div class="large-12 medium-12 small-12 columns">
@@ -228,35 +230,51 @@
   <div id="gradient-4"></div>
 
   <div id="progress-bar">
-    <div id="ord"></div>
-    <div id="bar-back"></div>
-    <div id="lax"></div>
+    <div id="ord">
+      <div class="tag">ORD</div>
+    </div>
+    <div id="bar-back">
+      <div id="plane-bar"></div>
+      <div id="plane-bar-filler">
+        <div id="circular-plane"><%= render 'progressplane' %></div>
+      </div>
+      <div id="arrow"></div>
+    </div>
+    <div id="lax">
+      <div class="tag">LAX</div>  
+    </div>
   </div>
 
   <div id="flight-status"></div>
   <div id="suitcase"></div>
   <div id="colleagues"></div>
   <div id="time-spent">
-    <div id="clock"></div>
+    <div id="clock">
+      <div class="hash"></div>
+      <div class="hash"></div>
+      <div class="hash"></div>
+      <div class="hash"></div>
+      <div class="hash"></div>
+      <div class="hash"></div>
+      <div class="hash"></div>
+      <div class="hash"></div>
+    </div>
     <div id="time-spent-description"></div>
   </div>
 </div>
-
-    <!-- <div id="speedo" style="text-align: center"> -->
-      <!-- <div id="bottom-circle">
-        <div id="short-arrow"></div>
-      </div>
-      <div id="top-circle">
-        <div id="long-arrow"></div>
-      </div>
-      <div id="timer">
-        <div id="min" style="text-align: center">15 min</div>
-        <div id="min-footer" style="text-align: center">until landing</div>    
-      </div> -->
-
- 
- <!-- END DASHBOARD -->
+<!-- END DASHBOARD -->
 
 
 
 <!-- <button id="land" style="position: absolute; z-index: 35; bottom: 0; right:0">LAND ZE PLANE</button> -->
+
+
+
+
+<!-- DATA PASSED FROM FRAMEWORKS -->
+<div id="plane-progress" data-plane-progress=60></div>
+<div id="timer-progress" data-timer-progress=></div>
+<!-- END DATA PASSED FROM FRAMEWORKS -->
+
+
+
