@@ -48,12 +48,54 @@ RSpec.describe Response, :type => :model do
     end
 
     it "can belong to an answer" do
-      puts "for below, should it -belong- to answer? how to represent the answer chosen?"
       expect(response).to belong_to(:answer)
     end
 
+    it "there can be many responses belonging to different answers but the same question "\
+       "in the case of 'select all that apply'" do
+
+      node_1 = FactoryGirl.create(:node)
+      question_1 = FactoryGirl.create(:question, node_id: node_1.id)
+      answer_a = FactoryGirl.create(
+        :answer,
+        question: question_1,
+        answer: 'answer a'
+      )
+      answer_b = FactoryGirl.create(
+        :answer,
+        question: question_1,
+        answer: 'answer b'
+      )
+      answer_c = FactoryGirl.create(
+        :answer,
+        question: question_1,
+        answer: 'answer c'
+      )
+
+      response_1 = FactoryGirl.create(
+        :response,
+        node_id: node_1.id,
+        answer_id: answer_a.id
+      )
+      response_2 = FactoryGirl.create(
+        :response,
+        node_id: node_1.id,
+        answer_id: answer_b.id
+      )
+      response_3 = FactoryGirl.create(
+        :response,
+        node_id: node_1.id,
+        answer_id: answer_c.id
+      )
+
+      question_ids_from_responses = [response_1, response_2, response_3].collect do |response|
+        response.node.question.id
+      end
+
+      expect(question_ids_from_responses.uniq.size).to eq 1
+    end
+
     it "can belong to a decision" do
-      puts "for below, should it -belong- to decision? how to represent the decision chosen?"
       expect(response).to belong_to(:decision)
     end
   end
@@ -77,6 +119,9 @@ RSpec.describe Response, :type => :model do
     pending "at the end of the experience, create a response for each node that "\
             "wasn't encountered and mark it as unseen, with answer of 0, and note "\
             "that it was not skipped"
+
+    pending "in 'select all that apply' questions, the multiple responses for a single "\
+            "question are NOT recorded as multiple visits to the same node"
   end
 
 end
