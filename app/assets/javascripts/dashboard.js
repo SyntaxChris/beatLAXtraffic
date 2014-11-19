@@ -5,7 +5,7 @@ $(document).ready(function(){
     $("#plane-bar-filler-landscape").animate({marginLeft: planeProgress+"%"}, 15000);
     $("#plane-bar").animate({width: planeProgress+"%"}, 15000);
     $("#plane-bar-filler").animate({marginLeft: planeProgress+"%"}, 15000);
-    $("#alert-plane").attr("class", "alert-plane")
+    
     
     $(function () {
         var prevWidth = $('#plane-bar-landscape').width();
@@ -14,10 +14,9 @@ $(document).ready(function(){
                 var curWidth = $(this).width();
                 var progressPercentage = curWidth/$('#bar-back-landscape').width()*100;            
                 if (prevWidth !== curWidth) {
-                    if (progressPercentage > 80) {     
+                    if (progressPercentage > 94) {     
                         $("#clock-alert").attr("class", "clock-alert");
-                    }
-                    if (progressPercentage > 94){
+                        $("#plane-alert").attr("class", "clock-alert");
                         $('#landing-plane').addClass("land-ze-plane");
                     }
                    prevWidth = curWidth;

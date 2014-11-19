@@ -15,7 +15,6 @@
 //= require 'attribute.js'
 //= require foundation
 //= require 'dashboard'
-//= require 'plane'
 //= require 'questions'
 //= require angular
 //= require angular-rails-templates

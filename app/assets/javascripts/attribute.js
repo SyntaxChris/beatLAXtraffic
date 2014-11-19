@@ -1,12 +1,3 @@
-/*
-A simple jQuery function that can add listeners on attribute change.
-http://meetselva.github.io/attrchange/
-
-About License:
-Copyright (C) 2013 Selvakumar Arumugam
-You may use attrchange plugin under the terms of the MIT Licese.
-https://github.com/meetselva/attrchange/blob/master/MIT-License.txt
-*/
 (function($) {
    function isDOMAttrModifiedSupported() {
 		var p = document.createElement('p');
