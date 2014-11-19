@@ -255,26 +255,26 @@
 
     .land-ze-plane { 
         position: absolute;
-        animation: landing 7s;
+        animation: landing 4s;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
 
-        -webkit-animation: landing 7s; 
+        -webkit-animation: landing 4s; 
         -webkit-animation-iteration-count: 1;
         -webkit-animation-timing-function: linear;
         -webkit-transform: rotate(15deg);
 
-        -moz-animation: landing 7s; 
+        -moz-animation: landing 4s; 
         -moz-animation-iteration-count: 1;
         -moz-animation-timing-function: linear;
         -moz-transform: rotate(15deg);
 
-        -o-animation: landing 7s; 
+        -o-animation: landing 4s; 
         -o-animation-iteration-count: 1;
         -o-animation-timing-function: linear;
         -o-transform: rotate(15deg);
 
-        -ms-animation: landing 7s; 
+        -ms-animation: landing 4s; 
         -ms-animation-iteration-count: 1;
         -ms-animation-timing-function: linear;
         -ms-transform: rotate(15deg);
@@ -312,7 +312,7 @@
 
     @keyframes landing {
         0%   {left:110%; top:-25%;}
-        100% {left:-90%; top: 25%;}
+        100% {left:-100%; top: 25%;}
     }
 
     @keyframes far {
@@ -328,7 +328,7 @@
     }
     @-webkit-keyframes landing {
         0%   {left:110%; top:-25%;}
-        100% {left:-90%; top: 25%;}
+        100% {left:-100%; top: 25%;}
     }
     @-webkit-keyframes far {
         0%   {left:-20%; top:15%;}
@@ -343,7 +343,7 @@
     }
     @-moz-keyframes landing {
         0%   {left:110%; top:-25%;}
-        100% {left:-90%; top: 25%;}
+        100% {left:-100%; top: 25%;}
     }
     @-moz-keyframes far {
         0%   {left:-20%; top:15%;}
@@ -358,7 +358,7 @@
 
     @-o-keyframes landing {
         0%   {left:110%; top:-25%;}
-        100% {left:-90%; top: 25%;}
+        100% {left:-100%; top: 25%;}
     }
     @-o-keyframes far {
         0%   {left:-20%; top:15%;}
@@ -373,7 +373,7 @@
     }
     @-ms-keyframes landing {
         0%   {left:110%; top:-25%;}
-        100% {left:-90%; top: 25%;}
+        100% {left:-100%; top: 25%;}
     }
     @-ms-keyframes far {
         0%   {left:-20%; top:15%;}
