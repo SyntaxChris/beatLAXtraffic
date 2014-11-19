@@ -1,29 +1,29 @@
 div#plane { 
     position: absolute;
-    animation: plane 25s;
+    animation: plane 35s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    animation-delay: 5s;  
+    animation-delay: 35s;  
 
-    -webkit-animation: plane 25s; 
+    -webkit-animation: plane 35s; 
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
-    -webkit-animation-delay: 5s;
+    -webkit-animation-delay: 25s;
 
-    -moz-animation: plane 25s; 
+    -moz-animation: plane 35s; 
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: linear;
-    -moz-animation-delay: 5s;
+    -moz-animation-delay: 25s;
 
-    -o-animation: plane 25s; 
+    -o-animation: plane 35s; 
     -o-animation-iteration-count: infinite;
     -o-animation-timing-function: linear;
-    -o-animation-delay: 5s;
+    -o-animation-delay: 25s;
 
-    -ms-animation: plane 25s; 
+    -ms-animation: plane 35s; 
     -ms-animation-iteration-count: infinite;
     -ms-animation-timing-function: linear;
-    -ms-animation-delay: 5s;
+    -ms-animation-delay: 25s;
     
 }
 
@@ -57,30 +57,30 @@ div#plane {
 
 div#far-plane { 
     position: absolute;
-    animation: far 25s;
+    animation: far 40s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 
-    -webkit-animation: far 25s; 
+    -webkit-animation: far 40s; 
     -webkit-animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
 
-    -moz-animation: far 25s; 
+    -moz-animation: far 40s; 
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: linear;
 
-    -o-animation: far 25s; 
+    -o-animation: far 40s; 
     -o-animation-iteration-count: infinite;
     -o-animation-timing-function: linear;
 
-    -ms-animation: far 25s; 
+    -ms-animation: far 40s; 
     -ms-animation-iteration-count: infinite;
     -ms-animation-timing-function: linear;
 }
 
 @keyframes plane {
     0%   {left:110%; top:15%;}
-    15%  {left:10%; top:-25%;}
+    8%  {left:10%; top:-25%;}
     100% {left:0%; top:-25%;}
 }
 
@@ -90,10 +90,11 @@ div#far-plane {
 }
 
 @keyframes far {
-    0%   {left:0%; top:15%;}
-    30%  {left:20%; top: 5%;}
-    100% {left:30%; top:-45%;}
+    0%   {left:-20%; top:15%;}
+    30%  {left:110%; top: 5%;}
+    100% {left:120%; top:-15%;}
 }
+
 
 @-webkit-keyframes plane {
     0%   {left:110%; top:15%;}
@@ -106,13 +107,14 @@ div#far-plane {
 }
 @-webkit-keyframes far {
     0%   {left:-20%; top:15%;}
-    40%  {left:110%; top: 5%;}
+    30%  {left:110%; top: 5%;}
     100% {left:120%; top:-15%;}
 }
 
+
 @-moz-keyframes plane {
     0%   {left:110%; top:15%;}
-    15%  {left:10%; top:-25%;}
+    8%  {left:10%; top:-25%;}
     100% {left:0%; top:-25%;}
 }
 @-moz-keyframes landing {
@@ -121,12 +123,12 @@ div#far-plane {
 }
 @-moz-keyframes far {
     0%   {left:-20%; top:15%;}
-    40%  {left:110%; top: 5%;}
+    30%  {left:110%; top: 5%;}
     100% {left:120%; top:-15%;}
 }
 @-o-keyframes plane {
     0%   {left:110%; top:15%;}
-    15%  {left:10%; top:-25%;}
+    8%  {left:10%; top:-25%;}
     100% {left:0%; top:-25%;}
 }
 
@@ -136,13 +138,13 @@ div#far-plane {
 }
 @-o-keyframes far {
     0%   {left:-20%; top:15%;}
-    40%  {left:110%; top: 5%;}
+    30%  {left:110%; top: 5%;}
     100% {left:120%; top:-15%;}
 }
 
 @-ms-keyframes plane {
     0%   {left:110%; top:15%;}
-    15%  {left:10%; top:-25%;}
+    8%  {left:10%; top:-25%;}
     100% {left:0%; top:-25%;}
 }
 @-ms-keyframes landing {
@@ -151,7 +153,7 @@ div#far-plane {
 }
 @-ms-keyframes far {
     0%   {left:-20%; top:15%;}
-    40%  {left:110%; top: 5%;}
+    30%  {left:110%; top: 5%;}
     100% {left:120%; top:-15%;}
 }
 
