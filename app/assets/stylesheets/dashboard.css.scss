@@ -1,13 +1,13 @@
-#dashboard {
-	position: fixed;
+#dashboard-landscape {
+    position: fixed;
     z-index: 30;
     bottom:0;
     width: 100%;
     height: 175px;
-	background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.9);
     font-family: Impact, Charcoal, sans-serif;
     
-    #gradient-1 {
+    #gradient-1-landscape {
         position:fixed;
         z-index: 31;
         bottom:0;
@@ -16,7 +16,7 @@
         background-color: #98E0DF;
     }
 
-    #gradient-2 {
+    #gradient-2-landscape {
         position:fixed;
         z-index: 32;
         bottom:0;
@@ -27,7 +27,7 @@
         border-right: 60px solid transparent;
     }
 
-    #gradient-3 {
+    #gradient-3-landscape {
         position:fixed;
         z-index: 33;
         bottom:0;
@@ -38,7 +38,7 @@
         border-right: 60px solid transparent;
     }
 
-    #gradient-4 {
+    #gradient-4-landscape {
         position:fixed;
         z-index: 33;
         bottom:0;
@@ -47,9 +47,21 @@
         height: 160px;
         border-bottom: 160px solid #74D4B7;
         border-right: 60px solid transparent;
+        #clock-landscape {
+            margin-top: 20px;
+            margin-left: 10px;
+            height: 120px;
+            width: 120px;
+            border-radius: 100%;
+            background-color: white;
+            svg {
+                width: 120px;
+                height: 120px;
+            }
+        }
     }
 
-    #progress-bar {
+    #progress-bar-landscape {
         position: fixed;
         z-index: 31;
         bottom: 110px;
@@ -58,7 +70,7 @@
         width: 80%;
         height: 65px;
 
-        #ord {
+        #ord-landscape {
             position: relative;
             z-index: 32;
             margin-left: 0;
@@ -68,13 +80,13 @@
             color: #3AB1D6;
             font-size: 20px;
             background-color: white;
-            .tag {
+            .tag-landscape {
                 padding-left: 60%; 
-                padding-top: 5%;
+                padding-top: 7%;
             }
         }
 
-        #ord:before {
+        #ord-landscape:before {
             content: "";
             position: absolute;
             width: 0;
@@ -86,30 +98,30 @@
         }
 
 
-        #lax {
+        #lax-landscape {
             position: relative;
             z-index: 32;
             margin-right: 0;
-            margin-left: 88%;
-            top: -80px;
+            margin-left: 91%;
+            top: -70px;
             width: 12%;
             height: 40px;
             font-size: 20px;
             color: #3AB1D6;
             .tag {
-                padding-left: 20%; 
+                padding-left: 30%; 
                 padding-top: 6.5%;
             }
         }
 
-        #bar-back {
+        #bar-back-landscape {
             position: relative;
             z-index: 31.5;
             top: -40px;
             width: 86%;
             height: 40px;
             background-color: #AEE6E5;
-            #arrow {
+            #arrow-landscape {
                 margin-left: 100%;
                 width: 0;
                 height: 0;
@@ -119,7 +131,7 @@
             }
         }
 
-        #plane-bar {
+        #plane-bar-landscape {
             position: absolute;
             z-index: 31.5;
             width: 20%;
@@ -129,101 +141,68 @@
             background-color: #3AB1D6;
         }
 
-        #plane-bar-filler {
+        #plane-bar-filler-landscape {
             position: absolute;
             z-index: 34;
             width: 75px;
             height: 75px;
             margin-top: -16px;
             margin-left: 20%;
-            #circular-plane {
+            #circular-plane-landscape {
                 position: relative;
                 z-index: 35;
                 margin-left:-10%;
                 width: 75px;
                 height: 75px;
+                svg {
+                    width: 75px;
+                    height: 75px;
+                }
             }
         }
-
-    }
-
-    #flight-status {
-        position: fixed;
-        z-index: 34;
-        bottom:0;
-        margin-right: 0;
-        margin-left: 75%;
-        width: 25%;
-        height: 120px;
-    }
-
-    #suitcase {
-        position: fixed;
-        z-index: 34;
-        bottom:0;
-        margin-right: 25%;
-        margin-left: 50%;
-        width: 25%;
-        height: 120px;
-    }
-
-    #colleagues {
-        position: fixed;
-        z-index: 34;
-        bottom:0;
-        margin-right: 50%;
-        margin-left: 25%;
-        width: 25%;
-        height: 120px;
-    }
-
-    #time-spent {
-        position: fixed;
-        z-index: 35;
-        bottom:0;
-        margin-right: 70%;
-        margin-left: 0;
-        width: 30%;
-        height: 170px;
-        #clock {
-            margin-top: 20px;
-            margin-left: 20px;
-            height: 140px;
-            width: 140px;
-            border-radius: 100%;
-            background-color: white;
-            .hash {
-                display: none;
-                margin-top: 27px;
-                margin-left: 32px;
-                height: 15px;
-                width: 5px;
-                border-radius: 2px;
-                background-color: #39BAD8;
-            }
-        }
-        #time-spent-description {
-
-        }
     }
 }
 
 
-
-@-moz-keyframes speedo-spin {
-    from{
-        -moz-transform:rotate(0deg);
-    }       
-    to{
-        -moz-transform:rotate(360deg);
-    }                       
+.alert-plane {
+    -webkit-animation: alert-plane 2s; /* Chrome, Safari, Opera */
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 3;
+    animation: alert-plane 2s;
 }
 
-@-webkit-keyframes speedo-spin {
-    from{
-        -webkit-transform:rotate(0deg);
-    }       
-    to{
-        -webkit-transform:rotate(360deg);
-    }                       
+.clock-alert {
+    -webkit-animation: clock-alert 2s; /* Chrome, Safari, Opera */
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 3;
+    animation: clock-alert 2s;
 }
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes alert-plane {
+    0% {fill: #24B7EA;}
+    50% {fill: red;}
+    100% {fill: #24B7EA;}
+}
+
+/* Standard syntax */
+@keyframes alert-plane {
+    from {fill: #24B7EA;}
+    to {fill: red;}
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes clock-alert {
+    0% {fill: white;}
+    50% {fill: red;}
+    100% {fill: white;}
+}
+
+/* Standard syntax */
+@keyframes clock-alert {
+    from {fill: white;}
+    to {fill: red;}
+}
+
+

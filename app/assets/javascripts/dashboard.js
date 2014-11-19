@@ -1,29 +1,28 @@
 $(document).ready(function(){
-    var elems = document.getElementsByClassName('hash');
-    var increase = Math.PI * 2 / elems.length;
-    var x = 0, y = 0, angle = 0;
     var planeProgress = $('#plane-progress').data('plane-progress')-5;
-    debugger;
-    for (var i = 0; i < elems.length; i++) {
-        var elem = elems[i];
-        // modify to change the radius and position of a circle
-        x = 55 * Math.cos(angle) + 55;
-        y = 55 * Math.sin(angle) + 55;
-        elem.style.position = 'absolute';
-        elem.style.left = x + 'px';
-        elem.style.top = y + 'px';
-        //need to work this part out
-        var rot = 90 + (i * (360 / elems.length));
-        elem.style['-moz-transform'] = "rotate("+rot+"deg)";
-        elem.style.MozTransform = "rotate("+rot+"deg)";
-        elem.style['-webkit-transform'] = "rotate("+rot+"deg)";
-        elem.style['-o-transform'] = "rotate("+rot+"deg)";
-        elem.style['-ms-transform'] = "rotate("+rot+"deg)";
-        angle += increase;
-        console.log(angle);
-    }
-    $(".hash").show();
-    $("#plane-bar").animate({width: planeProgress+"%"}, 1000);
-    $("#plane-bar-filler").animate({marginLeft: planeProgress+"%"}, 1000);
+       
+    $("#plane-bar-landscape").animate({width: planeProgress+"%"}, 15000);
+    $("#plane-bar-filler-landscape").animate({marginLeft: planeProgress+"%"}, 15000);
+    $("#plane-bar").animate({width: planeProgress+"%"}, 15000);
+    $("#plane-bar-filler").animate({marginLeft: planeProgress+"%"}, 15000);
+    $("#alert-plane").attr("class", "alert-plane")
+    
+    $(function () {
+        var prevWidth = $('#plane-bar-landscape').width();
+        $('#plane-bar-landscape').attrchange({
+            callback: function (e) {
+                var curWidth = $(this).width();
+                var progressPercentage = curWidth/$('#bar-back-landscape').width()*100;            
+                if (prevWidth !== curWidth) {
+                    if (progressPercentage > 80) {     
+                        $("#clock-alert").attr("class", "clock-alert");
+                    }
+                    if (progressPercentage > 94){
+                        $('#landing-plane').addClass("land-ze-plane");
+                    }
+                   prevWidth = curWidth;
+                };            
+            }
+        })
+    });
 });
-

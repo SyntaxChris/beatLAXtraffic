@@ -17,8 +17,6 @@
             <!-- <p><a href="#" ng-click="restartQuiz()">Retry?</a> -->
  <!-- </div> -->
 
-
-
 <!-- QUESTIONS FORMAT -->
 <div class="row">
   <div class="large-12 medium-12 small-12 columns">
@@ -30,6 +28,7 @@
           <div id="question-header-landscape">
               <h3 id="main-landscape">What are you doing while you wait?</h3>
               <h5 id="foot-landscape">Select all that apply</h5> 
+              <div id="logger"></div>
           </div>
         </div>
       </div>
@@ -223,56 +222,68 @@
 
 
 <!-- DASHBOARD -->
-<div id="dashboard">
-  <div id="gradient-1"></div>
-  <div id="gradient-2"></div>
-  <div id="gradient-3"></div>
-  <div id="gradient-4"></div>
-
-  <div id="progress-bar">
-    <div id="ord">
-      <div class="tag">ORD</div>
-    </div>
-    <div id="bar-back">
-      <div id="plane-bar"></div>
-      <div id="plane-bar-filler">
-        <div id="circular-plane"><%= render 'progressplane' %></div>
+<div class="show-for-portrait">
+  <div id="dashboard">
+    <div id="gradient-3"></div>
+    <div id="gradient-4"></div>
+    <div id="progress-bar">
+      <div id="ord">
+        <div class="tag">ORD</div>
       </div>
-      <div id="arrow"></div>
+      <div id="bar-back">
+        <div id="plane-bar"></div>
+        <div id="plane-bar-filler">
+          <div id="circular-plane"><%= render 'progressplane' %></div>
+        </div>
+        <div id="arrow"></div>
+      </div>
+      <div id="lax">
+        <div class="tag">LAX</div>  
+      </div>
     </div>
-    <div id="lax">
-      <div class="tag">LAX</div>  
+    <div id="flight-status"></div>
+    <div id="suitcase"></div>
+    <div id="colleagues"></div>
+    <div id="time-spent">
+      <div id="time-spent-description"></div>
     </div>
   </div>
+</div>
 
-  <div id="flight-status"></div>
-  <div id="suitcase"></div>
-  <div id="colleagues"></div>
-  <div id="time-spent">
-    <div id="clock">
-      <div class="hash"></div>
-      <div class="hash"></div>
-      <div class="hash"></div>
-      <div class="hash"></div>
-      <div class="hash"></div>
-      <div class="hash"></div>
-      <div class="hash"></div>
-      <div class="hash"></div>
+
+<div class="show-for-landscape">
+  <div id="dashboard-landscape">
+    <div id="gradient-1-landscape"></div>
+    <div id="gradient-2-landscape"></div>
+    <div id="gradient-3-landscape"></div>
+    <div id="gradient-4-landscape">
+      <div id="clock-landscape">
+        <%= render 'clock' %>
+      </div>
     </div>
-    <div id="time-spent-description"></div>
-  </div>
+    <div id="progress-bar-landscape">
+      <div id="ord-landscape">
+        <div class="tag-landscape">ORD</div>
+      </div>
+      <div id="bar-back-landscape">
+        <div id="plane-bar-landscape"></div>
+        <div id="plane-bar-filler-landscape">
+          <div id="circular-plane-landscape"><%= render 'progressplane' %></div>
+        </div>
+        <div id="arrow-landscape"></div>
+      </div>
+      <div id="lax-landscape">
+        <div class="tag-landscape">LAX</div>  
+      </div>
+    </div>
+  </div>  
 </div>
 <!-- END DASHBOARD -->
 
-
-
 <!-- <button id="land" style="position: absolute; z-index: 35; bottom: 0; right:0">LAND ZE PLANE</button> -->
 
-
-
-
 <!-- DATA PASSED FROM FRAMEWORKS -->
-<div id="plane-progress" data-plane-progress=60></div>
+<div id="plane-progress" data-plane-progress=100></div>
 <div id="timer-progress" data-timer-progress=></div>
 <!-- END DATA PASSED FROM FRAMEWORKS -->
 
