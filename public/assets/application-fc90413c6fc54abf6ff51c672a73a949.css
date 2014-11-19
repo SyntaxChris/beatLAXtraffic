@@ -1,3 +1,1860 @@
+@media screen and (max-width: 320px) {
+  /* line 3, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  #cloud-1 svg {
+    height: 70px;
+    width: 280px;
+  }
+
+  /* line 8, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  #cloud-2 svg {
+    height: 70px;
+    width: 280px;
+  }
+
+  /* line 13, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  #cloud-3 svg {
+    height: 70px;
+    width: 280px;
+  }
+
+  /* line 18, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  #cloud-4 svg {
+    height: 70px;
+    width: 280px;
+  }
+
+  /* line 23, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  #cloud-5 svg {
+    height: 70px;
+    width: 280px;
+  }
+
+  /* line 28, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  #cloud-6 svg {
+    height: 70px;
+    width: 280px;
+  }
+
+  /* line 33, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#plane svg {
+    height: 70px;
+    width: 150px;
+  }
+
+  @keyframes plane {
+    /* line 39, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 40, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    8% {
+      left: 0%;
+      top: -15%;
+    }
+
+    /* line 41, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @-webkit-keyframes plane {
+    /* line 45, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 46, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    8% {
+      left: 0%;
+      top: -15%;
+    }
+
+    /* line 47, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @-moz-keyframes plane {
+    /* line 51, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 52, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    8% {
+      left: 0%;
+      top: -15%;
+    }
+
+    /* line 53, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @-o-keyframes plane {
+    /* line 56, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 57, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    8% {
+      left: 0%;
+      top: -15%;
+    }
+
+    /* line 58, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @-ms-keyframes plane {
+    /* line 61, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 62, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    8% {
+      left: 0%;
+      top: -15%;
+    }
+
+    /* line 63, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @keyframes landing {
+    /* line 67, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 68, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    40% {
+      left: -120%;
+      top: 25%;
+    }
+
+    /* line 69, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -120%;
+      top: 25%;
+    }
+}
+
+  @-webkit-keyframes landing {
+    /* line 73, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 74, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    40% {
+      left: -120%;
+      top: 25%;
+    }
+
+    /* line 75, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -120%;
+      top: 25%;
+    }
+}
+
+  @-moz-keyframes landing {
+    /* line 79, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 80, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    40% {
+      left: -120%;
+      top: 25%;
+    }
+
+    /* line 81, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -120%;
+      top: 25%;
+    }
+}
+
+  @-o-keyframes landing {
+    /* line 85, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 86, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    40% {
+      left: -120%;
+      top: 25%;
+    }
+
+    /* line 87, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -120%;
+      top: 25%;
+    }
+}
+
+  @-ms-keyframes landing {
+    /* line 91, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 92, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    40% {
+      left: -120%;
+      top: 25%;
+    }
+
+    /* line 93, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -120%;
+      top: 25%;
+    }
+}
+
+  @keyframes far {
+    /* line 97, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: -30%;
+      top: 15%;
+    }
+
+    /* line 98, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    10% {
+      left: 110%;
+      top: 5%;
+    }
+
+    /* line 99, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 120%;
+      top: -15%;
+    }
+}
+
+  @-webkit-keyframes far {
+    /* line 103, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: -30%;
+      top: 15%;
+    }
+
+    /* line 104, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    10% {
+      left: 110%;
+      top: 5%;
+    }
+
+    /* line 105, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 120%;
+      top: -15%;
+    }
+}
+
+  @-moz-keyframes far {
+    /* line 109, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: -30%;
+      top: 15%;
+    }
+
+    /* line 110, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    10% {
+      left: 110%;
+      top: 5%;
+    }
+
+    /* line 111, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 120%;
+      top: -15%;
+    }
+}
+
+  @-o-keyframes far {
+    /* line 115, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: -30%;
+      top: 15%;
+    }
+
+    /* line 116, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    10% {
+      left: 110%;
+      top: 5%;
+    }
+
+    /* line 117, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 120%;
+      top: -15%;
+    }
+}
+
+  @-ms-keyframes far {
+    /* line 121, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: -30%;
+      top: 15%;
+    }
+
+    /* line 122, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    10% {
+      left: 110%;
+      top: 5%;
+    }
+
+    /* line 123, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 120%;
+      top: -15%;
+    }
+}
+}
+@media screen and (max-width: 640px) and (min-width: 321px) {
+  /* line 132, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  #cloud-1 svg {
+    height: 100px;
+    width: 320px;
+  }
+
+  /* line 137, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  #cloud-2 svg {
+    height: 100px;
+    width: 320px;
+  }
+
+  /* line 142, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  #cloud-3 svg {
+    height: 100px;
+    width: 320px;
+  }
+
+  /* line 147, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  #cloud-4 svg {
+    height: 100px;
+    width: 320px;
+  }
+
+  /* line 152, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  #cloud-5 svg {
+    height: 100px;
+    width: 320px;
+  }
+
+  /* line 157, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  #cloud-6 svg {
+    height: 100px;
+    width: 320px;
+  }
+
+  /* line 162, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#plane svg {
+    height: 70px;
+    width: 150px;
+  }
+
+  @keyframes plane {
+    /* line 168, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 169, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    15% {
+      left: -20%;
+      top: -15%;
+    }
+
+    /* line 170, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @-webkit-keyframes plane {
+    /* line 174, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 175, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    15% {
+      left: -20%;
+      top: -15%;
+    }
+
+    /* line 176, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @-moz-keyframes plane {
+    /* line 180, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 181, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    15% {
+      left: -20%;
+      top: -15%;
+    }
+
+    /* line 182, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @-o-keyframes plane {
+    /* line 185, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 186, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    15% {
+      left: -20%;
+      top: -15%;
+    }
+
+    /* line 187, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @-ms-keyframes plane {
+    /* line 190, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 191, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    15% {
+      left: -20%;
+      top: -15%;
+    }
+
+    /* line 192, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @keyframes landing {
+    /* line 196, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 197, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    70% {
+      left: -90%;
+      top: 25%;
+    }
+
+    /* line 198, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -91%;
+      top: 25%;
+    }
+}
+
+  @-webkit-keyframes landing {
+    /* line 202, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 203, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    70% {
+      left: -90%;
+      top: 25%;
+    }
+
+    /* line 204, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -91%;
+      top: 25%;
+    }
+}
+
+  @-moz-keyframes landing {
+    /* line 208, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 209, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    70% {
+      left: -90%;
+      top: 25%;
+    }
+
+    /* line 210, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -91%;
+      top: 25%;
+    }
+}
+
+  @-o-keyframes landing {
+    /* line 214, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 215, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    70% {
+      left: -90%;
+      top: 25%;
+    }
+
+    /* line 216, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -91%;
+      top: 25%;
+    }
+}
+
+  @-ms-keyframes landing {
+    /* line 220, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 221, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    70% {
+      left: -90%;
+      top: 25%;
+    }
+
+    /* line 222, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -91%;
+      top: 25%;
+    }
+}
+}
+@media screen and (max-width: 640px) {
+  /* line 227, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#plane {
+    position: absolute;
+    animation: plane 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 5s;
+    -webkit-animation: plane 20s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 5s;
+    -moz-animation: plane 20s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -moz-animation-delay: 5s;
+    -o-animation: plane 20s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+    -o-animation-delay: 5s;
+    -ms-animation: plane 20s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    -ms-animation-delay: 5s;
+  }
+
+  /* line 256, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  .land-ze-plane {
+    position: absolute;
+    animation: landing 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation: landing 7s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-transform: rotate(15deg);
+    -moz-animation: landing 7s;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: linear;
+    -moz-transform: rotate(15deg);
+    -o-animation: landing 7s;
+    -o-animation-iteration-count: 1;
+    -o-animation-timing-function: linear;
+    -o-transform: rotate(15deg);
+    -ms-animation: landing 7s;
+    -ms-animation-iteration-count: 1;
+    -ms-animation-timing-function: linear;
+    -ms-transform: rotate(15deg);
+  }
+
+  /* line 284, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#far-plane {
+    position: absolute;
+    animation: far 25s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation: far 25s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation: far 25s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -o-animation: far 25s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+    -ms-animation: far 25s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+  }
+
+  @keyframes plane {
+    /* line 308, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 309, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    15% {
+      left: 20%;
+      top: -15%;
+    }
+
+    /* line 310, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @keyframes landing {
+    /* line 314, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 315, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -90%;
+      top: 25%;
+    }
+}
+
+  @keyframes far {
+    /* line 319, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 0%;
+      top: 15%;
+    }
+
+    /* line 320, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    20% {
+      left: 110%;
+      top: 5%;
+    }
+
+    /* line 321, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 30%;
+      top: -45%;
+    }
+}
+
+  @-webkit-keyframes plane {
+    /* line 325, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 326, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    15% {
+      left: 20%;
+      top: -15%;
+    }
+
+    /* line 327, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @-webkit-keyframes landing {
+    /* line 330, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 331, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -90%;
+      top: 25%;
+    }
+}
+
+  @-webkit-keyframes far {
+    /* line 334, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: -20%;
+      top: 15%;
+    }
+
+    /* line 335, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    20% {
+      left: 110%;
+      top: 5%;
+    }
+
+    /* line 336, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 120%;
+      top: -15%;
+    }
+}
+
+  @-moz-keyframes plane {
+    /* line 340, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 341, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    15% {
+      left: 20%;
+      top: -15%;
+    }
+
+    /* line 342, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @-moz-keyframes landing {
+    /* line 345, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 346, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -90%;
+      top: 25%;
+    }
+}
+
+  @-moz-keyframes far {
+    /* line 349, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: -20%;
+      top: 15%;
+    }
+
+    /* line 350, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    20% {
+      left: 110%;
+      top: 5%;
+    }
+
+    /* line 351, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 120%;
+      top: -15%;
+    }
+}
+
+  @-o-keyframes plane {
+    /* line 354, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 355, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    15% {
+      left: 20%;
+      top: -15%;
+    }
+
+    /* line 356, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @-o-keyframes landing {
+    /* line 360, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 361, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -90%;
+      top: 25%;
+    }
+}
+
+  @-o-keyframes far {
+    /* line 364, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: -20%;
+      top: 15%;
+    }
+
+    /* line 365, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    20% {
+      left: 110%;
+      top: 5%;
+    }
+
+    /* line 366, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 120%;
+      top: -15%;
+    }
+}
+
+  @-ms-keyframes plane {
+    /* line 370, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: 15%;
+    }
+
+    /* line 371, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    15% {
+      left: 20%;
+      top: -15%;
+    }
+
+    /* line 372, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 0%;
+      top: -25%;
+    }
+}
+
+  @-ms-keyframes landing {
+    /* line 375, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: 110%;
+      top: -25%;
+    }
+
+    /* line 376, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: -90%;
+      top: 25%;
+    }
+}
+
+  @-ms-keyframes far {
+    /* line 379, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    0% {
+      left: -20%;
+      top: 15%;
+    }
+
+    /* line 380, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    20% {
+      left: 110%;
+      top: 5%;
+    }
+
+    /* line 381, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+    100% {
+      left: 120%;
+      top: -15%;
+    }
+}
+}
+@media screen and (max-width: 571px) and (min-width: 376px) {
+  /* line 419, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#lines,
+  div#cars {
+    padding-top: 40px;
+  }
+
+  /* line 422, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot div#lines svg {
+    width: 700px;
+  }
+
+  /* line 425, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot div#cars svg {
+    width: 700px;
+  }
+}
+@media screen and (max-width: 1250px) and (min-width: 572px) {
+  /* line 432, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#lines,
+  div#cars {
+    padding-top: 40px;
+  }
+
+  /* line 435, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot div#lines svg {
+    width: 1000px;
+  }
+
+  /* line 438, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot div#cars svg {
+    width: 1000px;
+  }
+}
+@media screen and (max-width: 1441px) and (min-width: 1251px) {
+  /* line 446, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#lines,
+  div#cars {
+    padding-top: 5px;
+  }
+
+  /* line 449, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot div#lines svg {
+    width: 1200px;
+  }
+
+  /* line 452, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot div#cars svg {
+    width: 1200px;
+  }
+}
+@media screen and (max-width: 1690px) and (min-width: 1442px) {
+  /* line 459, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#lines,
+  div#cars {
+    padding-top: 50px;
+  }
+
+  /* line 462, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot div#lines svg {
+    width: 1400px;
+  }
+
+  /* line 465, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot div#cars svg {
+    width: 1400px;
+  }
+}
+@media screen and (min-width: 1691px) {
+  /* line 472, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#lines,
+  div#cars {
+    padding-top: 50px;
+  }
+
+  /* line 475, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot div#lines svg {
+    width: 1600px;
+  }
+
+  /* line 478, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot div#cars svg {
+    width: 1600px;
+  }
+}
+@media screen and (max-width: 480px) {
+  /* line 780, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#large-landscape {
+    display: none;
+  }
+
+  /* line 784, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape {
+    text-align: center;
+    margin-top: 0px;
+  }
+  /* line 787, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape #main-landscape {
+    font-size: 18px;
+    color: white;
+    padding-bottom: 0;
+  }
+  /* line 792, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape #foot-landscape {
+    padding-top: 0px;
+    font-size: 12px;
+    color: #008CBA;
+  }
+
+  /* line 799, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot {
+    display: none;
+  }
+
+  /* line 803, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.small-tile-label-landscape {
+    font-size: 12px;
+  }
+
+  /* line 807, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row.tile-title {
+    font-size: 12px;
+  }
+
+  /* line 815, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone-landscape,
+  div#shop-landscape,
+  div#hang-out-landscape,
+  div#eat-landscape,
+  div#other-landscape {
+    width: 70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 823, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone-landscape svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* line 828, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#shop-landscape svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* line 833, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#hang-out-landscape svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* line 838, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#eat-landscape svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  /* line 843, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#other-landscape svg {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media screen and (max-width: 568px) and (min-width: 481px) {
+  /* line 850, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#large-landscape {
+    display: none;
+  }
+
+  /* line 854, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape {
+    text-align: center;
+    margin-top: 0px;
+  }
+  /* line 857, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape #main-landscape {
+    font-size: 18px;
+    color: white;
+    padding-bottom: 0;
+  }
+  /* line 862, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape #foot-landscape {
+    padding-top: 0px;
+    font-size: 12px;
+    color: #008CBA;
+  }
+
+  /* line 869, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot {
+    display: none;
+  }
+
+  /* line 873, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.small-tile-label-landscape {
+    font-size: 12px;
+  }
+
+  /* line 877, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row.tile-title {
+    font-size: 12px;
+  }
+
+  /* line 885, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone-landscape,
+  div#shop-landscape,
+  div#hang-out-landscape,
+  div#eat-landscape,
+  div#other-landscape {
+    width: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 893, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone-landscape svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* line 898, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#shop-landscape svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* line 903, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#hang-out-landscape svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* line 908, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#eat-landscape svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* line 913, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#other-landscape svg {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media screen and (max-width: 667px) and (min-width: 569px) {
+  /* line 920, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#large-landscape {
+    display: none;
+  }
+
+  /* line 924, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape {
+    text-align: center;
+    margin-top: 0px;
+  }
+  /* line 927, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape #main-landscape {
+    font-size: 18px;
+    color: white;
+    padding-bottom: 0;
+  }
+  /* line 932, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape #foot-landscape {
+    padding-top: 0px;
+    font-size: 12px;
+    color: #008CBA;
+  }
+
+  /* line 939, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot {
+    display: none;
+  }
+
+  /* line 943, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.small-tile-label-landscape {
+    font-size: 12px;
+  }
+
+  /* line 947, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row.tile-title {
+    font-size: 12px;
+  }
+
+  /* line 955, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone-landscape,
+  div#shop-landscape,
+  div#hang-out-landscape,
+  div#eat-landscape,
+  div#other-landscape {
+    width: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 963, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone-landscape svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* line 968, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#shop-landscape svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* line 973, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#hang-out-landscape svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* line 978, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#eat-landscape svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* line 983, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#other-landscape svg {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media screen and (max-width: 736px) and (min-width: 668px) {
+  /* line 991, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#large-landscape {
+    display: none;
+  }
+
+  /* line 995, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape {
+    text-align: center;
+    margin-top: 0px;
+  }
+  /* line 998, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape #main-landscape {
+    font-size: 18px;
+    color: white;
+    padding-bottom: 0;
+  }
+  /* line 1003, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape #foot-landscape {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    font-size: 12px;
+    color: #008CBA;
+  }
+
+  /* line 1011, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot {
+    display: none;
+  }
+
+  /* line 1015, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.small-tile-label-landscape {
+    font-size: 12px;
+  }
+
+  /* line 1019, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row.tile-title {
+    font-size: 12px;
+  }
+
+  /* line 1027, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone-landscape,
+  div#shop-landscape,
+  div#hang-out-landscape,
+  div#eat-landscape,
+  div#other-landscape {
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 1035, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone-landscape svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* line 1040, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#shop-landscape svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* line 1045, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#hang-out-landscape svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* line 1050, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#eat-landscape svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* line 1055, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#other-landscape svg {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 1024px) and (min-width: 737px) {
+  /* line 1062, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#small-landscape {
+    display: none;
+  }
+
+  /* line 1066, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape {
+    text-align: center;
+    margin-top: 20px;
+  }
+  /* line 1069, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape #main-landscape {
+    font-size: 30px;
+    color: white;
+    padding-bottom: 0;
+  }
+  /* line 1074, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape #foot-landscape {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    color: #008CBA;
+  }
+
+  /* line 1082, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.small-tile-label-landscape {
+    font-size: 12px;
+  }
+
+  /* line 1086, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row.tile-title {
+    font-size: 12px;
+  }
+
+  /* line 1094, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone-landscape,
+  div#shop-landscape,
+  div#hang-out-landscape,
+  div#eat-landscape,
+  div#other-landscape {
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 1102, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone-landscape svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* line 1107, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#shop-landscape svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* line 1112, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#hang-out-landscape svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* line 1117, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#eat-landscape svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* line 1122, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#other-landscape svg {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  /* line 1130, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#small-landscape {
+    display: none;
+  }
+
+  /* line 1134, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape {
+    text-align: center;
+    margin-top: 0px;
+  }
+  /* line 1137, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape #main-landscape {
+    font-size: 30px;
+    color: white;
+    padding-bottom: 0;
+  }
+  /* line 1142, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header-landscape #foot-landscape {
+    padding-top: 0px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    color: #008CBA;
+  }
+
+  /* line 1150, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.small-tile-label-landscape {
+    font-size: 12px;
+  }
+
+  /* line 1154, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row.tile-title {
+    font-size: 12px;
+  }
+
+  /* line 1162, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone-landscape,
+  div#shop-landscape,
+  div#hang-out-landscape,
+  div#eat-landscape,
+  div#other-landscape {
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 1170, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone-landscape svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* line 1175, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#shop-landscape svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* line 1180, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#hang-out-landscape svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* line 1185, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#eat-landscape svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* line 1190, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#other-landscape svg {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media screen and (max-width: 320px) {
+  /* line 1203, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header {
+    text-align: center;
+  }
+  /* line 1205, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header #main {
+    font-size: 18px;
+    color: white;
+    padding-bottom: 0;
+  }
+  /* line 1210, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header #foot {
+    color: #008CBA;
+    font-size: 14px;
+  }
+
+  /* line 1216, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot {
+    display: none;
+  }
+
+  /* line 1220, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row#bottom-tile-row {
+    margin-top: 10px;
+  }
+
+  /* line 1224, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row.small-tile-label {
+    font-size: 12px;
+  }
+
+  /* line 1232, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone,
+  div#shop,
+  div#hang-out,
+  div#eat,
+  div#other {
+    width: 90px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 1240, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#small-other {
+    position: relative;
+    width: 40px;
+    display: block;
+    margin-left: 60%;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 1249, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone svg {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* line 1254, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#shop svg {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* line 1259, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#hang-out svg {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* line 1264, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#eat svg {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* line 1269, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#other svg {
+    width: 90px;
+    height: 90px;
+  }
+}
+@media screen and (max-width: 375px) and (min-width: 321px) {
+  /* line 1276, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  /* line 1280, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header #main {
+    font-size: 18px;
+    color: white;
+    padding-bottom: 0;
+  }
+  /* line 1285, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header #foot {
+    color: #008CBA;
+    font-size: 14px;
+  }
+
+  /* line 1291, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot {
+    display: none;
+  }
+
+  /* line 1295, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row.small-tile-label {
+    font-size: 12px;
+  }
+
+  /* line 1303, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone,
+  div#shop,
+  div#hang-out,
+  div#eat,
+  div#other {
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 1311, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row#bottom-tile-row {
+    margin-top: 10px;
+  }
+
+  /* line 1315, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row#small-other-row {
+    margin-top: 10px;
+  }
+
+  /* line 1319, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#small-other {
+    position: relative;
+    width: 40px;
+    display: block;
+    margin-left: 60%;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 1328, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* line 1333, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#shop svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* line 1338, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#hang-out svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* line 1343, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#eat svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* line 1348, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#other svg {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 571px) and (min-width: 376px) {
+  /* line 1355, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  /* line 1359, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header #main {
+    font-size: 18px;
+    color: white;
+    padding-bottom: 0;
+  }
+  /* line 1364, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header #foot {
+    color: #008CBA;
+    font-size: 14px;
+  }
+
+  /* line 1370, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot {
+    display: none;
+  }
+
+  /* line 1374, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row.small-tile-label {
+    font-size: 12px;
+  }
+
+  /* line 1382, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone,
+  div#shop,
+  div#hang-out,
+  div#eat,
+  div#other {
+    width: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 1390, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row#bottom-tile-row {
+    margin-top: 10px;
+  }
+
+  /* line 1394, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row#small-other-row {
+    margin-top: 10px;
+  }
+
+  /* line 1398, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#small-other {
+    position: relative;
+    width: 40px;
+    display: block;
+    margin-left: 60%;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 1407, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* line 1412, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#shop svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* line 1417, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#hang-out svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* line 1422, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#eat svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* line 1427, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#other svg {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 768px) and (min-width: 572px) {
+  /* line 1434, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  /* line 1438, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header #main {
+    font-size: 18px;
+    color: white;
+    padding-bottom: 0;
+  }
+  /* line 1443, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#question-header #foot {
+    color: #008CBA;
+    font-size: 14px;
+  }
+
+  /* line 1449, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#parking-lot {
+    display: none;
+  }
+
+  /* line 1454, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row.small-tile-label {
+    font-size: 12px;
+  }
+
+  /* line 1462, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone,
+  div#shop,
+  div#hang-out,
+  div#eat,
+  div#other {
+    width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 1470, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row#bottom-tile-row {
+    margin-top: 30px;
+  }
+
+  /* line 1474, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div.row#small-other-row {
+    margin-top: 10px;
+  }
+
+  /* line 1478, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#small-other {
+    position: relative;
+    width: 40px;
+    display: block;
+    margin-left: 60%;
+    margin-right: auto;
+    padding: 0;
+  }
+
+  /* line 1487, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#phone svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* line 1492, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#shop svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* line 1497, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#hang-out svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* line 1502, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#eat svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* line 1507, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/breakpoints.css.scss */
+  div#other svg {
+    width: 150px;
+    height: 150px;
+  }
+}
 /* line 1, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/main.css.scss */
 body, html {
   overflow-x: hidden;
@@ -6,23 +1863,23 @@ body, html {
 /* line 1, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
 div#plane {
   position: absolute;
-  animation: plane 20s;
+  animation: plane 25s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-delay: 5s;
-  -webkit-animation: plane 20s;
+  -webkit-animation: plane 25s;
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
   -webkit-animation-delay: 5s;
-  -moz-animation: plane 20s;
+  -moz-animation: plane 25s;
   -moz-animation-iteration-count: infinite;
   -moz-animation-timing-function: linear;
   -moz-animation-delay: 5s;
-  -o-animation: plane 20s;
+  -o-animation: plane 25s;
   -o-animation-iteration-count: infinite;
   -o-animation-timing-function: linear;
   -o-animation-delay: 5s;
-  -ms-animation: plane 20s;
+  -ms-animation: plane 25s;
   -ms-animation-iteration-count: infinite;
   -ms-animation-timing-function: linear;
   -ms-animation-delay: 5s;
@@ -135,7 +1992,7 @@ div#far-plane {
 
   /* line 100, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
   15% {
-    left: 10%;
+    left: -50%;
     top: -25%;
   }
 
@@ -341,586 +2198,239 @@ div#far-plane {
     top: -15%;
   }
 }
-
-@media screen and (max-width: 640px) {
-  /* line 162, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-  div#plane {
-    position: absolute;
-    animation: plane 20s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-delay: 5s;
-    -webkit-animation: plane 20s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-delay: 5s;
-    -moz-animation: plane 20s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: linear;
-    -moz-animation-delay: 5s;
-    -o-animation: plane 20s;
-    -o-animation-iteration-count: infinite;
-    -o-animation-timing-function: linear;
-    -o-animation-delay: 5s;
-    -ms-animation: plane 20s;
-    -ms-animation-iteration-count: infinite;
-    -ms-animation-timing-function: linear;
-    -ms-animation-delay: 5s;
-  }
-
-  /* line 191, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-  .land-ze-plane {
-    position: absolute;
-    animation: landing 7s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    -webkit-animation: landing 7s;
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: linear;
-    -webkit-transform: rotate(15deg);
-    -moz-animation: landing 7s;
-    -moz-animation-iteration-count: 1;
-    -moz-animation-timing-function: linear;
-    -moz-transform: rotate(15deg);
-    -o-animation: landing 7s;
-    -o-animation-iteration-count: 1;
-    -o-animation-timing-function: linear;
-    -o-transform: rotate(15deg);
-    -ms-animation: landing 7s;
-    -ms-animation-iteration-count: 1;
-    -ms-animation-timing-function: linear;
-    -ms-transform: rotate(15deg);
-  }
-
-  /* line 219, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-  div#far-plane {
-    position: absolute;
-    animation: far 25s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    -webkit-animation: far 25s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    -moz-animation: far 25s;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: linear;
-    -o-animation: far 25s;
-    -o-animation-iteration-count: infinite;
-    -o-animation-timing-function: linear;
-    -ms-animation: far 25s;
-    -ms-animation-iteration-count: infinite;
-    -ms-animation-timing-function: linear;
-  }
-
-  @keyframes plane {
-    /* line 243, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: 15%;
-    }
-
-    /* line 244, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    15% {
-      left: 20%;
-      top: -15%;
-    }
-
-    /* line 245, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 0%;
-      top: -25%;
-    }
-}
-
-  @keyframes landing {
-    /* line 249, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: -25%;
-    }
-
-    /* line 250, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: -90%;
-      top: 25%;
-    }
-}
-
-  @keyframes far {
-    /* line 254, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 0%;
-      top: 15%;
-    }
-
-    /* line 255, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    20% {
-      left: 110%;
-      top: 5%;
-    }
-
-    /* line 256, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 30%;
-      top: -45%;
-    }
-}
-
-  @-webkit-keyframes plane {
-    /* line 260, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: 15%;
-    }
-
-    /* line 261, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    15% {
-      left: 20%;
-      top: -15%;
-    }
-
-    /* line 262, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 0%;
-      top: -25%;
-    }
-}
-
-  @-webkit-keyframes landing {
-    /* line 265, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: -25%;
-    }
-
-    /* line 266, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: -90%;
-      top: 25%;
-    }
-}
-
-  @-webkit-keyframes far {
-    /* line 269, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: -20%;
-      top: 15%;
-    }
-
-    /* line 270, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    20% {
-      left: 110%;
-      top: 5%;
-    }
-
-    /* line 271, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 120%;
-      top: -15%;
-    }
-}
-
-  @-moz-keyframes plane {
-    /* line 275, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: 15%;
-    }
-
-    /* line 276, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    15% {
-      left: 20%;
-      top: -15%;
-    }
-
-    /* line 277, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 0%;
-      top: -25%;
-    }
-}
-
-  @-moz-keyframes landing {
-    /* line 280, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: -25%;
-    }
-
-    /* line 281, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: -90%;
-      top: 25%;
-    }
-}
-
-  @-moz-keyframes far {
-    /* line 284, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: -20%;
-      top: 15%;
-    }
-
-    /* line 285, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    20% {
-      left: 110%;
-      top: 5%;
-    }
-
-    /* line 286, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 120%;
-      top: -15%;
-    }
-}
-
-  @-o-keyframes plane {
-    /* line 289, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: 15%;
-    }
-
-    /* line 290, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    15% {
-      left: 20%;
-      top: -15%;
-    }
-
-    /* line 291, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 0%;
-      top: -25%;
-    }
-}
-
-  @-o-keyframes landing {
-    /* line 295, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: -25%;
-    }
-
-    /* line 296, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: -90%;
-      top: 25%;
-    }
-}
-
-  @-o-keyframes far {
-    /* line 299, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: -20%;
-      top: 15%;
-    }
-
-    /* line 300, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    20% {
-      left: 110%;
-      top: 5%;
-    }
-
-    /* line 301, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 120%;
-      top: -15%;
-    }
-}
-
-  @-ms-keyframes plane {
-    /* line 305, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: 15%;
-    }
-
-    /* line 306, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    15% {
-      left: 20%;
-      top: -15%;
-    }
-
-    /* line 307, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 0%;
-      top: -25%;
-    }
-}
-
-  @-ms-keyframes landing {
-    /* line 310, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: -25%;
-    }
-
-    /* line 311, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: -90%;
-      top: 25%;
-    }
-}
-
-  @-ms-keyframes far {
-    /* line 314, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: -20%;
-      top: 15%;
-    }
-
-    /* line 315, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    20% {
-      left: 110%;
-      top: 5%;
-    }
-
-    /* line 316, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 120%;
-      top: -15%;
-    }
-}
-}
-@media screen and (max-width: 640px) {
-  @keyframes plane {
-    /* line 326, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: 15%;
-    }
-
-    /* line 327, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    15% {
-      left: -20%;
-      top: -15%;
-    }
-
-    /* line 328, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 0%;
-      top: -25%;
-    }
-}
-
-  @-webkit-keyframes plane {
-    /* line 332, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: 15%;
-    }
-
-    /* line 333, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    15% {
-      left: -20%;
-      top: -15%;
-    }
-
-    /* line 334, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 0%;
-      top: -25%;
-    }
-}
-
-  @-moz-keyframes plane {
-    /* line 338, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: 15%;
-    }
-
-    /* line 339, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    15% {
-      left: -20%;
-      top: -15%;
-    }
-
-    /* line 340, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 0%;
-      top: -25%;
-    }
-}
-
-  @-o-keyframes plane {
-    /* line 343, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: 15%;
-    }
-
-    /* line 344, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    15% {
-      left: -20%;
-      top: -15%;
-    }
-
-    /* line 345, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 0%;
-      top: -25%;
-    }
-}
-
-  @-ms-keyframes plane {
-    /* line 348, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    0% {
-      left: 110%;
-      top: 15%;
-    }
-
-    /* line 349, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    15% {
-      left: -20%;
-      top: -15%;
-    }
-
-    /* line 350, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/background.css.scss */
-    100% {
-      left: 0%;
-      top: -25%;
-    }
-}
-}
 /* line 1, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-#dash {
+#dashboard {
   position: fixed;
   z-index: 30;
   bottom: 0;
   width: 100%;
-  height: 195px;
+  height: 175px;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-family: Impact, Charcoal, sans-serif;
 }
-
-/* line 9, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-#curve {
-  height: 45px;
-  width: 200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* line 16, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-#dash-left {
+/* line 10, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #gradient-1 {
   position: fixed;
+  z-index: 31;
   bottom: 0;
-  left: 0;
-  width: 50%;
-  height: 150px;
-  margin-top: 75px;
+  width: 100%;
+  height: 105px;
+  background-color: #98E0DF;
+}
+/* line 19, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #gradient-2 {
+  position: fixed;
+  z-index: 32;
+  bottom: 0;
   margin-left: 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  width: 80%;
+  height: 105px;
+  border-bottom: 105px solid #AEE6E5;
+  border-right: 60px solid transparent;
 }
-
-/* line 27, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-#dash-right {
+/* line 30, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #gradient-3 {
   position: fixed;
+  z-index: 33;
   bottom: 0;
-  right: 0;
-  width: 50%;
-  height: 150px;
-  margin-top: 75px;
-  background-color: rgba(255, 255, 255, 0.9);
+  margin-left: 0;
+  width: 55%;
+  height: 105px;
+  border-bottom: 105px solid #C0EBDE;
+  border-right: 60px solid transparent;
+}
+/* line 41, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #gradient-4 {
+  position: fixed;
+  z-index: 33;
+  bottom: 0;
+  margin-left: 0;
+  width: 30%;
+  height: 160px;
+  border-bottom: 160px solid #74D4B7;
+  border-right: 60px solid transparent;
+}
+/* line 52, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #progress-bar {
+  position: fixed;
+  z-index: 31;
+  bottom: 110px;
+  margin-right: 0;
+  margin-left: 20%;
+  width: 80%;
+  height: 65px;
+}
+/* line 61, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #progress-bar #ord {
+  position: relative;
+  z-index: 32;
+  margin-left: 0;
+  margin-top: 15px;
+  width: 15%;
+  height: 40px;
+  color: #3AB1D6;
+  font-size: 20px;
+  background-color: white;
+}
+/* line 71, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #progress-bar #ord .tag {
+  padding-left: 60%;
+  padding-top: 5%;
+}
+/* line 77, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #progress-bar #ord:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 100%;
+  border-top: 20px solid transparent;
+  border-left: 15px solid white;
+  border-bottom: 20px solid transparent;
+}
+/* line 89, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #progress-bar #lax {
+  position: relative;
+  z-index: 32;
+  margin-right: 0;
+  margin-left: 88%;
+  top: -80px;
+  width: 12%;
+  height: 40px;
+  font-size: 20px;
+  color: #3AB1D6;
+}
+/* line 99, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #progress-bar #lax .tag {
+  padding-left: 20%;
+  padding-top: 6.5%;
+}
+/* line 105, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #progress-bar #bar-back {
+  position: relative;
+  z-index: 31.5;
+  top: -40px;
+  width: 86%;
+  height: 40px;
+  background-color: #AEE6E5;
+}
+/* line 112, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #progress-bar #bar-back #arrow {
+  margin-left: 100%;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-left: 10px solid #AEE6E5;
+  border-bottom: 20px solid transparent;
+}
+/* line 122, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #progress-bar #plane-bar {
+  position: absolute;
+  z-index: 31.5;
+  width: 20%;
+  height: 20px;
+  margin-top: 10px;
+  left: 2%;
+  background-color: #3AB1D6;
+}
+/* line 132, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #progress-bar #plane-bar-filler {
+  position: absolute;
+  z-index: 34;
+  width: 75px;
+  height: 75px;
+  margin-top: -16px;
+  margin-left: 20%;
+}
+/* line 139, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #progress-bar #plane-bar-filler #circular-plane {
+  position: relative;
+  z-index: 35;
+  margin-left: -10%;
+  width: 75px;
+  height: 75px;
+}
+/* line 150, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #flight-status {
+  position: fixed;
+  z-index: 34;
+  bottom: 0;
+  margin-right: 0;
+  margin-left: 75%;
+  width: 25%;
+  height: 120px;
+}
+/* line 160, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #suitcase {
+  position: fixed;
+  z-index: 34;
+  bottom: 0;
+  margin-right: 25%;
+  margin-left: 50%;
+  width: 25%;
+  height: 120px;
+}
+/* line 170, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #colleagues {
+  position: fixed;
+  z-index: 34;
+  bottom: 0;
+  margin-right: 50%;
+  margin-left: 25%;
+  width: 25%;
+  height: 120px;
+}
+/* line 180, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #time-spent {
+  position: fixed;
+  z-index: 35;
+  bottom: 0;
+  margin-right: 70%;
+  margin-left: 0;
+  width: 30%;
+  height: 170px;
+}
+/* line 188, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #time-spent #clock {
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 140px;
+  width: 140px;
+  border-radius: 100%;
+  background-color: white;
+}
+/* line 195, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+#dashboard #time-spent #clock .hash {
+  display: none;
+  margin-top: 27px;
+  margin-left: 32px;
+  height: 15px;
+  width: 5px;
+  border-radius: 2px;
+  background-color: #39BAD8;
 }
 
-/* line 37, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-#speedo {
-  height: 80px;
-  width: 80px;
-}
-
-@media screen and (max-width: 639px) {
-  /* line 47, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-  #dash {
-    position: fixed;
-    z-index: 30;
-    bottom: 0;
-    width: 100%;
-    height: 140px;
+@-moz-keyframes speedo-spin {
+  /* line 214, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+  from {
+    -moz-transform: rotate(0deg);
   }
 
-  /* line 55, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-  #curve {
-    height: 35px;
-    width: 10px;
-    margin-left: 0%;
-    margin-right: auto;
-  }
-
-  /* line 63, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-  div#dash div#curve svg {
-    height: 35px;
-    width: 180px;
-  }
-
-  /* line 68, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-  #dash-left {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 105px;
-    margin-top: 75px;
-    margin-left: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-
-  /* line 79, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-  #dash-right {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 105px;
-    margin-top: 75px;
-    background-color: rgba(255, 255, 255, 0.9);
+  /* line 217, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+  to {
+    -moz-transform: rotate(360deg);
   }
 }
-@media screen and (max-width: 320px) {
-  /* line 94, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-  #dash {
-    position: fixed;
-    z-index: 30;
-    bottom: 0;
-    width: 100%;
-    height: 115px;
+
+@-webkit-keyframes speedo-spin {
+  /* line 223, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+  from {
+    -webkit-transform: rotate(0deg);
   }
 
-  /* line 102, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-  #curve {
-    height: 25px;
-    width: 110px;
-    margin-left: 0%;
-    margin-right: auto;
-  }
-
-  /* line 110, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-  div#dash div#curve svg {
-    height: 25px;
-    width: 150px;
-  }
-
-  /* line 115, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-  #dash-left {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 105px;
-    margin-top: 75px;
-    margin-left: 0;
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-
-  /* line 126, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
-  #dash-right {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 90px;
-    margin-top: 75px;
-    background-color: rgba(255, 255, 255, 0.9);
+  /* line 226, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/dashboard.css.scss */
+  to {
+    -webkit-transform: rotate(360deg);
   }
 }
 /* line 1, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/parking_lot.css.scss */
@@ -944,181 +2454,268 @@ div#far-plane {
   position: absolute;
   z-index: 1.2;
 }
-
-@media screen and (max-width: 1920px) {
-  /* line 21, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/parking_lot.css.scss */
-  div#parking-lot div#lines svg {
-    width: 1660px;
-  }
-
-  /* line 25, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/parking_lot.css.scss */
-  div#parking-lot div#cars svg {
-    width: 1660px;
-  }
-}
-@media screen and (max-width: 1440px) {
-  /* line 32, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/parking_lot.css.scss */
-  div#parking-lot div#lines svg {
-    width: 1260px;
-  }
-
-  /* line 36, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/parking_lot.css.scss */
-  div#parking-lot div#cars svg {
-    width: 1260px;
-  }
-}
-@media screen and (max-width: 960px) {
-  /* line 43, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/parking_lot.css.scss */
-  div#parking-lot div#lines svg {
-    width: 900px;
-  }
-
-  /* line 47, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/parking_lot.css.scss */
-  div#parking-lot div#cars svg {
-    width: 900px;
-  }
-}
-@media screen and (max-width: 640px) {
-  /* line 54, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/parking_lot.css.scss */
-  div#parking-lot div#lines svg {
-    width: 700px;
-  }
-
-  /* line 58, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/parking_lot.css.scss */
-  div#parking-lot div#cars svg {
-    width: 700px;
-  }
-}
 /* line 1, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
 div#question-header {
+  margin-top: 20px;
   text-align: center;
 }
-/* line 3, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+/* line 5, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
 div#question-header #main {
+  font-size: 18px;
   color: white;
   padding-bottom: 0;
 }
-/* line 7, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+/* line 10, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
 div#question-header #foot {
-  font-size: 20px;
   color: #008CBA;
-  padding-top: 0px;
+  font-size: 14px;
 }
 
-/* line 18, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#phone,
-div#shop,
-div#hang-out,
-div#eat,
-div#other {
-  width: 125px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
+/* line 17, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#phone {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
 }
 
 /* line 26, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#phone:hover {
-  transform: rotate(10deg);
-  -webkit-transform: rotate(10deg);
-  -moz-transform: rotate(10deg);
-  -o-transform: rotate(10deg);
-  -ms-transform: rotate(10deg);
+div#phone-landscape {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
 }
 
-/* line 34, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#shop:hover {
-  transform: rotate(350deg);
-  -webkit-transform: rotate(350deg);
-  -moz-transform: rotate(350deg);
-  -o-transform: rotate(350deg);
-  -ms-transform: rotate(350deg);
+/* line 35, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#shop {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
 }
 
-/* line 42, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#hang-out:hover {
-  transform: rotate(10deg);
-  -webkit-transform: rotate(10deg);
-  -moz-transform: rotate(10deg);
-  -o-transform: rotate(10deg);
-  -ms-transform: rotate(10deg);
+/* line 44, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#shop-landscape {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
 }
 
-/* line 50, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#eat:hover {
-  transform: rotate(350deg);
-  -webkit-transform: rotate(350deg);
-  -moz-transform: rotate(350deg);
-  -o-transform: rotate(350deg);
-  -ms-transform: rotate(350deg);
+/* line 53, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#hang-out {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
 }
 
-/* line 58, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#other:hover {
-  transform: rotate(10deg);
-  -webkit-transform: rotate(10deg);
-  -moz-transform: rotate(10deg);
-  -o-transform: rotate(10deg);
-  -ms-transform: rotate(10deg);
+/* line 62, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#hang-out-landscape {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
 }
 
-/* line 70, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#phone svg a:hover #phone-background {
-  fill: #EF8E4B;
-}
-/* line 73, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#phone svg a:hover #phone-shadow {
-  fill: #FC9C52;
+/* line 71, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#eat {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
 }
 
-/* line 79, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#shop svg a:hover #shop-background {
-  fill: #F2A700;
-}
-/* line 82, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#shop svg a:hover #shop-shadow {
-  fill: #F7C001;
+/* line 80, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#eat-landscape {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 /* line 88, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#hang-out svg a:hover #hang-out-background {
-  fill: #3AB1D6;
-}
-/* line 91, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#hang-out svg a:hover #hang-out-shadow {
-  fill: #39BAD8;
+div#other {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
 }
 
 /* line 97, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#eat svg a:hover #eat-background {
+div#other-landscape {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+/* line 105, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#small-other {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -ms-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+/* line 115, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#phone:hover, div#phone:active,
+div#phone-landscape:hover, div#phone-landscape:active {
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+/* line 116, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#phone:hover #phone-background, div#phone:active #phone-background,
+div#phone-landscape:hover #phone-background, div#phone-landscape:active #phone-background {
+  fill: #EF8E4B;
+}
+/* line 119, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#phone:hover #phone-shadow, div#phone:active #phone-shadow,
+div#phone-landscape:hover #phone-shadow, div#phone-landscape:active #phone-shadow {
+  fill: #FC9C52;
+}
+
+/* line 130, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#shop:hover, div#shop:active,
+div#shop-landscape:hover, div#shop-landscape:active {
+  transform: rotate(-10deg);
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+}
+/* line 131, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#shop:hover #shop-background, div#shop:active #shop-background,
+div#shop-landscape:hover #shop-background, div#shop-landscape:active #shop-background {
+  fill: #F2A700;
+}
+/* line 134, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#shop:hover #shop-shadow, div#shop:active #shop-shadow,
+div#shop-landscape:hover #shop-shadow, div#shop-landscape:active #shop-shadow {
+  fill: #F7C001;
+}
+
+/* line 145, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#hang-out:hover, div#hang-out:active,
+div#hang-out-landscape:hover, div#hang-out-landscape:active {
+  transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+}
+/* line 146, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#hang-out:hover #hang-out-background, div#hang-out:active #hang-out-background,
+div#hang-out-landscape:hover #hang-out-background, div#hang-out-landscape:active #hang-out-background {
+  fill: #3AB1D6;
+}
+/* line 149, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#hang-out:hover #hang-out-shadow, div#hang-out:active #hang-out-shadow,
+div#hang-out-landscape:hover #hang-out-shadow, div#hang-out-landscape:active #hang-out-shadow {
+  fill: #39BAD8;
+}
+
+/* line 160, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#eat:hover, div#eat:active,
+div#eat-landscape:hover, div#eat-landscape:active {
+  transform: rotate(-10deg);
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+}
+/* line 161, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#eat:hover #eat-background, div#eat:active #eat-background,
+div#eat-landscape:hover #eat-background, div#eat-landscape:active #eat-background {
   fill: #4983C9;
 }
-/* line 100, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#eat svg a:hover #eat-shadow {
+/* line 164, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#eat:hover #eat-shadow, div#eat:active #eat-shadow,
+div#eat-landscape:hover #eat-shadow, div#eat-landscape:active #eat-shadow {
   fill: #558AD8;
 }
 
-/* line 106, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#other svg a:hover #other-background {
+/* line 175, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#other:hover, div#other:active,
+div#other-landscape:hover, div#other-landscape:active {
+  transform: rotate(10deg);
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -o-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+}
+/* line 176, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#other:hover #other-background, div#other:active #other-background,
+div#other-landscape:hover #other-background, div#other-landscape:active #other-background {
   fill: #9663C6;
 }
-/* line 109, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-div#other svg a:hover #other-shadow {
+/* line 179, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#other:hover #other-shadow, div#other:active #other-shadow,
+div#other-landscape:hover #other-shadow, div#other-landscape:active #other-shadow {
   fill: #AA75D3;
 }
 
-/* line 114, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+/* line 189, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#small-other:hover, div#small-other:active {
+  transform: rotate(-10deg);
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+}
+/* line 190, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#small-other:hover #other-background, div#small-other:active #other-background {
+  fill: #9663C6;
+}
+/* line 193, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+div#small-other:hover #other-shadow, div#small-other:active #other-shadow {
+  fill: #AA75D3;
+}
+
+/* line 203, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
 #user-text-input {
   display: none;
   width: 100%;
-  height: 125px;
+  height: 150px;
   background-color: white;
   border-radius: 15px;
   padding: 0;
 }
+/* line 210, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+#user-text-input #other-info {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  border: none;
+  appearance: caret;
+  -webkit-appearance: caret;
+  -moz-appearance: caret;
+}
 
-/* line 123, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
+/* line 221, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
 .arrow-left {
   position: fixed;
   bottom: 36%;
@@ -1129,73 +2726,6 @@ div#other svg a:hover #other-shadow {
   border-top: 20px solid transparent;
   border-bottom: 20px solid transparent;
   border-right: 30px solid white;
-}
-
-@media screen and (min-width: 640px) {
-  /* line 139, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-  div#tiles-small {
-    display: none;
-  }
-}
-@media screen and (max-width: 639px) {
-  /* line 145, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-  div#tiles-large {
-    display: none;
-  }
-
-  /* line 153, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-  div#phone,
-  div#shop,
-  div#hang-out,
-  div#eat,
-  div#other {
-    width: 100px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-  }
-
-  /* line 161, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-  div#phone svg {
-    width: 100px;
-    height: 100px;
-  }
-
-  /* line 166, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-  div#shop svg {
-    width: 100px;
-    height: 100px;
-  }
-
-  /* line 171, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-  div#hang-out svg {
-    width: 100px;
-    height: 100px;
-  }
-
-  /* line 176, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-  div#eat svg {
-    width: 100px;
-    height: 100px;
-  }
-
-  /* line 181, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-  div#other svg {
-    width: 100px;
-    height: 100px;
-  }
-}
-@media screen and (max-width: 320px) {
-  /* line 188, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-  div#parking-lot {
-    display: none;
-  }
-
-  /* line 192, /Users/Chris/Development/projects/clients/dopamine/lawa/app/assets/stylesheets/questions.css.scss */
-  div.row.small-tile-label {
-    font-size: 12px;
-  }
 }
 /* line 316, /Users/Chris/.rvm/gems/ruby-2.1.1/gems/foundation-rails-5.3.3.0/vendor/assets/stylesheets/foundation/components/_global.scss */
 meta.foundation-version {
@@ -9555,6 +11085,7 @@ th.hide-for-touch {
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+
 
 
 
