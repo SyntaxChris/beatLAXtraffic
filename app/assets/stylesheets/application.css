@@ -10,12 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require 'breakpoints'
  *= require 'main'
  *= require 'background'
  *= require 'dashboard'
  *= require 'parking_lot'
- *= require 'questions'
+ *= require 'tiles'
+ *= require 'timer_questions'
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
