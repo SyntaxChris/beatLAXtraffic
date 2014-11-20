@@ -15,8 +15,8 @@ $(document).ready(function(){
                 var progressPercentage = curWidth/$('#bar-back-landscape').width()*100;            
                 if (prevWidth !== curWidth) {
                     if (progressPercentage > 94) {     
-                        $("#clock-alert").attr("class", "clock-alert");
-                        $("#plane-alert").attr("class", "clock-alert");
+                        $("#timer-alert").attr("class", "timer-alert");
+                        $("#plane-alert").attr("class", "timer-alert");
                         $('#landing-plane').addClass("land-ze-plane");
                     }
                    prevWidth = curWidth;

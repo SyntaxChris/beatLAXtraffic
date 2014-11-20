@@ -14,7 +14,8 @@
  *= require 'background'
  *= require 'dashboard'
  *= require 'parking_lot'
- *= require 'questions'
+ *= require 'tiles'
+ *= require 'timer_questions'
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides

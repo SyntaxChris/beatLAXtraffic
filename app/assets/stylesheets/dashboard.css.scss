@@ -13,7 +13,7 @@
         bottom:0;
         width: 100%;
         height: 105px;
-        background-color: #98E0DF;
+        background-color: #46C0CC;
     }
 
     #gradient-2-landscape {
@@ -23,7 +23,7 @@
         margin-left: 0;
         width: 80%;
         height: 105px;
-        border-bottom: 105px solid #AEE6E5;
+        border-bottom: 105px solid #A8E3F5;
         border-right: 60px solid transparent;
     }
 
@@ -34,7 +34,7 @@
         margin-left: 0;
         width: 55%;
         height: 105px;
-        border-bottom: 105px solid #C0EBDE;
+        border-bottom: 105px solid #78D2EA;
         border-right: 60px solid transparent;
     }
 
@@ -45,7 +45,7 @@
         margin-left: 0;
         width: 30%;
         height: 160px;
-        border-bottom: 160px solid #74D4B7;
+        border-bottom: 160px solid #24B7EA;
         border-right: 60px solid transparent;
         #clock-landscape {
             margin-top: 20px;
@@ -119,13 +119,13 @@
             top: -40px;
             width: 86%;
             height: 40px;
-            background-color: #AEE6E5;
+            background-color: #A8E3F5;
             #arrow-landscape {
                 margin-left: 100%;
                 width: 0;
                 height: 0;
                 border-top: 20px solid transparent;
-                border-left: 10px solid #AEE6E5;
+                border-left: 10px solid #A8E3F5;
                 border-bottom: 20px solid transparent;
             }
         }
@@ -162,50 +162,50 @@
     }
 }
 
-.clock-alert {
-    -webkit-animation: clock-alert 2s; 
+.timer-alert {
+    -webkit-animation: timer-alert 2s; 
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: 3;
-    -moz-animation: clock-alert 2s; 
+    -moz-animation: timer-alert 2s; 
     -moz-animation-timing-function: linear;
     -moz-animation-iteration-count: 3;
-    -o-animation: clock-alert 2s; 
+    -o-animation: timer-alert 2s; 
     -o-animation-timing-function: linear;
     -o-animation-iteration-count: 3;
-    -ms-animation: clock-alert 2s; 
+    -ms-animation: timer-alert 2s; 
     -ms-animation-timing-function: linear;
     -ms-animation-iteration-count: 3;
-    animation: clock-alert 2s; 
+    animation: timer-alert 2s; 
     animation-timing-function: linear;
     animation-iteration-count: 3;
 }
 
 
-@-webkit-keyframes clock-alert {
+@-webkit-keyframes timer-alert {
     0% {fill: white;}
     50% {fill: red;}
     100% {fill: white;}
 }
 
-@-moz-keyframes clock-alert {
+@-moz-keyframes timer-alert {
     0% {fill: white;}
     50% {fill: red;}
     100% {fill: white;}
 }
 
-@-o-keyframes clock-alert {
+@-o-keyframes timer-alert {
     0% {fill: white;}
     50% {fill: red;}
     100% {fill: white;}
 }
 
-@-ms-keyframes clock-alert {
+@-ms-keyframes timer-alert {
     0% {fill: white;}
     50% {fill: red;}
     100% {fill: white;}
 }
 
-@keyframes clock-alert {
+@keyframes timer-alert {
     from {fill: white;}
     to {fill: red;}
 }
@@ -251,7 +251,7 @@
             margin-left: 0;
             width: 100%;
             height: 60px;
-            background-color: #AEE6E5;
+            background-color: #A8E3F5;
         }
 
         #gradient-3-landscape {
@@ -261,7 +261,7 @@
             margin-left: 0;
             width: 70%;
             height: 60px; 
-            border-bottom: 60px solid #C0EBDE;
+            border-bottom: 60px solid #78D2EA;
             border-right: 50px solid transparent;
         }
 
@@ -272,7 +272,7 @@
             margin-left: 0;
             width: 37%;
             height: 100px;
-            border-bottom: 100px solid #74D4B7;
+            border-bottom: 100px solid #24B7EA;
             border-right: 60px solid transparent;
             #clock-landscape {
                 display: none;
@@ -343,13 +343,13 @@
                 top: -20px;
                 width: 80%;
                 height: 20px;
-                background-color: #AEE6E5;
+                background-color: #A8E3F5;
                 #arrow-landscape {
                     margin-left: 100%;
                     width: 0;
                     height: 0;
                     border-top: 10px solid transparent;
-                    border-left: 5px solid #AEE6E5;
+                    border-left: 5px solid #A8E3F5;
                     border-bottom: 10px solid transparent;
                 }
             }
@@ -405,7 +405,7 @@
             bottom:0;
             width: 100%;
             height: 60px;
-            background-color: #98E0DF;
+            background-color: #46C0CC;
         }
 
         #gradient-2-landscape {
@@ -415,7 +415,7 @@
             margin-left: 0;
             width: 83%;
             height: 60px;
-            border-bottom: 60px solid #AEE6E5;
+            border-bottom: 60px solid #A8E3F5;
             border-right: 50px solid transparent;
         }
 
@@ -426,7 +426,7 @@
             margin-left: 0;
             width: 60%;
             height: 60px; 
-            border-bottom: 60px solid #C0EBDE;
+            border-bottom: 60px solid #78D2EA;
             border-right: 50px solid transparent;
         }
 
@@ -437,7 +437,7 @@
             margin-left: 0;
             width: 37%;
             height: 100px;
-            border-bottom: 100px solid #74D4B7;
+            border-bottom: 100px solid #24B7EA;
             border-right: 60px solid transparent;
             #clock-landscape {
                 margin-top: 5px;
@@ -512,13 +512,13 @@
                 top: -20px;
                 width: 80%;
                 height: 20px;
-                background-color: #AEE6E5;
+                background-color: #A8E3F5;
                 #arrow-landscape {
                     margin-left: 100%;
                     width: 0;
                     height: 0;
                     border-top: 10px solid transparent;
-                    border-left: 5px solid #AEE6E5;
+                    border-left: 5px solid #A8E3F5;
                     border-bottom: 10px solid transparent;
                 }
             }
@@ -573,7 +573,7 @@
             bottom:0;
             width: 100%;
             height: 60px;
-            background-color: #98E0DF;
+            background-color: #46C0CC;
         }
 
         #gradient-2-landscape {
@@ -583,7 +583,7 @@
             margin-left: 0;
             width: 83%;
             height: 60px;
-            border-bottom: 60px solid #AEE6E5;
+            border-bottom: 60px solid #A8E3F5;
             border-right: 50px solid transparent;
         }
 
@@ -594,7 +594,7 @@
             margin-left: 0;
             width: 60%;
             height: 60px; 
-            border-bottom: 60px solid #C0EBDE;
+            border-bottom: 60px solid #78D2EA;
             border-right: 50px solid transparent;
         }
 
@@ -605,7 +605,7 @@
             margin-left: 0;
             width: 37%;
             height: 100px;
-            border-bottom: 100px solid #74D4B7;
+            border-bottom: 100px solid #24B7EA;
             border-right: 60px solid transparent;
             #clock-landscape {
                 margin-top: 5px;
@@ -680,13 +680,13 @@
                 top: -20px;
                 width: 80%;
                 height: 20px;
-                background-color: #AEE6E5;
+                background-color: #A8E3F5;
                 #arrow-landscape {
                     margin-left: 100%;
                     width: 0;
                     height: 0;
                     border-top: 10px solid transparent;
-                    border-left: 5px solid #AEE6E5;
+                    border-left: 5px solid #A8E3F5;
                     border-bottom: 10px solid transparent;
                 }
             }
@@ -741,7 +741,7 @@
             bottom:0;
             width: 100%;
             height: 105px;
-            background-color: #98E0DF;
+            background-color: #46C0CC;
         }
 
         #gradient-2-landscape {
@@ -751,7 +751,7 @@
             margin-left: 0;
             width: 80%;
             height: 105px;
-            border-bottom: 105px solid #AEE6E5;
+            border-bottom: 105px solid #A8E3F5;
             border-right: 60px solid transparent;
         }
 
@@ -762,7 +762,7 @@
             margin-left: 0;
             width: 55%;
             height: 105px;
-            border-bottom: 105px solid #C0EBDE;
+            border-bottom: 105px solid #78D2EA;
             border-right: 60px solid transparent;
         }
 
@@ -773,7 +773,7 @@
             margin-left: 0;
             width: 30%;
             height: 160px;
-            border-bottom: 160px solid #74D4B7;
+            border-bottom: 160px solid #24B7EA;
             border-right: 60px solid transparent;
             #clock-landscape {
                 margin-top: 20px;
@@ -848,13 +848,13 @@
                 top: -40px;
                 width: 86%;
                 height: 40px;
-                background-color: #AEE6E5;
+                background-color: #A8E3F5;
                 #arrow-landscape {
                     margin-left: 100%;
                     width: 0;
                     height: 0;
                     border-top: 20px solid transparent;
-                    border-left: 10px solid #AEE6E5;
+                    border-left: 10px solid #A8E3F5;
                     border-bottom: 20px solid transparent;
                 }
             }
@@ -917,7 +917,7 @@
             margin-left: 0;
             width: 100%;
             height: 60px; 
-            background-color: #C0EBDE;
+            background-color: #78D2EA;
         }
 
         #gradient-4 {
@@ -927,7 +927,7 @@
             margin-left: 0;
             width: 42%;
             height: 85px;
-            border-bottom: 85px solid #74D4B7;
+            border-bottom: 85px solid #24B7EA;
             border-right: 50px solid transparent;
             #clock {
                 display: none;
@@ -991,13 +991,13 @@
                 top: -20px;
                 width: 75%;
                 height: 20px;
-                background-color: #AEE6E5;
+                background-color: #A8E3F5;
                 #arrow {
                     margin-left: 100%;
                     width: 0;
                     height: 0;
                     border-top: 10px solid transparent;
-                    border-left: 5px solid #AEE6E5;
+                    border-left: 5px solid #A8E3F5;
                     border-bottom: 10px solid transparent;
                 }
             }
@@ -1058,7 +1058,7 @@
             margin-left: 0;
             width: 100%;
             height: 70px; 
-            border-bottom: 70px solid #AEE6E5;
+            border-bottom: 70px solid #A8E3F5;
             border-right: 50px solid transparent;
         }
 
@@ -1069,7 +1069,7 @@
             margin-left: 0;
             width: 70%;
             height: 70px; 
-            border-bottom: 70px solid #C0EBDE;
+            border-bottom: 70px solid #78D2EA;
             border-right: 50px solid transparent;
         }
 
@@ -1080,7 +1080,7 @@
             margin-left: 0;
             width: 35%;
             height: 95px;
-            border-bottom: 95px solid #74D4B7;
+            border-bottom: 95px solid #24B7EA;
             border-right: 50px solid transparent;
             #clock {
                 display: none;
@@ -1146,13 +1146,13 @@
                 top: -30px;
                 width: 75%;
                 height: 20px;
-                background-color: #AEE6E5;
+                background-color: #A8E3F5;
                 #arrow {
                     margin-left: 100%;
                     width: 0;
                     height: 0;
                     border-top: 10px solid transparent;
-                    border-left: 5px solid #AEE6E5;
+                    border-left: 5px solid #A8E3F5;
                     border-bottom: 10px solid transparent;
                 }
             }
@@ -1208,7 +1208,7 @@
             margin-left: 0;
             width: 100%;
             height: 105px;
-            background-color: #C0EBDE;
+            background-color: #78D2EA;
         }
 
         #gradient-4 {
@@ -1218,7 +1218,7 @@
             margin-left: 0;
             width: 30%;
             height: 160px;
-            border-bottom: 160px solid #74D4B7;
+            border-bottom: 160px solid #24B7EA;
             border-right: 60px solid transparent;
             #clock {
                 margin-top: 20px;
@@ -1293,13 +1293,13 @@
                 top: -40px;
                 width: 86%;
                 height: 40px;
-                background-color: #AEE6E5;
+                background-color: #A8E3F5;
                 #arrow {
                     margin-left: 100%;
                     width: 0;
                     height: 0;
                     border-top: 20px solid transparent;
-                    border-left: 10px solid #AEE6E5;
+                    border-left: 10px solid #A8E3F5;
                     border-bottom: 20px solid transparent;
                 }
             }
