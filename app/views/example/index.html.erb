@@ -19,7 +19,7 @@
 <div id="skip-button">
   <%= render 'skipbutton' %>
 </div>
-
+<!-- <div id="logger"></div> -->
 
 
 <!-- QUESTIONS FORMAT -->
@@ -27,7 +27,7 @@
   <div class="large-12 medium-12 small-12 columns">
 
     <!-- tile questions -->
-    <div id="tile-questions" style="display:none">
+    <div id="tile-questions"  style="display: none">
       <!-- questions header -->
       <div class="show-for-landscape">
         <div class="row">
@@ -223,7 +223,6 @@
             <div id="timer-question-submit">Submit</div>
           </div>
         </div>
-        
         <!-- <input name="Submit" type="submit" class="button"> -->
       </div>
     </div>
@@ -254,66 +253,31 @@
 
 
 <!-- DASHBOARD -->
-<div class="show-for-portrait">
-  <div id="dashboard">
-    <div id="gradient-3"></div>
-    <div id="gradient-4"></div>
-    <div id="progress-bar">
-      <div id="ord">
-        <div id="depart-tag">ORD</div>
-      </div>
-      <div id="bar-back">
-        <div id="plane-bar"></div>
-        <div id="plane-bar-filler">
-          <div id="circular-plane">
-            <%= render 'progressplane' %>
-          </div>
-        </div>
-        <div id="arrow"></div>
-      </div>
-      <div id="lax">
-        <div id="arrival-tag">LAX</div>  
-      </div>
-    </div>
-    <div id="flight-status"></div>
-    <div id="suitcase"></div>
-    <div id="colleagues"></div>
-    <div id="time-spent">
-      <div id="time-spent-description"></div>
+
+<div id="dashboard">
+  <div id="gradient-1"></div>
+  <div id="gradient-2"></div>
+  <div id="gradient-3"></div>
+  <div id="gradient-4">
+    <div id="clock">
+      <%= render 'timer' %>
     </div>
   </div>
-</div>
 
-
-<div class="show-for-landscape">
-  <div id="dashboard-landscape">
-    <div id="gradient-1-landscape"></div>
-    <div id="gradient-2-landscape"></div>
-    <div id="gradient-3-landscape"></div>
-    <div id="gradient-4-landscape">
-      <div id="clock-landscape">
-        <%= render 'timer' %>
-      </div>
-    </div>
-    <div id="progress-bar-landscape">
-      <div id="ord-landscape">
-        <div id="depart-tag-landscape">ORD</div>
-      </div>
-      <div id="bar-back-landscape">
-        <div id="plane-bar-landscape"></div>
-        <div id="plane-bar-filler-landscape">
-          <div id="circular-plane-landscape">
-            <%= render 'progressplane' %>
-          </div>
+  <div id="progress-bar">
+    <div id="ord">ORD</div>
+    <div id="bar-back">
+      <div id="plane-bar"></div>
+      <div id="filler">
+        <div id="circular-plane">
+          <%= render 'progressplane' %>
         </div>
-        <div id="arrow-landscape"></div>
-      </div>
-      <div id="lax-landscape">
-        <div id="arrival-tag-landscape">LAX</div>  
       </div>
     </div>
-  </div>  
-</div>
+    <div id="lax">LAX</div>
+  </div>
+</div>  
+
 
 
 <!-- END DASHBOARD -->
