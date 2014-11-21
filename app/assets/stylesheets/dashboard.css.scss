@@ -47,6 +47,46 @@
         height: 160px;
         border-bottom: 160px solid #24B7EA;
         border-right: 60px solid transparent;
+        #hour {
+            position: absolute;
+            z-index: 32.1;
+            height: 120px;
+            width: 120px;
+            -webkit-animation: clock 30s linear infinite;
+            #short-hand {
+                position: absolute;
+                width: 5px;
+                height: 45px;
+                left: 57.5px;
+                top: 15px;
+                background-color: red;
+            }
+        }
+        #minute {
+            position: absolute;
+            z-index: 32.2;
+            height: 120px;
+            width: 120px;
+            -webkit-animation: clock 10s linear infinite;
+            #long-hand {
+                position: absolute;
+                width: 5px;
+                height: 55px;
+                left: 57.5px;
+                top: 5px;
+                background-color: red;
+            }
+        }
+        // #cap {
+        //     position: absolute;
+        //     z-index: 32.3;
+        //     height: 5px;
+        //     width: 5px;
+        //     margin-left: 58px;
+        //     margin-top: 58px;
+        //     background-color: red;
+        //     border-radius: 100%;
+        // }
         #clock {
             margin-top: 20px;
             margin-left: 10px;
@@ -155,6 +195,8 @@
     }
 }
 
+
+
 .timer-alert {
     -webkit-animation: timer-alert 2s; 
     -webkit-animation-timing-function: linear;
@@ -203,6 +245,16 @@
     to {fill: red;}
 }
 
+
+
+@-webkit-keyframes clock {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
 
 
 
@@ -779,7 +831,6 @@
         }
 
         #gradient-3 {
-            
             width: 70%;
             height: 55px;
             border-bottom: 55px solid #78D2EA;
