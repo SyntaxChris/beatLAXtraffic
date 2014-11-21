@@ -21,6 +21,10 @@ RSpec.describe Question, :type => :model do
       expect(question).to belong_to(:node)
     end
 
+    it "belongs to a question_type (ie 'multuple choice', 'select all applicable')" do
+      expect(question).to belong_to(:question_type)
+    end
+
     it "has many answers" do
       expect(question).to have_many(:answers)
     end

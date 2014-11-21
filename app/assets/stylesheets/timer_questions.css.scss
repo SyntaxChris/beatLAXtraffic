@@ -1,0 +1,292 @@
+div#clock-container {
+	height: 350px;
+	width: 350px;
+	margin-left: auto;
+	margin-right: auto;
+	svg {
+		height: 350px;
+		width: 350px;
+		.timer-question-font {
+			font-size: 20px;
+		}
+
+	}
+}
+
+#timer-question-submit {
+	position: relative;
+	z-index: 20;
+	cursor: pointer;
+	width: 150px; 
+	height: 50px; 
+	text-align: center;
+	font-size: 20px;
+	background-color: #079BED;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 12px;
+	bottom: 0px;
+	color: white;
+}
+
+#timer-question-submit:hover, #timer-question-submit:active {
+	background-color: #24B7EA;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 320px) and (min-width: 0px) and (orientation: portrait) {
+	div#clock-container {
+		height: 240px;
+		width: 240px;
+		svg {
+			height: 240px;
+			width: 240px;
+			.timer-question-font {
+				font-size: 18px;
+			}
+
+		}
+	}
+
+	#timer-question-submit {
+		height: 35px;
+		width: 90px;
+		padding-top: 6px;
+		font-size: 14px; 
+	}
+
+	#skip {
+		position: absolute;
+		margin-top: 30px;
+		margin-left: 20%;
+	}
+}
+
+
+@media screen and (max-width: 413px) and (min-width: 321px) and (orientation: portrait) {
+	div#clock-container {
+		height: 300px;
+		width: 300px;
+		svg {
+			height: 300px;
+			width: 300px;
+			.timer-question-font {
+				font-size: 18px;
+			}
+
+		}
+	}
+
+	#timer-question-submit {
+		height: 35px;
+		width: 90px;
+		padding-top: 6px;
+		font-size: 14px; 
+	}
+
+	#skip {
+		position: absolute;
+		margin-top: 30px;
+		margin-left: 20%;
+	}
+}
+
+
+@media screen and (max-width: 500px) and (min-width: 414px) and (orientation: portrait) {
+	div#clock-container {
+		height: 380px;
+		width: 380px;
+		margin-top: 20px;
+		svg {
+			height: 380px;
+			width: 380px;
+			.timer-question-font {
+				font-size: 18px;
+			}
+
+		}
+	}
+
+	#skip {
+		position: absolute;
+		margin-top: 30px;
+		margin-left: 20%;
+	}
+}
+
+@media screen and (min-width: 501px) and (orientation: portrait) {
+	div#clock-container {
+		height: 480px;
+		width: 480px;
+		margin-top: 20px;
+		svg {
+			height: 480px;
+			width: 480px;
+			.timer-question-font {
+				font-size: 18px;
+			}
+
+		}
+	}
+
+	#skip {
+		position: absolute;
+		margin-top: 20px;
+		margin-left: 30%;
+	}
+}
+
+@media screen and (max-width: 695px) and (min-width: 502px) and (orientation: portrait) {
+	div#clock-container {
+		height: 480px;
+		width: 480px;
+		margin-top: 50px;
+		svg {
+			height: 480px;
+			width: 480px;
+			.timer-question-font {
+				font-size: 18px;
+			}
+
+		}
+	}
+
+	#skip {
+		position: absolute;
+		margin-top: 20px;
+		margin-left: 30%;
+	}
+
+	#timer-question-submit {
+		margin-top: 30px;
+	}
+}
+
+@media screen and (max-width: 768px) and (min-width: 696px) and (orientation: portrait) {
+	div#clock-container {
+		height: 480px;
+		width: 480px;
+		margin-top: 70px;
+		svg {
+			height: 480px;
+			width: 480px;
+			.timer-question-font {
+				font-size: 18px;
+			}
+
+		}
+	}
+
+	#skip {
+		position: absolute;
+		margin-top: 20px;
+		margin-left: 30%;
+	}
+
+	#timer-question-submit {
+		margin-top: 40px;
+	}
+}
+
+
+
+// LANDSCAPE
+@media screen and (max-width: 568px) and (min-width: 0px) and (orientation: landscape) {
+	div#clock-container {
+		margin-top: -10px;
+		height: 200px;
+		width: 200px;
+		position: absolute;
+		left: 100px;
+		svg {
+			height: 200px;
+			width: 200px;
+			.timer-question-font {
+				font-size: 18px;
+			}
+
+		}
+	}
+
+	#timer-question-submit {
+		bottom: 120px;
+		left: 200px;
+		height: 35px;
+		width: 90px;
+		padding-top: 6px;
+		font-size: 14px; 
+	}
+
+	#skip {
+		margin-top: 20px;
+	
+	}
+}
+
+@media screen and (max-width: 800px) and (min-width: 569px) and (orientation: landscape) {
+	div#clock-container {
+		margin-top: 0px;
+		height: 250px;
+		width: 250px;
+		position: absolute;
+		left: 145px;
+		svg {
+			height: 250px;
+			width: 250px;
+			.timer-question-font {
+				font-size: 22px;
+			}
+
+		}
+	}
+
+	#timer-question-submit {
+		bottom: 150px;
+		left: 240px;
+		font-size: 20px;
+	}
+
+	#skip {
+		margin-top: 20px;
+	
+	}
+}
+
+
+@media screen and (max-width: 800px) and (min-width: 570px) and (orientation: landscape) {
+	div#clock-container {
+		margin-top: 0px;
+		height: 250px;
+		width: 250px;
+		position: absolute;
+		left: 145px;
+		svg {
+			height: 250px;
+			width: 250px;
+			.timer-question-font {
+				font-size: 22px;
+			}
+
+		}
+	}
+
+	#timer-question-submit {
+		bottom: 150px;
+		left: 240px;
+		font-size: 20px;
+	}
+
+	#skip {
+		margin-top: 20px;
+	
+	}
+}
+
+

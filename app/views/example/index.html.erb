@@ -16,39 +16,43 @@
             <!-- <p>You have finished the quiz.</p> -->
             <!-- <p><a href="#" ng-click="restartQuiz()">Retry?</a> -->
  <!-- </div> -->
+<div id="skip-button">
+  <%= render 'skipbutton' %>
+</div>
+<!-- <div id="logger"></div> -->
+
 
 <!-- QUESTIONS FORMAT -->
 <div class="row">
   <div class="large-12 medium-12 small-12 columns">
 
-  <!-- questions header -->
-    <div class="show-for-landscape">
-      <div class="row">
-        <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
-          <div id="question-header-landscape">
-              <h3 id="main-landscape">What are you doing while you wait?</h3>
-              <h5 id="foot-landscape">Select all that apply</h5> 
-              <div id="logger"></div>
+    <!-- tile questions -->
+    <div id="tile-questions"  style="display: none">
+      <!-- questions header -->
+      <div class="show-for-landscape">
+        <div class="row">
+          <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
+            <div id="question-header-landscape">
+                <h3 id="main-landscape">What are you doing while you wait?</h3>
+                <h5 id="foot-landscape">Select all that apply</h5> 
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="show-for-portrait">
-      <div class="row">
-        <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
-          <div id="question-header">
-              <h3 id="main">What are you doing while you wait?</h3>
-              <h5 id="foot">Select all that apply</h5> 
+      <div class="show-for-portrait">
+        <div class="row">
+          <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
+            <div id="question-header">
+                <h3 id="main">What are you doing while you wait?</h3>
+                <h5 id="foot">Select all that apply</h5> 
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- end questions header -->
+      <!-- end questions header -->
 
-
-    <div id="tiles">
-      <!-- tiles landscape -->
+      <!-- landscape -->
       <div class="show-for-landscape">
 
         <div id="large-landscape">
@@ -148,9 +152,9 @@
         </div>
 
       </div>
-      <!-- end tiles landscape -->
+      <!-- end landscape -->
       
-      <!-- tiles portrait -->
+      <!-- portrait -->
       <div class="show-for-portrait">
     
         <div class="row" id="tiles-small">
@@ -199,8 +203,35 @@
         </div>
 
       </div>
-    <!-- end tiles portrait -->
+    <!-- end portrait -->
     </div>
+    <!-- end tile questions -->
+
+
+
+    <!-- TIMER questions -->
+    <div id="clock-questions">
+      <!-- questions header -->
+      <div class="row" style="text-align:center">
+      <h3 style="color: white">How long do you usually take you to park?</h3>
+      </div>
+
+      <div class="row">
+        <div class="large-12 medium-12 small-12 large-centered medium-centered small-centerd columns">
+          <div id="clock-container">
+            <%= render 'timerquestion' %>
+            <div id="timer-question-submit">Submit</div>
+          </div>
+        </div>
+        <!-- <input name="Submit" type="submit" class="button"> -->
+      </div>
+    </div>
+    <!-- end clock questions -->
+
+
+
+
+
 
 
 
@@ -222,64 +253,33 @@
 
 
 <!-- DASHBOARD -->
-<div class="show-for-portrait">
-  <div id="dashboard">
-    <div id="gradient-3"></div>
-    <div id="gradient-4"></div>
-    <div id="progress-bar">
-      <div id="ord">
-        <div class="tag">ORD</div>
-      </div>
-      <div id="bar-back">
-        <div id="plane-bar"></div>
-        <div id="plane-bar-filler">
-          <div id="circular-plane"><%= render 'progressplane' %></div>
-        </div>
-        <div id="arrow"></div>
-      </div>
-      <div id="lax">
-        <div class="tag">LAX</div>  
-      </div>
-    </div>
-    <div id="flight-status"></div>
-    <div id="suitcase"></div>
-    <div id="colleagues"></div>
-    <div id="time-spent">
-      <div id="time-spent-description"></div>
+
+<div id="dashboard">
+  <div id="gradient-1"></div>
+  <div id="gradient-2"></div>
+  <div id="gradient-3"></div>
+  <div id="gradient-4">
+    <div id="clock">
+      <%= render 'timer' %>
     </div>
   </div>
-</div>
 
-
-<div class="show-for-landscape">
-  <div id="dashboard-landscape">
-    <div id="gradient-1-landscape"></div>
-    <div id="gradient-2-landscape"></div>
-    <div id="gradient-3-landscape"></div>
-    <div id="gradient-4-landscape">
-      <div id="clock-landscape">
-        <%= render 'clock' %>
-      </div>
-    </div>
-    <div id="progress-bar-landscape">
-      <div id="ord-landscape">
-        <div class="tag-landscape">ORD</div>
-      </div>
-      <div id="bar-back-landscape">
-        <div id="plane-bar-landscape"></div>
-        <div id="plane-bar-filler-landscape">
-          <div id="circular-plane-landscape">
-            <%= render 'progressplane' %>
-          </div>
+  <div id="progress-bar">
+    <div id="ord">ORD</div>
+    <div id="bar-back">
+      <div id="plane-bar"></div>
+      <div id="filler">
+        <div id="circular-plane">
+          <%= render 'progressplane' %>
         </div>
-        <div id="arrow-landscape"></div>
-      </div>
-      <div id="lax-landscape">
-        <div class="tag-landscape">LAX</div>  
       </div>
     </div>
-  </div>  
-</div>
+    <div id="lax">LAX</div>
+  </div>
+</div>  
+
+
+
 <!-- END DASHBOARD -->
 
 <!-- <button id="land" style="position: absolute; z-index: 35; bottom: 0; right:0">LAND ZE PLANE</button> -->
