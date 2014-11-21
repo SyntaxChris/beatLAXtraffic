@@ -22,10 +22,23 @@ $(document).ready(function(){
   			$( "#clock-questions" ).show();
   			clicks = 0
   		}
-  		
 	});
 
-	// timer question color change for labels
+
+	$("#toggle-questions").on("tap",function(){
+  		clicks += 1;
+		$("#clicks").text(clicks);
+  		if (clicks === 1) {
+	  		$( "#tile-questions" ).show();
+	  		$( "#clock-questions" ).hide();
+  		}
+  		else if (clicks === 2) {
+  			$( "#tile-questions" ).hide();
+  			$( "#clock-questions" ).show();
+  			clicks = 0
+  		}
+	});
+	
 	$("#timer-question-label-1").hover(
 		function () {
 			$("#timer-question-label-1").css('cursor','pointer');
