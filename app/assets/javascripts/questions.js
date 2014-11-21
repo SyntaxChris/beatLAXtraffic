@@ -8,6 +8,23 @@ $(document).ready(function(){
 	    $('#char-count').text(cs + " characters left");
 	});
 
+	var clicks = 0;
+
+	$( "#toggle-questions" ).click(function() {
+		clicks += 1;
+		$("#clicks").text(clicks);
+  		if (clicks === 1) {
+	  		$( "#tile-questions" ).show();
+	  		$( "#clock-questions" ).hide();
+  		}
+  		else if (clicks === 2) {
+  			$( "#tile-questions" ).hide();
+  			$( "#clock-questions" ).show();
+  			clicks = 0
+  		}
+  		
+	});
+
 	// timer question color change for labels
 	$("#timer-question-label-1").hover(
 		function () {
@@ -49,4 +66,6 @@ $(document).ready(function(){
  		}
  	);	
 });
+
+
 
