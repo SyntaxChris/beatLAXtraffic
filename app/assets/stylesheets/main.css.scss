@@ -18,3 +18,15 @@ body, html {
 }
 
 
+#toggle-questions {
+	position: absolute;
+	z-index: 50;
+	cursor: pointer;
+	font-size: 5px; 
+	width: 50px; 
+	height: 30px; 
+	padding: 5px 5px 10px 0;
+	text-align: center;
+	background-color: #079BED;
+	color: white;
+}
