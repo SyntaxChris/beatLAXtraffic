@@ -1,4 +1,29 @@
 $(document).ready(function(){
+	// TOGGLE ALL
+	var clicks = 0;
+	$( "#toggle-questions" ).click(function() {
+		clicks += 1;
+		$("#clicks").text(clicks);
+  		if (clicks === 1) {
+  			$( '#parking-lot' ).show();
+	  		$( "#tile-questions" ).show();
+	  		$( "#clock-questions" ).hide();
+	  		$( "#icon-questions" ).hide();
+  		}
+  		else if (clicks === 2) {
+  			$( "#tile-questions" ).hide();
+  			$( "#clock-questions" ).show();
+  		}
+  		else if (clicks === 3) {
+  			$( "#clock-questions" ).hide();
+  			$( '#parking-lot' ).hide();
+  			$( "#icon-questions" ).show();
+  			clicks = 0
+  		}
+	});
+	// END TOGGLE ALL
+
+	// TILE QUESTIONS
 	$('#other-button-landscape').click(function(){
 		$('#user-text-input').toggle();
 	});
@@ -7,38 +32,9 @@ $(document).ready(function(){
 	    var cs = 150 - $(this).val().length;
 	    $('#char-count').text(cs + " characters left");
 	});
+	// END TILE QUESTIONS
 
-	var clicks = 0;
-
-	$( "#toggle-questions" ).click(function() {
-		clicks += 1;
-		$("#clicks").text(clicks);
-  		if (clicks === 1) {
-	  		$( "#tile-questions" ).show();
-	  		$( "#clock-questions" ).hide();
-  		}
-  		else if (clicks === 2) {
-  			$( "#tile-questions" ).hide();
-  			$( "#clock-questions" ).show();
-  			clicks = 0
-  		}
-	});
-
-
-	$("#toggle-questions").on("tap",function(){
-  		clicks += 1;
-		$("#clicks").text(clicks);
-  		if (clicks === 1) {
-	  		$( "#tile-questions" ).show();
-	  		$( "#clock-questions" ).hide();
-  		}
-  		else if (clicks === 2) {
-  			$( "#tile-questions" ).hide();
-  			$( "#clock-questions" ).show();
-  			clicks = 0
-  		}
-	});
-	
+	// TIMER QUESTIONS
 	$("#timer-question-label-1").hover(
 		function () {
 			$("#timer-question-label-1").css('cursor','pointer');
@@ -77,7 +73,15 @@ $(document).ready(function(){
 		function () {
     		$("#timer-question-4").css("fill", "#16ACEF");
  		}
- 	);	
+ 	);
+ 	// END TIMER QUESTIONS	
+
+ 	// ICON QUESTIONS
+ 	$(".icon").click(function(){
+		$("#1").empty();
+		// $("#pet-icon").appendTo("#holder-1");
+	});
+ 	// END ICON QUESTIONS
 });
 
 
