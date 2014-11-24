@@ -20,6 +20,7 @@
 <div id="skip-button">
   <%= render 'skipbutton' %>
 </div>
+<div id="clicks" style="position: absolute; right:0"></div>
 <!-- <div id="logger"></div> -->
 
 
@@ -211,7 +212,7 @@
 
 
     <!-- TIMER questions -->
-    <div id="clock-questions">
+    <div id="clock-questions" style="display: none">
       <!-- questions header -->
       <div class="row" style="text-align:center">
       <h3 style="color: white">How long do you usually take you to park?</h3>
@@ -232,19 +233,80 @@
 
 
 
+    <!-- icon questions -->
+    <div id="icon-questions">
+     <!-- questions header -->
+      <div class="show-for-landscape">
+        <div class="row">
+          <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
+            <div id="question-header-landscape">
+                <h3 id="main-landscape">What are you doing while you wait?</h3>
+                <h5 id="foot-landscape">Select all that apply</h5> 
+            </div>
+          </div>
+        </div>
+      </div>
 
-
-
+      <div class="show-for-portrait">
+        <div class="row">
+          <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
+            <div id="question-header">
+                <h3 id="main">What are you doing while you wait?</h3>
+                <h5 id="foot">Select all that apply</h5> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end questions header -->
+      <div class="row">
+        <div class="large-6 medium-6 small-6 columns">
+          <div id="drop-box">
+            <div id="title">Pick your top 3 amenities</div>
+            <div id="ivon-description">
+              
+            </div>
+            <div id="icon-holder-row">
+              <div id="holder-1">
+                <div class="icon-holder" id="1" style="position:absolute; left: 115px; top: 138px">1</div>
+              </div>
+              <div id="holder-2">
+                <div class="icon-holder" id="2" style="position:absolute; left: 205px; top: 138px">2</div>
+              </div>
+              <div id="holder-3">
+                <div class="icon-holder" id="3" style="position:absolute; left: 296px; top: 138px">3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="large-6 medium-6 small-6 columns">
+          <div id="icon-box">
+            <div class="icon" id="icon-web"><%= render 'iconweb' %></div>
+            <div class="icon" id="dog"><%= render 'dog' %></div>
+            <div class="icon" id="couch"><%= render 'couch' %></div>
+            <div class="icon" id="family"><%= render 'family' %></div>
+            <div class="icon" id="computer"><%= render 'computer' %></div>
+            <div class="icon" id="wifi"><%= render 'wifi' %></div>
+            <div class="icon" id="parking"><%= render 'parking' %></div>
+            <div class="icon" id="exit"><%= render 'exit' %></div>
+            <div class="icon" id="help-desk"><%= render 'helpdesk' %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end icon questions -->
 
   </div>
 </div>
 <!-- END QUESTION FORMAT -->
 
 
+
+
+
 <!-- SCENES -->
 
 <!-- parking lot -->
-<div id="parking-lot">
+<div id="parking-lot" style="display: none">
   <%= render 'lines' %>
   <%= render 'cars' %>
 </div>
@@ -253,8 +315,10 @@
 <!-- END SCENES -->
 
 
-<!-- DASHBOARD -->
 
+
+
+<!-- DASHBOARD -->
 <div id="dashboard">
     <div id="grad-container">
       <div id="grad-4">
@@ -323,10 +387,6 @@
     </div>
     <div id="lax">LAX</div>
   </div>
-
-      <div id="person-icon">
-      <%= render 'personicon' %>
-    </div>
 </div>  
 
 

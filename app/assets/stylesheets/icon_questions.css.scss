@@ -1,0 +1,99 @@
+#drop-box {
+	height: 300px;
+	width: 400px;
+	background-color: white;
+	border-radius: 40px;
+	#title {
+		color: #78D2EA;
+		text-align: center;
+		padding-top: 30px;
+		font-size: 25px;
+	}
+	#icon-holder-row {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 60px;
+		height: 76px;
+		width: 257px;
+		#holder-1 {
+			display: inline-block;
+			height: 76px;
+			width: 76px;
+			margin-right: 10px;
+			border-radius: 100%;
+			border: 2px dotted #78D2EA;
+			color: #78D2EA;
+			font-size: 35px;
+		}
+		#holder-2 {
+			display: inline-block;
+			height: 76px;
+			width: 76px;
+			margin-right: 10px;
+			border-radius: 100%;
+			border: 2px dotted #78D2EA;
+			color: #78D2EA;
+			font-size: 35px;
+		}
+		#holder-3 {
+			display: inline-block;
+			height: 76px;
+			width: 76px;
+			border-radius: 100%;
+			border: 2px dotted #78D2EA;
+			color: #78D2EA;
+			font-size: 35px;
+		}
+	}
+}
+
+#icon-box {
+	right: 15%;
+	width: 300px;
+	margin-right: auto;
+	margin-left: auto;
+	#icon-web {
+		height: 300px;
+		width: 300px;
+		padding-top: 0px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	#dog {
+		position: absolute;
+		top: 0;
+	}
+	#couch {
+		position: absolute;
+		margin-left: 22.5%;
+		top: 0
+	}
+	#family {
+		position: absolute;
+		top: 0;
+		margin-left: 44.5%;
+	}
+	#computer {
+		position: absolute; 
+		top: 105px;
+	}
+	#wifi {
+		position: absolute;
+		top: 105px;
+		margin-left: 44.5%;
+	}
+	#parking {
+		position: absolute;
+		top: 215px;
+	}
+	#exit {
+		position: absolute;
+		top: 215px;
+		margin-left: 22%;
+	}
+	#help-desk {
+		position: absolute;
+		top: 215px;
+		margin-left: 44.5%;
+	}
+}
