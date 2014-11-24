@@ -53,7 +53,7 @@
             z-index: 32.1;
             height: 120px;
             width: 120px;
-            // -webkit-animation: clock 30s linear infinite;
+            -webkit-animation: clock 60s linear infinite;
             #short-hand {
                 position: absolute;
                 width: 5px;
@@ -68,7 +68,7 @@
             z-index: 32.2;
             height: 120px;
             width: 120px;
-            // -webkit-animation: clock 10s linear infinite;
+            -webkit-animation: clock 20s linear infinite;
             #long-hand {
                 position: absolute;
                 width: 5px;
@@ -78,16 +78,6 @@
                 background-color: red;
             }
         }
-        // #cap {
-        //     position: absolute;
-        //     z-index: 32.3;
-        //     height: 5px;
-        //     width: 5px;
-        //     margin-left: 58px;
-        //     margin-top: 58px;
-        //     background-color: red;
-        //     border-radius: 100%;
-        // }
         #clock {
             margin-top: 20px;
             margin-left: 10px;
@@ -100,6 +90,15 @@
                 height: 120px;
             }
         }
+        #display-time {
+            position: absolute;
+            left: 50%;
+            top: 50px;
+            span {
+                font-size: 80px;
+            }
+        }
+        
     }
 
     #progress-bar {
@@ -180,7 +179,6 @@
             font-size: 20px;
         }
 
-
         #lax:before {
             content: "";
             position: absolute;
@@ -192,6 +190,71 @@
             border-top: 20px solid white;
             border-left: 15px solid transparent;
             border-bottom: 20px solid white;
+        }
+    }
+
+    #grad-container {
+        position: fixed;
+        z-index: 40;
+        width: 100%;
+
+        #grad-4 {
+            position: absolute;
+            margin-left: 0;
+            width: 25%;
+            height: 175px;
+            color: white;
+            #displayed-time {
+                font-size: 80px;
+                display: inline-block;
+                padding: 70px 0 0 60%;
+            }
+            #min {
+                font-size: 20px;
+                display: inline-block;
+            }
+            #spent {
+                padding-left: 60%;
+            }
+        }
+        #grad-3 {
+            position: absolute;
+            margin-left: 25%;
+            width: 25%;
+            height: 105px;
+            margin-top: 70px;
+            color: white;
+        }
+        #grad-2 {
+            position: absolute;
+            margin-left: 50%;
+            width: 25%;
+            height: 105px;
+            margin-top: 70px;
+            color: white;
+        }
+        #grad-1 {
+            position: absolute;
+            margin-left: 75%;
+            width: 25%;
+            height: 105px;
+            margin-top: 70px;
+            color: white;
+            #plane-logo {
+                padding-top: 30px;
+                padding-left: 75%;
+                padding-right: 0;
+                padding-bottom: 0;
+                svg {
+                    height: 45px;
+                    width: 45px;
+                }
+            }
+            #flight-num {
+                font-size: 30px;
+                padding-top: 30px;
+                padding-left: 10%;
+            } 
         }
     }
 }
@@ -328,7 +391,7 @@
                 z-index: 31;
                 height: 25px;
                 width: 15%;
-                font-size: 15px;
+                font-size: 12px;
                 padding-top: 1px;
                 padding-left: 20px;
                 color: #3AB1D6;
@@ -393,7 +456,7 @@
                 padding-left: 2%;
                 color: #3AB1D6;
                 background-color: white;
-                font-size: 15px;
+                font-size: 12px;
             }
 
 
