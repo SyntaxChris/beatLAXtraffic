@@ -232,33 +232,9 @@
 
 
 
-
     <!-- icon questions -->
     <div id="icon-questions">
-     <!-- questions header -->
-      <div class="show-for-landscape">
-        <div class="row">
-          <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
-            <div id="question-header-landscape">
-                <h3 id="main-landscape">Which amenities do you prefer?</h3>
-                <h5 id="foot-landscape">Select all that apply</h5> 
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="show-for-portrait">
-        <div class="row">
-          <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
-            <div id="question-header">
-                <h3 id="main">Which amenities do you prefer?</h3>
-                <h5 id="foot">Select all that apply</h5> 
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end questions header -->
-      <div class="row">
+      <div class="row" id="icons-large-screen" style="margin-top: 90px;">
         <div class="large-6 medium-6 small-6 columns">
           <div id="drop-box">
             <div id="title">Pick your top 3 amenities</div>
@@ -339,6 +315,87 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div id="icons-small-screen">
+          <div id="holder-and-description-row">
+          <div id="dotted-circle-row">
+              <div id="icon-holder-description">
+                Pick your top 3 amenities
+              </div>
+              <div id="circle-1">
+                <div class="icon-holder" id="1" style="position: relative; top: 22px; left: 26px">1</div>
+              </div>
+              <div id="circle-2">
+                <div class="icon-holder" id="2" style="position: relative; top: 22px; left: 26px">2</div>
+              </div>
+              <div id="circle-3">
+                <div class="icon-holder" id="3" style="position: relative; top: 22px; left: 26px">3</div>
+              </div>
+            </div>
+ <!--            <div id="holder-1"></div>
+            <div id="holder-2"></div>
+            <div id="holder-3"></div> -->
+          </div>
+    
+          <div id="icon-box-small">
+            <div id="icon-web"><%= render 'iconweb' %></div>
+            <div class="icon" id="dog">
+              <%= render 'dog' %>
+              <div style="display:none">Hi, I'm the dog icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+            </div>
+            <div class="icon" id="couch">
+              <%= render 'couch' %>
+              <div style="display:none">Hi, I'm the couch icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+            </div>
+            <div class="icon" id="family">
+              <%= render 'family' %>
+              <div style="display:none">Hi, I'm the family icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+
+            </div>
+            <div class="icon" id="computer">
+              <%= render 'computer' %>
+              <div style="display:none">Hi, I'm the computer icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+            </div>
+            <div class="icon" id="wifi">
+              <%= render 'wifi' %>
+              <div style="display:none">Hi, I'm the wifi icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+            </div>
+            <div class="icon" id="parking">
+              <%= render 'parking' %>
+              <div style="display:none">Hi, I'm the parking icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+            </div>
+            <div class="icon" id="exit">
+              <%= render 'exit' %>
+              <div style="display:none">Hi, I'm the exit icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+            </div>
+            <div class="icon" id="help-desk">
+              <%= render 'helpdesk' %>
+              <div style="display:none">Hi, I'm the help desk icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+            </div>
+            <div id="icon-pop-up-small" style="display: none">
+              <div id="icon-description"></div>
+              <div id="choice-row">
+                <div id="yea">
+                  <%= render 'yea' %>
+                </div>
+                <div id="nah">
+                  <%= render 'nah' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            
         </div>
       </div>
     </div>
