@@ -77,9 +77,31 @@ $(document).ready(function(){
  	// END TIMER QUESTIONS	
 
  	// ICON QUESTIONS
- 	$(".icon").click(function(){
-		$("#1").empty();
-		// $("#pet-icon").appendTo("#holder-1");
+ 	$(".icon").one( "click", function() {
+ 		var iconChosen = $(this).last();
+ 		var description = iconChosen.text();
+
+		$( "#icon-pop-up").show();
+		$( "#icon-description").html(description);
+		$("#yea").one( "click",function(){
+			if ($("#holder-1").children().attr("class") !== "icon") {
+				iconChosen.clone().appendTo("#holder-1");
+				$( "#icon-pop-up").hide();
+			}
+			else if ($("#holder-2").children().attr("class") !== "icon") {
+	            iconChosen.clone().appendTo("#holder-2");
+	            $( "#icon-pop-up").hide();
+			}
+			else if ($("#holder-3").children().attr("class") !== "icon") {
+	            iconChosen.clone().appendTo("#holder-3");
+	            $( "#icon-pop-up").hide();
+	            $( ".submit-row" ).show();
+			}
+		});
+
+		$("#nah").click(function(){
+			$( "#icon-pop-up").hide();
+		});
 	});
  	// END ICON QUESTIONS
 });

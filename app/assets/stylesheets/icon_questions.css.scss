@@ -9,13 +9,13 @@
 		padding-top: 30px;
 		font-size: 25px;
 	}
-	#icon-holder-row {
+	#dotted-circle-row {
 		margin-left: auto;
 		margin-right: auto;
 		margin-top: 60px;
 		height: 76px;
 		width: 257px;
-		#holder-1 {
+		#circle-1 {
 			display: inline-block;
 			height: 76px;
 			width: 76px;
@@ -24,26 +24,75 @@
 			border: 2px dotted #78D2EA;
 			color: #78D2EA;
 			font-size: 35px;
+		}
+		#circle-2 {
+			display: inline-block;
+			height: 76px;
+			width: 76px;
+			margin-right: 10px;
+			border-radius: 100%;
+			border: 2px dotted #78D2EA;
+			color: #78D2EA;
+			font-size: 35px;
+		}
+		#circle-3 {
+			display: inline-block;
+			height: 76px;
+			width: 76px;
+			border-radius: 100%;
+			border: 2px dotted #78D2EA;
+			color: #78D2EA;
+			font-size: 35px;
+		}
+	}
+
+	#icon-place-holder-row {
+		position: absolute;
+		z-index: 5;
+		height: 76px;
+		width: 257px;
+		bottom: 115px;
+		left: 82px;
+		#holder-1 {	
+			display: inline-block;
+			height: 76px;
+			width: 76px;
+			margin-right: 10px;
+			padding: 0;
 		}
 		#holder-2 {
 			display: inline-block;
 			height: 76px;
 			width: 76px;
-			margin-right: 10px;
-			border-radius: 100%;
-			border: 2px dotted #78D2EA;
-			color: #78D2EA;
-			font-size: 35px;
+			margin-right: 9px;
 		}
 		#holder-3 {
 			display: inline-block;
 			height: 76px;
 			width: 76px;
-			border-radius: 100%;
-			border: 2px dotted #78D2EA;
-			color: #78D2EA;
-			font-size: 35px;
 		}
+	}
+	.submit-row {
+		margin-top: 30px;
+		text-align: center;
+		#icon-submit {
+			cursor: pointer;
+			width: 150px; 
+			height: 50px; 
+			text-align: center;
+			font-size: 20px;
+			background-color: #079BED;
+			margin-top: 10px;
+			margin-right: auto;
+			margin-left: auto;
+			padding-top: 12px;
+			bottom: 0px;
+			color: white;
+		}
+	}
+
+	#icon-submit:hover, #icon-submit:active {
+		background-color: #24B7EA;
 	}
 }
 
@@ -95,5 +144,44 @@
 		position: absolute;
 		top: 215px;
 		margin-left: 44.5%;
+	}
+}
+
+#icon-pop-up {
+	position: absolute; 
+	top: 50px; 
+	left: 16%; 
+	border-radius: 20px; 
+	height: 200px; 
+	width: 350px; 
+	background-color: white;
+	#icon-description {
+		width: 300px;
+		text-align: center;
+		color: #78D2EA;
+		font-size: 20px;
+		margin-top: 25px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#choice-row {
+		width: 200px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 30px;
+		#yea {
+			cursor: pointer;
+			display: inline-block;
+			width: 76px;
+			height: 76px;
+			margin-right: 43px;
+		}
+		#nah {
+			cursor: pointer;
+			display: inline-block;
+			width: 76px;
+			height: 76px;
+			border-radius: 100%;
+		}
 	}
 }
