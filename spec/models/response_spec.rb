@@ -4,18 +4,6 @@ RSpec.describe Response, :type => :model do
   describe "Attributes" do
     let(:response) { FactoryGirl.build(:response) }
 
-    it "can have a freeform answer text" do
-      answer = FactoryGirl.build(
-        :answer,
-        answer: "other"
-      )
-      response.answer = answer
-      response.freeform_answer = "I have other reasons"
-
-      expect(response.freeform_answer).to eq "I have other reasons"
-      expect(response.answer.answer).to eq "other"
-    end
-
     it "keeps track of 'times seen' for this session and this node, defaults to 1" do
       expect(response.times_seen).to eq 1
     end
@@ -39,6 +27,11 @@ RSpec.describe Response, :type => :model do
       response.rank = 3
       expect(response.rank).to eq 3
     end
+
+    it "has a user interaction numerical representation" do
+      response.user_interaction = -1
+      expect(response.user_interaction).to eq -1
+    end
   end
 
   describe "Associations" do
@@ -54,6 +47,10 @@ RSpec.describe Response, :type => :model do
 
     it "can belong to an answer" do
       expect(response).to belong_to(:answer)
+    end
+
+    it "can have a freeform response" do
+      expect(response).to have_one(:freeform_response)
     end
 
     it "there can be many responses belonging to different answers but the same question "\
@@ -188,15 +185,16 @@ RSpec.describe Response, :type => :model do
     pending "if there is no time left at a decision point, it logs '1' as the "\
             "amount of time remaining"
 
-    pending "when a question is NOT skipped, marks the response as not skipped and "\
-            "associates the proper answer"
+    pending "seen/skipped etc summarize themselves as -1, 0, 1 in 'interaction' field"
 
-    pending "when a question IS skipped, marks the response as skipped and records "\
-            "answer of 1"
+    pending "when a question is NOT skipped, marks the response as not skipped,"\
+            "associates the proper answer and notes in the 'interaction'"
+
+    pending "when a question IS skipped, marks the response as skipped and"\
+            "deals with 'interaction' field properly"
 
     pending "at the end of the experience, create a response for each node that "\
-            "wasn't encountered and mark it as unseen, with answer of 0, and note "\
-            "that it was not skipped"
+            "wasn't encountered and update its 'interaction' field"
 
     pending "in 'select all that apply' questions, the multiple responses for a single "\
             "question are NOT recorded as multiple visits to the same node"
