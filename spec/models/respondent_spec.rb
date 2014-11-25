@@ -5,7 +5,7 @@ describe Respondent do
     let(:respondent) {
       FactoryGirl.build(
         :respondent,
-        session_id: 666,
+        session_id: "d208970e98eb7d6be6dc899432549d99",
         flight_time_remaining: 30,
         time_elapsed: 15,
         current_node_id: 7,
@@ -17,7 +17,7 @@ describe Respondent do
     }
 
     it "has a session id" do
-      expect(respondent.session_id).to eq 666
+      expect(respondent.session_id).to eq "d208970e98eb7d6be6dc899432549d99"
     end
 
     it "has flight time remaining" do
