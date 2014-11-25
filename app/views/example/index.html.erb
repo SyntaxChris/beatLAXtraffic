@@ -1,4 +1,4 @@
-<button id="toggle-questions" style="position: absolute; font-size: 5px; width: 50px; height: 30px; padding: 5px 5px 10px 0 ">TOGGLE QUESTIONS</button>
+<div id="toggle-questions" style="position: absolute; font-size: 5px; width: 50px; height: 30px; padding: 5px 5px 10px 0 ">TOGGLE</div>
 <!-- <div ng-app='app.exampleApp' ng-controller='ExampleCtrl'> -->
   <!-- <div class="quiz" ng-show="quizRunning"> -->
   <!-- <ul ng-repeat="q in surveyQuestions"> -->
@@ -240,7 +240,7 @@
         <div class="row">
           <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
             <div id="question-header-landscape">
-                <h3 id="main-landscape">What are you doing while you wait?</h3>
+                <h3 id="main-landscape">Which amenities do you prefer?</h3>
                 <h5 id="foot-landscape">Select all that apply</h5> 
             </div>
           </div>
@@ -251,7 +251,7 @@
         <div class="row">
           <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
             <div id="question-header">
-                <h3 id="main">What are you doing while you wait?</h3>
+                <h3 id="main">Which amenities do you prefer?</h3>
                 <h5 id="foot">Select all that apply</h5> 
             </div>
           </div>
@@ -285,45 +285,54 @@
         </div>
         <div class="large-6 medium-6 small-6 columns">
           <div id="icon-box">
-            <div class="icon" id="icon-web"><%= render 'iconweb' %></div>
+            <div id="icon-web"><%= render 'iconweb' %></div>
             <div class="icon" id="dog">
               <%= render 'dog' %>
               <div style="display:none">Hi, I'm the dog icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="couch">
               <%= render 'couch' %>
               <div style="display:none">Hi, I'm the couch icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="family">
               <%= render 'family' %>
               <div style="display:none">Hi, I'm the family icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+
             </div>
             <div class="icon" id="computer">
               <%= render 'computer' %>
               <div style="display:none">Hi, I'm the computer icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="wifi">
               <%= render 'wifi' %>
               <div style="display:none">Hi, I'm the wifi icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="parking">
               <%= render 'parking' %>
               <div style="display:none">Hi, I'm the parking icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="exit">
               <%= render 'exit' %>
               <div style="display:none">Hi, I'm the exit icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="help-desk">
               <%= render 'helpdesk' %>
               <div style="display:none">Hi, I'm the help desk icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
           </div>
           <div id="icon-pop-up" style="display: none">
             <div id="icon-description"></div>
             <div id="choice-row">
               <div id="yea">
-                <%= render 'yes' %>
+                <%= render 'yea' %>
               </div>
               <div id="nah">
                 <%= render 'nah' %>
@@ -353,8 +362,6 @@
 <!-- end parking lot -->
 
 <!-- END SCENES -->
-
-
 
 
 

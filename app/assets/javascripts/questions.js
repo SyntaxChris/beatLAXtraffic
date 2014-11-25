@@ -44,7 +44,6 @@ $(document).ready(function(){
     		$("#timer-question-1").css("fill", "#008AE8");
  		}
  	);
-
  	$("#timer-question-label-2").hover(
 		function () {
 			$("#timer-question-label-2").css('cursor','pointer');
@@ -54,7 +53,6 @@ $(document).ready(function(){
     		$("#timer-question-2").css("fill", "#1BB9EF");
  		}
  	);
-
  	$("#timer-question-label-3").hover(
 		function () {
 			$("#timer-question-label-3").css('cursor','pointer');
@@ -64,7 +62,6 @@ $(document).ready(function(){
     		$("#timer-question-3").css("fill", "#079BED");
  		}
  	);
-
  	$("#timer-question-label-4").hover(
 		function () {
 			$("#timer-question-label-4").css('cursor','pointer');
@@ -77,32 +74,58 @@ $(document).ready(function(){
  	// END TIMER QUESTIONS	
 
  	// ICON QUESTIONS
- 	$(".icon").one( "click", function() {
- 		var iconChosen = $(this).last();
+ 	$(".icon").click(function() {
+ 		var iconChosen = $(this)
  		var description = iconChosen.text();
+ 		var removeBind = function(){
+ 			$( "#yea").unbind( "click" );
+			$( "#nah").unbind( "click" );
+ 		};
 
-		$( "#icon-pop-up").show();
-		$( "#icon-description").html(description);
-		$("#yea").one( "click",function(){
+		$("#icon-description").html(description);
+
+		$("#icon-pop-up").fadeIn();
+
+		$("#yea").click(function(){
 			if ($("#holder-1").children().attr("class") !== "icon") {
 				iconChosen.clone().appendTo("#holder-1");
-				$( "#icon-pop-up").hide();
+				$( "#icon-pop-up").fadeOut();
+				$("#holder-1").children().children(".remove-icon").fadeIn();
 			}
 			else if ($("#holder-2").children().attr("class") !== "icon") {
 	            iconChosen.clone().appendTo("#holder-2");
-	            $( "#icon-pop-up").hide();
+	            $( "#icon-pop-up").fadeOut();
+	            $("#holder-2").children().children(".remove-icon").fadeIn();
 			}
 			else if ($("#holder-3").children().attr("class") !== "icon") {
 	            iconChosen.clone().appendTo("#holder-3");
-	            $( "#icon-pop-up").hide();
-	            $( ".submit-row" ).show();
+	            $( "#icon-pop-up").fadeOut();
+	            $( ".submit-row" ).fadeIn();
+	            $("#holder-3").children().children(".remove-icon").fadeIn();
 			}
+			// Remove listners.
+			removeBind();
 		});
 
 		$("#nah").click(function(){
-			$( "#icon-pop-up").hide();
+			$( "#icon-pop-up").fadeOut();
+			// Remove listeners.
+			removeBind();
 		});
 	});
+
+	$("#holder-1").click(function(){
+		$(this).empty();
+	});
+
+	$("#holder-2").click(function(){
+		$(this).empty();
+	});
+
+	$("#holder-3").click(function(){
+		$(this).empty();
+	});
+
  	// END ICON QUESTIONS
 });
 

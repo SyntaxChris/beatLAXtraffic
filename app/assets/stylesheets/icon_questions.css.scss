@@ -53,6 +53,14 @@
 		width: 257px;
 		bottom: 115px;
 		left: 82px;
+		.remove-icon {
+			cursor: pointer;
+			position: relative;
+			height: 30px;
+			width: 30px;
+			top: -90px;
+			left: 60px;
+		}
 		#holder-1 {	
 			display: inline-block;
 			height: 76px;
@@ -108,6 +116,11 @@
 		margin-right: auto;
 		margin-left: auto;
 	}
+	.remove-icon {
+		position: relative;
+		top: -90px;
+		left: 60px;
+	}
 	#dog {
 		position: absolute;
 		top: 0;
@@ -149,11 +162,11 @@
 
 #icon-pop-up {
 	position: absolute; 
-	top: 50px; 
-	left: 16%; 
+	top: 0px; 
+	left: 21%; 
 	border-radius: 20px; 
-	height: 200px; 
-	width: 350px; 
+	height: 300px; 
+	width: 300px; 
 	background-color: white;
 	#icon-description {
 		width: 300px;
@@ -168,7 +181,7 @@
 		width: 200px;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 30px;
+		margin-top: 60px;
 		#yea {
 			cursor: pointer;
 			display: inline-block;
