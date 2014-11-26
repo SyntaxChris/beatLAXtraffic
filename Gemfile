@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'angular-rails-templates'
-gem 'bower-rails'
+gem 'angularjs-rails'
+gem "jasmine", github: "pivotal/jasmine-gem"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'

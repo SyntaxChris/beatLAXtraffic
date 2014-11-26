@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="lawaApp">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +11,7 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <body style="background-color: #98E0CA"><!-- change background color here -->
+  <body style="background-color: #98E0CA" ng-controller="NodeCtrl"><!-- change background color here -->
     <%= render 'example/clouds' %>
     <%= render 'example/middleplane' %>
     <%= render 'example/farplane' %>
