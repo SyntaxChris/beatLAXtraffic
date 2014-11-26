@@ -207,14 +207,241 @@
 	}
 }
 
-
-@media screen and (max-width: 925px) and (min-width: 0px) {
+@media screen and (max-width: 640px) and (min-width: 0px) {
 	#icons-large-screen {
 		display: none;
 	}
 	#icons-small-screen {
 		display: block;
 	}
+
+	#icon-web {
+		height: 250px;
+		width: 250px;
+		margin-left: auto;
+		margin-right: auto;
+		svg {
+			height: 250px;
+			width: 250px;
+		}
+	}
+
+	.icon {
+		height: 60px;
+		width: 60px;
+		svg {
+			height: 60px;
+			width: 60px;
+		}
+	}
+
+	#holder-and-description-row {
+		width: 280px; 
+		height: 110px;
+		margin-top: 20px;
+		margin-left: auto;
+		margin-bottom: 5px; 
+		margin-right: auto;
+		background-color: white;
+		border-radius: 20px;
+		padding-top: 10px;
+		#icon-holder-description {
+			width: 280px;
+			margin-left: auto;
+			margin-right: auto;
+			color: #78D2EA;
+			text-align: center;
+			font-size: 20px;
+		}
+		#circle-1 {
+			position: relative;
+			height: 55px;
+			width: 55px;
+			bottom: 7px;
+			right: 10px;
+			padding-top: 13px;
+			padding-left: 17px;
+			margin-top: 12px;
+			margin-left: 22px;
+			margin-right: 40px;
+			border-radius: 100%;
+			border: 2px dotted #78D2EA;
+			color: #78D2EA;
+			font-size: 35px;
+			div#1.icon-holder{
+				margin-left: 20px;
+			}
+		}
+		#circle-2 {
+			position: relative;
+			bottom: 62px;
+			left: 115px;
+			padding-top: 13px;
+			padding-left: 17px;
+			height: 55px;
+			width: 55px;
+			margin-right: 35px;
+			border-radius: 100%;
+			border: 2px dotted #78D2EA;
+			color: #78D2EA;
+			font-size: 35px;
+		}
+		#circle-3 {
+			position: relative;
+			bottom: 117px;
+			left: 212px;
+			padding-top: 13px;
+			padding-left: 17px;
+			height: 55px;
+			width: 55px;
+			border-radius: 100%;
+			border: 2px dotted #78D2EA;
+			color: #78D2EA;
+			font-size: 35px;
+		}
+		// #holder-1 {	
+		// 	display: inline-block;
+		// 	height: 76px;
+		// 	width: 76px;
+		// 	margin-right: 10px;
+		// 	padding: 0;
+		// }
+		// #holder-2 {
+		// 	display: inline-block;
+		// 	height: 76px;
+		// 	width: 76px;
+		// 	margin-right: 9px;
+		// }
+		// #holder-3 {
+		// 	display: inline-block;
+		// 	height: 76px;
+		// 	width: 76px;
+		// }
+	}
+	#icon-box-small {
+		display: block;
+		width: 300px; 
+		height: 300px;
+		margin-left: auto; 
+		margin-right: auto;
+		#dog {
+			width: 76px;
+			height: 76px;
+			position: relative;
+			bottom: 248px;
+			left: 20px;
+		}
+		#couch {
+			width: 76px;
+			height: 76px;
+			position: relative;
+			bottom: 325px;
+			left: 123px;
+		}
+		#family {
+			width: 76px;
+			height: 76px;
+			position: relative;
+			bottom: 401px;
+			left: 220px;
+		}
+		#computer {
+			width: 76px;
+			height: 76px;
+			position: relative;
+			bottom: 385px;
+			left: 20px;
+		}
+		#wifi {
+			width: 76px;
+			height: 76px;
+			position: relative;
+			bottom: 459px;
+			left: 220px;
+		}
+		#parking {
+			width: 76px;
+			height: 76px;
+			position: relative;
+			bottom: 445px;
+			left: 20px;
+		}
+		#exit {
+			width: 76px;
+			height: 76px;
+			position: relative;
+			bottom: 521px;
+			left: 122px;
+		}
+		#help-desk {
+			width: 76px;
+			height: 76px;
+			position: relative;
+			bottom: 597px;
+			left: 220px;
+		}
+		
+	}
+
+	#icon-pop-up-small {
+		position: absolute; 
+		top: 230px; 
+		margin-left: auto;
+		margin-right: auto; 
+		border-radius: 40px; 
+		height: 285px; 
+		width: 300px; 
+		background-color: white;
+		opacity: 0.9;
+		#icon-description {
+			width: 300px;
+			text-align: center;
+			color: #78D2EA;
+			font-size: 20px;
+			margin-top: 25px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		#choice-row {
+			width: 200px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 60px;
+			#yea {
+				cursor: pointer;
+				display: inline-block;
+				width: 76px;
+				height: 76px;
+				margin-right: 43px;
+			}
+			#nah {
+				cursor: pointer;
+				display: inline-block;
+				width: 76px;
+				height: 76px;
+				border-radius: 100%;
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width: 925px) and (min-width: 641px) {
+	#icons-large-screen {
+		display: none;
+	}
+	#icons-small-screen {
+		display: block;
+	}
+
+	// .icon {
+	// 	height: 50px;
+	// 	width: 50px;
+	// 	svg {
+	// 		height: 50px;
+	// 		width: 50px;
+	// 	}
+	// }
 
 	#holder-and-description-row {
 		width: 300px; 
