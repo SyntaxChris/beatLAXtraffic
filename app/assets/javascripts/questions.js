@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$( '#parking-lot' ).show();
 	// TOGGLE ALL
 	var clicks = 0;
 	$( "#toggle-questions" ).click(function() {
@@ -9,6 +10,7 @@ $(document).ready(function(){
 	  		$( "#tile-questions" ).show();
 	  		$( "#clock-questions" ).hide();
 	  		$( "#icon-questions" ).hide();
+	  		$( "#spinner-questions").hide();
   		}
   		else if (clicks === 2) {
   			$( "#tile-questions" ).hide();
@@ -18,6 +20,11 @@ $(document).ready(function(){
   			$( "#clock-questions" ).hide();
   			$( '#parking-lot' ).hide();
   			$( "#icon-questions" ).show();
+  		}
+  		else if (clicks === 4) {
+  			$( '#parking-lot' ).show();
+  			$( "#icon-questions" ).hide();
+  			$( "#spinner-questions" ).show();
   			clicks = 0
   		}
 	});
@@ -168,6 +175,48 @@ $(document).ready(function(){
 	});
 
  	// END ICON QUESTIONS
+
+
+ 	// SPINNER QUESTIONS
+ 	$('#spin-button').click(function(){
+	 	if (Math.floor(Math.random()*2) === 1){
+	 		$("#wheel").addClass("full");
+		 	setTimeout(
+		 		function(){
+		   			$("#full").css("fill", "red");
+		   			$("#spin-button").hide();
+		   			$("#lines").fadeIn();
+		   			$("#cars").fadeIn();
+		   			$("#try-again-button").show();
+		  		}, 6000
+		  	);
+	 	}
+	 	else {
+	 		$("#wheel").addClass("not-full");
+	 		setTimeout(
+		 		function(){
+		 			$("#chance-time").hide();
+		 			$("#parking-congrats").show();
+		 			$("#spin-button").hide();
+		 			$("#spinner-components").hide();
+		 			$("#parking-trophy").fadeIn();
+		   			$("#not-full").css("fill", "red");
+		   			$("#lines").fadeIn();
+		  		}, 6000
+	  		);
+	 	}
+ 	});
+
+ 	$("#try-again-button").click(function(){
+ 		$(this).hide();
+ 		$("#lines").hide();
+ 		$("#cars").hide();
+ 		$("#spin-button").show();
+ 		$("#wheel").removeClass("full");
+ 		$("#full").css("fill", "#ECF0F1");
+ 	});
+
+ 	// END SPINNER QUESTIONS
 });
 
 
