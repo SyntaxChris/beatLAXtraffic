@@ -233,7 +233,7 @@
 
 
     <!-- icon questions -->
-    <div id="icon-questions">
+    <div id="icon-questions" style="display: none">
       <div class="row" id="icons-large-screen" style="margin-top: 90px;">
         <div class="large-6 medium-6 small-6 columns">
           <div id="drop-box">
@@ -398,6 +398,47 @@
     </div>
     <!-- end icon questions -->
 
+
+    <div id="spinner-questions">
+      <div id="chance-time">
+        <h3 style="color: white; text-align: center">Chance time</h3>
+        <h5 style="color: white; text-align: center">You arrive at the parking lot and<br>see that the parking log is...</h5>
+      </div>
+
+      <div id="parking-congrats" style="display:none; margin-bottom: 34px;">
+        <h3 style="color: white; text-align: center">Congratulations!</h3>
+        <h5 style="color: white; text-align: center">You got a parking spot</h5>
+      </div>
+      
+      <div id="spin-button">
+        <div id="spin">Spin</div>
+      </div>
+      <div id="try-again-button" style="display: none">
+        <div id="try-again">Try again?</div>
+      </div>
+      <div id="spinner-components">
+        <div id="wheel-pointer">
+          <%= render 'wheelPointer' %>
+        </div>
+        <div id="wheel">
+          <%= render 'wheel' %>
+        </div>
+        <div id="parking-logo">
+          <%= render 'parkingLogo' %>
+        </div>
+      </div>
+      <div id="parking-trophy" style="display: none">
+        <%= render 'parkingTrophy' %>
+      </div>
+      <div id="continue-button">
+        <div id="continue">Continue</div>
+      </div>
+    </div>
+
+
+
+
+
   </div>
 </div>
 <!-- END QUESTION FORMAT -->
@@ -410,8 +451,12 @@
 
 <!-- parking lot -->
 <div id="parking-lot" style="display: none">
-  <%= render 'lines' %>
-  <%= render 'cars' %>
+  <div id="lines" style="display:none">
+    <%= render 'lines' %>
+  </div>
+  <div id="cars" style="display: none">
+    <%= render 'cars' %>
+  </div>
 </div>
 <!-- end parking lot -->
 
@@ -495,6 +540,7 @@
 <!-- DATA PASSED FROM FRAMEWORKS -->
 <div id="plane-progress" data-plane-progress=100></div>
 <div id="timer-progress" data-timer-progress=></div>
+<div id="spinner-chance" data-chance=<%= rand(2) %>></div>
 <!-- END DATA PASSED FROM FRAMEWORKS -->
 
 

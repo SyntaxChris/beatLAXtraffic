@@ -1,0 +1,101 @@
+#spin-button {
+	cursor: pointer;
+	height: 40px;
+	width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	background-color: red;
+	#spin {
+		padding: 8px 0 0 32px;
+	}
+}
+
+#try-again-button {
+	cursor: pointer;
+	height: 40px;
+	width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	background-color: red;
+	#try-again {
+		padding: 7px 0 0 14px;
+	}
+}
+
+#spin-button::hover {
+	opacity: 0.5;
+}
+
+#wheel {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 120px;
+	bottom: 150px;
+	height: 300px;
+	width: 300px;
+
+}
+
+#wheel-pointer {
+	position: relative;
+	z-index: 1;
+	margin-left: auto;
+	margin-right: auto;
+	top: 20px;
+	height: 60px;
+	width: 45px;
+}
+
+#parking-logo {
+	position: relative;
+	z-index: 1;
+	margin-left: auto;
+	margin-right: auto;
+
+	bottom: 322px;
+	height: 45px;
+	width: 45px;
+}
+
+#parking-trophy {
+	width: 200px;
+	height: 210px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#continue-button {
+	cursor: pointer;
+	height: 40px;
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	background-color: red;
+	#continue {
+		padding: 8px 0 0 42px;
+	}
+}
+
+.full {
+	-webkit-animation: lot-full 6s;
+	-webkit-animation-fill-mode: forwards;
+}
+
+.not-full {
+	-webkit-animation: lot-not-full 6s;
+	-webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes lot-full {
+    0%{ -webkit-transform: rotate(0deg);}
+    100%{ -webkit-transform: rotate(1642deg);}
+}
+
+@-webkit-keyframes lot-not-full {
+    0%{ -webkit-transform: rotate(0deg);}
+    100%{ -webkit-transform: rotate(1597deg);}
+}
