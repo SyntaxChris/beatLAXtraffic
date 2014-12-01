@@ -409,12 +409,17 @@
         <h3 style="color: white; text-align: center">Congratulations!</h3>
         <h5 style="color: white; text-align: center">You got a parking spot</h5>
       </div>
+      <div id="try-again" style="display:none">
+        <h3 style="color: white; text-align: center; margin-bottom: 40px">Try again?</h3>
+        <div id="yup-spinner"><%= render 'yea' %></div>
+        <div id="nope-spinner"><%= render 'nah' %></div>
+      </div>
       
       <div id="spin-button">
         <div id="spin">Spin</div>
       </div>
-      <div id="try-again-button" style="display: none">
-        <div id="try-again">Try again?</div>
+      <div id="try-again-buttons" style="display: none">
+       
       </div>
       <div id="spinner-components">
         <div id="wheel-pointer">
@@ -434,10 +439,6 @@
         <div id="continue">Continue</div>
       </div>
     </div>
-
-
-
-
 
   </div>
 </div>
