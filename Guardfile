@@ -41,7 +41,6 @@ guard :rspec, cmd: 'bundle exec rspec --format doc' do
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
 
-
 guard 'livereload' do
   watch(%r{app/views/.+\.(erb|haml|slim)$})
   watch(%r{app/helpers/.+\.rb})
@@ -50,3 +49,10 @@ guard 'livereload' do
   # Rails Assets Pipeline
   watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
 end
+
+## guard :jasmine, server: :jasmine_gem, port: 8888, server_timeout: 10, timeout: 10 do
+##   watch(%r{spec/javascripts/spec\.(js\.coffee|js|coffee)$}) { 'spec/javascripts' }
+##   watch(%r{spec/javascripts/.+_spec\.(js\.coffee|js|coffee)$})
+##   watch(%r{spec/javascripts/fixtures/.+$})
+##   watch(%r{app/assets/javascripts/(.+?)\.(js\.coffee|js|coffee)(?:\.\w+)*$}) { |m| "spec/javascripts/#{ m[1] }_spec.#{ m[2] }" }
+## end
