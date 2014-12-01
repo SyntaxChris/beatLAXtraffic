@@ -1,30 +1,36 @@
 $(document).ready(function(){
-	$( '#parking-lot' ).show();
 	// TOGGLE ALL
 	var clicks = 0;
 	$( "#toggle-questions" ).click(function() {
 		clicks += 1;
 		$("#clicks").text(clicks);
   		if (clicks === 1) {
-  			$( '#parking-lot' ).show();
+  			$( "#strategy-questions").hide();
+	  		$( "#lines" ).show();
+	  		$( "#cars" ).show();
 	  		$( "#tile-questions" ).show();
-	  		$( "#clock-questions" ).hide();
-	  		$( "#icon-questions" ).hide();
-	  		$( "#spinner-questions").hide();
   		}
   		else if (clicks === 2) {
   			$( "#tile-questions" ).hide();
   			$( "#clock-questions" ).show();
   		}
   		else if (clicks === 3) {
-  			$( "#clock-questions" ).hide();
-  			$( '#parking-lot' ).hide();
+  			$( "#lines" ).hide();
+	  		$( "#cars" ).hide();
+	  		$( "#clock-questions" ).hide();
   			$( "#icon-questions" ).show();
   		}
   		else if (clicks === 4) {
-  			$( '#parking-lot' ).show();
   			$( "#icon-questions" ).hide();
+  			$( "#lines" ).show();
+	  		$( "#cars" ).show();
   			$( "#spinner-questions" ).show();
+  		}
+  		else if (clicks === 5) {
+  			$( "#lines" ).hide();
+	  		$( "#cars" ).hide();
+  			$( "#spinner-questions" ).hide();
+  			$( "#strategy-questions").show();
   			clicks = 0
   		}
 	});
@@ -218,8 +224,25 @@ $(document).ready(function(){
  		$("#wheel").removeClass("full");
  		$("#full").css("fill", "#ECF0F1");
  	});
-
  	// END SPINNER QUESTIONS
+
+ 	// STRATEGY QUESTIONS
+ 	var personToggle = 0;
+ 	$("#person").click(function(){
+ 		personToggle += 1;
+
+ 		if (personToggle === 1) {
+ 			$("#guy-background").css("fill", "#98CC2D");
+ 			$("#shirt").css("fill", "#FBDD61");
+ 		};
+
+ 		if (personToggle === 2) {
+			$("#guy-background").css("fill", "#CCCCCC");
+			personToggle = 0;
+			$("#shirt").css("fill", "#A3A3A3");
+ 		};
+ 	});
+ 	// END STRATEGY QUESTIONS
 });
 
 
