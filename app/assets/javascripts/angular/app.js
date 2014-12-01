@@ -1,11 +1,11 @@
-this.app = angular.module('app', ['templates']);
+var lawaApp = angular.module('lawaApp', []);
 
-this.app.config([
+lawaApp.config([
   '$httpProvider', function($httpProvider) {
     return $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
   }
 ]);
 
-this.app.run(function() {
+lawaApp.run(function() {
   return console.log('angular app running');
 });

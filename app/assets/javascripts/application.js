@@ -17,7 +17,6 @@
 //= require 'dashboard'
 //= require 'questions'
 //= require angular
-//= require angular-rails-templates
 
 //= require angular/app
 //= require_tree ./angular/templates

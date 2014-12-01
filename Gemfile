@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'angular-rails-templates'
-gem 'bower-rails'
+gem 'angularjs-rails'
+gem "jasmine", github: "pivotal/jasmine-gem"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
@@ -46,10 +46,16 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0.0'
   gem 'guard'
-  gem 'guard-rspec', require: false
   gem 'pry'
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'jasmine-headless-webkit'
+  gem 'guard-jasmine'
+  gem 'guard-jasmine-headless-webkit'
+  gem 'guard-rspec', require: false
   gem 'database_cleaner'
   gem 'simplecov', '~> 0.9.0', :require => false
   gem 'factory_girl_rails'
