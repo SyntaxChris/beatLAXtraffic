@@ -59,15 +59,21 @@ describe Node do
       let!(:decision_2) {
         create(:decision, decision_point_id: decision_point.id, decision: "that way")
       }
-      let!(:destination_node) { create(:node, is_decision_point: false, decision_id: decision_2.id)}
+      let!(:destination_node) { create(:node, is_decision_point: false, decision_id: decision_2.id, nickname: "you found me")}
 
       it "gets all nodes and their associated question/decision data" do
         all_nodes = Node.all_with_content
+        q_node = all_nodes.first
+        d_node = all_nodes.second
 
-        binding.pry
-        expect(all.first["question"]).to eq "what?"
-        expect(all.first["answers"]).to be_a(Array)
-        expect(all.first["answers"].first).to eq "this"
+        expect(q_node.question.question).to eq "what?"
+        expect(q_node.question.answers.count).to eq 3
+        expect(q_node.question.answers.first.answer).to eq "this"
+
+        expect(d_node.decision_point.situation).to eq "where to?"
+        expect(d_node.decision_point.decisions.count).to eq 2
+        expect(d_node.decision_point.decisions.first.decision).to eq "this way"
+        expect(d_node.decision_point.decisions.second.destination_node.nickname).to eq "you found me"
       end
     end
   end

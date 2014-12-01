@@ -6,7 +6,10 @@ class Node < ActiveRecord::Base
   belongs_to :decision
 
   def Node.all_with_content
-    # all_nodes = Node.includes(:question, {decision_point: :decisions})
-
+    all_nodes = Node
+      .includes(
+        { question: :answers },
+        { decision_point: { decisions: :destination_node } }
+      )
   end
 end

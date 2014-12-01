@@ -17,7 +17,7 @@ RSpec.describe Decision, :type => :model do
 
   describe "Associations" do
     let!(:decision) { FactoryGirl.create(:decision) }
-    let(:destination_node) { create(:node, decision_id: decision.id) }
+    let!(:destination_node) { create(:node, decision_id: decision.id) }
 
     it "belongs to a decision point" do
       expect(decision).to belong_to(:decision_point)
@@ -28,7 +28,6 @@ RSpec.describe Decision, :type => :model do
     end
 
     it "has a destination node called 'destination_node'" do
-      binding.pry
       expect(decision.destination_node).to be_a(Node)
     end
   end
