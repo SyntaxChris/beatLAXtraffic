@@ -15,5 +15,10 @@
 /log/*.log
 /tmp
 
+# Ignore ruby-version and ruby-gemset
+/.ruby-version
+/.ruby-gemset
+/.powenv
+
 # Ignore user-speciic files
 /config/database.yml
