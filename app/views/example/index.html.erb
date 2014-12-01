@@ -440,6 +440,64 @@
       </div>
     </div>
 
+    <div id="mission-intro">
+      <%= render 'example/clouds' %>
+      <div id="envelope">
+        <%= render 'envelope' %>
+      </div>
+      <div class="content">
+        <h4>Your Mission</h4>
+        <p>
+          You are driving and need to pick up the following at LAX
+        </p>
+
+        <div id="mission-selection-box">
+          <div class="top-content">
+            <div class="chat-bubble">
+              Select a passenger to pick up
+            </div>
+
+            <div id="mission-carousel">
+              <div class="nav-left">
+                
+              </div>
+              <div class="nav-right">
+                
+              </div>
+
+              <div class="left">
+                <%= render 'greyguy' %>
+                <div class="blurb">
+                  <span>Something</span>
+                </div>
+              </div>
+              
+              <div class="center">
+                <%= render 'suitguy' %>
+                <div class="blurb">
+                  <span class="number">1</span> <span>Clients</span>
+                </div>
+              </div>
+
+              <div class="right">
+                <%= render 'greyguy' %>
+                <div class="blurb">
+                  <span>Something</span>
+                </div>
+              </div>
+            </div>
+
+            <div id="bottom-info">
+              <span>with</span> <span class="number">2</span> <span>Large Suitcases</span>
+            </div>
+          </div>
+          <button id="accept-mission-btn">
+            Accept Mission
+          </button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 <!-- END QUESTION FORMAT -->

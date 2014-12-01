@@ -16,6 +16,7 @@
  *= require 'parking_lot'
  *= require 'tiles'
  *= require 'timer_questions'
+ *= require 'mission_intro'
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
