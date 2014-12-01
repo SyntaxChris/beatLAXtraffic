@@ -11,16 +11,27 @@
 	}
 }
 
-#try-again-button {
-	cursor: pointer;
-	height: 40px;
-	width: 100px;
+#try-again {
+	width: 240px;
 	margin-left: auto;
 	margin-right: auto;
-	color: white;
-	background-color: red;
-	#try-again {
-		padding: 7px 0 0 14px;
+	#yup-spinner{
+		cursor: pointer;
+		display: inline-block;
+		margin-left: 30px;
+		margin-right: 60px;
+		svg {
+			height: 60px;
+			width: 60px;
+		}
+	}
+	#nope-spinner {
+		cursor: pointer;
+		display: inline-block;
+		svg {
+			height: 60px;
+			width: 60px;
+		}
 	}
 }
 
