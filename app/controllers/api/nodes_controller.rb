@@ -2,8 +2,7 @@ module Api
   class NodesController < ApplicationController
 
     def index
-      nodes = Node.all_with_content
-      render json: nodes, status: 200
+      @nodes = Node.all_with_content
     end
 
     def show
