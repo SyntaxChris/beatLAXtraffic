@@ -187,7 +187,8 @@ $(document).ready(function(){
 		   			$("#spin-button").hide();
 		   			$("#lines").fadeIn();
 		   			$("#cars").fadeIn();
-		   			$("#try-again-button").show();
+		   			$("#chance-time").hide();
+		   			$("#try-again").show();
 		  		}, 6000
 		  	);
 	 	}
@@ -196,8 +197,9 @@ $(document).ready(function(){
 	 		setTimeout(
 		 		function(){
 		 			$("#chance-time").hide();
-		 			$("#parking-congrats").show();
 		 			$("#spin-button").hide();
+		 			$("#try-again").hide();
+		 			$("#parking-congrats").show();
 		 			$("#spinner-components").hide();
 		 			$("#parking-trophy").fadeIn();
 		   			$("#not-full").css("fill", "red");
@@ -207,10 +209,11 @@ $(document).ready(function(){
 	 	}
  	});
 
- 	$("#try-again-button").click(function(){
- 		$(this).hide();
+ 	$("#yup-spinner").click(function(){
+ 		$("#try-again").hide();
  		$("#lines").hide();
  		$("#cars").hide();
+ 		$("#chance-time").show();
  		$("#spin-button").show();
  		$("#wheel").removeClass("full");
  		$("#full").css("fill", "#ECF0F1");
