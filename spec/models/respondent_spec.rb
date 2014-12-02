@@ -12,7 +12,8 @@ describe Respondent do
         flight_code: "JFK",
         passenger_count: 2,
         luggage_count: 4,
-        who_picking_up: "Boss"
+        who_picking_up: "Boss",
+        times_circled: 3
       )
     }
 
@@ -26,6 +27,10 @@ describe Respondent do
 
     it "has time elapsed" do
       expect(respondent.time_elapsed).to eq 15
+    end
+
+    it "has a times circled" do
+      expect(respondent.times_circled).to eq 3
     end
 
     it "has a current node location" do
@@ -55,5 +60,14 @@ describe Respondent do
     it "has many responses" do
       expect(respondent).to have_many(:responses)
     end
+  end
+
+  describe "Features" do
+    let(:respondent) { FactoryGirl.build(:respondent) }
+
+    pending "increases its times_circled counter at appropriate times "\
+            "(likely upon API call for recording a response and diong whatever "\
+            "pre/post-work is needed for that.)"
+
   end
 end
