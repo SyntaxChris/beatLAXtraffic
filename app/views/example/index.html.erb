@@ -24,11 +24,11 @@
 <!-- <div id="logger"></div> -->
 
 
-<!-- QUESTIONS FORMAT -->
+<!-- QUESTION FORMATS -->
 <div class="row">
   <div class="large-12 medium-12 small-12 columns">
 
-    <!-- tile questions -->
+    <!-- 1. TILE questions -->
     <div id="tile-questions"  style="display: none">
       <!-- questions header -->
       <div class="show-for-landscape">
@@ -207,11 +207,11 @@
       </div>
     <!-- end portrait -->
     </div>
-    <!-- end tile questions -->
+    <!-- end TILE questions -->
 
 
 
-    <!-- TIMER questions -->
+    <!-- 2. TIMER questions -->
     <div id="clock-questions" style="display: none">
       <!-- questions header -->
       <div class="row" style="text-align:center">
@@ -228,11 +228,11 @@
         <!-- <input name="Submit" type="submit" class="button"> -->
       </div>
     </div>
-    <!-- end clock questions -->
+    <!-- end TIMER questions -->
 
 
 
-    <!-- icon questions -->
+    <!-- 3. ICON questions -->
     <div id="icon-questions" style="display: none">
       <div class="row" id="icons-large-screen" style="margin-top: 90px;">
         <div class="large-6 medium-6 small-6 columns">
@@ -396,10 +396,10 @@
         </div>
       </div>
     </div>
-    <!-- end icon questions -->
+    <!-- end ICON questions -->
 
-
-    <div id="spinner-questions">
+    <!-- 4. SPINNER questions -->
+    <div id="spinner-questions" style="display:none">
       <div id="chance-time">
         <h3 style="color: white; text-align: center">Chance time</h3>
         <h5 style="color: white; text-align: center">You arrive at the parking lot and<br>see that the parking log is...</h5>
@@ -439,10 +439,90 @@
         <div id="continue">Continue</div>
       </div>
     </div>
+    <!-- end SPINNER questions -->
+
+
+    <!-- 5. STRATEGY questions -->
+    <div id="strategy-questions">
+
+      <div id="person">
+        <div class="bubble-icon-container">
+          <%= render 'guy' %>
+        </div>
+        <div class="checkmark">
+          <div id="unchecked">
+            <%= render 'unchecked' %>
+          </div>
+          <div id="checked" style="display:none">
+            <%= render 'checkedPerson' %>
+          </div>
+        </div>
+      </div>
+
+      <div id="stop-watch">
+        <div class="bubble-icon-container">
+          <%= render 'strategyStopWatch' %>
+        </div>
+        <div class="checkmark">
+          <div id="uncheckedStop">
+            <%= render 'unchecked' %>
+          </div>
+          <div id="checkedStop" style="display:none">
+            <%= render 'checkedStopWatch' %>
+          </div>
+        </div>
+      </div>
+
+      <div id="car-parking">
+        <div class="bubble-icon-container">
+          <div id="grayed">
+            <%= render 'grayParking' %>
+          </div>
+          <div id="colored" style="display:none">
+            <%= render 'coloredParking' %>
+          </div>
+          
+        </div>
+        <div class="checkmark">
+          <div id="uncheckedParking">
+            <%= render 'unchecked' %>
+          </div>
+          <div id="checkedParking" style="display:none">
+            <%= render 'checkedParking' %>
+          </div>
+        </div>
+      </div>
+
+      <div id="hassle">
+        <div class="bubble-icon-container">
+          <%= render 'hassle' %>
+        </div>
+        <div class="checkmark">
+          <div id="uncheckedHassle">
+            <%= render 'unchecked' %>
+          </div>
+          <div id="checkedHassle" style="display:none">
+            <%= render 'checkedHassle' %>
+          </div>
+        </div>
+      </div>
+
+      <div id="other-explain">
+        <div class="bubble-icon-container">
+          <%= render 'guy' %>
+        </div>
+      </div>
+      <div id="boxster">
+        <%= render 'boxster' %>
+      </div> 
+
+    </div>
+    <!-- end STRATEGY questions -->
+
 
   </div>
 </div>
-<!-- END QUESTION FORMAT -->
+<!-- END QUESTION FORMATS -->
 
 
 
@@ -451,7 +531,7 @@
 <!-- SCENES -->
 
 <!-- parking lot -->
-<div id="parking-lot" style="display: none">
+<div id="parking-lot">
   <div id="lines" style="display:none">
     <%= render 'lines' %>
   </div>
