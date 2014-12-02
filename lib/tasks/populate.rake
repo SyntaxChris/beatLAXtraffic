@@ -23,6 +23,7 @@ namespace :populate do
     clock_v2_type = QuestionType.create(name: "clock-v2")
     table_type = QuestionType.create(name: "table")
     apps_type = QuestionType.create(name: "apps")
+    yes_no_clock_type = QuestionType.create(name: "yes-no-clock")
 
     # create nodes per branch, and questions for nodes, and answers for questions
     #
@@ -155,14 +156,30 @@ namespace :populate do
         b3a5= Answer.create(question_id: b3q.id, answer: "Other (Specify)", icon_name: nil)
 
     dp5 = Node.create(nickname: "DP 5", is_decision_point: true , branch_id: park_and_meet_branch.id)
+      dp5dp = DecisionPoint.create(node_id: dp5.id, situation: "You arrive at the parking garage and find it is...")
+        dp5d1 = Decision.create(decision_point_id: dp5dp.id, decision: "Not Full")
+        dp5d2 = Decision.create(decision_point_id: dp5dp.id, decision: "Full")
 
     dp6 = Node.create(nickname: "DP 6", is_decision_point: true , branch_id: park_and_meet_branch.id)
+      dp6dp = DecisionPoint.create(node_id: dp6.id, situation: "You finally arrive at the lot and the parking lot is full. What do you do next?")
+        dp6d1 = Decision.create(decision_point_id: dp6dp.id, decision: "Wait until a parking spot opens up in the lot")
+        dp6d2 = Decision.create(decision_point_id: dp6dp.id, decision: "Exit parking structure and hope to catch your passenger at the curb")
+        dp6d3 = Decision.create(decision_point_id: dp6dp.id, decision: "Exit terminal area to wait off site until passenger is ready to be picked up at the curb")
+        dp6d4 = Decision.create(decision_point_id: dp6dp.id, decision: "Try to find a spot in another parking structure")
 
     dp10 = Node.create(nickname: "DP 10", is_decision_point: true , branch_id: park_and_meet_branch.id)
+      dp10dp = DecisionPoint.create(node_id: dp10.id, situation: "Do you find parking?")
+        dp10d1 = Decision.create(decision_point_id: dp10dp.id, decision: "Yes")
+        dp10d2 = Decision.create(decision_point_id: dp10dp.id, decision: "No")
 
     b4 = Node.create(nickname: "B 4", is_decision_point: false , branch_id: park_and_meet_branch.id)
+      b4q = Question.create(node_id: b4.id, question: "What is the longest you are willing to look for parking?", question_type_id: clock_v2_type.id)
+        b4a1= Answer.create(question_id: b4q.id, answer: "Set duration...", icon_name: nil)
 
     dp11 = Node.create(nickname: "DP 11", is_decision_point: true , branch_id: park_and_meet_branch.id)
+      dp11dp = DecisionPoint.create(node_id: dp11.id, situation: "You've been looking for XX minutes with no luck. What now?")
+        dp11d1 = Decision.create(decision_point_id: dp11dp.id, decision: "Keep trying")
+        dp11d2 = Decision.create(decision_point_id: dp11dp.id, decision: "Give up on parking")
 
     # hope to catch
     a1 = Node.create(nickname: "A 1", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id)
