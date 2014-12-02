@@ -14,7 +14,7 @@ $(document).ready(function(){
                 if (prevWidth !== curWidth) {
                     $("#logger").text(progressPercentage);
                     if (progressPercentage > 84) {     
-                        $("#timer-alert").attr("class", "timer-alert");
+                        // $("#timer-alert").attr("class", "timer-alert");
                         $("#plane-alert").attr("class", "timer-alert");
                         $('#landing-plane').addClass("land-ze-plane");
                     }
