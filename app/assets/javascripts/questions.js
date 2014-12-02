@@ -228,20 +228,91 @@ $(document).ready(function(){
 
  	// STRATEGY QUESTIONS
  	var personToggle = 0;
+ 	var stopWatchToggle = 0;
+ 	var carParkingToggle = 0;
+ 	var hassleToggle = 0;
+ 	var otherToggle = 0;
+
  	$("#person").click(function(){
  		personToggle += 1;
 
  		if (personToggle === 1) {
  			$("#guy-background").css("fill", "#98CC2D");
  			$("#shirt").css("fill", "#FBDD61");
+ 			$("#unchecked").hide();
+ 			$("#checked").show();
  		};
 
  		if (personToggle === 2) {
 			$("#guy-background").css("fill", "#CCCCCC");
-			personToggle = 0;
 			$("#shirt").css("fill", "#A3A3A3");
+ 			$("#checked").hide();
+ 			$("#unchecked").show();
+ 			personToggle = 0;
  		};
  	});
+
+
+ 	$("#stop-watch").click(function(){
+ 		stopWatchToggle += 1;
+
+ 		if (stopWatchToggle === 1) {
+ 			$("#timer-face").css("fill", "#D05E4B");
+ 			$("#uncheckedStop").hide();
+ 			$("#checkedStop").show();
+ 		};
+
+ 		if (stopWatchToggle === 2) {
+			$("#timer-face").css("fill", "#BCBCBC");
+ 			$("#checkedStop").hide();
+ 			$("#uncheckedStop").show();
+ 			stopWatchToggle = 0;
+ 		};
+ 	});
+
+ 	$("#car-parking").click(function(){
+ 		carParkingToggle += 1;
+
+ 		if (carParkingToggle === 1) {
+ 			$("#grayed").hide();
+ 			$("#colored").show();
+ 			$("#uncheckedParking").hide();
+ 			$("#checkedParking").show();
+ 		};
+
+ 		if (carParkingToggle === 2) {
+ 			$("#colored").hide();
+ 			$("#checkedParking").hide();
+			$("#grayed").show();
+ 			$("#uncheckedParking").show();
+ 			carParkingToggle = 0;
+ 		};
+ 	});
+
+ 	$("#hassle").click(function(){
+ 		hassleToggle += 1;
+
+ 		if (hassleToggle === 1) {
+ 			$("#hassle-background").css("fill", "#DD734E");
+ 			$("#hassle-edge").css("fill", "#DDBD03");
+ 			$("#hassle-face").css("fill", "#F9D43A");
+ 			$("#uncheckedHassle").hide();
+ 			$("#checkedHassle").show();
+ 		};
+
+ 		if (hassleToggle === 2) {
+			$("#hassle-background").css("fill", "#BCBCBC");
+			$("#hassle-edge").css("fill", "#999999");
+			$("#hassle-face").css("fill", "#D8D8D8");
+			$("#checkedHassle").hide();
+ 			$("#uncheckedHassle").show();
+ 			hassleToggle = 0;
+ 		};
+ 	});
+
+ 	// $("#other-explain").click(function(){
+ 		
+ 	// });
  	// END STRATEGY QUESTIONS
 });
 
