@@ -5,12 +5,17 @@ RSpec.describe DecisionPoint, :type => :model do
     let(:decision_point) {
       FactoryGirl.build(
         :decision_point,
-        nickname: "first-decision"
+        nickname: "first-decision",
+        situation: "where to?"
       )
     }
 
     it "has a nickname" do
       expect(decision_point.nickname).to eq "first-decision"
+    end
+
+    it "has a situation" do
+      expect(decision_point.situation).to eq "where to?"
     end
   end
 
