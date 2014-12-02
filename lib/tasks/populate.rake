@@ -25,6 +25,10 @@ namespace :populate do
     apps_type = QuestionType.create(name: "apps")
     yes_no_clock_type = QuestionType.create(name: "yes-no-clock")
     time_type = QuestionType.create(name: "time")
+    custom_1 = QuestionType.create(name: "custom-1")
+    custom_2 = QuestionType.create(name: "custom-2")
+    custom_3 = QuestionType.create(name: "custom-3")
+    custom_4 = QuestionType.create(name: "custom-4")
 
     # create nodes per branch, and questions for nodes, and answers for questions
     #
@@ -234,10 +238,34 @@ namespace :populate do
         e3a2 = Answer.create(question_id: e3q.id, answer: "No", icon_name: nil)
 
     e4 = Node.create(nickname: "E 4", is_decision_point: false , branch_id: ending_questions_branch.id)
+      e4q = Question.create(
+        node_id: e4.id,
+        question: "What was the reason for your last trip to LAX?",
+        question_type_id: custom_1.id
+      )
+        e4a1 = Answer.create(question_id: e4q.id, answer: "Business or business-related travel", icon_name: nil)
+        e4a2 = Answer.create(question_id: e4q.id, answer: "Leisure/vacation/visiting", icon_name: nil)
+        e4a3 = Answer.create(question_id: e4q.id, answer: "Not travelling: Picking-up passenger", icon_name: nil)
+        e4a4 = Answer.create(question_id: e4q.id, answer: "Not travelling: Dropping-off passenger", icon_name: nil)
+        e4a5 = Answer.create(question_id: e4q.id, answer: "Antoher reason (Specify)", icon_name: nil)
 
     e5 = Node.create(nickname: "E 5", is_decision_point: false , branch_id: ending_questions_branch.id)
+      e3q = Question.create(
+        node_id: e3.id,
+        question: "Based on this scenario, we estimated you spent [Calculated Game Time in Minutes] getting your passenger at the airport.\nIs this typical?",
+        question_type_id: time_type.id
+      )
+        e3a1 = Answer.create(question_id: e3q.id, answer: "Yes", icon_name: nil)
+        e3a2 = Answer.create(question_id: e3q.id, answer: "No", icon_name: nil)
 
     e6 = Node.create(nickname: "E 6", is_decision_point: false , branch_id: ending_questions_branch.id)
+      e3q = Question.create(
+        node_id: e3.id,
+        question: "Based on this scenario, we estimated you spent [Calculated Game Time in Minutes] getting your passenger at the airport.\nIs this typical?",
+        question_type_id: time_type.id
+      )
+        e3a1 = Answer.create(question_id: e3q.id, answer: "Yes", icon_name: nil)
+        e3a2 = Answer.create(question_id: e3q.id, answer: "No", icon_name: nil)
 
     e7 = Node.create(nickname: "E 7", is_decision_point: false , branch_id: ending_questions_branch.id)
 
