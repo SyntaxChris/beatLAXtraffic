@@ -24,6 +24,7 @@ namespace :populate do
     table_type = QuestionType.create(name: "table")
     apps_type = QuestionType.create(name: "apps")
     yes_no_clock_type = QuestionType.create(name: "yes-no-clock")
+    time_type = QuestionType.create(name: "time")
 
     # create nodes per branch, and questions for nodes, and answers for questions
     #
@@ -134,7 +135,7 @@ namespace :populate do
     b1 = Node.create(nickname: "B 1", is_decision_point: false , branch_id: park_and_meet_branch.id)
       b1q = Question.create(node_id: b1.id, question: "Why do you choose to park your car? Select all that apply:", question_type_id: table_type.id)
       # ^ this will need alt question text
-        b1a1= Answer.create(question_id: b1q.id, answer: "If convenient parking is available", icon_name: nil)
+        b1a1= Answer.create(question_id: b1q.id, answer: "When convenient parking is available", icon_name: nil)
         b1a2= Answer.create(question_id: b1q.id, answer: "To avoid driving in traffic", icon_name: nil)
         b1a3= Answer.create(question_id: b1q.id, answer: "To meet my passenger in the terminal", icon_name: nil)
         b1a4= Answer.create(question_id: b1q.id, answer: "Other (Specify)", icon_name: nil)
@@ -174,7 +175,7 @@ namespace :populate do
 
     b4 = Node.create(nickname: "B 4", is_decision_point: false , branch_id: park_and_meet_branch.id)
       b4q = Question.create(node_id: b4.id, question: "What is the longest you are willing to look for parking?", question_type_id: clock_v2_type.id)
-        b4a1= Answer.create(question_id: b4q.id, answer: "Set duration...", icon_name: nil)
+        b4a1 = Answer.create(question_id: b4q.id, answer: "Set duration...", icon_name: nil)
 
     dp11 = Node.create(nickname: "DP 11", is_decision_point: true , branch_id: park_and_meet_branch.id)
       dp11dp = DecisionPoint.create(node_id: dp11.id, situation: "You've been looking for XX minutes with no luck. What now?")
@@ -183,19 +184,54 @@ namespace :populate do
 
     # hope to catch
     a1 = Node.create(nickname: "A 1", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id)
+      a1q = Question.create(node_id: a1.id, question: "How well do you think this strategy will work?", question_type_id: thought_bubble_ranking.id)
+        a1a1 = Answer.create(question_id: a1q.id, answer: "Works like a charm every time", icon_name: nil)
+        a1a2 = Answer.create(question_id: a1q.id, answer: "I might have to circle a few times, but it will eventually work", icon_name: nil)
+        a1a3 = Answer.create(question_id: a1q.id, answer: "It;s always bad, but it's better than parking", icon_name: nil)
 
     a2 = Node.create(nickname: "A 2", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id)
+      a2q = Question.create(
+        node_id: a2.id,
+        question: "You're circling and don't see your passenger and think they may be late. How do you check for that information?",
+        question_type_id: apps_type.id
+      )
+        a2a1 = Answer.create(question_id: a2q.id, answer: "Check mobile phone for flight information", icon_name: nil)
+        a2a2 = Answer.create(question_id: a2q.id, answer: "Try to reach passenger", icon_name: nil)
+        a2a3 = Answer.create(question_id: a2q.id, answer: "Park and go inside terminal", icon_name: nil)
 
     dp2 = Node.create(nickname: "DP 2", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id)
+      dp2dp = DecisionPoint.create(node_id: dp2.id, situation: "You're almost at the terminal. Is your passenger there?")
+        dp2d1 = Decision.create(decision_point_id: dp2dp.id, decision: "Yes")
+        dp2d2 = Decision.create(decision_point_id: dp2dp.id, decision: "No")
 
     dp3 = Node.create(nickname: "DP 3", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id)
+      dp3dp = DecisionPoint.create(node_id: dp3.id, situation: "What do you do now?")
+        dp3d1 = Decision.create(decision_point_id: dp3dp.id, decision: "Continue Circling Around the airport")
+        dp3d2 = Decision.create(decision_point_id: dp3dp.id, decision: "Park in the parking structure")
+        dp3d3 = Decision.create(decision_point_id: dp3dp.id, decision: "Leave the airport and wait off site until the passenger is ready to be picked up at the curb ")
 
     # ending questions
     e1 = Node.create(nickname: "E 1", is_decision_point: false , branch_id: ending_questions_branch.id)
+      e1q = Question.create(node_id: e1.id, question: "Passenger Pick Up Success!")
+        e1a1 = Answer.create(question_id: e1q.id, answer: "Next", icon_name: nil)
 
     e2 = Node.create(nickname: "E 2", is_decision_point: false , branch_id: ending_questions_branch.id)
+      e2q = Question.create(
+        node_id: e2.id,
+        question: "Based on this scenario, we estimated you have circled around the terminal [X] times before picking up your passenger.\nIs this typical?",
+        question_type_id: clock_type.id
+      )
+        e2a1 = Answer.create(question_id: e2q.id, answer: "Yes", icon_name: nil)
+        e2a2 = Answer.create(question_id: e2q.id, answer: "No", icon_name: nil)
 
     e3 = Node.create(nickname: "E 3", is_decision_point: false , branch_id: ending_questions_branch.id)
+      e3q = Question.create(
+        node_id: e3.id,
+        question: "Based on this scenario, we estimated you spent [Calculated Game Time in Minutes] getting your passenger at the airport.\nIs this typical?",
+        question_type_id: time_type.id
+      )
+        e3a1 = Answer.create(question_id: e3q.id, answer: "Yes", icon_name: nil)
+        e3a2 = Answer.create(question_id: e3q.id, answer: "No", icon_name: nil)
 
     e4 = Node.create(nickname: "E 4", is_decision_point: false , branch_id: ending_questions_branch.id)
 
