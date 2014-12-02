@@ -20,11 +20,14 @@ namespace :populate do
     signs_type = QuestionType.create(name: "signs")
     clock_type = QuestionType.create(name: "clock")
     coin_flip_type = QuestionType.create(name: "coin-flip")
+    clock_v2_type = QuestionType.create(name: "clock-v2")
 
     # create nodes per branch, and questions for nodes, and answers for questions
     #
     # scenario questions
     # TODO: add icon names for all
+    # TODO: add destination nodes once multi-directional nodes are done
+    # TODO: add question type to DPs
     sq1 = Node.create(nickname: "SQ 1", is_decision_point: false, branch_id: scenario_questions_branch.id)
       sq1q = Question.create(node_id: sq1.id, question: "About how far away from LAX do you live?", question_type_id: nil)
       # ^ needs a question type
@@ -51,7 +54,6 @@ namespace :populate do
     sq35 = Node.create(nickname: "SQ 3.5", is_decision_point: false , branch_id: scenario_questions_branch.id)
       sq35q = Question.create(node_id: sq35.id, question: "Do you have a travel companion with you in the car?", question_type_id: airport_information_type.id)
 
-    # TODO: add question type to DP
     dp1 = Node.create(nickname: "DP 1", is_decision_point: true , branch_id: scenario_questions_branch.id)
       dp1dp = DecisionPoint.create(node_id: dp1.id, situation: "What is your strategy for picking up your passenger?")
         dp1d1 = Decision.create(decision_point_id: dp1dp.id, decision: "Park and meet your passenger inside the terminal")
@@ -95,12 +97,34 @@ namespace :populate do
 
     # wait offsite
     c1 = Node.create(nickname: "C 1", is_decision_point: false , branch_id: wait_offsite_branch.id)
+      c1q = Question.create(node_id: c1.id, question: "Where do you usually wait for your passenger?", question_type_id: signs_type.id)
+        c1a1= Answer.create(question_id: c1q.id, answer: "Cellphone waiting lot", icon_name: nil)
+        c1a2= Answer.create(question_id: c1q.id, answer: "Roadside near the airport", icon_name: nil)
+        c1a3= Answer.create(question_id: c1q.id, answer: "Nearby Store", icon_name: nil)
+        c1a4= Answer.create(question_id: c1q.id, answer: "Nearby Restaurant", icon_name: nil)
 
     c2 = Node.create(nickname: "C 2", is_decision_point: false , branch_id: wait_offsite_branch.id)
+      c2q = Question.create(node_id: c2.id, question: "How long do you expect to wait before driving into the terminal area?", question_type_id: clock_type.id)
+        c2a1= Answer.create(question_id: c2q.id, answer: "Less than 15 minutes", icon_name: nil)
+        c2a2= Answer.create(question_id: c2q.id, answer: "15 - 30 minutes", icon_name: nil)
+        c2a3= Answer.create(question_id: c2q.id, answer: "30 - 60 minutes", icon_name: nil)
+        c2a4= Answer.create(question_id: c2q.id, answer: "60 - 90 minutes", icon_name: nil)
+        c2a4= Answer.create(question_id: c2q.id, answer: "More than 90 minutes", icon_name: nil)
 
-    dp7 = Node.create(nickname: "DP 7", is_decision_point: true , branch_id: wait_offsite_branch.id)
+    dp7a = Node.create(nickname: "DP 7a", is_decision_point: true , branch_id: wait_offsite_branch.id)
+      dp7adp = DecisionPoint.create(node_id: dp7a.id, situation: "Is the passenger late?")
+        dp7ad1 = Decision.create(decision_point_id: dp7adp.id, decision: "Yes")
+        dp7ad2 = Decision.create(decision_point_id: dp7adp.id, decision: "No")
 
-    c4 = Node.create(nickname: "C 4", is_decision_point: false , branch_id: wait_offsite_branch.id)
+    dp7 = Node.create(nickname: "DP 7", is_decision_point: true , branch_id: wait_offsite_branch.id, decision_id: dp7ad1)
+      dp7dp = DecisionPoint.create(node_id: dp7.id, situation: "The passenger is late. What do you do next?")
+        dp7d1 = Decision.create(decision_point_id: dp7dp.id, decision: "Go park in the terminal parking area")
+        dp7d2 = Decision.create(decision_point_id: dp7dp.id, decision: "Hope to catch your passenger at the curb")
+        dp7d3 = Decision.create(decision_point_id: dp7dp.id, decision: "Keep waiting")
+
+    c4 = Node.create(nickname: "C 4", is_decision_point: false , branch_id: wait_offsite_branch.id, decision_id: dp7d3)
+      c4q = Question.create(node_id: c4.id, question: "What is the longest you are willing to wait for your passenger?", question_type_id: clock_v2_type.id)
+        c4a1= Answer.create(question_id: c4q.id, answer: "Set duration...", icon_name: nil)
 
     # park and meet
     b1 = Node.create(nickname: "B 1", is_decision_point: false , branch_id: park_and_meet_branch.id)
