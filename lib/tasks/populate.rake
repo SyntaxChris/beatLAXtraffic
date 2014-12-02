@@ -250,24 +250,38 @@ namespace :populate do
         e4a5 = Answer.create(question_id: e4q.id, answer: "Antoher reason (Specify)", icon_name: nil)
 
     e5 = Node.create(nickname: "E 5", is_decision_point: false , branch_id: ending_questions_branch.id)
-      e3q = Question.create(
-        node_id: e3.id,
-        question: "Based on this scenario, we estimated you spent [Calculated Game Time in Minutes] getting your passenger at the airport.\nIs this typical?",
-        question_type_id: time_type.id
+      e5q = Question.create(
+        node_id: e5.id,
+        question: "About how often do you go to LAX?",
+        question_type_id: custom_2.id
       )
-        e3a1 = Answer.create(question_id: e3q.id, answer: "Yes", icon_name: nil)
-        e3a2 = Answer.create(question_id: e3q.id, answer: "No", icon_name: nil)
+        e5a1 = Answer.create(question_id: e5q.id, answer: "Less than once a year", icon_name: nil)
+        e5a2 = Answer.create(question_id: e5q.id, answer: "1 - 2 times a year", icon_name: nil)
+        e5a3 = Answer.create(question_id: e5q.id, answer: "3 - 6 times a year", icon_name: nil)
+        e5a4 = Answer.create(question_id: e5q.id, answer: "6 - 9 times a year", icon_name: nil)
+        e5a5 = Answer.create(question_id: e5q.id, answer: "More than 9 times a year", icon_name: nil)
 
     e6 = Node.create(nickname: "E 6", is_decision_point: false , branch_id: ending_questions_branch.id)
-      e3q = Question.create(
-        node_id: e3.id,
-        question: "Based on this scenario, we estimated you spent [Calculated Game Time in Minutes] getting your passenger at the airport.\nIs this typical?",
-        question_type_id: time_type.id
+      e5q = Question.create(
+        node_id: e5.id,
+        question: "And finally, my esteemed driver: How old are you?",
+        question_type_id: custom_3.id
       )
-        e3a1 = Answer.create(question_id: e3q.id, answer: "Yes", icon_name: nil)
-        e3a2 = Answer.create(question_id: e3q.id, answer: "No", icon_name: nil)
+        e5a1 = Answer.create(question_id: e5q.id, answer: "18 - 24", icon_name: nil)
+        e5a2 = Answer.create(question_id: e5q.id, answer: "25 - 34", icon_name: nil)
+        e5a3 = Answer.create(question_id: e5q.id, answer: "35 - 44", icon_name: nil)
+        e5a4 = Answer.create(question_id: e5q.id, answer: "45 - 54", icon_name: nil)
+        e5a5 = Answer.create(question_id: e5q.id, answer: "55 - 64", icon_name: nil)
+        e5a6 = Answer.create(question_id: e5q.id, answer: "65 - 74", icon_name: nil)
+        e5a7 = Answer.create(question_id: e5q.id, answer: "75+", icon_name: nil)
 
     e7 = Node.create(nickname: "E 7", is_decision_point: false , branch_id: ending_questions_branch.id)
+      e7q = Question.create(
+        node_id: e7.id,
+        question: "You made it home!\nThank you for playing. All this information will help LAX better serve you in the future. If you want to keep in touch with our progress towards the new location please join our mailing list or visit us at http://connectinglax.com",
+        question_type_id: custom_3.id
+      )
+        e7a1 = Answer.create(question_id: e7q.id, answer: "Email Input", icon_name: nil)
 
 
     # where does this go/branch name?
