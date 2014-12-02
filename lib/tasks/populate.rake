@@ -21,6 +21,8 @@ namespace :populate do
     clock_type = QuestionType.create(name: "clock")
     coin_flip_type = QuestionType.create(name: "coin-flip")
     clock_v2_type = QuestionType.create(name: "clock-v2")
+    table_type = QuestionType.create(name: "table")
+    apps_type = QuestionType.create(name: "apps")
 
     # create nodes per branch, and questions for nodes, and answers for questions
     #
@@ -52,7 +54,8 @@ namespace :populate do
       )
 
     sq35 = Node.create(nickname: "SQ 3.5", is_decision_point: false , branch_id: scenario_questions_branch.id)
-      sq35q = Question.create(node_id: sq35.id, question: "Do you have a travel companion with you in the car?", question_type_id: airport_information_type.id)
+      sq35q = Question.create(node_id: sq35.id, question: "There is a friend in the car helping you with this pick-up ", question_type_id: airport_information_type.id)
+      # ^ This will either say this or an alternate based on a random generation
 
     dp1 = Node.create(nickname: "DP 1", is_decision_point: true , branch_id: scenario_questions_branch.id)
       dp1dp = DecisionPoint.create(node_id: dp1.id, situation: "What is your strategy for picking up your passenger?")
@@ -128,12 +131,28 @@ namespace :populate do
 
     # park and meet
     b1 = Node.create(nickname: "B 1", is_decision_point: false , branch_id: park_and_meet_branch.id)
-    # ^ this will need alt question
+      b1q = Question.create(node_id: b1.id, question: "Why do you choose to park your car? Select all that apply:", question_type_id: table_type.id)
+      # ^ this will need alt question text
+        b1a1= Answer.create(question_id: b1q.id, answer: "If convenient parking is available", icon_name: nil)
+        b1a2= Answer.create(question_id: b1q.id, answer: "To avoid driving in traffic", icon_name: nil)
+        b1a3= Answer.create(question_id: b1q.id, answer: "To meet my passenger in the terminal", icon_name: nil)
+        b1a4= Answer.create(question_id: b1q.id, answer: "Other (Specify)", icon_name: nil)
 
     b2 = Node.create(nickname: "B 2", is_decision_point: false , branch_id: park_and_meet_branch.id)
-    # ^ this will need alt question
+      b2q = Question.create(node_id: b2.id, question: "How long do you usually park for?", question_type_id: clock_type.id)
+      # ^ this will need alt question text
+        b2a1= Answer.create(question_id: b2q.id, answer: "Less than 30 minutes", icon_name: nil)
+        b2a2= Answer.create(question_id: b2q.id, answer: "30 - 60 minutes", icon_name: nil)
+        b2a3= Answer.create(question_id: b2q.id, answer: "60 - 90 minutes", icon_name: nil)
+        b2a4= Answer.create(question_id: b2q.id, answer: "More than 90 minutes", icon_name: nil)
 
     b3 = Node.create(nickname: "B 3", is_decision_point: false , branch_id: park_and_meet_branch.id)
+      b3q = Question.create(node_id: b3.id, question: "What are you doing while you're parked? Select all that apply:", question_type_id: apps_type.id)
+        b3a1= Answer.create(question_id: b3q.id, answer: "Waiting in my car", icon_name: nil)
+        b3a2= Answer.create(question_id: b3q.id, answer: "Waiting in the terminal", icon_name: nil)
+        b3a3= Answer.create(question_id: b3q.id, answer: "Shopping in the terminal", icon_name: nil)
+        b3a4= Answer.create(question_id: b3q.id, answer: "Getting something to eat or drink in the terminal", icon_name: nil)
+        b3a5= Answer.create(question_id: b3q.id, answer: "Other (Specify)", icon_name: nil)
 
     dp5 = Node.create(nickname: "DP 5", is_decision_point: true , branch_id: park_and_meet_branch.id)
 
