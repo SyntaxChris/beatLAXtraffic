@@ -399,7 +399,7 @@
     <!-- end icon questions -->
 
 
-    <div id="spinner-questions">
+    <div id="spinner-questions" style="display: none;">
       <div id="chance-time">
         <h3 style="color: white; text-align: center">Chance time</h3>
         <h5 style="color: white; text-align: center">You arrive at the parking lot and<br>see that the parking log is...</h5>
@@ -441,7 +441,6 @@
     </div>
 
     <div id="mission-intro">
-      <%= render 'example/clouds' %>
       <div id="envelope">
         <%= render 'envelope' %>
       </div>
@@ -458,28 +457,35 @@
             </div>
 
             <div id="mission-carousel">
-              <div class="nav-left">
+              <a href="javascript:void(0)" class="nav-left" data-direction="left">
                 
-              </div>
-              <div class="nav-right">
+              </a>
+              <a href="javascript:void(0)" class="nav-right" data-direction="right">
                 
+              </a>
+
+              <div class="far-left-side mover">
+                <%= render 'greyguy' %>
+                <div class="blurb">
+                  <span>Something</span>
+                </div>
               </div>
 
-              <div class="left">
+              <div class="left-side mover">
                 <%= render 'greyguy' %>
                 <div class="blurb">
                   <span>Something</span>
                 </div>
               </div>
               
-              <div class="center">
+              <div class="center mover">
                 <%= render 'suitguy' %>
                 <div class="blurb">
                   <span class="number">1</span> <span>Clients</span>
                 </div>
               </div>
 
-              <div class="right">
+              <div class="right-side mover">
                 <%= render 'greyguy' %>
                 <div class="blurb">
                   <span>Something</span>

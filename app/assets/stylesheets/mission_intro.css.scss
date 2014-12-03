@@ -1,11 +1,11 @@
 #mission-intro {
-  background: #83D6EF;
+  // background: #83D6EF;
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 51;
+  z-index: 25;
   #envelope {
     position: absolute;
     z-index: 1;
@@ -16,9 +16,7 @@
     }
   }
   .content {
-    max-width: 360px;
-    min-width: 300px;
-    width: 90%;
+    width: 300px;
     margin: 0 auto;
     height: 100%;
     position: relative;
@@ -51,6 +49,7 @@
       padding: 20px 0;
     }
     .nav-left, .nav-right {
+      display: block;
       position: absolute;
       background: #31BAE8;
       color: white;
@@ -61,6 +60,7 @@
       -webkit-border-radius: 50%;
       border-radius: 50%;
       top: 32%;
+      z-index: 2;
     }
     .nav-left {
       right: 59%;
@@ -149,10 +149,16 @@
     height: 200px;
     position: relative;
     overflow: hidden;
-    .left, .right, .center {
+    .mover {
       position: absolute;
-      width: 100%;
-      margin-top: 15px;
+      width: 76px;
+      &.moving {
+        -webkit-transition: all 300ms;
+        -moz-transition: all 300ms;
+        -ms-transition: all 300ms;
+        -o-transition: all 300ms;
+        transition: all 300ms;
+      }
       svg{
         -webkit-transform: scale(1.6);
         -moz-transform: scale(1.6);
@@ -161,26 +167,41 @@
         transform: scale(1.6);
       }
     }
-    .left {
-      -webkit-transform: translate3d(-50%,50%,0);
-      -moz-transform: translate3d(-50%,50%,0);
-      -ms-transform: translate3d(-50%,50%,0);
-      -o-transform: translate3d(-50%,50%,0);
-      transform: translate3d(-50%,50%,0);
+    .far-left-side {
+      -webkit-transform: translate3d(-130px,70%,0);
+      -moz-transform: translate3d(-130px,70%,0);
+      -ms-transform: translate3d(-130px,70%,0);
+      -o-transform: translate3d(-130px,70%,0);
+      transform: translate3d(-130px,70%,0);
+    }
+    .left-side {
+      -webkit-transform: translate3d(-36px,70%,0);
+      -moz-transform: translate3d(-36px,70%,0);
+      -ms-transform: translate3d(-36px,70%,0);
+      -o-transform: translate3d(-36px,70%,0);
+      transform: translate3d(-36px,70%,0);
     }
     .center {
-      -webkit-transform: translate3d(0,50%,0);
-      -moz-transform: translate3d(0,50%,0);
-      -ms-transform: translate3d(0,50%,0);
-      -o-transform: translate3d(0,50%,0);
-      transform: translate3d(0,50%,0);
+      -webkit-transform: translate3d(112px,70%,0);
+      -moz-transform: translate3d(112px,70%,0);
+      -ms-transform: translate3d(112px,70%,0);
+      -o-transform: translate3d(112px,70%,0);
+      transform: translate3d(112px,70%,0);
+      z-index: 3;
     }
-    .right {
-      -webkit-transform: translate3d(50%,50%,0);
-      -moz-transform: translate3d(50%,50%,0);
-      -ms-transform: translate3d(50%,50%,0);
-      -o-transform: translate3d(50%,50%,0);
-      transform: translate3d(50%,50%,0);
+    .right-side {
+      -webkit-transform: translate3d(262px,70%,0);
+      -moz-transform: translate3d(262px,70%,0);
+      -ms-transform: translate3d(262px,70%,0);
+      -o-transform: translate3d(262px,70%,0);
+      transform: translate3d(262px,70%,0);
+    }
+    .far-right-side {
+      -webkit-transform: translate3d(400px,70%,0);
+      -moz-transform: translate3d(400px,70%,0);
+      -ms-transform: translate3d(400px,70%,0);
+      -o-transform: translate3d(400px,70%,0);
+      transform: translate3d(400px,70%,0);
     }
     .blurb {
       position: absolute;

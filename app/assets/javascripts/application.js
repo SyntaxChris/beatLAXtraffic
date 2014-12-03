@@ -16,6 +16,7 @@
 //= require foundation
 //= require 'dashboard'
 //= require 'questions'
+//= require 'intro'
 //= require angular
 
 //= require angular/app
