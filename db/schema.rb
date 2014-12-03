@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20141202162526) do
     t.datetime "updated_at"
     t.integer  "node_id"
     t.string   "nickname"
-    t.text     "situation"
   end
 
   create_table "decisions", force: true do |t|

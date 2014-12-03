@@ -526,22 +526,30 @@
         <%= render 'envelope' %>
       </div>
       <div class="content">
-        <h4>Your Mission</h4>
-        <p>
-          You are driving and need to pick up the following at LAX
-        </p>
+        <header class="mission-heading">
+          <h4>Your Mission</h4>
+          <p>
+            You are driving and need to pick up the following at LAX
+          </p>
+        </header>
+        <header class="mission-conditions-heading">
+          <h4>Airport Conditions</h4>
+          <p>
+            Your passengers are coming from
+          </p>
+        </header>
 
         <div id="mission-selection-box">
-          <div class="top-content">
+          <div class="top-content stage-1">
             <div class="chat-bubble">
               Select a passenger to pick up
             </div>
 
             <div id="mission-carousel">
-              <a href="javascript:void(0)" class="nav-left" data-direction="left">
+              <a href="javascript:void(0)" class="nav-left" data-direction="right">
                 
               </a>
-              <a href="javascript:void(0)" class="nav-right" data-direction="right">
+              <a href="javascript:void(0)" class="nav-right" data-direction="left">
                 
               </a>
 
@@ -578,8 +586,72 @@
               <span>with</span> <span class="number">2</span> <span>Large Suitcases</span>
             </div>
           </div>
-          <button id="accept-mission-btn">
-            Accept Mission
+          <div class="stage-2-top">
+            <div class="destinations btcf">
+              <div class="left-side">
+                <div class="airport-heading">
+                  Departing
+                </div>
+                <div class="airport-code">
+                  XXX
+                </div>
+                <div class="airport-name">
+                  airport_name
+                </div>
+              </div>
+              <div class="center">
+                <div>
+                  <%= render 'introplane' %>
+                </div>
+                <div class="flight-number">Flight xxx</div>
+              </div>
+              <div class="right-side">
+                <div class="airport-heading">
+                  Arriving
+                </div>
+                <div class="airport-code">
+                  XXX
+                </div>
+                <div class="airport-name">
+                  airport_name
+                </div>
+              </div>
+            </div>
+            <div class="conditions">
+              <div class="traffic-meter medium">
+                <div class="tally-1"></div>
+                <div class="tally-2"></div>
+                <div class="tally-3"></div>
+                <div class="tally-4"></div>
+                <div class="tally-5"></div>
+                <div class="tally-6"></div>
+                <div class="tally-7"></div>
+                <div class="tally-8"></div>
+              </div>
+              <div class="traffic-summary">
+                LAX Traffic Level: <span>Medium</span>
+              </div>
+
+              <div class="time-summary">
+                <div>
+                  <span class="time-till-arrival">1hr</span>
+                  <%= render 'introstopwatch' %>
+                  <span class="blurb">Before plane lands</span>
+                </div>
+                <div>
+                  <%= render 'friendlyguy' %>
+                  <span class="blurb">with friends</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button id="accept-mission-btn" class="x-btn-accept-mission">
+            <span class="accept-text">
+              Accept Mission
+            </span>
+            <span class="continue-text">
+              Let's Go!
+            </span>
           </button>
         </div>
       </div>
