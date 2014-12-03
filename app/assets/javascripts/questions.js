@@ -4,33 +4,40 @@ $(document).ready(function(){
 	$( "#toggle-questions" ).click(function() {
 		clicks += 1;
 		$("#clicks").text(clicks);
-  		if (clicks === 1) {
+			if (clicks === 1) {
+				$( "#mission-intro").hide();
+				$( "#strategy-questions").show();
+				$( "#dashboard").show();
+				$('body').trigger('startDashboardAnimation');
+  		}
+  		else if (clicks === 2) {
   			$( "#strategy-questions").hide();
 	  		$( "#lines" ).show();
 	  		$( "#cars" ).show();
 	  		$( "#tile-questions" ).show();
   		}
-  		else if (clicks === 2) {
+  		else if (clicks === 3) {
   			$( "#tile-questions" ).hide();
   			$( "#clock-questions" ).show();
   		}
-  		else if (clicks === 3) {
+  		else if (clicks === 4) {
   			$( "#lines" ).hide();
 	  		$( "#cars" ).hide();
 	  		$( "#clock-questions" ).hide();
   			$( "#icon-questions" ).show();
   		}
-  		else if (clicks === 4) {
+  		else if (clicks === 5) {
   			$( "#icon-questions" ).hide();
   			$( "#lines" ).show();
 	  		$( "#cars" ).show();
   			$( "#spinner-questions" ).show();
   		}
-  		else if (clicks === 5) {
+  		else if (clicks === 6) {
   			$( "#lines" ).hide();
 	  		$( "#cars" ).hide();
   			$( "#spinner-questions" ).hide();
-  			$( "#strategy-questions").show();
+  			$( "#dashboard").hide();
+  			$( "#mission-intro").show();
   			clicks = 0
   		}
 	});
