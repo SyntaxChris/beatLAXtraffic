@@ -1,0 +1,68 @@
+#person,
+#stop-watch,
+#car-parking,
+#hassle,
+#other-explain {
+	height: 170px;
+	width: 160px;
+	border-radius: 30px;
+	background-color: white;
+}
+
+.bubble-icon-container {
+	position: relative;
+	top: 10px;
+	height: 70px;
+	width: 70px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.checkmark {
+	position: relative;
+	bottom: 80px;
+	left: 130px;
+}
+
+#person {
+	position: relative;
+	margin-top: 30%;
+	margin-left: 5%;
+	margin-right: auto;
+}
+
+#stop-watch {
+	position: relative;
+	bottom: 370px;
+	margin-left: 18%;
+	margin-right: auto;
+}
+
+#car-parking {
+	position: relative;
+	bottom: 610px;
+	margin-left: 42%;
+	margin-right: auto;
+}
+
+#hassle {
+	position: relative;
+	bottom: 710px;
+	margin-left: 67%;
+	margin-right: auto;
+}
+
+#other-explain {
+	position: relative;
+	bottom: 680px;
+	margin-left: 79%;
+	margin-right: auto;
+}
+
+#boxster {
+	position: relative;
+	bottom: 810px;
+	height: 130px;
+	width: 350px;
+	margin-left: 33%;
+}
