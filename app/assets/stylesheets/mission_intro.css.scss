@@ -7,12 +7,19 @@
   left: 0;
   z-index: 25;
   #envelope {
+    display: none;
     position: absolute;
     z-index: 1;
     width: 100%;
-    top: -8%;
+    top: 50%;
+    margin-top: -47%;
     svg {
-      width: 100%;
+      width: 94%;
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      transform: scale(1.2);
     }
   }
   .content {
@@ -405,5 +412,10 @@
     h4 {
       margin-top: 30%;
     }
+  }
+}
+@media only screen and (min-width : 768px) { //iPhone 6 Plus
+  #mission-intro #envelope {
+    display: block;
   }
 }
