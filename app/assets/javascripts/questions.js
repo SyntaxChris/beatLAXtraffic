@@ -36,8 +36,12 @@ $(document).ready(function(){
   			$( "#lines" ).hide();
 	  		$( "#cars" ).hide();
   			$( "#spinner-questions" ).hide();
-  			$( "#dashboard").hide();
-  			$( "#mission-intro").show();
+  			$( "#interactive-map" ).show();
+  		}
+  		else if (clicks === 7) {
+  			$( "#interactive-map" ).hide();
+  			$( "#dashboard" ).hide();
+  			$( "#mission-intro" ).show();
   			clicks = 0
   		}
 	});

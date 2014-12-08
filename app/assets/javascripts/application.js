@@ -17,6 +17,7 @@
 //= require 'dashboard'
 //= require 'questions'
 //= require 'intro'
+//= require 'interactive_map'
 //= require angular
 
 //= require angular/app
