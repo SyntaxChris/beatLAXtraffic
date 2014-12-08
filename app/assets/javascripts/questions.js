@@ -91,6 +91,80 @@ $(document).ready(function(){
     		$("#timer-question-4").css("fill", "#16ACEF");
  		}
  	);
+
+	var click1 = 0
+	var click2 = 0
+	var click3 = 0
+	var click4 = 0
+
+ 	$("#timer-question-label-1").click(function(){
+ 		if (click1 === 0){
+ 			$(this).animate({"opacity": "1.0"});
+	 		$("#timer-question-label-2").animate({"opacity": "0.5"});
+	 		$("#timer-question-label-3").animate({"opacity": "0.5"});
+	 		$("#timer-question-label-4").animate({"opacity": "0.5"});
+	 		click1 += 1;
+ 		} else {
+ 			$("#timer-question-label-2").animate({"opacity": "1.0"});
+	 		$("#timer-question-label-3").animate({"opacity": "1.0"});
+	 		$("#timer-question-label-4").animate({"opacity": "1.0"});
+	 		click1 = 0;
+ 		}
+ 		click2 = 0;
+ 		click3 = 0;
+ 		click4 = 0;
+ 	});
+ 	$("#timer-question-label-2").click(function(){
+ 		if (click2 === 0){
+ 			$(this).animate({"opacity": "1.0"});
+	 		$("#timer-question-label-3").animate({"opacity": "0.5"});
+	 		$("#timer-question-label-4").animate({"opacity": "0.5"});
+	 		$("#timer-question-label-1").animate({"opacity": "0.5"});
+	 		click2 += 1;
+ 		} else {
+ 			$("#timer-question-label-3").animate({"opacity": "1.0"});
+	 		$("#timer-question-label-4").animate({"opacity": "1.0"});
+	 		$("#timer-question-label-1").animate({"opacity": "1.0"});
+	 		click2 = 0;
+ 		}
+ 		click3 = 0;
+ 		click4 = 0;
+ 		click1 = 0;
+ 	});
+ 	$("#timer-question-label-3").click(function(){
+ 		 if (click3 === 0){
+ 		 	$(this).animate({"opacity": "1.0"});
+	 		$("#timer-question-label-4").animate({"opacity": "0.5"});
+	 		$("#timer-question-label-1").animate({"opacity": "0.5"});
+	 		$("#timer-question-label-2").animate({"opacity": "0.5"});
+	 		click3 += 1;
+ 		} else {
+ 			$("#timer-question-label-4").animate({"opacity": "1.0"});
+	 		$("#timer-question-label-1").animate({"opacity": "1.0"});
+	 		$("#timer-question-label-2").animate({"opacity": "1.0"});
+	 		click3 = 0;
+ 		}
+ 		click4 = 0;
+ 		click1 = 0;
+ 		click2 = 0;
+ 	});
+ 	$("#timer-question-label-4").click(function(){
+ 		if (click4 === 0){
+ 			$(this).animate({"opacity": "1.0"});
+	 		$("#timer-question-label-1").animate({"opacity": "0.5"});
+	 		$("#timer-question-label-2").animate({"opacity": "0.5"});
+	 		$("#timer-question-label-3").animate({"opacity": "0.5"});
+	 		click4 += 1;
+ 		} else {
+ 			$("#timer-question-label-1").animate({"opacity": "1.0"});
+	 		$("#timer-question-label-2").animate({"opacity": "1.0"});
+	 		$("#timer-question-label-3").animate({"opacity": "1.0"});
+	 		click4 = 0;
+ 		}
+ 		click1 = 0;
+ 		click2 = 0;
+ 		click3 = 0;
+ 	});
  	// END TIMER QUESTIONS	
 
  	// ICON QUESTIONS
