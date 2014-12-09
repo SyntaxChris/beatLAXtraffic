@@ -41,8 +41,15 @@
   }
   .map-path {
     display: none;
+    text-align: center;
     &.selected {
       display: block;
+    }
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      height: auto;
+      width: auto;
     }
   }
   // .map-path {
@@ -74,8 +81,11 @@
   // }
   .bottom-half {
     position: absolute;
+    text-align: center;
     width: 100%;
     bottom: 180px;
+    background: #f8f8f8;
+    max-height: 64%;
   }
   .top-half {
     text-align: center;
@@ -86,35 +96,85 @@
       text-shadow: 0 0 10px rgba(0,0,0,.3);
     }
   }
-}
-
-
-@media screen and (max-width: 413px) and (min-width: 0px) and (orientation: portrait) {
-  #interactive-map .bottom-half {
-    bottom: 95px;
+  .instructions {
+    background: white;
+    color: #979696;
+    position: absolute;
+    font-size: 1.2em;
+    font-weight: 300;
+    width: 25%;
+    padding: 20px 10px;
+    top: 10%;
+    left: 16%;
+    text-align: center;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 2px 2px 10px #bbb;
+    -webkit-box-shadow: 2px 2px 10px #bbb;
+    box-shadow: 2px 2px 10px #bbb;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent;
+      border-bottom: 0;
+      bottom: -13px;
+      left: 50%;
+      margin-left: -14px;
+      border-top-color: white;
+      border-width: 13px 14px 10px 14px;
+    }
   }
 }
 
-@media screen and (max-width: 500px) and (min-width: 414px) and (orientation: portrait) {
-  #interactive-map .bottom-half {
-    bottom: 125px;
-  }
-}
 
-@media screen and (max-width: 695px) and (min-width: 501px) and (orientation: portrait) {
-  #interactive-map .bottom-half {
-    bottom: 145px;
-  }
-}
+// @media screen and (max-width: 413px) and (min-width: 0px) and (orientation: portrait) {
+//   #interactive-map .bottom-half {
+//     bottom: 95px;
+//   }
+// }
 
-@media screen and (max-width: 768px) and (min-width: 696px) and (orientation: portrait) {
-  #interactive-map .bottom-half {
-    bottom: 145px;
+// @media screen and (max-width: 500px) and (min-width: 414px) and (orientation: portrait) {
+//   #interactive-map .bottom-half {
+//     bottom: 125px;
+//   }
+// }
+
+@media screen and (max-width: 768px) and (min-width: 0px) and (orientation: portrait) {
+  #interactive-map {
+    .bottom-half {
+      bottom: auto;//145px;
+      top: 100px;
+    }
+    .instructions {
+      top: 110%;
+      width: 90%;
+      left: 50%;
+      margin-left: -45%;
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent;
+        border-top: 0;
+        top: -10px;
+        left: 50%;
+        margin-left: -20px;
+        border-bottom-color: #FFF;
+        border-width: 20px 20px 10px 20px;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 620px) and (min-width: 0px) and (orientation: landscape) {
   #interactive-map .bottom-half {
+
     bottom: 95px;
   }
 }
