@@ -662,22 +662,34 @@
 
     <!-- START INTERACTIVE MAP -->
     <div id="interactive-map" style="display: none;">
-      <div>
-        
+      <div class="top-half">
+        <h3>What is your strategy for picking up your passenger?</h3>
       </div>
 
       <div class="bottom-half">
-        <div class="map-path yellow">
-          <%= render 'map_yellow' %>
+        <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="yellow">
+          
+        </a>
+        <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="green">
+          
+        </a>
+        <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="orange">
+          
+        </a>
+        <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
+          
+        </a>
+        <div class="map-path yellow selected">
+          <%= image_tag('map_yellow.jpg', width: '100%') %>
         </div>
         <div class="map-path green">
-          <%= render 'map_green' %>
+          <%= image_tag('map_green.jpg', width: '100%') %>
         </div>
         <div class="map-path orange">
-          <%= render 'map_orange' %>
+          <%= image_tag('map_orange.jpg', width: '100%') %>
         </div>
         <div class="map-path blue">
-          <%= render 'map_blue' %>
+          <%= image_tag('map_blue.jpg', width: '100%') %>
         </div>
       </div>
     </div>

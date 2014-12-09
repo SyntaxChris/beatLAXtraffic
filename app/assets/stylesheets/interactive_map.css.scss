@@ -4,31 +4,90 @@
   left: 0;
   height: 100%;
   bottom: 0;
+  .select-path-btn {
+    position: absolute;
+    display: block;
+    height: 80px;
+    width: 80px;
+    z-index: 3;
+    &[data-path="yellow"] {
+      //background: yellow;
+      left: 11%;
+      top: 50%;
+      height: 15%;
+      width: 9%;
+    }
+    &[data-path="blue"] {
+      //background: blue;
+      right: 9%;
+      top: 12%;
+      height: 15%;
+      width: 9%;
+    }
+    &[data-path="green"] {
+      //background: green;
+      left: 37%;
+      top: 49%;
+      height: 15%;
+      width: 9%;
+    }
+    &[data-path="orange"] {
+      //background: orange;
+      right: 34%;
+      top: 22%;
+      height: 15%;
+      width: 9%;
+    }
+  }
   .map-path {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    svg {
-      position: absolute;
+    display: none;
+    &.selected {
+      display: block;
     }
   }
-  .yellow {
-    svg {
-      bottom: 3%;
-      left: 2%;
-    }
-  }
+  // .map-path {
+  //   height: 100%;
+  //   width: 100%;
+  //   display: none;
+  //   position: absolute;
+  //   background-color: #f8f8f8;
+  //   background-repeat: no-repeat;
+  //   background-size: 100%;
+  //   background-position: bottom center;
+  //   z-index: 1;
+  //   &.selected {
+  //     display: block;
+  //     z-index: 2;
+  //   }
+  // }
+  // .yellow {
+  //   background-image: image_url('map_yellow.jpg');
+  // }
+  // .blue {
+  //   background-image: image_url('map_blue.jpg');
+  // }
+  // .green {
+  //   background-image: image_url('map_green.jpg');
+  // }
+  // .orange {
+  //   background-image: image_url('map_orange.jpg');
+  // }
   .bottom-half {
-    background-image: image_url('gps_map_background_altered.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center bottom;
     position: absolute;
     width: 100%;
-    height: 58%;
     bottom: 180px;
   }
+  .top-half {
+    text-align: center;
+    h3 {
+      margin: 20px 0 0;
+      color: white;
+      font-weight: 500;
+      text-shadow: 0 0 10px rgba(0,0,0,.3);
+    }
+  }
 }
+
 
 @media screen and (max-width: 413px) and (min-width: 0px) and (orientation: portrait) {
   #interactive-map .bottom-half {
