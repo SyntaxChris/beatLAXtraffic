@@ -57,6 +57,21 @@ $(document).ready(function(){
 	    var cs = 150 - $(this).val().length;
 	    $('[id=char-count-small]').text(cs + " characters left");
 	});
+	$('.other-submit').click(function() {
+	    $('[id=user-text-input]').hide();
+	    $('[id=other-small-textbox]').hide();
+	    $('.next').show();
+	    if (otherCheck === 0){
+			$(".unchecked-other-tile svg path").attr("fill", "#AA75D3");
+    		$(".unchecked-other-tile svg polyline").attr("stroke", "white");
+    		otherCheck = 1;
+    	}
+    	else {
+			$(".unchecked-other-tile svg path").attr("fill", "#FFFFFF");
+    		$(".unchecked-other-tile svg polyline").attr("stroke", "#757575");
+    		otherCheck = 0;
+    	}
+	});
 	$('[id=small-other]').click(function(){
 		$('[id=other-small-textbox]').show();
 	});
@@ -140,7 +155,8 @@ $(document).ready(function(){
 	});
 
 	$('[id=other-landscape]').click(function() {
-		$('#user-text-input').toggle();
+		$('[id=user-text-input]').toggle();
+		$('.next').toggle();
     	$(".unchecked-other-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
     	if (otherCheck === 0){
 			$(".unchecked-other-tile svg path").attr("fill", "#AA75D3");

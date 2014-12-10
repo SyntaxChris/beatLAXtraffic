@@ -158,6 +158,15 @@ div#other-cancel {
 	padding-top: 7px
 }
 
+.next {
+	cursor: pointer;
+	background-color: #D35E5B;
+	
+}
+
+.next:hover {
+	background-color: #C97D7B;
+}
 
 div#phone:hover, div#phone:active,
 div#phone-landscape:hover, div#phone-landscape:active {
