@@ -47,16 +47,107 @@ $(document).ready(function(){
 	});
 	// END TOGGLE ALL
 
-	// TILE QUESTIONS
-	$('#other-button-landscape').click(function(){
-		$('#user-text-input').toggle();
-	});
 
+	// TILE QUESTIONS
+
+	// other text field popup
 	$('#other-info').keyup(function() {
 	    var cs = 150 - $(this).val().length;
 	    $('#char-count').text(cs + " characters left");
 	});
+
+	$.fn.toggleAttr = function(attr,val){
+    	return this.each(function(){
+	        var $this = $(this);
+	        if ($this.is("[" + attr + "]")) {
+	            $this.removeAttr(attr);
+	        }
+	        else {
+	            $this.attr(attr,val);            
+	        }
+    	});
+	}
+
+	var phoneCheck = 0;
+	var shopCheck = 0;
+	var hangoutCheck = 0;
+	var eatCheck = 0;
+	var otherCheck = 0;
+
+	$('#phone-landscape').click(function() {
+    	$(".unchecked-phone-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
+    	if (phoneCheck === 0){
+			$(".unchecked-phone-tile svg path").attr("fill", "#FC9C52");
+    		$(".unchecked-phone-tile svg polyline").attr("stroke", "white");
+    		phoneCheck = 1;
+    	}
+    	else {
+			$(".unchecked-phone-tile svg path").attr("fill", "#FFFFFF");
+    		$(".unchecked-phone-tile svg polyline").attr("stroke", "#757575");
+    		phoneCheck = 0;
+    	}
+	});
+
+	$('#shop-landscape').click(function() {
+    	$(".unchecked-shop-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
+    	if (shopCheck === 0){
+			$(".unchecked-shop-tile svg path").attr("fill", "#F7C001");
+    		$(".unchecked-shop-tile svg polyline").attr("stroke", "white");
+    		shopCheck = 1;
+    	}
+    	else {
+			$(".unchecked-shop-tile svg path").attr("fill", "#FFFFFF");
+    		$(".unchecked-shop-tile svg polyline").attr("stroke", "#757575");
+    		shopCheck = 0;
+    	}
+	});
+
+	$('#hang-out-landscape').click(function() {
+    	$(".unchecked-hangout-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
+    	if (hangoutCheck === 0){
+			$(".unchecked-hangout-tile svg path").attr("fill", "#39BAD8");
+    		$(".unchecked-hangout-tile svg polyline").attr("stroke", "white");
+    		hangoutCheck = 1;
+    	}
+    	else {
+			$(".unchecked-hangout-tile svg path").attr("fill", "#FFFFFF");
+    		$(".unchecked-hangout-tile svg polyline").attr("stroke", "#757575");
+    		hangoutCheck = 0;
+    	}
+	});
+
+	$('#eat-landscape').click(function() {
+    	$(".unchecked-eat-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
+    	if (eatCheck === 0){
+			$(".unchecked-eat-tile svg path").attr("fill", "#558AD8");
+    		$(".unchecked-eat-tile svg polyline").attr("stroke", "white");
+    		eatCheck = 1;
+    	}
+    	else {
+			$(".unchecked-eat-tile svg path").attr("fill", "#FFFFFF");
+    		$(".unchecked-eat-tile svg polyline").attr("stroke", "#757575");
+    		eatCheck = 0;
+    	}
+	});
+
+	$('#other-landscape').click(function() {
+		$('#user-text-input').toggle();
+    	$(".unchecked-other-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
+    	if (otherCheck === 0){
+			$(".unchecked-other-tile svg path").attr("fill", "#AA75D3");
+    		$(".unchecked-other-tile svg polyline").attr("stroke", "white");
+    		otherCheck = 1;
+    	}
+    	else {
+			$(".unchecked-other-tile svg path").attr("fill", "#FFFFFF");
+    		$(".unchecked-other-tile svg polyline").attr("stroke", "#757575");
+    		otherCheck = 0;
+    	}
+	});
+
+
 	// END TILE QUESTIONS
+
 
 	// TIMER QUESTIONS
 	$("#timer-question-label-1").hover(

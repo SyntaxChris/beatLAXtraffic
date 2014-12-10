@@ -9,6 +9,11 @@ body, html {
 }
 
 #skip-button {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 	position: absolute;
 	height: 50px;
 	width: 120px;
@@ -24,6 +29,7 @@ body, html {
 
 
 #toggle-questions {
+
 	position: absolute;
 	z-index: 50;
 	cursor: pointer;

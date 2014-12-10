@@ -61,7 +61,7 @@
           <div class="row">
             <div class="large-12 medium-12 large-centered medium-centered columns">
               <div class="row">
-                <div class="large-4 medium-4 small-4 columns">
+                <div class="large-4 medium-4 small-4 columns phone">
                   <%= render 'phone' %>
                   <div class="row" style="text-align: center; color: white">
                     On my phone
@@ -94,6 +94,7 @@
                     Other
                   </div>
                 </div>
+                <!-- text area -->
                 <div class="large-4 medium-4 small-4 columns">
                   <div class="row" style="padding:0">
                     <div class="large-12 medium-12 small-12 columns">
@@ -103,13 +104,19 @@
                           Please write here
                         </div>
                         <div class="row" style="padding-bottom:0">
-                          <textarea id="other-info" cols="1" rows="4" maxlength="150"></textarea> 
+                          <textarea id="other-info" cols="1" rows="2" maxlength="150"></textarea> 
                         </div>
-                        <div class="row" id="char-count" style="text-align:center; color: #B2C4D4"></div>
+                        <div class="row" style="text-align: center">
+                          <div class="other-submit">
+                            <div>SUBMIT</div>
+                          </div>
+                          <div id="char-count" style="text-align:center; color: #B2C4D4"></div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <!-- end text area -->
               </div>
             </div>    
           </div>
@@ -234,10 +241,13 @@
 
     <!-- 3. ICON questions -->
     <div id="icon-questions" style="display: none">
+      <div class="row">
+        <h3 style="color: white; text-align: center">Imagine that you could customize this future location.</h3>
+      </div>
       <div class="row" id="icons-large-screen" style="margin-top: 90px;">
         <div class="large-6 medium-6 small-6 columns">
           <div id="drop-box">
-            <div id="title">Pick your top 3 amenities</div>
+            <div id="title">Pick your top 3 desired amenities</div>
             <div id="dotted-circle-row">
               <div id="circle-1">
                 <div class="icon-holder" id="1" style="position:absolute; left: 115px; top: 138px">1</div>
