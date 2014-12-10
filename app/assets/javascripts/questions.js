@@ -49,12 +49,21 @@ $(document).ready(function(){
 
 
 	// TILE QUESTIONS
-
-	// other text field popup
-	$('#other-info').keyup(function() {
+	$('[id=other-info]').keyup(function() {
 	    var cs = 150 - $(this).val().length;
 	    $('#char-count').text(cs + " characters left");
 	});
+	$('[id=other-info-small]').keyup(function() {
+	    var cs = 150 - $(this).val().length;
+	    $('[id=char-count-small]').text(cs + " characters left");
+	});
+	$('[id=small-other]').click(function(){
+		$('[id=other-small-textbox]').show();
+	});
+	$('[id=other-cancel]').click(function(){
+		$('[id=other-small-textbox]').hide();
+	});
+
 
 	$.fn.toggleAttr = function(attr,val){
     	return this.each(function(){
@@ -74,7 +83,7 @@ $(document).ready(function(){
 	var eatCheck = 0;
 	var otherCheck = 0;
 
-	$('#phone-landscape').click(function() {
+	$('[id=phone-landscape]').click(function() {
     	$(".unchecked-phone-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
     	if (phoneCheck === 0){
 			$(".unchecked-phone-tile svg path").attr("fill", "#FC9C52");
@@ -88,7 +97,7 @@ $(document).ready(function(){
     	}
 	});
 
-	$('#shop-landscape').click(function() {
+	$('[id=shop-landscape]').click(function() {
     	$(".unchecked-shop-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
     	if (shopCheck === 0){
 			$(".unchecked-shop-tile svg path").attr("fill", "#F7C001");
@@ -102,7 +111,7 @@ $(document).ready(function(){
     	}
 	});
 
-	$('#hang-out-landscape').click(function() {
+	$('[id=hang-out-landscape]').click(function() {
     	$(".unchecked-hangout-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
     	if (hangoutCheck === 0){
 			$(".unchecked-hangout-tile svg path").attr("fill", "#39BAD8");
@@ -116,7 +125,7 @@ $(document).ready(function(){
     	}
 	});
 
-	$('#eat-landscape').click(function() {
+	$('[id=eat-landscape]').click(function() {
     	$(".unchecked-eat-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
     	if (eatCheck === 0){
 			$(".unchecked-eat-tile svg path").attr("fill", "#558AD8");
@@ -130,7 +139,7 @@ $(document).ready(function(){
     	}
 	});
 
-	$('#other-landscape').click(function() {
+	$('[id=other-landscape]').click(function() {
 		$('#user-text-input').toggle();
     	$(".unchecked-other-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
     	if (otherCheck === 0){
