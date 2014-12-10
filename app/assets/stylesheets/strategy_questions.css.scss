@@ -1,21 +1,49 @@
-#person,
-#stop-watch,
-#car-parking,
-#hassle,
-#other-explain {
-	height: 170px;
-	width: 160px;
+// #person,
+// #stop-watch,
+// #car-parking,
+// #hassle,
+// #other-explain {
+// 	height: 170px;
+// 	width: 160px;
+// 	border-radius: 30px;
+// 	background-color: white;
+// }
+
+.bubble-icon-container {
+	padding-top: 10px;
+	height: 150px;
+	width: 130px;
+	margin-left: auto;
+	margin-right: auto;
 	border-radius: 30px;
 	background-color: white;
 }
 
-.bubble-icon-container {
-	position: relative;
-	top: 10px;
-	height: 70px;
-	width: 70px;
-	margin-left: auto;
+.bubble-icon-container#container-1 {
+	margin-top: 20px;
+	margin-left: 50%;
 	margin-right: auto;
+	.unchecked {
+		position: absolute;
+		z-index: 1;
+		width: 70px;
+		top: 5px;
+		right: 1%;
+	}
+}
+
+.bubble-icon-container#container-3 {
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: 50%;
+}
+.bubble-icon-container#container-4 {
+	margin-left: 0;
+	margin-right: auto;
+}
+.bubble-icon-container#container-5 {
+	margin-left: auto;
+	margin-right: 0;
 }
 
 .checkmark {
