@@ -128,6 +128,36 @@ div#small-other {
 	// transition: all 0.3s ease 0s;
 }
 
+div#other-small-textbox {
+	position: relative; 
+	bottom: 250px;
+}
+
+div#other-text-area {
+	position: absolute;
+	z-index: 3;
+	width: 90%;
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 160px;
+	background-color: white;
+
+}
+
+div#other-cancel {
+	position: absolute; 
+	bottom: 10px; 
+	right: 10px; 
+	color: white; 
+	width: 80px; 
+	height: 40px; 
+	border-radius: 5px; 
+	background-color:#6741A6; 
+	text-align: center; 
+	padding-top: 7px
+}
+
 
 div#phone:hover, div#phone:active,
 div#phone-landscape:hover, div#phone-landscape:active {
@@ -251,11 +281,16 @@ div#small-other:hover, div#small-other:active {
 		margin-left: auto;
 		margin-right: auto;
 	}
+}
 
-	.other-submit:hover {
-		cursor: pointer;
-		opacity: 0.7;
-	}
+.other-submit:hover {
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+#other-cancel:hover {
+	cursor: pointer;
+	background-color: #C39AE8;
 }
 
 .arrow-left {
