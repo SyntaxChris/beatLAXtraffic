@@ -18,6 +18,7 @@
 //= require 'questions'
 //= require 'intro'
 //= require 'interactive_map'
+//= require 'successful_pickup'
 //= require angular
 
 //= require angular/app

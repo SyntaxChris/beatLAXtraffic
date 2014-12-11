@@ -1,0 +1,73 @@
+#successful-pickup {
+  h3, p {
+    color: #71777D;
+    font-family: 'Helvetica Neue';
+  }
+  h3 {
+    width: 80%;
+    margin: 10px auto 0;
+    text-align: center;
+    font-size: 1.1em;
+    letter-spacing: .8px;
+  }
+  .high-five {
+    width: 40%;
+    min-width: 200px;
+    margin: 0 auto;
+  }
+  p {
+    font-size: 1em;
+    width: 95%;
+    text-align: center;
+    display: block;
+    line-height: 1.2;
+    margin: 15px auto 0;
+    letter-spacing: 1.2px;
+  }
+  .red-car {
+    display: block;
+    width: 200px;
+    margin: 15px auto 0;
+    padding: 0;
+    background: none;
+    outline: none;
+    -webkit-transition: all 1200ms;
+    -moz-transition: all 1200ms;
+    -ms-transition: all 1200ms;
+    -o-transition: all 1200ms;
+    transition: all 1200ms;
+    &.animate {
+      -webkit-transform: translateX(400%);
+      -moz-transform: translateX(400%);
+      -ms-transform: translateX(400%);
+      -o-transform: translateX(400%);
+      transform: translateX(400%);
+    }
+  }
+}
+
+@media only screen and (min-width : 360px) { 
+  #successful-pickup {
+    h3 {
+      font-size: 1.6em;
+    }
+    p {
+      font-size: 1.3em;
+      margin-top: 30px;
+    }
+    .red-car {
+      margin-top: 30px;
+    }
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  #successful-pickup {
+    h3 {
+      margin-top: 80px;
+    }
+    p {
+      width: 60%;
+    }
+  }
+}

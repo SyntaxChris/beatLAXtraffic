@@ -815,6 +815,27 @@
     </div>
     <!-- END INTERACTIVE MAP -->
 
+    <!-- START SUCCESSFUL PICKUP -->
+    <div id="successful-pickup" style="display: none;">
+      <h3>
+        You successfully picked up your passenger!
+      </h3>
+
+      <div class="high-five">
+        <%= render 'highFive' %>
+      </div>
+
+      <p>
+        Now we're going to make some guesses about your typical trip to LAX based on your game experience
+      </p>
+
+      <button class="red-car">
+        <%= render 'redCar' %>
+      </button>
+
+    </div>
+    <!-- END SUCCESFUL PICKUP -->
+
   </div>
 </div>
 <!-- END QUESTION FORMATS -->

@@ -42,7 +42,12 @@ $(document).ready(function(){
   		}
   		else if (clicks === 7) {
   			$( "#interactive-map" ).hide();
+  			$( "#successful-pickup" ).show();
   			$( "#dashboard" ).hide();
+  		}
+  		else if (clicks === 8) {
+  			$( "#successful-pickup" ).hide();
+  			$('.red-car').toggleClass('animate', false);
   			$( "#mission-intro" ).show();
   			clicks = 0
   		}
