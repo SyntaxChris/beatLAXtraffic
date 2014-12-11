@@ -442,6 +442,7 @@ $(document).ready(function(){
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "#98CC2D");
  			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
  			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
+ 			$("#guy-answer").css("color", "#98CC2D")
  			$("#guy-background").css("fill", "#98CC2D");
 	 		$("#shirt").css("fill", "#FBDD61");
  			guyToggle += 1;

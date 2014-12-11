@@ -113,8 +113,6 @@
 }
 .bubble-icon-container-small#container-5 {
 	margin-top: 10%;	
-	// margin-right: 0;
-	// width: 55%;
 }
 // END SMALL SCREENS
 
@@ -147,6 +145,17 @@
 	text-align:center;
 }
 
+#guy-answer {
+	color: #98CC2D;
+}
+
+#stopwatch-answer {
+	color: #D05E4B;
+}
+
+#parking-answer {
+
+}
 @media screen and (max-width: 800px) and (min-width: 0px) {
 
 }
