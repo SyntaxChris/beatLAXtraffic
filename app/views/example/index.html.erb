@@ -535,26 +535,36 @@
 
     <!-- 5. STRATEGY questions -->
     <div id="strategy-questions" style="display: none;">
+      <div class="row" style="text-align: center; margin-top: 20px">
+        <h3 style="color: white">Why do you choose this strategy?</h3>
+        <h6 style="color: #24B7EA; padding-top: 0">Select all that apply</h6>
+      </div>
       <div class="hide-for-small-only">
-        <div class="row" style="text-align: center; margin-top: 20px">
-          <h3 style="color: white">Why do you choose this strategy?</h3>
-        </div>
         <div class="row">
           <div class="large-12 medium-12 columns">
             <div class="row">
               <div class="large-4 medium-4 columns">
                 <div class="bubble-icon-container" id="container-1">
-                  <%= render 'guy' %>
+                  <%= render 'strategyStopWatch' %>
+                  <div class="strategy-answer" id="stopwatch-answer" style="position:relative; bottom:30px; font-size: 12px; text-align:center">
+                    To make it convenient for my passengers
+                  </div>
                 </div>
               </div>
               <div class="large-4 medium-4 columns">
                 <div class="bubble-icon-container" id="container-2">
-                  <%= render 'guy' %>
+                  <%= render 'grayParking' %>
+                  <div class="strategy-answer" id="stopwatch-answer" style="position:relative; bottom:30px; font-size: 12px; text-align:center">
+                    To make it convenient for my passengers
+                  </div>
                 </div>
               </div>
               <div class="large-4 medium-4 columns">
                 <div class="bubble-icon-container" id="container-3">
-                  <%= render 'guy' %>
+                  <%= render 'hassle' %>
+                  <div class="strategy-answer" id="hassle-answer" style="position:relative; bottom:30px; font-size: 12px; text-align:center">
+                    To make it convenient for my passengers
+                  </div>
                 </div>
               </div>
             </div>
@@ -566,16 +576,27 @@
               <div class="large-3 medium-3 columns">
                 <div class="bubble-icon-container" id="container-4">
                   <%= render 'guy' %>
+                  <div class="strategy-answer" id="guy-answer">
+                    To make it convenient for my passengers
+                  </div>
                 </div>
               </div>
               <div class="large-6 medium-6 columns">
+                <div class="row">
+                  <div class="small-4 small-centered columns">
+                    <div id="strategy-submit">Submit</div>
+                  </div>
+                </div>
                 <div>
                   <%= render 'boxster' %>
                 </div>
               </div>
               <div class="large-3 medium-3 columns">
                 <div class="bubble-icon-container" id="container-5" >
-                  <%= render 'guy' %>
+                  <%= render 'strategyOther' %>
+                  <div class="strategy-answer" id="other-strategy-answer" style="position:relative; bottom:30px; font-size: 12px; text-align:center">
+                    To make it convenient for my passengers
+                  </div>
                 </div>
               </div>
             </div>
@@ -584,79 +605,32 @@
       </div>
 
       <div class="show-for-small-only">
-        
-      </div>
-      <!-- <div id="person">
-        <div class="bubble-icon-container">
-          <%= render 'guy' %>
-        </div>
-        <div class="checkmark">
-          <div id="unchecked">
-            <%= render 'unchecked' %>
-          </div>
-          <div id="checked" style="display:none">
-            <%= render 'checkedPerson' %>
-          </div>
-        </div>
-      </div>
-
-      <div id="stop-watch">
-        <div class="bubble-icon-container">
-          <%= render 'strategyStopWatch' %>
-        </div>
-        <div class="checkmark">
-          <div id="uncheckedStop">
-            <%= render 'unchecked' %>
-          </div>
-          <div id="checkedStop" style="display:none">
-            <%= render 'checkedStopWatch' %>
+        <div class="row">
+          <div class="large-12 medium-12 columns">
+            <div class="small-4 columns">
+              <div class="bubble-icon-container-small" id="container-1" >
+                <%= render 'guy' %>
+              </div>
+              <div class="bubble-icon-container-small" id="container-2" >
+                <%= render 'guy' %>
+              </div>
+            </div>
+            <div class="small-4 columns">
+              <div class="bubble-icon-container-small" id="container-3" >
+                <%= render 'guy' %>
+              </div>
+            </div>
+            <div class="small-4 columns">
+              <div class="bubble-icon-container-small" id="container-4" >
+                <%= render 'guy' %>
+              </div>
+              <div class="bubble-icon-container-small" id="container-5" >
+                <%= render 'guy' %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div id="car-parking">
-        <div class="bubble-icon-container">
-          <div id="grayed">
-            <%= render 'grayParking' %>
-          </div>
-          <div id="colored" style="display:none">
-            <%= render 'coloredParking' %>
-          </div>
-          
-        </div>
-        <div class="checkmark">
-          <div id="uncheckedParking">
-            <%= render 'unchecked' %>
-          </div>
-          <div id="checkedParking" style="display:none">
-            <%= render 'checkedParking' %>
-          </div>
-        </div>
-      </div>
-
-      <div id="hassle">
-        <div class="bubble-icon-container">
-          <%= render 'hassle' %>
-        </div>
-        <div class="checkmark">
-          <div id="uncheckedHassle">
-            <%= render 'unchecked' %>
-          </div>
-          <div id="checkedHassle" style="display:none">
-            <%= render 'checkedHassle' %>
-          </div>
-        </div>
-      </div>
-
-      <div id="other-explain">
-        <div class="bubble-icon-container">
-          <%= render 'guy' %>
-        </div>
-      </div>
-      <div id="boxster">
-        <%= render 'boxster' %>
-      </div>  -->
-
     </div>
     <!-- end STRATEGY questions -->
 

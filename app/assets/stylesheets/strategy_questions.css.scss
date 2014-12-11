@@ -17,19 +17,62 @@
 	margin-right: auto;
 	border-radius: 30px;
 	background-color: white;
+	cursor: pointer;
+	.unchecked-bubble {
+		position: relative;
+		z-index: 1;
+		width: 70px;
+		top: -20px;
+		left: 100px;
+	}
+	.bubble-logo {
+		position: relative;
+		bottom: 35px;
+	}
 }
+
+.bubble-icon-container-small {
+	padding-top: 10px;
+	height: 150px;
+	width: 130px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 30px;
+	background-color: white;
+	.unchecked-bubble {
+		position: relative;
+		z-index: 1;
+		width: 70px;
+		top: -20px;
+		left: 100px;
+	}
+	.bubble-logo {
+		position: relative;
+		bottom: 35px;
+		cursor: pointer;
+	}
+}
+
+// .bubble-logo{
+// 	cursor: pointer;
+// }
+
+// .bubble-logo#stopwatch {
+// 	margin-left: 23%;
+// }
+
+// .bubble-logo#no-parking {
+// 	margin-left: 23%;
+// }
+
+// .bubble-logo#hassle {
+// 	margin-left: 23%;
+// }
 
 .bubble-icon-container#container-1 {
 	margin-top: 20px;
 	margin-left: 50%;
 	margin-right: auto;
-	.unchecked {
-		position: absolute;
-		z-index: 1;
-		width: 70px;
-		top: 5px;
-		right: 1%;
-	}
 }
 
 .bubble-icon-container#container-3 {
@@ -40,52 +83,42 @@
 .bubble-icon-container#container-4 {
 	margin-left: 0;
 	margin-right: auto;
+	// width: 55%;
 }
 .bubble-icon-container#container-5 {
 	margin-left: auto;
 	margin-right: 0;
+	// width: 55%;
 }
 
-.checkmark {
-	position: relative;
-	bottom: 80px;
-	left: 130px;
+// SMALL SCREENS
+.bubble-icon-container-small#container-1 {
+	// margin-top: 20px;
+	// margin-left: 50%;
+	// margin-right: auto;
 }
 
-#person {
-	position: relative;
-	margin-top: 30%;
-	margin-left: 5%;
-	margin-right: auto;
+.bubble-icon-container-small#container-2 {
+	margin-top: 10%;
 }
 
-#stop-watch {
-	position: relative;
-	bottom: 370px;
-	margin-left: 18%;
-	margin-right: auto;
+.bubble-icon-container-small#container-3 {
+	margin-top: 50%;
+	// margin-left: auto;
+	// margin-right: 50%;
 }
+.bubble-icon-container-small#container-4 {
+	// margin-right: auto;
+	// width: 55%;
+}
+.bubble-icon-container-small#container-5 {
+	margin-top: 10%;	
+	// margin-right: 0;
+	// width: 55%;
+}
+// END SMALL SCREENS
 
-#car-parking {
-	position: relative;
-	bottom: 610px;
-	margin-left: 42%;
-	margin-right: auto;
-}
 
-#hassle {
-	position: relative;
-	bottom: 710px;
-	margin-left: 67%;
-	margin-right: auto;
-}
-
-#other-explain {
-	position: relative;
-	bottom: 680px;
-	margin-left: 79%;
-	margin-right: auto;
-}
 
 #boxster {
 	position: relative;
@@ -93,4 +126,27 @@
 	height: 130px;
 	width: 350px;
 	margin-left: 33%;
+}
+
+#strategy-submit {
+	cursor: pointer;
+	padding: 10px 10px 10px 10px; 
+	color: white; 
+	background-color: #24B7EA; 
+	text-align: center
+}
+
+#strategy-submit:hover {
+	opacity: 0.7;
+}
+
+.strategy-answer {
+	position:relative;
+	bottom:30px; 
+	font-size: 12px;
+	text-align:center;
+}
+
+@media screen and (max-width: 800px) and (min-width: 0px) {
+
 }
