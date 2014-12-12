@@ -14,6 +14,7 @@
  *= require 'background'
  *= require 'dashboard'
  *= require 'parking_lot'
+ *= require 'distance_questions'
  *= require 'tiles'
  *= require 'timer_questions'
  *= require 'mission_intro'
@@ -23,3 +24,18 @@
  *= require foundation_and_overrides
 
  */
+body, html { 
+	font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden; 
+    overflow-y: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	font-family: 'Quicksand', sans-serif;
+}
