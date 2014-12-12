@@ -1,14 +1,3 @@
-// #person,
-// #stop-watch,
-// #car-parking,
-// #hassle,
-// #other-explain {
-// 	height: 170px;
-// 	width: 160px;
-// 	border-radius: 30px;
-// 	background-color: white;
-// }
-
 .bubble-icon-container {
 	padding-top: 10px;
 	height: 150px;
@@ -86,6 +75,8 @@
 	// width: 55%;
 }
 .bubble-icon-container#container-5 {
+	position: relative;
+	z-index: 6;
 	margin-left: auto;
 	margin-right: 0;
 	// width: 55%;
@@ -116,8 +107,6 @@
 }
 // END SMALL SCREENS
 
-
-
 #boxster {
 	position: relative;
 	bottom: 810px;
@@ -143,19 +132,50 @@
 	bottom:30px; 
 	font-size: 12px;
 	text-align:center;
+	color: #BCBCBC;
 }
 
-#guy-answer {
-	color: #98CC2D;
+.strategy-answer#stopwatch-answer {
+	bottom: 43px;
 }
 
-#stopwatch-answer {
-	color: #D05E4B;
+#strategy-other-container {
+	position: absolute; 
+	z-index: 5; 
+	height: 150px; 
+	width: 300%; 
+	bottom: 0; 
+	right: 60px; 
+	#text-container {
+		display: inline-block;
+		background-color: white;
+		height: 150px;
+		margin-bottom: 20%;
+		width: 0%;
+		border-radius: 30px 0 0 30px;
+	}
+	#text-container-filler {
+		display: inline-block;
+		height: 150px;
+		width: 98%;
+	}
 }
 
-#parking-answer {
-
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: white;
 }
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: white;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: white;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color: white;
+}
+
 @media screen and (max-width: 800px) and (min-width: 0px) {
 
 }

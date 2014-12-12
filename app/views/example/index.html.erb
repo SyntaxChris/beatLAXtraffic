@@ -162,48 +162,48 @@
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="small-11 small-centered columns" id="other-small-textbox" style="display:none; bottom: 200px ">
+              <div id="other-text-area">
                 <div class="row">
-                  <div class="small-11 small-centered columns" id="other-small-textbox" style="display:none; bottom: 200px ">
-                    <div id="other-text-area">
-                      <div class="row">
-                        <div class="small-12 small-centered columns">
-                          <textarea id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
-                          <div class="row">
-                            <div class="small-7 columns"><div id="char-count-small" style="text-align:center; color: #B2C4D4"></div></div>
-                            <div class="small-5 columns" style="text-align: center;">
-                              <div class="other-submit" style="color:white; background-color: #9B69CC; padding: 10px 0 10px 0; border-radius: 5px; margin-right: 5px; margin-bottom: 2px">
-                                <div>Submit</div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="small-12 small-centered columns">
+                    <textarea id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
                     <div class="row">
-                      <div class="small-6 columns" style="height: 120px; background-color: #C39AE8"></div>
-                      <div class="small-6 columns" style="height: 120px; background-color: #AB75D3"></div>
-                    </div>
-                    <div class="row">
-                      <div class="small-6 columns" style="height: 120px; background-color: #9B69CC;">
-                        <div style="position: absolute; bottom:5px; color: white">
-                          Other <span style="font-size: 12px">(Specify)</span>
-                        </div>
-                      </div>
-                      <div class="small-6 columns" style="height: 120px; background-color: #8B5DC0; color: white">
-                        <div id="other-cancel">
-                          Cancel
+                      <div class="small-7 columns"><div id="char-count-small" style="text-align:center; color: #B2C4D4"></div></div>
+                      <div class="small-5 columns" style="text-align: center;">
+                        <div class="other-submit" style="color:white; background-color: #9B69CC; padding: 10px 0 10px 0; border-radius: 5px; margin-right: 5px; margin-bottom: 2px">
+                          <div>Submit</div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="medium-4 small-4 medium-centered small-centered columns">
-                    <div class="next" style="width: 125px; height: 30px; margin-left: auto; margin-right: auto;  color: white; text-align: center; padding-top: 2px; border-radius: 5px">
-                      Next
-                    </div>
+              </div>
+              <div class="row">
+                <div class="small-6 columns" style="height: 120px; background-color: #C39AE8"></div>
+                <div class="small-6 columns" style="height: 120px; background-color: #AB75D3"></div>
+              </div>
+              <div class="row">
+                <div class="small-6 columns" style="height: 120px; background-color: #9B69CC;">
+                  <div style="position: absolute; bottom:5px; color: white">
+                    Other <span style="font-size: 12px">(Specify)</span>
                   </div>
                 </div>
+                <div class="small-6 columns" style="height: 120px; background-color: #8B5DC0; color: white">
+                  <div id="other-cancel">
+                    Cancel
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="medium-4 small-4 medium-centered small-centered columns">
+              <div class="next" style="width: 125px; height: 30px; margin-left: auto; margin-right: auto;  color: white; text-align: center; padding-top: 2px; border-radius: 5px">
+                Next
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -539,31 +539,31 @@
         <h3 style="color: white">Why do you choose this strategy?</h3>
         <h6 style="color: #24B7EA; padding-top: 0">Select all that apply</h6>
       </div>
-      <div class="hide-for-small-only">
+      <!-- <div class="hide-for-small-only"> -->
         <div class="row">
-          <div class="large-12 medium-12 columns">
+          <div class="large-12 medium-12 small-12 columns">
             <div class="row">
-              <div class="large-4 medium-4 columns">
+              <div class="large-4 medium-4 small-4 columns">
                 <div class="bubble-icon-container" id="container-1">
                   <%= render 'strategyStopWatch' %>
                   <div class="strategy-answer" id="stopwatch-answer">
-                    To make it convenient for my passengers
+                    To get in and out of the airport as quickly as possible
                   </div>
                 </div>
               </div>
-              <div class="large-4 medium-4 columns">
+              <div class="large-4 medium-4 small-4 columns">
                 <div class="bubble-icon-container" id="container-2">
                   <%= render 'grayParking' %>
                   <div class="strategy-answer" id="parking-answer">
-                    To make it convenient for my passengers
+                    To avoid paying for parking
                   </div>
                 </div>
               </div>
-              <div class="large-4 medium-4 columns">
+              <div class="large-4 medium-4 small-4 columns">
                 <div class="bubble-icon-container" id="container-3">
                   <%= render 'hassle' %>
                   <div class="strategy-answer" id="hassle-answer">
-                    To make it convenient for my passengers
+                    To minimize the hassle for me
                   </div>
                 </div>
               </div>
@@ -571,9 +571,9 @@
           </div>
         </div>
         <div class="row" style="margin-top: 40px;">
-          <div class="large-12 medium-12 columns">
+          <div class="large-12 medium-12 small-12 columns">
             <div class="row">
-              <div class="large-3 medium-3 columns">
+              <div class="large-3 medium-3 small-3 columns">
                 <div class="bubble-icon-container" id="container-4">
                   <%= render 'guy' %>
                   <div class="strategy-answer" id="guy-answer">
@@ -591,22 +591,45 @@
                   <%= render 'boxster' %>
                 </div>
               </div>
-              <div class="large-3 medium-3 columns">
-                <div class="bubble-icon-container" id="container-5" >
+              <div class="large-3 medium-3 small-3 columns">
+                <div class="bubble-icon-container" id="container-5">
                   <%= render 'strategyOther' %>
                   <div class="strategy-answer" id="other-strategy-answer">
-                    To make it convenient for my passengers
+                    Other (Explain)
                   </div>
                 </div>
+                <!-- other text container -->
+                <div id="strategy-other-container">
+                  <div id="container-positioner">
+                    <div id="text-container-filler"></div>
+                    <div id="text-container">
+                      <div id="other-strategy-buttons">
+                        <div class="row" id="slide-content" style="display: none">
+                          <div class="large-2 medium-2 small-2 columns">
+                            <div style="padding: 7px; color: white; background-color: #F25053; border-radius: 5px; text-align: center; margin-left: 30%; margin-top: 15%; cursor: pointer">Save</div>
+                            <div style="padding: 7px; color: white; background-color: #C1C1C1; border-radius: 5px; text-align: center; margin-left: 30%; margin-top: 7%; cursor: pointer">Cancel</div>
+                            <div id="char-count-strategy" style="margin-left: 50%; color: #C1C1C1"></div>
+                            <div style="color:#C1C1C1; font-size: 10px; margin-left: 30%">Characters Left</div>
+                          </div>
+                          <div class="large-8 medium-8 small-8 columns">
+                            <textarea id="other-strategy" placeholder="Please write here." cols="1" rows="6" maxlength="150" style="margin-top: 3%; background-color: #F0943F; color: white; postion: absolute; left: 40px; top: 20px"></textarea>
+                          </div>
+                          <div class="large-2 medium-2 small-2 columns"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end other text container -->
               </div>
             </div>
           </div>
         </div>
-      </div>
+      <!-- </div> -->
 
-      <div class="show-for-small-only">
+      <!-- <div class="show-for-small-only">
         <div class="row">
-          <div class="large-12 medium-12 columns">
+          <div class="large-12 medium-12 small-12 columns">
             <div class="small-4 columns">
               <div class="bubble-icon-container-small" id="container-1" >
                 <%= render 'guy' %>
@@ -630,7 +653,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- end STRATEGY questions -->
 
