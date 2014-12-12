@@ -59,6 +59,10 @@ $(document).ready(function(){
 	    var cs = 150 - $(this).val().length;
 	    $('[id=char-count-small]').text(cs + " characters left");
 	});
+	$('[id=other-strategy]').keyup(function() {
+	    var cs = 150 - $(this).val().length;
+	    $('[id=char-count-strategy]').text(cs);
+	});
 	$('.other-submit').click(function() {
 	    $('[id=user-text-input]').hide();
 	    $('[id=other-small-textbox]').hide();
@@ -532,8 +536,13 @@ $(document).ready(function(){
  			$("#pencil-left").css("fill", "#F0822C");
  			$("#pencil-middle").css("fill", "#F29532");
  			$("#pencil-right").css("fill", "#F3B43C");
- 			$("#text-container").animate({width: '98%'});
+ 			$("#text-container").animate({width: '98%'}, function(){
+ 				$(this).css({
+ 					"position":"absolute"
+ 				});
+ 			});
  			$("#text-container-filler").animate({width: '0%'});
+ 			$("#slide-content").fadeIn();
  			otherToggle += 1;
  		}
  		else {
@@ -546,6 +555,7 @@ $(document).ready(function(){
  			$("#pencil-right").css("fill", "#B7B7B7");
  			$("#text-container").animate({width: '0%'});
  			$("#text-container-filler").animate({width: '98%'});
+ 			$("#slide-content").fadeOut();
  			otherToggle = 0;
  		}
  	});
