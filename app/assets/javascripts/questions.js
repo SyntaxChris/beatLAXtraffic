@@ -482,7 +482,7 @@ $(document).ready(function(){
  	});
 
  	$('#no-parking').click(function(){
- 		if(stopWatchToggle === 0){
+ 		if(carParkingToggle === 0){
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "#2FA3CA");
  			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
  			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
@@ -490,7 +490,7 @@ $(document).ready(function(){
  			$(".parking-background").css("fill", "#2FA3CA");
  			$(".car-color").css("fill", "#FCC859")
  			$("#parking-sign-bg").css("fill", "#24B7EA");
- 			stopWatchToggle += 1;
+ 			carParkingToggle += 1;
  		}
  		else {
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
@@ -500,7 +500,7 @@ $(document).ready(function(){
 			$(".parking-background").css("fill", "#BCBCBC");
 			$(".car-color").css("fill", "#CCCCCC")
 			$("#parking-sign-bg").css("fill", "#CCCCCC");
- 			stopWatchToggle = 0;
+ 			carParkingToggle = 0;
  		}
  	});
 
