@@ -66,6 +66,75 @@ $(document).ready(function(){
 	// END TOGGLE ALL
 
 
+	// DISTANCE QUESTIONS
+	$("#circle-1").click(function(){
+		$("#house").animate({
+			"bottom":"341px"
+		});
+	});
+
+	$("#circle-2").click(function(){
+		$("#house").animate({
+			"bottom":"281px"
+		});
+	});
+
+	$("#circle-3").click(function(){
+		$("#house").animate({
+			"bottom":"221px"
+		});
+	});
+
+	$("#circle-4").click(function(){
+		$("#house").animate({
+			"bottom":"161px"
+		});
+	});
+
+	$("#circle-5").click(function(){
+		$("#house").animate({
+			"bottom":"101px"
+		});
+	});
+
+	// var cir1 = 0;
+	// var cir2 = 0;
+	// var cir3 = 0;
+	// var cir4 = 0;
+	// var cir5 = 0;
+
+	// $(".grayed-circle").click(function(){
+	// 	var tally = cir2+cir3+cir4+cir5
+	// 	var sliceBtm = $(this).css("bottom").length - 2;
+	// 	var sliceLft = $(this).css("left").length - 2;
+
+	// 	if(tally > 0){
+
+	// 	} 
+	// 	if(toggleAnimation === 0){
+	// 		$(this).animate({
+	// 			"height":"60px",
+	// 			"width":"60px",
+	// 			"bottom":parseInt($(this).css("bottom").slice(0, sliceBtm))-10+"px",
+	// 			"left":parseInt($(this).css("left").slice(0, sliceLft))-9+"px"
+	// 		});
+	// 		toggleAnimation = 1;
+	// 	}
+	// 	else {
+	// 		$(this).animate({
+	// 			"height":"40px",
+	// 			"width":"40px",
+	// 			"bottom":parseInt($(this).css("bottom").slice(0, sliceBtm))+10+"px",
+	// 			"left":parseInt($(this).css("left").slice(0, sliceLft))+9+"px"
+	// 		});
+	// 		toggleAnimation = 0;
+	// 	}	
+	// });
+	// END DISTANCE QUESTIONS
+
+
+
+
 	// TILE QUESTIONS
 	$('[id=other-info]').keyup(function() {
 	    var cs = 150 - $(this).val().length;
@@ -191,8 +260,6 @@ $(document).ready(function(){
     		otherCheck = 0;
     	}
 	});
-
-
 	// END TILE QUESTIONS
 
 
