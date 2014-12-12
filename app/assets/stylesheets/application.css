@@ -19,6 +19,9 @@
  *= require 'timer_questions'
  *= require 'mission_intro'
  *= require 'interactive_map'
+ *= require 'successful_pickup'
+ *= require 'circle_pickup'
+ *= require 'timer_pickup'
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
