@@ -4,43 +4,59 @@ $(document).ready(function(){
 	$( "#toggle-questions" ).click(function() {
 		clicks += 1;
 		$("#clicks").text(clicks);
-			if (clicks === 1) {
-				$( "#mission-intro").hide();
-				$( "#strategy-questions").show();
-				$( "#lines" ).hide();
-	  			$( "#cars" ).hide();
-				$( "#dashboard").show();
-				$('body').trigger('startDashboardAnimation');
+		if (clicks === 1) {
+			$( "#distance-questions").show();
+			$( "#parking-lot" ).hide();
+			$( "#mission-intro").hide();
+			$( "#strategy-questions").hide();
+			$( "#lines" ).hide();
+  			$( "#cars" ).hide();
+			$( "#dashboard").hide();
+			$('body').trigger('startDashboardAnimation');
+		}
+		else if (clicks === 2) {
+			$( "#strategy-questions").show();
+			$( "#distance-questions").hide();
+			$( "#mission-intro").hide();
+			$( "#parking-lot" ).hide();
+			$( "#lines" ).hide();
+  			$( "#cars" ).hide();
+			$( "#dashboard").show();
+			$('body').trigger('startDashboardAnimation');
   		}
-  		else if (clicks === 2) {
+  		else if (clicks === 3) {
   			$( "#strategy-questions").hide();
+  			$( "parking-lot" ).show();
 	  		$( "#lines" ).show();
 	  		$( "#cars" ).show();
 	  		$( "#tile-questions" ).show();
   		}
-  		else if (clicks === 3) {
+  		else if (clicks === 4) {
   			$( "#tile-questions" ).hide();
   			$( "#clock-questions" ).show();
   		}
-  		else if (clicks === 4) {
+  		else if (clicks === 5) {
+  			$( "parking-lot" ).hide();
   			$( "#lines" ).hide();
 	  		$( "#cars" ).hide();
 	  		$( "#clock-questions" ).hide();
   			$( "#icon-questions" ).show();
   		}
-  		else if (clicks === 5) {
+  		else if (clicks === 6) {
   			$( "#icon-questions" ).hide();
-  			$( "#lines" ).show();
-	  		$( "#cars" ).show();
+  			// $( "#parking-lot" ).show();
+  			// $( "#lines" ).show();
+	  		// $( "#cars" ).show();
   			$( "#spinner-questions" ).show();
   		}
-  		else if (clicks === 6) {
+  		else if (clicks === 7) {
+  			$( "parking-lot" ).hide();
   			$( "#lines" ).hide();
 	  		$( "#cars" ).hide();
   			$( "#spinner-questions" ).hide();
   			$( "#interactive-map" ).show();
   		}
-  		else if (clicks === 7) {
+  		else if (clicks === 8) {
   			$( "#interactive-map" ).hide();
   			$( "#dashboard" ).hide();
   			$( "#mission-intro" ).show();
@@ -48,6 +64,75 @@ $(document).ready(function(){
   		}
 	});
 	// END TOGGLE ALL
+
+
+	// DISTANCE QUESTIONS
+	$("#circle-1").click(function(){
+		$("#house").animate({
+			"bottom":"341px"
+		});
+	});
+
+	$("#circle-2").click(function(){
+		$("#house").animate({
+			"bottom":"281px"
+		});
+	});
+
+	$("#circle-3").click(function(){
+		$("#house").animate({
+			"bottom":"221px"
+		});
+	});
+
+	$("#circle-4").click(function(){
+		$("#house").animate({
+			"bottom":"161px"
+		});
+	});
+
+	$("#circle-5").click(function(){
+		$("#house").animate({
+			"bottom":"101px"
+		});
+	});
+
+	// var cir1 = 0;
+	// var cir2 = 0;
+	// var cir3 = 0;
+	// var cir4 = 0;
+	// var cir5 = 0;
+
+	// $(".grayed-circle").click(function(){
+	// 	var tally = cir2+cir3+cir4+cir5
+	// 	var sliceBtm = $(this).css("bottom").length - 2;
+	// 	var sliceLft = $(this).css("left").length - 2;
+
+	// 	if(tally > 0){
+
+	// 	} 
+	// 	if(toggleAnimation === 0){
+	// 		$(this).animate({
+	// 			"height":"60px",
+	// 			"width":"60px",
+	// 			"bottom":parseInt($(this).css("bottom").slice(0, sliceBtm))-10+"px",
+	// 			"left":parseInt($(this).css("left").slice(0, sliceLft))-9+"px"
+	// 		});
+	// 		toggleAnimation = 1;
+	// 	}
+	// 	else {
+	// 		$(this).animate({
+	// 			"height":"40px",
+	// 			"width":"40px",
+	// 			"bottom":parseInt($(this).css("bottom").slice(0, sliceBtm))+10+"px",
+	// 			"left":parseInt($(this).css("left").slice(0, sliceLft))+9+"px"
+	// 		});
+	// 		toggleAnimation = 0;
+	// 	}	
+	// });
+	// END DISTANCE QUESTIONS
+
+
 
 
 	// TILE QUESTIONS
@@ -175,8 +260,6 @@ $(document).ready(function(){
     		otherCheck = 0;
     	}
 	});
-
-
 	// END TILE QUESTIONS
 
 
@@ -398,6 +481,7 @@ $(document).ready(function(){
 		 		function(){
 		   			$("#full").css("fill", "red");
 		   			$("#spin-button").hide();
+		   			$("#parking-lot").fadeIn();
 		   			$("#lines").fadeIn();
 		   			$("#cars").fadeIn();
 		   			$("#chance-time").hide();
@@ -416,6 +500,7 @@ $(document).ready(function(){
 		 			$("#spinner-components").hide();
 		 			$("#parking-trophy").fadeIn();
 		   			$("#not-full").css("fill", "red");
+		   			$("#parking-lot").fadeIn();
 		   			$("#lines").fadeIn();
 		  		}, 6000
 	  		);
