@@ -7,6 +7,8 @@ $(document).ready(function(){
 			if (clicks === 1) {
 				$( "#mission-intro").hide();
 				$( "#strategy-questions").show();
+				$( "#lines" ).hide();
+	  			$( "#cars" ).hide();
 				$( "#dashboard").show();
 				$('body').trigger('startDashboardAnimation');
   		}
@@ -56,6 +58,25 @@ $(document).ready(function(){
 	$('[id=other-info-small]').keyup(function() {
 	    var cs = 150 - $(this).val().length;
 	    $('[id=char-count-small]').text(cs + " characters left");
+	});
+	$('[id=other-strategy]').keyup(function() {
+	    var cs = 150 - $(this).val().length;
+	    $('[id=char-count-strategy]').text(cs);
+	});
+	$('.other-submit').click(function() {
+	    $('[id=user-text-input]').hide();
+	    $('[id=other-small-textbox]').hide();
+	    $('.next').show();
+	    if (otherCheck === 0){
+			$(".unchecked-other-tile svg path").attr("fill", "#AA75D3");
+    		$(".unchecked-other-tile svg polyline").attr("stroke", "white");
+    		otherCheck = 1;
+    	}
+    	else {
+			$(".unchecked-other-tile svg path").attr("fill", "#FFFFFF");
+    		$(".unchecked-other-tile svg polyline").attr("stroke", "#757575");
+    		otherCheck = 0;
+    	}
 	});
 	$('[id=small-other]').click(function(){
 		$('[id=other-small-textbox]').show();
@@ -140,7 +161,8 @@ $(document).ready(function(){
 	});
 
 	$('[id=other-landscape]').click(function() {
-		$('#user-text-input').toggle();
+		$('[id=user-text-input]').toggle();
+		$('.next').toggle();
     	$(".unchecked-other-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
     	if (otherCheck === 0){
 			$(".unchecked-other-tile svg path").attr("fill", "#AA75D3");
@@ -162,7 +184,7 @@ $(document).ready(function(){
 	$("#timer-question-label-1").hover(
 		function () {
 			$("#timer-question-label-1").css('cursor','pointer');
-    		$("#timer-question-1").css("fill", "#A8E3F5");
+    		$("#timer-question-1").css("fill", "#54ACE8");
  		},
 		function () {
     		$("#timer-question-1").css("fill", "#008AE8");
@@ -171,7 +193,7 @@ $(document).ready(function(){
  	$("#timer-question-label-2").hover(
 		function () {
 			$("#timer-question-label-2").css('cursor','pointer');
-    		$("#timer-question-2").css("fill", "#A8E3F5");
+    		$("#timer-question-2").css("fill", "#73D4F5");
  		},
 		function () {
     		$("#timer-question-2").css("fill", "#1BB9EF");
@@ -180,7 +202,7 @@ $(document).ready(function(){
  	$("#timer-question-label-3").hover(
 		function () {
 			$("#timer-question-label-3").css('cursor','pointer');
-    		$("#timer-question-3").css("fill", "#A8E3F5");
+    		$("#timer-question-3").css("fill", "#66BDED");
  		},
 		function () {
     		$("#timer-question-3").css("fill", "#079BED");
@@ -189,7 +211,7 @@ $(document).ready(function(){
  	$("#timer-question-label-4").hover(
 		function () {
 			$("#timer-question-label-4").css('cursor','pointer');
-    		$("#timer-question-4").css("fill", "#A8E3F5");
+    		$("#timer-question-4").css("fill", "#68C4ED");
  		},
 		function () {
     		$("#timer-question-4").css("fill", "#16ACEF");
@@ -412,92 +434,131 @@ $(document).ready(function(){
  	// END SPINNER QUESTIONS
 
  	// STRATEGY QUESTIONS
- 	var personToggle = 0;
+ 	
+ 	var guyToggle = 0;
  	var stopWatchToggle = 0;
  	var carParkingToggle = 0;
  	var hassleToggle = 0;
  	var otherToggle = 0;
 
- 	$("#person").click(function(){
- 		personToggle += 1;
-
- 		if (personToggle === 1) {
+ 	$('#guy').click(function(){
+ 		if(guyToggle === 0){
+ 			$(this).siblings(0).children().children("g").children("circle").css("fill", "#98CC2D");
+ 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
+ 			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
+ 			$("#guy-answer").css("color", "#98CC2D");
  			$("#guy-background").css("fill", "#98CC2D");
- 			$("#shirt").css("fill", "#FBDD61");
- 			$("#unchecked").hide();
- 			$("#checked").show();
- 		};
-
- 		if (personToggle === 2) {
-			$("#guy-background").css("fill", "#CCCCCC");
+	 		$("#shirt").css("fill", "#FBDD61");
+ 			guyToggle += 1;
+ 		}
+ 		else {
+ 			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
+ 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
+ 			$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
+ 			$("#guy-answer").css("color", "#BCBCBC");
+ 			$("#guy-background").css("fill", "#CCCCCC");
 			$("#shirt").css("fill", "#A3A3A3");
- 			$("#checked").hide();
- 			$("#unchecked").show();
- 			personToggle = 0;
- 		};
+ 			guyToggle = 0;
+ 		}
  	});
 
-
- 	$("#stop-watch").click(function(){
- 		stopWatchToggle += 1;
-
- 		if (stopWatchToggle === 1) {
+ 	$('#stopwatch').click(function(){
+ 		if(stopWatchToggle === 0){
+ 			$(this).siblings(0).children().children("g").children("circle").css("fill", "#D05E4B");
+ 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
+ 			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
+ 			$("#stopwatch-answer").css("color", "#D05E4B");
  			$("#timer-face").css("fill", "#D05E4B");
- 			$("#uncheckedStop").hide();
- 			$("#checkedStop").show();
- 		};
-
- 		if (stopWatchToggle === 2) {
-			$("#timer-face").css("fill", "#BCBCBC");
- 			$("#checkedStop").hide();
- 			$("#uncheckedStop").show();
+ 			stopWatchToggle += 1;
+ 		}
+ 		else {
+ 			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
+ 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
+ 			$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
+ 			$("#stopwatch-answer").css("color", "#BCBCBC");
+ 			$("#timer-face").css("fill", "#BCBCBC");
  			stopWatchToggle = 0;
- 		};
+ 		}
  	});
 
- 	$("#car-parking").click(function(){
- 		carParkingToggle += 1;
-
- 		if (carParkingToggle === 1) {
- 			$("#grayed").hide();
- 			$("#colored").show();
- 			$("#uncheckedParking").hide();
- 			$("#checkedParking").show();
- 		};
-
- 		if (carParkingToggle === 2) {
- 			$("#colored").hide();
- 			$("#checkedParking").hide();
-			$("#grayed").show();
- 			$("#uncheckedParking").show();
- 			carParkingToggle = 0;
- 		};
+ 	$('#no-parking').click(function(){
+ 		if(stopWatchToggle === 0){
+ 			$(this).siblings(0).children().children("g").children("circle").css("fill", "#2FA3CA");
+ 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
+ 			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
+ 			$("#parking-answer").css("color", "#2FA3CA");
+ 			$(".parking-background").css("fill", "#2FA3CA");
+ 			$(".car-color").css("fill", "#FCC859")
+ 			$("#parking-sign-bg").css("fill", "#24B7EA");
+ 			stopWatchToggle += 1;
+ 		}
+ 		else {
+ 			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
+ 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
+ 			$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
+ 			$("#parking-answer").css("color", "#BCBCBC");
+			$(".parking-background").css("fill", "#BCBCBC");
+			$(".car-color").css("fill", "#CCCCCC")
+			$("#parking-sign-bg").css("fill", "#CCCCCC");
+ 			stopWatchToggle = 0;
+ 		}
  	});
 
- 	$("#hassle").click(function(){
- 		hassleToggle += 1;
-
- 		if (hassleToggle === 1) {
+ 	$('#hassle').click(function(){
+ 		if(hassleToggle === 0){
+ 			$(this).siblings(0).children().children("g").children("circle").css("fill", "#DD734E");
+ 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
+ 			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
+ 			$("#hassle-answer").css("color", "#DD734E");
  			$("#hassle-background").css("fill", "#DD734E");
  			$("#hassle-edge").css("fill", "#DDBD03");
  			$("#hassle-face").css("fill", "#F9D43A");
- 			$("#uncheckedHassle").hide();
- 			$("#checkedHassle").show();
- 		};
-
- 		if (hassleToggle === 2) {
-			$("#hassle-background").css("fill", "#BCBCBC");
+ 			hassleToggle += 1;
+ 		}
+ 		else {
+ 			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
+ 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
+ 			$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
+ 			$("#hassle-answer").css("color", "#BCBCBC");
+ 			$("#hassle-background").css("fill", "#BCBCBC");
 			$("#hassle-edge").css("fill", "#999999");
 			$("#hassle-face").css("fill", "#D8D8D8");
-			$("#checkedHassle").hide();
- 			$("#uncheckedHassle").show();
  			hassleToggle = 0;
- 		};
+ 		}
  	});
 
- 	// $("#other-explain").click(function(){
- 		
- 	// });
+ 	$('#strategy-other').click(function(){
+ 		if(otherToggle === 0){
+ 			$(this).siblings(0).children().children("g").children("circle").css("fill", "#FFD93B");
+ 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
+ 			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
+ 			$("#other-strategy-answer").css("color", "#F29532");
+ 			$("#pencil-left").css("fill", "#F0822C");
+ 			$("#pencil-middle").css("fill", "#F29532");
+ 			$("#pencil-right").css("fill", "#F3B43C");
+ 			$("#text-container").animate({width: '98%'}, function(){
+ 				$(this).css({
+ 					"position":"absolute"
+ 				});
+ 			});
+ 			$("#text-container-filler").animate({width: '0%'});
+ 			$("#slide-content").fadeIn();
+ 			otherToggle += 1;
+ 		}
+ 		else {
+ 			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
+ 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
+ 			$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
+ 			$("#other-strategy-answer").css("color", "#BCBCBC");
+ 			$("#pencil-left").css("fill", "#777777");
+ 			$("#pencil-middle").css("fill", "#919191");
+ 			$("#pencil-right").css("fill", "#B7B7B7");
+ 			$("#text-container").animate({width: '0%'});
+ 			$("#text-container-filler").animate({width: '98%'});
+ 			$("#slide-content").fadeOut();
+ 			otherToggle = 0;
+ 		}
+ 	});
  	// END STRATEGY QUESTIONS
 });
 
