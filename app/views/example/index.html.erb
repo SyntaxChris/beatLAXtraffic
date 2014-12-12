@@ -1,22 +1,5 @@
 <div id="toggle-questions" style="position: absolute; font-size: 5px; width: 50px; height: 30px; padding: 5px 5px 10px 0 ">TOGGLE</div>
-<!-- <div ng-app='app.exampleApp' ng-controller='ExampleCtrl'> -->
-  <!-- <div class="quiz" ng-show="quizRunning"> -->
-  <!-- <ul ng-repeat="q in surveyQuestions"> -->
 
-            <!-- <div ng-show="currentQuestion === q.id">
-              <h3>{{ q.question }}</h3>
-              <ul>
-                <li><a href="#" ng-click="advanceQuestion(q.id)">{{ q.answer_1 }}</a></li>
-                <li><a href="#" ng-click="advanceQuestion(q.id)">{{ q.answer_2 }}</a></li>
-              </ul>
-            </div> -->
-
-            <!-- </ul> -->
-
-            <!-- <div class="summary" ng-hide="quizRunning"> -->
-            <!-- <p>You have finished the quiz.</p> -->
-            <!-- <p><a href="#" ng-click="restartQuiz()">Retry?</a> -->
- <!-- </div> -->
 <div id="skip-button">
   <%= render 'skipbutton' %>
 </div>
@@ -26,8 +9,29 @@
 
 <!-- QUESTION FORMATS -->
 <div class="row">
+  <!-- 1. DISTANCE questions -->
+    <div id="distance-questions" style="display:none">
+      <div class="row" style="background-color: #B6E2F0; position: absolute; left: 0; bottom: 440px; height: 60px;  width: 102%; opacity: 0.8">
+        <br>
+      </div>
+      <div class="row" style="background-color: #A3DCEE; position: absolute; left: 0; bottom: 380px; height: 60px; width: 102%; opacity: 0.8">
+        <br>
+      </div>
+      <div class="row" style="background-color: #88CEE9; position: absolute; left: 0; bottom: 320px; height: 60px; width: 102%; opacity: 0.8">
+        <br>
+      </div>
+      <div class="row" style="background-color: #77BFE5; position: absolute; left: 0; bottom: 260px; height: 60px; width: 102%; opacity: 0.8">
+        <br>
+      </div>
+      <div class="row" style="background-color: #62AEE0; position: absolute; left: 0; bottom: 200px; height: 60px; width: 102%; opacity: 0.8">
+        <br>
+      </div>
+      <div class="row" style="background-color: #4194D0; position: absolute; left: 0; bottom: 0; height: 200px; width: 102%; opacity: 0.8">
+        <br>
+      </div>
+    </div>
+    <!-- end DISTANCE questions -->
   <div class="large-12 medium-12 small-12 columns">
-
     <!-- 1. TILE questions -->
     <div id="tile-questions"  style="display: none">
       <!-- questions header -->
@@ -659,7 +663,7 @@
 
 
     <!-- MISSION INTRO -->
-    <div id="mission-intro">
+    <div id="mission-intro" style="display: none">
       <div id="envelope">
         <%= render 'envelope' %>
       </div>
@@ -849,7 +853,7 @@
 <!-- SCENES -->
 
 <!-- parking lot -->
-<div id="parking-lot">
+<div id="parking-lot" style="display:none">
   <div id="lines" style="display:none">
     <%= render 'lines' %>
   </div>
