@@ -68,6 +68,10 @@ $(document).ready(function(){
 		}
 		else if (clicks === 10) {
 			$( "#circle-pickup" ).hide();
+			$( "#timer-pickup" ).show();
+		}
+		else if (clicks === 11) {
+			$( "#timer-pickup" ).hide();
 			$( ".red-car" ).toggleClass('animate', false);
 			$( "#mission-intro" ).show();
 			clicks = 0;
