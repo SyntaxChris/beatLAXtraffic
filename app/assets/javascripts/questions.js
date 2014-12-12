@@ -24,44 +24,58 @@ $(document).ready(function(){
 			$( "#dashboard").show();
 			$('body').trigger('startDashboardAnimation');
   		}
-  		else if (clicks === 3) {
-  			$( "#strategy-questions").hide();
-  			$( "parking-lot" ).show();
-	  		$( "#lines" ).show();
-	  		$( "#cars" ).show();
-	  		$( "#tile-questions" ).show();
-  		}
-  		else if (clicks === 4) {
-  			$( "#tile-questions" ).hide();
-  			$( "#clock-questions" ).show();
-  		}
-  		else if (clicks === 5) {
-  			$( "parking-lot" ).hide();
-  			$( "#lines" ).hide();
-	  		$( "#cars" ).hide();
-	  		$( "#clock-questions" ).hide();
-  			$( "#icon-questions" ).show();
-  		}
-  		else if (clicks === 6) {
-  			$( "#icon-questions" ).hide();
-  			// $( "#parking-lot" ).show();
-  			// $( "#lines" ).show();
-	  		// $( "#cars" ).show();
-  			$( "#spinner-questions" ).show();
-  		}
-  		else if (clicks === 7) {
-  			$( "parking-lot" ).hide();
-  			$( "#lines" ).hide();
-	  		$( "#cars" ).hide();
-  			$( "#spinner-questions" ).hide();
-  			$( "#interactive-map" ).show();
-  		}
-  		else if (clicks === 8) {
-  			$( "#interactive-map" ).hide();
-  			$( "#dashboard" ).hide();
-  			$( "#mission-intro" ).show();
-  			clicks = 0
-  		}
+		else if (clicks === 3) {
+			$( "#strategy-questions").hide();
+			$( "parking-lot" ).show();
+  		$( "#lines" ).show();
+  		$( "#cars" ).show();
+  		$( "#tile-questions" ).show();
+		}
+		else if (clicks === 4) {
+			$( "#tile-questions" ).hide();
+			$( "#clock-questions" ).show();
+		}
+		else if (clicks === 5) {
+			$( "parking-lot" ).hide();
+			$( "#lines" ).hide();
+  		$( "#cars" ).hide();
+  		$( "#clock-questions" ).hide();
+			$( "#icon-questions" ).show();
+		}
+		else if (clicks === 6) {
+			$( "#icon-questions" ).hide();
+			// $( "#parking-lot" ).show();
+			// $( "#lines" ).show();
+  		// $( "#cars" ).show();
+			$( "#spinner-questions" ).show();
+		}
+		else if (clicks === 7) {
+			$( "parking-lot" ).hide();
+			$( "#lines" ).hide();
+  		$( "#cars" ).hide();
+			$( "#spinner-questions" ).hide();
+			$( "#interactive-map" ).show();
+		}
+		else if (clicks === 8) {
+			$( "#interactive-map" ).hide();
+			$( "#successful-pickup" ).show();
+			$( "#dashboard" ).hide();
+		}
+		else if (clicks === 9) {
+			$( "#successful-pickup" ).hide();
+			$( "#circle-pickup" ).show();
+			$( "#dashboard" ).show();
+		}
+		else if (clicks === 10) {
+			$( "#circle-pickup" ).hide();
+			$( "#timer-pickup" ).show();
+		}
+		else if (clicks === 11) {
+			$( "#timer-pickup" ).hide();
+			$( ".red-car" ).toggleClass('animate', false);
+			$( "#mission-intro" ).show();
+			clicks = 0;
+		}
 	});
 	// END TOGGLE ALL
 
