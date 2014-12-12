@@ -867,6 +867,40 @@
     </div>
     <!-- END SUCCESFUL PICKUP -->
 
+    <!-- START CIRCLE PICKUP QUESTIONS -->
+    <div id="circle-pickup" style="display: none;">
+      <div class="content">
+        <h3>
+          How many times do you typically circle around the terminal when picking up your passenger?
+        </h3>
+
+        <div class="content-c">
+          <div class="red-circle">
+            <div class="circle-car">
+              <%= render 'blueCircleCar' %>
+            </div>
+            <div class="outer-container">
+              <div class="inner-circle">
+                <div class="circle-number">3</div>
+                <div>times</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-c buttons-c">
+          <div>
+             <button id="x-btn-circle-less" class="counter-btn">-1</button>
+             <button id="x-btn-circle-more" class="counter-btn">+1</button> 
+          </div>
+          <div>
+            <button id="x-btn-circle-next" class="circle-next-btn">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END CIRCLE PICKUP QUESTIONS -->
+
   </div>
 </div>
 <!-- END QUESTION FORMATS -->
