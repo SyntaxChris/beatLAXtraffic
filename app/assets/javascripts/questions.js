@@ -180,7 +180,7 @@ $(document).ready(function(){
 	$("#timer-question-label-1").hover(
 		function () {
 			$("#timer-question-label-1").css('cursor','pointer');
-    		$("#timer-question-1").css("fill", "#A8E3F5");
+    		$("#timer-question-1").css("fill", "#54ACE8");
  		},
 		function () {
     		$("#timer-question-1").css("fill", "#008AE8");
@@ -189,7 +189,7 @@ $(document).ready(function(){
  	$("#timer-question-label-2").hover(
 		function () {
 			$("#timer-question-label-2").css('cursor','pointer');
-    		$("#timer-question-2").css("fill", "#A8E3F5");
+    		$("#timer-question-2").css("fill", "#73D4F5");
  		},
 		function () {
     		$("#timer-question-2").css("fill", "#1BB9EF");
@@ -198,7 +198,7 @@ $(document).ready(function(){
  	$("#timer-question-label-3").hover(
 		function () {
 			$("#timer-question-label-3").css('cursor','pointer');
-    		$("#timer-question-3").css("fill", "#A8E3F5");
+    		$("#timer-question-3").css("fill", "#66BDED");
  		},
 		function () {
     		$("#timer-question-3").css("fill", "#079BED");
@@ -207,7 +207,7 @@ $(document).ready(function(){
  	$("#timer-question-label-4").hover(
 		function () {
 			$("#timer-question-label-4").css('cursor','pointer');
-    		$("#timer-question-4").css("fill", "#A8E3F5");
+    		$("#timer-question-4").css("fill", "#68C4ED");
  		},
 		function () {
     		$("#timer-question-4").css("fill", "#16ACEF");
@@ -532,6 +532,8 @@ $(document).ready(function(){
  			$("#pencil-left").css("fill", "#F0822C");
  			$("#pencil-middle").css("fill", "#F29532");
  			$("#pencil-right").css("fill", "#F3B43C");
+ 			$("#text-container").animate({width: '98%'});
+ 			$("#text-container-filler").animate({width: '0%'});
  			otherToggle += 1;
  		}
  		else {
@@ -542,6 +544,8 @@ $(document).ready(function(){
  			$("#pencil-left").css("fill", "#777777");
  			$("#pencil-middle").css("fill", "#919191");
  			$("#pencil-right").css("fill", "#B7B7B7");
+ 			$("#text-container").animate({width: '0%'});
+ 			$("#text-container-filler").animate({width: '98%'});
  			otherToggle = 0;
  		}
  	});
