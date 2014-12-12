@@ -4,43 +4,59 @@ $(document).ready(function(){
 	$( "#toggle-questions" ).click(function() {
 		clicks += 1;
 		$("#clicks").text(clicks);
-			if (clicks === 1) {
-				$( "#mission-intro").hide();
-				$( "#strategy-questions").show();
-				$( "#lines" ).hide();
-	  			$( "#cars" ).hide();
-				$( "#dashboard").show();
-				$('body').trigger('startDashboardAnimation');
+		if (clicks === 1) {
+			$( "#distance-questions").show();
+			$( "#parking-lot" ).hide();
+			$( "#mission-intro").hide();
+			$( "#strategy-questions").hide();
+			$( "#lines" ).hide();
+  			$( "#cars" ).hide();
+			$( "#dashboard").hide();
+			$('body').trigger('startDashboardAnimation');
+		}
+		else if (clicks === 2) {
+			$( "#strategy-questions").show();
+			$( "#distance-questions").hide();
+			$( "#mission-intro").hide();
+			$( "#parking-lot" ).hide();
+			$( "#lines" ).hide();
+  			$( "#cars" ).hide();
+			$( "#dashboard").show();
+			$('body').trigger('startDashboardAnimation');
   		}
-  		else if (clicks === 2) {
+  		else if (clicks === 3) {
   			$( "#strategy-questions").hide();
+  			$( "parking-lot" ).show();
 	  		$( "#lines" ).show();
 	  		$( "#cars" ).show();
 	  		$( "#tile-questions" ).show();
   		}
-  		else if (clicks === 3) {
+  		else if (clicks === 4) {
   			$( "#tile-questions" ).hide();
   			$( "#clock-questions" ).show();
   		}
-  		else if (clicks === 4) {
+  		else if (clicks === 5) {
+  			$( "parking-lot" ).hide();
   			$( "#lines" ).hide();
 	  		$( "#cars" ).hide();
 	  		$( "#clock-questions" ).hide();
   			$( "#icon-questions" ).show();
   		}
-  		else if (clicks === 5) {
+  		else if (clicks === 6) {
   			$( "#icon-questions" ).hide();
-  			$( "#lines" ).show();
-	  		$( "#cars" ).show();
+  			// $( "#parking-lot" ).show();
+  			// $( "#lines" ).show();
+	  		// $( "#cars" ).show();
   			$( "#spinner-questions" ).show();
   		}
-  		else if (clicks === 6) {
+  		else if (clicks === 7) {
+  			$( "parking-lot" ).hide();
   			$( "#lines" ).hide();
 	  		$( "#cars" ).hide();
   			$( "#spinner-questions" ).hide();
   			$( "#interactive-map" ).show();
   		}
-  		else if (clicks === 7) {
+  		else if (clicks === 8) {
   			$( "#interactive-map" ).hide();
   			$( "#dashboard" ).hide();
   			$( "#mission-intro" ).show();
@@ -398,6 +414,7 @@ $(document).ready(function(){
 		 		function(){
 		   			$("#full").css("fill", "red");
 		   			$("#spin-button").hide();
+		   			$("#parking-lot").fadeIn();
 		   			$("#lines").fadeIn();
 		   			$("#cars").fadeIn();
 		   			$("#chance-time").hide();
@@ -416,6 +433,7 @@ $(document).ready(function(){
 		 			$("#spinner-components").hide();
 		 			$("#parking-trophy").fadeIn();
 		   			$("#not-full").css("fill", "red");
+		   			$("#parking-lot").fadeIn();
 		   			$("#lines").fadeIn();
 		  		}, 6000
 	  		);
