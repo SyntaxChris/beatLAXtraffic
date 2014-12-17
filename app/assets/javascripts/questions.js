@@ -77,6 +77,7 @@ $(document).ready(function(){
 			$( "#timer-pickup" ).hide();
 			$( ".red-car" ).toggleClass('animate', false);
 			$( "#distance-questions").show();
+			$("#dashboard").hide();
 			clicks = 0;
 		}
 	});
