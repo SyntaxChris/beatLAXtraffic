@@ -185,7 +185,8 @@ RSpec.describe Response, :type => :model do
     pending "if there is no time left at a decision point, it logs '1' as the "\
             "amount of time remaining"
 
-    pending "seen/skipped etc summarize themselves as -1, 0, 1 in 'interaction' field"
+    pending "seen/skipped etc summarize themselves as -1, 0, 1 in 'interaction' field"\
+            "seen+answerd = 1, seen+skipped = -1, not seen = 0"
 
     pending "when a question is NOT skipped, marks the response as not skipped,"\
             "associates the proper answer and notes in the 'interaction'"

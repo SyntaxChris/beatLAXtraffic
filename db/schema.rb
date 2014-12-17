@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141202162526) do
+ActiveRecord::Schema.define(version: 20141217201333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20141202162526) do
     t.datetime "updated_at"
     t.integer  "node_id"
     t.string   "nickname"
+    t.text     "situation"
+    t.integer  "question_type_id"
   end
 
   create_table "decisions", force: true do |t|
@@ -42,6 +44,7 @@ ActiveRecord::Schema.define(version: 20141202162526) do
     t.datetime "updated_at"
     t.integer  "decision_point_id"
     t.text     "decision"
+    t.integer  "destination_node_id"
   end
 
   create_table "freeform_responses", force: true do |t|
@@ -86,6 +89,9 @@ ActiveRecord::Schema.define(version: 20141202162526) do
     t.integer  "luggage_count"
     t.string   "who_picking_up"
     t.integer  "times_circled"
+    t.string   "originating_location"
+    t.integer  "landing_time"
+    t.boolean  "travel_companion"
   end
 
   create_table "responses", force: true do |t|

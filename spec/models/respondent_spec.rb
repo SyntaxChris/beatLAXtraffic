@@ -13,7 +13,10 @@ describe Respondent do
         passenger_count: 2,
         luggage_count: 4,
         who_picking_up: "Boss",
-        times_circled: 3
+        times_circled: 3,
+        originating_location: "JFK",
+        landing_time: 120,
+        travel_companion: true
       )
     }
 
@@ -51,6 +54,18 @@ describe Respondent do
 
     it "has a pickup target party" do
       expect(respondent.who_picking_up).to eq "Boss"
+    end
+
+    it "has an originating_location" do
+      expect(respondent.originating_location).to eq "JFK"
+    end
+
+    it "has a landing_time" do
+      expect(respondent.landing_time).to eq 120
+    end
+
+    it "has a travel_companion" do
+      expect(respondent.travel_companion).to eq true
     end
   end
 

@@ -20,5 +20,9 @@ RSpec.describe QuestionType, :type => :model do
     it "has many questions" do
       expect(question_type).to have_many(:questions)
     end
+
+    it "has many decision_points" do
+      expect(question_type).to have_many(:decision_points)
+    end
   end
 end
