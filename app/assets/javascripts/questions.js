@@ -637,6 +637,8 @@ $(document).ready(function(){
  	// END STRATEGY QUESTIONS
 
  	// LAST SERIES QUESTIONS
+ 	var otherBoxCount = 0;
+
  	$('.question-wrapper').hover(
 	    function(){
 	      var $this = $(this);
@@ -646,7 +648,21 @@ $(document).ready(function(){
 	      var $this = $(this);
 	      $this.css('background-color', $this.data('bgcolor'));
 	    }
-  	);   
+  	);
+
+  	$("#other-last").click(function(){
+  		if(otherBoxCount === 0){
+  			$("#last-questions-other-container").show();
+  		}else if (otherBoxCount === 1){
+			$("#last-questions-other-container").hide();
+  		}
+  	}); 
+  	$("#last-other-cancel").click(function(){
+  		$("#last-questions-other-container").hide();
+  	});
+  	$("#last-other-save").click(function(){
+  		$("#last-questions-other-container").hide();
+  	});
  	// END LAST SERIES QUESTIONS
 });
 
