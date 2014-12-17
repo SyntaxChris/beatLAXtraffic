@@ -5,25 +5,28 @@ $(document).ready(function(){
 		clicks += 1;
 		$("#clicks").text(clicks);
 		if (clicks === 1) {
-			$( "#distance-questions").show();
-			$( "#parking-lot" ).hide();
-			$( "#mission-intro").hide();
-			$( "#strategy-questions").hide();
-			$( "#lines" ).hide();
-  			$( "#cars" ).hide();
-			$( "#dashboard").hide();
-			$('body').trigger('startDashboardAnimation');
-		}
+		// 	$( "#distance-questions").show();
+		// 	$( "#parking-lot" ).hide();
+		// 	$( "#mission-intro").hide();
+		// 	$( "#strategy-questions").hide();
+		// 	$( "#lines" ).hide();
+  // 		$( "#cars" ).hide();
+		// 	$( "#dashboard").hide();
+		// }
+		// else if (clicks === 2) {
+			$( "#distance-questions" ).hide();
+  		$( "#mission-intro" ).show();
+  	}
 		else if (clicks === 2) {
 			$( "#strategy-questions").show();
 			$( "#distance-questions").hide();
 			$( "#mission-intro").hide();
 			$( "#parking-lot" ).hide();
 			$( "#lines" ).hide();
-  			$( "#cars" ).hide();
+  		$( "#cars" ).hide();
 			$( "#dashboard").show();
 			$('body').trigger('startDashboardAnimation');
-  		}
+		}
 		else if (clicks === 3) {
 			$( "#strategy-questions").hide();
 			$( "parking-lot" ).show();
@@ -73,7 +76,7 @@ $(document).ready(function(){
 		else if (clicks === 11) {
 			$( "#timer-pickup" ).hide();
 			$( ".red-car" ).toggleClass('animate', false);
-			$( "#mission-intro" ).show();
+			$( "#distance-questions").show();
 			clicks = 0;
 		}
 	});
