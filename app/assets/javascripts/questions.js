@@ -132,6 +132,12 @@ $(document).ready(function(){
 	    var cs = 150 - $(this).val().length;
 	    $('[id=char-count-strategy]').text(cs);
 	});
+
+	$('#other-info-last-questions').keyup(function() {
+	    var cs = 150 - $(this).val().length;
+	    $('#char-count-last-questions').text(cs + " characters left");
+	});
+
 	$('.other-submit').click(function() {
 	    $('[id=user-text-input]').hide();
 	    $('[id=other-small-textbox]').hide();
