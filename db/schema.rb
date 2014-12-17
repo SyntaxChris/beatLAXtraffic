@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217195813) do
+ActiveRecord::Schema.define(version: 20141217201333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20141217195813) do
     t.datetime "updated_at"
     t.integer  "decision_point_id"
     t.text     "decision"
-    t.integer  "node_id"
+    t.integer  "destination_node_id"
   end
 
   create_table "freeform_responses", force: true do |t|

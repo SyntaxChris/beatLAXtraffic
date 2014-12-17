@@ -65,7 +65,7 @@ describe Node do
         create(:decision, decision_point_id: decision_point.id, decision: "this way")
       }
       let!(:decision_2) {
-        create(:decision, decision_point_id: decision_point.id, decision: "that way", node_id: destination_node.id)
+        create(:decision, decision_point_id: decision_point.id, decision: "that way", destination_node_id: destination_node.id)
       }
 
       it "gets all nodes and their associated question/decision data" do
