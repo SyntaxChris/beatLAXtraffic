@@ -1,6 +1,7 @@
-#distance-quesion-header {
+#distance-question-header {
+	margin-top: 15%;
 	text-align:center; 
-	margin-top: 20%;
+	font-size: 25px;
 }
 .grayed-circle {
 	cursor: pointer;
@@ -105,7 +106,7 @@ div#row-6 {
 	position: absolute; 
 	height: 400px; 
 	width: 90px; 
-	margin-left: 5%; 
+	margin-left: 1%; 
 	padding-top: 15px; 
 	bottom: 160px;
 }
@@ -167,12 +168,33 @@ div#row-6 {
 }
 
 @media screen and (min-width: 0px) and (max-width: 400px) {
+	#distance-question-header{
+		margin-top: 2%;
+		font-size: 16px;
+		padding: 0 10px 0 10px;
+	}
 	div#arrow-contents {
 		margin-left: 0;
 	}
 	#confirm-btn {
 		width: 100px; 
 		margin-top: 10px; 
+	}
+}
+
+@media screen and (min-width: 401px) and (max-width: 640px) {
+	#distance-question-header{
+		margin-top: 5%;
+		font-size: 20px;
+		padding: 0 10px 0 10px;
+	}
+}
+
+@media screen and (min-width: 641px) and (max-width: 980px) {
+	#distance-question-header{
+		margin-top: 10%;
+		font-size: 20px;
+		padding: 0 10px 0 10px;
 	}
 }
 
