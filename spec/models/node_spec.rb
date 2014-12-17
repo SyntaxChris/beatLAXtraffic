@@ -20,6 +20,7 @@ describe Node do
   end
 
   describe "Associations" do
+    let(:any_node) { FactoryGirl.build(:node)}
     let(:decision_point_node) { FactoryGirl.build(:node) }
     let(:question_node) { FactoryGirl.build(:node) }
 
@@ -29,6 +30,10 @@ describe Node do
 
     it "can have a decision_point" do
       expect(decision_point_node).to have_one(:decision_point)
+    end
+
+    it "has many incoming decisions" do
+      expect(any_node).to have_many(:incoming_decisions)
     end
 
     it "belongs to a branch" do
@@ -53,13 +58,15 @@ describe Node do
       let!(:decision_point) {
         create(:decision_point, node_id: decision_node.id, situation: "where to?")
       }
+      let!(:destination_node) {
+        create(:node, is_decision_point: false, nickname: "you found me")
+      }
       let!(:decision_1) {
         create(:decision, decision_point_id: decision_point.id, decision: "this way")
       }
       let!(:decision_2) {
-        create(:decision, decision_point_id: decision_point.id, decision: "that way")
+        create(:decision, decision_point_id: decision_point.id, decision: "that way", node_id: destination_node.id)
       }
-      let!(:destination_node) { create(:node, is_decision_point: false, decision_id: decision_2.id, nickname: "you found me")}
 
       it "gets all nodes and their associated question/decision data" do
         all_nodes = Node.all_with_content
@@ -74,6 +81,7 @@ describe Node do
         expect(d_node.decision_point.decisions.count).to eq 2
         expect(d_node.decision_point.decisions.first.decision).to eq "this way"
         expect(d_node.decision_point.decisions.second.destination_node.nickname).to eq "you found me"
+        expect(destination_node.incoming_decisions.first.decision).to eq "that way"
       end
     end
   end
