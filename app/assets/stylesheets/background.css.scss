@@ -157,41 +157,41 @@
 //     100% {left:120%; top:-15%;}
 // }
 
-// @media screen and (max-width: 320px) {
-//     #cloud-1 svg {
-//         height: 70px;
-//         width: 280px;
-//     }
+@media screen and (max-width: 320px) {
+    #cloud-1 svg {
+        height: 70px;
+        width: 280px;
+    }
 
-//     #cloud-2 svg {
-//         height: 70px;
-//         width: 280px;
-//     }
+    #cloud-2 svg {
+        height: 70px;
+        width: 280px;
+    }
 
-//     #cloud-3 svg {
-//         height: 70px;
-//         width: 280px;
-//     }
+    #cloud-3 svg {
+        height: 70px;
+        width: 280px;
+    }
 
-//     #cloud-4 svg {
-//         height: 70px;
-//         width: 280px;
-//     }
+    #cloud-4 svg {
+        height: 70px;
+        width: 280px;
+    }
 
-//     #cloud-5 svg {
-//         height: 70px;
-//         width: 280px;
-//     }
+    #cloud-5 svg {
+        height: 70px;
+        width: 280px;
+    }
 
-//     #cloud-6 svg {
-//         height: 70px;
-//         width: 280px;
-//     }
+    #cloud-6 svg {
+        height: 70px;
+        width: 280px;
+    }
 
-//     div#plane svg {
-//         height: 70px;
-//         width: 150px;
-//     }
+    div#plane svg {
+        height: 70px;
+        width: 150px;
+    }
 
 //     @keyframes plane {
 //         0%   {left:110%; top:15%;}
@@ -281,44 +281,44 @@
 //         100% {left:120%; top:-15%;}
 //     }
 
-// }
+}
 
 
-// @media screen and (max-width: 640px) and (min-width: 321px) {
-//     #cloud-1 svg {
-//         height: 100px;
-//         width: 320px;
-//     }
+@media screen and (max-width: 640px) and (min-width: 321px) {
+    #cloud-1 svg {
+        height: 100px;
+        width: 320px;
+    }
 
-//     #cloud-2 svg {
-//         height: 100px;
-//         width: 320px;
-//     }
+    #cloud-2 svg {
+        height: 100px;
+        width: 320px;
+    }
 
-//     #cloud-3 svg {
-//         height: 100px;
-//         width: 320px;
-//     }
+    #cloud-3 svg {
+        height: 100px;
+        width: 320px;
+    }
 
-//     #cloud-4 svg {
-//         height: 100px;
-//         width: 320px;
-//     }
+    #cloud-4 svg {
+        height: 100px;
+        width: 320px;
+    }
 
-//     #cloud-5 svg {
-//         height: 100px;
-//         width: 320px;
-//     }
+    #cloud-5 svg {
+        height: 100px;
+        width: 320px;
+    }
 
-//     #cloud-6 svg {
-//         height: 100px;
-//         width: 320px;
-//     }
+    #cloud-6 svg {
+        height: 100px;
+        width: 320px;
+    }
 
-//     div#plane svg {
-//         height: 70px;
-//         width: 150px;
-//     }
+    div#plane svg {
+        height: 70px;
+        width: 150px;
+    }
 
 //     @keyframes plane {
 //         0%   {left:110%; top:15%;}
@@ -377,37 +377,37 @@
 //         70% {left:-90%; top: 25%;}
 //         100% {left:-91%; top: 25%;}
 //     } 
-// }
+}
 
-// @media screen and (max-width: 640px) {
-//     div#plane { 
-//         position: absolute;
-//         animation: plane 20s;
-//         animation-iteration-count: infinite;
-//         animation-timing-function: linear;
-//         animation-delay: 5s;  
+@media screen and (max-width: 640px) {
+    div#plane { 
+        position: absolute;
+        animation: plane 20s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-delay: 5s;  
 
-//         -webkit-animation: plane 20s; 
-//         -webkit-animation-iteration-count: infinite;
-//         -webkit-animation-timing-function: linear;
-//         -webkit-animation-delay: 5s;
+        -webkit-animation: plane 20s; 
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-delay: 5s;
 
-//         -moz-animation: plane 20s; 
-//         -moz-animation-iteration-count: infinite;
-//         -moz-animation-timing-function: linear;
-//         -moz-animation-delay: 5s;
+        -moz-animation: plane 20s; 
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+        -moz-animation-delay: 5s;
 
-//         -o-animation: plane 20s; 
-//         -o-animation-iteration-count: infinite;
-//         -o-animation-timing-function: linear;
-//         -o-animation-delay: 5s;
+        -o-animation: plane 20s; 
+        -o-animation-iteration-count: infinite;
+        -o-animation-timing-function: linear;
+        -o-animation-delay: 5s;
 
-//         -ms-animation: plane 20s; 
-//         -ms-animation-iteration-count: infinite;
-//         -ms-animation-timing-function: linear;
-//         -ms-animation-delay: 5s;
+        -ms-animation: plane 20s; 
+        -ms-animation-iteration-count: infinite;
+        -ms-animation-timing-function: linear;
+        -ms-animation-delay: 5s;
         
-//     }
+    }
 
 //     .land-ze-plane { 
 //         position: absolute;
@@ -537,7 +537,7 @@
 //         100% {left:120%; top:-15%;}
 //     }
   
-// }
+}
 
 
 @media screen and (max-width: 571px) and (min-width: 376px) {
