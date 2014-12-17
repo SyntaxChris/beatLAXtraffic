@@ -34,9 +34,7 @@ namespace :populate do
     #
     # scenario questions
     # TODO: add icon names for all
-    # TODO: add destination nodes once multi-directional nodes are done
     #   - TODO: move all decision point nodes to the bottom and make sure THEY are stacked properly!
-    #   - TODO: remove all decision_ids from nodes
     # TODO: add question type to DPs
     sq1 = Node.create(nickname: "SQ 1", is_decision_point: false, branch_id: scenario_questions_branch.id)
       sq1q = Question.create(node_id: sq1.id, question: "About how far away from LAX do you live?", question_type_id: nil)
@@ -127,13 +125,13 @@ namespace :populate do
         dp7ad1 = Decision.create(decision_point_id: dp7adp.id, decision: "Yes", destination_node_id: dp7.id)
         dp7ad2 = Decision.create(decision_point_id: dp7adp.id, decision: "No", destination_node_id: e1.id)
 
-    dp7 = Node.create(nickname: "DP 7", is_decision_point: true , branch_id: wait_offsite_branch.id, decision_id: dp7ad1)
+    dp7 = Node.create(nickname: "DP 7", is_decision_point: true , branch_id: wait_offsite_branch.id)
       dp7dp = DecisionPoint.create(node_id: dp7.id, situation: "The passenger is late. What do you do next?")
         dp7d1 = Decision.create(decision_point_id: dp7dp.id, decision: "Go park in the terminal parking area", destination_node_id: b1.id)
         dp7d2 = Decision.create(decision_point_id: dp7dp.id, decision: "Hope to catch your passenger at the curb", destination_node_id: a2.id)
         dp7d3 = Decision.create(decision_point_id: dp7dp.id, decision: "Keep waiting", destination_node_id: c4.id)
 
-    c4 = Node.create(nickname: "C 4", is_decision_point: false , branch_id: wait_offsite_branch.id, decision_id: dp7d3)
+    c4 = Node.create(nickname: "C 4", is_decision_point: false , branch_id: wait_offsite_branch.id)
       c4q = Question.create(node_id: c4.id, question: "What is the longest you are willing to wait for your passenger?", question_type_id: clock_v2_type.id)
         c4a1= Answer.create(question_id: c4q.id, answer: "Set duration...", icon_name: nil)
 
