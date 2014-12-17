@@ -113,40 +113,6 @@ $(document).ready(function(){
 			"bottom":"101px"
 		});
 	});
-
-	// var cir1 = 0;
-	// var cir2 = 0;
-	// var cir3 = 0;
-	// var cir4 = 0;
-	// var cir5 = 0;
-
-	// $(".grayed-circle").click(function(){
-	// 	var tally = cir2+cir3+cir4+cir5
-	// 	var sliceBtm = $(this).css("bottom").length - 2;
-	// 	var sliceLft = $(this).css("left").length - 2;
-
-	// 	if(tally > 0){
-
-	// 	} 
-	// 	if(toggleAnimation === 0){
-	// 		$(this).animate({
-	// 			"height":"60px",
-	// 			"width":"60px",
-	// 			"bottom":parseInt($(this).css("bottom").slice(0, sliceBtm))-10+"px",
-	// 			"left":parseInt($(this).css("left").slice(0, sliceLft))-9+"px"
-	// 		});
-	// 		toggleAnimation = 1;
-	// 	}
-	// 	else {
-	// 		$(this).animate({
-	// 			"height":"40px",
-	// 			"width":"40px",
-	// 			"bottom":parseInt($(this).css("bottom").slice(0, sliceBtm))+10+"px",
-	// 			"left":parseInt($(this).css("left").slice(0, sliceLft))+9+"px"
-	// 		});
-	// 		toggleAnimation = 0;
-	// 	}	
-	// });
 	// END DISTANCE QUESTIONS
 
 
@@ -584,7 +550,7 @@ $(document).ready(function(){
  	});
 
  	$('#no-parking').click(function(){
- 		if(stopWatchToggle === 0){
+ 		if(carParkingToggle === 0){
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "#2FA3CA");
  			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
  			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
@@ -592,7 +558,7 @@ $(document).ready(function(){
  			$(".parking-background").css("fill", "#2FA3CA");
  			$(".car-color").css("fill", "#FCC859")
  			$("#parking-sign-bg").css("fill", "#24B7EA");
- 			stopWatchToggle += 1;
+ 			carParkingToggle += 1;
  		}
  		else {
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
@@ -602,7 +568,7 @@ $(document).ready(function(){
 			$(".parking-background").css("fill", "#BCBCBC");
 			$(".car-color").css("fill", "#CCCCCC")
 			$("#parking-sign-bg").css("fill", "#CCCCCC");
- 			stopWatchToggle = 0;
+ 			carParkingToggle = 0;
  		}
  	});
 
