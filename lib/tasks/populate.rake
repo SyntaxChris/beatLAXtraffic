@@ -175,20 +175,18 @@ namespace :populate do
         dp6d4 = Decision.create(decision_point_id: dp6dp.id, decision: "Try to find a spot in another parking structure", destination_node_id: dp10.id)
 
     dp10 = Node.create(nickname: "DP 10", is_decision_point: true , branch_id: park_and_meet_branch.id)
-    # TODO: destination_node_id needed below
       dp10dp = DecisionPoint.create(node_id: dp10.id, situation: "Do you find parking?")
-        dp10d1 = Decision.create(decision_point_id: dp10dp.id, decision: "Yes" )
-        dp10d2 = Decision.create(decision_point_id: dp10dp.id, decision: "No")
+        dp10d1 = Decision.create(decision_point_id: dp10dp.id, decision: "Yes", destination_node_id: b4.id)
+        dp10d2 = Decision.create(decision_point_id: dp10dp.id, decision: "No", destination_node_id: dp11.id)
 
     b4 = Node.create(nickname: "B 4", is_decision_point: false , branch_id: park_and_meet_branch.id)
       b4q = Question.create(node_id: b4.id, question: "What is the longest you are willing to look for parking?", question_type_id: clock_v2_type.id)
         b4a1 = Answer.create(question_id: b4q.id, answer: "Set duration...", icon_name: nil)
 
     dp11 = Node.create(nickname: "DP 11", is_decision_point: true , branch_id: park_and_meet_branch.id)
-    # TODO: destination_node_id needed below
       dp11dp = DecisionPoint.create(node_id: dp11.id, situation: "You've been looking for XX minutes with no luck. What now?")
-        dp11d1 = Decision.create(decision_point_id: dp11dp.id, decision: "Keep trying")
-        dp11d2 = Decision.create(decision_point_id: dp11dp.id, decision: "Give up on parking")
+        dp11d1 = Decision.create(decision_point_id: dp11dp.id, decision: "Keep trying", destination_node_id: dp10.id)
+        dp11d2 = Decision.create(decision_point_id: dp11dp.id, decision: "Give up on parking", destination_node_id: dp6.id)
 
     # hope to catch
     a1 = Node.create(nickname: "A 1", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id)
@@ -208,17 +206,15 @@ namespace :populate do
         a2a3 = Answer.create(question_id: a2q.id, answer: "Park and go inside terminal", icon_name: nil)
 
     dp2 = Node.create(nickname: "DP 2", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id)
-    # TODO: destination_node_id needed below
       dp2dp = DecisionPoint.create(node_id: dp2.id, situation: "You're almost at the terminal. Is your passenger there?")
-        dp2d1 = Decision.create(decision_point_id: dp2dp.id, decision: "Yes")
-        dp2d2 = Decision.create(decision_point_id: dp2dp.id, decision: "No")
+        dp2d1 = Decision.create(decision_point_id: dp2dp.id, decision: "Yes", destination_node_id: e1.id)
+        dp2d2 = Decision.create(decision_point_id: dp2dp.id, decision: "No", destination_node_id: dp3.id)
 
     dp3 = Node.create(nickname: "DP 3", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id)
-    # TODO: destination_node_id needed below
       dp3dp = DecisionPoint.create(node_id: dp3.id, situation: "What do you do now?")
-        dp3d1 = Decision.create(decision_point_id: dp3dp.id, decision: "Continue Circling Around the airport")
-        dp3d2 = Decision.create(decision_point_id: dp3dp.id, decision: "Park in the parking structure")
-        dp3d3 = Decision.create(decision_point_id: dp3dp.id, decision: "Leave the airport and wait off site until the passenger is ready to be picked up at the curb ")
+        dp3d1 = Decision.create(decision_point_id: dp3dp.id, decision: "Continue Circling Around the airport", destination_node_id: e1.id)
+        dp3d2 = Decision.create(decision_point_id: dp3dp.id, decision: "Park in the parking structure", destination_node_id: b1.id)
+        dp3d3 = Decision.create(decision_point_id: dp3dp.id, decision: "Leave the airport and wait off site until the passenger is ready to be picked up at the curb ", destination_node_id: c1.id)
 
     # ending questions
     e1 = Node.create(nickname: "E 1", is_decision_point: false , branch_id: ending_questions_branch.id)
@@ -292,6 +288,8 @@ namespace :populate do
 
     # where does this go/branch name?
     itf1 = Node.create(nickname: "ITF 1", is_decision_point: false , branch_id: ending_questions_branch.id)
+
+
 
   end
 
