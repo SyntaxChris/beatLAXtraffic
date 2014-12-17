@@ -137,7 +137,7 @@
     background: #4086C2;
     margin: 30px auto 0;
     padding: 10px 0;
-    font-size: 1.2em;
+    font-size: 1em;
     letter-spacing: .8px;
     font-weight: 300;
     position: relative;
@@ -241,27 +241,51 @@
   }
   .time-summary {
     >div {
-      width: 40%;
+      width: 90%;
       display: inline-block;
       vertical-align: bottom;
       text-align: center;
       position: relative;
     }
+    .gray-bg {
+      width: 75%;
+      position: absolute;
+      right: 0;
+      top: 16px;
+      height: 102px;
+      background: #F2F2F2;
+      -moz-border-radius-topright: 50px;
+      -moz-border-radius-bottomright: 50px;
+      -webkit-border-top-right-radius: 50px;
+      -webkit-border-bottom-right-radius: 50px;
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+      z-index: 1;
+    }
+    .stopwatch {
+      width: 48%;
+      position: relative;
+      z-index: 2;
+    }
     .blurb {
-      font-size: .7em;
+      font-size: 1em;
+      width: 45%;
       color: #5C5D5D;
       font-weight: 600;
+      position: relative;
+      z-index: 2;
     }
     .time-till-arrival {
       position: absolute;
-      z-index: 2;
+      z-index: 3;
       font-size: 2.4em;
       display: block;
       width: 100%;
-      text-align: center;
+      text-align: left;
       height: 24px;
-      margin-top: -24px;
+      margin-top: -15px;
       top: 50%;
+      left: 40px;
     }
   }
 }
