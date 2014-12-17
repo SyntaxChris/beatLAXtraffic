@@ -29,5 +29,9 @@ RSpec.describe DecisionPoint, :type => :model do
     it "has many decisions" do
       expect(decision_point).to have_many(:decisions)
     end
+
+    it "belongs to a question_type (ie 'multuple choice', 'select all applicable')" do
+      expect(decision_point).to belong_to(:question_type)
+    end
   end
 end
