@@ -110,40 +110,6 @@ $(document).ready(function(){
 			"bottom":"101px"
 		});
 	});
-
-	// var cir1 = 0;
-	// var cir2 = 0;
-	// var cir3 = 0;
-	// var cir4 = 0;
-	// var cir5 = 0;
-
-	// $(".grayed-circle").click(function(){
-	// 	var tally = cir2+cir3+cir4+cir5
-	// 	var sliceBtm = $(this).css("bottom").length - 2;
-	// 	var sliceLft = $(this).css("left").length - 2;
-
-	// 	if(tally > 0){
-
-	// 	} 
-	// 	if(toggleAnimation === 0){
-	// 		$(this).animate({
-	// 			"height":"60px",
-	// 			"width":"60px",
-	// 			"bottom":parseInt($(this).css("bottom").slice(0, sliceBtm))-10+"px",
-	// 			"left":parseInt($(this).css("left").slice(0, sliceLft))-9+"px"
-	// 		});
-	// 		toggleAnimation = 1;
-	// 	}
-	// 	else {
-	// 		$(this).animate({
-	// 			"height":"40px",
-	// 			"width":"40px",
-	// 			"bottom":parseInt($(this).css("bottom").slice(0, sliceBtm))+10+"px",
-	// 			"left":parseInt($(this).css("left").slice(0, sliceLft))+9+"px"
-	// 		});
-	// 		toggleAnimation = 0;
-	// 	}	
-	// });
 	// END DISTANCE QUESTIONS
 
 
