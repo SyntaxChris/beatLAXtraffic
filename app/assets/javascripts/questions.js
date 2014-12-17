@@ -635,6 +635,19 @@ $(document).ready(function(){
  		}
  	});
  	// END STRATEGY QUESTIONS
+
+ 	// LAST SERIES QUESTIONS
+ 	$('.question-wrapper').hover(
+	    function(){
+	      var $this = $(this);
+	      $this.data('bgcolor', $this.css('background-color')).css('background-color', '#E0BF42');
+	    },
+	    function(){
+	      var $this = $(this);
+	      $this.css('background-color', $this.data('bgcolor'));
+	    }
+  	);   
+ 	// END LAST SERIES QUESTIONS
 });
 
 
