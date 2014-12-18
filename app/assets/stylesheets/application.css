@@ -22,7 +22,7 @@
  *= require 'successful_pickup'
  *= require 'circle_pickup'
  *= require 'timer_pickup'
- *= require 'car_slider'
+ *= require 'car_slider_questions'
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides

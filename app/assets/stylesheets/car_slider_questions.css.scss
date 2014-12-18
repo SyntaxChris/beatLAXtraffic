@@ -5,6 +5,11 @@
 .question-wrapper-1{
 	border: 3px solid #E0BF42;
 }
+.question-wrapper-1:hover,
+.question-wrapper-1-other:hover{
+	background-color: #E0BF42;
+}
+
 .question-wrapper-1-other{
 	border: 3px solid #E0BF42;
 }
