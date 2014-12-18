@@ -1,10 +1,19 @@
 <div id="toggle-questions" style="position: absolute; z-index: 35; font-size: 10px; width: 50px; height: 30px; padding: 5px 5px 10px 0 ">TOGGLE</div>
+
 <div id="skip-button">
   <%= render 'skipbutton' %>
 </div>
+
 <div id="clicks" style="position: absolute; right:0; color: white"></div>
 <!-- <div id="logger"></div> -->
 
+<!-- SPLASH PAGE -->
+<div id="splash-page" style="display:none">
+  <div class="row" style="text-align: center">
+    <h3 style="color: white">Splash Page</h3>
+  </div>
+</div>
+<!-- END SPLASH PAGE -->
 
 <!-- QUESTION FORMATS -->
 <div class="row">
@@ -14,7 +23,6 @@
       <div class="row">
          <div id="distance-question-header" style="color: white; text-align:center">How far away do you live from LAX?</div>
       </div>
-     
      
       <div class="row" id="row-1">
         5+ hours away
@@ -48,11 +56,367 @@
         <%= render 'arrowPlane'%>
       </div>
   </div>
-  <!-- end DISTANCE questions -->
+  <!-- END DISTANCE QUESTIONS -->
 
 
+  <!-- 2. MISSION INTRO -->
+  <div id="mission-intro" style="display: none">
+    <div id="envelope">
+      <%= render 'envelope' %>
+    </div>
+    <div class="content">
+      <header class="mission-heading">
+        <h4>Your Mission</h4>
+        <p>
+          You are driving and need to pick up the following at LAX
+        </p>
+      </header>
+      <header class="mission-conditions-heading">
+        <h4>Airport Conditions</h4>
+        <p>
+          Your passengers are coming from
+        </p>
+      </header>
 
-  <!-- 1. TILE questions -->
+      <div id="mission-selection-box">
+        <div class="top-content stage-1">
+          <div class="chat-bubble">
+            Select a passenger to pick up
+          </div>
+
+          <div id="mission-carousel">
+            <a href="javascript:void(0)" class="nav-left" data-direction="right">
+              
+            </a>
+            <a href="javascript:void(0)" class="nav-right" data-direction="left">
+              
+            </a>
+
+            <div class="far-left-side mover">
+              <%= render 'greyguy' %>
+              <div class="blurb">
+                <span>Something</span>
+              </div>
+            </div>
+
+            <div class="left-side mover">
+              <%= render 'greyguy' %>
+              <div class="blurb">
+                <span>Something</span>
+              </div>
+            </div>
+            
+            <div class="center mover">
+              <%= render 'suitguy' %>
+              <div class="blurb">
+                <span class="number">1</span> <span>Clients</span>
+              </div>
+            </div>
+
+            <div class="right-side mover">
+              <%= render 'greyguy' %>
+              <div class="blurb">
+                <span>Something</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="bottom-info">
+            <span>with</span> <span class="number">2</span> <span>Large Suitcases</span>
+          </div>
+        </div>
+        <div class="stage-2-top">
+          <div class="destinations btcf">
+            <div class="left-side">
+              <div class="airport-heading">
+                Departing
+              </div>
+              <div class="airport-code">
+                XXX
+              </div>
+              <div class="airport-name">
+                airport_name
+              </div>
+            </div>
+            <div class="center">
+              <div>
+                <%= render 'introplane' %>
+              </div>
+              <div class="flight-number">Flight xxx</div>
+            </div>
+            <div class="right-side">
+              <div class="airport-heading">
+                Arriving
+              </div>
+              <div class="airport-code">
+                XXX
+              </div>
+              <div class="airport-name">
+                airport_name
+              </div>
+            </div>
+          </div>
+          <div class="conditions">
+            <div class="traffic-meter medium">
+              <div class="tally-1"></div>
+              <div class="tally-2"></div>
+              <div class="tally-3"></div>
+              <div class="tally-4"></div>
+              <div class="tally-5"></div>
+              <div class="tally-6"></div>
+              <div class="tally-7"></div>
+              <div class="tally-8"></div>
+            </div>
+            <div class="traffic-summary">
+              LAX Traffic Level: <span>Medium</span>
+            </div>
+
+            <div class="time-summary">
+              <div>
+                <div class="gray-bg"></div>
+                <span class="time-till-arrival">1hr</span>
+                <div class="stopwatch dIB vAM">
+                  <%= render 'introstopwatch' %>
+                </div>
+                <span class="blurb dIB vAM">Before plane lands</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="accept-mission-btn" class="x-btn-accept-mission">
+          <span class="accept-text">
+            Accept Mission
+          </span>
+          <span class="continue-text">
+            Let's Go!
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- END MISSION INTRO -->
+
+
+  <!-- 3. INTERACTIVE MAP -->
+  <div id="interactive-map" style="display: none;">
+    <div class="top-half">
+      <h3>What is your strategy for picking up your passenger?</h3>
+    </div>
+
+    <div class="bottom-half">
+      <div style="display: inline-block; position: relative;">
+        <div class="instructions">
+          Choose a letter to select an approach
+        </div>
+        <a href="javascript:void(0)" class="x-btn-select-path select-path-btn selected" data-path="yellow">
+          
+        </a>
+        <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="green">
+          
+        </a>
+        <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="orange">
+          
+        </a>
+        <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
+          
+        </a>
+        <div class="map-path yellow selected">
+          <%= image_tag('map_yellow.jpg', width: '100%') %>
+        </div>
+        <div class="map-path green">
+          <%= image_tag('map_green.jpg', width: '100%') %>
+        </div>
+        <div class="map-path orange">
+          <%= image_tag('map_orange.jpg', width: '100%') %>
+        </div>
+        <div class="map-path blue">
+          <%= image_tag('map_blue.jpg', width: '100%') %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END INTERACTIVE MAP -->
+
+
+  <!-- 4. STRATEGY questions -->
+  <div id="strategy-questions" style="display: none;">
+    <div class="row" style="text-align: center;">
+      <h3 style="color: white">Why do you choose this strategy?</h3>
+      <h6 style="color: #24B7EA; padding-top: 0">Select all that apply</h6>
+    </div>
+    <!-- <div class="hide-for-small-only"> -->
+      <div class="row">
+        <div class="large-12 medium-12 small-12 columns">
+          <div class="row">
+            <div class="large-4 medium-4 small-4 columns">
+              <div class="bubble-icon-container" id="container-1">
+                <%= render 'strategyStopWatch' %>
+                <div class="strategy-answer" id="stopwatch-answer">
+                  To get in and out of the airport as quickly as possible
+                </div>
+              </div>
+            </div>
+            <div class="large-4 medium-4 small-4 columns">
+              <div class="bubble-icon-container" id="container-2">
+                <%= render 'grayParking' %>
+                <div class="strategy-answer" id="parking-answer">
+                  To avoid paying for parking
+                </div>
+              </div>
+            </div>
+            <div class="large-4 medium-4 small-4 columns">
+              <div class="bubble-icon-container" id="container-3">
+                <%= render 'hassle' %>
+                <div class="strategy-answer" id="hassle-answer">
+                  To minimize the hassle for me
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 40px;">
+        <div class="large-12 medium-12 small-12 columns">
+          <div class="row">
+            <div class="large-3 medium-3 small-3 columns">
+              <div class="bubble-icon-container" id="container-4">
+                <%= render 'guy' %>
+                <div class="strategy-answer" id="guy-answer" style="margin-top: -10px">
+                  To make it convenient for my passengers
+                </div>
+              </div>
+            </div>
+            <div class="large-6 medium-6 columns">
+              <div class="row">
+                <div class="small-4 small-centered columns">
+                  <div id="strategy-submit" style="cursor: pointer">Submit</div>
+                </div>
+              </div>
+              <div>
+                <%= render 'boxster' %>
+              </div>
+            </div>
+            <div class="large-3 medium-3 small-3 columns">
+              <div class="bubble-icon-container" id="container-5">
+                <%= render 'strategyOther' %>
+                <div class="strategy-answer" id="other-strategy-answer">
+                  Other (Explain)
+                </div>
+              </div>
+              <!-- other text container -->
+              <div id="strategy-other-container">
+                <div id="container-positioner">
+                  <div id="text-container-filler"></div>
+                  <div id="text-container">
+                    <div id="other-strategy-buttons">
+                      <div class="row" id="slide-content" style="display: none">
+                        <div class="large-2 medium-2 small-2 columns">
+                          <div style="padding: 7px; color: white; background-color: #F25053; border-radius: 5px; text-align: center; margin-left: 30%; margin-top: 15%; cursor: pointer">Save</div>
+                          <div style="padding: 7px; color: white; background-color: #C1C1C1; border-radius: 5px; text-align: center; margin-left: 30%; margin-top: 7%; cursor: pointer">Cancel</div>
+                          <div id="char-count-strategy" style="margin-left: 50%; color: #C1C1C1"></div>
+                          <div style="color:#C1C1C1; font-size: 8px; margin-left: 30%">Characters Left</div>
+                        </div>
+                        <div class="large-8 medium-8 small-8 columns">
+                          <textarea id="other-strategy" placeholder="Please write here." cols="1" rows="6" maxlength="150" style="margin-top: 3%; background-color: #F0943F; color: white; postion: absolute; left: 40px; top: 20px"></textarea>
+                        </div>
+                        <div class="large-2 medium-2 small-2 columns"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end other text container -->
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- </div> -->
+
+    <!-- <div class="show-for-small-only">
+      <div class="row">
+        <div class="large-12 medium-12 small-12 columns">
+          <div class="small-4 columns">
+            <div class="bubble-icon-container-small" id="container-1" >
+              <%= render 'guy' %>
+            </div>
+            <div class="bubble-icon-container-small" id="container-2" >
+              <%= render 'guy' %>
+            </div>
+          </div>
+          <div class="small-4 columns">
+            <div class="bubble-icon-container-small" id="container-3" >
+              <%= render 'guy' %>
+            </div>
+          </div>
+          <div class="small-4 columns">
+            <div class="bubble-icon-container-small" id="container-4" >
+              <%= render 'guy' %>
+            </div>
+            <div class="bubble-icon-container-small" id="container-5" >
+              <%= render 'guy' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  <!-- END STRATEGY QUESTIONS -->
+
+
+  <!-- TODO: 5. Why do you choose to park your car? -->
+  <div id="why-park-car" style="display:none">
+    <div class="row" style="text-align:center">
+      <h3 style="color: white">Why do you choose to park your car?</h3>
+    </div>
+  </div>
+  <!-- END TODO: 5. Why do you choose to park your car? -->
+
+
+  <!-- 6. SPINNER QUESTIONS -->
+  <div id="spinner-questions" style="display:none;">
+    <div id="chance-time">
+      <h3 style="color: white; text-align: center">Chance Time!</h3>
+      <h5 style="color: white; text-align: center">You arrive at the parking lot and<br>see that the parking lot is...</h5>
+    </div>
+
+    <div id="parking-congrats" style="display:none; margin-bottom: 34px;">
+      <h3 style="color: white; text-align: center">Congratulations!</h3>
+      <h5 style="color: white; text-align: center">You got a parking spot</h5>
+    </div>
+    <div id="try-again" style="display:none">
+      <h3 style="color: white; text-align: center; margin-bottom: 40px">Try again?</h3>
+      <div id="yup-spinner"><%= render 'yea' %></div>
+      <div id="nope-spinner"><%= render 'nah' %></div>
+    </div>
+    
+    <div id="spin-button">
+      <div id="spin">Spin</div>
+    </div>
+    <div id="try-again-buttons" style="display: none">
+     
+    </div>
+    <div id="spinner-components">
+      <div id="wheel-pointer">
+        <%= render 'wheelPointer' %>
+      </div>
+      <div id="wheel">
+        <%= render 'wheel' %>
+      </div>
+      <div id="parking-logo">
+        <%= render 'parkingLogo' %>
+      </div>
+    </div>
+    <div id="parking-trophy" style="display: none">
+      <%= render 'parkingTrophy' %>
+    </div>
+    <div id="continue-button">
+      <div id="continue">Continue</div>
+    </div>
+  </div>
+  <!-- END SPINNER QUESTIONS -->
+
+
+  <!-- 7. TILE QUESTIONS -->
   <div class="large-12 medium-12 small-12 columns">
     <div id="tile-questions"  style="display: none">
       <!-- questions header -->
@@ -149,7 +513,6 @@
           </div>
         </div>
         
-
         <div id="small-landscape">
           <div class="row">
             <div class="small-3 medium-3 columns">
@@ -320,11 +683,10 @@
       </div>
     <!-- end portrait -->
     </div>
-    <!-- end TILE questions -->
+    <!-- END TILE QUESTIONS -->
 
 
-
-    <!-- 2. TIMER questions -->
+    <!-- 8. TIMER QUESTIONS -->
     <div id="clock-questions" style="display: none">
       <!-- questions header -->
       <div class="row" style="text-align:center">
@@ -335,17 +697,113 @@
         <div class="large-12 medium-12 small-12 large-centered medium-centered small-centerd columns">
           <div id="clock-container">
             <%= render 'timerquestion' %>
-            <div id="timer-question-submit">Submit</div>
+            <div id="timer-question-submit">Next</div>
           </div>
         </div>
         <!-- <input name="Submit" type="submit" class="button"> -->
       </div>
     </div>
-    <!-- end TIMER questions -->
+    <!-- END TIMER QUESTIONS -->
 
 
+    <!-- 9. SUCCESSFUL PICKUP -->
+    <div id="successful-pickup" style="display: none;">
+      <div class="sun-bg">
+        <%= render 'sunBeamBg' %>
+      </div>
+      <div class="content">
+        <h3>
+          You successfully picked up your passenger!
+        </h3>
 
-    <!-- 3. ICON questions -->
+        <div class="high-five">
+          <%= render 'highFive' %>
+        </div>
+
+        <p>
+          Now we're going to make some guesses about your typical trip to LAX based on your game experience
+        </p>
+
+        <button class="red-car">
+          <%= render 'redCar' %>
+        </button>
+      </div>
+    </div>
+    <!-- END SUCCESFUL PICKUP -->
+
+
+    <!-- 10. CIRCLE PICKUP QUESTIONS -->
+    <div id="circle-pickup" style="display: none;">
+      <div class="content">
+        <h3>
+          How many times do you typically circle around the terminal when picking up your passenger?
+        </h3>
+
+        <div class="content-c">
+          <div class="red-circle">
+            <div class="circle-car">
+              <%= render 'blueCircleCar' %>
+            </div>
+            <div class="outer-container">
+              <div class="inner-circle">
+                <div class="circle-number">3</div>
+                <div>times</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-c buttons-c">
+          <div>
+             <button id="x-btn-circle-less" class="counter-btn">-1</button>
+             <button id="x-btn-circle-more" class="counter-btn">+1</button> 
+          </div>
+          <div>
+            <button id="x-btn-circle-next" class="circle-next-btn">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END CIRCLE PICKUP QUESTIONS -->
+
+    <!-- 11. TIMER PICKUP QUESTIONS -->
+    <div id="timer-pickup" style="display: none;">
+      <div class="content">
+        <h3>
+          How long does it typically take for you to pick up your passenger at the terminal?
+        </h3>
+
+        <div class="content-c">
+          <div class="timer-c">
+            <div class="timer-number">0</div>
+            <div>min</div>
+          </div>
+        </div>
+
+        <div class="content-c buttons-c">
+          <div>
+             <button id="x-btn-timer-less" class="counter-btn">-5 min</button>
+             <button id="x-btn-timer-more" class="counter-btn">+5 min</button> 
+          </div>
+          <div>
+            <button id="x-btn-timer-next" class="timer-next-btn">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END TIMER PICKUP QUESTIONS -->
+
+
+    <!-- TODO: 12. RAIL SYSTEM QUESTIONS -->
+    <div id="rail-system" style="display: none">
+      <div class="row" style="text-align: center">
+        <h3 style="color: white">Rail system questions</h3>
+      </div>
+    </div>
+    <!-- END RAIL SYSTEM QUESTIONS -->
+
+
+    <!-- 13. ICON QUESTIONS -->
     <div id="icon-questions" style="display: none">
       <div class="row">
         <h3 style="color: white; text-align: center">Imagine that you could customize this future location.</h3>
@@ -515,443 +973,10 @@
         </div>
       </div>
     </div>
-    <!-- end ICON questions -->
-
-    <!-- 4. SPINNER questions -->
-    <div id="spinner-questions" style="display:none;">
-      <div id="chance-time">
-        <h3 style="color: white; text-align: center">Chance Time!</h3>
-        <h5 style="color: white; text-align: center">You arrive at the parking lot and<br>see that the parking lot is...</h5>
-      </div>
-
-      <div id="parking-congrats" style="display:none; margin-bottom: 34px;">
-        <h3 style="color: white; text-align: center">Congratulations!</h3>
-        <h5 style="color: white; text-align: center">You got a parking spot</h5>
-      </div>
-      <div id="try-again" style="display:none">
-        <h3 style="color: white; text-align: center; margin-bottom: 40px">Try again?</h3>
-        <div id="yup-spinner"><%= render 'yea' %></div>
-        <div id="nope-spinner"><%= render 'nah' %></div>
-      </div>
-      
-      <div id="spin-button">
-        <div id="spin">Spin</div>
-      </div>
-      <div id="try-again-buttons" style="display: none">
-       
-      </div>
-      <div id="spinner-components">
-        <div id="wheel-pointer">
-          <%= render 'wheelPointer' %>
-        </div>
-        <div id="wheel">
-          <%= render 'wheel' %>
-        </div>
-        <div id="parking-logo">
-          <%= render 'parkingLogo' %>
-        </div>
-      </div>
-      <div id="parking-trophy" style="display: none">
-        <%= render 'parkingTrophy' %>
-      </div>
-      <div id="continue-button">
-        <div id="continue">Continue</div>
-      </div>
-    </div>
-    <!-- end SPINNER questions -->
+    <!-- END ICON QUESTIONS -->
 
 
-    <!-- 5. STRATEGY questions -->
-    <div id="strategy-questions" style="display: none;">
-      <div class="row" style="text-align: center;">
-        <h3 style="color: white">Why do you choose this strategy?</h3>
-        <h6 style="color: #24B7EA; padding-top: 0">Select all that apply</h6>
-      </div>
-      <!-- <div class="hide-for-small-only"> -->
-        <div class="row">
-          <div class="large-12 medium-12 small-12 columns">
-            <div class="row">
-              <div class="large-4 medium-4 small-4 columns">
-                <div class="bubble-icon-container" id="container-1">
-                  <%= render 'strategyStopWatch' %>
-                  <div class="strategy-answer" id="stopwatch-answer">
-                    To get in and out of the airport as quickly as possible
-                  </div>
-                </div>
-              </div>
-              <div class="large-4 medium-4 small-4 columns">
-                <div class="bubble-icon-container" id="container-2">
-                  <%= render 'grayParking' %>
-                  <div class="strategy-answer" id="parking-answer">
-                    To avoid paying for parking
-                  </div>
-                </div>
-              </div>
-              <div class="large-4 medium-4 small-4 columns">
-                <div class="bubble-icon-container" id="container-3">
-                  <%= render 'hassle' %>
-                  <div class="strategy-answer" id="hassle-answer">
-                    To minimize the hassle for me
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row" style="margin-top: 40px;">
-          <div class="large-12 medium-12 small-12 columns">
-            <div class="row">
-              <div class="large-3 medium-3 small-3 columns">
-                <div class="bubble-icon-container" id="container-4">
-                  <%= render 'guy' %>
-                  <div class="strategy-answer" id="guy-answer" style="margin-top: -10px">
-                    To make it convenient for my passengers
-                  </div>
-                </div>
-              </div>
-              <div class="large-6 medium-6 columns">
-                <div class="row">
-                  <div class="small-4 small-centered columns">
-                    <div id="strategy-submit" style="cursor: pointer">Submit</div>
-                  </div>
-                </div>
-                <div>
-                  <%= render 'boxster' %>
-                </div>
-              </div>
-              <div class="large-3 medium-3 small-3 columns">
-                <div class="bubble-icon-container" id="container-5">
-                  <%= render 'strategyOther' %>
-                  <div class="strategy-answer" id="other-strategy-answer">
-                    Other (Explain)
-                  </div>
-                </div>
-                <!-- other text container -->
-                <div id="strategy-other-container">
-                  <div id="container-positioner">
-                    <div id="text-container-filler"></div>
-                    <div id="text-container">
-                      <div id="other-strategy-buttons">
-                        <div class="row" id="slide-content" style="display: none">
-                          <div class="large-2 medium-2 small-2 columns">
-                            <div style="padding: 7px; color: white; background-color: #F25053; border-radius: 5px; text-align: center; margin-left: 30%; margin-top: 15%; cursor: pointer">Save</div>
-                            <div style="padding: 7px; color: white; background-color: #C1C1C1; border-radius: 5px; text-align: center; margin-left: 30%; margin-top: 7%; cursor: pointer">Cancel</div>
-                            <div id="char-count-strategy" style="margin-left: 50%; color: #C1C1C1"></div>
-                            <div style="color:#C1C1C1; font-size: 8px; margin-left: 30%">Characters Left</div>
-                          </div>
-                          <div class="large-8 medium-8 small-8 columns">
-                            <textarea id="other-strategy" placeholder="Please write here." cols="1" rows="6" maxlength="150" style="margin-top: 3%; background-color: #F0943F; color: white; postion: absolute; left: 40px; top: 20px"></textarea>
-                          </div>
-                          <div class="large-2 medium-2 small-2 columns"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end other text container -->
-              </div>
-            </div>
-          </div>
-        </div>
-      <!-- </div> -->
-
-      <!-- <div class="show-for-small-only">
-        <div class="row">
-          <div class="large-12 medium-12 small-12 columns">
-            <div class="small-4 columns">
-              <div class="bubble-icon-container-small" id="container-1" >
-                <%= render 'guy' %>
-              </div>
-              <div class="bubble-icon-container-small" id="container-2" >
-                <%= render 'guy' %>
-              </div>
-            </div>
-            <div class="small-4 columns">
-              <div class="bubble-icon-container-small" id="container-3" >
-                <%= render 'guy' %>
-              </div>
-            </div>
-            <div class="small-4 columns">
-              <div class="bubble-icon-container-small" id="container-4" >
-                <%= render 'guy' %>
-              </div>
-              <div class="bubble-icon-container-small" id="container-5" >
-                <%= render 'guy' %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    </div>
-    <!-- end STRATEGY questions -->
-
-
-    <!-- MISSION INTRO -->
-    <div id="mission-intro" style="display: none">
-      <div id="envelope">
-        <%= render 'envelope' %>
-      </div>
-      <div class="content">
-        <header class="mission-heading">
-          <h4>Your Mission</h4>
-          <p>
-            You are driving and need to pick up the following at LAX
-          </p>
-        </header>
-        <header class="mission-conditions-heading">
-          <h4>Airport Conditions</h4>
-          <p>
-            Your passengers are coming from
-          </p>
-        </header>
-
-        <div id="mission-selection-box">
-          <div class="top-content stage-1">
-            <div class="chat-bubble">
-              Select a passenger to pick up
-            </div>
-
-            <div id="mission-carousel">
-              <a href="javascript:void(0)" class="nav-left" data-direction="right">
-                
-              </a>
-              <a href="javascript:void(0)" class="nav-right" data-direction="left">
-                
-              </a>
-
-              <div class="far-left-side mover">
-                <%= render 'greyguy' %>
-                <div class="blurb">
-                  <span>Something</span>
-                </div>
-              </div>
-
-              <div class="left-side mover">
-                <%= render 'greyguy' %>
-                <div class="blurb">
-                  <span>Something</span>
-                </div>
-              </div>
-              
-              <div class="center mover">
-                <%= render 'suitguy' %>
-                <div class="blurb">
-                  <span class="number">1</span> <span>Clients</span>
-                </div>
-              </div>
-
-              <div class="right-side mover">
-                <%= render 'greyguy' %>
-                <div class="blurb">
-                  <span>Something</span>
-                </div>
-              </div>
-            </div>
-
-            <div id="bottom-info">
-              <span>with</span> <span class="number">2</span> <span>Large Suitcases</span>
-            </div>
-          </div>
-          <div class="stage-2-top">
-            <div class="destinations btcf">
-              <div class="left-side">
-                <div class="airport-heading">
-                  Departing
-                </div>
-                <div class="airport-code">
-                  XXX
-                </div>
-                <div class="airport-name">
-                  airport_name
-                </div>
-              </div>
-              <div class="center">
-                <div>
-                  <%= render 'introplane' %>
-                </div>
-                <div class="flight-number">Flight xxx</div>
-              </div>
-              <div class="right-side">
-                <div class="airport-heading">
-                  Arriving
-                </div>
-                <div class="airport-code">
-                  XXX
-                </div>
-                <div class="airport-name">
-                  airport_name
-                </div>
-              </div>
-            </div>
-            <div class="conditions">
-              <div class="traffic-meter medium">
-                <div class="tally-1"></div>
-                <div class="tally-2"></div>
-                <div class="tally-3"></div>
-                <div class="tally-4"></div>
-                <div class="tally-5"></div>
-                <div class="tally-6"></div>
-                <div class="tally-7"></div>
-                <div class="tally-8"></div>
-              </div>
-              <div class="traffic-summary">
-                LAX Traffic Level: <span>Medium</span>
-              </div>
-
-              <div class="time-summary">
-                <div>
-                  <div class="gray-bg"></div>
-                  <span class="time-till-arrival">1hr</span>
-                  <div class="stopwatch dIB vAM">
-                    <%= render 'introstopwatch' %>
-                  </div>
-                  <span class="blurb dIB vAM">Before plane lands</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button id="accept-mission-btn" class="x-btn-accept-mission">
-            <span class="accept-text">
-              Accept Mission
-            </span>
-            <span class="continue-text">
-              Let's Go!
-            </span>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- END MISSION INTRO -->
-
-
-    <!-- START INTERACTIVE MAP -->
-    <div id="interactive-map" style="display: none;">
-      <div class="top-half">
-        <h3>What is your strategy for picking up your passenger?</h3>
-      </div>
-
-      <div class="bottom-half">
-        <div style="display: inline-block; position: relative;">
-          <div class="instructions">
-            Choose a letter to select an approach
-          </div>
-          <a href="javascript:void(0)" class="x-btn-select-path select-path-btn selected" data-path="yellow">
-            
-          </a>
-          <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="green">
-            
-          </a>
-          <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="orange">
-            
-          </a>
-          <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
-            
-          </a>
-          <div class="map-path yellow selected">
-            <%= image_tag('map_yellow.jpg', width: '100%') %>
-          </div>
-          <div class="map-path green">
-            <%= image_tag('map_green.jpg', width: '100%') %>
-          </div>
-          <div class="map-path orange">
-            <%= image_tag('map_orange.jpg', width: '100%') %>
-          </div>
-          <div class="map-path blue">
-            <%= image_tag('map_blue.jpg', width: '100%') %>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- END INTERACTIVE MAP -->
-
-    <!-- START SUCCESSFUL PICKUP -->
-    <div id="successful-pickup" style="display: none;">
-      <div class="sun-bg">
-        <%= render 'sunBeamBg' %>
-      </div>
-      <div class="content">
-        <h3>
-          You successfully picked up your passenger!
-        </h3>
-
-        <div class="high-five">
-          <%= render 'highFive' %>
-        </div>
-
-        <p>
-          Now we're going to make some guesses about your typical trip to LAX based on your game experience
-        </p>
-
-        <button class="red-car">
-          <%= render 'redCar' %>
-        </button>
-      </div>
-    </div>
-    <!-- END SUCCESFUL PICKUP -->
-
-    <!-- START CIRCLE PICKUP QUESTIONS -->
-    <div id="circle-pickup" style="display: none;">
-      <div class="content">
-        <h3>
-          How many times do you typically circle around the terminal when picking up your passenger?
-        </h3>
-
-        <div class="content-c">
-          <div class="red-circle">
-            <div class="circle-car">
-              <%= render 'blueCircleCar' %>
-            </div>
-            <div class="outer-container">
-              <div class="inner-circle">
-                <div class="circle-number">3</div>
-                <div>times</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="content-c buttons-c">
-          <div>
-             <button id="x-btn-circle-less" class="counter-btn">-1</button>
-             <button id="x-btn-circle-more" class="counter-btn">+1</button> 
-          </div>
-          <div>
-            <button id="x-btn-circle-next" class="circle-next-btn">Next</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- END CIRCLE PICKUP QUESTIONS -->
-
-    <!-- START TIMER PICKUP QUESTIONS -->
-    <div id="timer-pickup" style="display: none;">
-      <div class="content">
-        <h3>
-          How long does it typically take for you to pick up your passenger at the terminal?
-        </h3>
-
-        <div class="content-c">
-          <div class="timer-c">
-            <div class="timer-number">0</div>
-            <div>min</div>
-          </div>
-        </div>
-
-        <div class="content-c buttons-c">
-          <div>
-             <button id="x-btn-timer-less" class="counter-btn">-15 min</button>
-             <button id="x-btn-timer-more" class="counter-btn">+15 min</button> 
-          </div>
-          <div>
-            <button id="x-btn-timer-next" class="timer-next-btn">Next</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- END TIMER PICKUP QUESTIONS -->
-
-    <!-- LAST QUESTION SET -->
+    <!-- 14. LAST QUESTION SET -->
     <div id="last-question-set" style="display: none">
       <!-- set 1 -->
       <div id="question-set-1">
@@ -988,7 +1013,7 @@
         </div>
         <div class="row" style="margin-bottom: 1.5%">
           <div class="large-6 medium-6 small-10 large-centered medium-centered small-centered columns last-questions">
-            <div class="question-wrapper-1-other" style="padding-bottom: 16%; width: 100%; border-radius: 100px">
+            <div class="question-wrapper-1" style="padding-bottom: 16%; width: 100%; border-radius: 100px">
               <div class="question-text" id="q4">
                 Not traveling: Dropping-off passenger
               </div>
@@ -997,7 +1022,7 @@
         </div>
         <div class="row">
           <div class="large-5 medium-5 small-9 large-centered medium-centered small-centered columns last-questions">
-            <div class="question-wrapper-1" id="other-last" style="padding-bottom: 20%; width: 100%; border-radius: 100px">
+            <div class="question-wrapper-1-other" id="other-last" style="padding-bottom: 20%; width: 100%; border-radius: 100px">
               <div class="question-text" id="q5">
                 Another reason (specify)
               </div>
@@ -1141,26 +1166,16 @@
         </div>
       </div>
       <!-- end set 3 -->
-
-      <div id="car-slider">
-        <div style="height: 50px; width: 100%; background-color: #ABD9F4; margin-top: 15px">
-          <div id="car-start-tag">
-            LAX
-          </div>
-          <div id="progression-bar">
-            <div id="car-container">
-              <%= render 'car' %>
-            </div>
-          </div>
-          <div id="car-end-tag">
-            <div id="home-container">
-              <%= render 'home' %>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
     <!-- END LAST QUESTION SET -->
+
+    <!-- CONGRATULATIONS! -->
+    <div id="congrats" style="display: none">
+      <div class="row" style="text-align: center">
+        <h3 style="color: white">Congratulations!</h3>
+      </div>
+    </div>
+    <!-- END CONGRATULATIONS -->
 
   </div>
 </div>
@@ -1186,8 +1201,7 @@
 <!-- END SCENES -->
 
 
-
-<!-- DASHBOARD -->
+<!-- DASHBOARDS -->
 <div id="dashboard" style="display: none;">
     <div id="grad-container">
       <div id="grad-4">
@@ -1257,7 +1271,26 @@
     <div id="lax">LAX</div>
   </div>
 </div>  
-<!-- END DASHBOARD -->
+
+
+<div id="car-slider" style="display: none">
+  <div style="height: 50px; width: 100%; background-color: #ABD9F4; margin-top: 15px">
+    <div id="car-start-tag">
+      LAX
+    </div>
+    <div id="progression-bar">
+      <div id="car-container">
+        <%= render 'car' %>
+      </div>
+    </div>
+    <div id="car-end-tag">
+      <div id="home-container">
+        <%= render 'home' %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END DASHBOARDS -->
 
 
 <!-- DATA PASSED FROM FRAMEWORKS -->

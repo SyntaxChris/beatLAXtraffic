@@ -1,86 +1,88 @@
 $(document).ready(function(){
 	// TOGGLE ALL
-	var clicks = 0;
-	$("#last-question-set").show();
-	$( "#toggle-questions" ).click(function() {
-		clicks += 1;
-		$("#clicks").text(clicks);
-		if (clicks === 1) {
-		// 	$( "#distance-questions").show();
-		// 	$( "#parking-lot" ).hide();
-		// 	$( "#mission-intro").hide();
-		// 	$( "#strategy-questions").hide();
-		// 	$( "#lines" ).hide();
-  // 		$( "#cars" ).hide();
-		// 	$( "#dashboard").hide();
-		// }
-		// else if (clicks === 2) {
-		// $( "#distance-questions" ).hide();
-			$( "#last-question-set" ).hide();
-  		$( "#mission-intro" ).show();
-  	}
-		else if (clicks === 2) {
-			$( "#strategy-questions").show();
-			$( "#distance-questions").hide();
-			$( "#mission-intro").hide();
-			$( "#parking-lot" ).hide();
-			$( "#lines" ).hide();
-  		$( "#cars" ).hide();
-			$( "#dashboard").show();
-			$('body').trigger('startDashboardAnimation');
+	$("#splash-page").show();
+	var pageClicks = 0;
+
+	$("#toggle-questions").click(function(){
+		pageClicks += 1
+		$("#clicks").text(pageClicks);
+
+		if(pageClicks === 1){
+			$("#splash-page").hide();
+			$("#distance-questions").show();
 		}
-		else if (clicks === 3) {
-			$( "#strategy-questions").hide();
-			$( "parking-lot" ).show();
-  		$( "#lines" ).show();
-  		$( "#cars" ).show();
-  		$( "#tile-questions" ).show();
+		else if(pageClicks === 2){
+			$("#distance-questions").hide();
+			$("#mission-intro").show();
 		}
-		else if (clicks === 4) {
-			$( "#tile-questions" ).hide();
-			$( "#clock-questions" ).show();
+		else if(pageClicks === 3){
+			$("#mission-intro").hide();
+			$("#interactive-map").show();
+			$("#dashboard").show();
 		}
-		else if (clicks === 5) {
-			$( "parking-lot" ).hide();
-			$( "#lines" ).hide();
-  		$( "#cars" ).hide();
-  		$( "#clock-questions" ).hide();
-			$( "#icon-questions" ).show();
+		else if(pageClicks === 4){
+			$("#interactive-map").hide();
+			$("#strategy-questions").show();
 		}
-		else if (clicks === 6) {
-			$( "#icon-questions" ).hide();
-			// $( "#parking-lot" ).show();
-			// $( "#lines" ).show();
-  		// $( "#cars" ).show();
-			$( "#spinner-questions" ).show();
+		else if(pageClicks === 5){
+			$("#strategy-questions").hide();
+			$("#why-park-car").show();
 		}
-		else if (clicks === 7) {
-			$( "parking-lot" ).hide();
-			$( "#lines" ).hide();
-  		$( "#cars" ).hide();
-			$( "#spinner-questions" ).hide();
-			$( "#interactive-map" ).show();
+		else if(pageClicks === 6){
+			$("#why-park-car").hide();
+			$("#parking-lot").show();
+			$("#spinner-questions").show();
 		}
-		else if (clicks === 8) {
-			$( "#interactive-map" ).hide();
-			$( "#successful-pickup" ).show();
-			$( "#dashboard" ).hide();
+		else if(pageClicks === 7){
+			$("#parking-lot").hide();
+			$("#spinner-questions").hide();
+			$("#tile-questions").show();
 		}
-		else if (clicks === 9) {
-			$( "#successful-pickup" ).hide();
-			$( "#circle-pickup" ).show();
-			$( "#dashboard" ).show();
+		else if(pageClicks === 8){
+			$("#tile-questions").hide();
+			$("#clock-questions").show();
 		}
-		else if (clicks === 10) {
-			$( "#circle-pickup" ).hide();
-			$( "#timer-pickup" ).show();
+		else if(pageClicks === 9){
+			$("#clock-questions").hide();
+			$("#dashboard").hide();
+
+			$("#successful-pickup").show();
 		}
-		else if (clicks === 11) {
+		else if(pageClicks === 10){
+			$("#successful-pickup").hide();
+			$("#car-slider").show();
+			$("#circle-pickup").show();
+		}
+		else if(pageClicks === 11){
+			$("#circle-pickup").hide();
+			$("#timer-pickup").show();
+		}
+		else if(pageClicks === 12){
 			$( "#timer-pickup" ).hide();
 			$( ".red-car" ).toggleClass('animate', false);
-			$( "#distance-questions").show();
+			$("#car-slider").hide();
+			$("#dashboard").show();
+			$("#rail-system").show();
+		}
+		else if(pageClicks === 13){
+			$("#rail-system").hide();
+			$("#icon-questions").show();
+		}
+		else if(pageClicks === 14){
 			$("#dashboard").hide();
-			clicks = 0;
+			$("#icon-questions").hide();
+			$("#car-slider").show();
+			$("#last-question-set").show();
+		}
+		else if(pageClicks === 15){
+            $("#car-slider").hide();
+			$("#last-question-set").hide();
+			$("#congrats").show();
+		}
+		else {
+			$("#congrats").hide();
+			$("#splash-page").show();
+			pageClicks = 0;
 		}
 	});
 	// END TOGGLE ALL
@@ -639,29 +641,7 @@ $(document).ready(function(){
 
  	// LAST SERIES QUESTIONS
  	var otherBoxCount = 0;
-
- 	$('.question-wrapper-1').hover(
-	    function(){
-	      var $this = $(this);
-	      $this.data('bgcolor', $this.css('background-color')).css('background-color', '#E0BF42');
-	    },
-	    function(){
-	      var $this = $(this);
-	      $this.css('background-color', $this.data('bgcolor'));
-	    }
-  	);
-
-  	$('.question-wrapper-2').hover(
-	    function(){
-	      var $this = $(this);
-	      $this.data('bgcolor', $this.css('background-color')).css('background-color', '#0682C7');
-	    },
-	    function(){
-	      var $this = $(this);
-	      $this.css('background-color', $this.data('bgcolor'));
-	    }
-  	);
-
+ 	
   	$("#other-last").click(function(){
   		if(otherBoxCount === 0){
   			$("#last-questions-other-container").show();
