@@ -12,7 +12,7 @@ $(document).ready(function(){
     e.preventDefault();
     e.stopImmediatePropagation();
 
-    timerCount -= 15;
+    timerCount -= 55;
 
     if ( timerCount < 0 ) { timerCount = 0; }
 
@@ -23,7 +23,7 @@ $(document).ready(function(){
     e.preventDefault();
     e.stopImmediatePropagation();
 
-    timerCount += 15;
+    timerCount += 5;
 
     updateTimerCount();
 
