@@ -15,7 +15,8 @@ $(document).ready(function(){
 		// 	$( "#dashboard").hide();
 		// }
 		// else if (clicks === 2) {
-		$( "#distance-questions" ).hide();
+		// $( "#distance-questions" ).hide();
+			$( "#last-question-set" ).hide();
   		$( "#mission-intro" ).show();
   	}
 		else if (clicks === 2) {
