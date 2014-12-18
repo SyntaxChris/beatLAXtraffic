@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	// TOGGLE ALL
 	var clicks = 0;
+	$("#last-question-set").show();
 	$( "#toggle-questions" ).click(function() {
 		clicks += 1;
 		$("#clicks").text(clicks);
@@ -14,7 +15,8 @@ $(document).ready(function(){
 		// 	$( "#dashboard").hide();
 		// }
 		// else if (clicks === 2) {
-			$( "#distance-questions" ).hide();
+		// $( "#distance-questions" ).hide();
+			$( "#last-question-set" ).hide();
   		$( "#mission-intro" ).show();
   	}
 		else if (clicks === 2) {
@@ -509,7 +511,6 @@ $(document).ready(function(){
  	// END SPINNER QUESTIONS
 
  	// STRATEGY QUESTIONS
- 	
  	var guyToggle = 0;
  	var stopWatchToggle = 0;
  	var carParkingToggle = 0;
@@ -639,10 +640,21 @@ $(document).ready(function(){
  	// LAST SERIES QUESTIONS
  	var otherBoxCount = 0;
 
- 	$('.question-wrapper').hover(
+ 	$('.question-wrapper-1').hover(
 	    function(){
 	      var $this = $(this);
 	      $this.data('bgcolor', $this.css('background-color')).css('background-color', '#E0BF42');
+	    },
+	    function(){
+	      var $this = $(this);
+	      $this.css('background-color', $this.data('bgcolor'));
+	    }
+  	);
+
+  	$('.question-wrapper-2').hover(
+	    function(){
+	      var $this = $(this);
+	      $this.data('bgcolor', $this.css('background-color')).css('background-color', '#0682C7');
 	    },
 	    function(){
 	      var $this = $(this);
@@ -662,6 +674,20 @@ $(document).ready(function(){
   	});
   	$("#last-other-save").click(function(){
   		$("#last-questions-other-container").hide();
+  	});
+
+  	$(".question-wrapper-1").click(function(){
+  		$("#question-set-1").fadeOut();
+  		$("#question-set-2").fadeIn();
+  	});
+  	$("#last-other-save").click(function(){
+  		$("#question-set-1").fadeOut();
+  		$("#question-set-2").fadeIn();
+  	});
+
+  	$(".question-wrapper-2").click(function(){
+  		$("#question-set-2").fadeOut();
+  		$("#question-set-3").fadeIn();
   	});
  	// END LAST SERIES QUESTIONS
 });
