@@ -364,9 +364,115 @@
 
 
   <!-- TODO: 5. Why do you choose to park your car? -->
-  <div id="why-park-car" style="display:none">
+  <div id="why-park-car">
     <div class="row" style="text-align:center">
       <h3 style="color: white">Why do you choose to park your car?</h3>
+    </div>
+
+    <div class="hide-for-small-only">
+      <div class="row" style="padding: 0 10px 0 10px; margin-top: 10%">
+        <div class="large-3 medium-3 columns">
+          <div class="parking-bubble">
+            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+              <%= render 'unchecked' %>
+            </div>
+            <div style="position: absolute; width: 80%; height: 70px; margin-top: 7%; margin-left: 4%;">
+              <%= render 'carParkBubble' %>
+            </div>
+            <div style="position: absolute; width: 80%; top: 50%; margin-left: 4%; text-align: center; color: #A0A0A0">
+              Convenient parking available
+            </div>
+          </div>
+        </div>
+        <div class="large-3 medium-3 columns">
+          <div class="parking-bubble">
+            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+              <%= render 'unchecked' %>
+            </div>
+            <div style="position: absolute; width: 80%; height: 70px; margin-top: 7%; margin-left: 4%;">
+              <%= render 'avoidTraffic' %>
+            </div>
+            <div style="position: absolute; width: 80%; top: 50%; margin-left: 4%; text-align: center; color: #A0A0A0">
+              Convenient parking available
+            </div>
+          </div>
+        </div>
+        <div class="large-3 medium-3 columns">
+          <div class="parking-bubble">
+            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+              <%= render 'unchecked' %>
+            </div>
+            <div style="position: absolute; width: 80%; height: 70px; margin-top: 7%; margin-left: 4%;">
+              <%= render 'peopleParkBubble' %>
+            </div>
+            <div style="position: absolute; width: 80%; top: 50%; margin-left: 4%; text-align: center; color: #A0A0A0">
+              Convenient parking available
+            </div>
+          </div>
+        </div>
+        <div class="large-3 medium-3 columns">
+          <div id="parking-bubble-other">
+            <div style="position: absolute; width: 80%; top: 35%; margin-left: 4%; text-align: center; color: #A0A0A0">
+              Other (specify)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="show-for-small-only">
+      <div class="row" style="padding: 0 20px 0 20px">
+        <div class="small-6 columns" style="padding: 0 2% 0 3%">
+          <div class="parking-bubble">
+            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+              <%= render 'unchecked' %>
+            </div>
+            <div style="position: absolute; width: 80%; height: 70px; margin-top: 7%; margin-left: 4%;">
+              <%= render 'carParkBubble' %>
+              <div style="width: "></div>
+            </div>
+            <div style="position: absolute; width: 80%; top: 50%; margin-left: 4%; text-align: center; color: #A0A0A0">
+              Convenient parking available
+            </div>
+          </div>
+        </div>
+        <div class="small-6 columns" style="padding: 0 3% 0 2%">
+          <div class="parking-bubble">
+            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+              <%= render 'unchecked' %>
+            </div>
+            <div style="position: absolute; width: 80%; height: 70px; margin-top: 7%; margin-left: 4%;">
+              <%= render 'avoidTraffic' %>
+            </div>
+            <div style="position: absolute; width: 80%; top: 50%; margin-left: 4%; text-align: center; color: #A0A0A0">
+              Convenient parking available
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style=" margin-top: 10%; padding: 0 20px 0 20px">
+        <div class="small-6 columns" style="padding: 0 2% 0 3%">
+          <div class="parking-bubble">
+            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+              <%= render 'unchecked' %>
+            </div>
+            <div style="position: absolute; width: 80%; height: 70px; margin-top: 7%; margin-left: 4%;">
+              <%= render 'peopleParkBubble' %>
+            </div>
+            <div style="position: absolute; width: 80%; top: 50%; margin-left: 4%; text-align: center; color: #A0A0A0">
+              Convenient parking available
+            </div>
+          </div>
+        </div>
+        <div class="small-6 columns" style="padding: 0 3% 0 2%">
+          <div id="parking-bubble-other">
+            <div style="position: absolute; width: 80%; top: 35%; margin-left: 4%; text-align: center; color: #A0A0A0">
+              Other (specify)
+            </div>
+          </div>
+          <div id="why-parking-next">NEXT</div>
+        </div>
+      </div>
     </div>
   </div>
   <!-- END TODO: 5. Why do you choose to park your car? -->
@@ -1202,7 +1308,7 @@
 
 
 <!-- DASHBOARDS -->
-<div id="dashboard" style="display: none;">
+<div id="dashboard">
     <div id="grad-container">
       <div id="grad-4">
         <div class="row">
