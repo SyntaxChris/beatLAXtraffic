@@ -364,7 +364,7 @@
 
 
   <!-- TODO: 5. Why do you choose to park your car? -->
-  <div id="why-park-car">
+  <div id="why-park-car" style="display:none">
     <div class="row" style="text-align:center">
       <h3 style="color: white">Why do you choose to park your car?</h3>
     </div>
@@ -410,11 +410,17 @@
             </div>
           </div>
         </div>
-        <div class="large-3 medium-3 columns">
+        <div class="large-3 medium-3 columns"  style="text-align: center">
           <div id="parking-bubble-other">
-            <div style="position: absolute; width: 80%; top: 35%; margin-left: 4%; text-align: center; color: #A0A0A0">
+            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+              <%= render 'unchecked' %>
+            </div>
+            <div style="position: absolute; width: 80%; top: 35%; margin-left: 4%; margin-bottom: 20%; text-align: center; color: #A0A0A0">
               Other (specify)
             </div>
+          </div>
+          <div style="margin-left: auto; margin-right: auto; top: 150%; left: 30%; position: absolute; width: 40%; padding: 5%; background-color: #A0A0A0; color: white">
+            Next
           </div>
         </div>
       </div>
@@ -464,13 +470,18 @@
             </div>
           </div>
         </div>
-        <div class="small-6 columns" style="padding: 0 3% 0 2%">
+        <div class="small-6 columns" style="padding: 0 3% 0 2%; text-align: center">
           <div id="parking-bubble-other">
+            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+              <%= render 'unchecked' %>
+            </div>
             <div style="position: absolute; width: 80%; top: 35%; margin-left: 4%; text-align: center; color: #A0A0A0">
               Other (specify)
             </div>
           </div>
-          <div id="why-parking-next">NEXT</div>
+          <div style="margin-left: auto; margin-right: auto; top: 150%; left: 30%; position: absolute; width: 40%; padding: 5%; background-color: #A0A0A0; color: white">
+            Next
+          </div>
         </div>
       </div>
     </div>
