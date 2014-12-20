@@ -1,7 +1,8 @@
 $(document).ready(function(){
   //set some vars
   var $circlePickup = $('#circle-pickup'),
-      circleCount = 3;
+      circleCount = 3,
+      animating = false;
 
   //listeners
   $circlePickup
@@ -31,6 +32,18 @@ $(document).ready(function(){
 
   function updateCircleCount(){
     $circlePickup.find('.circle-number').text(circleCount);
+    animateCar();
+  }
+
+  function animateCar(){
+    if (!animating) {
+      animating = true;
+      $circlePickup.find('.circle-car').toggleClass('animate', true);
+      setTimeout(function(){
+        $circlePickup.find('.circle-car').toggleClass('animate', false);
+        animating = false;
+      },2000);
+    }
   }
 
 });
