@@ -8,9 +8,13 @@
 <!-- <div id="logger"></div> -->
 
 <!-- SPLASH PAGE -->
-<div id="splash-page" style="display:none">
-  <div class="row" style="text-align: center">
-    <h3 style="color: white">Splash Page</h3>
+<div id="splash-page" style="display:none;">
+  <div class="row" style="text-align: center; margin-top: 5%">
+    <h2 style="color: white">Are you an LAX <span style="font-weight: 700">Pick Up Artist?</span></h2>
+    <div style="font-size: 25px; color:white; padding: 15px; background-color: #F05759; width: 30%; margin-left: auto; margin-right: auto; margin-top: 5%;">Start</div>
+  </div>
+  <div style="position: absolute; bottom: -20%; left: -3%; width: 105%;">
+    <%= render 'splashPage' %>
   </div>
 </div>
 <!-- END SPLASH PAGE -->
@@ -367,7 +371,7 @@
 
 
   <!-- TODO: 5. Why do you choose to park your car? -->
-  <div id="why-park-car" style="display:none">
+  <div id="why-park-car" style="display: none">
     <div class="row" style="text-align:center">
       <h3 style="color: white">Why do you choose to park your car?</h3>
     </div>
@@ -379,10 +383,10 @@
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
               <%= render 'unchecked' %>
             </div>
-            <div style="position: absolute; width: 80%; height: 70px; margin-top: 7%; margin-left: 4%;">
+            <div class="bubble-logo">
               <%= render 'carParkBubble' %>
             </div>
-            <div style="position: absolute; width: 80%; top: 50%; margin-left: 4%; text-align: center; color: #A0A0A0">
+            <div class="parking-question-font" data-car="uncolored">
               Convenient parking available
             </div>
           </div>
@@ -392,10 +396,10 @@
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
               <%= render 'unchecked' %>
             </div>
-            <div style="position: absolute; width: 80%; height: 70px; margin-top: 7%; margin-left: 4%;">
+            <div class="bubble-logo">
               <%= render 'avoidTraffic' %>
             </div>
-            <div style="position: absolute; width: 80%; top: 50%; margin-left: 4%; text-align: center; color: #A0A0A0">
+            <div class="parking-question-font" data-traffic="uncolored">
               Convenient parking available
             </div>
           </div>
@@ -405,20 +409,20 @@
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
               <%= render 'unchecked' %>
             </div>
-            <div style="position: absolute; width: 80%; height: 70px; margin-top: 7%; margin-left: 4%;">
+            <div class="bubble-logo">
               <%= render 'peopleParkBubble' %>
             </div>
-            <div style="position: absolute; width: 80%; top: 50%; margin-left: 4%; text-align: center; color: #A0A0A0">
+            <div class="parking-question-font" data-people="uncolored">
               Convenient parking available
             </div>
           </div>
         </div>
-        <div class="large-3 medium-3 columns"  style="text-align: center">
+        <div class="large-3 medium-3 columns" style="text-align: center">
           <div id="parking-bubble-other">
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
               <%= render 'unchecked' %>
             </div>
-            <div style="position: absolute; width: 80%; top: 35%; margin-left: 4%; margin-bottom: 20%; text-align: center; color: #A0A0A0">
+            <div class="parking-question-other-font" data-other="uncolored">
               Other (specify)
             </div>
           </div>
@@ -436,11 +440,11 @@
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
               <%= render 'unchecked' %>
             </div>
-            <div style="position: absolute; width: 80%; height: 70px; margin-top: 7%; margin-left: 4%;">
+            <div class="bubble-logo" class="bubble-logo">
               <%= render 'carParkBubble' %>
               <div style="width: "></div>
             </div>
-            <div style="position: absolute; width: 80%; top: 50%; margin-left: 4%; text-align: center; color: #A0A0A0">
+            <div class="parking-question-font" data-state="uncolored">
               Convenient parking available
             </div>
           </div>
@@ -450,10 +454,10 @@
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
               <%= render 'unchecked' %>
             </div>
-            <div style="position: absolute; width: 80%; height: 70px; margin-top: 7%; margin-left: 4%;">
+            <div  class="bubble-logo">
               <%= render 'avoidTraffic' %>
             </div>
-            <div style="position: absolute; width: 80%; top: 50%; margin-left: 4%; text-align: center; color: #A0A0A0">
+            <div class="parking-question-font" data-state="uncolored">
               Convenient parking available
             </div>
           </div>
@@ -465,10 +469,10 @@
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
               <%= render 'unchecked' %>
             </div>
-            <div style="position: absolute; width: 80%; height: 70px; margin-top: 7%; margin-left: 4%;">
+            <div class="bubble-logo">
               <%= render 'peopleParkBubble' %>
             </div>
-            <div style="position: absolute; width: 80%; top: 50%; margin-left: 4%; text-align: center; color: #A0A0A0">
+            <div class="parking-question-font" data-state="uncolored">
               Convenient parking available
             </div>
           </div>
@@ -478,7 +482,7 @@
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
               <%= render 'unchecked' %>
             </div>
-            <div style="position: absolute; width: 80%; top: 35%; margin-left: 4%; text-align: center; color: #A0A0A0">
+            <div class="parking-question-other-font" data-other="uncolored">
               Other (specify)
             </div>
           </div>
@@ -1409,7 +1413,7 @@
 
 
 <!-- DASHBOARDS -->
-<div id="dashboard">
+<div id="dashboard" style="display: none">
     <div id="grad-container">
       <div id="grad-4">
         <div class="row">
