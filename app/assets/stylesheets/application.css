@@ -12,6 +12,7 @@
  *
  *= require 'main'
  *= require 'background'
+ *= require 'splash_page'
  *= require 'dashboard'
  *= require 'parking_lot'
  *= require 'distance_questions'
@@ -22,7 +23,9 @@
  *= require 'successful_pickup'
  *= require 'circle_pickup'
  *= require 'timer_pickup'
+ *= require 'parking_questions'
  *= require 'car_slider_questions'
+ *= require 'after_parking'
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
