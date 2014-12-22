@@ -1,0 +1,141 @@
+.parking-bubble {
+	width: 100%; 
+	text-align: center;
+	padding-bottom: 100%; 
+	background-color: white; 
+	border-radius: 30px;
+	cursor: pointer;
+	.bubble-logo {
+		position: absolute; 
+		width: 80%; 
+		height: 70px; 
+		margin-top: 7%; 
+		margin-left: 4%;
+	}
+}
+
+.parking-bubble:before {
+	content:"";
+	position: absolute;
+	top: 100%;
+	left: 42%;
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 30px solid white;
+}
+
+#parking-bubble-other {
+	cursor: pointer;
+	width: 100%; 
+	padding-bottom: 45%; 
+	background-color: white; 
+	border-radius: 30px
+}
+
+.parking-bubble-other:before {
+	content:"";
+	position: absolute;
+	top: 100%;
+	left: 42%;
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 30px solid red;
+}
+
+.parking-question-font, {
+	position: absolute; 
+	width: 80%; 
+	top: 50%; 
+	margin-left: 4%; 
+	text-align: center; 
+}
+
+.parking-question-other-font {
+	position: absolute; 
+	width: 80%; 
+	top: 35%; 
+	margin-left: 4%; 
+	margin-bottom: 20%; 
+	text-align: center;
+}
+
+div[data-car=uncolored],
+div[data-traffic=uncolored],
+div[data-people=uncolored],
+div[data-other=uncolored]{
+	color: #A0A0A0;
+}
+
+div[data-car=colored] {
+	color: #2FA3CA;
+}
+
+div[data-traffic=colored] {
+	color: #DD734E;
+}
+
+div[data-people=colored] {
+	color: #97CE11;
+}
+
+div[data-other=colored] {
+	color: #A370C4;
+}
+
+.car-park.bubble-fill[data-car=filled],
+.circle-state[data-car=closed] {
+	fill: #2FA3CA;
+}
+
+#traffic-fill[data-traffic=filled],
+.circle-state[data-traffic=closed] {
+	fill: #DD734E;
+}
+
+#people-fill[data-people=filled],
+.circle-state[data-people=closed] {
+	fill: #97CE11;
+}
+
+.circle-state[data-other=closed]{
+	fill: #A370C4
+}
+
+.car-park.bubble-fill[data-car=unfilled],
+#traffic-fill[data-traffic=unfilled],
+#people-fill[data-people=unfilled] {
+	fill: #A0A0A0;
+}
+
+.circle-state[data-car=closed],
+.circle-state[data-traffic=closed],
+.circle-state[data-people=closed],
+.circle-state[data-other=closed] {
+	stroke: none;
+}
+
+.circle-state[data-car=open],
+.circle-state[data-traffic=open],
+.circle-state[data-people=open],
+.circle-state[data-other=open] {
+	stroke-dasharray: 2.963,4.9383;
+}
+
+.checkmark-fill[data-car=gray],
+.checkmark-fill[data-traffic=gray],
+.checkmark-fill[data-people=gray],
+.checkmark-fill[data-other=gray] {
+	stroke: #757575;
+}
+
+.checkmark-fill[data-car=white],
+.checkmark-fill[data-traffic=white],
+.checkmark-fill[data-people=white],
+.checkmark-fill[data-other=white] {
+	stroke: white;
+}
+
