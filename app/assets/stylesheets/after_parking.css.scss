@@ -1,0 +1,188 @@
+#after-parking-questions {
+  h3 {
+    text-align: center;
+    font-weight: 600;
+    font-size: .9em;
+    line-height: 1;
+    &.main {
+      color: #00A8A8;
+    }
+    &.sub {
+      color: white;
+    }
+  }
+  .wide {
+    display: none !important;
+  }
+  .sign {
+    width: 90%;
+    max-width: 370px;
+    background: white;
+    padding: 4px;
+    display: block;
+    margin-bottom: 6px;
+    margin-right: 20px;
+    float: right;
+    position: relative;
+    font-family: 'Quicksand', sans-serif;
+    &:nth-of-type(1) {
+      .arrow-c {
+        -moz-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+
+      }
+    }
+    &:nth-of-type(3) {
+      .arrow-c {
+        -moz-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+
+      }
+    }
+    &:nth-of-type(4) {
+      .arrow-c {
+        -moz-transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+
+      }
+    }
+  }
+  .inner-content {
+    display: table;
+    height: 60px;
+    >div {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+  .pole {
+    position: absolute;
+    z-index: 0;
+    top: 20px;
+    right: -5px;
+  }
+  .holder {
+    position: absolute;
+    right: -15px;
+    top: 0;
+    height: 100%;
+    width: 30px;
+  }
+  .arrow-c {
+    height: 30px;
+    width: 30px;
+    margin: 0 auto;
+  }
+  .icon-c {
+    width: 15%;
+  }
+  .text {
+    text-align: right;
+    padding: 6px 10px 6px 0;
+    color: white;
+    width: 72%;
+    font-size: .8em;
+    line-height: 1;
+  }
+  .blue {
+    background: #1BB9EF;
+  }
+  .indigo {
+    background: #607BEA;
+  }
+  .purple {
+    background: #7341E0;
+  }
+  .magenta {
+    background: #A240E2;
+  }
+}
+
+@media only screen and (min-width : 360px) { 
+  #after-parking-questions {
+    h3 {
+      font-size: 1.2em;
+    }
+    .text {
+      font-size: 1em;
+    }
+  }
+}
+
+@media only screen and (min-width : 768px) { 
+  #after-parking-questions {
+    .mobile {
+      display: none !important;
+    }
+    .wide {
+      display: table-cell !important;
+    }
+    .pole {
+      right: auto;
+      left: 50%;
+      top: auto; //50px;
+      bottom: 100px;
+      margin-left: -35px;
+    }
+    .sign {
+      position: absolute;
+      padding: 6px;
+      z-index: 2;
+      max-width: 340px;
+      &:nth-of-type(odd) {
+        right: 50%;
+      }
+      &:nth-of-type(even) {
+        left: 50%;
+        .text {
+          text-align: left;
+          padding: 6px 0 6px 10px;
+        }
+        .holder {
+          -moz-transform: rotate(180deg);
+          -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+          right: auto;
+          left: -16px;
+        }
+      }
+      &:nth-of-type(1) {
+        top: 220px;
+      }
+      &:nth-of-type(2) {
+        top: 300px;
+        .arrow-c {
+          -moz-transform: rotate(90deg);
+          -webkit-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
+          transform: rotate(90deg);
+        }
+      }
+      &:nth-of-type(3) {
+        top: 380px;
+      }
+      &:nth-of-type(4) {
+        top: 460px;
+        .arrow-c {
+          -moz-transform: rotate(180deg);
+          -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}

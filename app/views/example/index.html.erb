@@ -149,10 +149,10 @@
                 Arriving
               </div>
               <div class="airport-code">
-                XXX
+                LAX
               </div>
               <div class="airport-name">
-                airport_name
+                Los Angeles
               </div>
             </div>
           </div>
@@ -168,17 +168,20 @@
               <div class="tally-8"></div>
             </div>
             <div class="traffic-summary">
-              LAX Traffic Level: <span>Medium</span>
+              LAX Traffic Level: <span class="traffic-label">Medium</span>
             </div>
 
             <div class="time-summary">
               <div>
                 <div class="gray-bg"></div>
-                <span class="time-till-arrival">1hr</span>
+                <span class="blurb dIB vAM">Plan will land in</span>
+                <div class="time-till-arrival">
+                  <div class="number">1</div>
+                  <div class="unit">hr</div>
+                </div>
                 <div class="stopwatch dIB vAM">
                   <%= render 'introstopwatch' %>
                 </div>
-                <span class="blurb dIB vAM">Before plane lands</span>
               </div>
             </div>
           </div>
@@ -822,93 +825,7 @@
     </div>
     <!-- END TIMER QUESTIONS -->
 
-
-    <!-- 9. SUCCESSFUL PICKUP -->
-    <div id="successful-pickup" style="display: none;">
-      <div class="sun-bg">
-        <%= render 'sunBeamBg' %>
-      </div>
-      <div class="content">
-        <h3>
-          You successfully picked up your passenger!
-        </h3>
-
-        <div class="high-five">
-          <%= render 'highFive' %>
-        </div>
-
-        <p>
-          Now we're going to make some guesses about your typical trip to LAX based on your game experience
-        </p>
-
-        <button class="red-car">
-          <%= render 'redCar' %>
-        </button>
-      </div>
-    </div>
-    <!-- END SUCCESFUL PICKUP -->
-
-
-    <!-- 10. CIRCLE PICKUP QUESTIONS -->
-    <div id="circle-pickup" style="display: none;">
-      <div class="content">
-        <h3>
-          How many times do you typically circle around the terminal when picking up your passenger?
-        </h3>
-
-        <div class="content-c">
-          <div class="red-circle">
-            <div class="circle-car">
-              <%= render 'blueCircleCar' %>
-            </div>
-            <div class="outer-container">
-              <div class="inner-circle">
-                <div class="circle-number">3</div>
-                <div>times</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="content-c buttons-c">
-          <div>
-             <button id="x-btn-circle-less" class="counter-btn">-1</button>
-             <button id="x-btn-circle-more" class="counter-btn">+1</button> 
-          </div>
-          <div>
-            <button id="x-btn-circle-next" class="circle-next-btn">Next</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- END CIRCLE PICKUP QUESTIONS -->
-
-    <!-- 11. TIMER PICKUP QUESTIONS -->
-    <div id="timer-pickup" style="display: none;">
-      <div class="content">
-        <h3>
-          How long does it typically take for you to pick up your passenger at the terminal?
-        </h3>
-
-        <div class="content-c">
-          <div class="timer-c">
-            <div class="timer-number">0</div>
-            <div>min</div>
-          </div>
-        </div>
-
-        <div class="content-c buttons-c">
-          <div>
-             <button id="x-btn-timer-less" class="counter-btn">-5 min</button>
-             <button id="x-btn-timer-more" class="counter-btn">+5 min</button> 
-          </div>
-          <div>
-            <button id="x-btn-timer-next" class="timer-next-btn">Next</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- END TIMER PICKUP QUESTIONS -->
+    <!-- PAGES 9 - 11 ARE OUTSIDE OF THIS CONTAINER -->
 
 
     <!-- TODO: 12. RAIL SYSTEM QUESTIONS -->
@@ -1295,6 +1212,179 @@
     <!-- END CONGRATULATIONS -->
 
   </div>
+
+  <!-- AFTER PARKING QUESTIONS -->
+    <div id="after-parking-questions" style="display: none;">
+
+      <h3 class="main">You finally arrive at the lot and the parking lot is full</h3>
+      <h3 class="sub">What do you do next?</h3>
+
+      <div class="pole">
+        <%= render 'signPole' %>
+      </div>
+
+
+      <button class="sign">
+        <div class="holder">
+          <%= render 'signHolder' %>
+        </div>
+        <div class="inner-content blue">
+          <div class="icon-c">
+            <div class="arrow-c">
+              <%= render 'signArrow' %>
+            </div>
+          </div>
+          <div class="text">
+            Wait until a parking spot opens up
+          </div>
+        </div>
+      </button>
+      <button class="sign">
+        <div class="holder">
+          <%= render 'signHolder' %>
+        </div>
+        <div class="inner-content indigo">
+          <div class="icon-c mobile">
+            <div class="arrow-c">
+              <%= render 'signArrow' %>
+            </div>
+          </div>
+          <div class="text">
+            Find a spot in another parking structure
+          </div>
+          <div class="icon-c wide">
+            <div class="arrow-c">
+              <%= render 'signArrow' %>
+            </div>
+          </div>
+        </div>
+      </button>
+      <button class="sign">
+        <div class="holder">
+          <%= render 'signHolder' %>
+        </div>
+        <div class="inner-content purple">
+          <div class="icon-c">
+            <div class="arrow-c">
+              <%= render 'signArrow' %>
+            </div>
+          </div>
+          <div class="text">
+            Exit parking structure to catch your passenger at the curb
+          </div>
+        </div>
+      </button>
+      <button class="sign">
+        <div class="holder">
+          <%= render 'signHolder' %>
+        </div>
+        <div class="inner-content magenta">
+          <div class="icon-c mobile">
+            <div class="arrow-c">
+              <%= render 'signArrow' %>
+            </div>
+          </div>
+          <div class="text">
+            Exit terminal area to wait off site until passenger is ready to be picked up
+          </div>
+          <div class="icon-c wide">
+            <div class="arrow-c">
+              <%= render 'signArrow' %>
+            </div>
+          </div>
+        </div>
+      </button>
+    </div>
+    <!-- END AFTER PARKING QUESTIONS -->
+
+  <!-- 9. SUCCESSFUL PICKUP -->
+  <div id="successful-pickup" style="display: none;">
+    <div class="sun-bg">
+      <%= render 'sunBeamBg' %>
+    </div>
+    <div class="content">
+      <h3>
+        You successfully picked up your passenger!
+      </h3>
+
+      <div class="high-five">
+        <%= render 'highFive' %>
+      </div>
+
+      <p>
+        Now we're going to make some guesses about your typical trip to LAX based on your game experience
+      </p>
+
+      <button class="red-car">
+        <%= render 'redCar' %>
+      </button>
+    </div>
+  </div>
+  <!-- END SUCCESFUL PICKUP -->
+
+
+  <!-- 10. CIRCLE PICKUP QUESTIONS -->
+  <div id="circle-pickup" style="display: none;">
+    <div class="content">
+      <h3>
+        How many times do you typically circle around the terminal when picking up your passenger?
+      </h3>
+
+      <div class="content-c">
+        <div class="red-circle">
+          <div class="circle-car">
+            <%= render 'blueCircleCar' %>
+          </div>
+          <div class="outer-container">
+            <div class="inner-circle">
+              <div class="circle-number">3</div>
+              <div>times</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-c buttons-c">
+        <div>
+           <button id="x-btn-circle-less" class="counter-btn">-1</button>
+           <button id="x-btn-circle-more" class="counter-btn">+1</button> 
+        </div>
+        <div>
+          <button id="x-btn-circle-next" class="circle-next-btn">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END CIRCLE PICKUP QUESTIONS -->
+
+  <!-- 11. TIMER PICKUP QUESTIONS -->
+  <div id="timer-pickup" style="display: none;">
+    <div class="content">
+      <h3>
+        How long does it typically take for you to pick up your passenger at the terminal?
+      </h3>
+
+      <div class="content-c">
+        <div class="timer-c">
+          <div class="timer-number">0</div>
+          <div>min</div>
+        </div>
+      </div>
+
+      <div class="content-c buttons-c">
+        <div>
+           <button id="x-btn-timer-less" class="counter-btn">-5 min</button>
+           <button id="x-btn-timer-more" class="counter-btn">+5 min</button> 
+        </div>
+        <div>
+          <button id="x-btn-timer-next" class="timer-next-btn">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END TIMER PICKUP QUESTIONS -->
+
+
 </div>
 <!-- END QUESTION FORMATS -->
 
