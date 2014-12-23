@@ -88,11 +88,34 @@ describe Respondent do
   end
 
   describe "Features" do
-    let(:respondent) { FactoryGirl.build(:respondent) }
+    describe "get_or_create_by_session(session_id)" do
+      describe "looks up a session to see if it has an active respondent session" do
+        context "when session exists" do
+        let!(:respondent) { FactoryGirl.create(:respondent, session_id: "1234") }
+          it "returns that active session" do
+            expect(Respondent.all.count).to eq 1
+            expect(Respondent.get_or_create_by_session("1234")).to eq(
+              {
+                session_id: respondent.session_id,
+                respondent_id: respondent.id
+              }
+            )
+            expect(Respondent.all.count).to eq 1
+          end
+        end
 
-    describe "get_or_create_session(session_id)" do
-      it "looks up a session to see if it has an active respondent session" do
-
+        context "when session doesn't exist" do
+          it "creates a session and returns it" do
+            expect(Respondent.all.count).to eq 0
+            expect(Respondent.get_or_create_by_session("1234")).to eq(
+              {
+                session_id: Respondent.last.session_id,
+                respondent_id: Respondent.last.id
+              }
+            )
+            expect(Respondent.all.count).to eq 1
+          end
+        end
       end
     end
 
