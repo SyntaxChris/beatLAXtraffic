@@ -12,7 +12,8 @@ describe Respondent do
         flight_code: "JFK",
         passenger_count: 2,
         luggage_count: 4,
-        who_picking_up: "Boss",
+        original_who_picking_up: "Boss",
+        final_who_picking_up: "Friend",
         times_circled: 3,
         originating_location: "JFK",
         landing_time: 120,
@@ -52,8 +53,12 @@ describe Respondent do
       expect(respondent.luggage_count).to eq 4
     end
 
-    it "has a pickup target party" do
-      expect(respondent.who_picking_up).to eq "Boss"
+    it "has an original pickup target party" do
+      expect(respondent.original_who_picking_up).to eq "Boss"
+    end
+
+    it "has a final pickup target party" do
+      expect(respondent.final_who_picking_up).to eq "Friend"
     end
 
     it "has an originating_location" do
