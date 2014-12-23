@@ -17,7 +17,8 @@ describe Respondent do
         times_circled: 3,
         originating_location: "JFK",
         landing_time: 120,
-        travel_companion: true
+        travel_companion: true,
+        active: true
       )
     }
 
@@ -72,6 +73,10 @@ describe Respondent do
     it "has a travel_companion" do
       expect(respondent.travel_companion).to eq true
     end
+
+    it "has an active boolean" do
+      expect(respondent.active).to eq true
+    end
   end
 
   describe "Associations" do
@@ -84,6 +89,12 @@ describe Respondent do
 
   describe "Features" do
     let(:respondent) { FactoryGirl.build(:respondent) }
+
+    describe "get_or_create_session(session_id)" do
+      it "looks up a session to see if it has an active respondent session" do
+
+      end
+    end
 
     pending "increases its times_circled counter at appropriate times "\
             "(likely upon API call for recording a response and diong whatever "\

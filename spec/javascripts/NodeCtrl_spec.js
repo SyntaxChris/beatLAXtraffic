@@ -1,10 +1,10 @@
 describe('NodeCtrl', function(){
   beforeEach(module('lawaApp'));
 
-  it('something should be something', inject(function($controller) {
+  it('currentNode is an integer', inject(function($controller) {
     var scope = {},
         ctrl = $controller('NodeCtrl', {$scope:scope});
 
-    expect(scope.someVar).toBe('var value');
+    expect(scope.currentNode).toEqual(jasmine.any(Number));
   }));
 });
