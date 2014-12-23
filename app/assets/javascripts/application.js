@@ -22,6 +22,7 @@
 //= require 'circle_pickup'
 //= require 'timer_pickup'
 //= require 'parking_questions'
+//= require 'congrats'
 //= require angular
 
 //= require angular/app

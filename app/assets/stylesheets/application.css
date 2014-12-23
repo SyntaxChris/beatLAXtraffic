@@ -26,6 +26,7 @@
  *= require 'parking_questions'
  *= require 'car_slider_questions'
  *= require 'after_parking'
+ *= require 'congrats'
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides

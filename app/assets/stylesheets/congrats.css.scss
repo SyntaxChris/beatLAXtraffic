@@ -1,0 +1,233 @@
+#congrats {
+  h3 {
+    color: #686969;
+  }
+  h4 {
+    color: #8D8D8D;
+    line-height: 1;
+    font-size: .9em;
+  }
+  p {
+    color: #545554;
+    line-height: 1;
+    font-size: .8em;
+    margin-bottom: 6px;
+  }
+  .inner-c {
+    width: 300px;
+    margin: 0 auto;
+  }
+  button {
+    font-size: .8em;
+    padding: 10px;
+    outline: none;
+  }
+  a, a:visited, a:active {
+    color: #54556D;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    display: block;
+    font-weight: 600;
+    font-size: 1em;
+  }
+  .share-story-btn {
+    background: #7457A3;
+    color: white;
+  }
+
+  .replay-btn, .share-btn {
+    background: #E96768;
+    color: white;
+    border-radius: 25px;
+  }
+  .trophy-c {
+    width: 52%;
+    margin: 0 auto;
+  }
+}
+
+#share-story-overlay {
+  .inner {
+    background: #8066AB;
+  }
+  .close-story-overlay-btn {
+    padding: 0;
+    margin: 0;
+    background: none;
+    color: white;
+    width: 100%;
+  }
+  textarea {
+    resize: none;
+    border: none;
+    height: 200px;
+    padding: 10px 20px;
+    &::-webkit-input-placeholder {
+      color: #333;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+      color: #333;  
+    }
+    ::-moz-placeholder {  /* Firefox 19+ */
+      color: #333;  
+    }
+    :-ms-input-placeholder {  
+      color: #333;  
+    }
+  }
+  .submit-story-btn {
+    width: 60%;
+    margin: 10px auto;
+    display: block;
+    padding: 6px;
+    background: #472E85;
+    font-size: .8em;
+  }
+}
+#congrats-share-overlay {
+  .inner {
+    background: #E96768;
+  }
+  .close-share-overlay-btn {
+    padding: 0;
+    margin: 0;
+    background: none;
+    color: white;
+    width: 100%;
+  }
+  .share-url {
+    border: 1px solid white;
+    border-radius: 4px;
+    color: white;
+    word-wrap: break-word;
+    font-size: .8em;
+    padding: 6px;
+    margin-bottom: 8px;
+  }
+  .share-btns-c {
+    button {
+      padding: 6px 4px;
+      width: 45%;
+      margin: 0;
+      background: none;
+      font-size: .8em;
+      display: block;
+      border-radius: 4px;
+      &:first-child {
+        float: left;
+      }
+      &:last-child {
+        float: right;
+      }
+    }
+    .twitter-share-btn {
+      background: #49C6EB;
+    }
+    .facebook-share-btn {
+      background: #456EA1;
+    }
+  }
+}
+
+#share-story-overlay, #congrats-share-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+  background: rgba(0,0,0,.4);
+  &.show {
+    display: block;
+  }
+  .inner {
+    border-radius: 10px;
+    padding: 10px;
+    position: absolute;
+    top: 35%;
+    width: 300px;
+    margin-top: -25%;
+    left: 50%;
+    margin-left: -150px;
+  }
+  .top-section {
+    margin-bottom: 10px;
+    >div {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+  .icon-c, .close-btn-c {
+    width: 20px;
+    color: white;
+  }
+  .title-text-c {
+    width: 220px;
+    font-size: .8em;
+    color: white;
+    line-height: 1;
+    text-align: center;
+  }
+  .close-btn-c {
+    text-align: right;
+  }
+}
+
+@media only screen and (min-width : 360px) {
+  #congrats {
+    h4 {
+      font-size: 1.1em;
+    }
+    p {
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+    a, a:visited, a:active {
+      font-size: 1.2em;
+    }
+    button {
+      font-size: 1em;
+      padding: 1rem;
+    }
+    .trophy-c {
+      width: 70%;
+    }
+  }
+  #share-story-overlay, #congrats-share-overlay {
+    .inner {
+      width: 340px;
+    }
+    .icon-c, .close-btn-c {
+      width: 20px;
+    }
+    .title-text-c {
+      width: 260px;
+    }
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  #congrats {
+    .row {
+      margin-top: 15%;
+    }
+    .trophy-c {
+      width: 100%;
+    }
+    .inner-c {
+      width: 32%;
+      min-width: 320px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    button {
+      padding: 1rem 2rem;
+    }
+  }
+  #share-story-overlay, #congrats-share-overlay {
+    .inner {
+      top: 56%;
+    }
+  }
+}
