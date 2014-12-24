@@ -1,6 +1,6 @@
 angular.module('lawaApp')
-  .controller("RespondentCtrl", [
+  .controller("AppCtrl", [
     '$scope','$http', function($scope,$http) {
-      // figure out current respondent by session
+
     }
   ])

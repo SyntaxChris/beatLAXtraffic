@@ -3,7 +3,8 @@ angular.module('lawaApp')
     '$scope','$http', function($scope,$http) {
 
       $scope.setup = function(){
-        $http.get('api/nodes').success(function(data){
+        console.log("this: " );
+        $http.get('/api/nodes').success(function(data){
           $scope.nodes = data;
         })
       }

@@ -23,7 +23,8 @@
 //= require 'timer_pickup'
 //= require 'parking_questions'
 //= require angular
-
+//= require angular-route
+//
 //= require angular/app
 //= require_tree ./angular/templates
 //= require_tree ./angular/modules
