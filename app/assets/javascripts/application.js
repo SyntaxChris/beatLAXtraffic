@@ -15,7 +15,7 @@
 //= require 'attribute.js'
 //= require foundation
 //= require 'dashboard'
-//= require 'questions'
+//= require 'toggle_questions'
 //= require 'intro'
 //= require 'distance_questions'
 //= require 'tile_questions'

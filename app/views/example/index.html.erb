@@ -842,7 +842,7 @@
 
 
     <!-- 13. ICON QUESTIONS -->
-    <div id="icon-questions" style="display: none">
+    <div id="icon-questions">
       <div class="row">
         <h3 style="color: white; text-align: center">Imagine that you could customize this future location.</h3>
       </div>
@@ -873,7 +873,6 @@
         </div>
         <div class="large-6 medium-6 small-6 columns">
           <div id="icon-box">
-            <div id="icon-web"><%= render 'iconweb' %></div>
             <div class="icon" id="dog">
               <%= render 'dog' %>
               <div style="display:none">Hi, I'm the dog icon</div>
@@ -893,6 +892,11 @@
             <div class="icon" id="computer">
               <%= render 'computer' %>
               <div style="display:none">Hi, I'm the computer icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+            </div>
+            <div class="icon" id="food">
+              <%= render 'food' %>
+              <div style="display:none">Hi, I'm the food icon</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="wifi">
@@ -952,8 +956,7 @@
           </div>
     
           <div id="icon-box-small">
-            <div id="icon-web"><%= render 'iconweb' %></div>
-            <div class="icon" id="dog">
+                        <div class="icon" id="dog">
               <%= render 'dog' %>
               <div style="display:none">Hi, I'm the dog icon</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
@@ -972,6 +975,11 @@
             <div class="icon" id="computer">
               <%= render 'computer' %>
               <div style="display:none">Hi, I'm the computer icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+            </div>
+            <div class="icon" id="food">
+              <%= render 'food' %>
+              <div style="display:none">Hi, I'm the food icon</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="wifi">
