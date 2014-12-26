@@ -1,19 +1,19 @@
 $(document).ready(function(){
 	$('[id=other-info]').keyup(function() {
-	    var cs = 150 - $(this).val().length;
+	    var cs = 140 - $(this).val().length;
 	    $('#char-count').text(cs + " characters left");
 	});
 	$('[id=other-info-small]').keyup(function() {
-	    var cs = 150 - $(this).val().length;
+	    var cs = 140 - $(this).val().length;
 	    $('[id=char-count-small]').text(cs + " characters left");
 	});
 	$('[id=other-strategy]').keyup(function() {
-	    var cs = 150 - $(this).val().length;
+	    var cs = 140 - $(this).val().length;
 	    $('[id=char-count-strategy]').text(cs);
 	});
 
 	$('#other-info-last-questions').keyup(function() {
-	    var cs = 150 - $(this).val().length;
+	    var cs = 140 - $(this).val().length;
 	    $('#char-count-last-questions').text(cs + " characters left");
 	});
 
