@@ -57,6 +57,7 @@ $(document).ready(function(){
  		click2 = 0;
  		click3 = 0;
  		click4 = 0;
+ 		$("#timer-question-submit").fadeIn();
  	});
  	$("#timer-question-label-2").click(function(){
  		if (click2 === 0){
@@ -74,6 +75,7 @@ $(document).ready(function(){
  		click3 = 0;
  		click4 = 0;
  		click1 = 0;
+ 		$("#timer-question-submit").fadeIn();
  	});
  	$("#timer-question-label-3").click(function(){
  		 if (click3 === 0){
@@ -91,6 +93,7 @@ $(document).ready(function(){
  		click4 = 0;
  		click1 = 0;
  		click2 = 0;
+ 		$("#timer-question-submit").fadeIn();
  	});
  	$("#timer-question-label-4").click(function(){
  		if (click4 === 0){
@@ -108,5 +111,6 @@ $(document).ready(function(){
  		click1 = 0;
  		click2 = 0;
  		click3 = 0;
+ 		$("#timer-question-submit").fadeIn();
  	});
 });
