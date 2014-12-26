@@ -842,7 +842,7 @@
 
 
     <!-- 13. ICON QUESTIONS -->
-    <div id="icon-questions" style="display: none">
+    <div id="icon-questions" style="display:none">
       <div class="row">
         <h3 style="color: white; text-align: center">Imagine that you could customize this future location.</h3>
       </div>
@@ -873,7 +873,6 @@
         </div>
         <div class="large-6 medium-6 small-6 columns">
           <div id="icon-box">
-            <div id="icon-web"><%= render 'iconweb' %></div>
             <div class="icon" id="dog">
               <%= render 'dog' %>
               <div style="display:none">Hi, I'm the dog icon</div>
@@ -893,6 +892,11 @@
             <div class="icon" id="computer">
               <%= render 'computer' %>
               <div style="display:none">Hi, I'm the computer icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+            </div>
+            <div class="icon" id="food">
+              <%= render 'food' %>
+              <div style="display:none">Hi, I'm the food icon</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="wifi">
@@ -952,7 +956,6 @@
           </div>
     
           <div id="icon-box-small">
-            <div id="icon-web"><%= render 'iconweb' %></div>
             <div class="icon" id="dog">
               <%= render 'dog' %>
               <div style="display:none">Hi, I'm the dog icon</div>
@@ -972,6 +975,11 @@
             <div class="icon" id="computer">
               <%= render 'computer' %>
               <div style="display:none">Hi, I'm the computer icon</div>
+              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+            </div>
+            <div class="icon" id="food">
+              <%= render 'food' %>
+              <div style="display:none">Hi, I'm the food icon</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="wifi">
@@ -995,15 +1003,22 @@
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div id="icon-pop-up-small" style="display: none">
-              <div id="icon-description-small"></div>
-              <div id="choice-row">
-                <div id="yea-small">
-                  <%= render 'yea' %>
-                </div>
-                <div id="nah-small">
-                  <%= render 'nah' %>
+              <div id="discription-group">
+                <div id="icon-description-small"></div>
+                <div id="choice-row">
+                  <div id="yea-small">
+                    <%= render 'yea' %>
+                  </div>
+                  <div id="nah-small">
+                    <%= render 'nah' %>
+                  </div>
                 </div>
               </div>
+              
+              <div class="submit-row" style="display:none">
+                <div id="icon-submit">Submit</div>
+              </div>
+
             </div>
           </div>
 
@@ -1210,7 +1225,45 @@
     <!-- CONGRATULATIONS! -->
     <div id="congrats" style="display: none">
       <div class="row" style="text-align: center">
-        <h3 style="color: white">Congratulations!</h3>
+        <!-- <h3 style="color: white">Congratulations!</h3> -->
+
+        <div class="inner-c">
+          <div class="trophy-c">
+            <%= render 'laxTrophy' %>
+          </div>
+        </div>
+        <div class="inner-c">
+          <h3>Congratulations!</h3>
+
+          <h4>You are now an official LAX pick-up artist!</h4>
+
+          <p>
+            If you want to keep in touch with our progress towards the new location, please join our mailing list or visit us at
+          </p>
+
+          <a href="http://connectinglax.com" target="_blank">connectinglax.com</a>
+
+          <button class="share-story-btn" id="x-btn-share-story">
+            <span class="" style="height: 25px; width: 25px; display: inline-block; vertical-align: middle;"><%= render 'congratsStoryBubble' %></span> <span>Have a story you want to share?</span>
+          </button>
+
+          <div>
+            <button class="replay-btn" id="x-btn-replay">
+              <span class="" style="display: inline-block; vertical-align: middle; height: 20px; width: 20px;">
+                <%= render 'congratsReplay' %>
+              </span>
+              <span>Replay</span>
+            </button>
+
+            <button class="share-btn" id="x-btn-share">
+              <span style="display: inline-block; vertical-align: middle; height: 20px; width: 20px;">
+                <%= render 'congratsShare' %>
+              </span>
+              <span>Share</span>
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
     <!-- END CONGRATULATIONS -->
@@ -1393,6 +1446,47 @@
 <!-- END QUESTION FORMATS -->
 
 
+<!-- CONGRATS OVERLAYS -->
+<div id="share-story-overlay">
+  <div class="inner">
+    <div class="top-section">
+      <div class="icon-c" style="height: 25px; width: 25px; display: inline-block; vertical-align: middle;"><%= render 'congratsStoryBubble' %></div>
+      <div class="title-text-c">Tell us about your best or worst experience. Anything goes.</div>
+      <div class="close-btn-c">
+        <button id="x-btn-close-story-overlay" class="close-story-overlay-btn">x</button>
+      </div>
+    </div>
+    <div>
+      <textarea id="story-text" placeholder="Write your story here"></textarea>
+    </div>
+    <div>
+      <button id="x-btn-submit-story" class="submit-story-btn">Send</button>
+    </div>
+  </div>
+</div>
+
+<div id="congrats-share-overlay">
+  <div class="inner">
+    <div class="top-section">
+      <div class="title-text-c">
+        Share your pickup skills
+      </div>
+      <div class="close-btn-c">
+        <button id="x-btn-close-share-overlay" class="close-share-overlay-btn">x</button>
+      </div>
+    </div>
+
+    <div class="share-url">
+      http://dfdsfgsdfgdfgsdfg.com/asdfsdfsdf
+    </div>
+
+    <div class="share-btns-c btcf">
+      <button id="x-btn-twitter-share" class="twitter-share-btn">Share on Twitter</button>
+      <button id="x-btn-facebook-share" class="facebook-share-btn">Share on Facebook</button>
+    </div>
+  </div>
+</div>
+<!-- END CONGRATS OVERLAYS -->
 
 
 

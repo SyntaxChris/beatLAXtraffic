@@ -15,13 +15,21 @@
 //= require 'attribute.js'
 //= require foundation
 //= require 'dashboard'
-//= require 'questions'
+//= require 'toggle_questions'
 //= require 'intro'
+//= require 'distance_questions'
+//= require 'tile_questions'
+//= require 'timer_questions'
+//= require 'icon_questions'
+//= require 'spinner_questions'
+//= require 'strategy_questions'
+//= require 'last_series_questions'
 //= require 'interactive_map'
 //= require 'successful_pickup'
 //= require 'circle_pickup'
 //= require 'timer_pickup'
 //= require 'parking_questions'
+//= require 'congrats'
 //= require angular
 
 //= require angular/app
