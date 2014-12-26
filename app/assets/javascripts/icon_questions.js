@@ -27,6 +27,7 @@ $(document).ready(function(){
 				tallyIcons += 1;
 				if(tallyIcons > 2){
 					$(".submit-row").fadeIn();
+					$("#discription-group").fadeOut();
 				}
 
 				if ($("#holder-1").children().attr("class") !== "icon") {
@@ -56,23 +57,42 @@ $(document).ready(function(){
 				tallyIcons += 1;
 				if(tallyIcons > 2){
 					$(".submit-row").fadeIn();
+
+					$("#discription-group").fadeOut();
+
+					if ($("#holder-1-small").children().attr("class") !== "icon") {
+						iconChosen.clone().appendTo("#holder-1-small");
+						$("#holder-1-small").children().children(".remove-icon").fadeIn();
+					}
+					else if ($("#holder-2-small").children().attr("class") !== "icon") {
+		            	iconChosen.clone().appendTo("#holder-2-small");
+		            	$("#holder-2-small").children().children(".remove-icon").fadeIn();
+					}
+					else if ($("#holder-3-small").children().attr("class") !== "icon") {
+		            	iconChosen.clone().appendTo("#holder-3-small");
+		            	$( ".submit-row-small" ).fadeIn();
+		            	$("#holder-3-small").children().children(".remove-icon").fadeIn();
+					}
 				}
-				if ($("#holder-1-small").children().attr("class") !== "icon") {
-					iconChosen.clone().appendTo("#holder-1-small");
-					$( "#icon-pop-up-small").fadeOut();
-					$("#holder-1-small").children().children(".remove-icon").fadeIn();
+				else {
+					if ($("#holder-1-small").children().attr("class") !== "icon") {
+						iconChosen.clone().appendTo("#holder-1-small");
+						$( "#icon-pop-up-small").fadeOut();
+						$("#holder-1-small").children().children(".remove-icon").fadeIn();
+					}
+					else if ($("#holder-2-small").children().attr("class") !== "icon") {
+			            iconChosen.clone().appendTo("#holder-2-small");
+			            $( "#icon-pop-up-small").fadeOut();
+			            $("#holder-2-small").children().children(".remove-icon").fadeIn();
+					}
+					else if ($("#holder-3-small").children().attr("class") !== "icon") {
+			            iconChosen.clone().appendTo("#holder-3-small");
+			            $( "#icon-pop-up-small").fadeOut();
+			            $( ".submit-row-small" ).fadeIn();
+			            $("#holder-3-small").children().children(".remove-icon").fadeIn();
+					}
 				}
-				else if ($("#holder-2-small").children().attr("class") !== "icon") {
-		            iconChosen.clone().appendTo("#holder-2-small");
-		            $( "#icon-pop-up-small").fadeOut();
-		            $("#holder-2-small").children().children(".remove-icon").fadeIn();
-				}
-				else if ($("#holder-3-small").children().attr("class") !== "icon") {
-		            iconChosen.clone().appendTo("#holder-3-small");
-		            $( "#icon-pop-up-small").fadeOut();
-		            $( ".submit-row-small" ).fadeIn();
-		            $("#holder-3-small").children().children(".remove-icon").fadeIn();
-				}
+
 
 				iconBackground.css("fill", "#CCCCCC");
 
@@ -126,7 +146,9 @@ $(document).ready(function(){
 		}
 
 		$(this).empty();
+		$( "#icon-pop-up-small").fadeOut();
 		$(".submit-row").fadeOut();
+		$("#discription-group").fadeIn();
 	});
 	$("#holder-1-small").click(function(){
 		if(tallyIcons > 0){
@@ -161,7 +183,9 @@ $(document).ready(function(){
 		}
 
 		$(this).empty();
-		$(".submit-row").fadeOut();		
+		$( "#icon-pop-up-small").fadeOut();
+		$(".submit-row").fadeOut();	
+		$("#discription-group").fadeIn();	
 	});
 
 	$("#holder-2").click(function(){
@@ -197,7 +221,9 @@ $(document).ready(function(){
 		}
 
 		$(this).empty();
+		$( "#icon-pop-up-small").fadeOut();
 		$(".submit-row").fadeOut();
+		$("#discription-group").fadeIn();
 	});
 
 	$("#holder-2-small").click(function(){
@@ -233,7 +259,9 @@ $(document).ready(function(){
 		}
 
 		$(this).empty();
+		$( "#icon-pop-up-small").fadeOut();
 		$(".submit-row").fadeOut();
+		$("#discription-group").fadeIn();
 	});
 
 	$("#holder-3").click(function(){
@@ -269,7 +297,9 @@ $(document).ready(function(){
 		}
 
 		$(this).empty();
+		$( "#icon-pop-up-small").fadeOut();
 		$(".submit-row").fadeOut();
+		$("#discription-group").fadeIn();
 	});
 	$("#holder-3-small").click(function(){
 		if(tallyIcons > 0){
@@ -304,6 +334,8 @@ $(document).ready(function(){
 		}
 
 		$(this).empty();
+		$( "#icon-pop-up-small").fadeOut();
 		$(".submit-row").fadeOut();
+		$("#discription-group").fadeIn();
 	});
 });

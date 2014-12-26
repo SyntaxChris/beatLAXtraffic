@@ -416,7 +416,7 @@
 
 	#icon-pop-up-small {
 		position: relative; 
-		bottom: 860px;
+		bottom: 670px;
 		z-index: 10;
 		margin-left: auto;
 		margin-right: auto;
@@ -430,7 +430,6 @@
 			text-align: center;
 			color: #78D2EA;
 			font-size: 20px;
-			margin-top: 190px;
 			padding-top: 20px;
 			margin-left: auto;
 			margin-right: auto;
@@ -455,26 +454,29 @@
 				border-radius: 100%;
 			}
 		}
-	}
-	.submit-row {
-		position: absolute;
-		z-index: 10;
-		text-align: center;
-		#icon-submit {
-			cursor: pointer;
-			width: 150px; 
-			height: 50px; 
+		.submit-row {
+			position: absolute;
+			z-index: 10;
+			margin-top: 75px;
+			margin-left: 65px;
 			text-align: center;
-			font-size: 20px;
-			background-color: #079BED;
-			margin-right: auto;
-			margin-left: auto;
-			padding-top: 12px;
-			border-radius: 10px;
-			bottom: 0px;
-			color: white;
+			#icon-submit {
+				cursor: pointer;
+				width: 150px; 
+				height: 50px; 
+				text-align: center;
+				font-size: 20px;
+				background-color: #079BED;
+				margin-right: auto;
+				margin-left: auto;
+				padding-top: 12px;
+				border-radius: 10px;
+				bottom: 0px;
+				color: white;
+			}
 		}
 	}
+	
 }
 
 
