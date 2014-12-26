@@ -155,6 +155,12 @@
 		z-index: 6; 
 		top: 105px;
 	}
+	#food {
+		position: absolute;
+		z-index: 6;
+		margin-left: 22.5%; 
+		top: 105px;
+	}
 	#wifi {
 		position: absolute;
 		z-index: 6;
@@ -220,23 +226,14 @@
 	}
 }
 
+
+
 @media screen and (max-width: 640px) and (min-width: 0px) {
 	#icons-large-screen {
 		display: none;
 	}
 	#icons-small-screen {
 		display: block;
-	}
-
-	#icon-web {
-		height: 250px;
-		width: 250px;
-		margin-left: auto;
-		margin-right: auto;
-		svg {
-			height: 250px;
-			width: 250px;
-		}
 	}
 
 	.icon {
@@ -355,56 +352,63 @@
 			width: 76px;
 			height: 76px;
 			position: relative;
-			bottom: 248px;
+			// bottom: 248px;
 			left: 20px;
 		}
 		#couch {
 			width: 76px;
 			height: 76px;
 			position: relative;
-			bottom: 325px;
+			bottom: 77px;
 			left: 123px;
 		}
 		#family {
 			width: 76px;
 			height: 76px;
 			position: relative;
-			bottom: 401px;
+			bottom: 153px;
 			left: 220px;
 		}
 		#computer {
 			width: 76px;
 			height: 76px;
 			position: relative;
-			bottom: 385px;
+			bottom: 145px;
 			left: 20px;
+		}
+		#food {
+			width: 76px;
+			height: 76px;
+			position: relative;
+			bottom: 220px;
+			left: 123px;
 		}
 		#wifi {
 			width: 76px;
 			height: 76px;
 			position: relative;
-			bottom: 459px;
+			bottom: 297px;
 			left: 220px;
 		}
 		#parking {
 			width: 76px;
 			height: 76px;
 			position: relative;
-			bottom: 445px;
+			bottom: 290px;
 			left: 20px;
 		}
 		#exit {
 			width: 76px;
 			height: 76px;
 			position: relative;
-			bottom: 521px;
+			bottom: 366px;
 			left: 122px;
 		}
 		#help-desk {
 			width: 76px;
 			height: 76px;
 			position: relative;
-			bottom: 597px;
+			bottom: 442px;
 			left: 220px;
 		}
 		
@@ -412,12 +416,12 @@
 
 	#icon-pop-up-small {
 		position: relative; 
-		top: -885px;
+		bottom: 670px;
 		z-index: 10;
 		margin-left: auto;
 		margin-right: auto;
 		border-radius: 20px; 
-		height: 250px; 
+		height: 200px; 
 		width: 280px; 
 		background-color: white;
 		opacity: 0.9;
@@ -426,16 +430,15 @@
 			text-align: center;
 			color: #78D2EA;
 			font-size: 20px;
-			margin-top: 25px;
 			padding-top: 20px;
 			margin-left: auto;
 			margin-right: auto;
 		}
 		#choice-row {
 			width: 250px;
-			margin-left: auto;
+			margin-left: 40px;
 			margin-right: auto;
-			margin-top: 60px;
+			margin-top: 30px;
 			#yea-small {
 				cursor: pointer;
 				display: inline-block;
@@ -451,205 +454,29 @@
 				border-radius: 100%;
 			}
 		}
+		.submit-row {
+			position: absolute;
+			z-index: 10;
+			margin-top: 75px;
+			margin-left: 65px;
+			text-align: center;
+			#icon-submit {
+				cursor: pointer;
+				width: 150px; 
+				height: 50px; 
+				text-align: center;
+				font-size: 20px;
+				background-color: #079BED;
+				margin-right: auto;
+				margin-left: auto;
+				padding-top: 12px;
+				border-radius: 10px;
+				bottom: 0px;
+				color: white;
+			}
+		}
 	}
+	
 }
 
-@media screen and (max-width: 925px) and (min-width: 641px) {
-	#icons-large-screen {
-		display: none;
-	}
-	#icons-small-screen {
-		display: block;
-	}
-	.icon {
-		position: relative;
-		bottom: 6px;
-		right: 6px;
-	}
-	#holder-and-description-row {
-		width: 310px; 
-		height: 130px;
-		margin-top: 20px;
-		margin-left: auto; 
-		margin-right: auto;
-		background-color: white;
-		border-radius: 20px;
-		padding-top: 10px;
-		#icon-holder-description {
-			width: 250px;
-			margin-left: auto;
-			margin-right: auto;
-			color: #78D2EA;
-			text-align: center;
-			font-size: 18px;
-		}
-		#dotted-circle-row {
-			margin-left: auto;
-			margin-right: auto;
-			#circle-1 {
-				position: relative;
-				height: 76px;
-				width: 76px;
-				left: 10px;
-				top: 5px;
-				border-radius: 100%;
-				border: 2px dotted #78D2EA;
-				color: #78D2EA;
-				font-size: 35px;
-				#one {
-					position: absolute;
-					z-index: 5;
-					top: 31%;
-					left: 40%;
-				}
-			}
-			#circle-2 {
-				position: relative;
-				height: 76px;
-				width: 76px;
-				left: 118px;
-				bottom: 70px;
-				border-radius: 100%;
-				border: 2px dotted #78D2EA;
-				color: #78D2EA;
-				font-size: 35px;
-				#two {
-					position: absolute;
-					z-index: 5;
-					top: 30%;
-					left: 35%;
-				}
-			}
-			#circle-3 {
-				position: relative;
-				height: 76px;
-				width: 76px;
-				bottom: 145px;
-				left: 225px;
-				border-radius: 100%;
-				border: 2px dotted #78D2EA;
-				color: #78D2EA;
-				font-size: 35px;
-				#three {
-					position: absolute;
-					z-index: 5;
-					top: 30%;
-					left: 35%;
-				}
-			}
-		}
-	}
-	#icon-box-small {
-		display: block;
-		width: 300px; 
-		height: 300px;
-		margin-left: auto; 
-		margin-right: auto;
-		#dog {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 300px;
-			left: 0px;
-		}
-		#couch {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 376px;
-			// top: 0;
-			left: 110px;
-		}
-		#family {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 452px;
-			left: 217px;
-		}
-		#computer {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 427px;
-			left: 0px;
-		}
-		#wifi {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 502px;
-			left: 217px;
-		}
-		#parking {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 474px;
-			left: 0px;
-		}
-		#exit {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 550px;
-			left: 110px;
-		}
-		#help-desk {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 626px;
-			left: 217px;
-		}
-		
-	}
 
-	#icon-pop-up-small {
-		position: absolute; 
-		z-index: 7;
-		top: 245px; 
-		margin-left: auto;
-		margin-right: auto; 
-		border-radius: 40px; 
-		height: 285px; 
-		width: 300px; 
-		background-color: white;
-		opacity: 0.9;
-		#icon-description-small {
-			width: 300px;
-			text-align: center;
-			color: #78D2EA;
-			font-size: 20px;
-			margin-top: 25px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		#choice-row {
-			width: 200px;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: 60px;
-			#yea-small {
-				cursor: pointer;
-				display: inline-block;
-				width: 76px;
-				height: 76px;
-				margin-right: 43px;
-			}
-			#nah-small {
-				cursor: pointer;
-				display: inline-block;
-				width: 76px;
-				height: 76px;
-				border-radius: 100%;
-			}
-		}
-	}
-
-	.remove-icon {
-		position: absolute;
-		bottom: 60px;
-		left: 50px;
-	}
-}
