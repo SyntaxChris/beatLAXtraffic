@@ -2,37 +2,21 @@ $(document).ready(function(){
 	$("#timer-question-label-1").hover(
 		function () {
 			$("#timer-question-label-1").css('cursor','pointer');
-    		$("#timer-question-1").css("fill", "#54ACE8");
- 		},
-		function () {
-    		$("#timer-question-1").css("fill", "#008AE8");
  		}
  	);
  	$("#timer-question-label-2").hover(
 		function () {
 			$("#timer-question-label-2").css('cursor','pointer');
-    		$("#timer-question-2").css("fill", "#73D4F5");
- 		},
-		function () {
-    		$("#timer-question-2").css("fill", "#1BB9EF");
  		}
  	);
  	$("#timer-question-label-3").hover(
 		function () {
 			$("#timer-question-label-3").css('cursor','pointer');
-    		$("#timer-question-3").css("fill", "#66BDED");
- 		},
-		function () {
-    		$("#timer-question-3").css("fill", "#079BED");
  		}
  	);
  	$("#timer-question-label-4").hover(
 		function () {
 			$("#timer-question-label-4").css('cursor','pointer');
-    		$("#timer-question-4").css("fill", "#68C4ED");
- 		},
-		function () {
-    		$("#timer-question-4").css("fill", "#16ACEF");
  		}
  	);
 
@@ -42,6 +26,10 @@ $(document).ready(function(){
 	var click4 = 0
 
  	$("#timer-question-label-1").click(function(){
+ 		$("#timer-question-1").css("fill", "#54ACE8");
+ 		$("#timer-question-2").css("fill", "#1BB9EF");
+ 		$("#timer-question-3").css("fill", "#079BED");
+ 		$("#timer-question-4").css("fill", "#16ACEF");
  		if (click1 === 0){
  			$(this).animate({"opacity": "1.0"});
 	 		$("#timer-question-label-2").animate({"opacity": "0.5"});
@@ -60,6 +48,10 @@ $(document).ready(function(){
  		$("#timer-question-submit").fadeIn();
  	});
  	$("#timer-question-label-2").click(function(){
+ 		$("#timer-question-2").css("fill", "#73D4F5");
+ 		$("#timer-question-1").css("fill", "#008AE8");
+ 		$("#timer-question-3").css("fill", "#079BED");
+ 		$("#timer-question-4").css("fill", "#16ACEF");
  		if (click2 === 0){
  			$(this).animate({"opacity": "1.0"});
 	 		$("#timer-question-label-3").animate({"opacity": "0.5"});
@@ -78,7 +70,11 @@ $(document).ready(function(){
  		$("#timer-question-submit").fadeIn();
  	});
  	$("#timer-question-label-3").click(function(){
- 		 if (click3 === 0){
+ 		$("#timer-question-3").css("fill", "#66BDED");
+ 		$("#timer-question-1").css("fill", "#008AE8");
+ 		$("#timer-question-2").css("fill", "#1BB9EF");
+ 		$("#timer-question-4").css("fill", "#16ACEF");
+ 		if (click3 === 0){
  		 	$(this).animate({"opacity": "1.0"});
 	 		$("#timer-question-label-4").animate({"opacity": "0.5"});
 	 		$("#timer-question-label-1").animate({"opacity": "0.5"});
@@ -96,6 +92,10 @@ $(document).ready(function(){
  		$("#timer-question-submit").fadeIn();
  	});
  	$("#timer-question-label-4").click(function(){
+ 		$("#timer-question-4").css("fill", "#68C4ED");
+ 		$("#timer-question-1").css("fill", "#008AE8");
+ 		$("#timer-question-2").css("fill", "#1BB9EF");
+ 		$("#timer-question-3").css("fill", "#079BED");
  		if (click4 === 0){
  			$(this).animate({"opacity": "1.0"});
 	 		$("#timer-question-label-1").animate({"opacity": "0.5"});
