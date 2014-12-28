@@ -246,12 +246,12 @@
 
 
   <!-- 4. STRATEGY questions -->
-  <div id="strategy-questions" style="display: none;">
+  <div id="strategy-questions">
     <div class="row" style="text-align: center;">
       <h3 style="color: white">Why do you choose this strategy?</h3>
       <h6 style="color: #24B7EA; padding-top: 0">Select all that apply</h6>
     </div>
-    <!-- <div class="hide-for-small-only"> -->
+    <!-- <div class="show-for-large-only"> -->
       <div class="row">
         <div class="large-12 medium-12 small-12 columns">
           <div class="row">
@@ -339,28 +339,42 @@
       </div>
     <!-- </div> -->
 
-    <!-- <div class="show-for-small-only">
+    <!-- <div class="hide-for-large-only">
       <div class="row">
-        <div class="large-12 medium-12 small-12 columns">
-          <div class="small-4 columns">
-            <div class="bubble-icon-container-small" id="container-1" >
-              <%= render 'guy' %>
+        <div id="main-ctnr">
+          <div class="medium-11 small-11 medium-centered small-centered columns">
+            <div class="row" style="margin-bottom: 5%">
+              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
+                <div class="bubble-container-small">
+                  <div class="row">
+                    <div class="medium-12 small-12 medium-centered small-centered columns">
+                      <div id="container-1">
+                        <%= render 'strategyStopWatch' %>
+                        <div class="strategy-answer" id="stopwatch-answer">
+                          To get in and out of the airport as quickly as possible
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+              </div>
+              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px; text-align: center">
+                  <div class="bubble-container-small" id="middle"></div>
+              </div>
+              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
+                <div class="bubble-container-small"></div>
+              </div>
             </div>
-            <div class="bubble-icon-container-small" id="container-2" >
-              <%= render 'guy' %>
-            </div>
-          </div>
-          <div class="small-4 columns">
-            <div class="bubble-icon-container-small" id="container-3" >
-              <%= render 'guy' %>
-            </div>
-          </div>
-          <div class="small-4 columns">
-            <div class="bubble-icon-container-small" id="container-4" >
-              <%= render 'guy' %>
-            </div>
-            <div class="bubble-icon-container-small" id="container-5" >
-              <%= render 'guy' %>
+            <div class="row">
+              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
+                <div class="bubble-container-small"></div>
+              </div>
+              <div class="medium-4 small-4 columns"></div style="padding-left: 10px; padding-right: 10px">
+              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
+                <div class="bubble-container-small"></div>
+              </div>
             </div>
           </div>
         </div>

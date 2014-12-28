@@ -100,7 +100,7 @@ $(document).ready(function(){
  			$("#pencil-left").css("fill", "#F0822C");
  			$("#pencil-middle").css("fill", "#F29532");
  			$("#pencil-right").css("fill", "#F3B43C");
- 			$("#text-container").animate({width: '98%'}, function(){
+ 			$("#text-container").animate({width: '93%'}, function(){
  				$(this).css({
  					"position":"absolute"
  				});
@@ -118,7 +118,7 @@ $(document).ready(function(){
  			$("#pencil-middle").css("fill", "#919191");
  			$("#pencil-right").css("fill", "#B7B7B7");
  			$("#text-container").animate({width: '0%'});
- 			$("#text-container-filler").animate({width: '98%'});
+ 			$("#text-container-filler").animate({width: '93%'});
  			$("#slide-content").fadeOut();
  			otherToggle = 0;
  		}
