@@ -837,7 +837,7 @@
     <!-- END TILE QUESTIONS -->
 
 
-    <!-- 8. TIMER QUESTIONS -->
+    <!-- 10. TIMER QUESTIONS -->
     <div id="clock-questions" style="display: none">
       <!-- questions header -->
       <div class="row" style="text-align:center">
@@ -855,10 +855,10 @@
     </div>
     <!-- END TIMER QUESTIONS -->
 
-    <!-- PAGES 9 - 11 ARE OUTSIDE OF THIS CONTAINER -->
+    <!-- PAGES 8 - 13 ARE OUTSIDE OF THIS CONTAINER -->
 
 
-    <!-- TODO: 12. RAIL SYSTEM QUESTIONS -->
+    <!-- TODO: 15. RAIL SYSTEM QUESTIONS -->
     <div id="rail-system" style="display: none">
       <div class="row" style="text-align: center">
         <h3 style="color: white">Rail system questions</h3>
@@ -867,7 +867,7 @@
     <!-- END RAIL SYSTEM QUESTIONS -->
 
 
-    <!-- 13. ICON QUESTIONS -->
+    <!-- 16. ICON QUESTIONS -->
     <div id="icon-questions" style="display:none">
       <div class="row">
         <h3 style="color: white; text-align: center">Imagine that you could customize this future location.</h3>
@@ -1055,7 +1055,7 @@
     <!-- END ICON QUESTIONS -->
 
 
-    <!-- 14. LAST QUESTION SET -->
+    <!-- 17. LAST QUESTION SET -->
     <div id="last-question-set" style="display: none">
       <!-- set 1 -->
       <div id="question-set-1">
@@ -1296,7 +1296,7 @@
 
   </div>
 
-  <!-- AFTER PARKING QUESTIONS -->
+  <!-- 8. AFTER PARKING QUESTIONS -->
   <div id="after-parking-questions" style="display: none;">
 
     <h3 class="main">You finally arrive at the lot and the parking lot is full</h3>
@@ -1380,7 +1380,7 @@
   </div>
   <!-- END AFTER PARKING QUESTIONS -->
 
-  <!-- START TIME SPENT -->
+  <!-- 9. START TIME SPENT -->
   <div id="time-spent" style="display: none;">
     <div class="content-c">
       <h3>
@@ -1413,7 +1413,7 @@
   </div>
   <!-- END TIME SPENT -->
 
-  <!-- 9. SUCCESSFUL PICKUP -->
+  <!-- 11. SUCCESSFUL PICKUP -->
   <div id="successful-pickup" style="display: none;">
     <div class="sun-bg">
       <%= render 'sunBeamBg' %>
@@ -1439,7 +1439,7 @@
   <!-- END SUCCESFUL PICKUP -->
 
 
-  <!-- 10. CIRCLE PICKUP QUESTIONS -->
+  <!-- 12. CIRCLE PICKUP QUESTIONS -->
   <div id="circle-pickup" style="display: none;">
     <div class="content">
       <h3>
@@ -1475,7 +1475,7 @@
   </div>
   <!-- END CIRCLE PICKUP QUESTIONS -->
 
-  <!-- 11. TIMER PICKUP QUESTIONS -->
+  <!-- 13. TIMER PICKUP QUESTIONS -->
   <div id="timer-pickup" style="display: none;">
     <div class="content">
       <h3>
@@ -1501,6 +1501,34 @@
     </div>
   </div>
   <!-- END TIMER PICKUP QUESTIONS -->
+
+  <!-- 14. WILLING TO WAIT -->
+  <div id="willing-to-wait" style="display: none;">
+    <div class="content-c">
+
+      <div class="timer-c">
+        <div class="inner">
+          <div class="timer-number">10</div>
+          <div>Mins</div>
+        </div>
+      </div>
+
+      <h3>
+        What is the longest you are willing to wait for your passenger?
+      </h3>
+    </div>
+
+    <div class="content-c buttons-c">
+      <div>
+        <button id="x-btn-remove-wait-time" class="remove-wait-time-btn">-10 min</button>
+        <button id="x-btn-add-wait-time" class="add-wait-time-btn">+10 min</button>
+      </div>
+      <div>
+        <button id="x-btn-wait-next" class="wait-next-btn">Next</button>
+      </div>
+    </div>
+  </div>
+  <!-- END WILLING TO WAIT-->
 
 
 </div>
