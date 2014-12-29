@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # short-circuit rails routes and hand control off to angular:
   get 'example' => 'example#index'
+  get 'test' => 'static#private'
 
   namespace :api, defaults: { format: 'json' } do
     resources :nodes, only: [:index, :show]

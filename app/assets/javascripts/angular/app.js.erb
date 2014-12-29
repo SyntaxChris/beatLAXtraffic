@@ -1,0 +1,19 @@
+var lawaApp = angular.module('lawaApp', ['ngRoute','underscore']);
+
+lawaApp.config([
+  '$httpProvider','$routeProvider','$locationProvider', function($httpProvider,$routeProvider,$locationProvider) {
+    $locationProvider.html5Mode(true);
+    // return $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
+
+    $routeProvider.when('/test',{
+        templateUrl: '<%= asset_path 'nodes.html' %>',
+        controller: 'NodeCtrl'
+    });
+  }
+
+
+]);
+
+lawaApp.run(function() {
+  return console.log('angular app running');
+});

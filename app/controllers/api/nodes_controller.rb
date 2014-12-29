@@ -10,5 +10,6 @@ module Api
       render json: node, status: 200
     end
 
+    private
   end
 end

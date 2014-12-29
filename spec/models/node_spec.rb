@@ -6,7 +6,8 @@ describe Node do
       FactoryGirl.build(
         :node,
         nickname: "E1",
-        is_decision_point: false
+        is_decision_point: false,
+        next_node_id: 2
       )
     }
 
@@ -16,6 +17,10 @@ describe Node do
 
     it "can be a decision point or not" do
       expect(node.is_decision_point).to eq false
+    end
+
+    it "can have a next node if it's a question node" do
+      expect(node.next_node_id).to eq 2
     end
   end
 
