@@ -27,7 +27,7 @@ describe "nodes API" do
 
       get '/api/nodes'
 
-      expect(json.first["question"]).to eq "what?"
+      expect(json.first["question"]["question"]).to eq "what?"
       expect(json.first["answers"]).to be_a(Array)
       expect(json.first["answers"].first["answer"]).to eq "this"
     end
@@ -54,7 +54,7 @@ describe "nodes API" do
       dp_index = nil
       json.each_with_index { |j,i| dp_index = i if j['is_decision_point'] == true }
 
-      expect(json[dp_index]["situation"]).to eq "where to?"
+      expect(json[dp_index]['decision_point']['situation']).to eq "where to?"
       expect(json[dp_index]["decisions"]).to be_a(Array)
       expect(json[dp_index]["decisions"].first["decision"]).to eq "this way!"
       expect(json[dp_index]["decisions"].first["destination_node_id"]).to eq q3.id
