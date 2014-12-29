@@ -45,7 +45,7 @@ angular.module('lawaApp')
       $scope.goToNextNode = function(){
         if(!$scope.currentNode.is_decision_point){
           // go to next node based on current Q's destination
-          var destinationNodeId = $scope.currentNode.destination_node_id;
+          var destinationNodeId = $scope.currentNode.next_node_id;
         }else if($scope.currentNode.is_decision_point){
           // go to node based on decision
           var destinationNodeId = $scope.currentDecisionDestination.node_id;
