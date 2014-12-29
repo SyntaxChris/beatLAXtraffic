@@ -1,9 +1,8 @@
-<h1>A Decision!</h1>
 <h2>{{currentNode.decision_point.situation}}</h2>
 <ul>
   <li
     ng-repeat="decision in currentNode.decisions"
     ng-click="setCurrentDecision(decision)">
-    {{decision.decision}}
+    <button>{{decision.decision}}</button>
   </li>
 </ul>

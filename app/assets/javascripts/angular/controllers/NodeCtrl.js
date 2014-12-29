@@ -31,12 +31,14 @@ angular.module('lawaApp')
 
       $scope.setCurrentDecision = function(decision){
         $scope.currentDecisionDestination = $scope.fetchNodeById(decision.destination_node_id);
+        $scope.submit();
       };
 
       $scope.addAnswerToCurrentAnswers = function(answer){
         // TODO: This will probably be replaced by some sort of collection coming from jQuery
         if (_.findWhere($scope.currentAnswers, answer)){
-          // answer is already in current list
+          // answer is already in current list, remove it.
+          $scope.currentAnswers = _.without($scope.currentAnswers, _.findWhere($scope.currentAnswers, answer));
         } else {
           $scope.currentAnswers.push(answer);
         }

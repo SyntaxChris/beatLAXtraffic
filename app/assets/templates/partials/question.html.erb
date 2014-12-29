@@ -1,6 +1,4 @@
-<h1>A Question!</h1>
 <h2>{{currentNode.question.question}}</h2>
-(you have selected: {{currentAnswers}})
 <ul>
   <li
     ng-repeat="answer in currentNode.answers"
@@ -8,3 +6,4 @@
     {{answer.answer}}
   </li>
 </ul>
+<button ng-click="submit()">Submit</button>
