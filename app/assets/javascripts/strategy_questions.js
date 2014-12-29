@@ -130,9 +130,10 @@ $(document).ready(function(){
 	var hassleTog = 0;
 	var otherTog = 0;
 	var otherPop = 0;
-	
+
 	$(".bubble-container-small").click(function(){
 		var bubbleId = $(this).attr("id");
+
 
 		switch(bubbleId){
 			case 'passenger':
@@ -247,11 +248,6 @@ $(document).ready(function(){
  					$("#pencil-m").css("fill", "#F29532");
  					$("#pencil-r").css("fill", "#F3B43C");
 
- 					if(otherPop === 0){
- 						$("#s-other-ctnr").fadeIn();
- 						otherPop += 1;
- 					}
-
 					otherTog += 1;
 				}
 				else{
@@ -264,10 +260,27 @@ $(document).ready(function(){
  					$("#pencil-m").css("fill", "#919191");
  					$("#pencil-r").css("fill", "#B7B7B7");
 
+ 					$("#s-other-ctnr").fadeOut();
+ 					otherPop = 0;
 					otherTog = 0;
+				}
+				if(otherPop === 0){
+					$("#s-other-ctnr").fadeIn();
+					otherPop += 1;
 				}
 			break;
 		}
+
+		var showNext = passengerTog + stopWatchTog + parkingTog + hassleTog + otherTog
+
+		if(showNext > 0){
+			$(".strategy-submit").fadeIn();
+		}
+		else{
+			$(".strategy-submit").fadeOut();
+		}
+
+
 	});
 
 	$(".save").click(function(){
@@ -278,16 +291,25 @@ $(document).ready(function(){
 	});
 
 	$(".cancel").click(function(){
+		var hideNext = passengerTog + stopWatchTog + parkingTog + hassleTog
+
+		if(hideNext === 0){
+			$(".strategy-submit").fadeOut();
+		}
+
 		$("#s-other-ctnr").fadeOut();
-		$(".bubble-container-small#s-other .check-ctnr svg g .circle-state").css("stroke", "#757575");
+
+		$(".bubble-container-small#s-other .check-ctnr svg g .circle-state").css("stroke-width", 3);
 		$(".bubble-container-small#s-other .check-ctnr svg g .circle-state").css("fill", "white");
 		$(".bubble-container-small#s-other .check-ctnr svg .checkmark").css("stroke", "#757575");
+		$(".bubble-container-small#s-other .strategy-answer").css("color", "#BCBCBC");
 
 		$("#pencil-l").css("fill", "#777777");
 		$("#pencil-m").css("fill", "#919191");
 		$("#pencil-r").css("fill", "#B7B7B7");
 
 		otherPop = 0;
+		otherTog = 0;
 	});
 
 

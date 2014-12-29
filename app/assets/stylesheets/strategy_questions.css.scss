@@ -71,7 +71,8 @@
 	margin-left: 33%;
 }
 
-#strategy-submit {
+.strategy-submit {
+	display: none;
 	cursor: pointer;
 	padding: 10px 10px 10px 10px; 
 	color: white; 
