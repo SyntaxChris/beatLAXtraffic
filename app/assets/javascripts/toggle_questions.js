@@ -61,6 +61,7 @@ $(document).ready(function(){
 			$("#successful-pickup").hide();
 			$("#car-slider").show();
 			$("#circle-pickup").show();
+			$('body').trigger('spinCar');
 		}
 		else if(pageClicks === 12){
 			$("#circle-pickup").hide();
