@@ -152,7 +152,7 @@ namespace :populate do
       a1q = Question.create(node_id: a1.id, question: "How well do you think this strategy will work?", question_type_id: thought_bubble_ranking.id)
         a1a1 = Answer.create(question_id: a1q.id, answer: "Works like a charm every time", icon_name: nil)
         a1a2 = Answer.create(question_id: a1q.id, answer: "I might have to circle a few times, but it will eventually work", icon_name: nil)
-        a1a3 = Answer.create(question_id: a1q.id, answer: "It;s always bad, but it's better than parking", icon_name: nil)
+        a1a3 = Answer.create(question_id: a1q.id, answer: "It's always bad, but it's better than parking", icon_name: nil)
 
     a2 = Node.create(nickname: "A 2", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id)
       a2q = Question.create(

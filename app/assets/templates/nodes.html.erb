@@ -6,13 +6,5 @@
     <div ng-if="currentNode.is_decision_point">
       <div ng-include="'<%= asset_path 'partials/decision.html' %>'"></div>
     </div>
-    <div ng-if="currentAnswers.length > 0">
-      <ul>
-        <p>you have selected:</p>
-        <li ng-repeat="answer in currentAnswers">
-          {{answer.answer}}
-        </li>
-      </ul>
-    </div>
   </div>
 </div>
