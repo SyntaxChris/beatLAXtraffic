@@ -1297,88 +1297,121 @@
   </div>
 
   <!-- AFTER PARKING QUESTIONS -->
-    <div id="after-parking-questions" style="display: none;">
+  <div id="after-parking-questions" style="display: none;">
 
-      <h3 class="main">You finally arrive at the lot and the parking lot is full</h3>
-      <h3 class="sub">What do you do next?</h3>
+    <h3 class="main">You finally arrive at the lot and the parking lot is full</h3>
+    <h3 class="sub">What do you do next?</h3>
 
-      <div class="pole">
-        <%= render 'signPole' %>
+    <div class="pole">
+      <%= render 'signPole' %>
+    </div>
+
+
+    <button class="sign">
+      <div class="holder">
+        <%= render 'signHolder' %>
+      </div>
+      <div class="inner-content blue">
+        <div class="icon-c">
+          <div class="arrow-c">
+            <%= render 'signArrow' %>
+          </div>
+        </div>
+        <div class="text">
+          Wait until a parking spot opens up
+        </div>
+      </div>
+    </button>
+    <button class="sign">
+      <div class="holder">
+        <%= render 'signHolder' %>
+      </div>
+      <div class="inner-content indigo">
+        <div class="icon-c mobile">
+          <div class="arrow-c">
+            <%= render 'signArrow' %>
+          </div>
+        </div>
+        <div class="text">
+          Find a spot in another parking structure
+        </div>
+        <div class="icon-c wide">
+          <div class="arrow-c">
+            <%= render 'signArrow' %>
+          </div>
+        </div>
+      </div>
+    </button>
+    <button class="sign">
+      <div class="holder">
+        <%= render 'signHolder' %>
+      </div>
+      <div class="inner-content purple">
+        <div class="icon-c">
+          <div class="arrow-c">
+            <%= render 'signArrow' %>
+          </div>
+        </div>
+        <div class="text">
+          Exit parking structure to catch your passenger at the curb
+        </div>
+      </div>
+    </button>
+    <button class="sign">
+      <div class="holder">
+        <%= render 'signHolder' %>
+      </div>
+      <div class="inner-content magenta">
+        <div class="icon-c mobile">
+          <div class="arrow-c">
+            <%= render 'signArrow' %>
+          </div>
+        </div>
+        <div class="text">
+          Exit terminal area to wait off site until passenger is ready to be picked up
+        </div>
+        <div class="icon-c wide">
+          <div class="arrow-c">
+            <%= render 'signArrow' %>
+          </div>
+        </div>
+      </div>
+    </button>
+  </div>
+  <!-- END AFTER PARKING QUESTIONS -->
+
+  <!-- START TIME SPENT -->
+  <div id="time-spent" style="display: none;">
+    <div class="content-c">
+      <h3>
+        You have spent
+      </h3>
+
+      <div class="timer-c">
+        <div class="inner">
+          <div class="timer-number">3</div>
+          <div>Hours</div>
+        </div>
       </div>
 
-
-      <button class="sign">
-        <div class="holder">
-          <%= render 'signHolder' %>
-        </div>
-        <div class="inner-content blue">
-          <div class="icon-c">
-            <div class="arrow-c">
-              <%= render 'signArrow' %>
-            </div>
-          </div>
-          <div class="text">
-            Wait until a parking spot opens up
-          </div>
-        </div>
-      </button>
-      <button class="sign">
-        <div class="holder">
-          <%= render 'signHolder' %>
-        </div>
-        <div class="inner-content indigo">
-          <div class="icon-c mobile">
-            <div class="arrow-c">
-              <%= render 'signArrow' %>
-            </div>
-          </div>
-          <div class="text">
-            Find a spot in another parking structure
-          </div>
-          <div class="icon-c wide">
-            <div class="arrow-c">
-              <%= render 'signArrow' %>
-            </div>
-          </div>
-        </div>
-      </button>
-      <button class="sign">
-        <div class="holder">
-          <%= render 'signHolder' %>
-        </div>
-        <div class="inner-content purple">
-          <div class="icon-c">
-            <div class="arrow-c">
-              <%= render 'signArrow' %>
-            </div>
-          </div>
-          <div class="text">
-            Exit parking structure to catch your passenger at the curb
-          </div>
-        </div>
-      </button>
-      <button class="sign">
-        <div class="holder">
-          <%= render 'signHolder' %>
-        </div>
-        <div class="inner-content magenta">
-          <div class="icon-c mobile">
-            <div class="arrow-c">
-              <%= render 'signArrow' %>
-            </div>
-          </div>
-          <div class="text">
-            Exit terminal area to wait off site until passenger is ready to be picked up
-          </div>
-          <div class="icon-c wide">
-            <div class="arrow-c">
-              <%= render 'signArrow' %>
-            </div>
-          </div>
-        </div>
-      </button>
+      <h3>
+        looking for parking
+      </h3>
     </div>
-    <!-- END AFTER PARKING QUESTIONS -->
+
+    <div class="content-c">
+
+      <h1>
+        What now?
+      </h1>
+
+      <div class="buttons-c">
+       <button id="x-btn-give-up" class="give-up-btn">Give Up</button>
+       <button id="x-btn-keep-looking" class="keep-looking-btn">Keep Looking</button> 
+      </div>
+    </div>
+  </div>
+  <!-- END TIME SPENT -->
 
   <!-- 9. SUCCESSFUL PICKUP -->
   <div id="successful-pickup" style="display: none;">
