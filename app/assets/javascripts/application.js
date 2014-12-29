@@ -22,11 +22,13 @@
 //= require 'circle_pickup'
 //= require 'timer_pickup'
 //= require 'parking_questions'
+//
 //= require angular
 //= require angular-resource
 //= require angular-cookies
 //= require angular-animate
 //= require angular-route
+//= require underscore
 
 //= require_tree .
 //
