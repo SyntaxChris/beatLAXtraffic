@@ -1,5 +1,15 @@
 <div ng-controller="NodeCtrl">
-  <div class="current-node">
-    <h2>{{currentNode}}
+  <div class="current-node-container">
+    <p>{{currentNode}}</p>
+    <p>{{currentNode.node_id}}</p>
+    <p>decision point? {{currentNode.is_decision_point}}</p>
+    <div ng-if="!currentNode.is_decision_point">
+      <div ng-include="'<%= asset_path 'partials/question.html' %>'"></div>
+    </div>
+    <div ng-if="currentNode.is_decision_point">
+      <div ng-include="'<%= asset_path 'partials/decision.html' %>'"></div>
+    </div>
+    <button ng-click="submit()">Submit</button>
   </div>
+  <button ng-repeat="node in nodes" ng-click="setCurrentNodeById(node.node_id)">set node to {{node.node_id}}</button>
 </div>
