@@ -1,7 +1,10 @@
 <h1>A Question!</h1>
 <h2>{{currentNode.question.question}}</h2>
+(you have selected: {{currentAnswers}})
 <ul>
-  <li ng-repeat="answer in currentNode.answers">
+  <li
+    ng-repeat="answer in currentNode.answers"
+    ng-click="addAnswerToCurrentAnswers(answer)">
     {{answer.answer}}
   </li>
 </ul>

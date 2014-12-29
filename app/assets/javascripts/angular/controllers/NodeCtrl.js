@@ -15,7 +15,9 @@ angular.module('lawaApp')
           // ...yes, i think so. something in the API like:
           // `starting_node = 1 || current_session.current_node_id`
           // ... and then this controller should just look to starting_node
-        })
+        });
+        $scope.currentDecisionDestination = null;
+        $scope.currentAnswers = [];
       }
 
       $scope.fetchNodeById = function(nodeId){
@@ -27,27 +29,40 @@ angular.module('lawaApp')
         $scope.currentNode = $scope.fetchNodeById(nodeId);
       };
 
-      $scope.setCurrentDecisionDestination = function(destinationId){
-        $scope.currentDecisionDestination = $scope.fetchNodeById(destinationId);
-      }
+      $scope.setCurrentDecision = function(decision){
+        $scope.currentDecisionDestination = $scope.fetchNodeById(decision.destination_node_id);
+      };
+
+      $scope.addAnswerToCurrentAnswers = function(answer){
+        // TODO: This will probably be replaced by some sort of collection coming from jQuery
+        if (_.findWhere($scope.currentAnswers, answer)){
+          // answer is already in current list
+        } else {
+          $scope.currentAnswers.push(answer);
+        }
+      };
 
       $scope.goToNextNode = function(){
         if(!$scope.currentNode.is_decision_point){
           // go to next node based on current Q's destination
           var destinationNodeId = $scope.currentNode.destination_node_id;
-        } else if($scope.currentNode.is_decision_point){
+        }else if($scope.currentNode.is_decision_point){
           // go to node based on decision
           var destinationNodeId = $scope.currentDecisionDestination.node_id;
         }
 
         $scope.setCurrentNodeById(destinationNodeId);
-      }
+      };
 
       $scope.submit = function(){
         // post to API and then on success:
         $scope.goToNextNode();
+
         // TODO: clear decision
-      }
+        $scope.currentDecisionDestination = null;
+        // TODO: clear answers
+        $scope.currentAnswers = [];
+      };
 
       $scope.setup();
     }

@@ -21,6 +21,7 @@ json.array! @nodes do |node|
        json.id answer.id
        json.answer answer.answer
     end
+    json.next_node_id node.next_node_id
   else
     nil
   end
