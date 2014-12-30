@@ -1,13 +1,13 @@
 $(document).ready(function(){
-	$('[id=other-info]').keyup(function() {
+	$("[id='other-info']").keyup(function() {
 	    var cs = 140 - $(this).val().length;
-	    $('#char-count').text(cs + " characters left");
+	    $("[id='char-count']").text(cs + " characters left");
 	});
 	$('[id=other-info-small]').keyup(function() {
 	    var cs = 140 - $(this).val().length;
 	    $('[id=char-count-small]').text(cs + " characters left");
 	});
-	$('[id=other-strategy]').keyup(function() {
+	$('.other-strategy').keyup(function() {
 	    var cs = 140 - $(this).val().length;
 	    $('[id=char-count-strategy]').text(cs);
 	});
@@ -58,75 +58,102 @@ $(document).ready(function(){
 	var eatCheck = 0;
 	var otherCheck = 0;
 
-	$('[id=phone-landscape]').click(function() {
-    	$(".unchecked-phone-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
-    	if (phoneCheck === 0){
-			$(".unchecked-phone-tile svg path").attr("fill", "#FC9C52");
-    		$(".unchecked-phone-tile svg polyline").attr("stroke", "white");
-    		phoneCheck = 1;
-    	}
-    	else {
-			$(".unchecked-phone-tile svg path").attr("fill", "#FFFFFF");
-    		$(".unchecked-phone-tile svg polyline").attr("stroke", "#757575");
-    		phoneCheck = 0;
-    	}
+	$(".other-cancel").click(function(){
+		otherCheck = 0;
 	});
 
-	$('[id=shop-landscape]').click(function() {
-    	$(".unchecked-shop-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
-    	if (shopCheck === 0){
-			$(".unchecked-shop-tile svg path").attr("fill", "#F7C001");
-    		$(".unchecked-shop-tile svg polyline").attr("stroke", "white");
-    		shopCheck = 1;
-    	}
-    	else {
-			$(".unchecked-shop-tile svg path").attr("fill", "#FFFFFF");
-    		$(".unchecked-shop-tile svg polyline").attr("stroke", "#757575");
-    		shopCheck = 0;
-    	}
+	$("[id='tally']").click(function(){
+		
+		var tileClass = $("div:nth-child(1)", this).attr("class");
+		switch(tileClass){
+			case 'unchecked-phone-tile':
+			    if (phoneCheck === 0){
+			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FC9C52");
+			    	phoneCheck = 1;	
+			    }
+			    else {
+			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");
+			    	phoneCheck = 0;
+			    }
+				
+			break;
+
+			case 'unchecked-shop-tile':
+				if (shopCheck === 0){
+			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#F7C001");
+			    	shopCheck = 1;	
+			    }
+			    else {
+			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
+			    	shopCheck = 0;
+			    }
+			break;
+
+			case 'unchecked-hangout-tile':
+				if (hangoutCheck === 0){
+			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#39BAD8");
+			    	hangoutCheck = 1;	
+			    }
+			    else {
+			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
+			    	hangoutCheck = 0;
+			    }
+
+			break;
+
+			case 'unchecked-eat-tile':
+			    if (eatCheck === 0){
+			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#558AD8");
+			    	eatCheck = 1;	
+			    }
+			    else {
+			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
+			    	eatCheck = 0;
+			    }
+
+			break;
+
+			case 'unchecked-other-tile':
+				if (otherCheck === 0){
+			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#AA75D3");
+			    	otherCheck = 1;	
+			    }
+			    else {
+			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
+			    	otherCheck = 0;
+			    }
+
+			break;
+		}
+
+		var tallyTiles = phoneCheck + shopCheck + hangoutCheck + eatCheck + otherCheck;
+
+		if(tallyTiles > 0){
+			$(".next").fadeIn();
+		}
+		else{
+			$(".next").fadeOut();
+		}
 	});
 
-	$('[id=hang-out-landscape]').click(function() {
-    	$(".unchecked-hangout-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
-    	if (hangoutCheck === 0){
-			$(".unchecked-hangout-tile svg path").attr("fill", "#39BAD8");
-    		$(".unchecked-hangout-tile svg polyline").attr("stroke", "white");
-    		hangoutCheck = 1;
-    	}
-    	else {
-			$(".unchecked-hangout-tile svg path").attr("fill", "#FFFFFF");
-    		$(".unchecked-hangout-tile svg polyline").attr("stroke", "#757575");
-    		hangoutCheck = 0;
-    	}
-	});
-
-	$('[id=eat-landscape]').click(function() {
-    	$(".unchecked-eat-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
-    	if (eatCheck === 0){
-			$(".unchecked-eat-tile svg path").attr("fill", "#558AD8");
-    		$(".unchecked-eat-tile svg polyline").attr("stroke", "white");
-    		eatCheck = 1;
-    	}
-    	else {
-			$(".unchecked-eat-tile svg path").attr("fill", "#FFFFFF");
-    		$(".unchecked-eat-tile svg polyline").attr("stroke", "#757575");
-    		eatCheck = 0;
-    	}
-	});
-
-	$('[id=other-landscape]').click(function() {
-		$('[id=user-text-input]').toggle();
-		$('.next').toggle();
-    	$(".unchecked-other-tile svg g circle").toggleAttr("stroke-dasharray","2.963,4.9383");
-    	if (otherCheck === 0){
-			$(".unchecked-other-tile svg path").attr("fill", "#AA75D3");
-    		$(".unchecked-other-tile svg polyline").attr("stroke", "white");
-    		otherCheck = 1;
-    	}
-    	else {
-			$(".unchecked-other-tile svg path").attr("fill", "#FFFFFF");
-    		$(".unchecked-other-tile svg polyline").attr("stroke", "#757575");
-    		otherCheck = 0;
-    	}
-	});
 });

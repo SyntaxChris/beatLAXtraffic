@@ -1,6 +1,7 @@
 $(document).ready(function(){
   //set some vars
   var $circlePickup = $('#circle-pickup'),
+      $body = $('body'),
       circleCount = 3,
       animating = false;
 
@@ -8,6 +9,19 @@ $(document).ready(function(){
   $circlePickup
     .on('click', '#x-btn-circle-less', decrementCircle)
     .on('click', '#x-btn-circle-more', incrementCircle);
+
+  $body.on('spinCar', spinCar);
+
+  function spinCar(){
+    if (!animating) {
+      animating = true;
+      $('.red-circle').toggleClass('spin', true);
+      setTimeout(function(){
+        $('.red-circle').toggleClass('spin', false);
+        animating = false;
+      },3000);
+    }
+  }
 
   function decrementCircle(e){
     e.preventDefault();
@@ -17,7 +31,7 @@ $(document).ready(function(){
 
     if ( circleCount < 0 ) { circleCount = 0; }
 
-    updateCircleCount();
+    updateCircleCount('back');
 
   }
   function incrementCircle(e){
@@ -26,23 +40,43 @@ $(document).ready(function(){
 
     circleCount++;
 
-    updateCircleCount();
+    updateCircleCount('forward');
 
   }
 
-  function updateCircleCount(){
+  function updateCircleCount(direction){
     $circlePickup.find('.circle-number').text(circleCount);
-    animateCar();
+    animateCar(direction);
   }
 
-  function animateCar(){
+  function animateCar(direction){
     if (!animating) {
       animating = true;
-      $circlePickup.find('.circle-car').toggleClass('animate', true);
-      setTimeout(function(){
-        $circlePickup.find('.circle-car').toggleClass('animate', false);
-        animating = false;
-      },2000);
+      if (direction == 'back') {
+        $('.red-circle').toggleClass('movable', true); 
+        setTimeout(function(){ 
+          $('.red-circle').toggleClass('animate-back', true);
+          setTimeout(function(){ 
+            $('.red-circle').toggleClass('movable', false);
+            setTimeout(function(){ 
+              $('.red-circle').toggleClass('animate-back', false);
+              animating = false;
+            },300);
+          },1000);
+        },300);
+      } else {
+        $('.red-circle').toggleClass('movable', true); 
+        setTimeout(function(){ 
+          $('.red-circle').toggleClass('animate', true);
+          setTimeout(function(){ 
+            $('.red-circle').toggleClass('movable', false);
+            setTimeout(function(){ 
+              $('.red-circle').toggleClass('animate', false);
+              animating = false;
+            },300);
+          },1000);
+        },300);
+      }
     }
   }
 

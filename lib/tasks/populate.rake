@@ -152,7 +152,7 @@ namespace :populate do
       a1q = Question.create(node_id: a1.id, question: "How well do you think this strategy will work?", question_type_id: thought_bubble_ranking.id)
         a1a1 = Answer.create(question_id: a1q.id, answer: "Works like a charm every time", icon_name: nil)
         a1a2 = Answer.create(question_id: a1q.id, answer: "I might have to circle a few times, but it will eventually work", icon_name: nil)
-        a1a3 = Answer.create(question_id: a1q.id, answer: "It;s always bad, but it's better than parking", icon_name: nil)
+        a1a3 = Answer.create(question_id: a1q.id, answer: "It's always bad, but it's better than parking", icon_name: nil)
 
     a2 = Node.create(nickname: "A 2", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id)
       a2q = Question.create(
@@ -235,7 +235,7 @@ namespace :populate do
         e7a1 = Answer.create(question_id: e7q.id, answer: "Email Input", icon_name: nil)
 
     # where does this go/branch name?
-    itf1 = Node.create(nickname: "ITF 1", is_decision_point: false , branch_id: ending_questions_branch.id)
+    # itf1 = Node.create(nickname: "ITF 1", is_decision_point: false , branch_id: ending_questions_branch.id)
 
     # Decision Points
     dp1 = Node.create(nickname: "DP 1", is_decision_point: true , branch_id: scenario_questions_branch.id)
@@ -243,7 +243,7 @@ namespace :populate do
         dp1d1 = Decision.create(decision_point_id: dp1dp.id, decision: "Park and meet your passenger inside the terminal", destination_node_id: b1.id)
         dp1d2 = Decision.create(decision_point_id: dp1dp.id, decision: "Hope to catch your passenger at the curb", destination_node_id: a1.id)
         dp1d3 = Decision.create(decision_point_id: dp1dp.id, decision: "Wait off site until passenger is ready to be picked up at the curb", destination_node_id: c1.id)
-        dp1d4 = Decision.create(decision_point_id: dp1dp.id, decision: "Meet at an offsite location that has a short train ride to the terminals", destination_node_id: noitf1.id)
+        dp1d4 = Decision.create(decision_point_id: dp1dp.id, decision: "Meet at an offsite location that has a short train ride to the terminals", destination_node_id: itf2.id)
 
     dp7 = Node.create(nickname: "DP 7", is_decision_point: true , branch_id: wait_offsite_branch.id)
       dp7dp = DecisionPoint.create(node_id: dp7.id, situation: "The passenger is late. What do you do next?")
@@ -278,22 +278,41 @@ namespace :populate do
 
     dp5 = Node.create(nickname: "DP 5", is_decision_point: true , branch_id: park_and_meet_branch.id)
       dp5dp = DecisionPoint.create(node_id: dp5.id, situation: "You arrive at the parking garage and find it is...")
-        dp5d1 = Decision.create(decision_point_id: dp5dp.id, decision: "Not Full", destination_node_id: e1.id)
+        dp5d1 = Decision.create(decision_point_id: dp5dp.id, decision: "Not Full", destination_node_id: b4.id)
         dp5d2 = Decision.create(decision_point_id: dp5dp.id, decision: "Full", destination_node_id: dp6.id)
 
-    dp3 = Node.create(nickname: "DP 3", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id)
+    dp3 = Node.create(nickname: "DP 3", is_decision_point: true , branch_id: hope_to_catch_curb_branch.id)
       dp3dp = DecisionPoint.create(node_id: dp3.id, situation: "What do you do now?")
         dp3d1 = Decision.create(decision_point_id: dp3dp.id, decision: "Continue Circling Around the airport", destination_node_id: e1.id)
         dp3d2 = Decision.create(decision_point_id: dp3dp.id, decision: "Park in the parking structure", destination_node_id: b1.id)
         dp3d3 = Decision.create(decision_point_id: dp3dp.id, decision: "Leave the airport and wait off site until the passenger is ready to be picked up at the curb ", destination_node_id: c1.id)
 
-    dp2 = Node.create(nickname: "DP 2", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id)
+    dp2 = Node.create(nickname: "DP 2", is_decision_point: true , branch_id: hope_to_catch_curb_branch.id)
       dp2dp = DecisionPoint.create(node_id: dp2.id, situation: "You're almost at the terminal. Is your passenger there?")
         dp2d1 = Decision.create(decision_point_id: dp2dp.id, decision: "Yes", destination_node_id: e1.id)
         dp2d2 = Decision.create(decision_point_id: dp2dp.id, decision: "No", destination_node_id: dp3.id)
 
-
-
+    # Update all existing question nodes to have next_node_ids
+    sq1.update(next_node_id: sq22.id)
+    sq22.update(next_node_id: sq31.id)
+    sq31.update(next_node_id: sq35.id)
+    sq35.update(next_node_id: dp1.id)
+    a1.update(next_node_id: a2.id)
+    a2.update(next_node_id: dp2.id)
+    b1.update(next_node_id: b2.id)
+    b2.update(next_node_id: b3.id)
+    b3.update(next_node_id: dp5.id)
+    b4.update(next_node_id: e1.id)
+    c1.update(next_node_id: c2.id)
+    c2.update(next_node_id: dp7.id)
+    c4.update(next_node_id: e1.id)
+    e1.update(next_node_id: e2.id)
+    e2.update(next_node_id: e3.id)
+    e3.update(next_node_id: e4.id)
+    e4.update(next_node_id: e5.id)
+    e5.update(next_node_id: e6.id)
+    e6.update(next_node_id: e7.id)
+    itf2.update(next_node_id: e4.id)
 
   end
 

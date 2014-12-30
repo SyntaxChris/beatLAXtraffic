@@ -26,6 +26,9 @@
  *= require 'parking_questions'
  *= require 'car_slider_questions'
  *= require 'after_parking'
+ *= require 'time_spent'
+ *= require 'willing_to_wait'
+ *= require 'think_strategy'
  *= require 'congrats'
  *= require_tree .
  *= require_self
