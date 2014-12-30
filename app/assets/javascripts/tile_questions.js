@@ -129,4 +129,15 @@ $(document).ready(function(){
     		otherCheck = 0;
     	}
 	});
+
+	$("[id='tally']").click(function(){
+		var tallyTiles = phoneCheck + shopCheck + hangoutCheck + eatCheck + otherCheck;
+		if(tallyTiles > 0){
+			$(".next").fadeIn();
+		}
+		else{
+			$(".next").fadeOut();
+		}
+	});
+
 });
