@@ -399,7 +399,11 @@
                     </div>
                   </div>
 
-                  <div class="strategy-submit" style="position: absolute; cursor: pointer; border-radius: 5px; margin-top: 180%; margin-left: 16%; padding: 7% 15% 7% 15%; font-size: 4vw">Next</div>
+                  <div id="boxster-ctnr">
+                    <%= render 'boxster' %>
+                  </div>
+
+                  <div class="strategy-submit" style="display: none">Next</div>
 
               </div>
 
@@ -461,7 +465,7 @@
                     <%= render 'sUnchecked'%>
                   </div>
                   <div class="row">
-                    <div class="small-5 small-centered columns">
+                    <div class="small-5 small-centered columns" style="padding-top: 3px">
                       <div class="logo-cntr" style="position: absolute; left:0">
                         <%= render 'sOther' %>
                       </div> 

@@ -20,6 +20,66 @@
 	}
 }
 
+.bubble-icon-container#container-1:before {
+	content:"";
+	position: absolute;
+	top: 100%;
+	left: 65%;
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 25px solid white;
+}
+
+.bubble-icon-container#container-2:before {
+	content:"";
+	position: absolute;
+	top: 100%;
+	left: 45%;
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 25px solid white;
+}
+
+.bubble-icon-container#container-3:before {
+	content:"";
+	position: absolute;
+	top: 100%;
+	left: 27%;
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 25px solid white;
+}
+
+.bubble-icon-container#container-4:before {
+	content:"";
+	position: absolute;
+	top: 100%;
+	left: 25%;
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 25px solid white;
+}
+
+.bubble-icon-container#container-5:before {
+	content:"";
+	position: absolute;
+	top: 100%;
+	left: 40%;
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 25px solid white;
+}
+
 
 .bubble-container-small {
 	cursor: pointer;
@@ -30,12 +90,24 @@
 	border-radius: 25px
 }
 
-.bubble-container-small#middle {
+.bubble-container-small:before {
+	content:"";
+	position: absolute;
+	top: 100%;
+	left: 40%;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 15px solid white;
+}
+
+.bubble-container-small#stop-watch {
 	position: absolute; 
 	z-index: 2; 
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 50%; 
+	margin-top: 30%; 
 	width: 180px; 
 }
 
@@ -72,12 +144,19 @@
 }
 
 .strategy-submit {
-	cursor: pointer;
-	padding: 10px 10px 10px 10px; 
+	position: absolute; 
+	cursor: pointer; 
+	border-radius: 5px; 
+	margin-top: 150%; 
+	margin-left: 16%; 
+	padding: 7% 15% 7% 15%; 
+	font-size: 4vw;
 	color: white; 
 	background-color: #24B7EA; 
 	text-align: center
 }
+
+
 
 .strategy-submit-large {
 	display: none;
@@ -140,6 +219,15 @@
 	cursor: pointer;	
 }
 
+#boxster-ctnr {
+	position: absolute; 
+	cursor: pointer; 
+	border-radius: 5px; 
+	margin-top: 180%; 
+	width: 110%;
+	left: -5%;
+}
+
 
 ::-webkit-input-placeholder { /* WebKit browsers */
     color: white;
@@ -170,7 +258,7 @@
 		z-index: 2; 
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 50%; 
+		margin-top: 30%; 
 		width: 90%; 
 	}
 }
@@ -204,7 +292,7 @@
 		z-index: 2; 
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 50%; 
+		margin-top: 30%; 
 		width: 90%; 
 	}
 }
