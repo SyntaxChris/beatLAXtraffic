@@ -12,11 +12,13 @@ describe Respondent do
         flight_code: "JFK",
         passenger_count: 2,
         luggage_count: 4,
-        who_picking_up: "Boss",
+        original_who_picking_up: "Boss",
+        final_who_picking_up: "Friend",
         times_circled: 3,
         originating_location: "JFK",
         landing_time: 120,
-        travel_companion: true
+        travel_companion: true,
+        active: true
       )
     }
 
@@ -52,8 +54,12 @@ describe Respondent do
       expect(respondent.luggage_count).to eq 4
     end
 
-    it "has a pickup target party" do
-      expect(respondent.who_picking_up).to eq "Boss"
+    it "has an original pickup target party" do
+      expect(respondent.original_who_picking_up).to eq "Boss"
+    end
+
+    it "has a final pickup target party" do
+      expect(respondent.final_who_picking_up).to eq "Friend"
     end
 
     it "has an originating_location" do
@@ -67,6 +73,10 @@ describe Respondent do
     it "has a travel_companion" do
       expect(respondent.travel_companion).to eq true
     end
+
+    it "has an active boolean" do
+      expect(respondent.active).to eq true
+    end
   end
 
   describe "Associations" do
@@ -78,7 +88,36 @@ describe Respondent do
   end
 
   describe "Features" do
-    let(:respondent) { FactoryGirl.build(:respondent) }
+    describe "get_or_create_by_session(session_id)" do
+      describe "looks up a session to see if it has an active respondent session" do
+        context "when session exists" do
+        let!(:respondent) { FactoryGirl.create(:respondent, session_id: "1234") }
+          it "returns that active session" do
+            expect(Respondent.all.count).to eq 1
+            expect(Respondent.get_or_create_by_session("1234")).to eq(
+              {
+                session_id: respondent.session_id,
+                respondent_id: respondent.id
+              }
+            )
+            expect(Respondent.all.count).to eq 1
+          end
+        end
+
+        context "when session doesn't exist" do
+          it "creates a session and returns it" do
+            expect(Respondent.all.count).to eq 0
+            expect(Respondent.get_or_create_by_session("1234")).to eq(
+              {
+                session_id: Respondent.last.session_id,
+                respondent_id: Respondent.last.id
+              }
+            )
+            expect(Respondent.all.count).to eq 1
+          end
+        end
+      end
+    end
 
     pending "increases its times_circled counter at appropriate times "\
             "(likely upon API call for recording a response and diong whatever "\
