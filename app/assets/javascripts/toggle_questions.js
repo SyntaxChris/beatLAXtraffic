@@ -80,9 +80,11 @@ $(document).ready(function(){
 		else if(pageClicks === 15) {
 			$( "#willing-to-wait" ).hide();
 			$("#dashboard").show();
+			$('body').toggleClass('rail-show', true);
 			$("#rail-system").show();
 		}
 		else if(pageClicks === 16){
+			$('body').toggleClass('rail-show', false);
 			$("#rail-system").hide();
 			$("#icon-questions").show();
 		}
