@@ -517,7 +517,7 @@
 
 
   <!-- TODO: 5. Why do you choose to park your car? -->
-  <div id="why-park-car" style="display: none">
+  <div id="why-park-car">
     <div class="row" style="text-align:center">
       <h3 style="color: white">Why do you choose to park your car?</h3>
     </div>
@@ -564,7 +564,7 @@
           </div>
         </div>
         <div class="large-3 medium-3 columns" style="text-align: center">
-          <div id="parking-bubble-other">
+          <div class="parking-bubble parking-bubble-other">
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
               <%= render 'unchecked' %>
             </div>
@@ -580,8 +580,9 @@
               <div class="parking-submit-btn">OK</div>
             </div>
           </div>
-          <div class="parking-next">Next</div>
+          <div class="parking-next" style="display:none; margin-left: 25%; position: absolute; text-align: center">Next</div>
         </div>
+
       </div>
     </div>
 
@@ -630,7 +631,7 @@
           </div>
         </div>
         <div class="small-6 columns" style="padding: 0 3% 0 2%; text-align: center">
-          <div id="parking-bubble-other">
+          <div class="parking-bubble parking-bubble-other">
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
               <%= render 'unchecked' %>
             </div>
@@ -646,8 +647,9 @@
               <div class="parking-submit-btn">OK</div>
             </div>
           </div>
-          <div class="parking-next">Next</div>
+          <div class="parking-next" style="display:none; margin-left: 20%; position: absolute; text-align: center">Next</div>
         </div>
+        
       </div>
     </div>
   </div>
@@ -1205,7 +1207,7 @@
 
 
     <!-- 14. LAST QUESTION SET -->
-    <div id="last-question-set">
+    <div id="last-question-set" style="display:none">
       <!-- set 1 -->
       <div id="question-set-1">
         <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
