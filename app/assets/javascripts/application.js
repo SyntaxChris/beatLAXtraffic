@@ -29,16 +29,17 @@
 //= require 'circle_pickup'
 //= require 'timer_pickup'
 //= require 'parking_questions'
+//= require 'willing_to_wait'
+//= require 'think_strategy'
 //= require 'congrats'
+//
 //= require angular
+//= require angular-resource
+//= require angular-cookies
+//= require angular-animate
+//= require angular-route
+//= require underscore
 
-//= require angular/app
-//= require_tree ./angular/templates
-//= require_tree ./angular/modules
-//= require_tree ./angular/filters
-//= require_tree ./angular/directives
-//= require_tree ./angular/models
-//= require_tree ./angular/services
-//= require_tree ./angular/controllers
-
+//= require_tree .
+//
 $(function(){ $(document).foundation(); });

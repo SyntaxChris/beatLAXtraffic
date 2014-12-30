@@ -1,0 +1,115 @@
+#think-strategy {
+  text-align: center;
+  h3 {
+    font-size: 1.1em;
+  }
+  button {
+    outline: none;
+  }
+  .thought-button {
+    background: none;
+    padding: 0;
+    opacity: .8;
+    width: 60%;
+    margin: -20px auto 0;
+    display: block;
+    &.selected, &:hover {
+      opacity: 1;
+    }
+    .text {
+      z-index: 3;
+      position: absolute;
+      color: #333;
+      text-align: center;
+      width: 80%;
+      left: 50%;
+      margin-left: -40%;
+      top: 50%;
+      margin-top: -30px;
+    }
+  }
+  .center-button .text {
+    width: 75%;
+    margin-left: -35%;
+    margin-top: -40px;
+  }
+  .center-button, .right-button {
+    margin-top: -40px;
+  }
+  .thought-head {
+    display: none;
+  }
+  .next-thought-btn {
+    width: 80%;
+    padding: 8px 0;
+    background: #EF4545;
+    display: block;
+    margin: -20px auto 0;
+  }
+}
+
+@media only screen and (min-width : 360px) { 
+  #think-strategy {
+    .thought-button {
+      margin-top: -10px;
+    }
+    .next-thought-btn {
+      margin-top: 0px;
+    }
+  }
+}
+
+@media only screen and (min-width : 768px) { 
+  #think-strategy {
+    .content-c {
+      max-width: 1024px;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+    .thought-button {
+      position: absolute;
+      width: 33%;
+    }
+    .thought-head {
+      display: block;
+      max-width: 200px;
+      margin: 225px auto 10px;
+    }
+    .left-button {
+      left: 10px;
+      top: 20%;
+      svg {
+        //-moz-transform: scaleX(-1);
+        //-o-transform: scaleX(-1);
+        //-webkit-transform: scaleX(-1);
+        //transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+        -webkit-transform: rotate(-25deg) scaleX(-1);
+        -moz-transform: rotate(-25deg) scaleX(-1);
+        -ms-transform: rotate(-25deg) scaleX(-1);
+        -o-transform: rotate(-25deg) scaleX(-1);
+        transform: rotate(-25deg) scaleX(-1);
+      }
+    }
+    .center-button {
+      left: 50%;
+      margin-left: -16%;
+    }
+    .right-button {
+      right: 10px;
+      top: 20%;
+      svg {
+        -webkit-transform: rotate(25deg);
+        -moz-transform: rotate(25deg);
+        -ms-transform: rotate(25deg);
+        -o-transform: rotate(25deg);
+        transform: rotate(25deg);
+      }
+    }
+    .next-thought-btn {
+      width: 300px;
+    }
+  }
+}
