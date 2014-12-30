@@ -1,0 +1,94 @@
+#rail-system {
+  text-align: center;
+  max-width: 768px;
+  margin: 0 auto;
+  h3 {
+    color: white;
+  }
+  .question-bubble {
+    background: white;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    position: relative;
+    padding: 10px;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-color: transparent;
+      border-bottom: 0;
+      bottom: -15px;
+      left: 50%;
+      margin-left: -20px;
+      border-top-color: white;
+      border-width: 20px 20px 10px 20px;
+    }
+  }
+  .rail-car {
+    width: 25%;
+    margin: 0 auto;
+  }
+  p {
+    color: #E79A77;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  &.part-1 .stage-2, &.part-2 .stage-1 {
+    display: none;
+  }
+
+  .stage-1 button {
+    background: #EE4544;
+    padding: 8px 0;
+    width: 90%;
+    display: block;
+    margin: 20px auto 0;
+    max-width: 300px;
+  }
+
+  .people {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .stage-2 button {
+    width: 45%;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0;
+    background: none;
+    margin-top: 20px;
+    position: relative;
+    svg {
+      width: 75%;
+    }
+    .text {
+      position: absolute;
+      width: 75%;
+      top: 50%;
+      marign-top: -10px;
+      font-size: .8em;
+      color: #607BEB;
+      z-index: 2;
+      font-weight: 600;
+    }
+  }
+
+  .downvote-btn {
+    .text {
+      margin-top: -16px;
+      color: #7341E0;
+    }
+    svg {
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+  }
+
+}

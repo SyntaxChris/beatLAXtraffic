@@ -1005,10 +1005,43 @@
 
 
     <!-- TODO: 15. RAIL SYSTEM QUESTIONS -->
-    <div id="rail-system" style="display: none">
-      <div class="row" style="text-align: center">
-        <h3 style="color: white">Rail system questions</h3>
-      </div>
+    <div id="rail-system" class="part-1" style="display: none">
+        <h3>Rail system questions</h3>
+
+        <div class="stage-1">
+          <div class="question-bubble">
+            <div class="rail-car">
+              <%= render 'railCar' %>
+            </div>
+
+            <p>
+              To avoid all of this, we're trying to build an airport rail system that would make it easy for a passenger to meet you at a nearby location outside of the airport!
+            </p>
+          </div>
+
+          <button id="x-btn-rail-system-next">Next</button>
+        </div>
+
+        <div class="stage-2">
+          <div class="question-bubble">
+            <div class="people">
+              <%= render 'peopleRail' %>
+            </div>
+
+            <p>
+              Would you meet your passenger at this new location outside of the airport in light of the experience you had today?
+            </p>
+          </div>
+
+          <button id="x-btn-upvote" class="upvote-btn">
+            <span class="text">YES</span>
+            <%= render 'thumbsUp' %>
+          </button>
+          <button id="x-btn-downvote" class="downvote-btn">
+            <span class="text">NO</span>
+            <%= render 'thumbsDown' %>
+          </button>
+        </div>
     </div>
     <!-- END RAIL SYSTEM QUESTIONS -->
 
