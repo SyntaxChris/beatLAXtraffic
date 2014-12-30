@@ -246,12 +246,14 @@
 
 
   <!-- 4. STRATEGY questions -->
-  <div id="strategy-questions" style="display: none;">
+  <div id="strategy-questions" style="display: none">
+
     <div class="row" style="text-align: center;">
       <h3 style="color: white">Why do you choose this strategy?</h3>
       <h6 style="color: #24B7EA; padding-top: 0">Select all that apply</h6>
     </div>
-    <!-- <div class="hide-for-small-only"> -->
+
+    <div id="large-strategy">
       <div class="row">
         <div class="large-12 medium-12 small-12 columns">
           <div class="row">
@@ -270,6 +272,7 @@
                   To avoid paying for parking
                 </div>
               </div>
+              <div class="strategy-submit-large">Next</div>
             </div>
             <div class="large-4 medium-4 small-4 columns">
               <div class="bubble-icon-container" id="container-3">
@@ -294,22 +297,19 @@
               </div>
             </div>
             <div class="large-6 medium-6 columns">
-              <div class="row">
-                <div class="small-4 small-centered columns">
-                  <div id="strategy-submit" style="cursor: pointer">Submit</div>
-                </div>
-              </div>
               <div>
                 <%= render 'boxster' %>
               </div>
             </div>
             <div class="large-3 medium-3 small-3 columns">
+
               <div class="bubble-icon-container" id="container-5">
                 <%= render 'strategyOther' %>
                 <div class="strategy-answer" id="other-strategy-answer">
                   Other (Explain)
                 </div>
               </div>
+
               <!-- other text container -->
               <div id="strategy-other-container">
                 <div id="container-positioner">
@@ -317,14 +317,20 @@
                   <div id="text-container">
                     <div id="other-strategy-buttons">
                       <div class="row" id="slide-content" style="display: none">
-                        <div class="large-2 medium-2 small-2 columns">
-                          <div style="padding: 7px; color: white; background-color: #F25053; border-radius: 5px; text-align: center; margin-left: 30%; margin-top: 15%; cursor: pointer">Save</div>
-                          <div style="padding: 7px; color: white; background-color: #C1C1C1; border-radius: 5px; text-align: center; margin-left: 30%; margin-top: 7%; cursor: pointer">Cancel</div>
-                          <div id="char-count-strategy" style="margin-left: 50%; color: #C1C1C1"></div>
+                        <div class="large-3 medium-3 small-3 columns">
+                          <div class="save-large" style="margin-top: 15px; text-align: center; color: white; background-color: #F25053; padding: 5%; margin-left: 25px; margin-right: 15px; font-size: 1.5vw; border-radius: 5px">
+                            Save
+                          </div>
+
+                          <div class="cancel-large" style="margin-top: 15px; text-align: center; color: white; background-color: #C1C1C1; padding: 5%; margin-left: 25px; margin-right: 15px; font-size: 1.5vw; border-radius: 5px">
+                            Cancel
+                          </div>
+
+                          <div id="char-count-strategy" style="text-align:center; color: #C1C1C1"></div>
                           <div style="color:#C1C1C1; font-size: 8px; margin-left: 30%">Characters Left</div>
                         </div>
-                        <div class="large-8 medium-8 small-8 columns">
-                          <textarea id="other-strategy" placeholder="Please write here." cols="1" rows="6" maxlength="140" style="margin-top: 3%; background-color: #F0943F; color: white; postion: absolute; left: 40px; top: 20px"></textarea>
+                        <div class="large-7 medium-7 columns">
+                          <textarea class="other-strategy" placeholder="Please write here." cols="1" rows="6" maxlength="140" style="margin-top: 3%; background-color: #F0943F; color: white; postion: absolute; left: 40px; top: 20px"></textarea>
                         </div>
                         <div class="large-2 medium-2 small-2 columns"></div>
                       </div>
@@ -333,39 +339,179 @@
                 </div>
               </div>
               <!-- end other text container -->
-            </div>
-          </div>
-        </div>
-      </div>
-    <!-- </div> -->
 
-    <!-- <div class="show-for-small-only">
-      <div class="row">
-        <div class="large-12 medium-12 small-12 columns">
-          <div class="small-4 columns">
-            <div class="bubble-icon-container-small" id="container-1" >
-              <%= render 'guy' %>
-            </div>
-            <div class="bubble-icon-container-small" id="container-2" >
-              <%= render 'guy' %>
-            </div>
-          </div>
-          <div class="small-4 columns">
-            <div class="bubble-icon-container-small" id="container-3" >
-              <%= render 'guy' %>
-            </div>
-          </div>
-          <div class="small-4 columns">
-            <div class="bubble-icon-container-small" id="container-4" >
-              <%= render 'guy' %>
-            </div>
-            <div class="bubble-icon-container-small" id="container-5" >
-              <%= render 'guy' %>
             </div>
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
+
+    <div id="small-strategy">
+      <div class="row">
+        <div id="main-ctnr">
+          <div class="medium-11 small-11 medium-centered small-centered columns">
+
+            <div class="row" style="margin-bottom: 5%">
+              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
+                <div class="bubble-container-small" id="passenger">
+                  <div class="check-ctnr" style="position: absolute; z-index: 5; right: 0; top: -5%">
+                    <%= render 'sUnchecked'%>
+                  </div>
+                  <div class="row" style="padding-top: 5px">
+                    <div class="small-5 small-centered columns">
+                      <div class="logo-cntr" style="position: absolute; left:0">
+                        <%= render 'sPassenger' %>
+                      </div> 
+                    </div>
+                  </div>
+                  <div style="position:absolute; width: 100%; margin-top: 65%; left:0;">
+                     <div class="row">
+                      <div class="small-11 small-centered columns">
+                        <div class="strategy-answer" style="font-size: 3vw; padding-left: 5px; padding-right: 5px">
+                          To make it convienient for my passengers
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px; text-align: center">
+                  <div class="bubble-container-small" id="stop-watch">
+                    <div class="check-ctnr" style="position: absolute; z-index: 5; right: -5% ; top: -5%">
+                      <%= render 'sUnchecked'%>
+                    </div>
+                    <div class="row" >
+                      <div class="small-5 small-centered columns">
+                        <div class="logo-cntr" style="position: absolute; left:0">
+                          <%= render 'sStopWatch' %>
+                        </div> 
+                      </div>
+                    </div>
+                    <div style="position:absolute; width: 100%; margin-top: 75%; left:0;">
+                      <div class="row">
+                        <div class="small-11 small-centered columns">
+                          <div class="strategy-answer" style="font-size: 2.6vw;">
+                            To get in and out of the airport as quickly as possible
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="boxster-ctnr">
+                    <%= render 'boxster' %>
+                  </div>
+
+                  <div class="strategy-submit" style="display: none">Next</div>
+
+              </div>
+
+              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
+                <div class="bubble-container-small" id="parking">
+                  <div class="check-ctnr" style="position: absolute; z-index: 5; right: 0; top: -5%">
+                    <%= render 'sUnchecked'%>
+                  </div>
+                  <div class="row">
+                    <div class="small-5 small-centered columns" style="padding-top: 3px">
+                      <div class="logo-cntr" style="position: absolute; left:0">
+                        <%= render 'sParking' %>
+                      </div> 
+                    </div>
+                  </div>
+                  <div style="position:absolute; width: 100%; margin-top: 70%; left:0;">
+                     <div class="row">
+                      <div class="small-11 small-centered columns">
+                        <div class="strategy-answer" style="font-size: 3vw; padding-left: 5px; padding-right: 5px">
+                          To avoid paying for parking
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
+                <div class="bubble-container-small" id="hassle">
+                  <div class="check-ctnr" style="position: absolute; z-index: 5; right: 0; top: -5%">
+                    <%= render 'sUnchecked'%>
+                  </div>
+                  <div class="row">
+                    <div class="small-5 small-centered columns" style="padding-top: 3px">
+                      <div class="logo-cntr" style="position: absolute; left:0">
+                        <%= render 'sHassle' %>
+                      </div> 
+                    </div>
+                  </div>
+                  <div style="position:absolute; width: 100%; margin-top: 70%; left:0;">
+                     <div class="row">
+                      <div class="small-11 small-centered columns">
+                        <div class="strategy-answer" style="font-size: 3vw; padding-left: 5px; padding-right: 5px">
+                          To minimize the hassle for me
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="medium-4 small-4 columns"></div style="padding-left: 10px; padding-right: 10px">
+
+              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
+                <div class="bubble-container-small" id="s-other">
+                  <div class="check-ctnr" style="position: absolute; z-index: 5; right:0; top: -5%">
+                    <%= render 'sUnchecked'%>
+                  </div>
+                  <div class="row">
+                    <div class="small-5 small-centered columns" style="padding-top: 3px">
+                      <div class="logo-cntr" style="position: absolute; left:0">
+                        <%= render 'sOther' %>
+                      </div> 
+                    </div>
+                  </div>
+                  <div style="position:absolute; width: 100%; margin-top: 75%; left:0;">
+                     <div class="row">
+                      <div class="small-11 small-centered columns">
+                        <div class="strategy-answer" style="font-size: 3vw; padding-left: 5px; padding-right: 5px">
+                          Other (Explain)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div id="s-other-ctnr" style="display: none; position: absolute; z-index: 6; top: 0; margin-top: 25%; left: 8%; width: 85%; background-color: white; padding-top: 15px; border: 1px solid #C1C1C1; border-radius: 10px">
+          <div class="small-3 columns">
+            <div class="row">
+              <div class="save" style="text-align: center; color: white; background-color: #F25053; padding: 8%; margin-left: 10px; font-size: 2.8vw; border-radius: 5px">
+                Save
+              </div>
+            </div>
+            <div class="row" style="margin-top: 15px">
+              <div class="cancel" style="text-align: center; color: white; background-color: #C1C1C1; padding: 8%; margin-left: 10px; font-size: 2.8vw; border-radius: 5px">
+                Cancel
+              </div>
+            </div>
+            <div class="row" style="text-align: center; color; margin-left: 5px;">
+              <div id="char-count-strategy" style="color: #C1C1C1; padding:0; margin:0"></div>
+              <div style="color:#C1C1C1; font-size: 2vw; padding: 0; margin:0">Characters Left</div>
+            </div>
+          </div>
+          <div class="small-9 columns">
+            <textarea class="other-strategy" cols="1" rows="7" maxlength="140" style="background-color: #F0943F; color: white" placeholder="Please write here"></textarea>
+          </div>
+
+      </div>
+    </div>
+
+
   </div>
   <!-- END STRATEGY QUESTIONS -->
 
@@ -837,7 +983,7 @@
     <!-- END TILE QUESTIONS -->
 
 
-    <!-- 8. TIMER QUESTIONS -->
+    <!-- 10. TIMER QUESTIONS -->
     <div id="clock-questions" style="display: none">
       <!-- questions header -->
       <div class="row" style="text-align:center">
@@ -855,10 +1001,10 @@
     </div>
     <!-- END TIMER QUESTIONS -->
 
-    <!-- PAGES 9 - 11 ARE OUTSIDE OF THIS CONTAINER -->
+    <!-- PAGES 8 - 13 ARE OUTSIDE OF THIS CONTAINER -->
 
 
-    <!-- TODO: 12. RAIL SYSTEM QUESTIONS -->
+    <!-- TODO: 15. RAIL SYSTEM QUESTIONS -->
     <div id="rail-system" style="display: none">
       <div class="row" style="text-align: center">
         <h3 style="color: white">Rail system questions</h3>
@@ -867,7 +1013,7 @@
     <!-- END RAIL SYSTEM QUESTIONS -->
 
 
-    <!-- 13. ICON QUESTIONS -->
+    <!-- 16. ICON QUESTIONS -->
     <div id="icon-questions" style="display:none">
       <div class="row">
         <h3 style="color: white; text-align: center">Imagine that you could customize this future location.</h3>
@@ -1055,7 +1201,7 @@
     <!-- END ICON QUESTIONS -->
 
 
-    <!-- 14. LAST QUESTION SET -->
+    <!-- 17. LAST QUESTION SET -->
     <div id="last-question-set" style="display: none">
       <!-- set 1 -->
       <div id="question-set-1">
@@ -1248,6 +1394,36 @@
     </div>
     <!-- END LAST QUESTION SET -->
 
+    <!-- 18. WHY DO YOU THINK THIS STRATEGY WILL WORK -->
+    <div id="think-strategy" style="display: none;">
+      <h3>
+        How well do you think this strategy will work?
+      </h3>
+      <div class="content-c">
+        <button class="thought-button left-button">
+          <div class="text">Works like a charm every time</div>
+          <%= render 'thoughtBubble' %>
+        </button>
+        <button class="thought-button center-button">
+          <div class="text">I might have to  circle a few times, but it will eventually work</div>
+          <%= render 'thoughtBubble' %>
+        </button>
+        <button class="thought-button right-button">
+          <div class="text">It’s always bad,  but it’s better than parking</div>
+          <%= render 'thoughtBubble' %>
+        </button>
+
+        <div class="thought-head">
+          <%= render 'head' %>
+        </div>
+
+        <button id="x-btn-next-though" class="next-thought-btn">
+          Next
+        </button>
+      </div>
+    </div>
+    <!-- END WHY DO YOU THINK THIS STRATEGY WILL WORK -->
+
     <!-- CONGRATULATIONS! -->
     <div id="congrats" style="display: none">
       <div class="row" style="text-align: center">
@@ -1296,91 +1472,124 @@
 
   </div>
 
-  <!-- AFTER PARKING QUESTIONS -->
-    <div id="after-parking-questions" style="display: none;">
+  <!-- 8. AFTER PARKING QUESTIONS -->
+  <div id="after-parking-questions" style="display: none;">
 
-      <h3 class="main">You finally arrive at the lot and the parking lot is full</h3>
-      <h3 class="sub">What do you do next?</h3>
+    <h3 class="main">You finally arrive at the lot and the parking lot is full</h3>
+    <h3 class="sub">What do you do next?</h3>
 
-      <div class="pole">
-        <%= render 'signPole' %>
+    <div class="pole">
+      <%= render 'signPole' %>
+    </div>
+
+
+    <button class="sign">
+      <div class="holder">
+        <%= render 'signHolder' %>
+      </div>
+      <div class="inner-content blue">
+        <div class="icon-c">
+          <div class="arrow-c">
+            <%= render 'signArrow' %>
+          </div>
+        </div>
+        <div class="text">
+          Wait until a parking spot opens up
+        </div>
+      </div>
+    </button>
+    <button class="sign">
+      <div class="holder">
+        <%= render 'signHolder' %>
+      </div>
+      <div class="inner-content indigo">
+        <div class="icon-c mobile">
+          <div class="arrow-c">
+            <%= render 'signArrow' %>
+          </div>
+        </div>
+        <div class="text">
+          Find a spot in another parking structure
+        </div>
+        <div class="icon-c wide">
+          <div class="arrow-c">
+            <%= render 'signArrow' %>
+          </div>
+        </div>
+      </div>
+    </button>
+    <button class="sign">
+      <div class="holder">
+        <%= render 'signHolder' %>
+      </div>
+      <div class="inner-content purple">
+        <div class="icon-c">
+          <div class="arrow-c">
+            <%= render 'signArrow' %>
+          </div>
+        </div>
+        <div class="text">
+          Exit parking structure to catch your passenger at the curb
+        </div>
+      </div>
+    </button>
+    <button class="sign">
+      <div class="holder">
+        <%= render 'signHolder' %>
+      </div>
+      <div class="inner-content magenta">
+        <div class="icon-c mobile">
+          <div class="arrow-c">
+            <%= render 'signArrow' %>
+          </div>
+        </div>
+        <div class="text">
+          Exit terminal area to wait off site until passenger is ready to be picked up
+        </div>
+        <div class="icon-c wide">
+          <div class="arrow-c">
+            <%= render 'signArrow' %>
+          </div>
+        </div>
+      </div>
+    </button>
+  </div>
+  <!-- END AFTER PARKING QUESTIONS -->
+
+  <!-- 9. START TIME SPENT -->
+  <div id="time-spent" style="display: none;">
+    <div class="content-c">
+      <h3>
+        You have spent
+      </h3>
+
+      <div class="timer-c">
+        <div class="inner">
+          <div class="timer-number">3</div>
+          <div>Hours</div>
+        </div>
       </div>
 
-
-      <button class="sign">
-        <div class="holder">
-          <%= render 'signHolder' %>
-        </div>
-        <div class="inner-content blue">
-          <div class="icon-c">
-            <div class="arrow-c">
-              <%= render 'signArrow' %>
-            </div>
-          </div>
-          <div class="text">
-            Wait until a parking spot opens up
-          </div>
-        </div>
-      </button>
-      <button class="sign">
-        <div class="holder">
-          <%= render 'signHolder' %>
-        </div>
-        <div class="inner-content indigo">
-          <div class="icon-c mobile">
-            <div class="arrow-c">
-              <%= render 'signArrow' %>
-            </div>
-          </div>
-          <div class="text">
-            Find a spot in another parking structure
-          </div>
-          <div class="icon-c wide">
-            <div class="arrow-c">
-              <%= render 'signArrow' %>
-            </div>
-          </div>
-        </div>
-      </button>
-      <button class="sign">
-        <div class="holder">
-          <%= render 'signHolder' %>
-        </div>
-        <div class="inner-content purple">
-          <div class="icon-c">
-            <div class="arrow-c">
-              <%= render 'signArrow' %>
-            </div>
-          </div>
-          <div class="text">
-            Exit parking structure to catch your passenger at the curb
-          </div>
-        </div>
-      </button>
-      <button class="sign">
-        <div class="holder">
-          <%= render 'signHolder' %>
-        </div>
-        <div class="inner-content magenta">
-          <div class="icon-c mobile">
-            <div class="arrow-c">
-              <%= render 'signArrow' %>
-            </div>
-          </div>
-          <div class="text">
-            Exit terminal area to wait off site until passenger is ready to be picked up
-          </div>
-          <div class="icon-c wide">
-            <div class="arrow-c">
-              <%= render 'signArrow' %>
-            </div>
-          </div>
-        </div>
-      </button>
+      <h3>
+        looking for parking
+      </h3>
     </div>
-    <!-- END AFTER PARKING QUESTIONS -->
 
-  <!-- 9. SUCCESSFUL PICKUP -->
+    <div class="content-c">
+
+      <h1>
+        What now?
+      </h1>
+
+      <div class="buttons-c">
+       <button id="x-btn-give-up" class="give-up-btn">Give Up</button>
+       <button id="x-btn-keep-looking" class="keep-looking-btn">Keep Looking</button> 
+      </div>
+    </div>
+  </div>
+  <!-- END TIME SPENT -->
+
+  <!-- 11. SUCCESSFUL PICKUP -->
   <div id="successful-pickup" style="display: none;">
     <div class="sun-bg">
       <%= render 'sunBeamBg' %>
@@ -1406,7 +1615,7 @@
   <!-- END SUCCESFUL PICKUP -->
 
 
-  <!-- 10. CIRCLE PICKUP QUESTIONS -->
+  <!-- 12. CIRCLE PICKUP QUESTIONS -->
   <div id="circle-pickup" style="display: none;">
     <div class="content">
       <h3>
@@ -1414,14 +1623,16 @@
       </h3>
 
       <div class="content-c">
+        <div class="count-c">
+          <div class="circle-number">3</div>
+          <div>times</div>
+        </div>
         <div class="red-circle">
           <div class="circle-car">
             <%= render 'blueCircleCar' %>
           </div>
           <div class="outer-container">
             <div class="inner-circle">
-              <div class="circle-number">3</div>
-              <div>times</div>
             </div>
           </div>
         </div>
@@ -1440,7 +1651,7 @@
   </div>
   <!-- END CIRCLE PICKUP QUESTIONS -->
 
-  <!-- 11. TIMER PICKUP QUESTIONS -->
+  <!-- 13. TIMER PICKUP QUESTIONS -->
   <div id="timer-pickup" style="display: none;">
     <div class="content">
       <h3>
@@ -1466,6 +1677,34 @@
     </div>
   </div>
   <!-- END TIMER PICKUP QUESTIONS -->
+
+  <!-- 14. WILLING TO WAIT -->
+  <div id="willing-to-wait" style="display: none;">
+    <div class="content-c">
+
+      <div class="timer-c">
+        <div class="inner">
+          <div class="timer-number">10</div>
+          <div>Mins</div>
+        </div>
+      </div>
+
+      <h3>
+        What is the longest you are willing to wait for your passenger?
+      </h3>
+    </div>
+
+    <div class="content-c buttons-c">
+      <div>
+        <button id="x-btn-remove-wait-time" class="remove-wait-time-btn">-10 min</button>
+        <button id="x-btn-add-wait-time" class="add-wait-time-btn">+10 min</button>
+      </div>
+      <div>
+        <button id="x-btn-wait-next" class="wait-next-btn">Next</button>
+      </div>
+    </div>
+  </div>
+  <!-- END WILLING TO WAIT-->
 
 
 </div>
