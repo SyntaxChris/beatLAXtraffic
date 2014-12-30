@@ -100,12 +100,24 @@ $(document).ready(function(){
 	    });	
 		$( ".parking-question-other-font").text("Other (Specify)");
 		$(".parking-question-other-font").animate({
-			top: "35%"
+			top: "5%"
 		});
 		$('#char-count').fadeOut();
 		$(".parking-other-text-area").fadeOut();
 		$(".parking-submit").fadeOut();
 		$('.parking-next').fadeIn();
+
+		$('parking-bubble-other .circle-state').attr('data-other', 
+			$('parking-bubble-other .circle-state').attr('data-other') === 'open' ? 'closed' : 'open'
+		);
+
+		$('parking-bubble-other .checkmark-fill').attr('data-other',
+	    	$('parking-bubble-other .checkmark-fill').attr('data-other') === 'gray' ? 'white' : 'gray'
+	    );
+
+	    $('parking-bubble-other .parking-question-other-font').attr('data-other',
+	    	$('parking-bubble-other .parking-question-other-font').attr('data-other') === 'colored' ? 'uncolored' : 'colored'
+	    );
     });
 });
 

@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	$('[id=other-info]').keyup(function() {
+	$("[id='other-info']").keyup(function() {
 	    var cs = 140 - $(this).val().length;
-	    $('#char-count').text(cs + " characters left");
+	    $("[id='char-count']").text(cs + " characters left");
 	});
 	$('[id=other-info-small]').keyup(function() {
 	    var cs = 140 - $(this).val().length;
