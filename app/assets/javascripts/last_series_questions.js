@@ -28,4 +28,8 @@ $(document).ready(function(){
   		$("#question-set-2").fadeOut();
   		$("#question-set-3").fadeIn();
   	});
+
+    $(".q-3-text").click(function(){
+      $(".next").fadeIn();
+    });
 });
