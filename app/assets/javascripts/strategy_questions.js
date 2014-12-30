@@ -4,6 +4,7 @@ $(document).ready(function(){
  	var carParkingToggle = 0;
  	var hassleToggle = 0;
  	var otherToggle = 0;
+ 	var saveToggle = 0;
 
  	$('#guy').click(function(){
  		if(guyToggle === 0){
@@ -13,7 +14,7 @@ $(document).ready(function(){
  			$("#guy-answer").css("color", "#98CC2D");
  			$("#guy-background").css("fill", "#98CC2D");
 	 		$("#shirt").css("fill", "#FBDD61");
- 			guyToggle += 1;
+ 			guyToggle = 1;
  		}
  		else {
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
@@ -33,7 +34,7 @@ $(document).ready(function(){
  			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
  			$("#stopwatch-answer").css("color", "#D05E4B");
  			$("#timer-face").css("fill", "#D05E4B");
- 			stopWatchToggle += 1;
+ 			stopWatchToggle = 1;
  		}
  		else {
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
@@ -54,7 +55,7 @@ $(document).ready(function(){
  			$(".parking-background").css("fill", "#2FA3CA");
  			$(".car-color").css("fill", "#FCC859")
  			$("#parking-sign-bg").css("fill", "#24B7EA");
- 			carParkingToggle += 1;
+ 			carParkingToggle = 1;
  		}
  		else {
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
@@ -77,7 +78,7 @@ $(document).ready(function(){
  			$("#hassle-background").css("fill", "#DD734E");
  			$("#hassle-edge").css("fill", "#DDBD03");
  			$("#hassle-face").css("fill", "#F9D43A");
- 			hassleToggle += 1;
+ 			hassleToggle = 1;
  		}
  		else {
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
@@ -92,37 +93,75 @@ $(document).ready(function(){
  	});
 
  	$('#strategy-other').click(function(){
- 		if(otherToggle === 0){
- 			$(this).siblings(0).children().children("g").children("circle").css("fill", "#FFD93B");
- 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
- 			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
- 			$("#other-strategy-answer").css("color", "#F29532");
- 			$("#pencil-left").css("fill", "#F0822C");
- 			$("#pencil-middle").css("fill", "#F29532");
- 			$("#pencil-right").css("fill", "#F3B43C");
- 			$("#text-container").animate({width: '93%'}, function(){
- 				$(this).css({
- 					"position":"absolute"
- 				});
- 			});
- 			$("#text-container-filler").animate({width: '0%'});
- 			$("#slide-content").fadeIn();
- 			otherToggle += 1;
+		$(this).siblings(0).children().children("g").children("circle").css("fill", "#FFD93B");
+		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
+		$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
+		$("#other-strategy-answer").css("color", "#F29532");
+		$("#pencil-left").css("fill", "#F0822C");
+		$("#pencil-middle").css("fill", "#F29532");
+		$("#pencil-right").css("fill", "#F3B43C");
+		$("#text-container").animate({width: '93%'}, function(){
+			$(this).css({
+				"position":"absolute"
+			});
+		});
+		$("#text-container-filler").animate({width: '0%'});
+		$("#slide-content").fadeIn();
+		otherToggle = 1;
+ 	});
+
+	$(".save").click(function(){
+		$("#text-container").animate({width: '0%'});
+ 		$("#text-container-filler").animate({width: '93%'});
+ 		$("#slide-content").fadeOut();
+ 		otherToggle = 1;
+ 		saveToggle = 1;
+	});
+
+
+ 
+	
+
+    $(".bubble-icon-container").click(function(toggleTally){
+    	var toggleTally = guyToggle + stopWatchToggle + carParkingToggle + hassleToggle
+
+    	if(toggleTally > 0){
+ 			$(".strategy-submit.large").fadeIn();
  		}
  		else {
- 			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
- 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
- 			$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
- 			$("#other-strategy-answer").css("color", "#BCBCBC");
- 			$("#pencil-left").css("fill", "#777777");
- 			$("#pencil-middle").css("fill", "#919191");
- 			$("#pencil-right").css("fill", "#B7B7B7");
- 			$("#text-container").animate({width: '0%'});
- 			$("#text-container-filler").animate({width: '93%'});
- 			$("#slide-content").fadeOut();
- 			otherToggle = 0;
+ 			$(".strategy-submit.large").fadeOut();
  		}
- 	});
+    });
+
+
+    	$(".cancel").click(function(){
+		
+		$("#text-container").animate({width: '0%'});
+ 		$("#text-container-filler").animate({width: '93%'});
+ 		$("#slide-content").fadeOut();
+
+ 		$("#other-strategy-answer").css("color", "#BCBCBC");
+		$("#other-strategy-answer").css("color", "#BCBCBC");
+		$("#pencil-left").css("fill", "#777777");
+		$("#pencil-middle").css("fill", "#919191");
+		$("#pencil-right").css("fill", "#B7B7B7");
+
+		$("#container-5 .unchecked-bubble svg g .circle-state").css("stroke-width", 3);
+		$("#container-5 .unchecked-bubble svg g .circle-state").css("fill", "white");
+		$("#container-5 .unchecked-bubble svg g .circle-state").css("stroke-dasharray", "2.963,4.9383");
+		$("#container-5 .unchecked-bubble svg .checkmark-fill").css("stroke", "#757575");
+		// saveToggle = 0;
+ 		otherToggle = 0;
+	});
+	
+
+
+
+
+
+
+
+
 
 	var passengerTog = 0;
 	var stopWatchTog = 0;
@@ -248,7 +287,13 @@ $(document).ready(function(){
  					$("#pencil-m").css("fill", "#F29532");
  					$("#pencil-r").css("fill", "#F3B43C");
 
-					otherTog += 1;
+ 					$("#s-other-ctnr").fadeIn();
+
+					otherTog = 1;
+					otherPop = 1;
+				}
+				else if(otherTog === 1 && otherPop === 0){
+					$("#s-other-ctnr").fadeIn();
 				}
 				else{
 					$(".check-ctnr svg g .circle-state", this).css("stroke-width", 3);
@@ -263,10 +308,6 @@ $(document).ready(function(){
  					$("#s-other-ctnr").fadeOut();
  					otherPop = 0;
 					otherTog = 0;
-				}
-				if(otherPop === 0){
-					$("#s-other-ctnr").fadeIn();
-					otherPop += 1;
 				}
 			break;
 		}
@@ -291,14 +332,13 @@ $(document).ready(function(){
 	});
 
 	$(".cancel").click(function(){
-		var hideNext = passengerTog + stopWatchTog + parkingTog + hassleTog
+		var hideNext = passengerTog + stopWatchTog + parkingTog + hassleTog;
 
 		if(hideNext === 0){
 			$(".strategy-submit").fadeOut();
 		}
 
 		$("#s-other-ctnr").fadeOut();
-
 		$(".bubble-container-small#s-other .check-ctnr svg g .circle-state").css("stroke-width", 3);
 		$(".bubble-container-small#s-other .check-ctnr svg g .circle-state").css("fill", "white");
 		$(".bubble-container-small#s-other .check-ctnr svg .checkmark").css("stroke", "#757575");
