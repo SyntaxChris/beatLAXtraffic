@@ -29,6 +29,7 @@
 //= require 'circle_pickup'
 //= require 'timer_pickup'
 //= require 'parking_questions'
+//= require 'willing_to_wait'
 //= require 'congrats'
 //
 //= require angular

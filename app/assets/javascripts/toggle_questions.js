@@ -75,20 +75,24 @@ $(document).ready(function(){
 			$( "#timer-pickup" ).hide();
 			$( ".red-car" ).toggleClass('animate', false);
 			$("#car-slider").hide();
+			$( "#willing-to-wait" ).show();
+		}
+		else if(pageClicks === 15) {
+			$( "#willing-to-wait" ).hide();
 			$("#dashboard").show();
 			$("#rail-system").show();
 		}
-		else if(pageClicks === 15){
+		else if(pageClicks === 16){
 			$("#rail-system").hide();
 			$("#icon-questions").show();
 		}
-		else if(pageClicks === 16){
+		else if(pageClicks === 17){
 			$("#dashboard").hide();
 			$("#icon-questions").hide();
 			$("#car-slider").show();
 			$("#last-question-set").show();
 		}
-		else if(pageClicks === 17){
+		else if(pageClicks === 18){
       $("#car-slider").hide();
 			$("#last-question-set").hide();
 			$("#congrats").show();
