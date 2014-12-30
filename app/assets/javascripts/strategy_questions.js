@@ -6,6 +6,8 @@ $(document).ready(function(){
  	var otherToggle = 0;
  	var saveToggle = 0;
 
+
+
  	$('#guy').click(function(){
  		if(guyToggle === 0){
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "#98CC2D");
@@ -110,7 +112,7 @@ $(document).ready(function(){
 		otherToggle = 1;
  	});
 
-	$(".save").click(function(){
+	$(".save-large").click(function(){
 		$("#text-container").animate({width: '0%'});
  		$("#text-container-filler").animate({width: '93%'});
  		$("#slide-content").fadeOut();
@@ -118,24 +120,27 @@ $(document).ready(function(){
  		saveToggle = 1;
 	});
 
+   
+    
 
- 
-	
-
-    $(".bubble-icon-container").click(function(toggleTally){
-    	var toggleTally = guyToggle + stopWatchToggle + carParkingToggle + hassleToggle
-
-    	if(toggleTally > 0){
- 			$(".strategy-submit.large").fadeIn();
+    $(".bubble-icon-container").click(function(){
+    	var toggleTally = guyToggle + stopWatchToggle + carParkingToggle + hassleToggle + otherToggle;
+    	debugger;
+    	if(toggleTally === 0){
+ 			$(".strategy-submit-large").fadeOut();
  		}
- 		else {
- 			$(".strategy-submit.large").fadeOut();
+ 		else{
+ 			$(".strategy-submit-large").fadeIn();
  		}
     });
 
 
-    	$(".cancel").click(function(){
-		
+    $(".cancel-large").click(function(){
+    	if(guyToggle + stopWatchToggle + carParkingToggle + hassleToggle === 0){
+    		$(".strategy-submit-large").fadeOut();
+    	}
+    	otherToggle = 0;
+    	
 		$("#text-container").animate({width: '0%'});
  		$("#text-container-filler").animate({width: '93%'});
  		$("#slide-content").fadeOut();
@@ -150,18 +155,8 @@ $(document).ready(function(){
 		$("#container-5 .unchecked-bubble svg g .circle-state").css("fill", "white");
 		$("#container-5 .unchecked-bubble svg g .circle-state").css("stroke-dasharray", "2.963,4.9383");
 		$("#container-5 .unchecked-bubble svg .checkmark-fill").css("stroke", "#757575");
-		// saveToggle = 0;
- 		otherToggle = 0;
 	});
 	
-
-
-
-
-
-
-
-
 
 	var passengerTog = 0;
 	var stopWatchTog = 0;
