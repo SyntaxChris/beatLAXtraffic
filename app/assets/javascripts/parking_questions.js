@@ -86,7 +86,7 @@ $(document).ready(function(){
 		$(this).animate({
 			top: "5%"
 		});
-		$('#char-count').fadeIn();
+		$("[id='char-count']").fadeIn();
 		$(".parking-other-text-area").fadeIn();
 		$(".parking-submit").fadeIn();
 		$('.parking-next').fadeOut();
@@ -102,7 +102,7 @@ $(document).ready(function(){
 		$(".parking-question-other-font").animate({
 			top: "5%"
 		});
-		$('#char-count').fadeOut();
+		$("[id='char-count']").fadeOut();
 		$(".parking-other-text-area").fadeOut();
 		$(".parking-submit").fadeOut();
 		$('.parking-next').fadeIn();

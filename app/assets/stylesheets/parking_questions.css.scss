@@ -3,7 +3,7 @@
 	text-align: center;
 	padding-bottom: 100%; 
 	background-color: white; 
-	border-radius: 30px;
+	border-radius: 25px;
 	cursor: pointer;
 	.bubble-logo {
 		position: absolute; 
@@ -52,6 +52,7 @@
 	top: 50%; 
 	margin-left: 4%; 
 	text-align: center; 
+	color: #A0A0A0;
 }
 
 .parking-question-other-font {
@@ -60,6 +61,7 @@
 	// padding-bottom: 50px;
 	margin-left: auto;
 	margin-right: auto;
+	top: 5%;
 	width: 90%;
 	height: 60%; 
 	// text-align: center;
@@ -75,6 +77,12 @@
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
 	border-top: 30px solid white;
+}
+
+.parking-submit {
+	display: none; 
+	position: relative; 
+	bottom: -25%;
 }
 
 .parking-submit-btn {
