@@ -1248,6 +1248,36 @@
     </div>
     <!-- END LAST QUESTION SET -->
 
+    <!-- 18. WHY DO YOU THINK THIS STRATEGY WILL WORK -->
+    <div id="think-strategy" style="display: none;">
+      <h3>
+        How well do you think this strategy will work?
+      </h3>
+      <div class="content-c">
+        <button class="thought-button left-button">
+          <div class="text">Works like a charm every time</div>
+          <%= render 'thoughtBubble' %>
+        </button>
+        <button class="thought-button center-button">
+          <div class="text">I might have to  circle a few times, but it will eventually work</div>
+          <%= render 'thoughtBubble' %>
+        </button>
+        <button class="thought-button right-button">
+          <div class="text">It’s always bad,  but it’s better than parking</div>
+          <%= render 'thoughtBubble' %>
+        </button>
+
+        <div class="thought-head">
+          <%= render 'head' %>
+        </div>
+
+        <button id="x-btn-next-though" class="next-thought-btn">
+          Next
+        </button>
+      </div>
+    </div>
+    <!-- END WHY DO YOU THINK THIS STRATEGY WILL WORK -->
+
     <!-- CONGRATULATIONS! -->
     <div id="congrats" style="display: none">
       <div class="row" style="text-align: center">

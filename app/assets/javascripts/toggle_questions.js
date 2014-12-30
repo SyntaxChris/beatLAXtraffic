@@ -95,6 +95,10 @@ $(document).ready(function(){
 		else if(pageClicks === 18){
       $("#car-slider").hide();
 			$("#last-question-set").hide();
+			$("#think-strategy").show();
+		}
+		else if(pageClicks === 19){
+			$("#think-strategy").hide();
 			$("#congrats").show();
 		}
 		else {
