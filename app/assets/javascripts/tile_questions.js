@@ -7,7 +7,7 @@ $(document).ready(function(){
 	    var cs = 140 - $(this).val().length;
 	    $('[id=char-count-small]').text(cs + " characters left");
 	});
-	$('[id=other-strategy]').keyup(function() {
+	$('.other-strategy').keyup(function() {
 	    var cs = 140 - $(this).val().length;
 	    $('[id=char-count-strategy]').text(cs);
 	});
