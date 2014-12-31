@@ -564,24 +564,25 @@
           </div>
         </div>
         <div class="large-3 medium-3 columns" style="text-align: center">
-          <div id="parking-bubble-other">
+          <div class="parking-bubble parking-bubble-other">
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
               <%= render 'unchecked' %>
             </div>
             <div class="parking-question-other-font" data-other="uncolored">
               Other (specify)
             </div>
-            <div class="parking-other-text-area" style="display: none; position: relative; top: 30%">
+            <div class="parking-other-text-area" style="display: none; position: relative; top: 30%;">
               <textarea id="other-info" cols="1" rows="5" maxlength="140"></textarea>
             </div>
             <br>
-            <div id="char-count" style="position: absolute; margin-left: 15%; text-align:center; color: #B2C4D4"></div>
-            <div class="parking-submit" style="display: none; position: relative; margin-left:auto; margin-right: auto; margin-top: 20px">
+            <div id="char-count" style="position: absolute; margin-left: 15%; text-align:center; color: #B2C4D4; font-size: 12px; width: 90%; margin-left: auto; margin-right: auto"></div>
+            <div class="parking-submit">
               <div class="parking-submit-btn">OK</div>
             </div>
           </div>
-          <div class="parking-next">Next</div>
+          <div class="parking-next" style="display:none; margin-left: 25%; position: absolute; text-align: center">Next</div>
         </div>
+
       </div>
     </div>
 
@@ -630,24 +631,25 @@
           </div>
         </div>
         <div class="small-6 columns" style="padding: 0 3% 0 2%; text-align: center">
-          <div id="parking-bubble-other">
+          <div class="parking-bubble parking-bubble-other">
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
               <%= render 'unchecked' %>
             </div>
             <div class="parking-question-other-font" data-other="uncolored">
               Other (specify)
             </div>
-            <div class="parking-other-text-area" style="display: none; position: relative; top: 30%">
+            <div class="parking-other-text-area" style="display: none; position: relative; top: 30%; margin-bottom: 20px">
               <textarea id="other-info" cols="1" rows="5" maxlength="140"></textarea>
             </div>
             <br>
-            <div id="char-count" style="position: absolute; margin-left: 15%; text-align:center; color: #B2C4D4"></div>
-            <div class="parking-submit" style="display: none; position: relative; margin-left:auto; margin-right: auto; margin-top: 20px">
+            <div id="char-count" style="position: absolute; margin-left: auto; margin-right: auto; text-align:center; color: #B2C4D4; font-size: 12px; width: 90%"></div>
+            <div class="parking-submit">
               <div class="parking-submit-btn">OK</div>
             </div>
           </div>
-          <div class="parking-next">Next</div>
+          <div class="parking-next" style="display:none; margin-left: 20%; position: absolute; text-align: center">Next</div>
         </div>
+        
       </div>
     </div>
   </div>
@@ -715,7 +717,7 @@
 
   <!-- 7. TILE QUESTIONS -->
   <div class="large-12 medium-12 small-12 columns">
-    <div id="tile-questions"  style="display: none">
+    <div id="tile-questions" style="display: none">
       <!-- questions header -->
       <div class="show-for-landscape">
         <div class="row">
@@ -735,6 +737,9 @@
                 <h3 id="main">What are you doing while you wait?</h3>
                 <h5 id="foot">Select all that apply</h5> 
             </div>
+            <div  class="next" style="color: white; width: 100px; position: absolute; left: 38%; top: 110%; padding 10px; text-align: center; border-radius: 5px;">
+                Next
+            </div>
           </div>
         </div>
       </div>
@@ -747,19 +752,19 @@
           <div class="row">
             <div class="large-12 medium-12 large-centered medium-centered columns">
               <div class="row">
-                <div class="large-4 medium-4 small-4 columns phone">
+                <div class="large-4 medium-4 small-4 columns phone" id="tally">
                   <%= render 'phone' %>
                   <div class="row" style="text-align: center; color: white">
                     On my phone
                   </div>
                 </div>
-                <div class="large-4 medium-4 small-4 columns">
+                <div class="large-4 medium-4 small-4 columns" id="tally">
                   <%= render 'shop' %>
                   <div class="row" style="text-align: center; color: white">
                     Shop in the terminal
                   </div>
                 </div>
-                <div class="large-4 medium-4 small-4 columns">
+                <div class="large-4 medium-4 small-4 columns" id="tally">
                   <%= render 'hangout' %>
                   <div class="row" style="text-align: center; color: white">
                     Hang out
@@ -768,13 +773,13 @@
               </div>
 
               <div class="row" style="margin-top: 10px;">
-                <div class="large-4 medium-4 small-4 columns">
+                <div class="large-4 medium-4 small-4 columns" id="tally">
                   <%= render 'eat' %>
                   <div class="row" style="text-align: center; color: white">
                     Eat or drink
                   </div>
                 </div>
-                <div class="large-4 medium-4 small-4 columns">
+                <div class="large-4 medium-4 small-4 columns" id="tally">
                   <%= render 'other' %>
                   <div class="row" style="text-align: center; color: white">
                     Other
@@ -792,11 +797,11 @@
                           Please write here
                         </div>
                         <div class="row" style="padding-bottom:0">
-                          <textarea id="other-info" cols="1" rows="2" maxlength="140"></textarea> 
+                          <textarea id="other-info" cols="1" rows="2" maxlength="140" placeholder="Please write here" style="color: black"></textarea> 
                         </div>
                         <div class="row" style="text-align: center">
                           <div class="other-submit">
-                            <div>Submit</div>
+                            <div>Save</div>
                           </div>
                           <div id="char-count" style="text-align:center; color: #B2C4D4"></div>
                         </div>
@@ -812,25 +817,25 @@
         
         <div id="small-landscape">
           <div class="row">
-            <div class="small-3 medium-3 columns">
+            <div class="small-3 medium-3 columns" id="tally">
               <%= render 'phone' %>
               <div class="row tile-title" style="text-align: center; color: white">
                 On my phone
               </div>
             </div>
-            <div class="small-3 medium-3 columns">
+            <div class="small-3 medium-3 columns" id="tally">
               <%= render 'shop' %>
               <div class="row tile-title" style="text-align: center; color: white">
                 Shop in the terminal
               </div>
             </div>
-            <div class="small-3 medium-3 columns">
+            <div class="small-3 medium-3 columns" id="tally">
               <%= render 'hangout' %>
               <div class="row tile-title" style="text-align: center; color: white">
                 Hang out
               </div>
             </div>
-            <div class="small-3 medium-3 columns">
+            <div class="small-3 medium-3 columns" id="tally">
               <%= render 'eat' %>
               <div class="row tile-title" style="text-align: center; color: white">
                 Eat or drink
@@ -856,8 +861,8 @@
                     <div class="row">
                       <div class="small-7 columns"><div id="char-count-small" style="text-align:center; color: #B2C4D4"></div></div>
                       <div class="small-5 columns" style="text-align: center;">
-                        <div class="other-submit" style="color:white; background-color: #9B69CC; padding: 10px 0 10px 0; border-radius: 5px; margin-right: 5px; margin-bottom: 2px">
-                          <div>Submit</div>
+                        <div class="next" style="color:white; background-color: #9B69CC; padding: 10px 0 10px 0; border-radius: 5px; margin-right: 5px; margin-bottom: 2px">
+                          <div>Next</div>
                         </div>
                       </div>
                     </div>
@@ -896,18 +901,18 @@
       
       <!-- portrait -->
       <div class="show-for-portrait">
-    
+
         <div class="row" id="tiles-small">
           <div class="medium-10 small-11 medium-centered small-centered columns">
 
             <div class="row">
-              <div class="medium-6 small-6 columns">
+              <div class="medium-6 small-6 columns" id="tally">
                 <%= render 'phone' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   On my phone
                 </div>
               </div>
-              <div class="medium-6 small-6 columns">
+              <div class="medium-6 small-6 columns" id="tally">
                 <%= render 'shop' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   Shop in the terminal
@@ -916,13 +921,13 @@
             </div>
 
             <div class="row" id="bottom-tile-row">
-              <div class="medium-6 small-6 columns">
+              <div class="medium-6 small-6 columns" id="tally">
                 <%= render 'hangout' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   Hang out
                 </div>
               </div>
-              <div class="medium-6 small-6 columns">
+              <div class="medium-6 small-6 columns" id="tally">
                 <%= render 'eat' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   Food and drinks
@@ -933,7 +938,7 @@
             <div class="row" id="small-other-row">
               <div class="medium-8 small-10 medium-centered small-centered columns">
                 <div class="row" style="margin-top: 15px">
-                  <div class="medium-6 small-6 columns"><%= render 'smallother' %></div>
+                  <div class="medium-6 small-6 columns" id="tally"><%= render 'smallother' %></div>
                   <div class="medium-6 small-6 columns" style="padding: 6px 0 0 0"><div class="small-tile-label" style="text-align: left; color: white">Other (Specify)</div></div>
                 </div>
                 <div class="row">
@@ -944,10 +949,11 @@
                           <textarea id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
                           <div class="row">
                             <div class="small-7 columns"><div id="char-count-small" style="text-align:center; color: #B2C4D4"></div></div>
-                            <div class="small-5 columns" style="text-align: center;">
-                              <div class="other-submit" style="color:white; background-color: #9B69CC; padding: 10px 0 10px 0; border-radius: 5px; margin-right: 5px; margin-bottom: 2px">
-                                <div>Submit</div>
+                            <div class="small-5 columns" style="text-align: center">
+                              <div class="other-submit" style="color: white; background-color: #8B5DC0; padding: 5px; margin-bottom: 5px; border-radius: 5px; margin-right: 5px">
+                                Save
                               </div>
+                              
                             </div>
                           </div>
                         </div>
@@ -976,7 +982,6 @@
 
           </div>
         </div>
-
       </div>
     <!-- end portrait -->
     </div>
@@ -1201,8 +1206,8 @@
     <!-- END ICON QUESTIONS -->
 
 
-    <!-- 17. LAST QUESTION SET -->
-    <div id="last-question-set" style="display: none">
+    <!-- 14. LAST QUESTION SET -->
+    <div id="last-question-set" style="display:none">
       <!-- set 1 -->
       <div id="question-set-1">
         <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
@@ -1388,6 +1393,14 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="row" style="text-align: center; margin-top: 10px">
+          <div class="large-3 medium-3 small-5 large-centered medium-centered small-centered columns">
+            <div class="next" style="position: relative; padding: 10px; width: 70%; color: white; margin-left: auto; margin-right: auto; border-radius: 5px">
+            Next
+          </div>
+          </div>
+          
         </div>
       </div>
       <!-- end set 3 -->

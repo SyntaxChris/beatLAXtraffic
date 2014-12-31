@@ -1,10 +1,22 @@
 $(document).ready(function(){
-	$('.parking-bubble').on('click', function(){
+	var carPark = 0;
+	var avoidTraffic = 0;
+	var people = 0;
+	var otherPark = 0;
+	
+	$('.parking-bubble').click(function(){
 
 		var bubbleLogoId = $(".bubble-logo svg", this).attr("id");
 
 		switch(bubbleLogoId){
 			case 'car-park':
+				if(carPark === 0){
+					carPark = 1;
+				}
+				else{
+					carPark = 0;
+				};
+
 				$('.circle-state', this).attr('data-car', 
 	    			$('.circle-state', this).attr('data-car') === 'open' ? 'closed' : 'open'
 	    		);
@@ -24,6 +36,13 @@ $(document).ready(function(){
 	    		break;
 
 	    	case 'avoid-traffic':
+	    		if(avoidTraffic === 0){
+					avoidTraffic = 1;
+				}
+				else{
+					avoidTraffic = 0;
+				};
+
 	    		$('.circle-state', this).attr('data-traffic', 
 	    			$('.circle-state', this).attr('data-traffic') === 'open' ? 'closed' : 'open'
 	    		);
@@ -43,6 +62,13 @@ $(document).ready(function(){
 	    		break;
 
 	    	case 'people':
+	    		if(people === 0){
+					people = 1;
+				}
+				else{
+					people = 0;
+				};
+
 	    		$('.circle-state', this).attr('data-people', 
 	    			$('.circle-state', this).attr('data-people') === 'open' ? 'closed' : 'open'
 	    		);
@@ -61,51 +87,60 @@ $(document).ready(function(){
 
 	    		break;	
 		}
+
+		var parkingIconTally = carPark + avoidTraffic + people + otherPark;
+
+		if (parkingIconTally > 0){
+			$(".parking-next").fadeIn();
+		} 
+		else {
+			$(".parking-next").fadeOut();
+		}
+	});
+    
+	var toggleOther = 0;
+
+    $(".parking-question-other-font").click(function(){
+    	if(toggleOther === 0){
+			$(".parking-bubble-other").animate({height: "250px"});
+			$(this).text("Please write here");
+			$(this).animate({top: "5%"});
+			$("[id='char-count']").fadeIn();
+			$(".parking-other-text-area").fadeIn();
+			$('.parking-submit').fadeIn();
+	    	toggleOther = 1;
+    	}
+    	else {
+	    	$(".parking-bubble-other").animate({height: "100px"});	
+			$( ".parking-question-other-font").text("Other (Specify)");
+			$(".parking-question-other-font").animate({top: "5%"});
+			$("[id='char-count']").fadeOut();
+			$(".parking-other-text-area").fadeOut();
+			$('.parking-submit').fadeOut();
+			$('.parking-bubble-other .circle-state').css('fill', '#FFFFFF');
+			$('.parking-bubble-other .circle-state').css('stroke-width', 3);
+			$('.parking-bubble-other .checkmark-fill').css('stroke', '#757575');
+	    	$('.parking-bubble-other .parking-question-other-font').css('color', '#A0A0A0');
+	    	otherPark = 0;
+	    	toggleOther = 0;
+    	};
 	});
 
-	$('[id="parking-bubble-other"]').on('click', function(){
-		$('.circle-state', this).attr('data-other', 
-			$('.circle-state', this).attr('data-other') === 'open' ? 'closed' : 'open'
-		);
-
-		$('.checkmark-fill', this).attr('data-other',
-	    	$('.checkmark-fill', this).attr('data-other') === 'gray' ? 'white' : 'gray'
-	    );
-
-	    $('.parking-question-other-font', this).attr('data-other',
-	    	$('.parking-question-other-font', this).attr('data-other') === 'colored' ? 'uncolored' : 'colored'
-	    );
-	});	
     
 
-    $( ".parking-question-other-font").on('click', function(){
-	    $('[id="parking-bubble-other"]').animate({
-			height: "250px"
-		});
-		$(this).text("Please write here");
-		$(this).animate({
-			top: "5%"
-		});
-		$('#char-count').fadeIn();
-		$(".parking-other-text-area").fadeIn();
-		$(".parking-submit").fadeIn();
-		$('.parking-next').fadeOut();
-	});
-
-    
-    $(".parking-submit").on('click', function(){
-    	$('[id="parking-bubble-other"]').clearQueue();
-    	$('[id="parking-bubble-other"]').animate({
-			height: "100px"
-	    });	
+    $(".parking-submit").click(function(){
+    	otherPark = 1;
+    	$('.parking-bubble-other .circle-state').css('fill', '#AA75D3');
+		$('.parking-bubble-other .circle-state').css('stroke-width', 0);
+		$('.parking-bubble-other .checkmark-fill').css('stroke', 'white');
+    	$('.parking-bubble-other .parking-question-other-font').css('color', '#AA75D3');
+    	$(".parking-bubble-other").animate({height: "100px"});	
 		$( ".parking-question-other-font").text("Other (Specify)");
-		$(".parking-question-other-font").animate({
-			top: "35%"
-		});
-		$('#char-count').fadeOut();
+		$(".parking-question-other-font").animate({top: "5%"});
+		$("[id='char-count']").fadeOut();
 		$(".parking-other-text-area").fadeOut();
 		$(".parking-submit").fadeOut();
-		$('.parking-next').fadeIn();
+		$(".parking-next").fadeIn();
     });
 });
 
