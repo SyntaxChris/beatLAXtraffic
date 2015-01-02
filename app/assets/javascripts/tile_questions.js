@@ -17,6 +17,18 @@ $(document).ready(function(){
 	    $('#char-count-last-questions').text(cs + " characters left");
 	});
 
+	var inputToggle = 0;
+	$("[id='other-landscape']").click(function(){
+		if(inputToggle === 0){
+			$("#user-text-input").fadeIn(200);
+			inputToggle = 1;
+		}
+		else{
+			$("#user-text-input").fadeOut(1000);
+			inputToggle = 0;
+		}
+	});
+
 	$('.other-submit').click(function() {
 	    $('[id=user-text-input]').hide();
 	    $('[id=other-small-textbox]').hide();
@@ -149,10 +161,10 @@ $(document).ready(function(){
 		var tallyTiles = phoneCheck + shopCheck + hangoutCheck + eatCheck + otherCheck;
 
 		if(tallyTiles > 0){
-			$(".next").fadeIn();
+			$(".next").fadeIn(500);
 		}
 		else{
-			$(".next").fadeOut();
+			$(".next").fadeOut(300);
 		}
 	});
 
