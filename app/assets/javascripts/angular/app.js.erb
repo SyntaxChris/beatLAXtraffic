@@ -9,7 +9,7 @@ lawaApp.config([
     // return $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
 
     $routeProvider.when('/test',{
-        templateUrl: '<%= asset_path 'templates/nodes.html' %>',
+        templateUrl: '<%= asset_path 'nodes.html' %>',
         controller: 'NodeCtrl'
     });
   }
@@ -17,6 +17,5 @@ lawaApp.config([
 ]);
 
 lawaApp.run(function() {
-  console.log('angular app running v2');
-  console.log('<%= asset_path 'templates/nodes.html' %>');
+  console.log("angular app v3")
 });
