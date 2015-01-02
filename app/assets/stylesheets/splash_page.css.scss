@@ -1,3 +1,37 @@
 #splash-page {
 	overflow-y: hidden;
 }
+
+#start-button {
+	font-size: 25px; 
+	color:white; 
+	padding: 15px; 
+	background-color: #F05759; 
+	width: 30%; 
+	margin-left: auto; 
+	margin-right: auto; 
+	margin-top: 5%;
+	margin-bottom: 50px;
+}
+
+#splash-page-container {
+	text-align: center;
+	position: absolute; 
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+
+// small mobile size
+@media screen and (max-width: 500px) and (min-width: 0px) {
+	#splash-page-container {
+		text-align: center;
+		position: absolute; 
+		margin-left: auto;
+		margin-right: auto;
+		bottom: -2%;
+		right: -50%;
+		width: 200%;
+	}
+}
+
