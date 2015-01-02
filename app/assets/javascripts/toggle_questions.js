@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$("#splash-page").show();
+	$("#skip-button").hide();
 	var pageClicks = 0;
 
 	$("#toggle-questions").click(function(){
@@ -9,6 +10,7 @@ $(document).ready(function(){
 		if(pageClicks === 1){
 			$("#splash-page").hide();
 			$("#distance-questions").show();
+			$("#skip-button").show();
 		}
 		else if(pageClicks === 2){
 			$("#distance-questions").hide();
