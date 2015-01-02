@@ -15,6 +15,8 @@
 	width: 240px;
 	margin-left: auto;
 	margin-right: auto;
+	// margin-top: 6.3%;
+	// margin-bottom: 1%;
 	#yup-spinner{
 		cursor: pointer;
 		display: inline-block;
@@ -52,14 +54,50 @@
 
 }
 
+
+#spinner-components {
+	margin-top: 20px;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	top: 25%;
+}
+
+
+
 .full {
 	-webkit-animation: lot-full 6s;
 	-webkit-animation-fill-mode: forwards;
+
+	-moz-animation: lot-full 6s;
+	-moz-animation-fill-mode: forwards;
+
+	-ms-animation: lot-full 6s;
+	-ms-animation-fill-mode: forwards;
+
+	-o-animation: lot-full 6s;
+	-o-animation-fill-mode: forwards;
+
+	animation: lot-full 6s;
+	animation-fill-mode: forwards;
 }
 
 .not-full {
 	-webkit-animation: lot-not-full 6s;
 	-webkit-animation-fill-mode: forwards;
+
+	-moz-animation: lot-not-full 6s;
+	-moz-animation-fill-mode: forwards;
+
+	-ms-animation: lot-not-full 6s;
+	-ms-animation-fill-mode: forwards;
+
+	-o-animation: lot-not-full 6s;
+	-o-animation-fill-mode: forwards;
+
+	animation: lot-not-full 6s;
+	animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes lot-full {
@@ -71,3 +109,56 @@
     0%{ -webkit-transform: rotate(0deg);}
     100%{ -webkit-transform: rotate(1597deg);}
 }
+
+@-moz-keyframes lot-full {
+    0%{ -moz-transform: rotate(0deg);}
+    100%{ -moz-transform: rotate(1642deg);}
+}
+
+@-moz-keyframes lot-not-full {
+    0%{ -moz-transform: rotate(0deg);}
+    100%{ -moz-transform: rotate(1597deg);}
+}
+
+@-ms-keyframes lot-full {
+    0%{ -ms-transform: rotate(0deg);}
+    100%{ -ms-transform: rotate(1642deg);}
+}
+
+@-ms-keyframes lot-not-full {
+    0%{ -ms-transform: rotate(0deg);}
+    100%{ -ms-transform: rotate(1597deg);}
+}
+
+@-o-keyframes lot-full {
+    0%{ -o-transform: rotate(0deg);}
+    100%{ -o-transform: rotate(1642deg);}
+}
+
+@-o-keyframes lot-not-full {
+    0%{ -o-transform: rotate(0deg);}
+    100%{ -o-transform: rotate(1597deg);}
+}
+
+@keyframes lot-full {
+    0%{ transform: rotate(0deg);}
+    100%{ transform: rotate(1642deg);}
+}
+
+@keyframes lot-not-full {
+    0%{ transform: rotate(0deg);}
+    100%{ transform: rotate(1597deg);}
+}
+
+@media screen and (min-width: 1000px) {
+	#spinner-components {
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		top: 25%;
+	}
+}
+
+
+
