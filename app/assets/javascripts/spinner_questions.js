@@ -1,6 +1,8 @@
 $(document).ready(function(){
 	$('#spin-button').click(function(){
-	 	if (Math.floor(Math.random()*2) === 1){
+		chanceLogic = Math.floor(Math.random()*2);
+
+	 	if (chanceLogic === 1){
 	 		$("#wheel").addClass("full");
 		 	setTimeout(
 		 		function(){
