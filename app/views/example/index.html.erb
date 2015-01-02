@@ -988,7 +988,7 @@
     <!-- END TILE QUESTIONS -->
 
 
-    <!-- 10. TIMER QUESTIONS -->
+    <!-- 11. TIMER QUESTIONS -->
     <div id="clock-questions" style="display: none">
       <!-- questions header -->
       <div class="row" style="text-align:center">
@@ -1009,7 +1009,7 @@
     <!-- PAGES 8 - 13 ARE OUTSIDE OF THIS CONTAINER -->
 
 
-    <!-- TODO: 15. RAIL SYSTEM QUESTIONS -->
+    <!-- TODO: 16. RAIL SYSTEM QUESTIONS -->
     <div id="rail-system" style="display: none">
       <div class="row" style="text-align: center">
         <h3 style="color: white">Rail system questions</h3>
@@ -1018,7 +1018,7 @@
     <!-- END RAIL SYSTEM QUESTIONS -->
 
 
-    <!-- 16. ICON QUESTIONS -->
+    <!-- 17. ICON QUESTIONS -->
     <div id="icon-questions" style="display:none">
       <div class="row">
         <h3 style="color: white; text-align: center">Imagine that you could customize this future location.</h3>
@@ -1485,7 +1485,57 @@
 
   </div>
 
-  <!-- 8. AFTER PARKING QUESTIONS -->
+  <!-- 8. LATE FLIGHT -->
+  <div id="late-flight" style="display: none;">
+    <div class="content-c">
+      <h3>You think your passenger's flight could be late.</h3>
+      <p>How would you check for that?</p>
+      
+      <div class="dIB vAT button-c">
+        <button class="select-btn call">
+          <%= render 'call' %>
+          <div class="checkmark">
+            <%= render 'sUnchecked' %>
+          </div>
+        </button>
+        <div>
+          Try to Reach Passenger
+        </div>
+      </div>
+
+      <div class="dIB vAT button-c">
+        <button class="select-btn parking">
+          <%= render 'parkingTile' %>
+          <div class="checkmark">
+            <%= render 'sUnchecked' %>
+          </div>
+        </button>
+        <div>
+          Park and go Inside Terminal
+        </div>
+      </div>
+
+      <div class="dIB vAT button-c">
+        <button class="select-btn check-phone">
+          <%= render 'checkPhone' %>
+          <div class="checkmark">
+            <%= render 'sUnchecked' %>
+          </div>
+        </button>
+        <div>
+          Check Mobile Phone for Flight Information
+        </div>
+      </div>
+
+      <div>
+        <button id="x-btn-late-flight-next" class="late-flight-next-btn">Next</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- END LATE FLIGHT -->
+
+  <!-- 9. AFTER PARKING QUESTIONS -->
   <div id="after-parking-questions" style="display: none;">
 
     <h3 class="main">You finally arrive at the lot and the parking lot is full</h3>
@@ -1569,7 +1619,7 @@
   </div>
   <!-- END AFTER PARKING QUESTIONS -->
 
-  <!-- 9. START TIME SPENT -->
+  <!-- 10. START TIME SPENT -->
   <div id="time-spent" style="display: none;">
     <div class="content-c">
       <h3>
@@ -1602,7 +1652,7 @@
   </div>
   <!-- END TIME SPENT -->
 
-  <!-- 11. SUCCESSFUL PICKUP -->
+  <!-- 12. SUCCESSFUL PICKUP -->
   <div id="successful-pickup" style="display: none;">
     <div class="sun-bg">
       <%= render 'sunBeamBg' %>
@@ -1628,7 +1678,7 @@
   <!-- END SUCCESFUL PICKUP -->
 
 
-  <!-- 12. CIRCLE PICKUP QUESTIONS -->
+  <!-- 13. CIRCLE PICKUP QUESTIONS -->
   <div id="circle-pickup" style="display: none;">
     <div class="content">
       <h3>
@@ -1664,7 +1714,7 @@
   </div>
   <!-- END CIRCLE PICKUP QUESTIONS -->
 
-  <!-- 13. TIMER PICKUP QUESTIONS -->
+  <!-- 14. TIMER PICKUP QUESTIONS -->
   <div id="timer-pickup" style="display: none;">
     <div class="content">
       <h3>
@@ -1691,7 +1741,7 @@
   </div>
   <!-- END TIMER PICKUP QUESTIONS -->
 
-  <!-- 14. WILLING TO WAIT -->
+  <!-- 15. WILLING TO WAIT -->
   <div id="willing-to-wait" style="display: none;">
     <div class="content-c">
 
