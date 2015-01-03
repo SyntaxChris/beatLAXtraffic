@@ -7,7 +7,7 @@ describe('NodeCtrl', function(){
   // inject services and attach to variable with same name (the ones _likeThis_)
   beforeEach(inject(function($controller, _$httpBackend_){
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('api/nodes').
+    $httpBackend.expectGET('/api/nodes').
       respond(
         [
           {
