@@ -67,6 +67,5 @@ angular.module('lawaApp')
       };
 
       $scope.setup();
-      console.log('nodectrl running');
     }
   ])
