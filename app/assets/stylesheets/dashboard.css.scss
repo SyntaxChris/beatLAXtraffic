@@ -823,12 +823,19 @@
 @media screen and (max-width: 449px) and (min-width: 0px) {
     .content-size {
         position: relative; 
-        margin-left: 20%; 
-        width: 70%;
+        margin-left: 10%; 
+        width: 95%;
     }
     .count-row {
         text-align: center; 
         padding-top: 35px
+    }
+
+    .dash-count {
+        font-size: 2vw; 
+        font-weight: 700; 
+        position: relative; 
+        top: -2px;
     }
 
 
@@ -859,7 +866,7 @@
             #section-2 {
                 text-align: center;
                 position: absolute;
-                height: 105px;
+                height: 85px;
                 width: 25%;
                 left: 30%;
                 padding-top: 10px;
@@ -867,15 +874,15 @@
                 .icon-row {
                     margin-top: 25px;
                     svg {
-                        height: 50px;
-                        width: 50px;
+                        height: 40px;
+                        width: 40px;
                     }
                 }
             }
             #section-3 {
                 text-align: center;
                 position: absolute;
-                height: 105px;
+                height: 85px;
                 width: 25%;
                 left: 65%;
                 padding-top: 10px;
@@ -883,8 +890,8 @@
                 .icon-row {
                     margin-top: 25px;
                     svg {
-                        height: 50px;
-                        width: 50px;
+                        height: 40px;
+                        width: 40px;
                     }
                 } 
             }
