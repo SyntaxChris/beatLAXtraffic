@@ -1785,58 +1785,62 @@
 
 
 <!-- DASHBOARDS -->
-<div id="dashboard" style="display: none">
-    <div id="grad-container">
-      <div id="grad-4">
-        <div class="row">
-          <div class="large-12 medium-12 small-12 columns">
-            <div id="displayed-time">15</div>
-            <div id="min">min</div>
-            <div id="spent">spent picking up</div>
-          </div>
-        </div>
+<!-- <div style="position: absolute; z-index: 50; width: 100%; padding-bottom: 15%; bottom: 0; background-color: #CDEDF9"></div> -->
+
+<div id="dashboard">
+    <div id="dash-contents">
+      <div id="section-1">
+        <div><span id="main-time">15</span>min</div>
       </div>
-      <div id="grad-3">
-        <div class="row">
-          <div class="large-6 medium-6 small-6 columns" style="padding-top: 20px; padding-left: 28%"><%= render 'personicon' %></div>
-          <div class="large-2 medium-2 small-2 columns" style="padding-top: 40px; font-size: 30px">x</div>
-          <div class="large-4 medium-4 small-4 columns" style="padding-top: 40px; padding-left: 0; padding-right: 0; font-size: 80px">2</div>
-          </div>
-      </div>
-      <div id="grad-2">        
-        <div class="row">
-          <div class="large-6 medium-6 small-6 columns" style="padding-top: 20px; padding-left: 28%"><%= render 'briefcase' %></div>
-          <div class="large-2 medium-2 small-2 columns" style="padding-top: 40px; font-size: 30px">x</div>
-          <div class="large-4 medium-4 small-4 columns" style="padding-top: 40px; padding-left: 0; padding-right: 0; font-size: 80px">4</div>
-        </div>
-      </div>
-      <div id="grad-1">
-        <div class="row">
-          <div class="large-4 medium-4 small-4 columns">
-            <div id="plane-logo">
-              <%= render 'planelogo' %>
+      <div id="section-2">
+        <div style="position: relative; margin-left: 30%; width: 60%">
+          <div class="row main-icn-rw">
+            <div class="large-6 medium-6 small-6 columns icon-row">
+              <%= render 'personicon' %>
+            </div>
+            <div class="large-6 medium-6 small-6 columns count-row">
+              <div class="dash-count">x<span id="passenger-count" style="font-size: 7vw; position: absolute; top: 0">2</span></div>
             </div>
           </div>
-          <div class="large-8 medium-8 small-8 columns" id="flight-num">
-            FLIGHT 2077 <br>
-            <div style="font-size: 18px">Inbound From ORD</div>
+        </div>
+      </div>
+      <div id="section-3">
+        <div style="position: relative; margin-left: 30%; width: 60%">
+          <div class="row main-icn-rw">
+            <div class="large-6 medium-6 small-6 columns icon-row">
+              <%= render 'briefcase' %>
+            </div>
+            <div class="large-6 medium-6 small-6 columns count-row">
+              <div class="dash-count">x<span id="passenger-count" style="font-size: 7vw; position: absolute; top: 0">2</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-4">
+        <div style="position: relative; margin-left: 15%; width: 80%">
+          <div class="row" style="margin-top: 5px">
+            <div id="plane-container" class="large-3 medium-3 small-3 columns" style="margin-top: 25px; padding-left: 7%">
+              <%= render 'planelogo' %>
+            </div>
+            <div class="large-9 medium-9 small-9 columns" style="padding-top: 25px">
+              <div class="row" style="font-size: 2vw">FLIGHT <span>2577</span></div>
+              <div class="row" style="font-size: 1.4vw">Inbound from <span id="inbound-from">ORD</span></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div id="grad-container">
+      <div id="grad-4"></div>
+      <div id="grad-3"></div>
+      <div id="grad-2"></div>
+      <div id="grad-1"></div>
+    </div>
   <div id="gradient-1"></div>
   <div id="gradient-2"></div>
-  <div id="gradient-3">
-  </div>
+  <div id="gradient-3"></div>
   <div id="gradient-4" style="padding: 0">
     <div id="clock">
-      <div id="hour">
-        <div id="short-hand"></div>
-      </div>
-      <div id="minute">
-        <div id="long-hand"></div>
-      </div>
-      <div id="cap"></div>
       <%= render 'timer' %>
     </div>
   </div>
@@ -1854,6 +1858,8 @@
     <div id="lax">LAX</div>
   </div>
 </div>  
+
+
 
 
 <div id="car-slider" style="display: none">
