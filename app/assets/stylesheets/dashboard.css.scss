@@ -1,3 +1,9 @@
+.content-size {
+    position: relative; 
+    margin-left: 30%; 
+    width: 60%;
+}
+
 .icon-row {
     margin-top: 12px; 
     padding-left: 7%;
@@ -270,6 +276,12 @@
         padding-top: 35px
     }
 
+    .content-size {
+        position: relative; 
+        margin-left: 25%; 
+        width: 65%;
+    }
+
     #dashboard {
         position: fixed;
         z-index: 30;
@@ -536,6 +548,11 @@
 
 
 @media screen and (max-width: 640px) and (min-width: 450px) {
+    .content-size {
+        position: relative; 
+        margin-left: 20%; 
+        width: 70%;
+    }
     .count-row {
         text-align: center; 
         padding-top: 35px
@@ -557,15 +574,15 @@
             height: 140px;
             color: white;
             #section-1 {
-                padding-left: 12%;
+                padding-left: 5%;
                 padding-top: 60px;
                 text-align: center;
                 position: absolute;
                 height: 160px;
                 width: 25%;
-                font-size: 2vw;
+                font-size: 3vw;
                 span#main-time {
-                    font-size: 10vw; 
+                    font-size: 15vw; 
                     font-weight: 700;
                 }
                 
@@ -804,9 +821,83 @@
 }
 
 @media screen and (max-width: 449px) and (min-width: 0px) {
+    .content-size {
+        position: relative; 
+        margin-left: 20%; 
+        width: 70%;
+    }
+    .count-row {
+        text-align: center; 
+        padding-top: 35px
+    }
+
 
     #dashboard {
         height: 100px;
+
+         #dash-contents {
+            position: absolute;
+            z-index: 40;
+            bottom: 0;
+            width: 100%;
+            height: 140px;
+            color: white;
+            #section-1 {
+                padding-left: 3%;
+                padding-top: 80px;
+                text-align: center;
+                position: absolute;
+                height: 160px;
+                width: 25%;
+                font-size: 3vw;
+                span#main-time {
+                    font-size: 15vw; 
+                    font-weight: 700;
+                }
+                
+            }
+            #section-2 {
+                text-align: center;
+                position: absolute;
+                height: 105px;
+                width: 25%;
+                left: 30%;
+                padding-top: 10px;
+                bottom: 0; 
+                .icon-row {
+                    margin-top: 25px;
+                    svg {
+                        height: 50px;
+                        width: 50px;
+                    }
+                }
+            }
+            #section-3 {
+                text-align: center;
+                position: absolute;
+                height: 105px;
+                width: 25%;
+                left: 65%;
+                padding-top: 10px;
+                bottom: 0;
+                .icon-row {
+                    margin-top: 25px;
+                    svg {
+                        height: 50px;
+                        width: 50px;
+                    }
+                } 
+            }
+            #section-4 {
+                display: none;
+                text-align: center;
+                position: absolute;
+                height: 105px;
+                width: 25%;
+                left: 75%;
+                bottom: 0; 
+            }
+        }
         
         #gradient-1 {
             display: none;
