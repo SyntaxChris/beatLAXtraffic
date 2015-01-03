@@ -17,6 +17,7 @@
  *= require 'parking_lot'
  *= require 'distance_questions'
  *= require 'tiles'
+ *= require 'late_flight'
  *= require 'timer_questions'
  *= require 'mission_intro'
  *= require 'interactive_map'
