@@ -1,0 +1,111 @@
+#late-flight {
+  text-align: center;
+  h3 {
+    color: white;
+  }
+  p {
+    color: #008CBA;
+    font-size: 1.2em;
+  }
+  .button-c {
+    width: 100px;
+    font-size: .7em;
+    color: white;
+    line-height: 1.1;
+    text-shadow: 0 0 10px rgba(0,0,0,.5);
+  }
+  .select-btn {
+    background: none;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    outline: none;
+    >svg {
+      width: 70%;
+      position: absolute;
+      display: block;
+      top: 0;
+      left:50%;
+      margin-left: -35%;
+    }
+    &.selected {
+      .circle-state {
+        fill: #2FA3CA;
+        stroke: none;
+      }
+      .checkmark {
+        stroke: white;
+      }
+    }
+  }
+  .parking {
+    background: #F7C001;
+  }
+  .call {
+    background: #FC9C52;
+  }
+  .check-phone {
+    background: #39BAD8;
+  }
+  .checkmark {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+  }
+
+  .late-flight-next-btn {
+    background: #F05759;
+    width: 100%;
+    max-width: 200px;
+    display: none;
+  }
+}
+
+@media only screen and (min-width : 360px) {
+  #late-flight {
+    .select-btn {
+      height: 110px;
+      width: 110px;
+    }
+    .button-c {
+      width: 110px;
+      font-size: .8em;
+    }
+  }
+}
+
+@media only screen and (min-width : 414px) {
+  #late-flight {
+    .select-btn {
+      height: 120px;
+      width: 120px;
+      margin-right: 5px;
+      margin-left: 5px;
+      &.call {
+        margin-left: 0;
+      }
+      &.check-phone {
+        margin-right: 0;
+      }
+    }
+    .button-c {
+      width: 130px;
+      font-size: .9em;
+    }
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  #late-flight {
+    .select-btn {
+      margin-right: 15px;
+      margin-left: 15px;
+    }
+    .button-c {
+      width: 150px;
+    }
+  }
+}

@@ -19,6 +19,7 @@
 //= require 'intro'
 //= require 'distance_questions'
 //= require 'tile_questions'
+//= require 'late_flight'
 //= require 'timer_questions'
 //= require 'icon_questions'
 //= require 'spinner_questions'
