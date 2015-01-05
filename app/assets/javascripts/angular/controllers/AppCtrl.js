@@ -5,9 +5,9 @@ angular.module('lawaApp')
       $scope.currentSessionId = 'something';
 
       $http({
-        url: '/api/respondent/get_or_create',
+        url: '/api/respondents/get_or_create',
         method: 'GET',
-        params: { session_id: currentSessionId }
+        params: { session_id: $scope.currentSessionId }
         }).success(function(data){
           $scope.respondent = data;
       });
