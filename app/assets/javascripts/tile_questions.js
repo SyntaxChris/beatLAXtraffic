@@ -1,21 +1,4 @@
 $(document).ready(function(){
-	$("[id='other-info']").keyup(function() {
-	    var cs = 140 - $(this).val().length;
-	    $("[id='char-count']").text(cs + " characters left");
-	});
-	$('[id=other-info-small]').keyup(function() {
-	    var cs = 140 - $(this).val().length;
-	    $('[id=char-count-small]').text(cs + " characters left");
-	});
-	$('.other-strategy').keyup(function() {
-	    var cs = 140 - $(this).val().length;
-	    $('[id=char-count-strategy]').text(cs + " characters left");
-	});
-
-	$('#other-info-last-questions').keyup(function() {
-	    var cs = 140 - $(this).val().length;
-	    $("[id='char-count-last-questions']").text(cs + " characters left");
-	});
 
 	var inputToggle = 0;
 	$("[id='other-landscape']").click(function(){
@@ -71,6 +54,10 @@ $(document).ready(function(){
 	var otherCheck = 0;
 
 	$(".other-cancel").click(function(){
+		$('#user-text-input').hide();
+		$(".unchecked-other-tile svg:nth-child(1) .checkmark-fill").css("stroke", "#757575");
+	    $(".unchecked-other-tile svg:nth-child(1) g .circle-state").css("stroke-width", 3);
+		$(".unchecked-other-tile svg:nth-child(1) g .circle-state").css("fill", "#FFFFFF");	
 		otherCheck = 0;
 	});
 
@@ -146,12 +133,14 @@ $(document).ready(function(){
 			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
 			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
 			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#AA75D3");
+			    	$('#user-text-input').show();
 			    	otherCheck = 1;	
 			    }
 			    else {
 			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
 			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
 			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
+			    	$('#user-text-input').hide();
 			    	otherCheck = 0;
 			    }
 

@@ -1,4 +1,7 @@
-var lawaApp = angular.module('lawaApp', ['ngRoute','underscore']);
+var lawaApp = angular.module('lawaApp', ['ngRoute','underscore', 'lawaApp.resources', 'lawaApp.services']);
+
+angular.module('lawaApp.resources',[]);
+angular.module('lawaApp.services',[]);
 
 lawaApp.config([
   '$httpProvider','$routeProvider','$locationProvider', function($httpProvider,$routeProvider,$locationProvider) {
@@ -11,9 +14,7 @@ lawaApp.config([
     });
   }
 
-
 ]);
 
 lawaApp.run(function() {
-  return console.log('angular app running');
 });

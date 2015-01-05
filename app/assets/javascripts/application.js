@@ -37,9 +37,6 @@
 //= require 'congrats'
 //
 //= require angular
-//= require angular-resource
-//= require angular-cookies
-//= require angular-animate
 //= require angular-route
 //= require underscore
 

@@ -64,7 +64,6 @@ $(document).ready(function(){
 		else if(pageClicks === 12){
 			$("#clock-questions").hide();
 			$("#dashboard").hide();
-
 			$("#successful-pickup").show();
 		}
 		else if(pageClicks === 13){
@@ -116,6 +115,7 @@ $(document).ready(function(){
 		}
 	});
 });
+
 
 
 

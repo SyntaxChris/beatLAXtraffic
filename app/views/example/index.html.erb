@@ -720,7 +720,7 @@
 
   <!-- 7. TILE QUESTIONS -->
   <div class="large-12 medium-12 small-12 columns">
-    <div id="tile-questions" style="display:none">
+    <div id="tile-questions" style="">
       <!-- questions header -->
       <div class="show-for-landscape">
         <div class="row">
@@ -736,12 +736,13 @@
       <div class="show-for-portrait">
         <div class="row">
           <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
-            <div id="question-header">
+            <div id="question-header" style="text-align: center">
                 <h3 id="main">What are you doing while you wait?</h3>
-                <h5 id="foot">Select all that apply</h5> 
-            </div>
-            <div  class="next" style="color: white; width: 100px; position: absolute; left: 38%; top: 110%; padding 10px; text-align: center; border-radius: 5px;">
-                Next
+                <h5 id="foot" style="text-align:center">
+                Select all that apply
+<div class="next" style="color: white; width: 100px; border-radius: 5px; position: relative; margin-left: auto; margin-right: auto">Next</div>
+                </h5> 
+                
             </div>
           </div>
         </div>
@@ -791,22 +792,29 @@
                 
                 <!-- text area -->
                 <div class="large-4 medium-4 small-4 columns">
-                  <div class="next" style="width: 125px; height: 40px; margin-left: auto; margin-right: auto; margin-top: 40px;  color: white; text-align: center; padding-top: 7px; border-radius: 5px">Next</div>
-                  <div class="row" style="padding:0">
+                  <div class="next" style="width: 125px; height: 40px; margin-left: 27.5%; margin-right: auto; margin-top: 40px;  color: white; text-align: center; padding-top: 7px; border-radius: 5px">Next</div>
+                  <div class="row">
                     <div class="large-12 medium-12 small-12 columns">
                       <div id="user-text-input">
                         <div class="arrow-left" style="position:absolute; z-index: 1;"></div>
-                        <div class="row" style="text-align: center; color: #AA75D3; padding-bottom: 5px">
-                          Please write here
-                        </div>
-                        <div class="row" style="padding-bottom:0">
-                          <textarea id="other-info" cols="1" rows="2" maxlength="140" placeholder="Please write here" style="color: black"></textarea> 
+                        <div class="row" style="padding-top: 15px">
+                          <textarea class="purple" id="other-info-large" cols="1" rows="3" maxlength="140" placeholder="Please write here"></textarea> 
                         </div>
                         <div class="row" style="text-align: center">
-                          <div class="other-submit">
-                            <div>Save</div>
+                          <div class="large-6 medium-6 columns" style="padding: 0">
+                            <div class="other-cancel">
+                              Cancel
+                            </div>
                           </div>
-                          <div id="char-count" style="text-align:center; color: #B2C4D4"></div>
+                          <div class="large-6 medium-6 columns" style="text-align: center">
+                            <div class="other-submit">
+                              Save
+                            </div>
+                          </div>
+                          
+                          <div id="char-count-large" style="text-align: center"></div>
+                          
+                          
                         </div>
                       </div>
                     </div>
@@ -860,9 +868,11 @@
               <div id="other-text-area">
                 <div class="row">
                   <div class="small-12 small-centered columns">
-                    <textarea id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
-                    <div class="row">
-                      <div class="small-7 columns"><div id="char-count-small" style="text-align:center; color: #B2C4D4"></div></div>
+                    <textarea class="purple" id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
+                      <div class="row">
+                        <div class="small-7 columns">
+                          <div id="char-count-small" style="font-size: 16px"></div>
+                      </div>
                       <div class="small-5 columns" style="text-align: center;">
                         <div class="next" style="color:white; background-color: #9B69CC; padding: 10px 0 10px 0; border-radius: 5px; margin-right: 5px; margin-bottom: 2px">
                           <div>Next</div>
@@ -909,13 +919,13 @@
           <div class="medium-10 small-11 medium-centered small-centered columns">
 
             <div class="row">
-              <div class="medium-6 small-6 columns" id="tally">
+              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
                 <%= render 'phone' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   On my phone
                 </div>
               </div>
-              <div class="medium-6 small-6 columns" id="tally">
+              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
                 <%= render 'shop' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   Shop in the terminal
@@ -924,13 +934,13 @@
             </div>
 
             <div class="row" id="bottom-tile-row">
-              <div class="medium-6 small-6 columns" id="tally">
+              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
                 <%= render 'hangout' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   Hang out
                 </div>
               </div>
-              <div class="medium-6 small-6 columns" id="tally">
+              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
                 <%= render 'eat' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   Food and drinks
@@ -941,22 +951,23 @@
             <div class="row" id="small-other-row">
               <div class="medium-8 small-10 medium-centered small-centered columns">
                 <div class="row" style="margin-top: 15px">
-                  <div class="medium-6 small-6 columns" id="tally"><%= render 'smallother' %></div>
-                  <div class="medium-6 small-6 columns" style="padding: 6px 0 0 0"><div class="small-tile-label" style="text-align: left; color: white">Other (Specify)</div></div>
+                  <div class="medium-6 small-6 columns" id="tally" style="padding: 0"><%= render 'smallother' %></div>
+                  <div class="medium-6 small-6 columns" style="padding: 6px 0 0 0"><div class="small-tile-label" style="text-align: left; color: white; font-size: 12px">Other (Specify)</div></div>
                 </div>
                 <div class="row">
                   <div class="small-11 small-centered columns" id="other-small-textbox" style="display:none">
                     <div id="other-text-area">
                       <div class="row">
                         <div class="small-12 small-centered columns">
-                          <textarea id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
+                          <textarea class="purple" id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
                           <div class="row">
-                            <div class="small-7 columns"><div id="char-count-small" style="text-align:center; color: #B2C4D4"></div></div>
+                            <div class="small-7 columns">
+                              <div id="char-count-small"></div>
+                            </div>
                             <div class="small-5 columns" style="text-align: center">
                               <div class="other-submit" style="color: white; background-color: #8B5DC0; padding: 5px; margin-bottom: 5px; border-radius: 5px; margin-right: 5px">
                                 Save
                               </div>
-                              
                             </div>
                           </div>
                         </div>
@@ -1087,47 +1098,47 @@
           <div id="icon-box">
             <div class="icon" id="dog">
               <%= render 'dog' %>
-              <div style="display:none">Hi, I'm the dog icon</div>
+              <div style="display:none">Dog run/relief area</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="couch">
               <%= render 'couch' %>
-              <div style="display:none">Hi, I'm the couch icon</div>
+              <div style="display:none">A comfortable place to wait for my passenger</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="family">
               <%= render 'family' %>
-              <div style="display:none">Hi, I'm the playground icon</div>
+              <div style="display:none">Childrens Play Area</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="computer">
               <%= render 'computer' %>
-              <div style="display:none">Hi, I'm the computer icon</div>
+              <div style="display:none">A way to make sure I know my passenger's flight status</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="food">
               <%= render 'food' %>
-              <div style="display:none">Hi, I'm the food icon</div>
+              <div style="display:none">A place to get food or coffee</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="wifi">
               <%= render 'wifi' %>
-              <div style="display:none">Hi, I'm the wifi icon</div>
+              <div style="display:none">Wifi</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="parking">
               <%= render 'parking' %>
-              <div style="display:none">Hi, I'm the parking icon</div>
+              <div style="display:none">Free short-term parking</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="exit">
               <%= render 'exit' %>
-              <div style="display:none">Hi, I'm the exit icon</div>
+              <div style="display:none">Easy ways to get in and out of the location</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="help-desk">
               <%= render 'helpdesk' %>
-              <div style="display:none">Hi, I'm the help desk icon</div>
+              <div style="display:none">Passenger Assistance</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
           </div>
@@ -1149,7 +1160,7 @@
           <div id="holder-and-description-row">
             <div id="dotted-circle-row">
               <div id="icon-holder-description">
-                Pick your top 3 amenities
+                  Pick your top 3 amenities
               </div>
               <div id="circle-1">
                 <div id="one">1</div>
@@ -1169,48 +1180,48 @@
           <div id="icon-box-small">
             <div class="icon" id="dog">
               <%= render 'dog' %>
-              <div style="display:none">Hi, I'm the dog icon</div>
+              <div style="display:none;">Dog run/relief area</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="couch">
               <%= render 'couch' %>
-              <div style="display:none">Hi, I'm the couch icon</div>
+              <div style="display:none;">A comfortable place to wait for my passenger</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="family">
               <%= render 'family' %>
-              <div style="display:none">Hi, I'm the family icon</div>
+              <div style="display:none;">Childrens Play Area</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
 
             </div>
             <div class="icon" id="computer">
               <%= render 'computer' %>
-              <div style="display:none">Hi, I'm the computer icon</div>
+              <div style="display:none;">A way to make sure I know my passenger's flight status</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="food">
               <%= render 'food' %>
-              <div style="display:none">Hi, I'm the food icon</div>
+              <div style="display:none;">A place to get food or coffee</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="wifi">
               <%= render 'wifi' %>
-              <div style="display:none">Hi, I'm the wifi icon</div>
+              <div style="display:none;">Wifi</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="parking">
               <%= render 'parking' %>
-              <div style="display:none">Hi, I'm the parking icon</div>
+              <div style="display:none;">Free short-term parking</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="exit">
               <%= render 'exit' %>
-              <div style="display:none">Hi, I'm the exit icon</div>
+              <div style="display:none;">Easy ways to get in and out of the location</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="help-desk">
               <%= render 'helpdesk' %>
-              <div style="display:none">Hi, I'm the help desk icon</div>
+              <div style="display:none;">Passenger Assistance</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div id="icon-pop-up-small" style="display: none">
