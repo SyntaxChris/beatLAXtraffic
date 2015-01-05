@@ -83,12 +83,14 @@ $(document).ready(function(){
 		}
 		else if(pageClicks === 16) {
 			$( "#willing-to-wait" ).hide();
-			$("#car-slider").hide();
-			$("#dashboard").show();
+			$("#car-slider").show();
+			$("#dashboard").hide();
 			$('body').toggleClass('rail-show', true);
 			$("#rail-system").show();
 		}
 		else if(pageClicks === 17){
+            $("#car-slider").hide();
+			$("#dashboard").show();
 			$('body').toggleClass('rail-show', false);
 			$("#rail-system").hide();
 			$("#icon-questions").show();
@@ -100,7 +102,7 @@ $(document).ready(function(){
 			$("#last-question-set").show();
 		}
 		else if(pageClicks === 19){
-      $("#car-slider").hide();
+      		
 			$("#last-question-set").hide();
 			$("#think-strategy").show();
 		}
@@ -109,6 +111,7 @@ $(document).ready(function(){
 			$("#congrats").show();
 		}
 		else {
+			$("#car-slider").hide();
 			$("#congrats").hide();
 			$("#splash-page").show();
 			pageClicks = 0;

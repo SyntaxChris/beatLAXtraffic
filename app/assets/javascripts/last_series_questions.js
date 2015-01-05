@@ -4,28 +4,32 @@ $(document).ready(function(){
   	$("#other-last").click(function(){
   		if(otherBoxCount === 0){
   			$("#last-questions-other-container").show();
-  		}else if (otherBoxCount === 1){
-			$("#last-questions-other-container").hide();
+  		}
+      else if (otherBoxCount === 1){
+			  $("#last-questions-other-container").hide();
   		}
   	}); 
+
   	$("#last-other-cancel").click(function(){
   		$("#last-questions-other-container").hide();
   	});
+
   	$("#last-other-save").click(function(){
   		$("#last-questions-other-container").hide();
   	});
 
   	$(".question-wrapper-1").click(function(){
-  		$("#question-set-1").fadeOut();
+  		$("#question-set-1").hide();
   		$("#question-set-2").fadeIn();
   	});
+
   	$("#last-other-save").click(function(){
-  		$("#question-set-1").fadeOut();
+  		$("#question-set-1").hide();
   		$("#question-set-2").fadeIn();
   	});
 
   	$(".question-wrapper-2").click(function(){
-  		$("#question-set-2").fadeOut();
+  		$("#question-set-2").hide();
   		$("#question-set-3").fadeIn();
   	});
 
