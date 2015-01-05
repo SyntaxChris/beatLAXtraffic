@@ -736,12 +736,13 @@
       <div class="show-for-portrait">
         <div class="row">
           <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
-            <div id="question-header">
+            <div id="question-header" style="text-align: center">
                 <h3 id="main">What are you doing while you wait?</h3>
-                <h5 id="foot">Select all that apply</h5> 
-            </div>
-            <div  class="next" style="color: white; width: 100px; position: absolute; left: 38%; top: 110%; padding 10px; text-align: center; border-radius: 5px;">
-                Next
+                <h5 id="foot" style="text-align:center">
+                Select all that apply
+<div class="next" style="color: white; width: 100px; border-radius: 5px; position: relative; margin-left: auto; margin-right: auto">Next</div>
+                </h5> 
+                
             </div>
           </div>
         </div>
@@ -918,13 +919,13 @@
           <div class="medium-10 small-11 medium-centered small-centered columns">
 
             <div class="row">
-              <div class="medium-6 small-6 columns" id="tally">
+              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
                 <%= render 'phone' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   On my phone
                 </div>
               </div>
-              <div class="medium-6 small-6 columns" id="tally">
+              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
                 <%= render 'shop' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   Shop in the terminal
@@ -933,13 +934,13 @@
             </div>
 
             <div class="row" id="bottom-tile-row">
-              <div class="medium-6 small-6 columns" id="tally">
+              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
                 <%= render 'hangout' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   Hang out
                 </div>
               </div>
-              <div class="medium-6 small-6 columns" id="tally">
+              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
                 <%= render 'eat' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   Food and drinks
@@ -950,8 +951,8 @@
             <div class="row" id="small-other-row">
               <div class="medium-8 small-10 medium-centered small-centered columns">
                 <div class="row" style="margin-top: 15px">
-                  <div class="medium-6 small-6 columns" id="tally"><%= render 'smallother' %></div>
-                  <div class="medium-6 small-6 columns" style="padding: 6px 0 0 0"><div class="small-tile-label" style="text-align: left; color: white">Other (Specify)</div></div>
+                  <div class="medium-6 small-6 columns" id="tally" style="padding: 0"><%= render 'smallother' %></div>
+                  <div class="medium-6 small-6 columns" style="padding: 6px 0 0 0"><div class="small-tile-label" style="text-align: left; color: white; font-size: 12px">Other (Specify)</div></div>
                 </div>
                 <div class="row">
                   <div class="small-11 small-centered columns" id="other-small-textbox" style="display:none">
