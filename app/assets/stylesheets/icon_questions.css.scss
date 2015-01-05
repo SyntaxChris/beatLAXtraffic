@@ -2,6 +2,8 @@
 	display: none;
 }
 
+
+
 .icon {
 	cursor: pointer;
 	z-index: 6;
@@ -426,19 +428,20 @@
 		background-color: white;
 		opacity: 0.9;
 		#icon-description-small {
-			width: 300px;
+			position: relative;
+			width: 280px;
+			margin-left: auto;
+			margin-right: auto;
 			text-align: center;
 			color: #78D2EA;
 			font-size: 20px;
-			padding-top: 20px;
-			margin-left: auto;
-			margin-right: auto;
+			padding: 20px 5px 0 5px;
 		}
 		#choice-row {
 			width: 250px;
 			margin-left: 40px;
 			margin-right: auto;
-			margin-top: 30px;
+			margin-top: 10px;
 			#yea-small {
 				cursor: pointer;
 				display: inline-block;
