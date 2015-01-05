@@ -9,12 +9,12 @@ $(document).ready(function(){
 	});
 	$('.other-strategy').keyup(function() {
 	    var cs = 140 - $(this).val().length;
-	    $('[id=char-count-strategy]').text(cs);
+	    $('[id=char-count-strategy]').text(cs + " characters left");
 	});
 
 	$('#other-info-last-questions').keyup(function() {
 	    var cs = 140 - $(this).val().length;
-	    $('#char-count-last-questions').text(cs + " characters left");
+	    $("[id='char-count-last-questions']").text(cs + " characters left");
 	});
 
 	var inputToggle = 0;

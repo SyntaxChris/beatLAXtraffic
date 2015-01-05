@@ -48,7 +48,7 @@
         < 30 minutes away
       </div>
       <div class="row" id="row-6">
-        <div id="confirm-btn"><b>Confirm</b></div>
+        <div id="confirm-btn"><b>Next</b></div>
         <%= render 'tower' %>
         <%= render 'laxArch' %>
       </div>
@@ -330,8 +330,7 @@
                             Cancel
                           </div>
 
-                          <div id="char-count-strategy" style="text-align:center; color: #C1C1C1"></div>
-                          <div style="color:#C1C1C1; font-size: 8px; margin-left: 30%">Characters Left</div>
+                          <div id="char-count-strategy" style="text-align:center; color: #C1C1C1; font-size: 12px; margin-left: 8%"></div>
                         </div>
                         <div class="large-7 medium-7 columns">
                           <textarea class="other-strategy" placeholder="Please write here." cols="1" rows="6" maxlength="140" style="margin-top: 3%; background-color: #F0943F; color: white; postion: absolute; left: 40px; top: 20px"></textarea>
@@ -504,8 +503,8 @@
               </div>
             </div>
             <div class="row" style="text-align: center; color; margin-left: 5px;">
-              <div id="char-count-strategy" style="color: #C1C1C1; padding:0; margin:0"></div>
-              <div style="color:#C1C1C1; font-size: 2vw; padding: 0; margin:0">Characters Left</div>
+              <div id="char-count-strategy" style="color: #C1C1C1; padding:0; margin:0; font-size: 12px"></div>
+              <div style="color:#C1C1C1; font-size: 2vw; padding: 0; margin:0"></div>
             </div>
           </div>
           <div class="small-9 columns">
@@ -579,7 +578,7 @@
               <textarea id="other-info" cols="1" rows="5" maxlength="140"></textarea>
             </div>
             <br>
-            <div id="char-count" style="position: absolute; margin-left: 15%; text-align:center; color: #B2C4D4; font-size: 12px; width: 90%; margin-left: auto; margin-right: auto"></div>
+            <div id="char-count" style="display: none; position: absolute; margin-left: 15%; text-align:center; color: #B2C4D4; font-size: 12px; width: 90%; margin-left: auto; margin-right: auto"></div>
             <div class="parking-submit">
               <div class="parking-submit-btn">OK</div>
             </div>
@@ -1098,7 +1097,7 @@
             </div>
             <div class="icon" id="family">
               <%= render 'family' %>
-              <div style="display:none">Hi, I'm the family icon</div>
+              <div style="display:none">Hi, I'm the playground icon</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
 
             </div>
