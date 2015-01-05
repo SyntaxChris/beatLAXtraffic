@@ -6,8 +6,6 @@ $(document).ready(function(){
  	var otherToggle = 0;
  	var saveToggle = 0;
 
-
-
  	$('#guy').click(function(){
  		if(guyToggle === 0){
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "#98CC2D");
@@ -315,8 +313,6 @@ $(document).ready(function(){
 		else{
 			$(".strategy-submit").hide();
 		}
-
-
 	});
 
 	$(".save").click(function(){
