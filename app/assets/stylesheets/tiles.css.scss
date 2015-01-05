@@ -13,6 +13,11 @@ div#question-header {
 	}
 }
 
+.next {
+	display: none;
+	position: absolute;
+}
+
 .unchecked-phone-tile,
 .unchecked-shop-tile,
 .unchecked-hangout-tile,
