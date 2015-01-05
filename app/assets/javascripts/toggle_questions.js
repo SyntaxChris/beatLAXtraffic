@@ -80,10 +80,10 @@ $(document).ready(function(){
 		else if(pageClicks === 15){
 			$( "#timer-pickup" ).hide();
 			$( ".red-car" ).toggleClass('animate', false);
-			$("#car-slider").hide();
 			$( "#willing-to-wait" ).show();
 		}
 		else if(pageClicks === 16) {
+			$("#car-slider").hide();
 			$( "#willing-to-wait" ).hide();
 			$("#dashboard").show();
 			$('body').toggleClass('rail-show', true);

@@ -16,6 +16,7 @@
 //= require foundation
 //= require 'dashboard'
 //= require 'toggle_questions'
+//= require 'char_count'
 //= require 'intro'
 //= require 'distance_questions'
 //= require 'tile_questions'
