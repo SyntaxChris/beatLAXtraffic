@@ -83,8 +83,8 @@ $(document).ready(function(){
 			$( "#willing-to-wait" ).show();
 		}
 		else if(pageClicks === 16) {
-			$("#car-slider").hide();
 			$( "#willing-to-wait" ).hide();
+			$("#car-slider").hide();
 			$("#dashboard").show();
 			$('body').toggleClass('rail-show', true);
 			$("#rail-system").show();
