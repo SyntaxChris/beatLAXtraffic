@@ -31,10 +31,10 @@ $(document).ready(function(){
   }
   
   if(suitcaseNum === 1){
-    carryOrSuit === 1 ?  $('#suitcase').text("Large Suitcase") :  $('#suitcase').text("Carry on bag");
+    carryOrSuit === 1 ? $('#suitcase').text("Large Suitcase") : $('#suitcase').text("Carry on bag");
   }
   else{
-    carryOrSuit === 1 ?  $('#suitcase').text("Large Suitcases") :  $('#suitcase').text("Carry on bags");
+    carryOrSuit === 1 ? $('#suitcase').text("Large Suitcases") : $('#suitcase').text("Carry on bags");
   }
 
   // randomize flight number
