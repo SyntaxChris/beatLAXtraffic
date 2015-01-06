@@ -3,11 +3,9 @@ $(document).ready(function(){
 
     $('body').on('startDashboardAnimation', startDashboardAnimation);
 
-    function startDashboardAnimation(){
-       
+    function startDashboardAnimation(){ 
         $("#plane-bar").animate({width: planeProgress+"%"}, 15000);
         $("#filler").animate({marginLeft: planeProgress+"%"}, 16000);
-        
         
         $(function () {
             var prevWidth = $('#plane-bar').width();
@@ -28,4 +26,6 @@ $(document).ready(function(){
             })
         });
     }
+    
+    startDashboardAnimation();
 });
