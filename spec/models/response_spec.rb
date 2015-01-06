@@ -176,6 +176,44 @@ RSpec.describe Response, :type => :model do
   end
 
   describe "Features" do
+    describe "create_from_node_interaction" do
+      let!(:respondent) { create(:respondent) }
+      let!(:node) { create(:node) }
+      let!(:answer) { create(:answer) }
+
+      it "creates a response for a respondent" do
+      argument_params = {
+        is_decision: false,
+        respondent_id: respondent.id,
+        node_id: node.id,
+        answers: [
+          { answer_id: answer.id,
+            rank: nil
+          }
+        ],
+        time_remaining: nil
+      }
+        response_count = respondent.responses.count
+        Response.create_from_node_interaction(argument_params)
+        expect(respondent.responses.count).to eq response_count + 1
+        expect(respondent.response.last.node_id).to eq node.id
+        expect(respondent.response.last.answer_id).to eq answer.id
+        expect(respondent.response.last.node_id).to eq node.id
+      end
+
+      it "decides on times_seen" do
+
+      end
+
+      it "decides if this node was skipped" do
+
+      end
+
+      it "creates a separate response for each multiple choice answer" do
+
+      end
+    end
+
     pending "checks to see if this user has responded to this node before, "\
              "if so, how many times, and increases times_seen accordingly"
 
