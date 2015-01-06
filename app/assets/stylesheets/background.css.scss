@@ -1,161 +1,161 @@
-// div#plane { 
-//     position: absolute;
-//     animation: plane 35s;
-//     animation-iteration-count: infinite;
-//     animation-timing-function: linear;
-//     animation-delay: 35s;  
+div#plane { 
+    position: absolute;
+    animation: plane 35s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 35s;  
 
-//     -webkit-animation: plane 35s; 
-//     -webkit-animation-iteration-count: infinite;
-//     -webkit-animation-timing-function: linear;
-//     -webkit-animation-delay: 25s;
+    -webkit-animation: plane 35s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 25s;
 
-//     -moz-animation: plane 35s; 
-//     -moz-animation-iteration-count: infinite;
-//     -moz-animation-timing-function: linear;
-//     -moz-animation-delay: 25s;
+    -moz-animation: plane 35s; 
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -moz-animation-delay: 25s;
 
-//     -o-animation: plane 35s; 
-//     -o-animation-iteration-count: infinite;
-//     -o-animation-timing-function: linear;
-//     -o-animation-delay: 25s;
+    -o-animation: plane 35s; 
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
+    -o-animation-delay: 25s;
 
-//     -ms-animation: plane 35s; 
-//     -ms-animation-iteration-count: infinite;
-//     -ms-animation-timing-function: linear;
-//     -ms-animation-delay: 25s;
+    -ms-animation: plane 35s; 
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    -ms-animation-delay: 25s;
     
-// }
+}
 
-// .land-ze-plane { 
-//     position: absolute;
-//     animation: landing 7s;
-//     animation-iteration-count: infinite;
-//     animation-timing-function: linear;
+.land-ze-plane { 
+    position: absolute;
+    animation: landing 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 
-//     -webkit-animation: landing 7s; 
-//     -webkit-animation-iteration-count: 1;
-//     -webkit-animation-timing-function: linear;
-//     -webkit-transform: rotate(15deg);
+    -webkit-animation: landing 7s; 
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+    -webkit-transform: rotate(15deg);
 
-//     -moz-animation: landing 7s; 
-//     -moz-animation-iteration-count: 1;
-//     -moz-animation-timing-function: linear;
-//     -moz-transform: rotate(15deg);
+    -moz-animation: landing 7s; 
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: linear;
+    -moz-transform: rotate(15deg);
 
-//     -o-animation: landing 7s; 
-//     -o-animation-iteration-count: 1;
-//     -o-animation-timing-function: linear;
-//     -o-transform: rotate(15deg);
+    -o-animation: landing 7s; 
+    -o-animation-iteration-count: 1;
+    -o-animation-timing-function: linear;
+    -o-transform: rotate(15deg);
 
-//     -ms-animation: landing 7s; 
-//     -ms-animation-iteration-count: 1;
-//     -ms-animation-timing-function: linear;
-//     -ms-transform: rotate(15deg);
+    -ms-animation: landing 7s; 
+    -ms-animation-iteration-count: 1;
+    -ms-animation-timing-function: linear;
+    -ms-transform: rotate(15deg);
 
-// }
+}
 
-// div#far-plane { 
-//     position: absolute;
-//     animation: far 40s;
-//     animation-iteration-count: infinite;
-//     animation-timing-function: linear;
+div#far-plane { 
+    position: absolute;
+    animation: far 40s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 
-//     -webkit-animation: far 40s; 
-//     -webkit-animation-iteration-count: infinite;
-//     -webkit-animation-timing-function: linear;
+    -webkit-animation: far 40s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
 
-//     -moz-animation: far 40s; 
-//     -moz-animation-iteration-count: infinite;
-//     -moz-animation-timing-function: linear;
+    -moz-animation: far 40s; 
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
 
-//     -o-animation: far 40s; 
-//     -o-animation-iteration-count: infinite;
-//     -o-animation-timing-function: linear;
+    -o-animation: far 40s; 
+    -o-animation-iteration-count: infinite;
+    -o-animation-timing-function: linear;
 
-//     -ms-animation: far 40s; 
-//     -ms-animation-iteration-count: infinite;
-//     -ms-animation-timing-function: linear;
-// }
+    -ms-animation: far 40s; 
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+}
 
-// @keyframes plane {
-//     0%   {left:110%; top:15%;}
-//     8%  {left:10%; top:-25%;}
-//     100% {left:0%; top:-25%;}
-// }
+@keyframes plane {
+    0%   {left:110%; top:15%;}
+    8%  {left:10%; top:-25%;}
+    100% {left:0%; top:-25%;}
+}
 
-// @keyframes landing {
-//     0%   {left:110%; top:-25%;}
-//     100% {left:-90%; top: 35%;}
-// }
+@keyframes landing {
+    0%   {left:110%; top:-25%;}
+    100% {left:-90%; top: 35%;}
+}
 
-// @keyframes far {
-//     0%   {left:-20%; top:15%;}
-//     30%  {left:110%; top: 5%;}
-//     100% {left:120%; top:-15%;}
-// }
-
-
-// @-webkit-keyframes plane {
-//     0%   {left:110%; top:15%;}
-//     15%  {left:-50%; top:-25%;}
-//     100% {left:0%; top:-25%;}
-// }
-// @-webkit-keyframes landing {
-//     0%   {left:110%; top:-25%;}
-//     100% {left:-90%; top: 35%;}
-// }
-// @-webkit-keyframes far {
-//     0%   {left:-20%; top:15%;}
-//     30%  {left:110%; top: 5%;}
-//     100% {left:120%; top:-15%;}
-// }
+@keyframes far {
+    0%   {left:-20%; top:15%;}
+    30%  {left:110%; top: 5%;}
+    100% {left:120%; top:-15%;}
+}
 
 
-// @-moz-keyframes plane {
-//     0%   {left:110%; top:15%;}
-//     8%  {left:10%; top:-25%;}
-//     100% {left:0%; top:-25%;}
-// }
-// @-moz-keyframes landing {
-//     0%   {left:110%; top:-25%;}
-//     100% {left:-90%; top: 35%;}
-// }
-// @-moz-keyframes far {
-//     0%   {left:-20%; top:15%;}
-//     30%  {left:110%; top: 5%;}
-//     100% {left:120%; top:-15%;}
-// }
-// @-o-keyframes plane {
-//     0%   {left:110%; top:15%;}
-//     8%  {left:10%; top:-25%;}
-//     100% {left:0%; top:-25%;}
-// }
+@-webkit-keyframes plane {
+    0%   {left:110%; top:15%;}
+    15%  {left:-50%; top:-25%;}
+    100% {left:0%; top:-25%;}
+}
+@-webkit-keyframes landing {
+    0%   {left:110%; top:-25%;}
+    100% {left:-90%; top: 35%;}
+}
+@-webkit-keyframes far {
+    0%   {left:-20%; top:15%;}
+    30%  {left:110%; top: 5%;}
+    100% {left:120%; top:-15%;}
+}
 
-// @-o-keyframes landing {
-//     0%   {left:110%; top:-25%;}
-//     100% {left:-90%; top: 35%;}
-// }
-// @-o-keyframes far {
-//     0%   {left:-20%; top:15%;}
-//     30%  {left:110%; top: 5%;}
-//     100% {left:120%; top:-15%;}
-// }
 
-// @-ms-keyframes plane {
-//     0%   {left:110%; top:15%;}
-//     8%  {left:10%; top:-25%;}
-//     100% {left:0%; top:-25%;}
-// }
-// @-ms-keyframes landing {
-//     0%   {left:110%; top:-25%;}
-//     100% {left:-90%; top: 35%;}
-// }
-// @-ms-keyframes far {
-//     0%   {left:-20%; top:15%;}
-//     30%  {left:110%; top: 5%;}
-//     100% {left:120%; top:-15%;}
-// }
+@-moz-keyframes plane {
+    0%   {left:110%; top:15%;}
+    8%  {left:10%; top:-25%;}
+    100% {left:0%; top:-25%;}
+}
+@-moz-keyframes landing {
+    0%   {left:110%; top:-25%;}
+    100% {left:-90%; top: 35%;}
+}
+@-moz-keyframes far {
+    0%   {left:-20%; top:15%;}
+    30%  {left:110%; top: 5%;}
+    100% {left:120%; top:-15%;}
+}
+@-o-keyframes plane {
+    0%   {left:110%; top:15%;}
+    8%  {left:10%; top:-25%;}
+    100% {left:0%; top:-25%;}
+}
+
+@-o-keyframes landing {
+    0%   {left:110%; top:-25%;}
+    100% {left:-90%; top: 35%;}
+}
+@-o-keyframes far {
+    0%   {left:-20%; top:15%;}
+    30%  {left:110%; top: 5%;}
+    100% {left:120%; top:-15%;}
+}
+
+@-ms-keyframes plane {
+    0%   {left:110%; top:15%;}
+    8%  {left:10%; top:-25%;}
+    100% {left:0%; top:-25%;}
+}
+@-ms-keyframes landing {
+    0%   {left:110%; top:-25%;}
+    100% {left:-90%; top: 35%;}
+}
+@-ms-keyframes far {
+    0%   {left:-20%; top:15%;}
+    30%  {left:110%; top: 5%;}
+    100% {left:120%; top:-15%;}
+}
 
 @media screen and (max-width: 320px) {
     #cloud-1 svg {
@@ -193,93 +193,93 @@
         width: 150px;
     }
 
-//     @keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         8%  {left:10%; top:-25%;}
-//         100% {left:0%; top:-25%;}
-//     }
+    @keyframes plane {
+        0%   {left:110%; top:15%;}
+        8%  {left:10%; top:-25%;}
+        100% {left:0%; top:-25%;}
+    }
 
-//     @-webkit-keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         8%  {left:10%; top:-25%;}
-//         100% {left:0%; top:-25%;}
-//     }
+    @-webkit-keyframes plane {
+        0%   {left:110%; top:15%;}
+        8%  {left:10%; top:-25%;}
+        100% {left:0%; top:-25%;}
+    }
 
-//     @-moz-keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         8%  {left:10%; top:-25%;}
-//         100% {left:0%; top:-25%;}
-//     }
-//     @-o-keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         8%  {left:10%; top:-25%;}
-//         100% {left:0%; top:-25%;}
-//     }
-//     @-ms-keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         8%  {left:10%; top:-25%;}
-//         100% {left:0%; top:-25%;}
-//     }
+    @-moz-keyframes plane {
+        0%   {left:110%; top:15%;}
+        8%  {left:10%; top:-25%;}
+        100% {left:0%; top:-25%;}
+    }
+    @-o-keyframes plane {
+        0%   {left:110%; top:15%;}
+        8%  {left:10%; top:-25%;}
+        100% {left:0%; top:-25%;}
+    }
+    @-ms-keyframes plane {
+        0%   {left:110%; top:15%;}
+        8%  {left:10%; top:-25%;}
+        100% {left:0%; top:-25%;}
+    }
 
-//     @keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         40% {left:-120%; top: 25%;}
-//         100% {left:-120%; top: 25%;}
-//     }
+    @keyframes landing {
+        0%   {left:110%; top:-25%;}
+        40% {left:-120%; top: 25%;}
+        100% {left:-120%; top: 25%;}
+    }
 
-//     @-webkit-keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         40% {left:-120%; top: 25%;}
-//         100% {left:-120%; top: 25%;}
-//     }
+    @-webkit-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        40% {left:-120%; top: 25%;}
+        100% {left:-120%; top: 25%;}
+    }
 
-//     @-moz-keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         40% {left:-120%; top: 25%;}
-//         100% {left:-120%; top: 25%;}
-//     }
+    @-moz-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        40% {left:-120%; top: 25%;}
+        100% {left:-120%; top: 25%;}
+    }
 
-//     @-o-keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         40% {left:-120%; top: 25%;}
-//         100% {left:-120%; top: 25%;}
-//     }
+    @-o-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        40% {left:-120%; top: 25%;}
+        100% {left:-120%; top: 25%;}
+    }
 
-//     @-ms-keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         40% {left:-120%; top: 25%;}
-//         100% {left:-120%; top: 25%;}
-//     }
+    @-ms-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        40% {left:-120%; top: 25%;}
+        100% {left:-120%; top: 25%;}
+    }
 
-//     @keyframes far {
-//         0%   {left:-30%; top:15%;}
-//         10%  {left:110%; top: 5%;}
-//         100% {left:120%; top:-15%;}
-//     }
+    @keyframes far {
+        0%   {left:-30%; top:15%;}
+        10%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
 
-//     @-webkit-keyframes far {
-//         0%   {left:-30%; top:15%;}
-//         10%  {left:110%; top: 5%;}
-//         100% {left:120%; top:-15%;}
-//     }
+    @-webkit-keyframes far {
+        0%   {left:-30%; top:15%;}
+        10%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
 
-//     @-moz-keyframes far {
-//         0%   {left:-30%; top:15%;}
-//         10%  {left:110%; top: 5%;}
-//         100% {left:120%; top:-15%;}
-//     }
+    @-moz-keyframes far {
+        0%   {left:-30%; top:15%;}
+        10%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
 
-//     @-o-keyframes far {
-//         0%   {left:-30%; top:15%;}
-//         10%  {left:110%; top: 5%;}
-//         100% {left:120%; top:-15%;}
-//     }
+    @-o-keyframes far {
+        0%   {left:-30%; top:15%;}
+        10%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
 
-//     @-ms-keyframes far {
-//         0%   {left:-30%; top:15%;}
-//         10%  {left:110%; top: 5%;}
-//         100% {left:120%; top:-15%;}
-//     }
+    @-ms-keyframes far {
+        0%   {left:-30%; top:15%;}
+        10%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
 
 }
 
@@ -320,63 +320,63 @@
         width: 150px;
     }
 
-//     @keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         15%  {left:-20%; top:-15%;}
-//         100% {left:0%; top:-25%;}
-//     }
+    @keyframes plane {
+        0%   {left:110%; top:15%;}
+        15%  {left:-20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
 
-//     @-webkit-keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         15%  {left:-20%; top:-15%;}
-//         100% {left:0%; top:-25%;}
-//     }
+    @-webkit-keyframes plane {
+        0%   {left:110%; top:15%;}
+        15%  {left:-20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
 
-//     @-moz-keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         15%  {left:-20%; top:-15%;}
-//         100% {left:0%; top:-25%;}
-//     }
-//     @-o-keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         15%  {left:-20%; top:-15%;}
-//         100% {left:0%; top:-25%;}
-//     }
-//     @-ms-keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         15%  {left:-20%; top:-15%;}
-//         100% {left:0%; top:-25%;}
-//     }
+    @-moz-keyframes plane {
+        0%   {left:110%; top:15%;}
+        15%  {left:-20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
+    @-o-keyframes plane {
+        0%   {left:110%; top:15%;}
+        15%  {left:-20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
+    @-ms-keyframes plane {
+        0%   {left:110%; top:15%;}
+        15%  {left:-20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
 
-//     @keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         70% {left:-90%; top: 25%;}
-//         100% {left:-91%; top: 25%;}
-//     }
+    @keyframes landing {
+        0%   {left:110%; top:-25%;}
+        70% {left:-90%; top: 25%;}
+        100% {left:-91%; top: 25%;}
+    }
 
-//     @-webkit-keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         70% {left:-90%; top: 25%;}
-//         100% {left:-91%; top: 25%;}
-//     }
+    @-webkit-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        70% {left:-90%; top: 25%;}
+        100% {left:-91%; top: 25%;}
+    }
 
-//     @-moz-keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         70% {left:-90%; top: 25%;}
-//         100% {left:-91%; top: 25%;}
-//     }
+    @-moz-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        70% {left:-90%; top: 25%;}
+        100% {left:-91%; top: 25%;}
+    }
 
-//     @-o-keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         70% {left:-90%; top: 25%;}
-//         100% {left:-91%; top: 25%;}
-//     }
+    @-o-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        70% {left:-90%; top: 25%;}
+        100% {left:-91%; top: 25%;}
+    }
 
-//     @-ms-keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         70% {left:-90%; top: 25%;}
-//         100% {left:-91%; top: 25%;}
-//     } 
+    @-ms-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        70% {left:-90%; top: 25%;}
+        100% {left:-91%; top: 25%;}
+    } 
 }
 
 @media screen and (max-width: 640px) {
@@ -409,133 +409,133 @@
         
     }
 
-//     .land-ze-plane { 
-//         position: absolute;
-//         animation: landing 4s;
-//         animation-iteration-count: infinite;
-//         animation-timing-function: linear;
+    .land-ze-plane { 
+        position: absolute;
+        animation: landing 4s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
 
-//         -webkit-animation: landing 4s; 
-//         -webkit-animation-iteration-count: 1;
-//         -webkit-animation-timing-function: linear;
-//         -webkit-transform: rotate(15deg);
+        -webkit-animation: landing 4s; 
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation-timing-function: linear;
+        -webkit-transform: rotate(15deg);
 
-//         -moz-animation: landing 4s; 
-//         -moz-animation-iteration-count: 1;
-//         -moz-animation-timing-function: linear;
-//         -moz-transform: rotate(15deg);
+        -moz-animation: landing 4s; 
+        -moz-animation-iteration-count: 1;
+        -moz-animation-timing-function: linear;
+        -moz-transform: rotate(15deg);
 
-//         -o-animation: landing 4s; 
-//         -o-animation-iteration-count: 1;
-//         -o-animation-timing-function: linear;
-//         -o-transform: rotate(15deg);
+        -o-animation: landing 4s; 
+        -o-animation-iteration-count: 1;
+        -o-animation-timing-function: linear;
+        -o-transform: rotate(15deg);
 
-//         -ms-animation: landing 4s; 
-//         -ms-animation-iteration-count: 1;
-//         -ms-animation-timing-function: linear;
-//         -ms-transform: rotate(15deg);
+        -ms-animation: landing 4s; 
+        -ms-animation-iteration-count: 1;
+        -ms-animation-timing-function: linear;
+        -ms-transform: rotate(15deg);
 
-//     }
+    }
 
-//     div#far-plane { 
-//         position: absolute;
-//         animation: far 25s;
-//         animation-iteration-count: infinite;
-//         animation-timing-function: linear;
+    div#far-plane { 
+        position: absolute;
+        animation: far 25s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
 
-//         -webkit-animation: far 25s; 
-//         -webkit-animation-iteration-count: infinite;
-//         -webkit-animation-timing-function: linear;
+        -webkit-animation: far 25s; 
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
 
-//         -moz-animation: far 25s; 
-//         -moz-animation-iteration-count: infinite;
-//         -moz-animation-timing-function: linear;
+        -moz-animation: far 25s; 
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
 
-//         -o-animation: far 25s; 
-//         -o-animation-iteration-count: infinite;
-//         -o-animation-timing-function: linear;
+        -o-animation: far 25s; 
+        -o-animation-iteration-count: infinite;
+        -o-animation-timing-function: linear;
 
-//         -ms-animation: far 25s; 
-//         -ms-animation-iteration-count: infinite;
-//         -ms-animation-timing-function: linear;
-//     }
+        -ms-animation: far 25s; 
+        -ms-animation-iteration-count: infinite;
+        -ms-animation-timing-function: linear;
+    }
 
-//     @keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         15%  {left:20%; top:-15%;}
-//         100% {left:0%; top:-25%;}
-//     }
+    @keyframes plane {
+        0%   {left:110%; top:15%;}
+        15%  {left:20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
 
-//     @keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         100% {left:-100%; top: 25%;}
-//     }
+    @keyframes landing {
+        0%   {left:110%; top:-25%;}
+        100% {left:-100%; top: 25%;}
+    }
 
-//     @keyframes far {
-//         0%   {left:0%; top:15%;}
-//         20%  {left:110%; top: 5%;}
-//         100% {left:30%; top:-45%;}
-//     }
+    @keyframes far {
+        0%   {left:0%; top:15%;}
+        20%  {left:110%; top: 5%;}
+        100% {left:30%; top:-45%;}
+    }
 
-//     @-webkit-keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         15%  {left:20%; top:-15%;}
-//         100% {left:0%; top:-25%;}
-//     }
-//     @-webkit-keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         100% {left:-100%; top: 25%;}
-//     }
-//     @-webkit-keyframes far {
-//         0%   {left:-20%; top:15%;}
-//         20%  {left:110%; top: 5%;}
-//         100% {left:120%; top:-15%;}
-//     }
+    @-webkit-keyframes plane {
+        0%   {left:110%; top:15%;}
+        15%  {left:20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
+    @-webkit-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        100% {left:-100%; top: 25%;}
+    }
+    @-webkit-keyframes far {
+        0%   {left:-20%; top:15%;}
+        20%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
 
-//     @-moz-keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         15%  {left:20%; top:-15%;}
-//         100% {left:0%; top:-25%;}
-//     }
-//     @-moz-keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         100% {left:-100%; top: 25%;}
-//     }
-//     @-moz-keyframes far {
-//         0%   {left:-20%; top:15%;}
-//         20%  {left:110%; top: 5%;}
-//         100% {left:120%; top:-15%;}
-//     }
-//     @-o-keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         15%  {left:20%; top:-15%;}
-//         100% {left:0%; top:-25%;}
-//     }
+    @-moz-keyframes plane {
+        0%   {left:110%; top:15%;}
+        15%  {left:20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
+    @-moz-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        100% {left:-100%; top: 25%;}
+    }
+    @-moz-keyframes far {
+        0%   {left:-20%; top:15%;}
+        20%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
+    @-o-keyframes plane {
+        0%   {left:110%; top:15%;}
+        15%  {left:20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
 
-//     @-o-keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         100% {left:-100%; top: 25%;}
-//     }
-//     @-o-keyframes far {
-//         0%   {left:-20%; top:15%;}
-//         20%  {left:110%; top: 5%;}
-//         100% {left:120%; top:-15%;}
-//     }
+    @-o-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        100% {left:-100%; top: 25%;}
+    }
+    @-o-keyframes far {
+        0%   {left:-20%; top:15%;}
+        20%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
 
-//     @-ms-keyframes plane {
-//         0%   {left:110%; top:15%;}
-//         15%  {left:20%; top:-15%;}
-//         100% {left:0%; top:-25%;}
-//     }
-//     @-ms-keyframes landing {
-//         0%   {left:110%; top:-25%;}
-//         100% {left:-100%; top: 25%;}
-//     }
-//     @-ms-keyframes far {
-//         0%   {left:-20%; top:15%;}
-//         20%  {left:110%; top: 5%;}
-//         100% {left:120%; top:-15%;}
-//     }
+    @-ms-keyframes plane {
+        0%   {left:110%; top:15%;}
+        15%  {left:20%; top:-15%;}
+        100% {left:0%; top:-25%;}
+    }
+    @-ms-keyframes landing {
+        0%   {left:110%; top:-25%;}
+        100% {left:-100%; top: 25%;}
+    }
+    @-ms-keyframes far {
+        0%   {left:-20%; top:15%;}
+        20%  {left:110%; top: 5%;}
+        100% {left:120%; top:-15%;}
+    }
   
 }
 
