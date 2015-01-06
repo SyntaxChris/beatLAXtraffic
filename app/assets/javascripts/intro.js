@@ -9,6 +9,13 @@ $(document).ready(function(){
     .on('click', '.x-btn-accept-mission', acceptMission)
     .on('click', '.x-btn-continue-mission', continueMission);
 
+  // randomize person pickup number
+  var personPickup = Math.floor(Math.random() * 3) + 1;
+  var suitcaseNum = Math.floor(Math.random() * 3) + 1;
+
+  $('.number.person').text(personPickup);
+  $('.number.suitcase').text(suitcaseNum);
+
   // randomize flight number
   var flightNum = Math.floor(Math.random() * 900) + 100;
   $('span#flight-num').text(flightNum);
@@ -62,7 +69,7 @@ $(document).ready(function(){
 
   // randomize plane time
   var landTime = ["30", "1", "2"][Math.floor(Math.random() * 3)];
-  $('.number').text(landTime);
+  $('.number.landing').text(landTime);
 
   if(landTime === "30"){
     $('.unit').text("min")
