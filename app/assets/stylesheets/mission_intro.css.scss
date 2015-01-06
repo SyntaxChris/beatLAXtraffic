@@ -99,9 +99,26 @@
   }
   .nav-left {
     right: 59%;
+    .nav-arrow{
+      margin-top: 5px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid white;
+      border-bottom: 10px solid transparent;
+    }
   }
   .nav-right {
     left: 59%;
+    .nav-arrow{
+      margin-top: 5px;
+      margin-left: 20px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-left: 10px solid white;
+      border-bottom: 10px solid transparent;
+    }
   }
   .chat-bubble {
     color: #3CBDE9;
