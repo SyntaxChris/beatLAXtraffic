@@ -139,18 +139,16 @@
               <div class="airport-heading">
                 Departing
               </div>
-              <div class="airport-code">
-                XXX
+              <div id="departure" class="airport-code">
               </div>
-              <div class="airport-name">
-                airport_name
+              <div id="depart" class="airport-name">
               </div>
             </div>
             <div class="center">
               <div>
                 <%= render 'introplane' %>
               </div>
-              <div class="flight-number">Flight xxx</div>
+              <div class="flight-number">Flight <span id="flight-num"></span></div>
             </div>
             <div class="right-side">
               <div class="airport-heading">
@@ -165,7 +163,7 @@
             </div>
           </div>
           <div class="conditions">
-            <div class="traffic-meter medium">
+            <div id="traffic-meter" class="traffic-meter">
               <div class="tally-1"></div>
               <div class="tally-2"></div>
               <div class="tally-3"></div>
@@ -176,13 +174,13 @@
               <div class="tally-8"></div>
             </div>
             <div class="traffic-summary">
-              LAX Traffic Level: <span class="traffic-label">Medium</span>
+              LAX Traffic Level: <span class="traffic-label"></span>
             </div>
 
             <div class="time-summary">
               <div>
                 <div class="gray-bg"></div>
-                <span class="blurb dIB vAM">Plan will land in</span>
+                <span class="blurb dIB vAM">Plane will land in</span>
                 <div class="time-till-arrival">
                   <div class="number">1</div>
                   <div class="unit">hr</div>
@@ -715,6 +713,62 @@
     </div>
   </div>
   <!-- END SPINNER QUESTIONS -->
+
+  <div id="parking-spinner-question" style="display:none">
+    <div id="chance-time">
+      <h3 style="color: white; text-align: center">Chance Time!</h3>
+      <h5 style="color: white; text-align: center">You arrive at the parking lot and<br>see that the parking lot is...</h5>
+    </div>
+
+    <div id="parking-congrats" style="display:none;">
+      <h3 style="color: white; text-align: center">Congratulations!</h3>
+      <h5 style="color: white; text-align: center">You got a parking spot</h5>
+      <div id="continue-button">
+        Continue
+      </div>
+    </div>
+
+    <div id="try-again" style="display:none">
+      <h3 style="color: white; text-align: center;">Try again?</h3>
+      <div id="yup-spinner"><%= render 'yea' %></div>
+      <div id="nope-spinner"><%= render 'nah' %></div>
+    </div>
+
+    <div id="spin-button">
+      Spin
+    </div>
+
+    <div class="row" id="spinner-components">
+      <div class="large-7 medium-8 small-12 large-centered medium-centered small-centered columns">
+        <div style="width: 100%; padding-bottom: 50%; padding-left: 2%">
+          <div style="width: 100%; position: absolute; z-index: 3">
+            <div class="row" style="padding: 0">
+              <div class="large-4 medium-4 small-4 large-centered medium-centered small-centered columns" style="padding-left: 0">
+                <div style="width: 100%; padding-bottom: 10%;">
+                  <div id="wheel-pointer" style="padding-right: 25%; padding-left: 10%">
+                    <%= render 'wheelPointer' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="position: relative; z-index: 1; width: 100%; padding-top: 4%; margin: 0">
+            <div id="wheel" style="padding: 0; margin: 0">
+              <%= render 'wheel' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-5 medium-5 small-9 columns large-centered medium-centered small-centered columns">
+        <div id="parking-trophy" style="display: none">
+          <%= render 'parkingTrophy' %>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <!-- 7. TILE QUESTIONS -->
@@ -1915,8 +1969,8 @@
               <%= render 'planelogo' %>
             </div>
             <div class="large-9 medium-9 small-9 columns" style="padding-top: 25px">
-              <div class="row" style="font-size: 2vw">FLIGHT <span>2577</span></div>
-              <div class="row" style="font-size: 1.4vw">Inbound from <span id="inbound-from">ORD</span></div>
+              <div class="row" style="font-size: 2vw">FLIGHT <span id="dash-flight-num"></span></div>
+              <div class="row" style="font-size: 1.4vw">Inbound from <span id="inbound-from"></span></div>
             </div>
           </div>
         </div>
@@ -1938,7 +1992,7 @@
   </div>
 
   <div id="progress-bar">
-    <div id="ord">ORD</div>
+    <div id="ord"></div>
     <div id="bar-back">
       <div id="plane-bar"></div>
       <div id="filler">
