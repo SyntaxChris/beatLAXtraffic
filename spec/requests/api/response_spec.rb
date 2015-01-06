@@ -3,17 +3,6 @@ require 'rails_helper'
 describe "responses API" do
   describe "create" do
     it "records a survey response for a respondent" do
-    # "node_id"
-    # "respondent_id"
-    # "freeform_answer"
-    # "answer_id"
-    # "decision_id"
-    # "times_seen",       default: 1
-    # "time_remaining"
-    # "seen"
-    # "skipped"
-    # "rank"
-    # "user_interaction"
       params = {
         is_decision: nil,
         node_id: nil,
