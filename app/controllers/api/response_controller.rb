@@ -2,11 +2,11 @@ module Api
   class ResponseController < ApplicationController
 
     def create
-      result = Response.create_from_node_interaction(params)
+      result = Response.create_all_from_node_interaction(params)
       if result["status"] == "success"
-        render json: "success!", status: 200
+        render json: {status: result["status"]}, status: 200
       else
-        render json: "fail", status: 402
+        render json: {status: result["status"], messages: result["messages"]}, status: 402
       end
     end
 

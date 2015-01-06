@@ -184,7 +184,7 @@ RSpec.describe Response, :type => :model do
   end
 
   describe "Features" do
-    describe "create_from_node_interaction" do
+    describe "create_all_from_node_interaction" do
       context "survey questions" do
         let!(:respondent) { create(:respondent) }
         let!(:node) { create(:node) }
@@ -206,7 +206,7 @@ RSpec.describe Response, :type => :model do
           time_elapsed: 10
         }
           response_count = respondent.responses.count
-          Response.create_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params)
           expect(respondent.responses.count).to eq response_count + 1
           expect(respondent.responses.last.node_id).to eq node.id
           expect(respondent.responses.last.answer_id).to eq answer.id
@@ -228,7 +228,7 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params)
           expect(respondent.responses.count).to eq response_count + 1
           expect(respondent.responses.last.node_id).to eq node.id
           expect(respondent.responses.last.answer_id).to eq answer.id
@@ -246,7 +246,7 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params)
           expect(respondent.responses.count).to eq response_count + 1
           expect(respondent.responses.last.node_id).to eq node.id
           expect(respondent.responses.last.answer_id).to eq nil
@@ -266,7 +266,7 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params)
           expect(respondent.responses.count).to eq response_count + 1
           expect(respondent.responses.last.node_id).to eq node.id
           expect(respondent.responses.last.answer_id).to eq nil
@@ -298,7 +298,7 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params)
           expect(respondent.responses.count).to eq response_count + 3
           expect(respondent.responses.where(answer_id: answer.id).first.rank).to eq 2
           expect(respondent.responses.where(answer_id: answer_2.id).first.rank).to eq 3
@@ -330,7 +330,7 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params)
           expect(respondent.responses.count).to eq response_count + 3
           expect(respondent.responses.where(answer_id: answer.id).last.rank).to eq 2
           expect(respondent.responses.where(answer_id: answer.id).last.times_seen).to eq 2
@@ -363,10 +363,11 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params)
           expect(respondent.responses.count).to eq response_count + 1
           expect(respondent.responses.last.node_id).to eq node.id
           expect(respondent.responses.last.decision_id).to eq decision.id
+          expect(respondent.responses.last.skipped).to eq nil
         end
       end
     end
