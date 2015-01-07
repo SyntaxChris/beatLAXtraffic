@@ -12,9 +12,30 @@ $(document).ready(function(){
   // randomize person pickup number
   var personPickup = Math.floor(Math.random() * 3) + 1;
   var suitcaseNum = Math.floor(Math.random() * 3) + 1;
+  var carryOrSuit = Math.floor(Math.random() * 2);
 
   $('.number.person').text(personPickup);
   $('.number.suitcase').text(suitcaseNum);
+
+  if(personPickup === 1){
+    $('#client').text("Client");
+    $('#cousin').text("Cousin");
+    $('#colleague').text("Colleague");
+    $('#friend').text("Friend");
+  }
+  else{
+    $('#client').text("Clients");
+    $('#cousin').text("Cousins");
+    $('#colleague').text("Colleagues");
+    $('#friend').text("Friends");
+  }
+  
+  if(suitcaseNum === 1){
+    carryOrSuit === 1 ? $('#suitcase').text("Large Suitcase") : $('#suitcase').text("Carry on bag");
+  }
+  else{
+    carryOrSuit === 1 ? $('#suitcase').text("Large Suitcases") : $('#suitcase').text("Carry on bags");
+  }
 
   // randomize flight number
   var flightNum = Math.floor(Math.random() * 900) + 100;

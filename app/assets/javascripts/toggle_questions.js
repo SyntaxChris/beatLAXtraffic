@@ -32,81 +32,85 @@ $(document).ready(function(){
 		else if(pageClicks === 6){
 			$("#why-park-car").hide();
 			$("#parking-lot").show();
-			$("#spinner-questions").show();
+			$("#parking-spinner-questions").show();
 		}
 		else if(pageClicks === 7){
 			$("#parking-lot").hide();
-			$("#spinner-questions").hide();
-			$("#tile-questions").show();
+			$("#parking-spinner-questions").hide();
+			$("#pickup-spinner-question").show();
 		}
 		else if(pageClicks === 8){
+			$("#pickup-spinner-question").hide();
+			$("#tile-questions").show();
+		}
+		else if(pageClicks === 9){
 			$("#tile-questions").hide();
 			$("#late-flight").show();
 		}
-		else if(pageClicks === 9){
+		else if(pageClicks === 10){
 			$("#late-flight").hide();
 			$("#parking-lot").show();
 			$("#lines").show();
 	 		$("#cars").show();
 			$("#after-parking-questions").show();
 		}
-		else if(pageClicks === 10){
+		else if(pageClicks === 11){
 			$("#parking-lot").hide();
 			$("#lines").hide();
 	 		$("#cars").hide();
 			$("#after-parking-questions").hide();
 			$('#time-spent').show();
 		}
-		else if(pageClicks === 11){
+		else if(pageClicks === 12){
 			$('#time-spent').hide();
 			$("#clock-questions").show();
 		}
-		else if(pageClicks === 12){
+		else if(pageClicks === 13){
 			$("#clock-questions").hide();
 			$("#dashboard").hide();
 			$("#successful-pickup").show();
 		}
-		else if(pageClicks === 13){
+		else if(pageClicks === 14){
 			$("#successful-pickup").hide();
 			$("#car-slider").show();
 			$("#circle-pickup").show();
 			$('body').trigger('spinCar');
 		}
-		else if(pageClicks === 14){
+		else if(pageClicks === 15){
 			$("#circle-pickup").hide();
 			$("#timer-pickup").show();
 		}
-		else if(pageClicks === 15){
+		else if(pageClicks === 16){
 			$( "#timer-pickup" ).hide();
 			$( ".red-car" ).toggleClass('animate', false);
 			$( "#willing-to-wait" ).show();
 		}
-		else if(pageClicks === 16) {
+		else if(pageClicks === 17) {
 			$( "#willing-to-wait" ).hide();
 			$("#car-slider").show();
 			$("#dashboard").hide();
 			$('body').toggleClass('rail-show', true);
 			$("#rail-system").show();
 		}
-		else if(pageClicks === 17){
+		else if(pageClicks === 18){
             $("#car-slider").hide();
 			$("#dashboard").show();
 			$('body').toggleClass('rail-show', false);
 			$("#rail-system").hide();
 			$("#icon-questions").show();
 		}
-		else if(pageClicks === 18){
+		else if(pageClicks === 19){
 			$("#dashboard").hide();
 			$("#icon-questions").hide();
 			$("#car-slider").show();
 			$("#last-question-set").show();
 		}
-		else if(pageClicks === 19){
+		else if(pageClicks === 20){
       		
 			$("#last-question-set").hide();
 			$("#think-strategy").show();
 		}
-		else if(pageClicks === 20){
+		else if(pageClicks === 21){
 			$("#think-strategy").hide();
 			$("#congrats").show();
 		}

@@ -1,65 +1,71 @@
-#spin-button {
+.chance-time {
+	h3 {
+		margin-top: -20px;
+	}
+}
+
+.spin-button {
 	cursor: pointer;
 	width: 150px;
 	font-size: 25px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 20px;
+	// margin-bottom: 20px;
 	text-align: center;
-	padding: 12px 15px 12px 15px;
+	padding: 10px 15px 10px 15px;
 	color: white;
 	background-color: red;
 }
 
-#try-again {
-	width: 240px;
+.fail {
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-	#yup-spinner{
-		cursor: pointer;
-		display: inline-block;
-		margin-left: 30px;
-		margin-right: 60px;
-		svg {
-			height: 60px;
-			width: 60px;
-		}
-	}
-	#nope-spinner {
-		cursor: pointer;
-		display: inline-block;
-		svg {
-			height: 60px;
-			width: 60px;
-		}
-	}
 }
 
-#spin-button::hover {
+.spin-button::hover {
 	opacity: 0.5;
 }
 
-#continue-button {
+.continue-btn {
 	cursor: pointer;
 	margin-left: auto;
 	margin-right: auto;
 	font-size: 25px;
 	text-align: center;
-	width: 150px;
-	padding: 12px 15px 12px 15px;
+	width: 200px;
+	padding: 10px 15px 10px 15px;
 	color: white;
 	background-color: red;
 
 }
 
 
-#spinner-components {
-	margin-top: 20px;
+.spinner-components {
+	// margin-top: 10px;
 	position: absolute;
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
-	top: 25%;
+	// top: 20%;
+}
+
+.trophey {
+	text-align: center;
+	margin-top: 4%;
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.failed-spin {
+	// margin-top:-20px;
+	text-align: center;
+	svg {
+		width: 90%;
+		height: 90%;
+	}
 }
 
 
@@ -97,6 +103,46 @@
 	animation: lot-not-full 6s;
 	animation-fill-mode: forwards;
 }
+
+.there {
+	-webkit-animation: not-missing 6s;
+	-webkit-animation-fill-mode: forwards;
+
+	-moz-animation: not-missing 6s;
+	-moz-animation-fill-mode: forwards;
+
+	-ms-animation: not-missing 6s;
+	-ms-animation-fill-mode: forwards;
+
+	-o-animation: not-missing 6s;
+	-o-animation-fill-mode: forwards;
+
+	animation: not-missing 6s;
+	animation-fill-mode: forwards;
+}
+
+.not-there {
+	-webkit-animation: missing 6s;
+	-webkit-animation-fill-mode: forwards;
+
+	-moz-animation: missing 6s;
+	-moz-animation-fill-mode: forwards;
+
+	-ms-animation: missing 6s;
+	-ms-animation-fill-mode: forwards;
+
+	-o-animation: missing 6s;
+	-o-animation-fill-mode: forwards;
+
+	animation: missing 6s;
+	animation-fill-mode: forwards;
+}
+
+
+
+
+
+
 
 @-webkit-keyframes lot-full {
     0%{ -webkit-transform: rotate(0deg);}
@@ -148,8 +194,73 @@
     100%{ transform: rotate(1597deg);}
 }
 
+
+
+
+
+
+
+
+
+
+
+@-webkit-keyframes not-missing {
+    0%{ -webkit-transform: rotate(0deg);}
+    100%{ -webkit-transform: rotate(1642deg);}
+}
+
+@-webkit-keyframes missing {
+    0%{ -webkit-transform: rotate(0deg);}
+    100%{ -webkit-transform: rotate(1597deg);}
+}
+
+@-moz-keyframes not-missing {
+    0%{ -moz-transform: rotate(0deg);}
+    100%{ -moz-transform: rotate(1642deg);}
+}
+
+@-moz-keyframes missing {
+    0%{ -moz-transform: rotate(0deg);}
+    100%{ -moz-transform: rotate(1597deg);}
+}
+
+@-ms-keyframes not-missing {
+    0%{ -ms-transform: rotate(0deg);}
+    100%{ -ms-transform: rotate(1642deg);}
+}
+
+@-ms-keyframes missing {
+    0%{ -ms-transform: rotate(0deg);}
+    100%{ -ms-transform: rotate(1597deg);}
+}
+
+@-o-keyframes not-missing {
+    0%{ -o-transform: rotate(0deg);}
+    100%{ -o-transform: rotate(1642deg);}
+}
+
+@-o-keyframes missing {
+    0%{ -o-transform: rotate(0deg);}
+    100%{ -o-transform: rotate(1597deg);}
+}
+
+@keyframes not-missing {
+    0%{ transform: rotate(0deg);}
+    100%{ transform: rotate(1642deg);}
+}
+
+@keyframes missing {
+    0%{ transform: rotate(0deg);}
+    100%{ transform: rotate(1597deg);}
+}
+
+
+
+
+
+
 @media screen and (min-width: 1000px) {
-	#spinner-components {
+	.spinner-components {
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
@@ -157,7 +268,7 @@
 		margin-top: 0;
 	}
 
-	#try-again {
+	.fail {
 		margin-bottom: 6%;
 	}
 }
