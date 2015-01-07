@@ -656,48 +656,55 @@
   <!-- END TODO: 5. Why do you choose to park your car? -->
 
 
-  <!-- 6. SPINNER QUESTIONS -->
- <!--  <div id="spinner-questions" style="display: none">
-    <div id="chance-time">
-      <h3 style="color: white; text-align: center">Chance Time!</h3>
-      <h5 style="color: white; text-align: center">You arrive at the parking lot and<br>see that the parking lot is...</h5>
+  <!-- SPINNER QUESTIONS -->
+  <!-- 6. Parking spinner -->
+  <div id="parking-spinner-questions" style="display: none">
+    <div class="chance-time">
+      <h1 style="color: white; text-align: center">Chance Time!</h1>
+      <h3 style="color: white; text-align: center">
+        You arrive at the parking lot and <span style="font-weight: 700">see that the parking lot is...</span>
+      </h3>
     </div>
 
-    <div id="parking-congrats" style="display:none;">
-      <h3 style="color: white; text-align: center">Congratulations!</h3>
-      <h5 style="color: white; text-align: center">You got a parking spot</h5>
-      <div id="continue-button">
+    <div class="congrats" style="display:none;">
+      <h1 style="color: white; text-align: center">Congratulations!</h1>
+      <h3 style="color: white; text-align: center; margin-top: -20px">You got a parking spot.</h3>
+      <div class="continue-btn">
         Continue
       </div>
     </div>
 
-    <div id="try-again" style="display:none">
-      <h3 style="color: white; text-align: center;">Try again?</h3>
-      <div id="yup-spinner"><%= render 'yea' %></div>
-      <div id="nope-spinner"><%= render 'nah' %></div>
+    <div class="fail" style="display:none">
+      <h1 style="color: white; text-align: center;">Dang!</h1>
+      <h3 style="color: white; text-align: center; margin-top: -20px">The parking lot is full.</h3>
+      <div class="continue-btn">
+        Continue
+      </div>
     </div>
 
-    <div id="spin-button">
+    <div class="spin-button" id="parking">
       Spin
     </div>
-
-    <div class="row" id="spinner-components">
-      <div class="large-7 medium-8 small-12 large-centered medium-centered small-centered columns">
-        <div style="width: 100%; padding-bottom: 50%; padding-left: 2%">
-          <div style="width: 100%; position: absolute; z-index: 3">
-            <div class="row" style="padding: 0">
-              <div class="large-4 medium-4 small-4 large-centered medium-centered small-centered columns" style="padding-left: 0">
-                <div style="width: 100%; padding-bottom: 10%;">
-                  <div id="wheel-pointer" style="padding-right: 25%; padding-left: 10%">
-                    <%= render 'wheelPointer' %>
+    
+    <div class="spinner-components">
+      <div class="row">
+        <div class="large-7 medium-8 small-12 large-centered medium-centered small-centered columns">
+          <div style="width: 100%; padding-bottom: 50%; padding-left: 2%">
+            <div style="width: 100%; position: absolute; z-index: 3">
+              <div class="row" style="padding: 0">
+                <div class="large-4 medium-4 small-4 large-centered medium-centered small-centered columns" style="padding-left: 0">
+                  <div style="width: 100%; padding-bottom: 10%;">
+                    <div id="wheel-pointer" style="padding-right: 25%; padding-left: 10%">
+                      <%= render 'wheelPointer' %>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div style="position: relative; z-index: 1; width: 100%; padding-top: 4%; margin: 0">
-            <div id="wheel" style="padding: 0; margin: 0">
-              <%= render 'wheel' %>
+            <div style="position: relative; z-index: 1; width: 100%; padding-top: 4%; margin: 0">
+              <div class="wheel" style="padding: 0; margin: 0">
+                <%= render 'parkingWheel' %>
+              </div>
             </div>
           </div>
         </div>
@@ -706,15 +713,20 @@
 
     <div class="row">
       <div class="large-5 medium-5 small-9 columns large-centered medium-centered small-centered columns">
-        <div id="parking-trophy" style="display: none">
+        <div class="trophey" style="display: none">
           <%= render 'parkingTrophy' %>
+        </div>
+        <div class="failed-spin" style="display: none">
+          <%= render 'noParking' %>
         </div>
       </div>
     </div>
-  </div> -->
-  <!-- END SPINNER QUESTIONS -->
 
-  <div id="pickup-spinner-question" style="">
+  </div>
+  <!-- end parking spinner -->
+  
+  <!-- 7. Pickup spinner -->
+  <div id="pickup-spinner-question" style="display:none">
     <div class="chance-time">
       <h1 style="color: white; text-align: center">Chance Time!</h1>
       <h3 style="color: white; text-align: center">
@@ -725,15 +737,15 @@
     <div class="congrats" style="display:none;">
       <h1 style="color: white; text-align: center">Nice!</h1>
       <h3 style="color: white; text-align: center; margin-top: -20px">Your passenger is at the curb!</h3>
-      <div class="continue-button">
+      <div class="continue-btn">
         Continue
       </div>
     </div>
 
     <div class="fail" style="display:none">
       <h1 style="color: white; text-align: center;">Dang!</h1>
-      <h3 style="color: white; text-align: center; margin-top: -20px">Our pick-up wasn't there</h3>
-      <div class="continue-button">
+      <h3 style="color: white; text-align: center; margin-top: -20px">Our pick-up wasn't there.</h3>
+      <div class="continue-btn">
         Continue
       </div>
     </div>
@@ -778,7 +790,8 @@
       </div>
     </div>
   </div>
-
+  <!-- end pickup spinner -->
+  <!-- END SPINNER QUESTIONS -->
 
 
 
