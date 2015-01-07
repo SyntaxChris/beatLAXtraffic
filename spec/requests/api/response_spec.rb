@@ -2,18 +2,40 @@ require 'rails_helper'
 
 describe "responses API" do
   describe "create" do
+    let!(:respondent) { create(:respondent) }
+    let!(:node) { create(:node) }
+    let!(:answer) { create(:answer) }
+    let!(:answer_2) { create(:answer) }
+    let!(:answer_3) { create(:answer) }
+    let!(:answer_4) { create(:answer) }
+
     it "records a survey response for a respondent" do
+      Response.create(node_id: node.id, answer_id: answer.id, respondent_id: 123)
+      Response.create(node_id: node.id, answer_id: answer.id, respondent_id: respondent.id)
+      argument_params = {
+      }
       params = {
-        is_decision: nil,
-        node_id: nil,
-        respondent_id: nil,
-        answers: [
-          { answer_id: nil,
-            rank: nil
-          }
-        ],
-        decision_id: nil,
-        time_remaining: nil
+        response: {
+          is_decision: false,
+          respondent_id: respondent.id,
+          node_id: node.id,
+          decision_id: nil,
+          answers: [
+            {
+              answer_id: answer.id,
+              rank: 2
+            },
+            {
+              answer_id: answer_2.id,
+              rank: 3
+            },
+            {
+              answer_id: answer_3.id,
+              rank: 1
+            }
+          ],
+          time_remaining: nil
+        }
       }
       post '/api/response', params, format: :json
 
