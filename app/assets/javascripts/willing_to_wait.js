@@ -1,7 +1,7 @@
 $(document).ready(function(){
   //set some vars
   var $willingToWait = $('#willing-to-wait'),
-      timerCount = 10;
+      timerCount = 5;
 
   //listeners
   $willingToWait
@@ -12,7 +12,7 @@ $(document).ready(function(){
     e.preventDefault();
     e.stopImmediatePropagation();
 
-    timerCount -= 10;
+    timerCount -= 5;
 
     if ( timerCount < 0 ) { timerCount = 0; }
 
@@ -23,7 +23,7 @@ $(document).ready(function(){
     e.preventDefault();
     e.stopImmediatePropagation();
 
-    timerCount += 10;
+    timerCount += 5;
 
     updateTimerCount();
 
