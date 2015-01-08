@@ -1,4 +1,4 @@
-<div id="toggle-questions" style="position: absolute; z-index: 35; font-size: 10px; width: 50px; height: 30px; padding: 5px 5px 10px 0 ">TOGGLE</div>
+<button id="toggle-questions" style="position: absolute; z-index: 35; font-size: 10px; width: 50px; height: 30px; padding: 5px 5px 10px 0 ">TOGGLE</button>
 
 <div class="rail-background">
   <%= render 'railBuildings' %>
@@ -1967,9 +1967,23 @@
 <!-- <div style="position: absolute; z-index: 50; width: 100%; padding-bottom: 15%; bottom: 0; background-color: #CDEDF9"></div> -->
 
 <div id="dashboard" style="display: none">
+<div id="clock-contents">
+  <div id="clock-face" data-opac="0"></div>
+    <div id="clock-hand-cntr" data-rot="0">
+      <div id="long-hand"></div>
+    </div>
+    <div id="clock">
+       <%= render 'timer' %> 
+    </div>
+</div>
     <div id="dash-contents">
       <div id="section-1">
-        <div><span id="main-time">15</span>min</div>
+        <div id="time-container">
+
+          <span id="hr"></span><span id="hr-unit"></span><span id="min"></span><span id="min-unit"></span>
+          <div id="landing-label">Until landing</div>
+        </div>
+        
       </div>
       <div id="section-2">
         <div class="content-size">
@@ -2019,9 +2033,8 @@
   <div id="gradient-2"></div>
   <div id="gradient-3"></div>
   <div id="gradient-4" style="padding: 0">
-    <div id="clock">
-      <%= render 'timer' %>
-    </div>
+    <!-- clock animation found in toggle.js for now -->
+    
   </div>
 
   <div id="progress-bar">
@@ -2062,7 +2075,7 @@
 
 
 <!-- DATA PASSED FROM FRAMEWORKS -->
-<div id="plane-progress" data-plane-progress=100></div>
+<div id="plane-progress" data-plane-progress=70></div>
 <div id="timer-progress" data-timer-progress=></div>
 <div id="spinner-chance" data-chance=<%= rand(2) %>></div>
 <!-- END DATA PASSED FROM FRAMEWORKS -->
