@@ -3,15 +3,10 @@ module Api
 
     def create
       result = Response.create_all_from_node_interaction(response_params)
-      if result["status"] == "success"
-        render json: {
-          status: result["status"]
-        }, status: 200
+      if result[:status] == "success"
+        render json: result, status: 200
       else
-        render json: {
-          status: result["status"],
-          messages: result["message"]
-        }, status: 402
+        render json: result, status: 402
       end
     end
 
@@ -22,7 +17,7 @@ module Api
         :node_id,
         :respondent_id,
         :decision_id,
-        :answers => [:answer_id, :rank]
+        :answers => [:id, :rank]
       )
     end
 

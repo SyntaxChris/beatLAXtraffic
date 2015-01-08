@@ -31,7 +31,7 @@ angular.module('lawaApp')
 
       $scope.setCurrentDecision = function(decision){
         $scope.currentDecisionDestination = $scope.fetchNodeById(decision.destination_node_id);
-        $scope.submit();
+        $scope.submit(decision.id);
       };
 
       $scope.addAnswerToCurrentAnswers = function(answer){
@@ -56,7 +56,15 @@ angular.module('lawaApp')
         $scope.setCurrentNodeById(destinationNodeId);
       };
 
-      $scope.submit = function(){
+      $scope.submit = function(decisionId){
+        var params = {
+          is_decision: $scope.currentNode.is_decision_point,
+          respondent_id: 1,
+          node_id: $scope.currentNode.node_id,
+          decision_id: decisionId || null,
+          answers: $scope.currentAnswers
+        }
+        $http.post('/api/nodes').success(function(data){
         // post to API and then on success:
         $scope.goToNextNode();
 

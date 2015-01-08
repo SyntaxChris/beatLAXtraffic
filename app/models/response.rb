@@ -13,13 +13,13 @@ class Response < ActiveRecord::Base
     if answers_array.empty?
       response.skipped = true unless response_params[:decision_id].present?
     else
-      response.answer_id = answers_array.first[:answer_id]
+      response.answer_id = answers_array.first[:id]
     end
     response.calculate_seen_before
 
     # return result
     if response.save
-      return {status: "success!"}
+      return {status: "success"}
     else
       return {status: "fail", message: response.errors.messages}
     end
@@ -60,7 +60,7 @@ class Response < ActiveRecord::Base
       successes = 0
       answers_array.each do |answer_hash|
         response = Response.new(response_params)
-        response.answer_id = answer_hash[:answer_id]
+        response.answer_id = answer_hash[:id]
         response.rank = answer_hash[:rank]
         response.times_seen = multi_times_seen
 
@@ -70,7 +70,7 @@ class Response < ActiveRecord::Base
       end
 
       if successes == node_interaction_params[:answers].count
-        return {status: "success!"}
+        return {status: "success"}
       else
         return {status: "fail", message: "one of the multiple choice anwers had a problem"}
       end

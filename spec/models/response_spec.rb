@@ -199,7 +199,7 @@ RSpec.describe Response, :type => :model do
           respondent_id: respondent.id,
           node_id: node.id,
           answers: [
-            { answer_id: answer.id,
+            { id: answer.id,
               rank: nil
             }
           ],
@@ -220,7 +220,7 @@ RSpec.describe Response, :type => :model do
             respondent_id: respondent.id,
             node_id: node.id,
             answers: [
-              { answer_id: answer.id,
+              { id: answer.id,
                 rank: nil
               }
             ],
@@ -282,15 +282,15 @@ RSpec.describe Response, :type => :model do
             node_id: node.id,
             answers: [
               {
-                answer_id: answer.id,
+                id: answer.id,
                 rank: 2
               },
               {
-                answer_id: answer_2.id,
+                id: answer_2.id,
                 rank: 3
               },
               {
-                answer_id: answer_3.id,
+                id: answer_3.id,
                 rank: 1
               }
             ],
@@ -314,15 +314,15 @@ RSpec.describe Response, :type => :model do
             node_id: node.id,
             answers: [
               {
-                answer_id: answer.id,
+                id: answer.id,
                 rank: 2
               },
               {
-                answer_id: answer_2.id,
+                id: answer_2.id,
                 rank: 3
               },
               {
-                answer_id: answer_3.id,
+                id: answer_3.id,
                 rank: 1
               }
             ],
@@ -340,8 +340,8 @@ RSpec.describe Response, :type => :model do
           expect(respondent.responses.where(answer_id: answer_3.id).first.times_seen).to eq 2
         end
 
-        it "time elapses with every node traversal" do
-          pending "need to add this and have this number: "\
+        pending "time elapses with every node traversal" do
+          skip "need to add this and have this number: "\
                   "\n\t - add to time elapsed" \
                   "\n\t - subtract from time-till-land"
         end
