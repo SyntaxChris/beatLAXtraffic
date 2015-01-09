@@ -105,6 +105,7 @@ $(document).ready(function(){
 			$(".parking-bubble-other").animate({height: "250px"});
 			$(this).text("Please write here");
 			$(this).animate({top: "5%"});
+			$('.other-icon').fadeOut();
 			$("[id='char-count']").fadeIn();
 			$(".parking-other-text-area").fadeIn();
 			$('.parking-submit').fadeIn();
@@ -117,6 +118,7 @@ $(document).ready(function(){
 			$("[id='char-count']").fadeOut();
 			$(".parking-other-text-area").fadeOut();
 			$('.parking-submit').fadeOut();
+			$('.other-icon').show();
 			$('.parking-bubble-other .circle-state').css('fill', '#FFFFFF');
 			$('.parking-bubble-other .circle-state').css('stroke-width', 3);
 			$('.parking-bubble-other .checkmark-fill').css('stroke', '#757575');

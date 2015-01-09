@@ -10,8 +10,8 @@ $(document).ready(function(){
 		progression += ratio;
 
 		if(progression <= sliderPercentage){
-			$("#progression-bar").animate({'width': progression + "%"}, 1000);
-			$("#car-container").animate({'margin-left': progression + "%"}, 1000);
+			$("#progression-bar").animate({'width': progression + "%"}, 500);
+			$("#car-container").animate({'margin-left': progression + "%"}, 500);
 		}
 	};
 	
