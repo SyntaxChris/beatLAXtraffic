@@ -27,9 +27,11 @@
 <div class="row">
   <!-- 1. DISTANCE questions -->
     <div id="distance-questions" style="display: none">
-      <div id="distance-bg" style="position: absolute; z-index: -2; width: 100%; height: 100%; top:0; background-color: #85D3EE"></div>
-      <div class="row">
-         <div id="distance-question-header" style="color: white; text-align:center">How far away do you live from LAX?</div>
+      <div id="distance-bg"></div>
+      <div class="row" id="dis-row" style="text-align:center">
+        <h3 class="main-question">
+          How far away do you live from LAX?
+        </h3>
       </div>
      
       <div class="row" id="row-1">
@@ -251,8 +253,8 @@
   <div id="strategy-questions" style="display: none">
 
     <div class="row" style="text-align: center;">
-      <h3 style="color: white">Why do you choose this strategy?</h3>
-      <h6 style="color: #24B7EA; padding-top: 0">Select all that apply</h6>
+      <h3 class="main-question">Why do you choose this strategy?</h3>
+      <h5 class="sub-header">Select all that apply</h5>
     </div>
 
     <div id="large-strategy">
@@ -519,11 +521,11 @@
   <!-- TODO: 5. Why do you choose to park your car? -->
   <div id="why-park-car" style="display:none">
     <div class="row" style="text-align:center">
-      <h3 style="color: white">Why do you choose to park your car?</h3>
+      <h3 class="main-question">Why do you choose to park your car?</h3>
     </div>
 
     <div class="hide-for-small-only">
-      <div class="row" style="padding: 0 10px 0 10px; margin-top: 10%">
+      <div class="row" style="padding: 0 10px 0 10px; margin-top: 5%">
         <div class="large-3 medium-3 columns">
           <div class="parking-bubble">
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
@@ -590,7 +592,7 @@
       <div class="row" style="padding: 0 20px 0 20px">
         <div class="small-6 columns" style="padding: 0 2% 0 3%">
           <div class="parking-bubble">
-            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+            <div class="unchecked" style="position: absolute; right: 5px; top: -10%">
               <%= render 'unchecked' %>
             </div>
             <div class="bubble-logo" class="bubble-logo">
@@ -660,15 +662,15 @@
   <!-- 6. Parking spinner -->
   <div id="parking-spinner-questions" style="display: none">
     <div class="chance-time">
-      <h1 style="color: white; text-align: center">Chance Time!</h1>
-      <h3 style="color: white; text-align: center">
+      <h1>Chance Time!</h1>
+      <h3 class="main-question">
         You arrive at the parking lot and <span style="font-weight: 700">see that the parking lot is...</span>
       </h3>
     </div>
 
     <div class="congrats" style="display:none;">
-      <h1 style="color: white; text-align: center">Congratulations!</h1>
-      <h3 style="color: white; text-align: center; margin-top: -20px">You got a parking spot.</h3>
+      <h1>Congratulations!</h1>
+      <h3 class="main-question">You got a parking spot!</h3>
       <div class="continue-btn">
         Continue
       </div>
@@ -676,7 +678,7 @@
 
     <div class="fail" style="display:none">
       <h1 style="color: white; text-align: center;">Dang!</h1>
-      <h3 style="color: white; text-align: center; margin-top: -20px">The parking lot is full.</h3>
+      <h3 class="main-question">The parking lot is full.</h3>
       <div class="continue-btn">
         Continue
       </div>
@@ -728,23 +730,23 @@
   <!-- 7. Pickup spinner -->
   <div id="pickup-spinner-question" style="display:none">
     <div class="chance-time">
-      <h1 style="color: white; text-align: center">Chance Time!</h1>
-      <h3 style="color: white; text-align: center">
+      <h1>Chance Time!</h1>
+      <h3 class="main-question">
         You're almost at the Terminal. <span style="font-weight: 700">Is your passenger there?</span>
       </h3>
     </div>
 
     <div class="congrats" style="display:none;">
-      <h1 style="color: white; text-align: center">Nice!</h1>
-      <h3 style="color: white; text-align: center; margin-top: -20px">Your passenger is at the curb!</h3>
+      <h1>Nice!</h1>
+      <h3 class="main-question" style="margin-top: -20px">Your passenger is at the curb!</h3>
       <div class="continue-btn">
         Continue
       </div>
     </div>
 
     <div class="fail" style="display:none">
-      <h1 style="color: white; text-align: center;">Dang!</h1>
-      <h3 style="color: white; text-align: center; margin-top: -20px">Our pick-up wasn't there.</h3>
+      <h1>Dang!</h1>
+      <h3 class="main-question">Our pick-up wasn't there.</h3>
       <div class="continue-btn">
         Continue
       </div>
@@ -808,7 +810,7 @@
         <div class="row">
           <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
             <div id="question-header-landscape">
-                <h3 id="main-landscape">What are you doing while you wait?</h3>
+                <h3 class="main-question" id="main-landscape">What are you doing while you wait?</h3>
                 <h5 id="foot-landscape">Select all that apply</h5> 
             </div>
           </div>
@@ -819,7 +821,7 @@
         <div class="row">
           <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
             <div id="question-header" style="text-align: center">
-                <h3 id="main">What are you doing while you wait?</h3>
+                <h3 class="main-question" id="main">What are you doing while you wait?</h3>
                 <h5 id="foot" style="text-align:center">
                 Select all that apply
 <div class="next" style="color: white; width: 100px; border-radius: 5px; position: relative; margin-left: auto; margin-right: auto">Next</div>
@@ -1087,8 +1089,8 @@
     <!-- 11. TIMER QUESTIONS -->
     <div id="clock-questions" style="display: none">
       <!-- questions header -->
-      <div class="row" style="text-align:center">
-        <h3 style="color: white">How long do you usually park for?</h3>
+      <div class="row">
+        <h3 class="main-question">How long do you usually park for?</h3>
       </div>
 
       <div class="row">
@@ -1147,7 +1149,7 @@
     <!-- 17. ICON QUESTIONS -->
     <div id="icon-questions" style="display: none">
       <div class="row">
-        <h3 style="color: white; text-align: center">Imagine that you could customize this future location.</h3>
+        <h3 class="main-question">Imagine that you could customize this future location.</h3>
       </div>
       <div class="row" id="icons-large-screen" style="margin-top: 90px;">
         <div class="large-6 medium-6 small-6 columns">
@@ -1170,7 +1172,7 @@
               <div id="holder-3"></div>
             </div>
             <div class="submit-row" style="display: none">
-              <div id="icon-submit">Submit</div>
+              <div id="icon-submit">Next</div>
             </div>
           </div>
         </div>
@@ -1320,7 +1322,7 @@
               </div>
               
               <div class="submit-row" style="display:none">
-                <div id="icon-submit">Submit</div>
+                <div id="icon-submit">Next</div>
               </div>
 
             </div>
@@ -1338,7 +1340,7 @@
       <!-- set 1 -->
       <div id="question-set-1">
         <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
-          <h4 style="color: white; margin-top:5%; text-align: center">What was the reason for your last trip to LAX?</h4>
+          <h3 class="main-question">What was the reason for your last trip to LAX?</h3>
         </div>
 
         <div class="row" style="margin-bottom: 1.5%; margin-top: 3%">
@@ -1415,7 +1417,7 @@
       <!-- set 2 -->
       <div id="question-set-2" style="display: none">
         <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
-          <h4 style="color: white; margin-top:5%; text-align: center">About how often do you go to LAX?</h4>
+          <h3 class="main-question">About how often do you go to LAX?</h3>
         </div>
 
         <div class="row" style="margin-bottom: 1.5%; margin-top: 3%">
@@ -1469,7 +1471,7 @@
       <!-- set 3 -->
       <div id="question-set-3" style="display: none">
         <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
-          <h4 style="color: white; margin-top:5%; text-align: center">And finally, how old are you?</h4>
+          <h3 class="main-question">And finally, how old are you?</h3>
         </div>
 
         <div class="row" style="margin-bottom: 1.5%; margin-top: 3%">
@@ -1536,7 +1538,7 @@
 
     <!-- 18. WHY DO YOU THINK THIS STRATEGY WILL WORK -->
     <div id="think-strategy" style="display: none;">
-      <h3>
+      <h3 class="main-question">
         How well do you think this strategy will work?
       </h3>
       <div class="content-c">
@@ -1566,9 +1568,8 @@
 
     <!-- CONGRATULATIONS! -->
     <div id="congrats" style="display: none">
-      <div class="row" style="text-align: center">
+      <div class="row" style="text-align: center;">
         <!-- <h3 style="color: white">Congratulations!</h3> -->
-
         <div class="inner-c">
           <div class="trophy-c">
             <%= render 'laxTrophy' %>
@@ -1615,7 +1616,7 @@
   <!-- 8. LATE FLIGHT -->
   <div id="late-flight" style="display: none;">
     <div class="content-c">
-      <h3>You think your passenger's flight could be late.</h3>
+      <h3 class="main-question">You think your passenger's flight could be late.</h3>
       <p>How would you check for that?</p>
       
       <div class="dIB vAT button-c">
@@ -1665,8 +1666,8 @@
   <!-- 9. AFTER PARKING QUESTIONS -->
   <div id="after-parking-questions" style="display:none">
 
-    <h3 class="main">You finally arrive at the lot and the parking lot is full</h3>
-    <h3 class="sub">What do you do next?</h3>
+    <h3 class="main-question">You finally arrive at the lot and the parking lot is full</h3>
+    <h3 id="pole">What do you do next?</h3>
 
     <div class="pole">
       <%= render 'signPole' %>
