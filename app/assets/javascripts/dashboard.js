@@ -88,6 +88,7 @@ $(document).ready(function(){
         else{
             $("#plane-alert").attr("class", "timer-alert");
             $('#landing-plane').addClass("land-ze-plane");
+            $('svg circle#timer-fill').attr("class", "clock-pulse")
             window.setTimeout(function () {
                 $("#landing-label").text('Plane landed');
             }, 5000);
@@ -96,6 +97,7 @@ $(document).ready(function(){
 
 
         // timer logic
+
         if(hour > 0){
             if(min > 0){
                 min -= timeStepper;
@@ -144,36 +146,54 @@ $(document).ready(function(){
 
 
         // clock animation
-        $('svg circle#timer-fill').css("opacity", 0);
+        if($('#landing-label').text() !== "Plane landed"){
+            $('svg circle#timer-fill').css("opacity", 0);
 
-        switch(nextColor){
-            case 0:
-                $('svg circle#timer-fill').css("fill", '#2779C1');
-            break;
+            switch(nextColor){
+                case 0:
+                    $('svg circle#timer-fill').css("fill", '#2779C1');
+                break;
 
-            case 1:
-                $('svg circle#timer-fill').css("fill", '#2AB1D0');
-            break;
+                case 1:
+                    $('svg circle#timer-fill').css("fill", '#2AB1D0');
+                break;
 
-            case 2:
-                $('svg circle#timer-fill').css("fill", '#32BD26');
-            break;
+                case 2:
+                    $('svg circle#timer-fill').css("fill", '#32BD26');
+                break;
 
-            case 3:
-                $('svg circle#timer-fill').css("fill", '#FFD333');
-            break;
+                case 3:
+                    $('svg circle#timer-fill').css("fill", '#FFD333');
+                break;
 
-            case 4:
-                $('svg circle#timer-fill').css("fill", '#FFA733');
-            break;
+                case 4:
+                    $('svg circle#timer-fill').css("fill", '#FFA733');
+                break;
 
-            case 5:
-                $('svg circle#timer-fill').css("fill", '#FF8133');
-            break;
+                case 5:
+                    $('svg circle#timer-fill').css("fill", '#FF8133');
+                break;
 
-            case 6:
-                $('svg circle#timer-fill').css("fill", '#FF3333');
-            break;
+                case 6:
+                    $('svg circle#timer-fill').css("fill", '#FF3333');
+                break;
+            }
+            
+            var o = $('#clock-face').data('opac') + 0.125;
+
+            if(nextColor === 6){
+                nextColor = 0;
+            };
+
+            if($('#clock-face').data('opac') > 0.8){
+                $('#clock-face').data('opac', 0);
+                $('svg circle#timer-fill').css("opacity", 0);
+                nextColor += 1
+            }
+            else{
+                $('svg circle#timer-fill').css("opacity", o);
+                $('#clock-face').data('opac', o);
+            } 
         }
 
         var r = $('#clock-hand-cntr').data('rot') + 45;
@@ -188,21 +208,7 @@ $(document).ready(function(){
 
         $('#clock-hand-cntr').data('rot', r);
         
-        var o = $('#clock-face').data('opac') + 0.125;
-
-        if(nextColor === 6){
-            nextColor = 0;
-        };
-
-        if($('#clock-face').data('opac') > 0.8){
-            $('#clock-face').data('opac', 0);
-            $('svg circle#timer-fill').css("opacity", 0);
-            nextColor += 1
-        }
-        else{
-            $('svg circle#timer-fill').css("opacity", o);
-            $('#clock-face').data('opac', o);
-        } 
+        
         // end clock animation
     });
 });
