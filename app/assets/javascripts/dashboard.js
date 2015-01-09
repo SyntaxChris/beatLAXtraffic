@@ -88,6 +88,9 @@ $(document).ready(function(){
         else{
             $("#plane-alert").attr("class", "timer-alert");
             $('#landing-plane').addClass("land-ze-plane");
+            window.setTimeout(function () {
+                $("#landing-label").text('Plane landed');
+            }, 5000);
         }
 
 

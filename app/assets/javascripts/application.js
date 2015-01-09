@@ -15,6 +15,7 @@
 //= require 'attribute.js'
 //= require foundation
 //= require 'dashboard'
+//= require 'car_dash'
 //= require 'toggle_questions'
 //= require 'char_count'
 //= require 'intro'

@@ -1,8 +1,8 @@
 #successful-pickup {
   position: absolute;
-  top: 0;
+  top: -50px;
   left: 0;
-  height: 100%;
+  height: 110%;
   width: 100%;
   overflow: hidden;
   h3, p {
@@ -88,6 +88,7 @@
 
 @media only screen and (min-width : 768px) {
   #successful-pickup {
+    // top: -20px;
     h3 {
       margin-top: 80px;
     }
@@ -103,5 +104,11 @@
         transform: scale(1.5);
       }
     }
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  #successful-pickup {
+    top: 0px;
   }
 }
