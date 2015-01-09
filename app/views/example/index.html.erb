@@ -2062,14 +2062,17 @@
     <div id="car-start-tag">
       LAX
     </div>
-    <div id="progression-bar">
-      <div id="car-container">
+    <div id="progression-bar"></div>
+    <!-- <div id="car-filler-bar"></div> -->
+    <div id="car-container">
         <%= render 'car' %>
-      </div>
     </div>
     <div id="car-end-tag">
       <div id="home-container">
         <%= render 'home' %>
+        <div class="row" id="end">
+          FINISH
+        </div>
       </div>
     </div>
   </div>
@@ -2081,6 +2084,7 @@
 <div id="plane-progress" data-plane-progress=0></div>
 <div id="time" data-hours=0 data-minutes=0></div>
 <div id="spinner-chance" data-chance=<%= rand(2) %>></div>
+<div id="car-scenario" data-ratio-num=7></div>
 <!-- END DATA PASSED FROM FRAMEWORKS -->
 
 
