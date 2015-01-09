@@ -571,9 +571,12 @@
               <%= render 'unchecked' %>
             </div>
             <div class="parking-question-other-font" data-other="uncolored">
+              <div class="other-icon" style="width: 30%; text-align: center; margin-left: auto; margin-right: auto">
+                <%=render 'questionBubble'%>
+              </div>
               Other (specify)
             </div>
-            <div class="parking-other-text-area" style="display: none; position: relative; top: 30%;">
+            <div class="parking-other-text-area" style="display: none; position: relative; top: 30%; position: relative; z-index: 20">
               <textarea id="other-info" cols="1" rows="5" maxlength="140"></textarea>
             </div>
             <br>
@@ -1752,7 +1755,7 @@
   <!-- END AFTER PARKING QUESTIONS -->
 
   <!-- 10. START TIME SPENT -->
-  <div id="time-spent" style="display: none;">
+  <div id="time-spent" style="">
     <div class="content-c">
       <h3>
         You have spent
@@ -1760,8 +1763,8 @@
 
       <div class="timer-c">
         <div class="inner">
-          <div class="timer-number">3</div>
-          <div>Hours</div>
+          <div class="timer-number">5</div>
+          <div>Minutes</div>
         </div>
       </div>
 
