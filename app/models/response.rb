@@ -10,7 +10,7 @@ class Response < ActiveRecord::Base
 
   def self.create_from_options!(response_params, answers_array = [])
     response = Response.new(response_params)
-    if answers_array.empty?
+    if answers_array.empty? || answers_array.nil?
       response.skipped = true unless response_params[:decision_id].present?
     else
       response.answer_id = answers_array.first[:id]
@@ -68,12 +68,12 @@ class Response < ActiveRecord::Base
           successes += 1
         end
       end
+    end
 
-      if successes == node_interaction_params[:answers].count
-        return {status: "success"}
-      else
-        return {status: "fail", message: "one of the multiple choice anwers had a problem"}
-      end
+    if successes == node_interaction_params[:answers].count
+      return {status: "success"}
+    else
+      return {status: "fail", message: "one of the multiple choice anwers had a problem"}
     end
   end
 

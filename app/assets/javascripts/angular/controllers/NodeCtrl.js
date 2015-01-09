@@ -56,22 +56,33 @@ angular.module('lawaApp')
         $scope.setCurrentNodeById(destinationNodeId);
       };
 
+      var answersForParams = function(answersArray) {
+        return _.map(answersArray, function(answerObject){
+          return {
+            id: answerObject.id
+            // TODO: add rank
+          }
+        })
+      }
+
       $scope.submit = function(decisionId){
+        var paramSafeAnswers = answersForParams($scope.currentAnswers);
         var params = {
           is_decision: $scope.currentNode.is_decision_point,
           respondent_id: 1,
           node_id: $scope.currentNode.node_id,
           decision_id: decisionId || null,
-          answers: $scope.currentAnswers
+          answers: paramSafeAnswers || null
         }
-        $http.post('/api/nodes').success(function(data){
-        // post to API and then on success:
-        $scope.goToNextNode();
+        $http.post('/api/response', { response: params }).success(function(data){
+          // post to API and then on success:
+          $scope.goToNextNode();
 
-        // TODO: clear decision
-        $scope.currentDecisionDestination = null;
-        // TODO: clear answers
-        $scope.currentAnswers = [];
+          // TODO: clear decision
+          $scope.currentDecisionDestination = null;
+          // TODO: clear answers
+          $scope.currentAnswers = [];
+        });
       };
 
       $scope.setup();

@@ -12,12 +12,13 @@ module Api
 
     private
     def response_params
+      params[:response][:answers] ||= [] if params[:response].has_key?(:answers)
       params.require(:response).permit(
         :is_decision,
         :node_id,
         :respondent_id,
         :decision_id,
-        :answers => [:id, :rank]
+        answers: [[:id, :rank]]
       )
     end
 
