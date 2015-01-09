@@ -63,8 +63,8 @@
 		z-index: 5;
 		height: 76px;
 		width: 257px;
-		bottom: 115px;
-		left: 82px;
+		bottom: 116px;
+		left: 78px;
 		.remove-icon {
 			cursor: pointer;
 			position: relative;
@@ -76,9 +76,12 @@
 		#holder-1 {	
 			display: inline-block;
 			height: 76px;
-			width: 76px;
-			margin-right: 10px;
-			padding: 0;
+			width: 85px;
+			margin-right: 2px;
+			// padding-right: 10px;
+			// margin-right: 20px;
+			// padding: 0;
+
 		}
 		#holder-2 {
 			display: inline-block;
@@ -87,7 +90,10 @@
 			margin-right: 9px;
 		}
 		#holder-3 {
-			display: inline-block;
+			// display: inline-block;
+			position: absolute;
+			top: -1px;
+			left: 183px;
 			height: 76px;
 			width: 76px;
 		}
@@ -150,6 +156,7 @@
 		position: absolute;
 		z-index: 6;
 		top: 0;
+		padding: 0;
 		margin-left: 44.5%;
 	}
 	#computer {
@@ -331,24 +338,42 @@
 		}
 		#holder-1-small {
 			position: absolute;	
-			top: -4px;
-			left: -5px; 
+			top: -6px;
+			left: -7px; 
 			height: 55px;
 			width: 55px;
+			.icon{
+				svg {
+					height: 110%;
+					width: 110%;
+				}
+			}
 		}
 		#holder-2-small {
 			position: absolute;	
-			top: -4px;
-			left: -5px; 
+			top: -6px;
+			left: -7px; 
 			height: 55px;
 			width: 55px;
+			.icon{
+				svg {
+					height: 110%;
+					width: 110%;
+				}
+			}
 		}
 		#holder-3-small {
 			position: absolute;	
-			top: -4px;
-			left: -5px; 
+			top: -7px;
+			left: -7px; 
 			height: 55px;
 			width: 55px;
+			.icon{
+				svg {
+					height: 110%;
+					width: 110%;
+				}
+			}
 		}
 	}
 	#icon-box-small {
@@ -461,6 +486,10 @@
 				width: 76px;
 				height: 76px;
 				margin-right: 43px;
+				svg {
+					width: 90%;
+					height: 90%;
+				}
 			}
 			#nah-small {
 				cursor: pointer;
@@ -468,6 +497,10 @@
 				width: 76px;
 				height: 76px;
 				border-radius: 100%;
+				svg {
+					width: 90%;
+					height: 90%;
+				}
 			}
 		}
 		.submit-row {
