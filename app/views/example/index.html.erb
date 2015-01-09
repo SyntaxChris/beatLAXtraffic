@@ -533,7 +533,7 @@
               <%= render 'carParkBubble' %>
             </div>
             <div class="parking-question-font" data-car="uncolored">
-              Convenient parking available
+              When convenient parking is available
             </div>
           </div>
         </div>
@@ -546,7 +546,7 @@
               <%= render 'avoidTraffic' %>
             </div>
             <div class="parking-question-font" data-traffic="uncolored">
-              Convenient parking available
+              To avoid driving in traffic
             </div>
           </div>
         </div>
@@ -559,7 +559,7 @@
               <%= render 'peopleParkBubble' %>
             </div>
             <div class="parking-question-font" data-people="uncolored">
-              Convenient parking available
+              To meet my passenger in the terminal
             </div>
           </div>
         </div>
@@ -1338,7 +1338,7 @@
       <!-- set 1 -->
       <div id="question-set-1">
         <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
-          <h4 style="color: white; margin-top:5%; text-align: center">What was the last reason for your last trip to LAX?</h4>
+          <h4 style="color: white; margin-top:5%; text-align: center">What was the reason for your last trip to LAX?</h4>
         </div>
 
         <div class="row" style="margin-bottom: 1.5%; margin-top: 3%">
@@ -1968,7 +1968,7 @@
 <!-- DASHBOARDS -->
 <!-- <div style="position: absolute; z-index: 50; width: 100%; padding-bottom: 15%; bottom: 0; background-color: #CDEDF9"></div> -->
 
-<div id="dashboard" style="display: none">
+<div id="dashboard" style="display:none">
 <div id="clock-contents">
   <div id="clock-face" data-opac="0"></div>
     <div id="clock-hand-cntr" data-rot="0">
@@ -2077,8 +2077,7 @@
 
 
 <!-- DATA PASSED FROM FRAMEWORKS -->
-<div id="plane-progress" data-plane-progress=70></div>
-<div id="timer-progress" data-timer-progress=></div>
+<div id="plane-progress" data-plane-progress=0></div>
 <div id="spinner-chance" data-chance=<%= rand(2) %>></div>
 <!-- END DATA PASSED FROM FRAMEWORKS -->
 

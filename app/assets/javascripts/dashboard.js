@@ -1,8 +1,74 @@
 $(document).ready(function(){
-    // clock animation
+    var landTime = ["30", "1", "2"][Math.floor(Math.random() * 3)];
     var nextColor = 0;
+    var planeProgress;
+
+    $('.number.landing').text(landTime);
+
+    if(landTime === "2"){
+        planeProgress = 0;
+        $("#hr").text(landTime);
+        $("#hr-unit").text("hrs");
+    }
+    else if(landTime === "1"){
+        planeProgress = 15;
+        $('#plane-progress').data('plane-progress', 15);
+        $("#hr").text(landTime);
+        $("#hr-unit").text("hr");
+    }
+    else{
+        planeProgress = 35;
+        $('#plane-progress').data('plane-progress', 35);
+        $("#min").text(landTime);
+        $("#min-unit").text("min");
+    }
+
+
+    $('body').on('startDashboardAnimation', startDashboardAnimation);
+
+    function startDashboardAnimation(){ 
+        $("#plane-bar").animate({width: planeProgress+"%"}, 2000);
+        $("#filler").animate({marginLeft: planeProgress+"%"}, 2000);
+        
+        $(function () {
+            var prevWidth = $('#plane-bar').width();
+            $('#plane-bar').attrchange({
+                callback: function (e) {
+                    var curWidth = $(this).width();
+                    var progressPercentage = curWidth/$('#bar-back').width()*100;            
+                    if (prevWidth !== curWidth) {
+                        $("#logger").text(progressPercentage);
+                        if (progressPercentage > 84) {     
+                            $("#plane-alert").attr("class", "timer-alert");
+                            $('#landing-plane').addClass("land-ze-plane");
+                        }
+                       prevWidth = curWidth;
+                    };            
+                }
+            })
+        });
+    }
+    
+    startDashboardAnimation();
+
 
     $("#toggle-questions").click(function(){
+
+        // retrieve data from element set by Angular
+        var currentPlaneProgress = $('#plane-progress').data('plane-progress');
+
+        if(currentPlaneProgress < 85){
+            // temporarily increment
+            currentPlaneProgress += 5;
+
+            $('#plane-progress').data('plane-progress', currentPlaneProgress);
+            $("#plane-bar").animate({width: currentPlaneProgress+"%"}, 1000);
+            $("#filler").animate({marginLeft: currentPlaneProgress+"%"}, 1000);
+        }
+        // end plane progress logic
+
+
+        // clock animation
         $('svg circle#timer-fill').css("opacity", 0);
 
         switch(nextColor){
@@ -78,54 +144,6 @@ $(document).ready(function(){
             $('svg circle#timer-fill').css("opacity", o);
             $('#clock-face').data('opac', o);
         } 
+        // end clock animation
     });
-    // end clock animation
-
-    var landTime = ["30", "1", "2"][Math.floor(Math.random() * 3)];
-    $('.number.landing').text(landTime);
-    
-    var planeProgress;
-    if(landTime === "2"){
-        planeProgress = 0;
-        $("#hr").text(landTime);
-        $("#hr-unit").text("hrs");
-    }
-    else if(landTime === "1"){
-        planeProgress = 15;
-        $("#hr").text(landTime);
-        $("#hr-unit").text("hr");
-    }
-    else{
-        planeProgress = 37;
-        $("#min").text(landTime);
-        $("#min-unit").text("min");
-    }
-
-
-    $('body').on('startDashboardAnimation', startDashboardAnimation);
-
-    function startDashboardAnimation(){ 
-        $("#plane-bar").animate({width: planeProgress+"%"}, 2000);
-        $("#filler").animate({marginLeft: planeProgress+"%"}, 2000);
-        
-        $(function () {
-            var prevWidth = $('#plane-bar').width();
-            $('#plane-bar').attrchange({
-                callback: function (e) {
-                    var curWidth = $(this).width();
-                    var progressPercentage = curWidth/$('#bar-back').width()*100;            
-                    if (prevWidth !== curWidth) {
-                        $("#logger").text(progressPercentage);
-                        if (progressPercentage > 84) {     
-                            $("#plane-alert").attr("class", "timer-alert");
-                            $('#landing-plane').addClass("land-ze-plane");
-                        }
-                       prevWidth = curWidth;
-                    };            
-                }
-            })
-        });
-    }
-    
-    startDashboardAnimation();
 });
