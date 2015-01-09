@@ -88,7 +88,8 @@ $(document).ready(function(){
         else{
             $("#plane-alert").attr("class", "timer-alert");
             $('#landing-plane').addClass("land-ze-plane");
-            $('svg circle#timer-fill').attr("class", "clock-pulse")
+            $('svg circle#timer-fill').attr("class", "clock-pulse");
+            // when plane lands
             window.setTimeout(function () {
                 $("#landing-label").text('Plane landed');
                 $("span#flight-status").text('Arrived');
@@ -143,9 +144,8 @@ $(document).ready(function(){
             }
         }
         // end timer logic
-
-
-
+    
+        
         // clock animation
         if($('#landing-label').text() !== "Plane landed"){
             $('svg circle#timer-fill').css("opacity", 0);
@@ -196,6 +196,10 @@ $(document).ready(function(){
                 $('#clock-face').data('opac', o);
             } 
         }
+        else{
+            $('svg circle#timer-fill').css("opacity", 1);
+        }
+
 
         var r = $('#clock-hand-cntr').data('rot') + 45;
 
