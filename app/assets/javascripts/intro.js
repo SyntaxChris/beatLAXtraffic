@@ -89,15 +89,16 @@ $(document).ready(function(){
 
 
   // randomize plane time
-  var landTime = ["30", "1", "2"][Math.floor(Math.random() * 3)];
-  $('.number.landing').text(landTime);
+  // var landTime = ["30", "1", "2"][Math.floor(Math.random() * 3)];
+  // $('.number.landing').text(landTime);
+  // $('#main-time').text(landTime);
 
-  if(landTime === "30"){
-    $('.unit').text("min")
-  }
-  else{
-    $('.unit').text("hr")
-  }
+  // if(landTime === "30"){
+  //   $('.unit').text("min")
+  // }
+  // else{
+  //   $('.unit').text("hr")
+  // }
 
 
   //accept the current mission

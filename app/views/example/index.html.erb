@@ -1,4 +1,4 @@
-<div id="toggle-questions" style="position: absolute; z-index: 35; font-size: 10px; width: 50px; height: 30px; padding: 5px 5px 10px 0 ">TOGGLE</div>
+<button id="toggle-questions" style="position: absolute; z-index: 35; font-size: 10px; width: 50px; height: 30px; padding: 5px 5px 10px 0 ">TOGGLE</button>
 
 <div class="rail-background">
   <%= render 'railBuildings' %>
@@ -533,7 +533,7 @@
               <%= render 'carParkBubble' %>
             </div>
             <div class="parking-question-font" data-car="uncolored">
-              Convenient parking available
+              When convenient parking is available
             </div>
           </div>
         </div>
@@ -546,7 +546,7 @@
               <%= render 'avoidTraffic' %>
             </div>
             <div class="parking-question-font" data-traffic="uncolored">
-              Convenient parking available
+              To avoid driving in traffic
             </div>
           </div>
         </div>
@@ -559,7 +559,7 @@
               <%= render 'peopleParkBubble' %>
             </div>
             <div class="parking-question-font" data-people="uncolored">
-              Convenient parking available
+              To meet my passenger in the terminal
             </div>
           </div>
         </div>
@@ -1145,7 +1145,7 @@
 
 
     <!-- 17. ICON QUESTIONS -->
-    <div id="icon-questions" style="display:none">
+    <div id="icon-questions" style="display: none">
       <div class="row">
         <h3 style="color: white; text-align: center">Imagine that you could customize this future location.</h3>
       </div>
@@ -1178,7 +1178,7 @@
           <div id="icon-box">
             <div class="icon" id="dog">
               <%= render 'dog' %>
-              <div style="display:none">Dog run/relief area</div>
+              <div style="display:none">A dog run/relief area</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="couch">
@@ -1188,7 +1188,7 @@
             </div>
             <div class="icon" id="family">
               <%= render 'family' %>
-              <div style="display:none">Childrens Play Area</div>
+              <div style="display:none">A childrens Play Area</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="computer">
@@ -1223,6 +1223,7 @@
             </div>
           </div>
           <div id="icon-pop-up" style="display: none">
+            <div class="i-want">I want...</div>
             <div id="icon-description"></div>
             <div id="choice-row">
               <div id="yea">
@@ -1270,7 +1271,7 @@
             </div>
             <div class="icon" id="family">
               <%= render 'family' %>
-              <div style="display:none;">Childrens Play Area</div>
+              <div style="display:none;">A childrens Play Area</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
 
             </div>
@@ -1296,7 +1297,7 @@
             </div>
             <div class="icon" id="exit">
               <%= render 'exit' %>
-              <div style="display:none;">Easy ways to get in and out of the location</div>
+              <div style="display:none;">easy ways to get in and out of the location</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="help-desk">
@@ -1305,6 +1306,7 @@
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div id="icon-pop-up-small" style="display: none">
+              <div class="i-want">I want...</div>
               <div id="discription-group">
                 <div id="icon-description-small"></div>
                 <div id="choice-row">
@@ -1336,7 +1338,7 @@
       <!-- set 1 -->
       <div id="question-set-1">
         <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
-          <h4 style="color: white; margin-top:5%; text-align: center">What was the last reason for your last trip to LAX?</h4>
+          <h4 style="color: white; margin-top:5%; text-align: center">What was the reason for your last trip to LAX?</h4>
         </div>
 
         <div class="row" style="margin-bottom: 1.5%; margin-top: 3%">
@@ -1876,7 +1878,7 @@
 
       <div class="timer-c">
         <div class="inner">
-          <div class="timer-number">10</div>
+          <div class="timer-number">5</div>
           <div>Mins</div>
         </div>
       </div>
@@ -1888,8 +1890,8 @@
 
     <div class="content-c buttons-c">
       <div>
-        <button id="x-btn-remove-wait-time" class="remove-wait-time-btn">-10 min</button>
-        <button id="x-btn-add-wait-time" class="add-wait-time-btn">+10 min</button>
+        <button id="x-btn-remove-wait-time" class="remove-wait-time-btn">-5 min</button>
+        <button id="x-btn-add-wait-time" class="add-wait-time-btn">+5 min</button>
       </div>
       <div>
         <button id="x-btn-wait-next" class="wait-next-btn">Next</button>
@@ -1967,9 +1969,23 @@
 <!-- <div style="position: absolute; z-index: 50; width: 100%; padding-bottom: 15%; bottom: 0; background-color: #CDEDF9"></div> -->
 
 <div id="dashboard" style="display: none">
+<div id="clock-contents">
+  <div id="clock-face" data-opac="0"></div>
+    <div id="clock-hand-cntr" data-rot="0">
+      <div id="long-hand"></div>
+    </div>
+    <div id="clock">
+       <%= render 'timer' %> 
+    </div>
+</div>
     <div id="dash-contents">
       <div id="section-1">
-        <div><span id="main-time">15</span>min</div>
+        <div id="time-container">
+
+          <span id="hr"></span><span id="hr-unit"></span><span id="min"></span><span id="min-unit"></span>
+          <div id="landing-label">Until landing</div>
+        </div>
+        
       </div>
       <div id="section-2">
         <div class="content-size">
@@ -2019,9 +2035,8 @@
   <div id="gradient-2"></div>
   <div id="gradient-3"></div>
   <div id="gradient-4" style="padding: 0">
-    <div id="clock">
-      <%= render 'timer' %>
-    </div>
+    <!-- clock animation found in toggle.js for now -->
+    
   </div>
 
   <div id="progress-bar">
@@ -2062,8 +2077,8 @@
 
 
 <!-- DATA PASSED FROM FRAMEWORKS -->
-<div id="plane-progress" data-plane-progress=100></div>
-<div id="timer-progress" data-timer-progress=></div>
+<div id="plane-progress" data-plane-progress=0></div>
+<div id="time" data-hours=0 data-minutes=0></div>
 <div id="spinner-chance" data-chance=<%= rand(2) %>></div>
 <!-- END DATA PASSED FROM FRAMEWORKS -->
 

@@ -120,6 +120,7 @@ $(document).ready(function(){
 		$(".spinner-components").show();
 		$(".fail").hide();
 		$(".congrats").hide();
+		$(".trophey").hide();
  	});
 
 

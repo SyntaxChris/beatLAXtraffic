@@ -197,6 +197,13 @@
 	height: 300px; 
 	width: 400px; 
 	background-color: white;
+	.i-want{
+		text-align: center; 
+		font-size: 30px; 
+		margin-top: 15px;
+		color: #78D2EA;
+
+	}
 	#icon-description {
 		width: 300px;
 		text-align: center;
@@ -210,7 +217,7 @@
 		width: 200px;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 60px;
+		margin-top: 40px;
 		#yea {
 			cursor: pointer;
 			display: inline-block;
@@ -427,6 +434,12 @@
 		width: 280px; 
 		background-color: white;
 		opacity: 0.9;
+	    .i-want{
+			text-align: center; 
+			font-size: 30px; 
+			padding-top: 10px;
+			color: #78D2EA;
+		}
 		#icon-description-small {
 			position: relative;
 			width: 280px;
