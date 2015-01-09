@@ -1318,7 +1318,7 @@ div#clock-contents {
                     position: absolute; 
                     width: 100%;  
                     top: 30px;
-                    left: 1%;
+                    left: 0;
                     span#hr{
                         font-size: 9vw; 
                         font-weight: 700;
@@ -1333,14 +1333,14 @@ div#clock-contents {
                         margin-left: 4px;
                     }
                     span#min-unit{
-                        font-size: 2vw;
+                        font-size: 3vw;
                         position: relative;
                         right: 6%;
                     }
                     div#landing-label {
                         margin-top: 0px;
                         text-align: center; 
-                        font-size: 2vw
+                        font-size: 3vw
                     }
                 }
                 
