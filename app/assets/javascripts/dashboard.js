@@ -91,6 +91,7 @@ $(document).ready(function(){
             $('svg circle#timer-fill').attr("class", "clock-pulse")
             window.setTimeout(function () {
                 $("#landing-label").text('Plane landed');
+                $("span#flight-status").text('Arrived');
             }, 5000);
         }
 
@@ -178,7 +179,7 @@ $(document).ready(function(){
                     $('svg circle#timer-fill').css("fill", '#FF3333');
                 break;
             }
-            
+
             var o = $('#clock-face').data('opac') + 0.125;
 
             if(nextColor === 6){
