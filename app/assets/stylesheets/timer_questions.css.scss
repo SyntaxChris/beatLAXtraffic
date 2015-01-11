@@ -13,6 +13,11 @@ div#clock-container {
 	}
 }
 
+.timer-font,
+.timer-tile{
+	cursor: pointer;
+}
+
 #timer-question-submit {
 	position: relative;
 	z-index: 20;

@@ -1,89 +1,86 @@
 $(document).ready(function(){
     var landTime = ["30", "1", "2"][Math.floor(Math.random() * 3)];
+    var planeProgress = 0;
     var nextColor = 0;
-    var planeProgress;
-    var timeStepper;
-    var hour;
-    var min;
+    var hour = $('#time').data('hours');
+    var min = $('#time').data('minutes');
+    var terminalLoop = 0;    
 
     $('.number.landing').text(landTime);
 
     // set global elements/variables with initial start values
     if(landTime === "2"){
-        planeProgress = 0;
-        timeStepper = 7;
+        $('#plane-progress').data('plane-progress', planeProgress += 0);
         $("#plane-bar").animate({width: planeProgress+"%"}, 2000);
         $("#filler").animate({marginLeft: planeProgress+"%"}, 2000);
-        $('#time').data('hours', 2);
-        $("#hr").text(landTime);
-        $("#hr-unit").text("hrs");
     }
     else if(landTime === "1"){
-        planeProgress = 20;
-        timeStepper = 5;
+        $('#plane-progress').data('plane-progress', planeProgress += 20);
         $("#plane-bar").animate({width: planeProgress+"%"}, 2000);
         $("#filler").animate({marginLeft: planeProgress+"%"}, 2000);
-        $('#plane-progress').data('plane-progress', 25);
-        $('#time').data('hours', 1);
-        $("#hr").text(landTime);
-        $("#hr-unit").text("hr");
     }
     else{
-        planeProgress = 35;
-        timeStepper = 3;
+        $('#plane-progress').data('plane-progress', planeProgress += 35);
         $("#plane-bar").animate({width: planeProgress+"%"}, 2000);
         $("#filler").animate({marginLeft: planeProgress+"%"}, 2000);
-        $('#plane-progress').data('plane-progress', 35);
-        $('#time').data('hours', 0);
-        $('#time').data('minutes', 30);
-        $("#min").text(landTime);
-        $("#min-unit").text("min");
     }
 
-    hour = $('#time').data('hours');
-    min = $('#time').data('minutes');
+    $('#min').text(min);
+    $("#min-unit").text("min");
 
-    // $('body').on('startDashboardAnimation', startDashboardAnimation);
+    // target elements that increase time
+    $(".sign, #x-btn-keep-looking, #x-btn-cirle-next, #x-btn-timer-more, x-btn-add ").click(function(){
+        // how many times do you circle around terminal
+        terminalLoop += parseInt($(".circle-number").text());
 
-    // function startDashboardAnimation(){ 
-        // $("#plane-bar").animate({width: planeProgress+"%"}, 2000);
-        // $("#filler").animate({marginLeft: planeProgress+"%"}, 2000);
-        
-    //     $(function () {
-    //         var prevWidth = $('#plane-bar').width();
-    //         $('#plane-bar').attrchange({
-    //             callback: function (e) {
-    //                 var curWidth = $(this).width();
-    //                 var progressPercentage = curWidth/$('#bar-back').width()*100;            
-    //                 if (prevWidth !== curWidth) {
-    //                     $("#logger").text(progressPercentage);
-    //                     if (progressPercentage > 84) {     
-    //                         $("#plane-alert").attr("class", "timer-alert");
-    //                         $('#landing-plane').addClass("land-ze-plane");
-    //                     }
-    //                    prevWidth = curWidth;
-    //                 };            
-    //             }
-    //         })
-    //     });
-    // }
-    
-    // startDashboardAnimation();
+    });
+
+    // target elements that decrease time
+    $("#x-btn-timer-less").click(function(){
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     $("#toggle-questions").click(function(){
 
-        // retrieve data from element set by Angular
-        var currentPlaneProgress = $('#plane-progress').data('plane-progress');
-
         // plane progress logic
-        if(currentPlaneProgress < 85){
+        if(planeProgress < 85){
             // temporarily increment
-            currentPlaneProgress += 5;
+            $('#plane-progress').data('plane-progress', planeProgress += 5);
 
-            $('#plane-progress').data('plane-progress', currentPlaneProgress);
-            $("#plane-bar").animate({width: currentPlaneProgress+"%"}, 200);
-            $("#filler").animate({marginLeft: currentPlaneProgress+"%"}, 200);
+            $('#plane-progress').data('plane-progress', planeProgress);
+            $("#plane-bar").animate({width: planeProgress+"%"}, 200);
+            $("#filler").animate({marginLeft: planeProgress+"%"}, 200);
         }
         else{
             $("#plane-alert").attr("class", "timer-alert");
@@ -99,49 +96,24 @@ $(document).ready(function(){
 
 
         // timer logic
-
-        if(hour > 0){
-            if(min > 0){
-                min -= timeStepper;
-                if(min <= 0){
-                   min = 60 + min;
-                   hour -= 1; 
-                }
-                if(hour === 0){
-                    $('#hr').empty();
-                    $('#hr-unit').empty();
-                }
-                else{
-                    $('#hr').text(hour);
-                    $('#hr-unit').text('hr');
-                }
-                $('#min').text(min);
-                $('#min-unit').text('min'); 
-            }
-            else if(min <= 0){
-                hour -= 1;
-                min += 60;
-                min -= timeStepper;
-                if(hour < 1){
-                    $('#hr').empty();
-                    $('#hr-unit').empty();
-                }
-                $('#min').text(min);
-                $('#min-unit').text('min');
-            }  
+        $('#time').data('minutes', min += 5);
+        // $('#time').data('hours');
+        
+        if(min === 60){
+            $('#time').data('hours', hour += 1);
+            $('#hr').text(hour);
+            if(hour > 1){$("#hr-unit").text("hrs")}
+            else{$("#hr-unit").text("hr")}
+            
+            min = 0;
+            $('#time').data('minutes', min);
+            $('#min').empty();
+            $('#min-unit').empty();
         }
         else{
-            $('#hr').empty();
-            $('#hr-unit').empty();
-            if(min > 0){
-                min -= timeStepper;
-                min > 0 ? min : min = 0;
-                $('#min').text(min); 
-            }
-            else {
-                $('#min').text(0);
-                $('#plane-label').text("Plane landed");
-            }
+            $('#time').data('minutes', min);
+            $('#min').text(min);
+            $('#min-unit').text('min');
         }
         // end timer logic
     
