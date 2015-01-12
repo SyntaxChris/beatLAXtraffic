@@ -18,7 +18,8 @@ div#clock-container {
 	cursor: pointer;
 }
 
-#timer-question-submit {
+.next#timer-question {
+	display:block;
 	position: relative;
 	z-index: 20;
 	cursor: pointer;
@@ -34,11 +35,6 @@ div#clock-container {
 	bottom: 0px;
 	color: white;
 }
-
-// #timer-question-submit:hover, #timer-question-submit:active {
-// 	background-color: #24B7EA;
-// 	opacity: 0.8;
-// }
 
 @media screen and (max-width: 320px) and (min-width: 0px) and (orientation: portrait) {
 	div#clock-container {

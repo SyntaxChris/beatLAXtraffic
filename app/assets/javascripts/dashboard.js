@@ -29,44 +29,28 @@ $(document).ready(function(){
     $("#min-unit").text("min");
 
     // target elements that increase time
-    $(".sign, #x-btn-keep-looking, #x-btn-cirle-next, #x-btn-timer-more, x-btn-add ").click(function(){
-        // how many times do you circle around terminal
-        terminalLoop += parseInt($(".circle-number").text());
+    $(".sign, #x-btn-keep-looking, #x-btn-cirle-next, #x-btn-timer-more, x-btn-add, .next#spin-parking-lose, .next#spin-pickup-lose, .timer-tile, .timer-font").click(function(){
+        var idClicked = $(this).attr('id'); 
+        if(idClicked === 'tf-1' || idClicked === 'tile-1' ){
+            // increment counter by 90min
+        }
+        else if(idClicked === 'tf-2' || idClicked === 'tile-2' ){
+            // increment counter by 15min
+        }
+        else if(idClicked === 'tf-3' || idClicked === 'tile-3' ){
+            // increment counter by 60min
+        }
+        else if(idClicked === 'tf-4' || idClicked === 'tile-4' ){
+            // increment counter by 30min
+        }
+
+        // if terminal loop question display not equal to none
+        // terminalLoop += parseInt($(".circle-number").text());
+
+
+        
 
     });
-
-    // target elements that decrease time
-    $("#x-btn-timer-less").click(function(){
-
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -83,7 +67,7 @@ $(document).ready(function(){
             $("#filler").animate({marginLeft: planeProgress+"%"}, 200);
         }
         else{
-            $("#plane-alert").attr("class", "timer-alert");
+            $("#plane-alert").attr("class", "clock-pulse");
             $('#landing-plane').addClass("land-ze-plane");
             $('svg circle#timer-fill').attr("class", "clock-pulse");
             // when plane lands

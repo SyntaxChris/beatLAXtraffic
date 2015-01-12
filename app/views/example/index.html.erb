@@ -12,7 +12,7 @@
 <!-- <div id="logger"></div> -->
 
 <!-- SPLASH PAGE -->
-<div id="splash-page" style="display:none;">
+<div id="splash-page" style="display:none">
   <div class="row" style="text-align: center; margin-top: 3%">
     <h2 style="color: white">Are you an LAX <span style="font-weight: 700">Pick Up Artist?</span></h2>
     <div id="start-button">Start</div>
@@ -50,9 +50,13 @@
         < 30 minutes away
       </div>
       <div class="row" id="row-6">
-        <div id="confirm-btn"><b>Next</b></div>
-        <%= render 'tower' %>
-        <%= render 'laxArch' %>
+        <div class="next" id="dist-temp"><b>Next</b></div>
+        <div id="tower">
+          <%= render 'tower' %>  
+        </div>
+        <div id="arch">
+          <%= render 'laxArch' %>  
+        </div>
       </div>
       
       <div id="arrow-contents">
@@ -276,7 +280,7 @@
                   To avoid paying for parking
                 </div>
               </div>
-              <div class="strategy-submit-large">Next</div>
+              <div class="next" id="strategy-large-temp">Next</div>
             </div>
             <div class="large-4 medium-4 small-4 columns">
               <div class="bubble-icon-container" id="container-3">
@@ -406,7 +410,7 @@
                     <%= render 'boxster' %>
                   </div>
 
-                  <div class="strategy-submit" style="display: none">Next</div>
+                  <div class="next" id="strategy-small-temp" style="display: none">Next</div>
 
               </div>
 
@@ -519,7 +523,7 @@
 
 
   <!-- TODO: 5. Why do you choose to park your car? -->
-  <div id="why-park-car" style="display:none">
+  <div id="why-park-car" style="display: none">
     <div class="row" style="text-align:center">
       <h3 class="main-question">Why do you choose to park your car?</h3>
     </div>
@@ -581,11 +585,11 @@
             </div>
             <br>
             <div id="char-count" style="display: none; position: absolute; margin-left: 15%; text-align:center; color: #B2C4D4; font-size: 12px; width: 90%; margin-left: auto; margin-right: auto"></div>
-            <div class="parking-submit">
-              <div class="parking-submit-btn">OK</div>
-            </div>
+            
+            <div class="parking-ok-btn">OK</div>
+        
           </div>
-          <div class="parking-next" style="display:none; margin-left: 25%; position: absolute; text-align: center">Next</div>
+          <div class="next" id="why-park" style="display:none; margin-left: 25%; position: absolute; text-align: center">Next</div>
         </div>
 
       </div>
@@ -649,10 +653,10 @@
             <br>
             <div id="char-count" style="position: absolute; margin-left: auto; margin-right: auto; text-align:center; color: #B2C4D4; font-size: 12px; width: 90%"></div>
             <div class="parking-submit">
-              <div class="parking-submit-btn">OK</div>
+              <div class="parking-submit-btn" style="display:none">OK</div>
             </div>
           </div>
-          <div class="parking-next" style="display:none; margin-left: 20%; position: absolute; text-align: center">Next</div>
+          <div class="next" id="why-park" style="display:none">Next</div>
         </div>
         
       </div>
@@ -674,7 +678,7 @@
     <div class="congrats" style="display:none;">
       <h1>Congratulations!</h1>
       <h3 class="main-question">You got a parking spot!</h3>
-      <div class="continue-btn">
+      <div class="next" id="spin-parking-win">
         Continue
       </div>
     </div>
@@ -682,7 +686,7 @@
     <div class="fail" style="display:none">
       <h1 style="color: white; text-align: center;">Dang!</h1>
       <h3 class="main-question">The parking lot is full.</h3>
-      <div class="continue-btn">
+      <div class="next" id="spin-parking-lose">
         Continue
       </div>
     </div>
@@ -742,7 +746,7 @@
     <div class="congrats" style="display:none;">
       <h1>Nice!</h1>
       <h3 class="main-question" style="margin-top: -20px">Your passenger is at the curb!</h3>
-      <div class="continue-btn">
+      <div class="next" id="spin-pickup-win">
         Continue
       </div>
     </div>
@@ -750,7 +754,7 @@
     <div class="fail" style="display:none">
       <h1>Dang!</h1>
       <h3 class="main-question">Our pick-up wasn't there.</h3>
-      <div class="continue-btn">
+      <div class="next" id="spin-pikcup-lose">
         Continue
       </div>
     </div>
@@ -808,6 +812,7 @@
   <!-- 7. TILE QUESTIONS -->
   <div class="large-12 medium-12 small-12 columns">
     <div id="tile-questions" style="display:none">
+    
       <!-- questions header -->
       <div class="show-for-landscape">
         <div class="row">
@@ -824,12 +829,11 @@
         <div class="row">
           <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
             <div id="question-header" style="text-align: center">
-                <h3 class="main-question" id="main">What are you doing while you wait?</h3>
-                <h5 id="foot" style="text-align:center">
+              <h3 class="main-question" id="main">What are you doing while you wait?</h3>
+              <h5 id="foot" style="text-align:center">
                 Select all that apply
-<div class="next" style="color: white; width: 100px; border-radius: 5px; position: relative; margin-left: auto; margin-right: auto">Next</div>
-                </h5> 
-                
+                <div class="next" id="tiles-large" style="">Next</div>
+              </h5> 
             </div>
           </div>
         </div>
@@ -879,7 +883,7 @@
                 
                 <!-- text area -->
                 <div class="large-4 medium-4 small-4 columns">
-                  <div class="next" style="width: 125px; height: 40px; margin-left: 27.5%; margin-right: auto; margin-top: 40px;  color: white; text-align: center; padding-top: 7px; border-radius: 5px">Next</div>
+                  <div class="next" id="tiles-medium">Next</div>
                   <div class="row">
                     <div class="large-12 medium-12 small-12 columns">
                       <div id="user-text-input">
@@ -989,7 +993,7 @@
           </div>
           <div class="row">
             <div class="medium-4 small-4 medium-centered small-centered columns">
-              <div class="next" style="width: 125px; height: 30px; margin-left: auto; margin-right: auto;  color: white; text-align: center; padding-top: 2px; border-radius: 5px">
+              <div class="next" id="tiles-small">
                 Next
               </div>
             </div>
@@ -1100,7 +1104,7 @@
         <div class="large-12 medium-12 small-12 large-centered medium-centered small-centerd columns">
           <div id="clock-container">
             <%= render 'timerquestion' %>
-            <div class="next" id="timer-question-submit" style="display:none">Next</div>
+            <div class="next" id="timer-question" style="display:none">Next</div>
           </div>
         </div>
       </div>
@@ -1814,7 +1818,7 @@
 
 
   <!-- 13. CIRCLE PICKUP QUESTIONS -->
-  <div id="circle-pickup" style="display: none;">
+  <div id="circle-pickup" style="display: none">
     <div class="content">
       <h3>
         How many times do you typically circle around the terminal when picking up your passenger?
@@ -1842,7 +1846,7 @@
            <button id="x-btn-circle-more" class="counter-btn">+1</button> 
         </div>
         <div id>
-          <button id="x-btn-circle-next" class="circle-next-btn">Next</button>
+          <button id="x-btn-circle-next" class="next">Next</button>
         </div>
       </div>
     </div>
@@ -1858,7 +1862,7 @@
 
       <div class="content-c">
         <div class="timer-c">
-          <div class="timer-number">0</div>
+          <div class="timer-number" id="min">0</div>
           <div>min</div>
         </div>
       </div>
@@ -1869,7 +1873,7 @@
            <button id="x-btn-timer-more" class="counter-btn">+5 min</button> 
         </div>
         <div>
-          <button id="x-btn-timer-next" class="timer-next-btn">Next</button>
+          <button id="x-btn-timer-next" class="next">Next</button>
         </div>
       </div>
     </div>
@@ -1882,7 +1886,7 @@
 
       <div class="timer-c">
         <div class="inner">
-          <div class="timer-number">5</div>
+          <div class="timer-number" id="wait">5</div>
           <div>Mins</div>
         </div>
       </div>
@@ -1898,7 +1902,7 @@
         <button id="x-btn-add-wait-time" class="add-wait-time-btn">+5 min</button>
       </div>
       <div>
-        <button id="x-btn-wait-next" class="wait-next-btn">Next</button>
+        <button id="x-btn-wait-next" class="next">Next</button>
       </div>
     </div>
   </div>
