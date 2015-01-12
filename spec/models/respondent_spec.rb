@@ -88,6 +88,12 @@ describe Respondent do
   end
 
   describe "Features" do
+
+    it "on creation, current_node_id equals the starting node" do
+      new_respondent = Respondent.create
+      expect(new_respondent.current_node_id).to eq 1
+    end
+
     describe "get_or_create_by_session(session_id)" do
       describe "looks up a session to see if it has an active respondent session" do
         context "when session exists" do
@@ -97,7 +103,8 @@ describe Respondent do
             expect(Respondent.get_or_create_by_session("1234")).to eq(
               {
                 session_id: respondent.session_id,
-                respondent_id: respondent.id
+                respondent_id: respondent.id,
+                current_node_id: respondent.current_node_id
               }
             )
             expect(Respondent.all.count).to eq 1
@@ -110,7 +117,8 @@ describe Respondent do
             expect(Respondent.get_or_create_by_session("1234")).to eq(
               {
                 session_id: Respondent.last.session_id,
-                respondent_id: Respondent.last.id
+                respondent_id: Respondent.last.id,
+                current_node_id: Respondent.last.current_node_id
               }
             )
             expect(Respondent.all.count).to eq 1

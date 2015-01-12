@@ -77,16 +77,19 @@ RSpec.describe Response, :type => :model do
       response_1 = FactoryGirl.create(
         :response,
         node_id: node_1.id,
+        respondent_id: 1,
         answer_id: answer_a.id
       )
       response_2 = FactoryGirl.create(
         :response,
         node_id: node_1.id,
+        respondent_id: 1,
         answer_id: answer_b.id
       )
       response_3 = FactoryGirl.create(
         :response,
         node_id: node_1.id,
+        respondent_id: 1,
         answer_id: answer_c.id
       )
 
@@ -131,30 +134,35 @@ RSpec.describe Response, :type => :model do
       response_1 = FactoryGirl.create(
         :response,
         node_id: node_1.id,
+        respondent_id: 1,
         answer_id: answer_a.id,
         rank: 1
       )
       response_2 = FactoryGirl.create(
         :response,
         node_id: node_1.id,
+        respondent_id: 1,
         answer_id: answer_b.id,
         rank: 2
       )
       response_3 = FactoryGirl.create(
         :response,
         node_id: node_1.id,
+        respondent_id: 1,
         answer_id: answer_c.id,
         rank: 3
       )
       response_4 = FactoryGirl.create(
         :response,
         node_id: node_1.id,
+        respondent_id: 1,
         answer_id: answer_d.id,
         rank: 0
       )
       response_5 = FactoryGirl.create(
         :response,
         node_id: node_1.id,
+        respondent_id: 1,
         answer_id: answer_d.id,
         rank: 0
       )
@@ -176,6 +184,250 @@ RSpec.describe Response, :type => :model do
   end
 
   describe "Features" do
+    describe "create_all_from_node_interaction" do
+      context "survey questions" do
+        let!(:respondent) { create(:respondent) }
+        let!(:next_node) { create(:node) }
+        let!(:node) { create(:node, next_node_id: next_node.id) }
+        let!(:answer) { create(:answer) }
+        let!(:answer_2) { create(:answer) }
+        let!(:answer_3) { create(:answer) }
+        let!(:answer_4) { create(:answer) }
+
+        it "creates a question response for a respondent" do
+        argument_params = {
+          is_decision: false,
+          respondent_id: respondent.id,
+          node_id: node.id,
+          answers: [
+            { id: answer.id,
+              rank: nil
+            }
+          ],
+          time_elapsed: 10
+        }
+          response_count = respondent.responses.count
+          Response.create_all_from_node_interaction(argument_params)
+          expect(respondent.responses.count).to eq response_count + 1
+          expect(respondent.responses.last.node_id).to eq node.id
+          expect(respondent.responses.last.answer_id).to eq answer.id
+        end
+
+        it "decides on times_seen" do
+          Response.create(node_id: node.id, answer_id: answer.id, respondent_id: 123)
+          Response.create(node_id: node.id, answer_id: answer.id, respondent_id: respondent.id)
+          argument_params = {
+            is_decision: false,
+            respondent_id: respondent.id,
+            node_id: node.id,
+            answers: [
+              { id: answer.id,
+                rank: nil
+              }
+            ],
+            time_remaining: nil
+          }
+
+          response_count = respondent.responses.count
+          Response.create_all_from_node_interaction(argument_params)
+          expect(respondent.responses.count).to eq response_count + 1
+          expect(respondent.responses.last.node_id).to eq node.id
+          expect(respondent.responses.last.answer_id).to eq answer.id
+          expect(respondent.responses.last.times_seen).to eq 2
+        end
+
+        it "decides if this node was skipped" do
+          argument_params = {
+            is_decision: false,
+            respondent_id: respondent.id,
+            node_id: node.id,
+            answers: [
+            ],
+            time_remaining: nil
+          }
+
+          response_count = respondent.responses.count
+          Response.create_all_from_node_interaction(argument_params)
+          expect(respondent.responses.count).to eq response_count + 1
+          expect(respondent.responses.last.node_id).to eq node.id
+          expect(respondent.responses.last.answer_id).to eq nil
+          expect(respondent.responses.last.skipped).to eq true
+        end
+
+        it "decides if the node was seen before AND skipped this time" do
+          Response.create(node_id: node.id, answer_id: answer.id, respondent_id: 123)
+          Response.create(node_id: node.id, answer_id: answer.id, respondent_id: respondent.id)
+          argument_params = {
+            is_decision: false,
+            respondent_id: respondent.id,
+            node_id: node.id,
+            answers: [
+            ],
+            time_remaining: nil
+          }
+
+          response_count = respondent.responses.count
+          Response.create_all_from_node_interaction(argument_params)
+          expect(respondent.responses.count).to eq response_count + 1
+          expect(respondent.responses.last.node_id).to eq node.id
+          expect(respondent.responses.last.answer_id).to eq nil
+          expect(respondent.responses.last.skipped).to eq true
+          expect(respondent.responses.last.times_seen).to eq 2
+        end
+
+        it "updates the respondent's current_node_id to be the next_node" do
+          argument_params = {
+            is_decision: false,
+            respondent_id: respondent.id,
+            node_id: node.id,
+            next_node_id: next_node.id,
+            answers: [
+              { id: answer.id,
+                rank: nil
+              }
+            ],
+            time_elapsed: 10
+          }
+          response_count = respondent.responses.count
+          Response.create_all_from_node_interaction(argument_params)
+          expect(respondent.responses.count).to eq response_count + 1
+          expect(respondent.responses.last.node_id).to eq node.id
+          expect(respondent.responses.last.answer_id).to eq answer.id
+          expect(Respondent.last.current_node_id).to eq next_node.id
+        end
+
+        it "creates a separate response for each multiple choice answer" do
+          Response.create(node_id: node.id, answer_id: answer.id, respondent_id: 123)
+          argument_params = {
+            is_decision: false,
+            respondent_id: respondent.id,
+            node_id: node.id,
+            answers: [
+              {
+                id: answer.id,
+                rank: 2
+              },
+              {
+                id: answer_2.id,
+                rank: 3
+              },
+              {
+                id: answer_3.id,
+                rank: 1
+              }
+            ],
+            time_remaining: nil
+          }
+
+          response_count = respondent.responses.count
+          Response.create_all_from_node_interaction(argument_params)
+          expect(respondent.responses.count).to eq response_count + 3
+          expect(respondent.responses.where(answer_id: answer.id).first.rank).to eq 2
+          expect(respondent.responses.where(answer_id: answer_2.id).first.rank).to eq 3
+          expect(respondent.responses.where(answer_id: answer_3.id).first.rank).to eq 1
+        end
+
+        it "creates a separate response for each multiple choice answer AND knows if it has seen his question before" do
+          Response.create(node_id: node.id, answer_id: answer.id, respondent_id: 123)
+          Response.create(node_id: node.id, answer_id: answer.id, respondent_id: respondent.id)
+          argument_params = {
+            is_decision: false,
+            respondent_id: respondent.id,
+            node_id: node.id,
+            answers: [
+              {
+                id: answer.id,
+                rank: 2
+              },
+              {
+                id: answer_2.id,
+                rank: 3
+              },
+              {
+                id: answer_3.id,
+                rank: 1
+              }
+            ],
+            time_remaining: nil
+          }
+
+          response_count = respondent.responses.count
+          Response.create_all_from_node_interaction(argument_params)
+          expect(respondent.responses.count).to eq response_count + 3
+          expect(respondent.responses.where(answer_id: answer.id).last.rank).to eq 2
+          expect(respondent.responses.where(answer_id: answer.id).last.times_seen).to eq 2
+          expect(respondent.responses.where(answer_id: answer_2.id).first.rank).to eq 3
+          expect(respondent.responses.where(answer_id: answer_2.id).first.times_seen).to eq 2
+          expect(respondent.responses.where(answer_id: answer_3.id).first.rank).to eq 1
+          expect(respondent.responses.where(answer_id: answer_3.id).first.times_seen).to eq 2
+        end
+
+        pending "time elapses with every node traversal" do
+          skip "need to add this and have this number: "\
+                  "\n\t - add to time elapsed" \
+                  "\n\t - subtract from time-till-land"
+        end
+      end
+      context "decision points" do
+        let!(:respondent) { create(:respondent) }
+        let!(:next_node) { create(:node) }
+        let!(:node) { create(:node, next_node_id: next_node.id) }
+        let!(:decision_point) { create(:decision_point) }
+        let!(:decision) { create(:decision) }
+
+        it "creates a decision point response for a respondent (with empty answers)" do
+          argument_params = {
+            is_decision: true,
+            respondent_id: respondent.id,
+            node_id: node.id,
+            answers: [
+            ],
+            decision_id: decision.id,
+          }
+
+          response_count = respondent.responses.count
+          Response.create_all_from_node_interaction(argument_params)
+          expect(respondent.responses.count).to eq response_count + 1
+          expect(respondent.responses.last.node_id).to eq node.id
+          expect(respondent.responses.last.decision_id).to eq decision.id
+          expect(respondent.responses.last.skipped).to eq nil
+        end
+        it "creates a decision point response for a respondent (with nil answers)" do
+          argument_params = {
+            is_decision: true,
+            respondent_id: respondent.id,
+            node_id: node.id,
+            answers: nil,
+            decision_id: decision.id,
+          }
+
+          response_count = respondent.responses.count
+          Response.create_all_from_node_interaction(argument_params)
+          expect(respondent.responses.count).to eq response_count + 1
+          expect(respondent.responses.last.node_id).to eq node.id
+          expect(respondent.responses.last.decision_id).to eq decision.id
+          expect(respondent.responses.last.skipped).to eq nil
+        end
+        it "updates the respondent's current_node_id to be the next_node" do
+          argument_params = {
+            is_decision: true,
+            respondent_id: respondent.id,
+            node_id: node.id,
+            answers: nil,
+            decision_id: decision.id,
+            next_node_id: next_node.id
+          }
+
+          response_count = respondent.responses.count
+          Response.create_all_from_node_interaction(argument_params)
+          expect(respondent.responses.count).to eq response_count + 1
+          expect(respondent.responses.last.node_id).to eq node.id
+          expect(respondent.responses.last.decision_id).to eq decision.id
+          expect(Respondent.last.current_node_id).to eq next_node.id
+        end
+      end
+    end
+
     pending "checks to see if this user has responded to this node before, "\
              "if so, how many times, and increases times_seen accordingly"
 
