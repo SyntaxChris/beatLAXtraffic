@@ -187,7 +187,8 @@ RSpec.describe Response, :type => :model do
     describe "create_all_from_node_interaction" do
       context "survey questions" do
         let!(:respondent) { create(:respondent) }
-        let!(:node) { create(:node) }
+        let!(:next_node) { create(:node) }
+        let!(:node) { create(:node, next_node_id: next_node.id) }
         let!(:answer) { create(:answer) }
         let!(:answer_2) { create(:answer) }
         let!(:answer_3) { create(:answer) }
@@ -274,6 +275,27 @@ RSpec.describe Response, :type => :model do
           expect(respondent.responses.last.times_seen).to eq 2
         end
 
+        it "updates the respondent's current_node_id to be the next_node" do
+          argument_params = {
+            is_decision: false,
+            respondent_id: respondent.id,
+            node_id: node.id,
+            next_node_id: next_node.id,
+            answers: [
+              { id: answer.id,
+                rank: nil
+              }
+            ],
+            time_elapsed: 10
+          }
+          response_count = respondent.responses.count
+          Response.create_all_from_node_interaction(argument_params)
+          expect(respondent.responses.count).to eq response_count + 1
+          expect(respondent.responses.last.node_id).to eq node.id
+          expect(respondent.responses.last.answer_id).to eq answer.id
+          expect(Respondent.last.current_node_id).to eq next_node.id
+        end
+
         it "creates a separate response for each multiple choice answer" do
           Response.create(node_id: node.id, answer_id: answer.id, respondent_id: 123)
           argument_params = {
@@ -348,11 +370,12 @@ RSpec.describe Response, :type => :model do
       end
       context "decision points" do
         let!(:respondent) { create(:respondent) }
-        let!(:node) { create(:node) }
+        let!(:next_node) { create(:node) }
+        let!(:node) { create(:node, next_node_id: next_node.id) }
         let!(:decision_point) { create(:decision_point) }
         let!(:decision) { create(:decision) }
 
-        it "creates a decision point response for a respondent" do
+        it "creates a decision point response for a respondent (with empty answers)" do
           argument_params = {
             is_decision: true,
             respondent_id: respondent.id,
@@ -368,6 +391,39 @@ RSpec.describe Response, :type => :model do
           expect(respondent.responses.last.node_id).to eq node.id
           expect(respondent.responses.last.decision_id).to eq decision.id
           expect(respondent.responses.last.skipped).to eq nil
+        end
+        it "creates a decision point response for a respondent (with nil answers)" do
+          argument_params = {
+            is_decision: true,
+            respondent_id: respondent.id,
+            node_id: node.id,
+            answers: nil,
+            decision_id: decision.id,
+          }
+
+          response_count = respondent.responses.count
+          Response.create_all_from_node_interaction(argument_params)
+          expect(respondent.responses.count).to eq response_count + 1
+          expect(respondent.responses.last.node_id).to eq node.id
+          expect(respondent.responses.last.decision_id).to eq decision.id
+          expect(respondent.responses.last.skipped).to eq nil
+        end
+        it "updates the respondent's current_node_id to be the next_node" do
+          argument_params = {
+            is_decision: true,
+            respondent_id: respondent.id,
+            node_id: node.id,
+            answers: nil,
+            decision_id: decision.id,
+            next_node_id: next_node.id
+          }
+
+          response_count = respondent.responses.count
+          Response.create_all_from_node_interaction(argument_params)
+          expect(respondent.responses.count).to eq response_count + 1
+          expect(respondent.responses.last.node_id).to eq node.id
+          expect(respondent.responses.last.decision_id).to eq decision.id
+          expect(Respondent.last.current_node_id).to eq next_node.id
         end
       end
     end

@@ -58,7 +58,7 @@ describe "responses API" do
       expect(response).to be_success
     end
 
-    pending "is ok with a nil answers array" do
+    it "is ok with a nil answers array" do
       Response.create(node_id: node.id, answer_id: answer.id, respondent_id: 123)
       Response.create(node_id: node.id, answer_id: answer.id, respondent_id: respondent.id)
       params = {
@@ -107,8 +107,37 @@ describe "responses API" do
       expect(response).not_to be_success
     end
 
-    it "records a decision point response for a respondent" do
-      skip "test this too"
+    it "records a decision point response for a respondent with empty answers" do
+      params = {
+        response: {
+          is_decision: true,
+          respondent_id: respondent.id,
+          node_id: node.id,
+          decision_id: 2,
+          answers: [],
+          time_remaining: nil
+        }
+      }
+      xhr :post, '/api/response', params
+
+      expect(response).to be_success
+      expect(Response.last.decision_id).to eq 2
+    end
+    it "records a decision point response for a respondent with nil answers" do
+      params = {
+        response: {
+          is_decision: true,
+          respondent_id: respondent.id,
+          node_id: node.id,
+          decision_id: 2,
+          answers: nil,
+          time_remaining: nil
+        }
+      }
+      xhr :post, '/api/response', params
+
+      expect(response).to be_success
+      expect(Response.last.decision_id).to eq 2
     end
   end
 end

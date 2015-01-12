@@ -6,7 +6,7 @@ module Api
       if result[:status] == "success"
         render json: result, status: 200
       else
-        render json: result, status: 402
+        render json: result, status: 422
       end
     end
 
@@ -18,6 +18,7 @@ module Api
         :node_id,
         :respondent_id,
         :decision_id,
+        :next_node_id,
         answers: [[:id, :rank]]
       )
     end

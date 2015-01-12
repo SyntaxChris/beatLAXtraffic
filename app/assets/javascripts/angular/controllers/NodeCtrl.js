@@ -3,21 +3,24 @@ angular.module('lawaApp')
     '$scope','$http','_', function($scope,$http,_) {
 
       $scope.setup = function(){
+        // get and set up all nodes
         $http.get('/api/nodes').success(function(data){
           $scope.nodes = data;
-
-          // TODO:
-          // the setup function will need a way to set the currentNode as the first
-          // node in the experience if session is new, otherwise set it to current player's
-          // session current node. but for now, we'll go with:
-          $scope.currentNode = $scope.fetchNodeById(1);
-          // also, should the API do that an should this js function not be responsible for that?
-          // ...yes, i think so. something in the API like:
-          // `starting_node = 1 || current_session.current_node_id`
-          // ... and then this controller should just look to starting_node
         });
+
+        // find or create a respondent with session and current node data
+        $http.get('/api/respondents/get_or_create/').success(function(data){
+          $scope.surveySessionId = data.session_id;
+          $scope.respondentId = data.respondent_id;
+          $scope.setCurrentNodeById(data.current_node_id);
+        })
+
         $scope.currentDecisionDestination = null;
         $scope.currentAnswers = [];
+      }
+
+      $scope.setCurrentNodeBySession = function() {
+        $scope.currentNode = $scope.fetchNodeById(sessionCurrentNodeId);
       }
 
       $scope.fetchNodeById = function(nodeId){
@@ -66,21 +69,23 @@ angular.module('lawaApp')
       }
 
       $scope.submit = function(decisionId){
+        console.log($scope);
         var paramSafeAnswers = answersForParams($scope.currentAnswers);
         var params = {
           is_decision: $scope.currentNode.is_decision_point,
-          respondent_id: 1,
+          respondent_id: $scope.respondentId,
           node_id: $scope.currentNode.node_id,
           decision_id: decisionId || null,
-          answers: paramSafeAnswers || null
+          answers: paramSafeAnswers || null,
+          next_node_id: $scope.currentNode.next_node_id
         }
         $http.post('/api/response', { response: params }).success(function(data){
           // post to API and then on success:
           $scope.goToNextNode();
 
-          // TODO: clear decision
+          // clear decision prepping for next question (can move to own method)
           $scope.currentDecisionDestination = null;
-          // TODO: clear answers
+          // clear answers prepping for next question (can move into above-mentioned)
           $scope.currentAnswers = [];
         });
       };
