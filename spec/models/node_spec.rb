@@ -7,7 +7,8 @@ describe Node do
         :node,
         nickname: "E1",
         is_decision_point: false,
-        next_node_id: 2
+        next_node_id: 2,
+        template_name: "steve"
       )
     }
 
@@ -21,6 +22,10 @@ describe Node do
 
     it "can have a next node if it's a question node" do
       expect(node.next_node_id).to eq 2
+    end
+
+    it "has a template_name" do
+      expect(node.template_name).to eq "steve"
     end
   end
 

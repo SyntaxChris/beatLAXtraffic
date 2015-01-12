@@ -17,6 +17,20 @@ angular.module('lawaApp')
 
         $scope.currentDecisionDestination = null;
         $scope.currentAnswers = [];
+        var templateId = "1"
+        // this needs to a string with the erb code around it, but it needs to be
+        // interpolate-able via js so that this controller can set it accordingly.
+        // $scope.templateTest = "\'</%= asset_path \'partials/testing-1.html\' %>\'"
+        console.log($scope.templateTest)
+
+        var templates = {}
+        <% Node.all.each do |node| %>
+          <%= "templates['#{node.id}'] = {template: '#{asset_path "partials/question-#{node.template_name}.html"}'}" %>
+        <% end %>
+
+        $scope.getTemplateName = function(nodeId){
+          return templates[nodeId].template;
+        }
       }
 
       $scope.setCurrentNodeBySession = function() {
@@ -89,6 +103,11 @@ angular.module('lawaApp')
           $scope.currentAnswers = [];
         });
       };
+
+
+        $scope.getMinigameName = function(area){
+            return minigames[area.minigame_type_id].name;
+        };
 
       $scope.setup();
     }
