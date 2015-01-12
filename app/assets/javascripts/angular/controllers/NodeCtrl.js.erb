@@ -25,7 +25,7 @@ angular.module('lawaApp')
 
         var templates = {}
         <% Node.all.each do |node| %>
-          <%= "templates['#{node.id}'] = {template: '#{asset_path "partials/question-#{node.template_name}.html"}'}" %>
+          <%= "templates['#{node.id}'] = {template: '#{asset_path "partials/#{node.template_name}.html"}'}" %>
         <% end %>
 
         $scope.getTemplateName = function(nodeId){

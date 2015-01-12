@@ -37,7 +37,7 @@ namespace :populate do
     #   - TODO: move all decision point nodes to the bottom and make sure THEY are stacked properly!
     # TODO: add question type to DPs
 
-    sq1 = Node.create(nickname: "SQ 1", is_decision_point: false, branch_id: scenario_questions_branch.id)
+    sq1 = Node.create(nickname: "SQ 1", is_decision_point: false, branch_id: scenario_questions_branch.id, template_name: "testing-1")
       sq1q = Question.create(node_id: sq1.id, question: "About how far away from LAX do you live?", question_type_id: nil)
       # ^ needs a question type
         sq1a1 = Answer.create(question_id: sq1q.id, answer: "Less than 30 minute drive away", icon_name: nil)

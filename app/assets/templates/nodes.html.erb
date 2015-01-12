@@ -6,11 +6,7 @@
     <div ng-if="currentNode.is_decision_point">
       <div ng-include="'<%= asset_path 'partials/decision.html' %>'"></div>
     </div>
-
-    <div>
-      <h1>template name: {{getTemplateName(currentNode.node_id)}}</h1>
-      <div ng-include="getTemplateName(currentNode.node_id)">
-      </div>
-    </div>
+  </div>
+  <div ng-include="getTemplateName(currentNode.node_id)">
   </div>
 </div>
