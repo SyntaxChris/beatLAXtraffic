@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	var otherBoxCount = 0;
+  var qClicks = 0;
  	
   	$("#other-last").click(function(){
   		if(otherBoxCount === 0){
@@ -33,7 +34,10 @@ $(document).ready(function(){
   		$("#question-set-3").fadeIn();
   	});
 
-    $(".q-3-text").click(function(){
-      $(".next").fadeIn();
+    $('.question-wrapper-3').click(function(){
+      $('.question-wrapper-3').removeClass('q3-clicked');
+      $(this).addClass('q3-clicked');
+      $('.next').fadeIn();
     });
+
 });

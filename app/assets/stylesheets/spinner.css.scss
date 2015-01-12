@@ -25,21 +25,29 @@
 	font-size: 25px;
 	margin-left: auto;
 	margin-right: auto;
-	// margin-bottom: 20px;
+	
 	text-align: center;
 	padding: 10px 15px 10px 15px;
 	color: white;
 	background-color: red;
 }
 
+.spin-button::hover {
+	opacity: 0.5;
+}
+
+.wheel#num-1{
+	padding: 7px 0 0 0;
+}
+
+.wheel#num-2{
+	padding: 5px 0 0 0;
+}
+
 .fail {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.spin-button::hover {
-	opacity: 0.5;
 }
 
 .continue-btn {
@@ -75,15 +83,13 @@
 }
 
 .failed-spin {
-	// margin-top:-20px;
+	margin-top:-30px;
 	text-align: center;
 	svg {
 		width: 90%;
 		height: 90%;
 	}
 }
-
-
 
 .full {
 	-webkit-animation: lot-full 6s;
@@ -153,12 +159,6 @@
 	animation-fill-mode: forwards;
 }
 
-
-
-
-
-
-
 @-webkit-keyframes lot-full {
     0%{ -webkit-transform: rotate(0deg);}
     100%{ -webkit-transform: rotate(1642deg);}
@@ -208,16 +208,6 @@
     0%{ transform: rotate(0deg);}
     100%{ transform: rotate(1597deg);}
 }
-
-
-
-
-
-
-
-
-
-
 
 @-webkit-keyframes not-missing {
     0%{ -webkit-transform: rotate(0deg);}
@@ -269,11 +259,6 @@
     100%{ transform: rotate(1597deg);}
 }
 
-
-
-
-
-
 @media screen and (min-width: 1000px) {
 	.spinner-components {
 		position: relative;
@@ -287,6 +272,13 @@
 		margin-bottom: 6%;
 	}
 }
+
+@media screen and (max-width: 1000px) {
+	.continue-btn {
+		margin-bottom: 10%;
+	}
+}
+
 
 
 

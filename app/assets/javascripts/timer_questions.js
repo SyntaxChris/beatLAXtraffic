@@ -1,29 +1,4 @@
 $(document).ready(function(){
-	$("#timer-question-label-1").hover(
-		function () {
-			$("#timer-question-label-1").css('cursor','pointer');
- 		}
- 	);
- 	$("#timer-question-label-2").hover(
-		function () {
-			$("#timer-question-label-2").css('cursor','pointer');
- 		}
- 	);
- 	$("#timer-question-label-3").hover(
-		function () {
-			$("#timer-question-label-3").css('cursor','pointer');
- 		}
- 	);
- 	$("#timer-question-label-4").hover(
-		function () {
-			$("#timer-question-label-4").css('cursor','pointer');
- 		}
- 	);
-
-	var click1 = 0
-	var click2 = 0
-	var click3 = 0
-	var click4 = 0
 
 	$('.timer-font').click(function(){
 		var id = $(this).attr('id')
@@ -49,6 +24,7 @@ $(document).ready(function(){
             $('.timer-tile').css("opacity", "1");
 			$('#tile-4').css("opacity", "0.5");
 		}
+		$('#timer-question-submit').fadeIn();
 	});
 
 	$('.timer-tile').click(function(){
@@ -71,5 +47,6 @@ $(document).ready(function(){
             $('.timer-font').animate({"opacity": "0.5"}, 130);
 			$('[id="tf-4"]').animate({"opacity": "1"}, 130);
 		}
+		$('#timer-question-submit').fadeIn();
 	});
 });

@@ -663,7 +663,7 @@
 
   <!-- SPINNER QUESTIONS -->
   <!-- 6. Parking spinner -->
-  <div id="parking-spinner-questions" style="display: none">
+  <div id="parking-spinner-questions" style="display:none">
     <div class="chance-time">
       <h1>Chance Time!</h1>
       <h3 class="main-question">
@@ -707,7 +707,7 @@
               </div>
             </div>
             <div style="position: relative; z-index: 1; width: 100%; padding-top: 4%; margin: 0">
-              <div class="wheel" style="padding: 0; margin: 0">
+              <div class="wheel" id="num-1">
                 <%= render 'parkingWheel' %>
               </div>
             </div>
@@ -775,7 +775,7 @@
               </div>
             </div>
             <div style="position: relative; z-index: 1; width: 100%; padding-top: 4%; margin: 0">
-              <div class="wheel" style="padding: 0; margin: 0">
+              <div class="wheel" id="num-2">
                 <%= render 'pickupWheel' %>
               </div>
             </div>
@@ -1100,7 +1100,7 @@
         <div class="large-12 medium-12 small-12 large-centered medium-centered small-centerd columns">
           <div id="clock-container">
             <%= render 'timerquestion' %>
-            <div id="timer-question-submit" style="display:none">Next</div>
+            <div class="next" id="timer-question-submit" style="display:none">Next</div>
           </div>
         </div>
       </div>
