@@ -26,7 +26,7 @@
  *= require 'circle_pickup'
  *= require 'timer_pickup'
  *= require 'parking_questions'
- *= require 'car_slider_questions'
+ *= require 'last_series_questions'
  *= require 'after_parking'
  *= require 'time_spent'
  *= require 'rail_system'
