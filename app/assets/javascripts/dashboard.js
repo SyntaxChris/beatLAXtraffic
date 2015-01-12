@@ -1,14 +1,20 @@
 $(document).ready(function(){
+
     var landTime = ["30", "1", "2"][Math.floor(Math.random() * 3)];
+    var counterNum = $('#counter-num').data('counter-number');
     var planeProgress = 0;
     var nextColor = 0;
     var hour = $('#time').data('hours');
     var min = $('#time').data('minutes');
-    var terminalLoop = 0;    
 
+    debugger;
+    
+
+    $('#min').text(min);
+    $("#min-unit").text("min");
     $('.number.landing').text(landTime);
 
-    // set global elements/variables with initial start values
+    // set initial start values for plane progress bar 
     if(landTime === "2"){
         $('#plane-progress').data('plane-progress', planeProgress += 0);
         $("#plane-bar").animate({width: planeProgress+"%"}, 2000);
@@ -25,31 +31,44 @@ $(document).ready(function(){
         $("#filler").animate({marginLeft: planeProgress+"%"}, 2000);
     }
 
-    $('#min').text(min);
-    $("#min-unit").text("min");
-
-    // target elements that increase time
-    $(".sign, #x-btn-keep-looking, #x-btn-cirle-next, #x-btn-timer-more, x-btn-add, .next#spin-parking-lose, .next#spin-pickup-lose, .timer-tile, .timer-font").click(function(){
+    // target elements that increase counter time
+    $(".sign, #x-btn-keep-looking, #x-btn-cirle-next, #x-btn-timer-more, .next#spin-parking-lose, .next#spin-pickup-lose, .next#timer-question, #x-btn-circle-next, #x-btn-timer-next, #x-btn-wait-next").click(function(){
         var idClicked = $(this).attr('id'); 
-        if(idClicked === 'tf-1' || idClicked === 'tile-1' ){
-            // increment counter by 90min
+
+        if(idClick === 'timer-question'){
+            $.each($(".timer-tile"), function( index, value ) {
+                if($(value).attr('id') === 'tile-1' && $(value).css('opacity') === '0.5'){
+                    counterNum += 90;
+                }
+                else if($(value).attr('id') === 'tile-2' && $(value).css('opacity') === '0.5'){
+                    counterNum += 15;
+                }
+                else if($(value).attr('id') === 'tile-3' && $(value).css('opacity') === '0.5'){
+                    counterNum += 60;
+                }
+                else if($(value).attr('id') === 'tile-4' && $(value).css('opacity') === '0.5'){
+                    counterNum += 30;
+                }
+            });
         }
-        else if(idClicked === 'tf-2' || idClicked === 'tile-2' ){
-            // increment counter by 15min
+        else if(idClick === 'x-btn-circle-next'){
+            var loopNum = 5 * parseInt($(".circle-number").text());
+            counterNum += loopNum;
         }
-        else if(idClicked === 'tf-3' || idClicked === 'tile-3' ){
-            // increment counter by 60min
+        else if(idClick === 'x-btn-timer-next'){
+            counterNum += parseInt($("div#min.timer-number").text());
         }
-        else if(idClicked === 'tf-4' || idClicked === 'tile-4' ){
-            // increment counter by 30min
+        else if(idClick === 'x-btn-wait-next'){
+            counterNum += parseInt($("div#wait.timer-number").text());
+        }
+        else{
+            counterNum += 5;
         }
 
-        // if terminal loop question display not equal to none
-        // terminalLoop += parseInt($(".circle-number").text());
 
 
-        
-
+        // set new value to counter data
+        $('#counter-num').data('counter-number', $('#counter-num').data('counter-number') += counterNum );
     });
 
 

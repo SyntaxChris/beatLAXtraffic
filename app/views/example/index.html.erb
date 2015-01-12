@@ -1343,7 +1343,7 @@
 
 
     <!-- 14. LAST QUESTION SET -->
-    <div id="last-question-set" style="display: none">
+    <div id="last-question-set" style="display:none">
       <!-- set 1 -->
       <div id="question-set-1">
         <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
@@ -1532,10 +1532,10 @@
         </div>
         <div class="row" style="text-align: center; margin-top: 10px">
           <div class="large-3 medium-3 small-5 large-centered medium-centered small-centered columns">
-            <div class="next" style="position: relative; padding: 10px; width: 70%; color: white; margin-left: auto; margin-right: auto; border-radius: 5px">
+            <div class="next" id="last-question-set">
             Next
           </div>
-          </div>
+        </div>
           
         </div>
       </div>
@@ -1881,16 +1881,14 @@
   <!-- END TIMER PICKUP QUESTIONS -->
 
   <!-- 15. WILLING TO WAIT -->
-  <div id="willing-to-wait" style="display: none;">
+  <div id="willing-to-wait" style="display:none">
     <div class="content-c">
-
       <div class="timer-c">
         <div class="inner">
           <div class="timer-number" id="wait">5</div>
           <div>Mins</div>
         </div>
       </div>
-
       <h3>
         What is the longest you are willing to wait for your passenger?
       </h3>
@@ -1902,13 +1900,11 @@
         <button id="x-btn-add-wait-time" class="add-wait-time-btn">+5 min</button>
       </div>
       <div>
-        <button id="x-btn-wait-next" class="next">Next</button>
+        <button id="x-btn-wait-next" class="next wait-next-btn">Next</button>
       </div>
     </div>
   </div>
   <!-- END WILLING TO WAIT-->
-
-
 </div>
 <!-- END QUESTION FORMATS -->
 
@@ -2070,7 +2066,6 @@
       LAX
     </div>
     <div id="progression-bar"></div>
-    <!-- <div id="car-filler-bar"></div> -->
     <div id="car-container">
         <%= render 'car' %>
     </div>
@@ -2088,6 +2083,7 @@
 
 
 <!-- DATA PASSED FROM FRAMEWORKS -->
+<div id="counter-num" data-counter-number=0></div>
 <div id="plane-progress" data-plane-progress=0></div>
 <div id="time" data-hours=0 data-minutes=0></div>
 <div id="car-scenario" data-ratio-num=6></div>
