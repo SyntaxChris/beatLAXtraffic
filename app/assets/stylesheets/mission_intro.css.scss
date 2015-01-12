@@ -25,6 +25,7 @@
   .content {
     width: 300px;
     margin: 0 auto;
+    margin-top: -40px;
     height: 100%;
     position: relative;
     z-index: 2;
@@ -99,20 +100,38 @@
   }
   .nav-left {
     right: 59%;
+    .nav-arrow{
+      margin-top: 5px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-right: 10px solid white;
+      border-bottom: 10px solid transparent;
+    }
   }
   .nav-right {
     left: 59%;
+    .nav-arrow{
+      margin-top: 5px;
+      margin-left: 20px;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-left: 10px solid white;
+      border-bottom: 10px solid transparent;
+    }
   }
   .chat-bubble {
     color: #3CBDE9;
     border: 1px solid #3CBDE9;
     background: white;
     width: 80%;
-    margin: 0 auto 10px;
+    margin: 15px auto 10px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    padding: 8px;
+    padding: 7px;
+    font-size: 1.4em;
     font-weight: 300;
     position: relative;
     &:before, &:after {
@@ -305,6 +324,7 @@
 }
 #mission-carousel {
   height: 156px;
+  top: -10px;
   position: relative;
   overflow: hidden;
   .mover {
@@ -363,7 +383,7 @@
   }
   .blurb {
     position: absolute;
-    width: 100%;
+    width: 150%;
     text-align: center;
     color: #494848;
     top: 125%;

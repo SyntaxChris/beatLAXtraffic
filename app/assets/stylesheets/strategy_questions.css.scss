@@ -1,3 +1,16 @@
+h5.sub-header {
+	color: #008CBA; 
+	padding-top: 0;
+	font-weight: 300;
+}
+
+#boxter-cntnr {
+	svg {
+		position: relative;
+		top: -45px;
+	}
+}
+
 .bubble-icon-container {
 	padding-top: 10px;
 	height: 150px;
@@ -167,7 +180,7 @@
 	width: 150px; 
 	padding: 15px;
 	left: 27%;
-	top: 150%; 
+	bottom: -150%; 
     border-radius: 5px; 
     text-align: center; 
     color: white; 
@@ -228,6 +241,9 @@
 	left: -5%;
 }
 
+#char-count-strategy {
+	margin-left: 30px;
+}
 
 ::-webkit-input-placeholder { /* WebKit browsers */
     color: white;
@@ -297,19 +313,3 @@
 	}
 }
 
-// @media screen and (min-width: 800px) {
-//    	.bubble-container-small {
-//     	width: 180px;
-//     	padding-bottom: 75%;
-//     	border-radius: 25px;
-//     }
-
-//    	.bubble-container-small#middle {
-// 		position: absolute; 
-// 		z-index: 2; 
-// 		margin-left: auto;
-// 		margin-right: auto;
-// 		margin-top: 50%; 
-// 		width: 180px; 
-// 	}
-// }

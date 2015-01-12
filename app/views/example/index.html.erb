@@ -1,4 +1,8 @@
-<div id="toggle-questions" style="position: absolute; z-index: 35; font-size: 10px; width: 50px; height: 30px; padding: 5px 5px 10px 0 ">TOGGLE</div>
+<button id="toggle-questions" style="position: absolute; z-index: 35; font-size: 10px; width: 50px; height: 30px; padding: 5px 5px 10px 0 ">TOGGLE</button>
+
+<div class="rail-background">
+  <%= render 'railBuildings' %>
+</div>
 
 <div id="skip-button">
   <%= render 'skipbutton' %>
@@ -22,10 +26,12 @@
 <!-- QUESTION FORMATS -->
 <div class="row">
   <!-- 1. DISTANCE questions -->
-    <div id="distance-questions" style="display: none">
-      <div id="distance-bg" style="position: absolute; z-index: -2; width: 100%; height: 100%; top:0; background-color: #85D3EE"></div>
-      <div class="row">
-         <div id="distance-question-header" style="color: white; text-align:center">How far away do you live from LAX?</div>
+    <div id="distance-questions" style="display:none">
+      <div id="distance-bg"></div>
+      <div class="row" id="dis-row" style="text-align:center">
+        <h3 class="main-question">
+          How far away do you live from LAX?
+        </h3>
       </div>
      
       <div class="row" id="row-1">
@@ -44,7 +50,7 @@
         < 30 minutes away
       </div>
       <div class="row" id="row-6">
-        <div id="confirm-btn"><b>Confirm</b></div>
+        <div id="confirm-btn"><b>Next</b></div>
         <%= render 'tower' %>
         <%= render 'laxArch' %>
       </div>
@@ -64,7 +70,7 @@
 
 
   <!-- 2. MISSION INTRO -->
-  <div id="mission-intro" style="display: none">
+  <div id="mission-intro" style="display:none">
     <div id="envelope">
       <%= render 'envelope' %>
     </div>
@@ -90,43 +96,43 @@
 
           <div id="mission-carousel">
             <a href="javascript:void(0)" class="nav-left" data-direction="right">
-              
+              <div class="nav-arrow"></div>
             </a>
             <a href="javascript:void(0)" class="nav-right" data-direction="left">
-              
+              <div class="nav-arrow"></div>
             </a>
 
             <div class="far-left-side mover">
-              <%= render 'greyguy' %>
+              <%= render 'friend' %>
               <div class="blurb">
-                <span>Something</span>
+                <span class="number person"></span> <span id="friend"></span>
               </div>
             </div>
 
             <div class="left-side mover">
-              <%= render 'greyguy' %>
+              <%= render 'business' %>
               <div class="blurb">
-                <span>Something</span>
+                <span class="number person"></span> <span id="colleague"></span>
               </div>
             </div>
             
             <div class="center mover">
               <%= render 'suitguy' %>
               <div class="blurb">
-                <span class="number">1</span> <span>Clients</span>
+                <span class="number person"></span> <span id="client"></span>
               </div>
             </div>
 
             <div class="right-side mover">
-              <%= render 'greyguy' %>
+              <%= render 'familyGuy' %>
               <div class="blurb">
-                <span>Something</span>
+                <span class="number person"></span> <span id="cousin"></span>
               </div>
             </div>
           </div>
 
           <div id="bottom-info">
-            <span>with</span> <span class="number">2</span> <span>Large Suitcases</span>
+            <span>with</span> <span class="number suitcase"></span> <span id="suitcase"></span>
           </div>
         </div>
         <div class="stage-2-top">
@@ -135,18 +141,16 @@
               <div class="airport-heading">
                 Departing
               </div>
-              <div class="airport-code">
-                XXX
+              <div id="departure" class="airport-code">
               </div>
-              <div class="airport-name">
-                airport_name
+              <div id="depart" class="airport-name">
               </div>
             </div>
             <div class="center">
               <div>
                 <%= render 'introplane' %>
               </div>
-              <div class="flight-number">Flight xxx</div>
+              <div class="flight-number">Flight <span id="flight-num"></span></div>
             </div>
             <div class="right-side">
               <div class="airport-heading">
@@ -161,7 +165,7 @@
             </div>
           </div>
           <div class="conditions">
-            <div class="traffic-meter medium">
+            <div id="traffic-meter" class="traffic-meter">
               <div class="tally-1"></div>
               <div class="tally-2"></div>
               <div class="tally-3"></div>
@@ -172,15 +176,15 @@
               <div class="tally-8"></div>
             </div>
             <div class="traffic-summary">
-              LAX Traffic Level: <span class="traffic-label">Medium</span>
+              LAX Traffic Level: <span class="traffic-label"></span>
             </div>
 
             <div class="time-summary">
               <div>
                 <div class="gray-bg"></div>
-                <span class="blurb dIB vAM">Plan will land in</span>
+                <span class="blurb dIB vAM">Plane will land in</span>
                 <div class="time-till-arrival">
-                  <div class="number">1</div>
+                  <div class="number landing">1</div>
                   <div class="unit">hr</div>
                 </div>
                 <div class="stopwatch dIB vAM">
@@ -249,8 +253,8 @@
   <div id="strategy-questions" style="display: none">
 
     <div class="row" style="text-align: center;">
-      <h3 style="color: white">Why do you choose this strategy?</h3>
-      <h6 style="color: #24B7EA; padding-top: 0">Select all that apply</h6>
+      <h3 class="main-question">Why do you choose this strategy?</h3>
+      <h5 class="sub-header">Select all that apply</h5>
     </div>
 
     <div id="large-strategy">
@@ -297,7 +301,7 @@
               </div>
             </div>
             <div class="large-6 medium-6 columns">
-              <div>
+              <div id="boxter-cntnr">
                 <%= render 'boxster' %>
               </div>
             </div>
@@ -326,8 +330,7 @@
                             Cancel
                           </div>
 
-                          <div id="char-count-strategy" style="text-align:center; color: #C1C1C1"></div>
-                          <div style="color:#C1C1C1; font-size: 8px; margin-left: 30%">Characters Left</div>
+                          <div id="char-count-strategy" style="text-align:center; color: #C1C1C1; font-size: 12px; margin-left: 8%"></div>
                         </div>
                         <div class="large-7 medium-7 columns">
                           <textarea class="other-strategy" placeholder="Please write here." cols="1" rows="6" maxlength="140" style="margin-top: 3%; background-color: #F0943F; color: white; postion: absolute; left: 40px; top: 20px"></textarea>
@@ -499,9 +502,8 @@
                 Cancel
               </div>
             </div>
-            <div class="row" style="text-align: center; color; margin-left: 5px;">
-              <div id="char-count-strategy" style="color: #C1C1C1; padding:0; margin:0"></div>
-              <div style="color:#C1C1C1; font-size: 2vw; padding: 0; margin:0">Characters Left</div>
+            <div class="row" style="text-align: center; color">
+              <div id="char-count-strategy" style="color: #C1C1C1; padding:0; margin:0; font-size: 2vw; text-align: center"></div>
             </div>
           </div>
           <div class="small-9 columns">
@@ -519,11 +521,11 @@
   <!-- TODO: 5. Why do you choose to park your car? -->
   <div id="why-park-car" style="display:none">
     <div class="row" style="text-align:center">
-      <h3 style="color: white">Why do you choose to park your car?</h3>
+      <h3 class="main-question">Why do you choose to park your car?</h3>
     </div>
 
     <div class="hide-for-small-only">
-      <div class="row" style="padding: 0 10px 0 10px; margin-top: 10%">
+      <div class="row" style="padding: 0 10px 0 10px; margin-top: 5%">
         <div class="large-3 medium-3 columns">
           <div class="parking-bubble">
             <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
@@ -533,7 +535,7 @@
               <%= render 'carParkBubble' %>
             </div>
             <div class="parking-question-font" data-car="uncolored">
-              Convenient parking available
+              When convenient parking is available
             </div>
           </div>
         </div>
@@ -546,7 +548,7 @@
               <%= render 'avoidTraffic' %>
             </div>
             <div class="parking-question-font" data-traffic="uncolored">
-              Convenient parking available
+              To avoid driving in traffic
             </div>
           </div>
         </div>
@@ -559,7 +561,7 @@
               <%= render 'peopleParkBubble' %>
             </div>
             <div class="parking-question-font" data-people="uncolored">
-              Convenient parking available
+              To meet my passenger in the terminal
             </div>
           </div>
         </div>
@@ -569,13 +571,16 @@
               <%= render 'unchecked' %>
             </div>
             <div class="parking-question-other-font" data-other="uncolored">
+              <div class="other-icon" style="width: 30%; text-align: center; margin-left: auto; margin-right: auto">
+                <%=render 'questionBubble'%>
+              </div>
               Other (specify)
             </div>
-            <div class="parking-other-text-area" style="display: none; position: relative; top: 30%;">
+            <div class="parking-other-text-area" style="display: none; position: relative; top: 30%; position: relative; z-index: 20">
               <textarea id="other-info" cols="1" rows="5" maxlength="140"></textarea>
             </div>
             <br>
-            <div id="char-count" style="position: absolute; margin-left: 15%; text-align:center; color: #B2C4D4; font-size: 12px; width: 90%; margin-left: auto; margin-right: auto"></div>
+            <div id="char-count" style="display: none; position: absolute; margin-left: 15%; text-align:center; color: #B2C4D4; font-size: 12px; width: 90%; margin-left: auto; margin-right: auto"></div>
             <div class="parking-submit">
               <div class="parking-submit-btn">OK</div>
             </div>
@@ -590,7 +595,7 @@
       <div class="row" style="padding: 0 20px 0 20px">
         <div class="small-6 columns" style="padding: 0 2% 0 3%">
           <div class="parking-bubble">
-            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+            <div class="unchecked" style="position: absolute; right: 5px; top: -10%">
               <%= render 'unchecked' %>
             </div>
             <div class="bubble-logo" class="bubble-logo">
@@ -656,48 +661,55 @@
   <!-- END TODO: 5. Why do you choose to park your car? -->
 
 
-  <!-- 6. SPINNER QUESTIONS -->
-  <div id="spinner-questions" style="display: none">
-    <div id="chance-time">
-      <h3 style="color: white; text-align: center">Chance Time!</h3>
-      <h5 style="color: white; text-align: center">You arrive at the parking lot and<br>see that the parking lot is...</h5>
+  <!-- SPINNER QUESTIONS -->
+  <!-- 6. Parking spinner -->
+  <div id="parking-spinner-questions" style="display:none">
+    <div class="chance-time">
+      <h1>Chance Time!</h1>
+      <h3 class="main-question">
+        You arrive at the parking lot and <span style="font-weight: 700">see that the parking lot is...</span>
+      </h3>
     </div>
 
-    <div id="parking-congrats" style="display:none;">
-      <h3 style="color: white; text-align: center">Congratulations!</h3>
-      <h5 style="color: white; text-align: center">You got a parking spot</h5>
-      <div id="continue-button">
+    <div class="congrats" style="display:none;">
+      <h1>Congratulations!</h1>
+      <h3 class="main-question">You got a parking spot!</h3>
+      <div class="continue-btn">
         Continue
       </div>
     </div>
 
-    <div id="try-again" style="display:none">
-      <h3 style="color: white; text-align: center;">Try again?</h3>
-      <div id="yup-spinner"><%= render 'yea' %></div>
-      <div id="nope-spinner"><%= render 'nah' %></div>
+    <div class="fail" style="display:none">
+      <h1 style="color: white; text-align: center;">Dang!</h1>
+      <h3 class="main-question">The parking lot is full.</h3>
+      <div class="continue-btn">
+        Continue
+      </div>
     </div>
 
-    <div id="spin-button">
+    <div class="spin-button" id="parking">
       Spin
     </div>
-
-    <div class="row" id="spinner-components">
-      <div class="large-7 medium-8 small-12 large-centered medium-centered small-centered columns">
-        <div style="width: 100%; padding-bottom: 50%; padding-left: 2%">
-          <div style="width: 100%; position: absolute; z-index: 3">
-            <div class="row" style="padding: 0">
-              <div class="large-4 medium-4 small-4 large-centered medium-centered small-centered columns" style="padding-left: 0">
-                <div style="width: 100%; padding-bottom: 10%;">
-                  <div id="wheel-pointer" style="padding-right: 25%; padding-left: 10%">
-                    <%= render 'wheelPointer' %>
+    
+    <div class="spinner-components">
+      <div class="row">
+        <div class="large-7 medium-8 small-12 large-centered medium-centered small-centered columns">
+          <div style="width: 100%; padding-bottom: 50%; padding-left: 2%">
+            <div style="width: 100%; position: absolute; z-index: 3">
+              <div class="row" style="padding: 0">
+                <div class="large-4 medium-4 small-4 large-centered medium-centered small-centered columns" style="padding-left: 0">
+                  <div style="width: 100%; padding-bottom: 10%;">
+                    <div id="wheel-pointer" style="padding-right: 25%; padding-left: 10%">
+                      <%= render 'wheelPointer' %>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div style="position: relative; z-index: 1; width: 100%; padding-top: 4%; margin: 0">
-            <div id="wheel" style="padding: 0; margin: 0">
-              <%= render 'wheel' %>
+            <div style="position: relative; z-index: 1; width: 100%; padding-top: 4%; margin: 0">
+              <div class="wheel" id="num-1">
+                <%= render 'parkingWheel' %>
+              </div>
             </div>
           </div>
         </div>
@@ -706,13 +718,91 @@
 
     <div class="row">
       <div class="large-5 medium-5 small-9 columns large-centered medium-centered small-centered columns">
-        <div id="parking-trophy" style="display: none">
+        <div class="trophey" style="display: none">
           <%= render 'parkingTrophy' %>
+        </div>
+        <div class="failed-spin" style="display: none">
+          <%= render 'noParking' %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- end parking spinner -->
+  
+  <!-- 7. Pickup spinner -->
+  <div id="pickup-spinner-question" style="display:none">
+    <div class="chance-time">
+      <h1>Chance Time!</h1>
+      <h3 class="main-question">
+        You're almost at the Terminal. <span style="font-weight: 700">Is your passenger there?</span>
+      </h3>
+    </div>
+
+    <div class="congrats" style="display:none;">
+      <h1>Nice!</h1>
+      <h3 class="main-question" style="margin-top: -20px">Your passenger is at the curb!</h3>
+      <div class="continue-btn">
+        Continue
+      </div>
+    </div>
+
+    <div class="fail" style="display:none">
+      <h1>Dang!</h1>
+      <h3 class="main-question">Our pick-up wasn't there.</h3>
+      <div class="continue-btn">
+        Continue
+      </div>
+    </div>
+
+    <div class="spin-button" id="pickup">
+      Spin
+    </div>
+    
+    <div class="spinner-components">
+      <div class="row">
+        <div class="large-7 medium-8 small-12 large-centered medium-centered small-centered columns">
+          <div style="width: 100%; padding-bottom: 50%; padding-left: 2%">
+            <div style="width: 100%; position: absolute; z-index: 3">
+              <div class="row" style="padding: 0">
+                <div class="large-4 medium-4 small-4 large-centered medium-centered small-centered columns" style="padding-left: 0">
+                  <div style="width: 100%; padding-bottom: 10%;">
+                    <div id="wheel-pointer" style="padding-right: 25%; padding-left: 10%">
+                      <%= render 'wheelPointer' %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="position: relative; z-index: 1; width: 100%; padding-top: 4%; margin: 0">
+              <div class="wheel" id="num-2">
+                <%= render 'pickupWheel' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-5 medium-5 small-9 columns large-centered medium-centered small-centered columns">
+        <div class="trophey" style="display: none">
+          <%= render 'pickupTrophy' %>
+        </div>
+        <div class="failed-spin" style="display: none">
+          <%= render 'missingPassenger' %>
         </div>
       </div>
     </div>
   </div>
+  <!-- end pickup spinner -->
   <!-- END SPINNER QUESTIONS -->
+
+
+
+
+
+
 
 
   <!-- 7. TILE QUESTIONS -->
@@ -723,7 +813,7 @@
         <div class="row">
           <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
             <div id="question-header-landscape">
-                <h3 id="main-landscape">What are you doing while you wait?</h3>
+                <h3 class="main-question" id="main-landscape">What are you doing while you wait?</h3>
                 <h5 id="foot-landscape">Select all that apply</h5> 
             </div>
           </div>
@@ -733,12 +823,13 @@
       <div class="show-for-portrait">
         <div class="row">
           <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
-            <div id="question-header">
-                <h3 id="main">What are you doing while you wait?</h3>
-                <h5 id="foot">Select all that apply</h5> 
-            </div>
-            <div  class="next" style="color: white; width: 100px; position: absolute; left: 38%; top: 110%; padding 10px; text-align: center; border-radius: 5px;">
-                Next
+            <div id="question-header" style="text-align: center">
+                <h3 class="main-question" id="main">What are you doing while you wait?</h3>
+                <h5 id="foot" style="text-align:center">
+                Select all that apply
+<div class="next" style="color: white; width: 100px; border-radius: 5px; position: relative; margin-left: auto; margin-right: auto">Next</div>
+                </h5> 
+                
             </div>
           </div>
         </div>
@@ -788,22 +879,29 @@
                 
                 <!-- text area -->
                 <div class="large-4 medium-4 small-4 columns">
-                  <div class="next" style="width: 125px; height: 40px; margin-left: auto; margin-right: auto; margin-top: 40px;  color: white; text-align: center; padding-top: 7px; border-radius: 5px">Next</div>
-                  <div class="row" style="padding:0">
+                  <div class="next" style="width: 125px; height: 40px; margin-left: 27.5%; margin-right: auto; margin-top: 40px;  color: white; text-align: center; padding-top: 7px; border-radius: 5px">Next</div>
+                  <div class="row">
                     <div class="large-12 medium-12 small-12 columns">
                       <div id="user-text-input">
                         <div class="arrow-left" style="position:absolute; z-index: 1;"></div>
-                        <div class="row" style="text-align: center; color: #AA75D3; padding-bottom: 5px">
-                          Please write here
-                        </div>
-                        <div class="row" style="padding-bottom:0">
-                          <textarea id="other-info" cols="1" rows="2" maxlength="140" placeholder="Please write here" style="color: black"></textarea> 
+                        <div class="row" style="padding-top: 15px">
+                          <textarea class="purple" id="other-info-large" cols="1" rows="3" maxlength="140" placeholder="Please write here"></textarea> 
                         </div>
                         <div class="row" style="text-align: center">
-                          <div class="other-submit">
-                            <div>Save</div>
+                          <div class="large-6 medium-6 columns" style="padding: 0">
+                            <div class="other-cancel">
+                              Cancel
+                            </div>
                           </div>
-                          <div id="char-count" style="text-align:center; color: #B2C4D4"></div>
+                          <div class="large-6 medium-6 columns" style="text-align: center">
+                            <div class="other-submit">
+                              Save
+                            </div>
+                          </div>
+                          
+                          <div id="char-count-large" style="text-align: center"></div>
+                          
+                          
                         </div>
                       </div>
                     </div>
@@ -857,9 +955,11 @@
               <div id="other-text-area">
                 <div class="row">
                   <div class="small-12 small-centered columns">
-                    <textarea id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
-                    <div class="row">
-                      <div class="small-7 columns"><div id="char-count-small" style="text-align:center; color: #B2C4D4"></div></div>
+                    <textarea class="purple" id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
+                      <div class="row">
+                        <div class="small-7 columns">
+                          <div id="char-count-small" style="font-size: 16px"></div>
+                      </div>
                       <div class="small-5 columns" style="text-align: center;">
                         <div class="next" style="color:white; background-color: #9B69CC; padding: 10px 0 10px 0; border-radius: 5px; margin-right: 5px; margin-bottom: 2px">
                           <div>Next</div>
@@ -906,13 +1006,13 @@
           <div class="medium-10 small-11 medium-centered small-centered columns">
 
             <div class="row">
-              <div class="medium-6 small-6 columns" id="tally">
+              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
                 <%= render 'phone' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   On my phone
                 </div>
               </div>
-              <div class="medium-6 small-6 columns" id="tally">
+              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
                 <%= render 'shop' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   Shop in the terminal
@@ -921,13 +1021,13 @@
             </div>
 
             <div class="row" id="bottom-tile-row">
-              <div class="medium-6 small-6 columns" id="tally">
+              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
                 <%= render 'hangout' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   Hang out
                 </div>
               </div>
-              <div class="medium-6 small-6 columns" id="tally">
+              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
                 <%= render 'eat' %>
                 <div class="row small-tile-label" style="text-align: center; color: white">
                   Food and drinks
@@ -938,22 +1038,23 @@
             <div class="row" id="small-other-row">
               <div class="medium-8 small-10 medium-centered small-centered columns">
                 <div class="row" style="margin-top: 15px">
-                  <div class="medium-6 small-6 columns" id="tally"><%= render 'smallother' %></div>
-                  <div class="medium-6 small-6 columns" style="padding: 6px 0 0 0"><div class="small-tile-label" style="text-align: left; color: white">Other (Specify)</div></div>
+                  <div class="medium-6 small-6 columns" id="tally" style="padding: 0"><%= render 'smallother' %></div>
+                  <div class="medium-6 small-6 columns" style="padding: 6px 0 0 0"><div class="small-tile-label" style="text-align: left; color: white; font-size: 12px">Other (Specify)</div></div>
                 </div>
                 <div class="row">
                   <div class="small-11 small-centered columns" id="other-small-textbox" style="display:none">
                     <div id="other-text-area">
                       <div class="row">
                         <div class="small-12 small-centered columns">
-                          <textarea id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
+                          <textarea class="purple" id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
                           <div class="row">
-                            <div class="small-7 columns"><div id="char-count-small" style="text-align:center; color: #B2C4D4"></div></div>
+                            <div class="small-7 columns">
+                              <div id="char-count-small"></div>
+                            </div>
                             <div class="small-5 columns" style="text-align: center">
                               <div class="other-submit" style="color: white; background-color: #8B5DC0; padding: 5px; margin-bottom: 5px; border-radius: 5px; margin-right: 5px">
                                 Save
                               </div>
-                              
                             </div>
                           </div>
                         </div>
@@ -988,18 +1089,18 @@
     <!-- END TILE QUESTIONS -->
 
 
-    <!-- 10. TIMER QUESTIONS -->
-    <div id="clock-questions" style="display: none">
+    <!-- 11. TIMER QUESTIONS -->
+    <div id="clock-questions" style="display:none">
       <!-- questions header -->
-      <div class="row" style="text-align:center">
-        <h3 style="color: white">How long do you usually park for?</h3>
+      <div class="row">
+        <h3 class="main-question">How long do you usually park for?</h3>
       </div>
 
       <div class="row">
         <div class="large-12 medium-12 small-12 large-centered medium-centered small-centerd columns">
           <div id="clock-container">
             <%= render 'timerquestion' %>
-            <div id="timer-question-submit" style="display:none">Next</div>
+            <div class="next" id="timer-question-submit" style="display:none">Next</div>
           </div>
         </div>
       </div>
@@ -1008,20 +1109,50 @@
 
     <!-- PAGES 8 - 13 ARE OUTSIDE OF THIS CONTAINER -->
 
-
     <!-- TODO: 15. RAIL SYSTEM QUESTIONS -->
-    <div id="rail-system" style="display: none">
-      <div class="row" style="text-align: center">
-        <h3 style="color: white">Rail system questions</h3>
-      </div>
+    <div id="rail-system" class="part-1" style="display: none; padding-top: 10%">
+        <div class="stage-1">
+          <div class="question-bubble">
+            <div class="rail-car">
+              <%= render 'railCar' %>
+            </div>
+
+            <p>
+              To avoid all of this, we're trying to build an airport rail system that would make it easy for a passenger to meet you at a nearby location outside of the airport!
+            </p>
+          </div>
+
+          <button id="x-btn-rail-system-next">Next</button>
+        </div>
+
+        <div class="stage-2">
+          <div class="question-bubble">
+            <div class="people">
+              <%= render 'peopleRail' %>
+            </div>
+
+            <p>
+              Would you meet your passenger at this new location outside of the airport in light of the experience you had today?
+            </p>
+          </div>
+
+          <button id="x-btn-upvote" class="upvote-btn">
+            <span class="text">YES</span>
+            <%= render 'thumbsUp' %>
+          </button>
+          <button id="x-btn-downvote" class="downvote-btn">
+            <span class="text">NO</span>
+            <%= render 'thumbsDown' %>
+          </button>
+        </div>
     </div>
     <!-- END RAIL SYSTEM QUESTIONS -->
 
 
-    <!-- 16. ICON QUESTIONS -->
-    <div id="icon-questions" style="display:none">
+    <!-- 17. ICON QUESTIONS -->
+    <div id="icon-questions" style="display: none">
       <div class="row">
-        <h3 style="color: white; text-align: center">Imagine that you could customize this future location.</h3>
+        <h3 class="main-question">Imagine that you could customize this future location.</h3>
       </div>
       <div class="row" id="icons-large-screen" style="margin-top: 90px;">
         <div class="large-6 medium-6 small-6 columns">
@@ -1044,7 +1175,7 @@
               <div id="holder-3"></div>
             </div>
             <div class="submit-row" style="display: none">
-              <div id="icon-submit">Submit</div>
+              <div id="icon-submit">Next</div>
             </div>
           </div>
         </div>
@@ -1052,52 +1183,52 @@
           <div id="icon-box">
             <div class="icon" id="dog">
               <%= render 'dog' %>
-              <div style="display:none">Hi, I'm the dog icon</div>
+              <div style="display:none">A dog run/relief area</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="couch">
               <%= render 'couch' %>
-              <div style="display:none">Hi, I'm the couch icon</div>
+              <div style="display:none">A comfortable place to wait for my passenger</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="family">
               <%= render 'family' %>
-              <div style="display:none">Hi, I'm the family icon</div>
+              <div style="display:none">A childrens Play Area</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-
             </div>
             <div class="icon" id="computer">
               <%= render 'computer' %>
-              <div style="display:none">Hi, I'm the computer icon</div>
+              <div style="display:none">A way to make sure I know my passenger's flight status</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="food">
               <%= render 'food' %>
-              <div style="display:none">Hi, I'm the food icon</div>
+              <div style="display:none">A place to get food or coffee</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="wifi">
               <%= render 'wifi' %>
-              <div style="display:none">Hi, I'm the wifi icon</div>
+              <div style="display:none">Wifi</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="parking">
               <%= render 'parking' %>
-              <div style="display:none">Hi, I'm the parking icon</div>
+              <div style="display:none">Free short-term parking</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="exit">
               <%= render 'exit' %>
-              <div style="display:none">Hi, I'm the exit icon</div>
+              <div style="display:none">Easy ways to get in and out of the location</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="help-desk">
               <%= render 'helpdesk' %>
-              <div style="display:none">Hi, I'm the help desk icon</div>
+              <div style="display:none">Passenger Assistance</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
           </div>
           <div id="icon-pop-up" style="display: none">
+            <div class="i-want">I want...</div>
             <div id="icon-description"></div>
             <div id="choice-row">
               <div id="yea">
@@ -1115,7 +1246,7 @@
           <div id="holder-and-description-row">
             <div id="dotted-circle-row">
               <div id="icon-holder-description">
-                Pick your top 3 amenities
+                  Pick your top 3 amenities
               </div>
               <div id="circle-1">
                 <div id="one">1</div>
@@ -1135,51 +1266,52 @@
           <div id="icon-box-small">
             <div class="icon" id="dog">
               <%= render 'dog' %>
-              <div style="display:none">Hi, I'm the dog icon</div>
+              <div style="display:none;">Dog run/relief area</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="couch">
               <%= render 'couch' %>
-              <div style="display:none">Hi, I'm the couch icon</div>
+              <div style="display:none;">A comfortable place to wait for my passenger</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="family">
               <%= render 'family' %>
-              <div style="display:none">Hi, I'm the family icon</div>
+              <div style="display:none;">A childrens Play Area</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
 
             </div>
             <div class="icon" id="computer">
               <%= render 'computer' %>
-              <div style="display:none">Hi, I'm the computer icon</div>
+              <div style="display:none;">A way to make sure I know my passenger's flight status</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="food">
               <%= render 'food' %>
-              <div style="display:none">Hi, I'm the food icon</div>
+              <div style="display:none;">A place to get food or coffee</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="wifi">
               <%= render 'wifi' %>
-              <div style="display:none">Hi, I'm the wifi icon</div>
+              <div style="display:none;">Wifi</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="parking">
               <%= render 'parking' %>
-              <div style="display:none">Hi, I'm the parking icon</div>
+              <div style="display:none;">Free short-term parking</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="exit">
               <%= render 'exit' %>
-              <div style="display:none">Hi, I'm the exit icon</div>
+              <div style="display:none;">easy ways to get in and out of the location</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div class="icon" id="help-desk">
               <%= render 'helpdesk' %>
-              <div style="display:none">Hi, I'm the help desk icon</div>
+              <div style="display:none;">Passenger Assistance</div>
               <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
             </div>
             <div id="icon-pop-up-small" style="display: none">
+              <div class="i-want">I want...</div>
               <div id="discription-group">
                 <div id="icon-description-small"></div>
                 <div id="choice-row">
@@ -1193,7 +1325,7 @@
               </div>
               
               <div class="submit-row" style="display:none">
-                <div id="icon-submit">Submit</div>
+                <div id="icon-submit">Next</div>
               </div>
 
             </div>
@@ -1207,11 +1339,11 @@
 
 
     <!-- 14. LAST QUESTION SET -->
-    <div id="last-question-set" style="display:none">
+    <div id="last-question-set" style="display: none">
       <!-- set 1 -->
       <div id="question-set-1">
         <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
-          <h4 style="color: white; margin-top:5%; text-align: center">What was the last reason for your last trip to LAX?</h4>
+          <h3 class="main-question">What was the reason for your last trip to LAX?</h3>
         </div>
 
         <div class="row" style="margin-bottom: 1.5%; margin-top: 3%">
@@ -1288,7 +1420,7 @@
       <!-- set 2 -->
       <div id="question-set-2" style="display: none">
         <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
-          <h4 style="color: white; margin-top:5%; text-align: center">About how often do you go to LAX?</h4>
+          <h3 class="main-question">About how often do you go to LAX?</h3>
         </div>
 
         <div class="row" style="margin-bottom: 1.5%; margin-top: 3%">
@@ -1342,7 +1474,7 @@
       <!-- set 3 -->
       <div id="question-set-3" style="display: none">
         <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
-          <h4 style="color: white; margin-top:5%; text-align: center">And finally, how old are you?</h4>
+          <h3 class="main-question">And finally, how old are you?</h3>
         </div>
 
         <div class="row" style="margin-bottom: 1.5%; margin-top: 3%">
@@ -1409,7 +1541,7 @@
 
     <!-- 18. WHY DO YOU THINK THIS STRATEGY WILL WORK -->
     <div id="think-strategy" style="display: none;">
-      <h3>
+      <h3 class="main-question">
         How well do you think this strategy will work?
       </h3>
       <div class="content-c">
@@ -1439,9 +1571,8 @@
 
     <!-- CONGRATULATIONS! -->
     <div id="congrats" style="display: none">
-      <div class="row" style="text-align: center">
+      <div class="row" style="text-align: center;">
         <!-- <h3 style="color: white">Congratulations!</h3> -->
-
         <div class="inner-c">
           <div class="trophy-c">
             <%= render 'laxTrophy' %>
@@ -1485,18 +1616,68 @@
 
   </div>
 
-  <!-- 8. AFTER PARKING QUESTIONS -->
-  <div id="after-parking-questions" style="display: none;">
+  <!-- 8. LATE FLIGHT -->
+  <div id="late-flight" style="display: none;">
+    <div class="content-c">
+      <h3 class="main-question">You think your passenger's flight could be late.</h3>
+      <p>How would you check for that?</p>
+      
+      <div class="dIB vAT button-c">
+        <button class="select-btn call">
+          <%= render 'call' %>
+          <div class="checkmark">
+            <%= render 'sUnchecked' %>
+          </div>
+        </button>
+        <div>
+          Try to Reach Passenger
+        </div>
+      </div>
 
-    <h3 class="main">You finally arrive at the lot and the parking lot is full</h3>
-    <h3 class="sub">What do you do next?</h3>
+      <div class="dIB vAT button-c">
+        <button class="select-btn parking">
+          <%= render 'parkingTile' %>
+          <div class="checkmark">
+            <%= render 'sUnchecked' %>
+          </div>
+        </button>
+        <div>
+          Park and go Inside Terminal
+        </div>
+      </div>
+
+      <div class="dIB vAT button-c">
+        <button class="select-btn check-phone">
+          <%= render 'checkPhone' %>
+          <div class="checkmark">
+            <%= render 'sUnchecked' %>
+          </div>
+        </button>
+        <div>
+          Check Mobile Phone for Flight Information
+        </div>
+      </div>
+
+      <div>
+        <button id="x-btn-late-flight-next" class="late-flight-next-btn">Next</button>
+      </div>
+
+    </div>
+  </div>
+  <!-- END LATE FLIGHT -->
+
+  <!-- 9. AFTER PARKING QUESTIONS -->
+  <div id="after-parking-questions" style="display:none">
+
+    <h3 class="main-question">You finally arrive at the lot and the parking lot is full</h3>
+    <h3 id="pole">What do you do next?</h3>
 
     <div class="pole">
       <%= render 'signPole' %>
     </div>
 
 
-    <button class="sign">
+    <button class="sign" id="cntr-1">
       <div class="holder">
         <%= render 'signHolder' %>
       </div>
@@ -1511,7 +1692,8 @@
         </div>
       </div>
     </button>
-    <button class="sign">
+
+    <button class="sign" id="cntr-2">
       <div class="holder">
         <%= render 'signHolder' %>
       </div>
@@ -1531,7 +1713,8 @@
         </div>
       </div>
     </button>
-    <button class="sign">
+
+    <button class="sign" id="cntr-3">
       <div class="holder">
         <%= render 'signHolder' %>
       </div>
@@ -1546,7 +1729,8 @@
         </div>
       </div>
     </button>
-    <button class="sign">
+
+    <button class="sign" id="cntr-4">
       <div class="holder">
         <%= render 'signHolder' %>
       </div>
@@ -1566,11 +1750,12 @@
         </div>
       </div>
     </button>
+
   </div>
   <!-- END AFTER PARKING QUESTIONS -->
 
-  <!-- 9. START TIME SPENT -->
-  <div id="time-spent" style="display: none;">
+  <!-- 10. START TIME SPENT -->
+  <div id="time-spent" style="display:none">
     <div class="content-c">
       <h3>
         You have spent
@@ -1578,8 +1763,8 @@
 
       <div class="timer-c">
         <div class="inner">
-          <div class="timer-number">3</div>
-          <div>Hours</div>
+          <div class="timer-number">5</div>
+          <div>Minutes</div>
         </div>
       </div>
 
@@ -1602,7 +1787,7 @@
   </div>
   <!-- END TIME SPENT -->
 
-  <!-- 11. SUCCESSFUL PICKUP -->
+  <!-- 12. SUCCESSFUL PICKUP -->
   <div id="successful-pickup" style="display: none;">
     <div class="sun-bg">
       <%= render 'sunBeamBg' %>
@@ -1628,7 +1813,7 @@
   <!-- END SUCCESFUL PICKUP -->
 
 
-  <!-- 12. CIRCLE PICKUP QUESTIONS -->
+  <!-- 13. CIRCLE PICKUP QUESTIONS -->
   <div id="circle-pickup" style="display: none;">
     <div class="content">
       <h3>
@@ -1664,10 +1849,10 @@
   </div>
   <!-- END CIRCLE PICKUP QUESTIONS -->
 
-  <!-- 13. TIMER PICKUP QUESTIONS -->
-  <div id="timer-pickup" style="display: none;">
+  <!-- 14. TIMER PICKUP QUESTIONS -->
+  <div id="timer-pickup" style="display:none">
     <div class="content">
-      <h3>
+      <h3 class="main-question">
         How long does it typically take for you to pick up your passenger at the terminal?
       </h3>
 
@@ -1691,13 +1876,13 @@
   </div>
   <!-- END TIMER PICKUP QUESTIONS -->
 
-  <!-- 14. WILLING TO WAIT -->
+  <!-- 15. WILLING TO WAIT -->
   <div id="willing-to-wait" style="display: none;">
     <div class="content-c">
 
       <div class="timer-c">
         <div class="inner">
-          <div class="timer-number">10</div>
+          <div class="timer-number">5</div>
           <div>Mins</div>
         </div>
       </div>
@@ -1709,8 +1894,8 @@
 
     <div class="content-c buttons-c">
       <div>
-        <button id="x-btn-remove-wait-time" class="remove-wait-time-btn">-10 min</button>
-        <button id="x-btn-add-wait-time" class="add-wait-time-btn">+10 min</button>
+        <button id="x-btn-remove-wait-time" class="remove-wait-time-btn">-5 min</button>
+        <button id="x-btn-add-wait-time" class="add-wait-time-btn">+5 min</button>
       </div>
       <div>
         <button id="x-btn-wait-next" class="wait-next-btn">Next</button>
@@ -1785,64 +1970,81 @@
 
 
 <!-- DASHBOARDS -->
-<div id="dashboard" style="display: none">
-    <div id="grad-container">
-      <div id="grad-4">
-        <div class="row">
-          <div class="large-12 medium-12 small-12 columns">
-            <div id="displayed-time">15</div>
-            <div id="min">min</div>
-            <div id="spent">spent picking up</div>
-          </div>
+<!-- <div style="position: absolute; z-index: 50; width: 100%; padding-bottom: 15%; bottom: 0; background-color: #CDEDF9"></div> -->
+
+<div id="dashboard" style="display:none">
+<div id="clock-contents">
+  <div id="clock-face" data-opac="0"></div>
+    <div id="clock-hand-cntr" data-rot="0">
+      <div id="long-hand"></div>
+    </div>
+    <div id="clock">
+       <%= render 'timer' %> 
+    </div>
+</div>
+    <div id="dash-contents">
+      <div id="section-1">
+        <div id="time-container">
+
+          <span id="hr"></span><span id="hr-unit"></span><span id="min"></span><span id="min-unit"></span>
+          <div id="landing-label">Spent picking up</div>
         </div>
+        
       </div>
-      <div id="grad-3">
-        <div class="row">
-          <div class="large-6 medium-6 small-6 columns" style="padding-top: 20px; padding-left: 28%"><%= render 'personicon' %></div>
-          <div class="large-2 medium-2 small-2 columns" style="padding-top: 40px; font-size: 30px">x</div>
-          <div class="large-4 medium-4 small-4 columns" style="padding-top: 40px; padding-left: 0; padding-right: 0; font-size: 80px">2</div>
-          </div>
-      </div>
-      <div id="grad-2">        
-        <div class="row">
-          <div class="large-6 medium-6 small-6 columns" style="padding-top: 20px; padding-left: 28%"><%= render 'briefcase' %></div>
-          <div class="large-2 medium-2 small-2 columns" style="padding-top: 40px; font-size: 30px">x</div>
-          <div class="large-4 medium-4 small-4 columns" style="padding-top: 40px; padding-left: 0; padding-right: 0; font-size: 80px">4</div>
-        </div>
-      </div>
-      <div id="grad-1">
-        <div class="row">
-          <div class="large-4 medium-4 small-4 columns">
-            <div id="plane-logo">
-              <%= render 'planelogo' %>
+      <div id="section-2">
+        <div class="content-size">
+          <div class="row main-icn-rw">
+            <div class="large-6 medium-6 small-6 columns icon-row">
+              <%= render 'personicon' %>
+            </div>
+            <div class="large-6 medium-6 small-6 columns count-row">
+              <div class="dash-count">X<span id="passenger-count">2</span></div>
             </div>
           </div>
-          <div class="large-8 medium-8 small-8 columns" id="flight-num">
-            FLIGHT 2077 <br>
-            <div style="font-size: 18px">Inbound From ORD</div>
+        </div>
+      </div>
+      <div id="section-3">
+        <div class="content-size">
+          <div class="row main-icn-rw">
+            <div class="large-6 medium-6 small-6 columns icon-row">
+              <%= render 'briefcase' %>
+            </div>
+            <div class="large-6 medium-6 small-6 columns count-row">
+              <div class="dash-count">X<span id="luggage-count">2</span></div>
+            </div>
           </div>
         </div>
       </div>
+      <div id="section-4">
+        <div style="position: relative; margin-left: 15%; width: 80%">
+          <div class="row" style="margin-top: 5px">
+            <div id="plane-container" class="large-3 medium-3 small-3 columns" style="margin-top: 25px; padding-left: 7%">
+              <%= render 'planelogo' %>
+            </div>
+            <div class="large-9 medium-9 small-9 columns" style="padding-top: 25px">
+              <div class="row" style="font-size: 2vw">FLIGHT <span id="dash-flight-num"></span></div>
+              <div class="row" style="font-size: 1.4vw"><span id="flight-status">Inbound</span> from <span id="inbound-from"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="grad-container">
+      <div id="grad-4"></div>
+      <div id="grad-3"></div>
+      <div id="grad-2"></div>
+      <div id="grad-1"></div>
     </div>
   <div id="gradient-1"></div>
   <div id="gradient-2"></div>
-  <div id="gradient-3">
-  </div>
+  <div id="gradient-3"></div>
   <div id="gradient-4" style="padding: 0">
-    <div id="clock">
-      <div id="hour">
-        <div id="short-hand"></div>
-      </div>
-      <div id="minute">
-        <div id="long-hand"></div>
-      </div>
-      <div id="cap"></div>
-      <%= render 'timer' %>
-    </div>
+    <!-- clock animation found in toggle.js for now -->
+    
   </div>
 
   <div id="progress-bar">
-    <div id="ord">ORD</div>
+    <div id="ord"></div>
     <div id="bar-back">
       <div id="plane-bar"></div>
       <div id="filler">
@@ -1856,19 +2058,24 @@
 </div>  
 
 
+
+
 <div id="car-slider" style="display: none">
   <div style="height: 50px; width: 100%; background-color: #ABD9F4; margin-top: 15px">
     <div id="car-start-tag">
       LAX
     </div>
-    <div id="progression-bar">
-      <div id="car-container">
+    <div id="progression-bar"></div>
+    <!-- <div id="car-filler-bar"></div> -->
+    <div id="car-container">
         <%= render 'car' %>
-      </div>
     </div>
     <div id="car-end-tag">
       <div id="home-container">
         <%= render 'home' %>
+        <div class="row" id="end">
+          FINISH
+        </div>
       </div>
     </div>
   </div>
@@ -1877,9 +2084,9 @@
 
 
 <!-- DATA PASSED FROM FRAMEWORKS -->
-<div id="plane-progress" data-plane-progress=100></div>
-<div id="timer-progress" data-timer-progress=></div>
-<div id="spinner-chance" data-chance=<%= rand(2) %>></div>
+<div id="plane-progress" data-plane-progress=0></div>
+<div id="time" data-hours=0 data-minutes=0></div>
+<div id="car-scenario" data-ratio-num=6></div>
 <!-- END DATA PASSED FROM FRAMEWORKS -->
 
 

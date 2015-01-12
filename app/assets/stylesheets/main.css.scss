@@ -3,6 +3,27 @@ body, html {
     overflow-x: hidden; 
     overflow-y: auto;
 }
+
+h1{
+	color: white;
+	text-shadow: 0 0 10px rgba(0,0,0,.3);
+	font-weight: 700;
+	text-align:center;
+}
+
+h3.main-question{
+	color: white;
+	text-shadow: 0 0 10px rgba(0,0,0,.3);
+	font-weight: 700;
+	text-align: center;
+}
+
+.sub-header{
+	color: #079BED; 
+	padding-top: 0;
+	font-weight: 700;
+}
+
 .btcf:after {
   content:"";
   display:table;
@@ -11,6 +32,7 @@ body, html {
 
 .dIB { display: inline-block; }
 .vAM { vertical-align: middle; }
+.vAT { vertical-align: top; }
 
 #skip-button {
 	-webkit-user-select: none;
@@ -33,7 +55,6 @@ body, html {
 
 
 #toggle-questions {
-
 	position: absolute;
 	z-index: 50;
 	cursor: pointer;

@@ -6,8 +6,6 @@ $(document).ready(function(){
  	var otherToggle = 0;
  	var saveToggle = 0;
 
-
-
  	$('#guy').click(function(){
  		if(guyToggle === 0){
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "#98CC2D");
@@ -127,7 +125,7 @@ $(document).ready(function(){
     	var toggleTally = guyToggle + stopWatchToggle + carParkingToggle + hassleToggle + otherToggle;
     	debugger;
     	if(toggleTally === 0){
- 			$(".strategy-submit-large").fadeOut();
+ 			$(".strategy-submit-large").hide();
  		}
  		else{
  			$(".strategy-submit-large").fadeIn();
@@ -137,7 +135,7 @@ $(document).ready(function(){
 
     $(".cancel-large").click(function(){
     	if(guyToggle + stopWatchToggle + carParkingToggle + hassleToggle === 0){
-    		$(".strategy-submit-large").fadeOut();
+    		$(".strategy-submit-large").hide();
     	}
     	otherToggle = 0;
     	
@@ -300,7 +298,7 @@ $(document).ready(function(){
  					$("#pencil-m").css("fill", "#919191");
  					$("#pencil-r").css("fill", "#B7B7B7");
 
- 					$("#s-other-ctnr").fadeOut();
+ 					$("#s-other-ctnr").hide();
  					otherPop = 0;
 					otherTog = 0;
 				}
@@ -313,15 +311,13 @@ $(document).ready(function(){
 			$(".strategy-submit").fadeIn();
 		}
 		else{
-			$(".strategy-submit").fadeOut();
+			$(".strategy-submit").hide();
 		}
-
-
 	});
 
 	$(".save").click(function(){
 		if(otherPop === 1){
-			$("#s-other-ctnr").fadeOut();
+			$("#s-other-ctnr").hide();
 			otherPop = 0;
 		}
 	});
@@ -330,10 +326,10 @@ $(document).ready(function(){
 		var hideNext = passengerTog + stopWatchTog + parkingTog + hassleTog;
 
 		if(hideNext === 0){
-			$(".strategy-submit").fadeOut();
+			$(".strategy-submit").hide();
 		}
 
-		$("#s-other-ctnr").fadeOut();
+		$("#s-other-ctnr").hide();
 		$(".bubble-container-small#s-other .check-ctnr svg g .circle-state").css("stroke-width", 3);
 		$(".bubble-container-small#s-other .check-ctnr svg g .circle-state").css("fill", "white");
 		$(".bubble-container-small#s-other .check-ctnr svg .checkmark").css("stroke", "#757575");

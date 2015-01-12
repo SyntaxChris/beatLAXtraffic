@@ -2,6 +2,8 @@
 	display: none;
 }
 
+
+
 .icon {
 	cursor: pointer;
 	z-index: 6;
@@ -61,8 +63,8 @@
 		z-index: 5;
 		height: 76px;
 		width: 257px;
-		bottom: 115px;
-		left: 82px;
+		bottom: 116px;
+		left: 78px;
 		.remove-icon {
 			cursor: pointer;
 			position: relative;
@@ -74,9 +76,12 @@
 		#holder-1 {	
 			display: inline-block;
 			height: 76px;
-			width: 76px;
-			margin-right: 10px;
-			padding: 0;
+			width: 85px;
+			margin-right: 2px;
+			// padding-right: 10px;
+			// margin-right: 20px;
+			// padding: 0;
+
 		}
 		#holder-2 {
 			display: inline-block;
@@ -85,7 +90,10 @@
 			margin-right: 9px;
 		}
 		#holder-3 {
-			display: inline-block;
+			// display: inline-block;
+			position: absolute;
+			top: -1px;
+			left: 183px;
 			height: 76px;
 			width: 76px;
 		}
@@ -148,6 +156,7 @@
 		position: absolute;
 		z-index: 6;
 		top: 0;
+		padding: 0;
 		margin-left: 44.5%;
 	}
 	#computer {
@@ -195,6 +204,13 @@
 	height: 300px; 
 	width: 400px; 
 	background-color: white;
+	.i-want{
+		text-align: center; 
+		font-size: 30px; 
+		margin-top: 15px;
+		color: #78D2EA;
+
+	}
 	#icon-description {
 		width: 300px;
 		text-align: center;
@@ -208,7 +224,7 @@
 		width: 200px;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 60px;
+		margin-top: 40px;
 		#yea {
 			cursor: pointer;
 			display: inline-block;
@@ -259,7 +275,7 @@
 	#holder-and-description-row {
 		width: 280px; 
 		height: 105px;
-		margin-top: 20px;
+		margin-top: -5px;
 		margin-left: auto;
 		margin-bottom: 5px; 
 		margin-right: auto;
@@ -322,24 +338,42 @@
 		}
 		#holder-1-small {
 			position: absolute;	
-			top: -4px;
-			left: -5px; 
+			top: -6px;
+			left: -7px; 
 			height: 55px;
 			width: 55px;
+			.icon{
+				svg {
+					height: 110%;
+					width: 110%;
+				}
+			}
 		}
 		#holder-2-small {
 			position: absolute;	
-			top: -4px;
-			left: -5px; 
+			top: -6px;
+			left: -7px; 
 			height: 55px;
 			width: 55px;
+			.icon{
+				svg {
+					height: 110%;
+					width: 110%;
+				}
+			}
 		}
 		#holder-3-small {
 			position: absolute;	
-			top: -4px;
-			left: -5px; 
+			top: -7px;
+			left: -7px; 
 			height: 55px;
 			width: 55px;
+			.icon{
+				svg {
+					height: 110%;
+					width: 110%;
+				}
+			}
 		}
 	}
 	#icon-box-small {
@@ -425,26 +459,37 @@
 		width: 280px; 
 		background-color: white;
 		opacity: 0.9;
+	    .i-want{
+			text-align: center; 
+			font-size: 30px; 
+			padding-top: 10px;
+			color: #78D2EA;
+		}
 		#icon-description-small {
-			width: 300px;
+			position: relative;
+			width: 280px;
+			margin-left: auto;
+			margin-right: auto;
 			text-align: center;
 			color: #78D2EA;
 			font-size: 20px;
-			padding-top: 20px;
-			margin-left: auto;
-			margin-right: auto;
+			padding: 20px 5px 0 5px;
 		}
 		#choice-row {
 			width: 250px;
 			margin-left: 40px;
 			margin-right: auto;
-			margin-top: 30px;
+			margin-top: 10px;
 			#yea-small {
 				cursor: pointer;
 				display: inline-block;
 				width: 76px;
 				height: 76px;
 				margin-right: 43px;
+				svg {
+					width: 90%;
+					height: 90%;
+				}
 			}
 			#nah-small {
 				cursor: pointer;
@@ -452,6 +497,10 @@
 				width: 76px;
 				height: 76px;
 				border-radius: 100%;
+				svg {
+					width: 90%;
+					height: 90%;
+				}
 			}
 		}
 		.submit-row {

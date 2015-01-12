@@ -9,6 +9,98 @@ $(document).ready(function(){
     .on('click', '.x-btn-accept-mission', acceptMission)
     .on('click', '.x-btn-continue-mission', continueMission);
 
+  // randomize person pickup number
+  var personPickup = Math.floor(Math.random() * 3) + 1;
+  var suitcaseNum = Math.floor(Math.random() * 3) + 1;
+  var carryOrSuit = Math.floor(Math.random() * 2);
+
+  $('.number.person').text(personPickup);
+  $('.number.suitcase').text(suitcaseNum);
+
+  if(personPickup === 1){
+    $('#client').text("Client");
+    $('#cousin').text("Cousin");
+    $('#colleague').text("Colleague");
+    $('#friend').text("Friend");
+  }
+  else{
+    $('#client').text("Clients");
+    $('#cousin').text("Cousins");
+    $('#colleague').text("Colleagues");
+    $('#friend').text("Friends");
+  }
+  
+  if(suitcaseNum === 1){
+    carryOrSuit === 1 ? $('#suitcase').text("Large Suitcase") : $('#suitcase').text("Carry on bag");
+  }
+  else{
+    carryOrSuit === 1 ? $('#suitcase').text("Large Suitcases") : $('#suitcase').text("Carry on bags");
+  }
+
+  // randomize flight number
+  var flightNum = Math.floor(Math.random() * 900) + 100;
+  $('span#flight-num').text(flightNum);
+  $('span#dash-flight-num').text(flightNum);
+
+  // randomize flight departure and airport code
+  var Airports = {JFK: "New York City", DFW: "Dallas", ORD: "Chicago", HNL: "Honolulu", 
+  MEX: "Mexico City", YVR: "Vancouver", HKG: "Hong Kong", LHR: "London", SYD: "Sydney"};
+
+  // randomize airport location
+  var randomizeValue = function (obj) {
+    var keys = Object.keys(obj)
+    return obj[keys[ keys.length * Math.random() << 0]];
+  };
+
+  // find airport code (key) for randomized airport (value) in Airports obj
+  function findKey(obj, value){
+    var key;
+    _.each(_.keys(obj), function(k){
+      var v = obj[k];
+      if (v === value){
+        key = k;
+      }
+    });
+    return key;
+  } 
+
+  var airportLocation = randomizeValue(Airports);
+  var airportCode = findKey(Airports, airportLocation);
+
+  $(".airport-code#departure").text(airportCode);
+  $("span#inbound-from").text(airportCode);
+  $("div#ord").text(airportCode);
+  $(".airport-name#depart").text(airportLocation);
+
+  // randomize traffic conditions
+  var trafficConditions = ["Low", "Medium", "Heavy"][Math.floor(Math.random() * 4)];
+
+  $('span.traffic-label').text(trafficConditions);
+
+  if(trafficConditions === "Low"){
+    $('#traffic-meter').addClass("low");
+  }
+  else if(trafficConditions === "Medium"){
+    $('#traffic-meter').addClass("medium");
+  }
+  else{
+    $('#traffic-meter').addClass("high");
+  }
+
+
+  // randomize plane time
+  // var landTime = ["30", "1", "2"][Math.floor(Math.random() * 3)];
+  // $('.number.landing').text(landTime);
+  // $('#main-time').text(landTime);
+
+  // if(landTime === "30"){
+  //   $('.unit').text("min")
+  // }
+  // else{
+  //   $('.unit').text("hr")
+  // }
+
+
   //accept the current mission
   function acceptMission(){
     //toggle the stage 2 class on
