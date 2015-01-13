@@ -9,9 +9,10 @@
       <div ng-repeat="answer in currentNode.answers"
         ng-click="addAnswerToCurrentAnswers(answer)"
         ng-attr-id="row-{{$index + 1}}"
-        class="row">
+        class="row" data-rowid="{{$index + 1}}">
           {{answer.answer}}
       </div>
+
       <div class="row" id="row-6">
         <div id="confirm-btn" ng-click="submit()"><b>Next</b></div>
 
