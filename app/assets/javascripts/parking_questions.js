@@ -91,10 +91,10 @@ $(document).ready(function(){
 		var parkingIconTally = carPark + avoidTraffic + people + otherPark;
 
 		if (parkingIconTally > 0){
-			$(".parking-next").fadeIn();
+			$(".next#why-park").fadeIn();
 		} 
 		else {
-			$(".parking-next").fadeOut();
+			$(".next#why-park").fadeOut();
 		}
 	});
     
@@ -108,7 +108,7 @@ $(document).ready(function(){
 			$('.other-icon').fadeOut();
 			$("[id='char-count']").fadeIn();
 			$(".parking-other-text-area").fadeIn();
-			$('.parking-submit').fadeIn();
+			$('.parking-ok-btn').fadeIn();
 	    	toggleOther = 1;
     	}
     	else {
@@ -117,7 +117,7 @@ $(document).ready(function(){
 			$(".parking-question-other-font").animate({top: "5%"});
 			$("[id='char-count']").fadeOut();
 			$(".parking-other-text-area").fadeOut();
-			$('.parking-submit').fadeOut();
+			$('.parking-ok-btn').fadeOut();
 			$('.other-icon').show();
 			$('.parking-bubble-other .circle-state').css('fill', '#FFFFFF');
 			$('.parking-bubble-other .circle-state').css('stroke-width', 3);
@@ -127,10 +127,9 @@ $(document).ready(function(){
 	    	toggleOther = 0;
     	};
 	});
-
     
 
-    $(".parking-submit").click(function(){
+    $(".parking-ok-btn").click(function(){
     	otherPark = 1;
     	$('.parking-bubble-other .circle-state').css('fill', '#AA75D3');
 		$('.parking-bubble-other .circle-state').css('stroke-width', 0);
@@ -141,8 +140,8 @@ $(document).ready(function(){
 		$(".parking-question-other-font").animate({top: "5%"});
 		$("[id='char-count']").fadeOut();
 		$(".parking-other-text-area").fadeOut();
-		$(".parking-submit").fadeOut();
-		$(".parking-next").fadeIn();
+		$(".parking-ok-btn").fadeOut();
+		$(".next#why-park").fadeIn();
     });
 });
 

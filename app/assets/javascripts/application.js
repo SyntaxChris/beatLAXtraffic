@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require 'attribute.js'
 //= require foundation
 //= require 'dashboard'
 //= require 'car_dash'

@@ -3,8 +3,6 @@ $(document).ready(function(){
 	$("#skip-button").hide();
 	var pageClicks = 0;
 
-	
-
 	$("#toggle-questions").click(function(){
 		pageClicks += 1
 		$("#clicks").text(pageClicks);

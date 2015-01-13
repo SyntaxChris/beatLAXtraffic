@@ -65,10 +65,15 @@
     }
   }
   .wait-next-btn, .wait-next-btn:hover {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
     background: #EC7173;
     border: none;
     color: white;
   }
+
 }
 
 @media only screen and (min-width : 360px) { 
