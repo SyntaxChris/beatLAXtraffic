@@ -15,8 +15,7 @@ $(document).ready(function(){
 		}
 	};
 	
-
-    $("#toggle-questions").click(function(){
+    $('#x-btn-circle-next, #x-btn-timer-next, #x-btn-wait-next, #x-btn-upvote, #x-btn-downvote, #last-question-set.next, #x-btn-next-though').click(function(){
     	if($("#car-slider").css("display") === "block"){
     		clicks += 1;
     		ratioNum = $('#car-scenario').data('ratio-num');

@@ -3,7 +3,6 @@ $(document).ready(function(){
     var landTime = ["30", "1", "2"][Math.floor(Math.random() * 3)];
     var hour = $('#time').data('hours');
     var min = $('#time').data('minutes');
-
     var movePlane = function(incrementNum){
         var currentProgress = $('#plane-progress').data('plane-progress');
         var totalProgress = incrementNum + currentProgress;
@@ -120,32 +119,33 @@ $(document).ready(function(){
 
         $('#counter-num').data('counter-number', currentMin)
     }
+    var setPlane = function(scenario){
+        if(scenario === "2"){
+            $('#plane-progress').data('plane-progress', 0);
+            $("#plane-bar").animate({width: "0%"}, 2000);
+            $("#filler").animate({marginLeft: "0%"}, 2000);
+        }
+        else if(scenario === "1"){
+            $('#plane-progress').data('plane-progress', 20);
+            $("#plane-bar").animate({width: "20%"}, 2000);
+            $("#filler").animate({marginLeft: "20%"}, 2000);
+        }
+        else{
+            $('#plane-progress').data('plane-progress', 35);
+            $("#plane-bar").animate({width: "35%"}, 2000);
+            $("#filler").animate({marginLeft: "35%"}, 2000);
+        }
+    };
 
-
-
-
-
-    // set initial text values
+    // set initial values
     $('span#min').text(0);
     $("span#min-unit").text("min");
     $('.number.landing').text(landTime);
+    setPlane(landTime);
 
-    // set initial start values for plane progress bar 
-    if(landTime === "2"){
-        $('#plane-progress').data('plane-progress', 0);
-        $("#plane-bar").animate({width: "0%"}, 2000);
-        $("#filler").animate({marginLeft: "0%"}, 2000);
-    }
-    else if(landTime === "1"){
-        $('#plane-progress').data('plane-progress', 20);
-        $("#plane-bar").animate({width: "20%"}, 2000);
-        $("#filler").animate({marginLeft: "20%"}, 2000);
-    }
-    else{
-        $('#plane-progress').data('plane-progress', 35);
-        $("#plane-bar").animate({width: "35%"}, 2000);
-        $("#filler").animate({marginLeft: "35%"}, 2000);
-    }
+    
+ 
+    
 
     // target elements that increase counter time
     $(".sign, #x-btn-keep-looking, #x-btn-cirle-next, #x-btn-timer-more, #spin-parking-lose, .next#spin-pickup-lose, .next#timer-question, #x-btn-circle-next, #x-btn-timer-next, #x-btn-wait-next").click(function(){
@@ -185,7 +185,7 @@ $(document).ready(function(){
             var timerNum = parseInt($("divspan#min.timer-number").text());
             movePlane(timerNum);
             moveClock();
-            counterDisplay(timeNum);
+            counterDisplay(timerNum);
         }
         else if(idClicked === 'x-btn-wait-next'){
             var waitNum = parseInt($("#wait.timer-number").text());
