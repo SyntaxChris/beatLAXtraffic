@@ -42627,7 +42627,7 @@ lawaApp.config([
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
 
     $routeProvider.when('/test',{
-        templateUrl: '/assets/nodes.html',
+        templateUrl: '/assets/nodes-cef192c9f7ce24a3e84029fed0a95226.html',
         controller: 'NodeCtrl'
     });
   }
@@ -42801,7 +42801,7 @@ angular.module('lawaApp')
           
       
           
-            templates['1'] = {template: '/assets/partials/sq-1.html'}
+            templates['1'] = {template: '/assets/partials/sq-1-3f1bb61e66bfcbd720e45aefe6492747.html'}
           
       
           
