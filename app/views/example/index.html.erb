@@ -754,7 +754,7 @@
     <div class="fail" style="display:none">
       <h1>Dang!</h1>
       <h3 class="main-question">Our pick-up wasn't there.</h3>
-      <div class="next" id="spin-pikcup-lose">
+      <div class="next" id="spin-pickup-lose">
         Continue
       </div>
     </div>
@@ -1094,7 +1094,7 @@
 
 
     <!-- 11. TIMER QUESTIONS -->
-    <div id="clock-questions" style="display:none">
+    <div id="clock-questions" style="display: none">
       <!-- questions header -->
       <div class="row">
         <h3 class="main-question">How long do you usually park for?</h3>
@@ -1970,18 +1970,16 @@
 
 
 <!-- DASHBOARDS -->
-<!-- <div style="position: absolute; z-index: 50; width: 100%; padding-bottom: 15%; bottom: 0; background-color: #CDEDF9"></div> -->
-
-<div id="dashboard" style="display:none">
-<div id="clock-contents">
-  <div id="clock-face" data-opac="0"></div>
-    <div id="clock-hand-cntr" data-rot="0">
-      <div id="long-hand"></div>
-    </div>
-    <div id="clock">
-       <%= render 'timer' %> 
-    </div>
-</div>
+<div id="dashboard" style="display: none">
+  <div id="clock-contents">
+    <div id="clock-face" data-opac="0"></div>
+      <div id="clock-hand-cntr" data-rot="0">
+        <div id="long-hand"></div>
+      </div>
+      <div id="clock">
+         <%= render 'timer' %> 
+      </div>
+  </div>
     <div id="dash-contents">
       <div id="section-1">
         <div id="time-container">
