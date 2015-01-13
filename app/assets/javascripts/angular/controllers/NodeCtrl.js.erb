@@ -6,22 +6,22 @@ angular.module('lawaApp')
         // get and set up all nodes
         $http.get('/api/nodes').success(function(data){
           $scope.nodes = data;
+
+          // find or create a respondent with session and current node data
+          $http.get('/api/respondents/get_or_create/').success(function(data){
+            $scope.surveySessionId = data.session_id;
+            $scope.respondentId = data.respondent_id;
+            $scope.setCurrentNodeById(data.current_node_id);
+          })
+
+          $scope.currentDecisionDestination = null;
+          $scope.currentAnswers = [];
         });
-
-        // find or create a respondent with session and current node data
-        $http.get('/api/respondents/get_or_create/').success(function(data){
-          $scope.surveySessionId = data.session_id;
-          $scope.respondentId = data.respondent_id;
-          $scope.setCurrentNodeById(data.current_node_id);
-        })
-
-        $scope.currentDecisionDestination = null;
-        $scope.currentAnswers = [];
-      }
+      };
 
       $scope.setCurrentNodeBySession = function() {
         $scope.currentNode = $scope.fetchNodeById(sessionCurrentNodeId);
-      }
+      };
 
       $scope.fetchNodeById = function(nodeId){
         var currentNode = _.where($scope.nodes, {node_id: nodeId})
@@ -30,6 +30,7 @@ angular.module('lawaApp')
 
       $scope.setCurrentNodeById = function(nodeId){
         $scope.currentNode = $scope.fetchNodeById(nodeId);
+        $scope.currentTemplateName = $scope.getTemplateName(nodeId);
       };
 
       $scope.setCurrentDecision = function(decision){
@@ -89,6 +90,24 @@ angular.module('lawaApp')
           $scope.currentAnswers = [];
         });
       };
+
+
+        $scope.getMinigameName = function(area){
+            return minigames[area.minigame_type_id].name;
+        };
+
+      var templates = {}
+      <% Node.all.each do |node| %>
+          <% if !node.is_decision_point %>
+            <%= "templates['#{node.id}'] = {template: '#{asset_path "partials/#{node.template_name}.html"}'}" %>
+          <% elsif node.is_decision_point %>
+            <%= "templates['#{node.id}'] = {template: '#{asset_path "partials/#{node.template_name}.html"}'}" %>
+          <% end %>
+      <% end %>
+
+      $scope.getTemplateName = function(nodeId){
+        return templates[nodeId].template;
+      }
 
       $scope.setup();
     }

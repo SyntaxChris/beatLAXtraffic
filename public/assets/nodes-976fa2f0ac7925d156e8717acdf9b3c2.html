@@ -9,7 +9,7 @@
     {{ getTemplateName(currentNode.node_id)}}
   </div> -->
   <div class="row">
-    <div ng-include="currentTemplateName">
+    <div ng-include="getTemplateName(currentNode.node_id)">
     </div>
   </div>
 </div>
