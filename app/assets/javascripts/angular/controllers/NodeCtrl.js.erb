@@ -99,9 +99,9 @@ angular.module('lawaApp')
       var templates = {}
       <% Node.all.each do |node| %>
           <% if !node.is_decision_point %>
-            <%= "templates['#{node.id}'] = {template: '#{asset_path "partials/#{node.clean_template_name}.html"}'}" %>
+            <%= "templates['#{node.id}'] = {template: '#{asset_path "#{node.clean_template_name}.html"}'}" %>
           <% elsif node.is_decision_point %>
-            <%= "templates['#{node.id}'] = {template: '#{asset_path "partials/#{node.clean_template_name}.html"}'}" %>
+            <%= "templates['#{node.id}'] = {template: '#{asset_path "#{node.clean_template_name}.html"}'}" %>
           <% end %>
       <% end %>
 
