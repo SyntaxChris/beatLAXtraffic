@@ -106,6 +106,7 @@ angular.module('lawaApp')
       <% end %>
 
       $scope.getTemplateName = function(nodeId){
+        console.log(templates);
         return templates[nodeId].template;
       }
 
