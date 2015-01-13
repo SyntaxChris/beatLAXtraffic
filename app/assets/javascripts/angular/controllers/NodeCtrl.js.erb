@@ -31,7 +31,6 @@ angular.module('lawaApp')
       $scope.setCurrentNodeById = function(nodeId){
         $scope.currentNode = $scope.fetchNodeById(nodeId);
         $scope.currentTemplateName = $scope.getTemplateName(nodeId);
-        console.log("current: " + $scope.currentTemplateName);
       };
 
       $scope.setCurrentDecision = function(decision){
