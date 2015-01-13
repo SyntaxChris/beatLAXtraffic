@@ -15,6 +15,6 @@ class Node < ActiveRecord::Base
   end
 
   def clean_template_name
-    nickname.downcase.gsub(/ /,"_")
+    nickname.downcase.gsub(/ /,"-")
   end
 end
