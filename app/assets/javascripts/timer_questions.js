@@ -24,7 +24,7 @@ $(document).ready(function(){
             $('.timer-tile').css("opacity", "1");
 			$('#tile-4').css("opacity", "0.5");
 		}
-		$('#timer-question-submit').fadeIn();
+		$('.next#timer-question').fadeIn();
 	});
 
 	$('.timer-tile').click(function(){
@@ -47,6 +47,6 @@ $(document).ready(function(){
             $('.timer-font').animate({"opacity": "0.5"}, 130);
 			$('[id="tf-4"]').animate({"opacity": "1"}, 130);
 		}
-		$('#timer-question-submit').fadeIn();
+		$('.next#timer-question').fadeIn();
 	});
 });

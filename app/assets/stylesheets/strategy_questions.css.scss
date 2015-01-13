@@ -156,7 +156,7 @@ h5.sub-header {
 	margin-left: 33%;
 }
 
-.strategy-submit {
+.next#strategy-small-temp {
 	position: absolute; 
 	cursor: pointer; 
 	border-radius: 5px; 
@@ -171,7 +171,7 @@ h5.sub-header {
 
 
 
-.strategy-submit-large {
+.next#strategy-large-temp {
 	display: none;
 	cursor: pointer; 
 	background-color: #24B7EA;
@@ -189,7 +189,8 @@ h5.sub-header {
 
 
 
-#strategy-submit:hover {
+.next#strategy-large-temp:hover,
+.next#strategy-small-temp:hover {
 	opacity: 0.7;
 }
 

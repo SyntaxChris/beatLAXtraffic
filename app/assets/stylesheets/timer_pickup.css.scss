@@ -57,7 +57,11 @@
       color: white;
     }
   }
-  .timer-next-btn {
+  .next#x-btn-timer-next {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
     width: 200px;
     background: #EB7374;
     color: white;

@@ -125,17 +125,17 @@ $(document).ready(function(){
     	var toggleTally = guyToggle + stopWatchToggle + carParkingToggle + hassleToggle + otherToggle;
     	debugger;
     	if(toggleTally === 0){
- 			$(".strategy-submit-large").hide();
+ 			$(".next#strategy-large-temp").hide();
  		}
  		else{
- 			$(".strategy-submit-large").fadeIn();
+ 			$(".next#strategy-large-temp").fadeIn();
  		}
     });
 
 
     $(".cancel-large").click(function(){
     	if(guyToggle + stopWatchToggle + carParkingToggle + hassleToggle === 0){
-    		$(".strategy-submit-large").hide();
+    		$(".next#strategy-large-temp").hide();
     	}
     	otherToggle = 0;
     	
@@ -308,10 +308,10 @@ $(document).ready(function(){
 		var showNext = passengerTog + stopWatchTog + parkingTog + hassleTog + otherTog
 
 		if(showNext > 0){
-			$(".strategy-submit").fadeIn();
+			$(".next#strategy-small-temp").fadeIn();
 		}
 		else{
-			$(".strategy-submit").hide();
+			$(".next#strategy-small-temp").hide();
 		}
 	});
 

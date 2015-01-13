@@ -135,16 +135,30 @@ div#row-6 {
 	bottom: 160px;
 }
 
-#confirm-btn {
-	height: 40px; 
-	width: 250px; 
+.next#dist-temp {
+	display: block;
+	position: relative;
+	padding: 15px;
+	width: 150px;
+	margin-top: 5%;
 	background-color: white; 
 	color: #4EA0D6; 
 	margin-left: auto; 
 	margin-right: auto; 
-	margin-top: 80px; 
-	padding-top: 6px; 
-	cursor: pointer
+	cursor: pointer;
+}
+
+div#arch {
+	position: absolute;
+	bottom: 0%;
+	left: 5%;
+
+}
+
+div#tower {
+	position: absolute;
+	bottom: 90%;
+	right: 20%;
 }
 
 @media screen and (min-width: 640px) {
@@ -182,7 +196,7 @@ div#row-6 {
 	div#arrow-contents {
 		bottom: 60px;
 	}
-	#confirm-btn {
+	.next#dist-temp {
 		width: 150px; 
 		margin-top: 10px; 
 	}
@@ -197,9 +211,13 @@ div#row-6 {
 	div#arrow-contents {
 		margin-left: 0;
 	}
-	#confirm-btn {
+	.next#dist-temp{
 		width: 100px; 
 		margin-top: 10px; 
+	}
+
+	#arch{
+		display: none;
 	}
 }
 
