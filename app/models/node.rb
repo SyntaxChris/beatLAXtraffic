@@ -13,4 +13,8 @@ class Node < ActiveRecord::Base
         { decision_point: { decisions: :destination_node } }
       )
   end
+
+  def clean_template_name
+    nickname.downcase.gsub(/ /,"_")
+  end
 end
