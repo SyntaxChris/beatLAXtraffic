@@ -42627,7 +42627,7 @@ lawaApp.config([
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
 
     $routeProvider.when('/test',{
-        templateUrl: '/assets/nodes-61bd36eecec159e1884a162b28dad475.html',
+        templateUrl: '/assets/nodes.html',
         controller: 'NodeCtrl'
     });
   }
@@ -42753,135 +42753,136 @@ angular.module('lawaApp')
       var templates = {}
       
           
-            templates['5'] = {template: '/gq_1.html'}
+            templates['5'] = {template: '/partials/gq_1.html'}
           
       
           
-            templates['6'] = {template: '/no-itf_1.html'}
+            templates['6'] = {template: '/partials/no-itf_1.html'}
           
       
           
-            templates['23'] = {template: '/e_7.html'}
+            templates['23'] = {template: '/partials/e_7.html'}
           
       
           
-            templates['24'] = {template: '/dp_1.html'}
+            templates['24'] = {template: '/partials/dp_1.html'}
           
       
           
-            templates['25'] = {template: '/dp_7.html'}
+            templates['25'] = {template: '/partials/dp_7.html'}
           
       
           
-            templates['26'] = {template: '/dp_7a.html'}
+            templates['26'] = {template: '/partials/dp_7a.html'}
           
       
           
-            templates['27'] = {template: '/dp_11.html'}
+            templates['27'] = {template: '/partials/dp_11.html'}
           
       
           
-            templates['28'] = {template: '/dp_10.html'}
+            templates['28'] = {template: '/partials/dp_10.html'}
           
       
           
-            templates['29'] = {template: '/dp_6.html'}
+            templates['29'] = {template: '/partials/dp_6.html'}
           
       
           
-            templates['30'] = {template: '/dp_5.html'}
+            templates['30'] = {template: '/partials/dp_5.html'}
           
       
           
-            templates['31'] = {template: '/dp_3.html'}
+            templates['31'] = {template: '/partials/dp_3.html'}
           
       
           
-            templates['32'] = {template: '/dp_2.html'}
+            templates['32'] = {template: '/partials/dp_2.html'}
           
       
           
-            templates['1'] = {template: '/sq_1.html'}
+            templates['1'] = {template: '/partials/sq_1.html'}
           
       
           
-            templates['2'] = {template: '/sq_2.2.html'}
+            templates['2'] = {template: '/partials/sq_2.2.html'}
           
       
           
-            templates['3'] = {template: '/sq_3.1.html'}
+            templates['3'] = {template: '/partials/sq_3.1.html'}
           
       
           
-            templates['4'] = {template: '/sq_3.5.html'}
+            templates['4'] = {template: '/partials/sq_3.5.html'}
           
       
           
-            templates['15'] = {template: '/a_1.html'}
+            templates['15'] = {template: '/partials/a_1.html'}
           
       
           
-            templates['16'] = {template: '/a_2.html'}
+            templates['16'] = {template: '/partials/a_2.html'}
           
       
           
-            templates['11'] = {template: '/b_1.html'}
+            templates['11'] = {template: '/partials/b_1.html'}
           
       
           
-            templates['12'] = {template: '/b_2.html'}
+            templates['12'] = {template: '/partials/b_2.html'}
           
       
           
-            templates['13'] = {template: '/b_3.html'}
+            templates['13'] = {template: '/partials/b_3.html'}
           
       
           
-            templates['14'] = {template: '/b_4.html'}
+            templates['14'] = {template: '/partials/b_4.html'}
           
       
           
-            templates['8'] = {template: '/c_1.html'}
+            templates['8'] = {template: '/partials/c_1.html'}
           
       
           
-            templates['9'] = {template: '/c_2.html'}
+            templates['9'] = {template: '/partials/c_2.html'}
           
       
           
-            templates['10'] = {template: '/c_4.html'}
+            templates['10'] = {template: '/partials/c_4.html'}
           
       
           
-            templates['17'] = {template: '/e_1.html'}
+            templates['17'] = {template: '/partials/e_1.html'}
           
       
           
-            templates['18'] = {template: '/e_2.html'}
+            templates['18'] = {template: '/partials/e_2.html'}
           
       
           
-            templates['19'] = {template: '/e_3.html'}
+            templates['19'] = {template: '/partials/e_3.html'}
           
       
           
-            templates['20'] = {template: '/e_4.html'}
+            templates['20'] = {template: '/partials/e_4.html'}
           
       
           
-            templates['21'] = {template: '/e_5.html'}
+            templates['21'] = {template: '/partials/e_5.html'}
           
       
           
-            templates['22'] = {template: '/e_6.html'}
+            templates['22'] = {template: '/partials/e_6.html'}
           
       
           
-            templates['7'] = {template: '/itf_2.html'}
+            templates['7'] = {template: '/partials/itf_2.html'}
           
       
 
       $scope.getTemplateName = function(nodeId){
+        console.log(templates);
         return templates[nodeId].template;
       }
 
