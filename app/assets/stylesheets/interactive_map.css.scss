@@ -167,6 +167,13 @@
       display: block;
     }
   }
+  .tram {
+    position: absolute;
+    z-index: 1;
+    bottom: 16%;
+    right: 34%;
+    width: 10%;
+  }
 }
 
 @media screen and (max-width: 768px) and (min-width: 0px) and (orientation: portrait) {
