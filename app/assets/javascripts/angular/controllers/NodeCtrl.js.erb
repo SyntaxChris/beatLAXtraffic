@@ -70,7 +70,6 @@ angular.module('lawaApp')
       }
 
       $scope.submit = function(decisionId){
-        console.log($scope);
         var paramSafeAnswers = answersForParams($scope.currentAnswers);
         var params = {
           is_decision: $scope.currentNode.is_decision_point,
@@ -107,6 +106,7 @@ angular.module('lawaApp')
 
       $scope.getTemplateName = function(nodeId){
         return templates[nodeId].template;
+        console.log("templates: " + templates);
       }
 
       $scope.setup();

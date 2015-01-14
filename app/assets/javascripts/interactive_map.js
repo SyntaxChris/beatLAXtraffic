@@ -1,9 +1,12 @@
 $(document).ready(function(){
+
+  var $body = $('body');
+
   //set some vars
   var $interactiveMap = $('#interactive-map');
 
   //listeners
-  $interactiveMap.on('click', '.x-btn-select-path',selectPath);
+  $body.on('click', '#interactive-map .x-btn-select-path',selectPath);
 
   function selectPath(e){
     //prevent the default and propagation
@@ -18,14 +21,14 @@ $(document).ready(function(){
     if ($btn.hasClass('selected')) { return; }
 
     //deselect selected classes
-    $interactiveMap
-      .find('.x-btn-select-path.selected').toggleClass('selected', false).end()
-      .find('.map-path.selected').toggleClass('selected', false);
+    $body
+      .find('#interactive-map .x-btn-select-path.selected').toggleClass('selected', false).end()
+      .find('#interactive-map .map-path.selected').toggleClass('selected', false);
 
     //add selected classes
-    $interactiveMap
-      .find('.x-btn-select-path[data-path="'+path+'"]').toggleClass('selected', true).end()
-      .find('.map-path.'+path).toggleClass('selected', true);
+    $body
+      .find('#interactive-map .x-btn-select-path[data-path="'+path+'"]').toggleClass('selected', true).end()
+      .find('#interactive-map .map-path.'+path).toggleClass('selected', true);
   }
 
 
