@@ -15,6 +15,7 @@ json.array! @nodes do |node|
   elsif !node.is_decision_point
     json.question do
       json.id node.question.id
+      json.question_type node.question.question_type.name
       json.question node.question.question
     end
     json.answers node.question.answers.each do |answer|

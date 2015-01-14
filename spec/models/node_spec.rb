@@ -60,7 +60,8 @@ describe Node do
 
     describe "all_with_content" do
       let!(:question_node) { create(:node, is_decision_point: false) }
-      let!(:question) { create(:question, node_id: question_node.id, question: 'what?')}
+      let!(:select_type) { create(:question_type, name: "select-one") }
+      let!(:question) { create(:question, question_type_id: select_type.id, node_id: question_node.id, question: 'what?')}
       let!(:answer_1) { create(:answer, question_id: question.id, answer: "this")}
       let!(:answer_2) { create(:answer, question_id: question.id, answer: "that")}
       let!(:answer_3) { create(:answer, question_id: question.id, answer: "the other thing")}
@@ -84,6 +85,7 @@ describe Node do
         d_node = all_nodes.second
 
         expect(q_node.question.question).to eq "what?"
+        expect(q_node.question.question_type.name).to eq "select-one"
         expect(q_node.question.answers.count).to eq 3
         expect(q_node.question.answers.first.answer).to eq "this"
 
