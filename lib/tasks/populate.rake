@@ -11,34 +11,17 @@ namespace :populate do
     ending_questions_branch = Branch.create(name: "ending questions")
 
     # create question types
-    mission_information_type = QuestionType.create(name: "mission-information")
-    airport_information_type = QuestionType.create(name: "airport-information")
-    gps_view_type = QuestionType.create(name: "gps-view")
-    thought_bubble_ranking = QuestionType.create(name: "thought-bubble-ranking")
-    yes_no_type = QuestionType.create(name: "yes-no")
-    ranking_type = QuestionType.create(name: "ranking")
-    signs_type = QuestionType.create(name: "signs")
-    clock_type = QuestionType.create(name: "clock")
-    coin_flip_type = QuestionType.create(name: "coin-flip")
-    clock_v2_type = QuestionType.create(name: "clock-v2")
-    table_type = QuestionType.create(name: "table")
-    apps_type = QuestionType.create(name: "apps")
-    yes_no_clock_type = QuestionType.create(name: "yes-no-clock")
-    time_type = QuestionType.create(name: "time")
-    custom_1 = QuestionType.create(name: "custom-1")
-    custom_2 = QuestionType.create(name: "custom-2")
-    custom_3 = QuestionType.create(name: "custom-3")
-    custom_4 = QuestionType.create(name: "custom-4")
+    many_choice = QuestionType.create(name: "select-multiple")
+    single_choice = QuestionType.create(name: "select-one")
+    rank = QuestionType.create(name: "rank")
 
     # create nodes per branch, and questions for nodes, and answers for questions
     #
     # scenario questions
     # TODO: add icon names for all
-    #   - TODO: move all decision point nodes to the bottom and make sure THEY are stacked properly!
-    # TODO: add question type to DPs
 
     sq1 = Node.create(nickname: "SQ 1", is_decision_point: false, branch_id: scenario_questions_branch.id, template_name: "sq-1")
-      sq1q = Question.create(node_id: sq1.id, question: "About how far away from LAX do you live?", question_type_id: nil)
+      sq1q = Question.create(node_id: sq1.id, question: "About how far away from LAX do you live?", question_type_id: single_choice.name)
       # ^ needs a question type
         sq1a1 = Answer.create(question_id: sq1q.id, answer: "Less than 30 minute drive away", icon_name: nil)
         sq1a2 = Answer.create(question_id: sq1q.id, answer: "30 - 60 minutes away", icon_name: nil)
@@ -50,22 +33,22 @@ namespace :populate do
       sq22q = Question.create(
         node_id: sq22.id,
         question: "You are the chosen one, selected to pick up XXX. There will be X passengers you need to pick up. They will have XXX with them",
-        question_type_id: mission_information_type.id
+        question_type_id: single_choice.name
       )
 
     sq31 = Node.create(nickname: "SQ 3.1", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "sq-3-3")
       sq31q = Question.create(
         node_id: sq31.id,
         question: "Flight Number XXX from XXX is coming and will land in X. The traffic forecast is XXX.",
-        question_type_id: airport_information_type.id
+        question_type_id: single_choice.name
       )
 
     sq35 = Node.create(nickname: "SQ 3.5", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "sq-3-5")
-      sq35q = Question.create(node_id: sq35.id, question: "There is a friend in the car helping you with this pick-up ", question_type_id: airport_information_type.id)
+      sq35q = Question.create(node_id: sq35.id, question: "There is a friend in the car helping you with this pick-up ", question_type_id: single_choice.name)
       # ^ This will either say this or an alternate based on a random generation
 
     gq1 = Node.create(nickname: "GQ 1", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "gq-1")
-      gq1q = Question.create(node_id: gq1.id, question: "Why do you choose this strategy? Select all that apply (minimum 1)", question_type_id: thought_bubble_ranking.id)
+      gq1q = Question.create(node_id: gq1.id, question: "Why do you choose this strategy? Select all that apply (minimum 1)", question_type_id: many_choice.name)
         gq1a1 = Answer.create(question_id: gq1q.id, answer: "To minimize the hassle for me", icon_name: nil)
         gq1a2 = Answer.create(question_id: gq1q.id, answer: "To make it convenient for my passenger", icon_name: nil)
         gq1a3 = Answer.create(question_id: gq1q.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil)
@@ -78,7 +61,7 @@ namespace :populate do
       noitf1q = Question.create(
         node_id: noitf1.id,
         question: "To avoid all of this, we're trying to build an airport rail system that would make it easy for a passenger to meet you at a nearby location outside of the airport! \nWould you meet your passenger at this new location outside of the airport in light of the experience you had today?",
-        question_type_id: yes_no_type.id
+        question_type_id: single_choice.name
       )
         noitf1a1 = Answer.create(question_id: noitf1q.id, answer: "yes", icon_name: nil)
         noitf1a1 = Answer.create(question_id: noitf1q.id, answer: "no", icon_name: nil)
@@ -87,7 +70,7 @@ namespace :populate do
       itf2q = Question.create(
         node_id: itf2.id,
         question: "Imagine that you have the power to customize this off site location. \nPick your top 3 amenities. ",
-        question_type_id: ranking_type.id
+        question_type_id: rank.name
       )
         itf2a1= Answer.create(question_id: itf2q.id, answer: "Free short-term parking", icon_name: nil)
         itf2a2= Answer.create(question_id: itf2q.id, answer: "A way to make sure I know the status of my passenger’s flight.", icon_name: nil)
@@ -100,14 +83,14 @@ namespace :populate do
 
     # wait offsite
     c1 = Node.create(nickname: "C 1", is_decision_point: false , branch_id: wait_offsite_branch.id, template_name: "c-1")
-      c1q = Question.create(node_id: c1.id, question: "Where do you usually wait for your passenger?", question_type_id: signs_type.id)
+      c1q = Question.create(node_id: c1.id, question: "Where do you usually wait for your passenger?", question_type_id: single_choice.name)
         c1a1= Answer.create(question_id: c1q.id, answer: "Cellphone waiting lot", icon_name: nil)
         c1a2= Answer.create(question_id: c1q.id, answer: "Roadside near the airport", icon_name: nil)
         c1a3= Answer.create(question_id: c1q.id, answer: "Nearby Store", icon_name: nil)
         c1a4= Answer.create(question_id: c1q.id, answer: "Nearby Restaurant", icon_name: nil)
 
     c2 = Node.create(nickname: "C 2", is_decision_point: false , branch_id: wait_offsite_branch.id, template_name: "c-2")
-      c2q = Question.create(node_id: c2.id, question: "How long do you expect to wait before driving into the terminal area?", question_type_id: clock_type.id)
+      c2q = Question.create(node_id: c2.id, question: "How long do you expect to wait before driving into the terminal area?", question_type_id: single_choice.name)
         c2a1= Answer.create(question_id: c2q.id, answer: "Less than 15 minutes", icon_name: nil)
         c2a2= Answer.create(question_id: c2q.id, answer: "15 - 30 minutes", icon_name: nil)
         c2a3= Answer.create(question_id: c2q.id, answer: "30 - 60 minutes", icon_name: nil)
@@ -115,12 +98,12 @@ namespace :populate do
         c2a4= Answer.create(question_id: c2q.id, answer: "More than 90 minutes", icon_name: nil)
 
     c4 = Node.create(nickname: "C 4", is_decision_point: false , branch_id: wait_offsite_branch.id, template_name: "c-4")
-      c4q = Question.create(node_id: c4.id, question: "What is the longest you are willing to wait for your passenger?", question_type_id: clock_v2_type.id)
+      c4q = Question.create(node_id: c4.id, question: "What is the longest you are willing to wait for your passenger?", question_type_id: single_choice.name)
         c4a1= Answer.create(question_id: c4q.id, answer: "Set duration...", icon_name: nil)
 
     # park and meet
     b1 = Node.create(nickname: "B 1", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-1")
-      b1q = Question.create(node_id: b1.id, question: "Why do you choose to park your car? Select all that apply:", question_type_id: table_type.id)
+      b1q = Question.create(node_id: b1.id, question: "Why do you choose to park your car? Select all that apply:", question_type_id: many_choice.name)
       # ^ this will need alt question text
         b1a1= Answer.create(question_id: b1q.id, answer: "When convenient parking is available", icon_name: nil)
         b1a2= Answer.create(question_id: b1q.id, answer: "To avoid driving in traffic", icon_name: nil)
@@ -128,7 +111,7 @@ namespace :populate do
         b1a4= Answer.create(question_id: b1q.id, answer: "Other (Specify)", icon_name: nil)
 
     b2 = Node.create(nickname: "B 2", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-2")
-      b2q = Question.create(node_id: b2.id, question: "How long do you usually park for?", question_type_id: clock_type.id)
+      b2q = Question.create(node_id: b2.id, question: "How long do you usually park for?", question_type_id: single_choice.name)
       # ^ this will need alt question text
         b2a1= Answer.create(question_id: b2q.id, answer: "Less than 30 minutes", icon_name: nil)
         b2a2= Answer.create(question_id: b2q.id, answer: "30 - 60 minutes", icon_name: nil)
@@ -136,7 +119,7 @@ namespace :populate do
         b2a4= Answer.create(question_id: b2q.id, answer: "More than 90 minutes", icon_name: nil)
 
     b3 = Node.create(nickname: "B 3", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-3")
-      b3q = Question.create(node_id: b3.id, question: "What are you doing while you're parked? Select all that apply:", question_type_id: apps_type.id)
+      b3q = Question.create(node_id: b3.id, question: "What are you doing while you're parked? Select all that apply:", question_type_id: many_choice.name)
         b3a1= Answer.create(question_id: b3q.id, answer: "Waiting in my car", icon_name: nil)
         b3a2= Answer.create(question_id: b3q.id, answer: "Waiting in the terminal", icon_name: nil)
         b3a3= Answer.create(question_id: b3q.id, answer: "Shopping in the terminal", icon_name: nil)
@@ -144,12 +127,12 @@ namespace :populate do
         b3a5= Answer.create(question_id: b3q.id, answer: "Other (Specify)", icon_name: nil)
 
     b4 = Node.create(nickname: "B 4", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-4")
-      b4q = Question.create(node_id: b4.id, question: "What is the longest you are willing to look for parking?", question_type_id: clock_v2_type.id)
+      b4q = Question.create(node_id: b4.id, question: "What is the longest you are willing to look for parking?", question_type_id: single_choice.name)
         b4a1 = Answer.create(question_id: b4q.id, answer: "Set duration...", icon_name: nil)
 
     # hope to catch
     a1 = Node.create(nickname: "A 1", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id, template_name: "a-1")
-      a1q = Question.create(node_id: a1.id, question: "How well do you think this strategy will work?", question_type_id: thought_bubble_ranking.id)
+      a1q = Question.create(node_id: a1.id, question: "How well do you think this strategy will work?", question_type_id: single_choice.name)
         a1a1 = Answer.create(question_id: a1q.id, answer: "Works like a charm every time", icon_name: nil)
         a1a2 = Answer.create(question_id: a1q.id, answer: "I might have to circle a few times, but it will eventually work", icon_name: nil)
         a1a3 = Answer.create(question_id: a1q.id, answer: "It's always bad, but it's better than parking", icon_name: nil)
@@ -158,7 +141,7 @@ namespace :populate do
       a2q = Question.create(
         node_id: a2.id,
         question: "You're circling and don't see your passenger and think they may be late. How do you check for that information?",
-        question_type_id: apps_type.id
+        question_type_id: single_choice.name
       )
         a2a1 = Answer.create(question_id: a2q.id, answer: "Check mobile phone for flight information", icon_name: nil)
         a2a2 = Answer.create(question_id: a2q.id, answer: "Try to reach passenger", icon_name: nil)
@@ -174,7 +157,7 @@ namespace :populate do
       e2q = Question.create(
         node_id: e2.id,
         question: "Based on this scenario, we estimated you have circled around the terminal [X] times before picking up your passenger.\nIs this typical?",
-        question_type_id: clock_type.id
+        question_type_id: single_choice.name
       )
         e2a1 = Answer.create(question_id: e2q.id, answer: "Yes", icon_name: nil)
         e2a2 = Answer.create(question_id: e2q.id, answer: "No", icon_name: nil)
@@ -183,7 +166,7 @@ namespace :populate do
       e3q = Question.create(
         node_id: e3.id,
         question: "Based on this scenario, we estimated you spent [Calculated Game Time in Minutes] getting your passenger at the airport.\nIs this typical?",
-        question_type_id: time_type.id
+        question_type_id: single_choice.name
       )
         e3a1 = Answer.create(question_id: e3q.id, answer: "Yes", icon_name: nil)
         e3a2 = Answer.create(question_id: e3q.id, answer: "No", icon_name: nil)
@@ -192,7 +175,7 @@ namespace :populate do
       e4q = Question.create(
         node_id: e4.id,
         question: "What was the reason for your last trip to LAX?",
-        question_type_id: custom_1.id
+        question_type_id: single_choice.name
       )
         e4a1 = Answer.create(question_id: e4q.id, answer: "Business or business-related travel", icon_name: nil)
         e4a2 = Answer.create(question_id: e4q.id, answer: "Leisure/vacation/visiting", icon_name: nil)
@@ -204,7 +187,7 @@ namespace :populate do
       e5q = Question.create(
         node_id: e5.id,
         question: "About how often do you go to LAX?",
-        question_type_id: custom_2.id
+        question_type_id: single_choice.name
       )
         e5a1 = Answer.create(question_id: e5q.id, answer: "Less than once a year", icon_name: nil)
         e5a2 = Answer.create(question_id: e5q.id, answer: "1 - 2 times a year", icon_name: nil)
@@ -216,7 +199,7 @@ namespace :populate do
       e6q = Question.create(
         node_id: e6.id,
         question: "And finally, my esteemed driver: How old are you?",
-        question_type_id: custom_3.id
+        question_type_id: single_choice.name
       )
         e6a1 = Answer.create(question_id: e6q.id, answer: "18 - 24", icon_name: nil)
         e6a2 = Answer.create(question_id: e6q.id, answer: "25 - 34", icon_name: nil)
@@ -230,7 +213,7 @@ namespace :populate do
       e7q = Question.create(
         node_id: e7.id,
         question: "You made it home!\nThank you for playing. All this information will help LAX better serve you in the future. If you want to keep in touch with our progress towards the new location please join our mailing list or visit us at http://connectinglax.com",
-        question_type_id: custom_3.id
+        question_type_id: single_choice.name
       )
         e7a1 = Answer.create(question_id: e7q.id, answer: "Email Input", icon_name: nil)
 
