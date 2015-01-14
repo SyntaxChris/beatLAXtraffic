@@ -15,20 +15,27 @@ $(document).ready(function(){
 
     //set the path
     var $btn = $(this),
-        path = $btn.data('path');
+        path = $btn.data('path'),
+        $confirmPathBtn = $body.find('#interactive-map #x-btn-confirm-map-choice');
 
     //check if this one is selected already
     if ($btn.hasClass('selected')) { return; }
 
+    if ( !$confirmPathBtn.hasClass('show') ) {
+      $confirmPathBtn.toggleClass('show', true);
+    }
+
     //deselect selected classes
     $body
       .find('#interactive-map .x-btn-select-path.selected').toggleClass('selected', false).end()
-      .find('#interactive-map .map-path.selected').toggleClass('selected', false);
+      .find('#interactive-map .map-path.selected').toggleClass('selected', false).end()
+      .find('#interactive-map .instructions .showing').toggleClass('showing', false);
 
     //add selected classes
     $body
       .find('#interactive-map .x-btn-select-path[data-path="'+path+'"]').toggleClass('selected', true).end()
-      .find('#interactive-map .map-path.'+path).toggleClass('selected', true);
+      .find('#interactive-map .map-path.'+path).toggleClass('selected', true).end()
+      .find('#interactive-map .instructions .path-'+path).toggleClass('showing', true);
   }
 
 
