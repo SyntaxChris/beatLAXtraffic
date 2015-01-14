@@ -135,7 +135,7 @@ div#row-6 {
 	bottom: 160px;
 }
 
-.next#dist-temp {
+.next#dist-temp, #confirm-btn {
 	display: block;
 	position: relative;
 	padding: 15px;
@@ -196,7 +196,7 @@ div#tower {
 	div#arrow-contents {
 		bottom: 60px;
 	}
-	.next#dist-temp {
+	.next#dist-temp, #confirm-btn {
 		width: 150px; 
 		margin-top: 10px; 
 	}
@@ -211,7 +211,7 @@ div#tower {
 	div#arrow-contents {
 		margin-left: 0;
 	}
-	.next#dist-temp{
+	.next#dist-temp, #confirm-btn{
 		width: 100px; 
 		margin-top: 10px; 
 	}
