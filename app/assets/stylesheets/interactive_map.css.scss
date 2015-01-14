@@ -73,7 +73,8 @@
     background: white;
     color: #979696;
     position: absolute;
-    font-size: 1.2em;
+    font-size: .8em;
+    line-height: 1;
     font-weight: 300;
     width: 25%;
     padding: 20px 10px;
@@ -81,7 +82,7 @@
     bottom: 65%;
     min-width: 300px;
     left: 16%;
-    text-align: center;
+    text-align: left;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
@@ -103,13 +104,45 @@
       border-width: 13px 14px 10px 14px;
     }
   }
+  .path-message {
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+    >div {
+      &:first-child {
+        width: 78%;
+      }
+      &:last-child {
+        width: 20%;
+      }
+    }
+  }
+  .path-yellow {
+    color: #F49F42;
+  }
+  .path-green {
+    color: #89C650;
+    .icon .icon-background {
+      fill: #89C650;
+    }
+  }
+  .path-orange {
+    color: #DC5F26;
+  }
+  .path-blue {
+    color: #2C6EB5;
+  }
   .confirm-map-choice-btn {
     background: #F06465;
     color: white;
     width: 100%;
     padding: 10px 0;
-    margin-top: 10px;
+    margin-top: 2px;
     display: none;
+    &.show {
+      display: block;
+    }
   }
   .path-message {
     display: none;
