@@ -52,33 +52,6 @@
       width: auto;
     }
   }
-  // .map-path {
-  //   height: 100%;
-  //   width: 100%;
-  //   display: none;
-  //   position: absolute;
-  //   background-color: #f8f8f8;
-  //   background-repeat: no-repeat;
-  //   background-size: 100%;
-  //   background-position: bottom center;
-  //   z-index: 1;
-  //   &.selected {
-  //     display: block;
-  //     z-index: 2;
-  //   }
-  // }
-  // .yellow {
-  //   background-image: image_url('map_yellow.jpg');
-  // }
-  // .blue {
-  //   background-image: image_url('map_blue.jpg');
-  // }
-  // .green {
-  //   background-image: image_url('map_green.jpg');
-  // }
-  // .orange {
-  //   background-image: image_url('map_orange.jpg');
-  // }
   .bottom-half {
     position: absolute;
     text-align: center;
@@ -104,7 +77,9 @@
     font-weight: 300;
     width: 25%;
     padding: 20px 10px;
-    top: 10%;
+    // top: 10%;
+    bottom: 65%;
+    min-width: 300px;
     left: 16%;
     text-align: center;
     -moz-border-radius: 10px;
@@ -128,20 +103,21 @@
       border-width: 13px 14px 10px 14px;
     }
   }
+  .confirm-map-choice-btn {
+    background: #F06465;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 10px;
+    display: none;
+  }
+  .path-message {
+    display: none;
+    &.showing {
+      display: block;
+    }
+  }
 }
-
-
-// @media screen and (max-width: 413px) and (min-width: 0px) and (orientation: portrait) {
-//   #interactive-map .bottom-half {
-//     bottom: 95px;
-//   }
-// }
-
-// @media screen and (max-width: 500px) and (min-width: 414px) and (orientation: portrait) {
-//   #interactive-map .bottom-half {
-//     bottom: 125px;
-//   }
-// }
 
 @media screen and (max-width: 768px) and (min-width: 0px) and (orientation: portrait) {
   #interactive-map {
