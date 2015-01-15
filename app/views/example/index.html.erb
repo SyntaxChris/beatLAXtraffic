@@ -221,9 +221,52 @@
     <div class="bottom-half">
       <div style="display: inline-block; position: relative;">
         <div class="instructions">
-          Choose a letter to select an approach
+          <div class="path-message showing">Choose a letter to select an approach</div>
+          <div class="path-yellow path-message btcf">
+            <div class="dIB vAM">Hope to catch your passenger at the curb</div>
+            <div class="dIB vAM">
+              <div class="dIB vAM double">
+                <%= render 'gpsRefresh' %>
+              </div>
+              <div class="dIB vAM double">
+                <%= render 'gpsCar' %>
+              </div>
+            </div>
+          </div>
+          <div class="path-green path-message btcf">
+            <div class="dIB vAM">Park and meet your passenger inside the terminal</div>
+            <div class="dIB vAM icon">
+              <%= render 'parking' %>
+            </div>
+          </div>
+          <div class="path-orange path-message btcf">
+            <div class="dIB vAM">Wait off site until passenger is ready to be picked up</div>
+            <div class="dIB vAM">
+              <div class="dIB vAM double">
+                <%= render 'gpsEats' %>
+              </div>
+              <div class="dIB vAM double">
+                <%= render 'gpsBag' %>
+              </div>
+            </div>
+          </div>
+          <div class="path-blue path-message btcf">
+            <div class="dIB vAM">Go to an offsite location with a connecting tram</div>
+            <div class="dIB vAM">
+              <div class="dIB vAM double">
+                <%= render 'gpsTrain' %>
+              </div>
+              <div class="dIB vAM double">
+                <%= render 'gpsHandicapable' %>
+              </div>
+            </div>
+          </div>
+
+          <button id="x-btn-confirm-map-choice" class="confirm-map-choice-btn">
+            CONFIRM
+          </button>
         </div>
-        <a href="javascript:void(0)" class="x-btn-select-path select-path-btn selected" data-path="yellow">
+        <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="yellow">
           
         </a>
         <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="green">
@@ -235,17 +278,23 @@
         <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
           
         </a>
-        <div class="map-path yellow selected">
-          <%= image_tag('map_yellow.jpg', width: '100%') %>
+        <div class="map-path all selected">
+          <%= image_tag('map_all-01.jpg', width: '100%') %>
+        </div>
+        <div class="map-path yellow">
+          <%= image_tag('map_yellow-01.jpg', width: '100%') %>
         </div>
         <div class="map-path green">
-          <%= image_tag('map_green.jpg', width: '100%') %>
+          <%= image_tag('map_green-01.jpg', width: '100%') %>
         </div>
         <div class="map-path orange">
-          <%= image_tag('map_orange.jpg', width: '100%') %>
+          <%= image_tag('map_orange-01.jpg', width: '100%') %>
         </div>
         <div class="map-path blue">
-          <%= image_tag('map_blue.jpg', width: '100%') %>
+          <%= image_tag('map_blue-01.jpg', width: '100%') %>
+        </div>
+        <div class="tram">
+          <%= render 'gpsTram' %>
         </div>
       </div>
     </div>
