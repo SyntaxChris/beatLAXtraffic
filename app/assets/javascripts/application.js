@@ -14,6 +14,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require 'emergency_nav'
 //= require 'dashboard'
 //= require 'car_dash'
 //= require 'toggle_questions'

@@ -12,10 +12,10 @@
 <!-- <div id="logger"></div> -->
 
 <!-- SPLASH PAGE -->
-<div id="splash-page" style="display:none">
+<div id="splash-page" class="slide current" data-currentnode="1" data-nextnode="2">
   <div class="row" style="text-align: center; margin-top: 3%">
     <h2 style="color: white">Are you an LAX <span style="font-weight: 700">Pick Up Artist?</span></h2>
-    <div id="start-button">Start</div>
+    <div id="start-button" class="emergency-next">Start</div>
   </div>
   <div id="splash-page-container">
     <%= render 'splashPage' %>
@@ -26,7 +26,7 @@
 <!-- QUESTION FORMATS -->
 <div class="row">
   <!-- 1. DISTANCE questions -->
-    <div id="distance-questions" style="display:none">
+    <div id="distance-questions" class="slide" data-currentnode="2" data-nextnode="3">
       <div id="distance-bg"></div>
       <div class="row" id="dis-row" style="text-align:center">
         <h3 class="main-question">
@@ -50,7 +50,7 @@
         < 30 minutes away
       </div>
       <div class="row" id="row-6">
-        <div class="next" id="dist-temp"><b>Next</b></div>
+        <div class="next emergency-next" id="dist-temp"><b>Next</b></div>
         <div id="tower">
           <%= render 'tower' %>  
         </div>
@@ -74,7 +74,7 @@
 
 
   <!-- 2. MISSION INTRO -->
-  <div id="mission-intro" style="display:none">
+  <div id="mission-intro"  class="slide" data-currentnode="3" data-nextnode="4">
     <div id="envelope">
       <%= render 'envelope' %>
     </div>
@@ -213,7 +213,7 @@
 
 
   <!-- 3. INTERACTIVE MAP -->
-  <div id="interactive-map" style="display: none;">
+  <div id="interactive-map" class="slide" data-currentnode="4" data-nextnode="5">
     <div class="top-half">
       <h3>What is your strategy for picking up your passenger?</h3>
     </div>
@@ -262,7 +262,7 @@
             </div>
           </div>
 
-          <button id="x-btn-confirm-map-choice" class="confirm-map-choice-btn">
+          <button id="x-btn-confirm-map-choice" class="confirm-map-choice-btn emergency-next">
             CONFIRM
           </button>
         </div>
@@ -303,7 +303,7 @@
 
 
   <!-- 4. STRATEGY questions -->
-  <div id="strategy-questions" style="display: none">
+  <div id="strategy-questions" class="slide" data-currentnode="5" data-nextnode="6">
 
     <div class="row" style="text-align: center;">
       <h3 class="main-question">Why do you choose this strategy?</h3>
@@ -329,7 +329,7 @@
                   To avoid paying for parking
                 </div>
               </div>
-              <div class="next" id="strategy-large-temp">Next</div>
+              <div class="next emergency-next" id="strategy-large-temp" style="z-index: 10;">Next</div>
             </div>
             <div class="large-4 medium-4 small-4 columns">
               <div class="bubble-icon-container" id="container-3">
@@ -459,7 +459,7 @@
                     <%= render 'boxster' %>
                   </div>
 
-                  <div class="next" id="strategy-small-temp" style="display: none">Next</div>
+                  <div class="next emergency-next" id="strategy-small-temp" style="display: none; z-index: 10;">Next</div>
 
               </div>
 
@@ -572,7 +572,7 @@
 
 
   <!-- TODO: 5. Why do you choose to park your car? -->
-  <div id="why-park-car" style="display: none">
+  <div id="why-park-car" class="slide" data-currentnode="6" data-nextnode="7">
     <div class="row" style="text-align:center">
       <h3 class="main-question">Why do you choose to park your car?</h3>
     </div>
@@ -638,7 +638,7 @@
             <div class="parking-ok-btn">OK</div>
         
           </div>
-          <div class="next" id="why-park" style="display:none; margin-left: 25%; position: absolute; text-align: center">Next</div>
+          <div class="next emergency-next" id="why-park" style="display:none; margin-left: 25%; position: absolute; text-align: center">Next</div>
         </div>
 
       </div>
@@ -705,7 +705,7 @@
               <div class="parking-submit-btn" style="display:none">OK</div>
             </div>
           </div>
-          <div class="next" id="why-park" style="display:none">Next</div>
+          <div class="next emergency-next" id="why-park" style="display:none">Next</div>
         </div>
         
       </div>
@@ -716,7 +716,7 @@
 
   <!-- SPINNER QUESTIONS -->
   <!-- 6. Parking spinner -->
-  <div id="parking-spinner-questions" style="display:none">
+  <div id="parking-spinner-questions" class="slide" data-currentnode="9" data-nextnode="10">
     <div class="chance-time">
       <h1>Chance Time!</h1>
       <h3 class="main-question">
@@ -727,7 +727,7 @@
     <div class="congrats" style="display:none;">
       <h1>Congratulations!</h1>
       <h3 class="main-question">You got a parking spot!</h3>
-      <div class="next" id="spin-parking-win">
+      <div class="next emergency-next" id="spin-parking-win">
         Continue
       </div>
     </div>
@@ -735,7 +735,7 @@
     <div class="fail" style="display:none">
       <h1 style="color: white; text-align: center;">Dang!</h1>
       <h3 class="main-question">The parking lot is full.</h3>
-      <div class="next" id="spin-parking-lose">
+      <div class="next emergency-next" id="spin-parking-lose">
         Continue
       </div>
     </div>
@@ -860,7 +860,7 @@
 
   <!-- 7. TILE QUESTIONS -->
   <div class="large-12 medium-12 small-12 columns">
-    <div id="tile-questions" style="display:none">
+    <div id="tile-questions" class="slide" data-currentnode="8" data-nextnode="9">
     
       <!-- questions header -->
       <div class="show-for-landscape">
@@ -881,7 +881,7 @@
               <h3 class="main-question" id="main">What are you doing while you wait?</h3>
               <h5 id="foot" style="text-align:center">
                 Select all that apply
-                <div class="next" id="tiles-large" style="">Next</div>
+                <div class="next emergency-next" id="tiles-large" style="">Next</div>
               </h5> 
             </div>
           </div>
@@ -932,7 +932,7 @@
                 
                 <!-- text area -->
                 <div class="large-4 medium-4 small-4 columns">
-                  <div class="next" id="tiles-medium">Next</div>
+                  <div class="next emergency-next" id="tiles-medium">Next</div>
                   <div class="row">
                     <div class="large-12 medium-12 small-12 columns">
                       <div id="user-text-input">
@@ -1014,7 +1014,7 @@
                           <div id="char-count-small" style="font-size: 16px"></div>
                       </div>
                       <div class="small-5 columns" style="text-align: center;">
-                        <div class="next" style="color:white; background-color: #9B69CC; padding: 10px 0 10px 0; border-radius: 5px; margin-right: 5px; margin-bottom: 2px">
+                        <div class="next emergency-next" style="color:white; background-color: #9B69CC; padding: 10px 0 10px 0; border-radius: 5px; margin-right: 5px; margin-bottom: 2px">
                           <div>Next</div>
                         </div>
                       </div>
@@ -1042,7 +1042,7 @@
           </div>
           <div class="row">
             <div class="medium-4 small-4 medium-centered small-centered columns">
-              <div class="next" id="tiles-small">
+              <div class="next emergency-next" id="tiles-small">
                 Next
               </div>
             </div>
@@ -1143,7 +1143,7 @@
 
 
     <!-- 11. TIMER QUESTIONS -->
-    <div id="clock-questions" style="display: none">
+    <div id="clock-questions" class="slide" data-currentnode="7" data-nextnode="8">
       <!-- questions header -->
       <div class="row">
         <h3 class="main-question">How long do you usually park for?</h3>
@@ -1153,7 +1153,7 @@
         <div class="large-12 medium-12 small-12 large-centered medium-centered small-centerd columns">
           <div id="clock-container">
             <%= render 'timerquestion' %>
-            <div class="next" id="timer-question" style="display:none">Next</div>
+            <div class="next emergency-next" id="timer-question" style="display:none">Next</div>
           </div>
         </div>
       </div>
@@ -1392,7 +1392,7 @@
 
 
     <!-- 14. LAST QUESTION SET -->
-    <div id="last-question-set" style="display:none">
+    <div id="last-question-set" class="slide" data-currentnode="14" data-nextnode="15">
       <!-- set 1 -->
       <div id="question-set-1">
         <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
@@ -1581,7 +1581,7 @@
         </div>
         <div class="row" style="text-align: center; margin-top: 10px">
           <div class="large-3 medium-3 small-5 large-centered medium-centered small-centered columns">
-            <div class="next" id="last-question-set">
+            <div class="next emergency-next" id="last-question-set">
             Next
           </div>
         </div>
@@ -1623,7 +1623,7 @@
     <!-- END WHY DO YOU THINK THIS STRATEGY WILL WORK -->
 
     <!-- CONGRATULATIONS! -->
-    <div id="congrats" style="display: none">
+    <div id="congrats" class="slide" data-currentnode="15" data-nextnode="16">
       <div class="row" style="text-align: center;">
         <!-- <h3 style="color: white">Congratulations!</h3> -->
         <div class="inner-c">
@@ -1841,7 +1841,7 @@
   <!-- END TIME SPENT -->
 
   <!-- 12. SUCCESSFUL PICKUP -->
-  <div id="successful-pickup" style="display: none;">
+  <div id="successful-pickup" class="slide" data-currentnode="11" data-nextnode="12">
     <div class="sun-bg">
       <%= render 'sunBeamBg' %>
     </div>
@@ -1867,7 +1867,7 @@
 
 
   <!-- 13. CIRCLE PICKUP QUESTIONS -->
-  <div id="circle-pickup" style="display: none">
+  <div id="circle-pickup" class="slide" data-currentnode="12" data-nextnode="13">
     <div class="content">
       <h3>
         How many times do you typically circle around the terminal when picking up your passenger?
@@ -1895,7 +1895,7 @@
            <button id="x-btn-circle-more" class="counter-btn">+1</button> 
         </div>
         <div id>
-          <button id="x-btn-circle-next" class="next">Next</button>
+          <button id="x-btn-circle-next" class="next emergency-next">Next</button>
         </div>
       </div>
     </div>
@@ -1903,7 +1903,7 @@
   <!-- END CIRCLE PICKUP QUESTIONS -->
 
   <!-- 14. TIMER PICKUP QUESTIONS -->
-  <div id="timer-pickup" style="display:none">
+  <div id="timer-pickup" class="slide" data-currentnode="13" data-nextnode="14">
     <div class="content">
       <h3 class="main-question">
         How long does it typically take for you to pick up your passenger at the terminal?
@@ -1922,7 +1922,7 @@
            <button id="x-btn-timer-more" class="counter-btn">+5 min</button> 
         </div>
         <div>
-          <button id="x-btn-timer-next" class="next">Next</button>
+          <button id="x-btn-timer-next" class="next emergency-next">Next</button>
         </div>
       </div>
     </div>
@@ -1930,7 +1930,7 @@
   <!-- END TIMER PICKUP QUESTIONS -->
 
   <!-- 15. WILLING TO WAIT -->
-  <div id="willing-to-wait" style="display:none">
+  <div id="willing-to-wait" class="slide" data-currentnode="10" data-nextnode="11">
     <div class="content-c">
       <div class="timer-c">
         <div class="inner">
@@ -1949,7 +1949,7 @@
         <button id="x-btn-add-wait-time" class="add-wait-time-btn">+5 min</button>
       </div>
       <div>
-        <button id="x-btn-wait-next" class="next wait-next-btn">Next</button>
+        <button id="x-btn-wait-next" class="next wait-next-btn emergency-next">Next</button>
       </div>
     </div>
   </div>

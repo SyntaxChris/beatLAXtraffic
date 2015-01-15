@@ -70,3 +70,10 @@ h3.main-question{
 	background-color: #079BED;
 	color: white;
 }
+
+.slide {
+	display: none;
+	&.current {
+		display: block;
+	}
+}

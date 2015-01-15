@@ -1,6 +1,6 @@
 $(document).ready(function(){
-	$("#splash-page").show();
-	$("#skip-button").hide();
+	// $("#splash-page").show();
+	// $("#skip-button").hide();
 	var pageClicks = 0;
 
 	$("#toggle-questions").click(function(){

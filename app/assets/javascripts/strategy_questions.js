@@ -123,7 +123,7 @@ $(document).ready(function(){
 
     $(".bubble-icon-container").click(function(){
     	var toggleTally = guyToggle + stopWatchToggle + carParkingToggle + hassleToggle + otherToggle;
-    	debugger;
+    	// debugger;
     	if(toggleTally === 0){
  			$(".next#strategy-large-temp").hide();
  		}

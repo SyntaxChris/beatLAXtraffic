@@ -179,21 +179,21 @@ $(document).ready(function(){
             var loopMin = 5 * parseInt($(".circle-number").text());
             movePlane(loopMin);
             moveClock();
-            debugger;
+            // debugger;
             counterDisplay(loopMin);
         }
         else if(idClicked === 'x-btn-timer-next'){
             var timerNum = parseInt($("div#min.timer-number").text());
             movePlane(timerNum);
             moveClock();
-            debugger;
+            // debugger;
             counterDisplay(timerNum);
         }
         else if(idClicked === 'x-btn-wait-next'){
             var waitNum = parseInt($("#wait.timer-number").text());
             movePlane(waitNum);
             moveClock();
-            debugger;
+            // debugger;
             counterDisplay(waitNum);
         }
         else{
