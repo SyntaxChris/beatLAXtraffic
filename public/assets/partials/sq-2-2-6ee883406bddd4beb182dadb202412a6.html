@@ -1,0 +1,135 @@
+  <div id="mission-intro">
+    <div id="envelope">
+      <div ng-include"'/assets/svgs/envelope-0cef39c18123d34e7f445191663348d1.html'"></div>
+    </div>
+    <div class="content">
+      <header class="mission-heading">
+        <h4>Your Mission</h4>
+        <p>
+          You are driving and need to pick up the following at LAX
+        </p>
+      </header>
+      <header class="mission-conditions-heading">
+        <h4>Airport Conditions</h4>
+        <p>
+          Your passengers are coming from
+        </p>
+      </header>
+
+      <div id="mission-selection-box">
+        <div class="top-content stage-1">
+          <div class="chat-bubble">
+            Select a passenger to pick up
+          </div>
+
+          <div id="mission-carousel">
+            <a href="javascript:void(0)" class="nav-left" data-direction="right">
+              <div class="nav-arrow"></div>
+            </a>
+            <a href="javascript:void(0)" class="nav-right" data-direction="left">
+              <div class="nav-arrow"></div>
+            </a>
+
+            <div class="far-left-side mover">
+              <div ng-include"'/assets/svgs/friend-7f40a0c230b48a6bb63e032fd0ba4df0.html'"></div>
+              <div class="blurb">
+                <span class="number person"></span> <span id="friend"></span>
+              </div>
+            </div>
+
+            <div class="left-side mover">
+              <div ng-include"'/assets/svgs/business-7f40a0c230b48a6bb63e032fd0ba4df0.html'"></div>
+              <div class="blurb">
+                <span class="number person"></span> <span id="colleague"></span>
+              </div>
+            </div>
+            
+            <div class="center mover">
+              <div ng-include"'/assets/svgs/suitguy-7f40a0c230b48a6bb63e032fd0ba4df0.html'"></div>
+              <div class="blurb">
+                <span class="number person"></span> <span id="client"></span>
+              </div>
+            </div>
+
+            <div class="right-side mover">
+              <div ng-include"'/assets/svgs/familyguy-7f40a0c230b48a6bb63e032fd0ba4df0.html'"></div>
+              <div class="blurb">
+                <span class="number person"></span> <span id="cousin"></span>
+              </div>
+            </div>
+          </div>
+
+          <div id="bottom-info">
+            <span>with</span> <span class="number suitcase"></span> <span id="suitcase"></span>
+          </div>
+        </div>
+        <div class="stage-2-top">
+          <div class="destinations btcf">
+            <div class="left-side">
+              <div class="airport-heading">
+                Departing
+              </div>
+              <div id="departure" class="airport-code">
+              </div>
+              <div id="depart" class="airport-name">
+              </div>
+            </div>
+            <div class="center">
+              <div>
+                <div ng-include"'/assets/svgs/introplane-7f40a0c230b48a6bb63e032fd0ba4df0.html'"></div>
+              </div>
+              <div class="flight-number">Flight <span id="flight-num"></span></div>
+            </div>
+            <div class="right-side">
+              <div class="airport-heading">
+                Arriving
+              </div>
+              <div class="airport-code">
+                LAX
+              </div>
+              <div class="airport-name">
+                Los Angeles
+              </div>
+            </div>
+          </div>
+          <div class="conditions">
+            <div id="traffic-meter" class="traffic-meter">
+              <div class="tally-1"></div>
+              <div class="tally-2"></div>
+              <div class="tally-3"></div>
+              <div class="tally-4"></div>
+              <div class="tally-5"></div>
+              <div class="tally-6"></div>
+              <div class="tally-7"></div>
+              <div class="tally-8"></div>
+            </div>
+            <div class="traffic-summary">
+              LAX Traffic Level: <span class="traffic-label"></span>
+            </div>
+
+            <div class="time-summary">
+              <div>
+                <div class="gray-bg"></div>
+                <span class="blurb dIB vAM">Plane will land in</span>
+                <div class="time-till-arrival">
+                  <div class="number landing">1</div>
+                  <div class="unit">hr</div>
+                </div>
+                <div class="stopwatch dIB vAM">
+                  <div ng-include"'/assets/svgs/introstopwatch-7f40a0c230b48a6bb63e032fd0ba4df0.html'"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="accept-mission-btn" class="x-btn-accept-mission" ng-click="submit()">
+          <span class="accept-text">
+            Accept Mission
+          </span>
+          <span class="continue-text">
+            Let's Go!
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
