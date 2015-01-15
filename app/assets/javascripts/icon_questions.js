@@ -25,7 +25,7 @@ $(document).ready(function(){
 				$("#icon-pop-up-small").fadeIn();
         	};
         
-			$("#yea").click(function(){
+			$body.on('click', "#yea", function(){
 				tallyIcons += 1;
 				if(tallyIcons > 2){
 					$(".submit-row").fadeIn();
@@ -55,7 +55,7 @@ $(document).ready(function(){
 				removeBind();
 			});
 
-			$("#yea-small").click(function(){
+			$body.on('click', "#yea-small", function(){
 				tallyIcons += 1;
 				if(tallyIcons > 2){
 					$(".submit-row").fadeIn();
@@ -104,12 +104,12 @@ $(document).ready(function(){
 				removeBind();
 			});
 
-			$("#nah").click(function(){
+			$body.on('click', "#nah", function(){
 				$( "#icon-pop-up").hide();
 				// Remove listeners.
 				removeBind();
 			});
-			$("#nah-small").click(function(){
+			$body.on('click', "#nah-small", function(){
 				$( "#icon-pop-up-small").hide();
 				// Remove listeners.
 				removeBind();
@@ -117,7 +117,7 @@ $(document).ready(function(){
         };
 	});
 
-	$("#holder-1").click(function(){
+	$body.on('click', "#holder-1", function(){
 		if($(this).html() !== ""){
 			tallyIcons -= 1
 		}
@@ -155,7 +155,7 @@ $(document).ready(function(){
 		$(".i-want").fadeIn();
 		$("#discription-group").fadeIn();
 	});
-	$("#holder-1-small").click(function(){
+	$body.on('click', "#holder-1-small", function(){
 		if(tallyIcons > 0){
 			tallyIcons -= 1
 		}
@@ -194,7 +194,7 @@ $(document).ready(function(){
 		$("#discription-group").fadeIn();	
 	});
 
-	$("#holder-2").click(function(){
+	$body.on('click', "#holder-2", function(){
 		if(tallyIcons > 0){
 			tallyIcons -= 1
 		}
@@ -233,7 +233,7 @@ $(document).ready(function(){
 		$("#discription-group").fadeIn();
 	});
 
-	$("#holder-2-small").click(function(){
+	$body.on('click', "#holder-2-small", function(){
 		if(tallyIcons > 0){
 			tallyIcons -= 1
 		}
@@ -272,7 +272,7 @@ $(document).ready(function(){
 		$("#discription-group").fadeIn();
 	});
 
-	$("#holder-3").click(function(){
+	$body.on('click', "#holder-3", function(){
 		if(tallyIcons > 0){
 			tallyIcons -= 1
 		}
@@ -310,7 +310,7 @@ $(document).ready(function(){
 		$(".i-want").fadeIn();
 		$("#discription-group").fadeIn();
 	});
-	$("#holder-3-small").click(function(){
+	$body.on('click', "#holder-3-small", function(){
 		if(tallyIcons > 0){
 			tallyIcons -= 1
 		}
