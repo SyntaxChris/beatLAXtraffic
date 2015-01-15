@@ -1,14 +1,17 @@
 $(document).ready(function(){
+	$body = $('body');
 	var carPark = 0;
 	var avoidTraffic = 0;
 	var people = 0;
 	var otherPark = 0;
-	
-	$('.parking-bubble').click(function(){
+	var toggleOther = 0;
 
-		var bubbleLogoId = $(".bubble-logo svg", this).attr("id");
+    $body
+    .on('click', ".parking-bubble", function(){
 
-		switch(bubbleLogoId){
+    	var bubbleLogoId = $(".bubble-logo svg", this).attr("id");
+
+    	switch(bubbleLogoId){
 			case 'car-park':
 				if(carPark === 0){
 					carPark = 1;
@@ -96,11 +99,9 @@ $(document).ready(function(){
 		else {
 			$(".next#why-park").fadeOut();
 		}
-	});
-    
-	var toggleOther = 0;
-
-    $(".parking-question-other-font").click(function(){
+  	
+    })
+    .on('click', ".parking-question-other-font", function(){
     	if(toggleOther === 0){
 			$(".parking-bubble-other").animate({height: "250px"});
 			$(this).text("Please write here");
@@ -126,10 +127,8 @@ $(document).ready(function(){
 	    	otherPark = 0;
 	    	toggleOther = 0;
     	};
-	});
-    
-
-    $(".parking-ok-btn").click(function(){
+  	})
+    .on('click',".parking-ok-btn", function(){
     	otherPark = 1;
     	$('.parking-bubble-other .circle-state').css('fill', '#AA75D3');
 		$('.parking-bubble-other .circle-state').css('stroke-width', 0);
@@ -142,6 +141,6 @@ $(document).ready(function(){
 		$(".parking-other-text-area").fadeOut();
 		$(".parking-ok-btn").fadeOut();
 		$(".next#why-park").fadeIn();
-    });
+  	})
 });
 
