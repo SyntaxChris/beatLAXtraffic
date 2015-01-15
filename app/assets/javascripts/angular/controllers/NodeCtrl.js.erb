@@ -1,6 +1,6 @@
 angular.module('lawaApp')
   .controller("NodeCtrl", [
-    '$scope','$http', function($scope,$http) {
+    '$scope','$http','_', function($scope,$http,_) {
 
       $scope.setup = function(){
         // get and set up all nodes
@@ -105,7 +105,6 @@ angular.module('lawaApp')
       <% end %>
 
       $scope.getTemplateName = function(nodeId){
-        console.log(templates);
         return templates[nodeId].template;
         console.log("templates: " + templates);
       }
