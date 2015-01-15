@@ -24,7 +24,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'rails_admin', '~> 0.6.5'
 
 # Use Zurb Foundation
-gem 'foundation-rails'
+gem 'foundation-rails', '5.4.5'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -45,7 +45,6 @@ gem 'spring',        group: :development
 # Use unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
@@ -54,6 +53,10 @@ gem 'spring',        group: :development
 group :development, :test do
   gem 'guard'
   gem 'pry'
+end
+
+group :staging do
+  gem 'thin'
 end
 
 group :test do
