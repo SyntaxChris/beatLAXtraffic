@@ -1,10 +1,11 @@
 $(document).ready(function(){
   //set some vars
   var $timerPickup = $('#timer-pickup'),
+      $body = $('body'),
       timerCount = 0;
 
   //listeners
-  $timerPickup
+  $body
     .on('click', '#x-btn-timer-less', decrementTimer)
     .on('click', '#x-btn-timer-more', incrementTimer);
 
@@ -30,7 +31,7 @@ $(document).ready(function(){
   }
 
   function updateTimerCount(){
-    $timerPickup.find('.timer-number').text(timerCount);
+    $body.find('#timer-pickup .timer-number').text(timerCount);
   }
 
 });

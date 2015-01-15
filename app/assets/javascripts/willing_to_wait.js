@@ -1,10 +1,11 @@
 $(document).ready(function(){
   //set some vars
   var $willingToWait = $('#willing-to-wait'),
+      $body = $('body'),
       timerCount = 5;
 
   //listeners
-  $willingToWait
+  $body
     .on('click', '#x-btn-remove-wait-time', decrementTimer)
     .on('click', '#x-btn-add-wait-time', incrementTimer);
 
@@ -30,7 +31,7 @@ $(document).ready(function(){
   }
 
   function updateTimerCount(){
-    $willingToWait.find('.timer-number').text(timerCount);
+    $body.find('#willing-to-wait .timer-number').text(timerCount);
   }
 
 });
