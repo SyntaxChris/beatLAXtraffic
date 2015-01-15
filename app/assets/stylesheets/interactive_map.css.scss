@@ -52,33 +52,6 @@
       width: auto;
     }
   }
-  // .map-path {
-  //   height: 100%;
-  //   width: 100%;
-  //   display: none;
-  //   position: absolute;
-  //   background-color: #f8f8f8;
-  //   background-repeat: no-repeat;
-  //   background-size: 100%;
-  //   background-position: bottom center;
-  //   z-index: 1;
-  //   &.selected {
-  //     display: block;
-  //     z-index: 2;
-  //   }
-  // }
-  // .yellow {
-  //   background-image: image_url('map_yellow.jpg');
-  // }
-  // .blue {
-  //   background-image: image_url('map_blue.jpg');
-  // }
-  // .green {
-  //   background-image: image_url('map_green.jpg');
-  // }
-  // .orange {
-  //   background-image: image_url('map_orange.jpg');
-  // }
   .bottom-half {
     position: absolute;
     text-align: center;
@@ -100,19 +73,22 @@
     background: white;
     color: #979696;
     position: absolute;
-    font-size: 1.2em;
+    font-size: .8em;
+    line-height: 1;
     font-weight: 300;
     width: 25%;
-    padding: 20px 10px;
-    top: 10%;
+    padding: 10px;
+    // top: 10%;
+    bottom: 65%;
+    min-width: 300px;
     left: 16%;
-    text-align: center;
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
     -moz-box-shadow: 2px 2px 10px #bbb;
     -webkit-box-shadow: 2px 2px 10px #bbb;
     box-shadow: 2px 2px 10px #bbb;
+    height: 110px;
     &:after {
       content: "";
       position: absolute;
@@ -128,20 +104,77 @@
       border-width: 13px 14px 10px 14px;
     }
   }
+  .path-message {
+    text-align: center;
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+    >div {
+      &:first-child {
+        width: 69%;
+      }
+      &:last-child {
+        width: 29%;
+        text-align: right;
+        >svg {
+          width: 60%;
+        }
+        .double {
+          width: 47%;
+        }
+      }
+    }
+    .icon {
+      height: auto;
+      width: auto;
+    }
+  }
+  .path-yellow {
+    color: #F49F42;
+    text-align: left;
+  }
+  .path-green {
+    color: #89C650;
+    text-align: left;
+    .icon .icon-background {
+      fill: #89C650;
+    }
+  }
+  .path-orange {
+    color: #DC5F26;
+    text-align: left;
+  }
+  .path-blue {
+    color: #2C6EB5;
+    text-align: left;
+  }
+  .confirm-map-choice-btn {
+    background: #F06465;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 8px;
+    margin-bottom: 0;
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
+  .path-message {
+    display: none;
+    &.showing {
+      display: block;
+    }
+  }
+  .tram {
+    position: absolute;
+    z-index: 1;
+    bottom: 16%;
+    right: 34%;
+    width: 10%;
+  }
 }
-
-
-// @media screen and (max-width: 413px) and (min-width: 0px) and (orientation: portrait) {
-//   #interactive-map .bottom-half {
-//     bottom: 95px;
-//   }
-// }
-
-// @media screen and (max-width: 500px) and (min-width: 414px) and (orientation: portrait) {
-//   #interactive-map .bottom-half {
-//     bottom: 125px;
-//   }
-// }
 
 @media screen and (max-width: 768px) and (min-width: 0px) and (orientation: portrait) {
   #interactive-map {
@@ -154,6 +187,7 @@
       width: 90%;
       left: 50%;
       margin-left: -45%;
+      height: 150px;
       &:after {
         content: "";
         position: absolute;
@@ -173,9 +207,13 @@
 }
 
 @media screen and (max-width: 620px) and (min-width: 0px) and (orientation: landscape) {
-  #interactive-map .bottom-half {
-
-    bottom: 95px;
+  #interactive-map {
+    .bottom-half {
+      bottom: 95px;
+    }
+    .instructions {
+      height: 140px;
+    }
   }
 }
 
