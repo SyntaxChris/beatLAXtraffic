@@ -1,0 +1,38 @@
+<!-- TODO: 15. RAIL SYSTEM QUESTIONS -->
+<div id="rail-system" class="part-1" style="padding-top: 10%">
+    <div class="stage-1">
+      <div class="question-bubble">
+        <div class="rail-car">
+          <div ng-include="'<%= asset_path 'svgs/_railCar.html' %>'"></div>
+        </div>
+
+        <p>
+          To avoid all of this, we're trying to build an airport rail system that would make it easy for a passenger to meet you at a nearby location outside of the airport!
+        </p>
+      </div>
+
+      <button id="x-btn-rail-system-next">Next</button>
+    </div>
+
+    <div class="stage-2">
+      <div class="question-bubble">
+        <div class="people">
+          <div ng-include="'<%= asset_path 'svgs/_peopleRail.html' %>'"></div>
+        </div>
+
+        <p>
+          Would you meet your passenger at this new location outside of the airport in light of the experience you had today?
+        </p>
+      </div>
+
+      <button id="x-btn-upvote" class="upvote-btn">
+        <span class="text">YES</span>
+        <div ng-include="'<%= asset_path 'svgs/_thumbsUp.html' %>'"></div>
+      </button>
+      <button id="x-btn-downvote" class="downvote-btn">
+        <span class="text">NO</span>
+        <div ng-include="'<%= asset_path 'svgs/_thumbsDown.html' %>'"></div>
+      </button>
+    </div>
+</div>
+<!-- END RAIL SYSTEM QUESTIONS -->
