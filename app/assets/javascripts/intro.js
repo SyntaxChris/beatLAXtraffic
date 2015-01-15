@@ -1,13 +1,16 @@
 $(document).ready(function(){
+
+  var $body = $('body'); //dynamic templating fix
+
   //set some variables
   var $missionIntroC = $('#mission-intro'), movingCarousel = false;
 
   //listeners
-  $missionIntroC
-    .on('click', '.nav-right', moveCarousel)
-    .on('click', '.nav-left', moveCarousel)
-    .on('click', '.x-btn-accept-mission', acceptMission)
-    .on('click', '.x-btn-continue-mission', continueMission);
+  $body
+    .on('click', '#mission-intro .nav-right', moveCarousel)
+    .on('click', '#mission-intro .nav-left', moveCarousel)
+    .on('click', '#mission-intro .x-btn-accept-mission', acceptMission)
+    .on('click', '#mission-intro .x-btn-continue-mission', continueMission);
 
   // randomize person pickup number
   var personPickup = Math.floor(Math.random() * 3) + 1;
