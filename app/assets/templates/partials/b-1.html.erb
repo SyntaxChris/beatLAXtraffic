@@ -1,0 +1,141 @@
+ <!-- Why do you choose to park your car? -->
+<div id="why-park-car">
+  <div class="row" style="text-align:center">
+    <h3 class="main-question">Why do you choose to park your car?</h3>
+  </div>
+
+  <div class="hide-for-small-only">
+    <div class="row" style="padding: 0 10px 0 10px; margin-top: 5%">
+      <div class="large-3 medium-3 columns">
+        <div class="parking-bubble">
+          <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+            <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+          </div>
+          <div class="bubble-logo">
+            <div ng-include="'<%= asset_path 'svgs/_carParkBubble.html' %>'"></div>
+          </div>
+          <div class="parking-question-font" data-car="uncolored">
+            When convenient parking is available
+          </div>
+        </div>
+      </div>
+      <div class="large-3 medium-3 columns">
+        <div class="parking-bubble">
+          <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+            <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+          </div>
+          <div class="bubble-logo">
+            <div ng-include="'<%= asset_path 'svgs/_avoidTraffic.html' %>'"></div>
+          </div>
+          <div class="parking-question-font" data-traffic="uncolored">
+            To avoid driving in traffic
+          </div>
+        </div>
+      </div>
+      <div class="large-3 medium-3 columns">
+        <div class="parking-bubble">
+          <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+            <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+          </div>
+          <div class="bubble-logo">
+            <div ng-include="'<%= asset_path 'svgs/_peopleParkBubble.html' %>'"></div>
+          </div>
+          <div class="parking-question-font" data-people="uncolored">
+            To meet my passenger in the terminal
+          </div>
+        </div>
+      </div>
+      <div class="large-3 medium-3 columns" style="text-align: center">
+        <div class="parking-bubble parking-bubble-other">
+          <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+            <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+          </div>
+          <div class="parking-question-other-font" data-other="uncolored">
+            <div class="other-icon" style="width: 30%; text-align: center; margin-left: auto; margin-right: auto">
+              <div ng-include="'<%= asset_path 'svgs/_questionBubble.html' %>'"></div>
+            </div>
+            Other (specify)
+          </div>
+          <div class="parking-other-text-area" style="display: none; position: relative; top: 30%; position: relative; z-index: 20">
+            <textarea id="other-info" cols="1" rows="5" maxlength="140"></textarea>
+          </div>
+          <br>
+          <div id="char-count" style="display: none; position: absolute; margin-left: 15%; text-align:center; color: #B2C4D4; font-size: 12px; width: 90%; margin-left: auto; margin-right: auto"></div>
+          
+          <div class="parking-ok-btn">OK</div>
+      
+        </div>
+        <div class="next" id="why-park" style="display:none; margin-left: 25%; position: absolute; text-align: center">Next</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="show-for-small-only">
+    <div class="row" style="padding: 0 20px 0 20px">
+      <div class="small-6 columns" style="padding: 0 2% 0 3%">
+        <div class="parking-bubble">
+          <div class="unchecked" style="position: absolute; right: 5px; top: -10%">
+            <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+          </div>
+          <div class="bubble-logo" class="bubble-logo">
+            <div ng-include="'<%= asset_path 'svgs/_carParkBubble.html' %>'"></div>
+            <div style="width: "></div>
+          </div>
+          <div class="parking-question-font" data-state="uncolored">
+            Convenient parking available
+          </div>
+        </div>
+      </div>
+      <div class="small-6 columns" style="padding: 0 3% 0 2%">
+        <div class="parking-bubble">
+          <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+            <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+          </div>
+          <div  class="bubble-logo">
+            <div ng-include="'<%= asset_path 'svgs/_avoidTraffic.html' %>'"></div>
+          </div>
+          <div class="parking-question-font" data-state="uncolored">
+            Convenient parking available
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style=" margin-top: 10%; padding: 0 20px 0 20px">
+      <div class="small-6 columns" style="padding: 0 2% 0 3%">
+        <div class="parking-bubble">
+          <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+            <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+          </div>
+          <div class="bubble-logo">
+            <div ng-include="'<%= asset_path 'svgs/_peopleParkBubble.html' %>'"></div>
+          </div>
+          <div class="parking-question-font" data-state="uncolored">
+            Convenient parking available
+          </div>
+        </div>
+      </div>
+      <div class="small-6 columns" style="padding: 0 3% 0 2%; text-align: center">
+        <div class="parking-bubble parking-bubble-other">
+          <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
+            <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+          </div>
+          <div class="parking-question-other-font" data-other="uncolored">
+            Other (specify)
+          </div>
+          <div class="parking-other-text-area" style="display: none; position: relative; top: 30%; margin-bottom: 20px">
+            <textarea id="other-info" cols="1" rows="5" maxlength="140"></textarea>
+          </div>
+          <br>
+          <div id="char-count" style="position: absolute; margin-left: auto; margin-right: auto; text-align:center; color: #B2C4D4; font-size: 12px; width: 90%"></div>
+          <div class="parking-submit">
+            <div class="parking-submit-btn" style="display:none">OK</div>
+          </div>
+        </div>
+        <div class="next" id="why-park" style="display:none">Next</div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+  <!-- END Why do you choose to park your car? -->

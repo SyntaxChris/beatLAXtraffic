@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	var carPark = 0;
 	var avoidTraffic = 0;
 	var people = 0;
@@ -7,9 +8,10 @@ $(document).ready(function(){
 	
 	$body.on('click', '.parking-bubble', function(){
 
-		var bubbleLogoId = $(".bubble-logo svg", this).attr("id");
 
-		switch(bubbleLogoId){
+    	var bubbleLogoId = $(".bubble-logo svg", this).attr("id");
+
+    	switch(bubbleLogoId){
 			case 'car-park':
 				if(carPark === 0){
 					carPark = 1;
@@ -102,6 +104,7 @@ $(document).ready(function(){
 	var toggleOther = 0;
 
     $body.on('click', ".parking-question-other-font", function(){
+
     	if(toggleOther === 0){
 			$(".parking-bubble-other").animate({height: "250px"});
 			$(this).text("Please write here");
@@ -129,8 +132,8 @@ $(document).ready(function(){
     	};
 	});
     
-
     $body.on('click', ".parking-ok-btn", function(){
+
     	otherPark = 1;
     	$('.parking-bubble-other .circle-state').css('fill', '#AA75D3');
 		$('.parking-bubble-other .circle-state').css('stroke-width', 0);
@@ -143,6 +146,6 @@ $(document).ready(function(){
 		$(".parking-other-text-area").fadeOut();
 		$(".parking-ok-btn").fadeOut();
 		$(".next#why-park").fadeIn();
-    });
+  	})
 });
 

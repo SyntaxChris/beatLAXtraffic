@@ -243,7 +243,7 @@ namespace :populate do
         dp1d1 = Decision.create(decision_point_id: dp1dp.id, decision: "Park and meet your passenger inside the terminal", destination_node_id: b1.id)
         dp1d2 = Decision.create(decision_point_id: dp1dp.id, decision: "Hope to catch your passenger at the curb", destination_node_id: a1.id)
         dp1d3 = Decision.create(decision_point_id: dp1dp.id, decision: "Wait off site until passenger is ready to be picked up at the curb", destination_node_id: c1.id)
-        dp1d4 = Decision.create(decision_point_id: dp1dp.id, decision: "Meet at an offsite location that has a short train ride to the terminals", destination_node_id: itf2.id)
+        dp1d4 = Decision.create(decision_point_id: dp1dp.id, decision: "Meet at an offsite location that has a short train ride to the terminals", destination_node_id: noitf1.id)
 
     dp7 = Node.create(nickname: "DP 7", is_decision_point: true , branch_id: wait_offsite_branch.id, template_name: "dp-7")
       dp7dp = DecisionPoint.create(node_id: dp7.id, situation: "The passenger is late. What do you do next?")
