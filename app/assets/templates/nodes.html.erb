@@ -1,14 +1,14 @@
 <div ng-controller="NodeCtrl">
-  <!-- <div class="current-node-container" style="background-color:white">
+  <div class="current-node-container" style="background-color:white">
     <div ng-if="!currentNode.is_decision_point">
-      <div ng-include="'<#%= asset_path 'partials/question.html' %>'"></div>
+      <div ng-include="'<%= asset_path 'partials/question.html' %>'"></div>
     </div>
     <div ng-if="currentNode.is_decision_point">
-      <div ng-include="'<#%= asset_path 'partials/decision.html' %>'"></div>
+      <div ng-include="'<%= asset_path 'partials/decision.html' %>'"></div>
     </div>
     {{ getTemplateName(currentNode.node_id)}}
-  </div> -->
-  <div class="row">
+  </div>
+  <div class="row" style="">
     <div ng-include="currentTemplateName">
     </div>
   </div>
