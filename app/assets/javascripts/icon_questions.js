@@ -1,6 +1,8 @@
 $(document).ready(function(){
-	var tallyIcons = 0;
-	$(".icon").click(function() {
+	var tallyIcons = 0,
+			$body = $('body');
+
+	$body.on('click', ".icon", function() {
  		var iconChosen = $(this);
  		var iconBackground = $("svg .icon-background", this);
  		var description = iconChosen.text();
