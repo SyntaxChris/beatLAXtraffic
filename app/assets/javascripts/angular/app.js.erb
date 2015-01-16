@@ -5,7 +5,7 @@ angular.module('lawaApp.services',[]);
 
 lawaApp.config([
   '$httpProvider','$routeProvider','$locationProvider', function($httpProvider,$routeProvider,$locationProvider) {
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode({ enabled: true, requireBase: false });
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content');
 
     $routeProvider.when('/test',{
