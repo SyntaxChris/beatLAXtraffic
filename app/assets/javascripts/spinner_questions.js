@@ -4,7 +4,9 @@ $(document).ready(function(){
 
  	$body.on('click', '.spin-button', function(){
  		var spinButtonId = $(this).attr("id");
-		var chanceLogic = Math.floor(Math.random()*2);
+ 		var chanceLogic = $('#spinner-chance').data('outcome');
+		// var chanceLogic = Math.floor(Math.random()*2);
+
 
 		// parking spinner
 		if(spinButtonId === 'parking'){
