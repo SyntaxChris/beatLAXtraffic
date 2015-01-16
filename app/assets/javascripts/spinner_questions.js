@@ -17,6 +17,7 @@ $(document).ready(function(){
 		}
 
 		$body.trigger('findSpecificNode',[node]);
+		resetSpinner();
 	}
 
  	$body.on('click', '.spin-button', function(){
@@ -126,7 +127,7 @@ $(document).ready(function(){
  	});
 
 
- 	$body.on('click', ".continue-btn", function(){
+ 	function resetSpinner(){
  		$(".wheel").removeClass("full");
  		$(".wheel").removeClass("not-full");
  		$(".wheel").removeClass("there");
@@ -143,7 +144,7 @@ $(document).ready(function(){
 		$(".fail").hide();
 		$(".congrats").hide();
 		$(".trophey").hide();
- 	});
+ 	}
 
 
 });
