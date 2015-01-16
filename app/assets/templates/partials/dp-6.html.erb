@@ -1,0 +1,85 @@
+<div id="after-parking-questions">
+
+  <h3 class="main-question">You finally arrive at the lot and the parking lot is full</h3>
+  <h3 id="pole">What do you do next?</h3>
+
+  <div class="pole">
+    <div ng-include="'<%= asset_path 'svgs/_signPole.html' %>'"></div>
+  </div>
+
+
+  <button class="sign" id="cntr-1">
+    <div class="holder">
+      <div ng-include="'<%= asset_path 'svgs/_signHolder.html' %>'"></div>
+    </div>
+    <div class="inner-content blue">
+      <div class="icon-c">
+        <div class="arrow-c">
+          <div ng-include="'<%= asset_path 'svgs/_signArrow.html' %>'"></div>
+        </div>
+      </div>
+      <div class="text">
+        Wait until a parking spot opens up
+      </div>
+    </div>
+  </button>
+
+  <button class="sign" id="cntr-2">
+    <div class="holder">
+      <div ng-include="'<%= asset_path 'svgs/_signHolder.html' %>'"></div>
+    </div>
+    <div class="inner-content indigo">
+      <div class="icon-c mobile">
+        <div class="arrow-c">
+          <div ng-include="'<%= asset_path 'svgs/_signArrow.html' %>'"></div>
+        </div>
+      </div>
+      <div class="text">
+        Find a spot in another parking structure
+      </div>
+      <div class="icon-c wide">
+        <div class="arrow-c">
+          <div ng-include="'<%= asset_path 'svgs/_signArrow.html' %>'"></div>
+        </div>
+      </div>
+    </div>
+  </button>
+
+  <button class="sign" id="cntr-3">
+    <div class="holder">
+      <div ng-include="'<%= asset_path 'svgs/_signHolder.html' %>'"></div>
+    </div>
+    <div class="inner-content purple">
+      <div class="icon-c">
+        <div class="arrow-c">
+          <div ng-include="'<%= asset_path 'svgs/_signArrow.html' %>'"></div>
+        </div>
+      </div>
+      <div class="text">
+        Exit parking structure to catch your passenger at the curb
+      </div>
+    </div>
+  </button>
+
+  <button class="sign" id="cntr-4">
+    <div class="holder">
+      <div ng-include="'<%= asset_path 'svgs/_signHolder.html' %>'"></div>
+    </div>
+    <div class="inner-content magenta">
+      <div class="icon-c mobile">
+        <div class="arrow-c">
+          <div ng-include="'<%= asset_path 'svgs/_signArrow.html' %>'"></div>
+        </div>
+      </div>
+      <div class="text">
+        Exit terminal area to wait off site until passenger is ready to be picked up
+      </div>
+      <div class="icon-c wide">
+        <div class="arrow-c">
+          <div ng-include="'<%= asset_path 'svgs/_signArrow.html' %>'"></div>
+        </div>
+      </div>
+    </div>
+  </button>
+
+</div>
