@@ -3,39 +3,44 @@ $(document).ready(function(){
 	var inputToggle = 0;
 
 	$body
-		.on('click', "[id='other-landscape']", function(){
-			if(inputToggle === 0){
-				$("#user-text-input").fadeIn(200);
-				inputToggle = 1;
-			}
-			else{
-				$("#user-text-input").fadeOut(1000);
-				inputToggle = 0;
-			}
-		})
-		.on('click', '.other-submit', function(){
-			$('[id=user-text-input]').hide();
-		    $('[id=other-small-textbox]').hide();
-		    $('.next').show();
+	.on('click', "[id='other-landscape']", function(){
+		console.log('other-landscape');
+		if(inputToggle === 0){
+			$("#user-text-input").fadeIn(200);
+			inputToggle = 1;
+		}
+		else{
+			$("#user-text-input").fadeOut(1000);
+			inputToggle = 0;
+		}
+	})
+	.on('click', '.other-submit', function(){
+		console.log('other-submit');
+		$('[id=user-text-input]').hide();
+	    $('[id=other-small-textbox]').hide();
+	    $('.next').show();
 
-		    if (otherCheck === 0){
-				$(".unchecked-other-tile svg path").attr("fill", "#AA75D3");
-	    		$(".unchecked-other-tile svg polyline").attr("stroke", "white");
-	    		otherCheck = 1;
-	    	}
-	    	else {
-				$(".unchecked-other-tile svg path").attr("fill", "#FFFFFF");
-	    		$(".unchecked-other-tile svg polyline").attr("stroke", "#757575");
-	    		otherCheck = 0;
-    		}
+	    if (otherCheck === 0){
+			$(".unchecked-other-tile svg path").attr("fill", "#AA75D3");
+    		$(".unchecked-other-tile svg polyline").attr("stroke", "white");
+    		otherCheck = 1;
+    	}
+    	else {
+			$(".unchecked-other-tile svg path").attr("fill", "#FFFFFF");
+    		$(".unchecked-other-tile svg polyline").attr("stroke", "#757575");
+    		otherCheck = 0;
+		}
 
-		})
-		.on('click', "[id=small-other]", function(){
-			
-		})
-		.on('click', "[id='other-landscape']", function(){
-			
-		})
+	})
+	.on('click', "[id=small-other]", function(){
+		console.log('small-other');
+		$('[id=other-small-textbox]').show();
+	})
+		
+	.on('click', "[id='other-landscape']", function(){
+		console.log('other-landscape');
+		$('[id=other-small-textbox]').hide();
+	})
 
 	// $("[id='other-landscape']").click(function(){
 	// 	if(inputToggle === 0){
@@ -63,12 +68,12 @@ $(document).ready(function(){
  //    		otherCheck = 0;
  //    	}
 	// });
-	$('[id=small-other]').click(function(){
-		$('[id=other-small-textbox]').show();
-	});
-	$('[id=other-cancel]').click(function(){
-		$('[id=other-small-textbox]').hide();
-	});
+	// $('[id=small-other]').click(function(){
+	// 	$('[id=other-small-textbox]').show();
+	// });
+	// $('[id=other-cancel]').click(function(){
+	// 	$('[id=other-small-textbox]').hide();
+	// });
 
 
 	$.fn.toggleAttr = function(attr,val){
@@ -89,99 +94,195 @@ $(document).ready(function(){
 	var eatCheck = 0;
 	var otherCheck = 0;
 
-	$(".other-cancel").click(function(){
-		$('#user-text-input').hide();
-		$(".unchecked-other-tile svg:nth-child(1) .checkmark-fill").css("stroke", "#757575");
-	    $(".unchecked-other-tile svg:nth-child(1) g .circle-state").css("stroke-width", 3);
-		$(".unchecked-other-tile svg:nth-child(1) g .circle-state").css("fill", "#FFFFFF");	
-		otherCheck = 0;
-	});
+	$body
+		.on('click', '.other-cancel', function(){
+			console.log('other-cancel');
+			$('#user-text-input').hide();
+			$(".unchecked-other-tile svg:nth-child(1) .checkmark-fill").css("stroke", "#757575");
+		    $(".unchecked-other-tile svg:nth-child(1) g .circle-state").css("stroke-width", 3);
+			$(".unchecked-other-tile svg:nth-child(1) g .circle-state").css("fill", "#FFFFFF");	
+			otherCheck = 0;
+		})
+		.on('click', "[id='tally']", function(){
+			console.log('tally');
+            var tileClass = $("div:nth-child(1)", this).attr("class");
+			switch(tileClass){
+				case 'unchecked-phone-tile':
+				    if (phoneCheck === 0){
+				    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+				    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+				    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FC9C52");
+				    	phoneCheck = 1;	
+				    }
+				    else {
+				    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+				    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+				    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");
+				    	phoneCheck = 0;
+				    }
+					
+				break;
 
-	$("[id='tally']").click(function(){
+				case 'unchecked-shop-tile':
+					if (shopCheck === 0){
+				    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+				    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+				    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#F7C001");
+				    	shopCheck = 1;	
+				    }
+				    else {
+				    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+				    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+				    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
+				    	shopCheck = 0;
+				    }
+				break;
+
+				case 'unchecked-hangout-tile':
+					if (hangoutCheck === 0){
+				    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+				    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+				    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#39BAD8");
+				    	hangoutCheck = 1;	
+				    }
+				    else {
+				    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+				    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+				    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
+				    	hangoutCheck = 0;
+				    }
+
+				break;
+
+				case 'unchecked-eat-tile':
+				    if (eatCheck === 0){
+				    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+				    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+				    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#558AD8");
+				    	eatCheck = 1;	
+				    }
+				    else {
+				    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+				    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+				    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
+				    	eatCheck = 0;
+				    }
+
+				break;
+
+				case 'unchecked-other-tile':
+					if (otherCheck === 0){
+				    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+				    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+				    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#AA75D3");
+				    	$('#user-text-input').show();
+				    	otherCheck = 1;	
+				    }
+				    else {
+				    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+				    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+				    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
+				    	$('#user-text-input').hide();
+				    	otherCheck = 0;
+				    }
+
+				break;
+			}
+		});
+
+	// $(".other-cancel").click(function(){
+	// 	$('#user-text-input').hide();
+	// 	$(".unchecked-other-tile svg:nth-child(1) .checkmark-fill").css("stroke", "#757575");
+	//     $(".unchecked-other-tile svg:nth-child(1) g .circle-state").css("stroke-width", 3);
+	// 	$(".unchecked-other-tile svg:nth-child(1) g .circle-state").css("fill", "#FFFFFF");	
+	// 	otherCheck = 0;
+	// });
+
+	// $("[id='tally']").click(function(){
 		
-		var tileClass = $("div:nth-child(1)", this).attr("class");
-		switch(tileClass){
-			case 'unchecked-phone-tile':
-			    if (phoneCheck === 0){
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FC9C52");
-			    	phoneCheck = 1;	
-			    }
-			    else {
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");
-			    	phoneCheck = 0;
-			    }
+	// 	var tileClass = $("div:nth-child(1)", this).attr("class");
+	// 	switch(tileClass){
+	// 		case 'unchecked-phone-tile':
+	// 		    if (phoneCheck === 0){
+	// 		    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FC9C52");
+	// 		    	phoneCheck = 1;	
+	// 		    }
+	// 		    else {
+	// 		    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");
+	// 		    	phoneCheck = 0;
+	// 		    }
 				
-			break;
+	// 		break;
 
-			case 'unchecked-shop-tile':
-				if (shopCheck === 0){
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#F7C001");
-			    	shopCheck = 1;	
-			    }
-			    else {
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
-			    	shopCheck = 0;
-			    }
-			break;
+	// 		case 'unchecked-shop-tile':
+	// 			if (shopCheck === 0){
+	// 		    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#F7C001");
+	// 		    	shopCheck = 1;	
+	// 		    }
+	// 		    else {
+	// 		    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
+	// 		    	shopCheck = 0;
+	// 		    }
+	// 		break;
 
-			case 'unchecked-hangout-tile':
-				if (hangoutCheck === 0){
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#39BAD8");
-			    	hangoutCheck = 1;	
-			    }
-			    else {
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
-			    	hangoutCheck = 0;
-			    }
+	// 		case 'unchecked-hangout-tile':
+	// 			if (hangoutCheck === 0){
+	// 		    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#39BAD8");
+	// 		    	hangoutCheck = 1;	
+	// 		    }
+	// 		    else {
+	// 		    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
+	// 		    	hangoutCheck = 0;
+	// 		    }
 
-			break;
+	// 		break;
 
-			case 'unchecked-eat-tile':
-			    if (eatCheck === 0){
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#558AD8");
-			    	eatCheck = 1;	
-			    }
-			    else {
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
-			    	eatCheck = 0;
-			    }
+	// 		case 'unchecked-eat-tile':
+	// 		    if (eatCheck === 0){
+	// 		    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#558AD8");
+	// 		    	eatCheck = 1;	
+	// 		    }
+	// 		    else {
+	// 		    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
+	// 		    	eatCheck = 0;
+	// 		    }
 
-			break;
+	// 		break;
 
-			case 'unchecked-other-tile':
-				if (otherCheck === 0){
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#AA75D3");
-			    	$('#user-text-input').show();
-			    	otherCheck = 1;	
-			    }
-			    else {
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
-			    	$('#user-text-input').hide();
-			    	otherCheck = 0;
-			    }
+	// 		case 'unchecked-other-tile':
+	// 			if (otherCheck === 0){
+	// 		    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#AA75D3");
+	// 		    	$('#user-text-input').show();
+	// 		    	otherCheck = 1;	
+	// 		    }
+	// 		    else {
+	// 		    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
+	// 		    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
+	// 		    	$('#user-text-input').hide();
+	// 		    	otherCheck = 0;
+	// 		    }
 
-			break;
-		}
+	// 		break;
+	// 	}
 
 		var tallyTiles = phoneCheck + shopCheck + hangoutCheck + eatCheck + otherCheck;
 
