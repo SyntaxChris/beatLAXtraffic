@@ -149,9 +149,9 @@ namespace :populate do
 
 
     # ending questions
-    #e1 = Node.create(nickname: "E 1", is_decision_point: false , branch_id: ending_questions_branch.id, template_name: "e-1")
-    #  e1q = Question.create(node_id: e1.id, question: "Passenger Pick Up Success!")
-    #    e1a1 = Answer.create(question_id: e1q.id, answer: "Next", icon_name: nil)
+    e1 = Node.create(nickname: "E 1", is_decision_point: false , branch_id: ending_questions_branch.id, template_name: "e-1")
+      e1q = Question.create(node_id: e1.id, question: "Passenger Pick Up Success!", question_type_id: single_choice.id)
+        e1a1 = Answer.create(question_id: e1q.id, answer: "Next", icon_name: nil)
 
     e2 = Node.create(nickname: "E 2", is_decision_point: false , branch_id: ending_questions_branch.id, template_name: "e-2")
       e2q = Question.create(
