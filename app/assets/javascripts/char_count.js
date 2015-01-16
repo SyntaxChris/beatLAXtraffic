@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 	$(".char-count").text("140 characters left");
 
-	$('#tile-text').keyup(function() {
+	$("[id='tile-text']").keyup(function() {
 	    var cs = 140 - $(this).val().length;
 	    $('.char-count').text(cs + " characters left");
 	});

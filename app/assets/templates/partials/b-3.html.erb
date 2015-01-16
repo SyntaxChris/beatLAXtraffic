@@ -1,285 +1,178 @@
 <!-- TILE QUESTIONS -->
-  <div class="large-12 medium-12 small-12 columns">
-    <div id="tile-questions">
-    
-      <!-- questions header -->
-      <div class="show-for-landscape">
-        <div class="row">
-          <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
-            <div id="question-header-landscape">
-                <h3 class="main-question" id="main-landscape">What are you doing while you wait?</h3>
-                <h5 id="foot-landscape">Select all that apply</h5> 
+<div id="tile-questions">
+  <div class="row">
+    <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
+      <div id="question-header-landscape">
+          <h3 class="main-question" id="main-landscape">What are you doing while you wait?</h3>
+          <h5 id="foot-landscape">Select all that apply</h5> 
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 medium-12 small-12 columns">
+      <div class="row top">
+        <div class="large-4 medium-6 small-6 columns">
+          <div class="tile-container tile-1">
+            <div class="check-mark-container">
+              <%= render 'unchecked' %>
             </div>
+            <%= render 'phone' %>
+          </div>
+          <div class="row tile-title" style="font-size: 2vw">
+            On my phone
           </div>
         </div>
+
+        <div class="large-4 medium-6 small-6 columns">
+          <div class="tile-container tile-2">
+            <div class="check-mark-container">
+              <%= render 'unchecked' %>
+            </div>
+            <%= render 'shop' %>
+          </div>
+          <div class="row tile-title" style="font-size: 2vw">
+            Shop in the terminal
+          </div>
+        </div>
+
+        <div class="show-for-large-only">
+          <div class="large-4 medium-0 small-0 columns">
+            <div class="tile-container tile-3">
+              <div class="check-mark-container">
+                <%= render 'unchecked' %>
+              </div>
+              <%= render 'hangout' %>
+            </div>
+            <div class="row tile-title" style="font-size: 2vw">
+              Hang out
+            </div>
+          </div>
+        </div>  
       </div>
 
-      <div class="show-for-portrait">
-        <div class="row">
-          <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
-            <div id="question-header" style="text-align: center">
-              <h3 class="main-question" id="main">What are you doing while you wait?</h3>
-              <h5 id="foot" style="text-align:center">
-                Select all that apply
-                <div class="next" id="tiles-large" style="">Next</div>
-              </h5> 
+      <div class="row">
+        <div class="show-for-large-only">
+         <div class="large-4 medium-6 small-6 columns">
+            <div class="tile-container tile-4">
+              <div class="check-mark-container">
+                <%= render 'unchecked' %>
+              </div>
+              <%= render 'eat' %>
             </div>
-          </div>
-        </div>
-      </div>
-      <!-- end questions header -->
-
-      <!-- landscape -->
-      <div class="show-for-landscape">
-
-        <div id="large-landscape">
-          <div class="row">
-            <div class="large-12 medium-12 large-centered medium-centered columns">
-              <div class="row">
-                <div class="large-4 medium-4 small-4 columns phone" id="tally">
-                  <div ng-include="'<%= asset_path 'svgs/_phone.html' %>'"></div>
-                  <div class="row" style="text-align: center; color: white">
-                    On my phone
-                  </div>
-                </div>
-                <div class="large-4 medium-4 small-4 columns" id="tally">
-                  <div ng-include="'<%= asset_path 'svgs/_shop.html' %>'"></div>
-                  <div class="row" style="text-align: center; color: white">
-                    Shop in the terminal
-                  </div>
-                </div>
-                <div class="large-4 medium-4 small-4 columns" id="tally">
-                  <div ng-include="'<%= asset_path 'svgs/_hangout.html' %>'"></div>
-                  <div class="row" style="text-align: center; color: white">
-                    Hang out
-                  </div>
-                </div>
+            <div class="row tile-title" style="font-size: 2vw">
+              Eat or drink
+            </div>
+          </div> 
+   
+          <div class="large-4 medium-6 small-6 columns">
+            <!-- always other -->
+            <div class="tile-container tile-5">
+              <div class="check-mark-container">
+                <%= render 'unchecked' %>
               </div>
-
-              <div class="row" style="margin-top: 10px;">
-                <div class="large-4 medium-4 small-4 columns" id="tally">
-                  <div ng-include="'<%= asset_path 'svgs/_eat.html' %>'"></div>
-                  <div class="row" style="text-align: center; color: white">
-                    Eat or drink
-                  </div>
-                </div>
-                <div class="large-4 medium-4 small-4 columns" id="tally">
-                  <div ng-include="'<%= asset_path 'svgs/_other.html' %>'"></div>
-                  <div class="row" style="text-align: center; color: white">
-                    Other
-                  </div>
-                </div>
-                
-                <!-- text area -->
-                <div class="large-4 medium-4 small-4 columns">
-                  <div class="next" id="tiles-medium">Next</div>
-                  <div class="row">
-                    <div class="large-12 medium-12 small-12 columns">
-                      <div id="user-text-input">
-                        <div class="arrow-left" style="position:absolute; z-index: 1;"></div>
-                        <div class="row" style="padding-top: 15px">
-                          <textarea class="purple" id="other-info-large" cols="1" rows="3" maxlength="140" placeholder="Please write here"></textarea> 
-                        </div>
-                        <div class="row" style="text-align: center">
-                          <div class="large-6 medium-6 columns" style="padding: 0">
-                            <div class="other-cancel">
-                              Cancel
-                            </div>
-                          </div>
-                          <div class="large-6 medium-6 columns" style="text-align: center">
-                            <div class="other-submit">
-                              Save
-                            </div>
-                          </div>
-                          
-                          <div id="char-count-large" style="text-align: center"></div>
-                          
-                          
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end text area -->
-              </div>
-            </div>    
-          </div>
-        </div>
-        
-        <div id="small-landscape">
-          <div class="row">
-            <div class="small-3 medium-3 columns" id="tally">
-              <div ng-include="'<%= asset_path 'svgs/_phone.html' %>'"></div>
-              <div class="row tile-title" style="text-align: center; color: white">
-                On my phone
+              <%= render 'other' %>
+              <div class="row tile-title" style="font-size: 2vw">
+                Other (Specify)
               </div>
             </div>
-            <div class="small-3 medium-3 columns" id="tally">
-              <div ng-include="'<%= asset_path 'svgs/_shop.html' %>'"></div>
-              <div class="row tile-title" style="text-align: center; color: white">
-                Shop in the terminal
-              </div>
-            </div>
-            <div class="small-3 medium-3 columns" id="tally">
-              <div ng-include="'<%= asset_path 'svgs/_hangout.html' %>'"></div>
-              <div class="row tile-title" style="text-align: center; color: white">
-                Hang out
-              </div>
-            </div>
-            <div class="small-3 medium-3 columns" id="tally">
-              <div ng-include="'<%= asset_path 'svgs/_eat.html' %>'"></div>
-              <div class="row tile-title" style="text-align: center; color: white">
-                Eat or drink
-              </div>
-            </div> 
-          </div>
-          <div class="row">
-            <div class="small-8 medium-8 small-centered medium-centered columns">
-              <div class="row" style="margin-top: 15px">
-                <div csvg/lass="medium-6 small-6 columns">
-                  <div ng-include="'<%= asset_path 'svgs/_smallother.html' %>'"></div>
-                </div>
-                <div class="medium-6 small-6 columns" style="padding: 6px 0 0 0">
-                  <div class="small-tile-label-landscape" style="text-align: left; color: white">Other (Specify)</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="small-11 small-centered columns" id="other-small-textbox" style="display:none; bottom: 200px ">
-              <div id="other-text-area">
-                <div class="row">
-                  <div class="small-12 small-centered columns">
-                    <textarea class="purple" id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
-                      <div class="row">
-                        <div class="small-7 columns">
-                          <div id="char-count-small" style="font-size: 16px"></div>
-                      </div>
-                      <div class="small-5 columns" style="text-align: center;">
-                        <div class="next" style="color:white; background-color: #9B69CC; padding: 10px 0 10px 0; border-radius: 5px; margin-right: 5px; margin-bottom: 2px">
-                          <div>Next</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          </div> 
+          <!-- TEXT BUBBLE -->
+          <div class="large-4 columns">
+            <div class="other-txt-bbl" style="display: none">
+              <textarea class="purple" id="tile-text" cols="1" rows="3" maxlength="140" placeholder="Please write here"></textarea>
+              <div class="char-count">
+                140 Characters left
               </div>
               <div class="row">
-                <div class="small-6 columns" style="height: 120px; background-color: #C39AE8"></div>
-                <div class="small-6 columns" style="height: 120px; background-color: #AB75D3"></div>
-              </div>
-              <div class="row">
-                <div class="small-6 columns" style="height: 120px; background-color: #9B69CC;">
-                  <div style="position: absolute; bottom:5px; color: white">
-                    Other <span style="font-size: 12px">(Specify)</span>
-                  </div>
-                </div>
-                <div class="small-6 columns" style="height: 120px; background-color: #8B5DC0; color: white">
-                  <div id="other-cancel">
+                <div class="large-6 columns bbl-btn">
+                  <div class="bbl-btn cancel" style="background-color: #B2C4D4">
                     Cancel
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="medium-4 small-4 medium-centered small-centered columns">
-              <div class="next" id="tiles-small">
-                Next
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <!-- end landscape -->
-      
-      <!-- portrait -->
-      <div class="show-for-portrait">
-
-        <div class="row" id="tiles-small">
-          <div class="medium-10 small-11 medium-centered small-centered columns">
-
-            <div class="row">
-              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
-                <div ng-include="'<%= asset_path 'svgs/_phone.html' %>'"></div>
-                <div class="row small-tile-label" style="text-align: center; color: white">
-                  On my phone
-                </div>
-              </div>
-              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
-                <div ng-include="'<%= asset_path 'svgs/_shop.html' %>'"></div>
-                <div class="row small-tile-label" style="text-align: center; color: white">
-                  Shop in the terminal
-                </div>
-              </div>
-            </div>
-
-            <div class="row" id="bottom-tile-row">
-              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
-                <div ng-include="'<%= asset_path 'svgs/_hangout.html' %>'"></div>
-                <div class="row small-tile-label" style="text-align: center; color: white">
-                  Hang out
-                </div>
-              </div>
-              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
-                <div ng-include="'<%= asset_path 'svgs/_eat.html' %>'"></div>
-                <div class="row small-tile-label" style="text-align: center; color: white">
-                  Food and drinks
-                </div>
-              </div>
-            </div>
-
-            <div class="row" id="small-other-row">
-              <div class="medium-8 small-10 medium-centered small-centered columns">
-                <div class="row" style="margin-top: 15px">
-                  <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
-                    <div ng-include="'<%= asset_path 'svgs/_smallother' %></div.html>'"></div>
-                  <div class="medium-6 small-6 columns" style="padding: 6px 0 0 0"><div class="small-tile-label" style="text-align: left; color: white; font-size: 12px">Other (Specify)</div></div>
-                </div>
-                <div class="row">
-                  <div class="small-11 small-centered columns" id="other-small-textbox" style="display:none">
-                    <div id="other-text-area">
-                      <div class="row">
-                        <div class="small-12 small-centered columns">
-                          <textarea class="purple" id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
-                          <div class="row">
-                            <div class="small-7 columns">
-                              <div id="char-count-small"></div>
-                            </div>
-                            <div class="small-5 columns" style="text-align: center">
-                              <div class="other-submit" style="color: white; background-color: #8B5DC0; padding: 5px; margin-bottom: 5px; border-radius: 5px; margin-right: 5px">
-                                Save
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="small-6 columns" style="height: 120px; background-color: #C39AE8"></div>
-                      <div class="small-6 columns" style="height: 120px; background-color: #AB75D3"></div>
-                    </div>
-                    <div class="row">
-                      <div class="small-6 columns" style="height: 120px; background-color: #9B69CC;">
-                        <div style="position: absolute; bottom:5px; color: white">
-                          Other <span style="font-size: 12px">(Specify)</span>
-                        </div>
-                      </div>
-                      <div class="small-6 columns" style="height: 120px; background-color: #8B5DC0; color: white">
-                        <div id="other-cancel">
-                          Cancel
-                        </div>
-                      </div>
-                    </div>
+                <div class="large-6 columns bbl-btn">
+                  <div class="bbl-btn save" style="background-color: #AA75D3">
+                    Save
                   </div>
                 </div>
               </div>
             </div>
 
+            <div class="tile-next">
+              Next
+            </div>
+          </div> 
+          <!-- END TEXT BUBBLE -->
+        </div>
+
+        <div class="hide-for-large-only">
+          <div class="large-4 medium-6 small-6 columns">
+            <div class="tile-container tile-3">
+              <div class="check-mark-container">
+                <%= render 'unchecked' %>
+              </div>
+              <%= render 'hangout' %>
+            </div>
+            <div class="row tile-title" style="font-size: 2vw">
+              Hang out
+            </div>
+          </div>    
+
+          <div class="large-4 medium-6 small-6 columns">
+            <div class="tile-container tile-4">
+              <div class="check-mark-container">
+                <%= render 'unchecked' %>
+              </div>
+              <%= render 'eat' %>
+            </div>
+            <div class="row tile-title" style="font-size: 2vw">
+              Eat or drink
+            </div>
           </div>
         </div>
       </div>
-    <!-- end portrait -->
+
+      <div class="hide-for-large-only">
+        <div class="row">
+          <div class="medium-6 small-6 medium-centered small-centered columns">
+            <!-- always other -->
+            <div class="tile-container tile-5">
+              <div class="check-mark-container">
+                <%= render 'unchecked' %>
+              </div>
+              <%= render 'other' %>
+            </div>
+            <div class="row tile-title other">
+              Other (Specify)
+            </div>
+          </div>
+        </div>
+
+        <!-- TEXT BUBBLE - Medium/Small screens -->
+        <div class="other-txt-bbl-sm" style="display:none">
+          <textarea class="purple small" cols="1" rows="3" maxlength="140" placeholder="Please write here"></textarea>
+          <div class="char-count">
+            140 Characters left
+          </div>
+          <div class="row">
+            <div class="medium-6 small-6 columns bbl-btn">
+              <div class="bbl-btn cancel" style="background-color: #B2C4D4">
+                Cancel
+              </div>
+            </div>
+            <div class="medium-6 small-6 columns bbl-btn">
+              <div class="bbl-btn save" style="background-color: #AA75D3">
+                Save
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END TEXT BUBBLE - Medium/Small screens -->
+        <div class="tile-next small" style="display:block">
+          Next
+        </div>
+      </div>
     </div>
-    <!-- END TILE QUESTIONS -->
+  </div>
+</div>  
+<!-- END TILE QUESTIONS -->

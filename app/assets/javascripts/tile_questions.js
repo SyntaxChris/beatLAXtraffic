@@ -10,7 +10,7 @@ $(document).ready(function(){
 	$body
 	.on('click', '.tile-container', function(){
 		var tileId = $(this).children().eq(1).attr('id');
-
+	
 		switch(tileId){
 			case 'phone-landscape':
 				if(phoneTog === 0){
@@ -82,21 +82,23 @@ $(document).ready(function(){
 
 			case 'other-landscape':
 				$('.other-txt-bbl').fadeIn();
+				$('.other-txt-bbl-sm').fadeIn();
 			break;
 		}
 
         var tallyTot = phoneTog + shopTog + hangTog + eatTog + otherTog;
 
 		if(tallyTot > 0){
-			$(".next.tile").fadeIn(500);
+			$(".tile-next").fadeIn(500);
 		}
 		else{
-			$(".next.tile").fadeOut(300);
+			$(".tile-next").fadeOut(300);
 		}
 		
 	})
 	.on('click', '.cancel', function(){
 		$('.other-txt-bbl').fadeOut();
+		$('.other-txt-bbl-sm').fadeOut();
 		$('.tile-container.tile-5 .check-mark-container svg .circle-state').css('stroke-width', '3');
 		$('.tile-container.tile-5 .check-mark-container svg .circle-state').css('fill', 'white');
 		$('.tile-container.tile-5 .check-mark-container svg .checkmark-fill').css('stroke', 'gray');
@@ -107,24 +109,28 @@ $(document).ready(function(){
 		var tallyTot = phoneTog + shopTog + hangTog + eatTog + otherTog;
 
 		if(tallyTot > 0){
-			$(".next.tile").fadeIn(500);
+			$(".tile-next").fadeIn(500);
 		}
 		else{
-			$(".next.tile").fadeOut(300);
+			$(".tile-next").fadeOut(300);
 		}
 	})
 	.on('click', '.save', function(){
-		$('.other-txt-bbl').fadeOut();
-		$('.tile-container.tile-5 .check-mark-container svg .circle-state').css('stroke-width', '0');
-		$('.tile-container.tile-5 .check-mark-container svg .circle-state').css('fill', '#AA75D3');
-		$('.tile-container.tile-5 .check-mark-container svg .checkmark-fill').css('stroke', 'white');
+		if($("textarea.purple").val() !== "" || $("textarea.purple.small").val() !== ""){
+			$('.other-txt-bbl').fadeOut();
+			$('.other-txt-bbl-sm').fadeOut();
+			$('.tile-container.tile-5 .check-mark-container svg .circle-state').css('stroke-width', '0');
+			$('.tile-container.tile-5 .check-mark-container svg .circle-state').css('fill', '#AA75D3');
+			$('.tile-container.tile-5 .check-mark-container svg .checkmark-fill').css('stroke', 'white');
+			otherTog = 1;
+		}
 
-		otherTog = 1;
+		
 
 		var tallyTot = phoneTog + shopTog + hangTog + eatTog + otherTog;
 
 		if(tallyTot > 0){
-			$(".next.tile").fadeIn(500);
+			$(".tile-next").fadeIn(500);
 		}
 	})
 });

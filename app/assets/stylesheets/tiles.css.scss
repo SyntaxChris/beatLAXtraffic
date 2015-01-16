@@ -43,6 +43,25 @@
    border-bottom: 13px solid transparent;
 }
 
+
+.other-txt-bbl-sm{
+	position: absolute;
+	width: 70%;
+	margin-left: 13%;
+	margin-right: 5%;
+	top: 5%;
+	z-index: 30;
+	padding: 20px;
+	background-color: white;
+	border-radius: 20px;
+	.char-count {
+		text-align: center;
+		color: #B2C4D4;
+	}
+}
+
+
+
 .bbl-btn {
 	cursor: pointer;
 	padding: 10px; 
@@ -57,6 +76,7 @@
 
 .tile-next{
 	display: none;
+	cursor: pointer;
 	background-color: #D35E5B; 
 	border-radius: 5px; 
 	color: white; 
@@ -66,6 +86,21 @@
 	margin-left: auto; 
 	margin-right: auto; 
 	margin-top: 50px;
+}
+
+.tile-next.small{
+	display: none;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	margin-left: 38%;
+	margin-right: auto;
+	background-color: #D35E5B; 
+	border-radius: 5px; 
+	color: white; 
+	padding: 10px; 
+	text-align:center; 
+	width: 20%;  
 }
 
 
@@ -97,7 +132,7 @@
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
-		top: -270px;
+		// top: -270px;
 	}
 
 }
