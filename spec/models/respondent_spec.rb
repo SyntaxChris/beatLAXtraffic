@@ -169,6 +169,34 @@ describe Respondent do
           end
         end
       end
+
+      describe "evenly_distributed_pickup_target" do
+        context "when there is one least-used" do
+          let!(:respondent) { FactoryGirl.create(
+            :respondent, original_who_picking_up: "Friend"
+          )}
+          let!(:respondent_1) { FactoryGirl.create(
+            :respondent, original_who_picking_up: "Friend"
+          )}
+          let!(:respondent_2) { FactoryGirl.create(
+            :respondent, original_who_picking_up: "Coworker"
+          )}
+
+          it "returns the pickup target with the lowest occurance" do
+            expect(Respondent.evenly_distributed_pickup_target).to eq "Parent"
+          end
+        end
+        context "when there are two or more least-used" do
+          it "returns a random selection of the lowest occurances" do
+            f1 = FactoryGirl.create(:respondent, original_who_picking_up: "Friend")
+            f1 = FactoryGirl.create(:respondent, original_who_picking_up: "Friend")
+            expect(["Coworker", "Parent"]).to include(Respondent.evenly_distributed_pickup_target)
+          end
+          it "returns a random selection of the lowest occurances" do
+            expect(["Coworker", "Parent", "Friend"]).to include(Respondent.evenly_distributed_pickup_target)
+          end
+        end
+      end
     end
 
     pending "increases its times_circled counter at appropriate times "\

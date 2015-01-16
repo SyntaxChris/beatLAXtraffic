@@ -29,6 +29,35 @@ class Respondent < ActiveRecord::Base
 
   def set_variables
     self.flight_code = FLIGHT_NUMBERS.sample
+    self.luggage_count = [1,2,3].sample
+    self.luggage_type = LUGGAGE_TYPES.sample
+    self.picking_up_number = [1,2,3].sample
+    self.originating_location = ORIGINATING_LOCATIONS.sample
+    self.original_who_picking_up = Respondent.evenly_distributed_pickup_target
+    self.travel_companion = [true,false].sample
+    self.landing_time = TIME_TILL_LANDS.sample
+  end
+
+  def self.evenly_distributed_pickup_target
+    all = Respondent.all
+    parent = all.where(original_who_picking_up: "Parent")
+    friend = all.where(original_who_picking_up: "Friend")
+    coworker = all.where(original_who_picking_up: "Coworker")
+
+    results = {
+      "Parent" => parent.count,
+      "Friend" => friend.count,
+      "Coworker" => coworker.count
+    }
+    winner = results.min_by{|k,v| v}
+    minimum = results.values.sort.min
+
+    if results.values.count{|n| n == minimum} > 1
+      ties = results.select{|name, count| count == minimum}
+      return ties.keys.sample
+    else
+      return winner.first
+    end
   end
 end
 
