@@ -47,13 +47,16 @@ angular.module('lawaApp')
       };
 
       $scope.addAnswerToCurrentAnswers = function(answer){
-        // TODO: This will probably be replaced by some sort of collection coming from jQuery
-        if (_.findWhere($scope.currentAnswers, answer)){
-          // answer is already in current list, remove it.
-          $scope.currentAnswers = _.without($scope.currentAnswers, _.findWhere($scope.currentAnswers, answer));
-        } else {
-          $scope.currentAnswers.push(answer);
-        }
+
+        // if this is a multiple choice:
+        // (make below into a single method?)
+          if (_.findWhere($scope.currentAnswers, answer)){
+            // answer is already in current list, remove it.
+            $scope.currentAnswers = _.without($scope.currentAnswers, _.findWhere($scope.currentAnswers, answer));
+          } else {
+            $scope.currentAnswers.push(answer);
+          }
+        // otherwise, select single and replace upon next single click
       };
 
       $scope.goToNextNode = function(){

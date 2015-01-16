@@ -12,6 +12,7 @@ RSpec.describe Question, :type => :model do
     it "has a 'question' text content" do
       expect(question.question).to eq "what year is it?"
     end
+
   end
 
   describe "Associations" do
