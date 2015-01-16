@@ -572,7 +572,7 @@
 
 
   <!-- TODO: 5. Why do you choose to park your car? -->
-  <div id="why-park-car" class="slide" data-currentnode="6" data-nextnode="7">
+  <div id="why-park-car" class="slide" data-currentnode="6" data-nextnode="13">
     <div class="row" style="text-align:center">
       <h3 class="main-question">Why do you choose to park your car?</h3>
     </div>
@@ -1163,7 +1163,7 @@
     <!-- PAGES 8 - 13 ARE OUTSIDE OF THIS CONTAINER -->
 
     <!-- TODO: 15. RAIL SYSTEM QUESTIONS -->
-    <div id="rail-system" class="part-1" style="display: none; padding-top: 10%">
+    <div id="rail-system" class="part-1 slide" style="padding-top: 10%" data-currentnode="18" data-nextnode="19">
         <div class="stage-1">
           <div class="question-bubble">
             <div class="rail-car">
@@ -1189,11 +1189,11 @@
             </p>
           </div>
 
-          <button id="x-btn-upvote" class="upvote-btn">
+          <button id="x-btn-upvote" class="upvote-btn emergency-next">
             <span class="text">YES</span>
             <%= render 'thumbsUp' %>
           </button>
-          <button id="x-btn-downvote" class="downvote-btn">
+          <button id="x-btn-downvote" class="downvote-btn emergency-next">
             <span class="text">NO</span>
             <%= render 'thumbsDown' %>
           </button>
@@ -1203,7 +1203,7 @@
 
 
     <!-- 17. ICON QUESTIONS -->
-    <div id="icon-questions" style="display: none">
+    <div id="icon-questions" class="slide" data-currentnode="19" data-nextnode="20">
       <div class="row">
         <h3 class="main-question">Imagine that you could customize this future location.</h3>
       </div>
@@ -1228,7 +1228,7 @@
               <div id="holder-3"></div>
             </div>
             <div class="submit-row" style="display: none">
-              <div id="icon-submit">Next</div>
+              <div id="icon-submit" class="emergency-next">Next</div>
             </div>
           </div>
         </div>
@@ -1670,7 +1670,7 @@
   </div>
 
   <!-- 8. LATE FLIGHT -->
-  <div id="late-flight" style="display: none;">
+  <div id="late-flight" class="slide" data-currentnode="10" data-nextnode="8">
     <div class="content-c">
       <h3 class="main-question">You think your passenger's flight could be late.</h3>
       <p>How would you check for that?</p>
@@ -1712,7 +1712,7 @@
       </div>
 
       <div>
-        <button id="x-btn-late-flight-next" class="late-flight-next-btn">Next</button>
+        <button id="x-btn-late-flight-next" class="late-flight-next-btn emergency-next">Next</button>
       </div>
 
     </div>
@@ -1841,7 +1841,7 @@
   <!-- END TIME SPENT -->
 
   <!-- 12. SUCCESSFUL PICKUP -->
-  <div id="successful-pickup" class="slide" data-currentnode="14" data-nextnode="20">
+  <div id="successful-pickup" class="slide" data-currentnode="14" data-nextnode="18">
     <div class="sun-bg">
       <%= render 'sunBeamBg' %>
     </div>
@@ -1930,7 +1930,7 @@
   <!-- END TIMER PICKUP QUESTIONS -->
 
   <!-- 15. WILLING TO WAIT -->
-  <div id="willing-to-wait" class="slide" data-currentnode="10" data-nextnode="8">
+  <div id="willing-to-wait" class="slide" data-currentnode="17" data-nextnode="14">
     <div class="content-c">
       <div class="timer-c">
         <div class="inner">
