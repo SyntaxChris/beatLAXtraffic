@@ -12,7 +12,7 @@
 <!-- <div id="logger"></div> -->
 
 <!-- SPLASH PAGE -->
-<div id="splash-page" class="slide current" data-currentnode="1" data-nextnode="2">
+<div id="splash-page" class="slide current" data-currentnode="1" data-nextnode="3">
   <div class="row" style="text-align: center; margin-top: 3%">
     <h2 style="color: white">Are you an LAX <span style="font-weight: 700">Pick Up Artist?</span></h2>
     <div id="start-button" class="emergency-next">Start</div>
@@ -26,7 +26,7 @@
 <!-- QUESTION FORMATS -->
 <div class="row">
   <!-- 1. DISTANCE questions -->
-    <div id="distance-questions" class="slide" data-currentnode="2" data-nextnode="3">
+    <div id="distance-questions" class="slide" data-currentnode="2" data-nextnode="4">
       <div id="distance-bg"></div>
       <div class="row" id="dis-row" style="text-align:center">
         <h3 class="main-question">
@@ -74,7 +74,7 @@
 
 
   <!-- 2. MISSION INTRO -->
-  <div id="mission-intro"  class="slide" data-currentnode="3" data-nextnode="4">
+  <div id="mission-intro"  class="slide" data-currentnode="3" data-nextnode="2">
     <div id="envelope">
       <%= render 'envelope' %>
     </div>
@@ -262,7 +262,7 @@
             </div>
           </div>
 
-          <button id="x-btn-confirm-map-choice" class="confirm-map-choice-btn emergency-next">
+          <button id="x-btn-confirm-map-choice" class="confirm-map-choice-btn">
             CONFIRM
           </button>
         </div>
@@ -716,7 +716,7 @@
 
   <!-- SPINNER QUESTIONS -->
   <!-- 6. Parking spinner -->
-  <div id="parking-spinner-questions" class="slide" data-currentnode="9" data-nextnode="10">
+  <div id="parking-spinner-questions" class="slide" data-currentnode="7" data-nextnode="10">
     <div class="chance-time">
       <h1>Chance Time!</h1>
       <h3 class="main-question">
@@ -784,7 +784,7 @@
   <!-- end parking spinner -->
   
   <!-- 7. Pickup spinner -->
-  <div id="pickup-spinner-question" style="display:none">
+  <div id="pickup-spinner-question" class="slide" data-currentnode="8" data-nextnode="14">
     <div class="chance-time">
       <h1>Chance Time!</h1>
       <h3 class="main-question">
@@ -795,7 +795,7 @@
     <div class="congrats" style="display:none;">
       <h1>Nice!</h1>
       <h3 class="main-question" style="margin-top: -20px">Your passenger is at the curb!</h3>
-      <div class="next" id="spin-pickup-win">
+      <div class="next" id="spin-pickup-win" data-result="yes">
         Continue
       </div>
     </div>
@@ -803,7 +803,7 @@
     <div class="fail" style="display:none">
       <h1>Dang!</h1>
       <h3 class="main-question">Our pick-up wasn't there.</h3>
-      <div class="next" id="spin-pickup-lose">
+      <div class="next" id="spin-pickup-lose" data-result="no">
         Continue
       </div>
     </div>
@@ -860,7 +860,7 @@
 
   <!-- 7. TILE QUESTIONS -->
   <div class="large-12 medium-12 small-12 columns">
-    <div id="tile-questions" class="slide" data-currentnode="8" data-nextnode="9">
+    <div id="tile-questions" class="slide" data-currentnode="9" data-nextnode="10">
     
       <!-- questions header -->
       <div class="show-for-landscape">
@@ -1392,7 +1392,7 @@
 
 
     <!-- 14. LAST QUESTION SET -->
-    <div id="last-question-set" class="slide" data-currentnode="14" data-nextnode="15">
+    <div id="last-question-set" class="slide" data-currentnode="20" data-nextnode="22">
       <!-- set 1 -->
       <div id="question-set-1">
         <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
@@ -1593,7 +1593,7 @@
     <!-- END LAST QUESTION SET -->
 
     <!-- 18. WHY DO YOU THINK THIS STRATEGY WILL WORK -->
-    <div id="think-strategy" style="display: none;">
+    <div id="think-strategy" class="slide" data-currentnode="21" data-nextnode="10">
       <h3 class="main-question">
         How well do you think this strategy will work?
       </h3>
@@ -1615,7 +1615,7 @@
           <%= render 'head' %>
         </div>
 
-        <button id="x-btn-next-though" class="next-thought-btn">
+        <button id="x-btn-next-though" class="next-thought-btn emergency-next">
           Next
         </button>
       </div>
@@ -1623,7 +1623,7 @@
     <!-- END WHY DO YOU THINK THIS STRATEGY WILL WORK -->
 
     <!-- CONGRATULATIONS! -->
-    <div id="congrats" class="slide" data-currentnode="15" data-nextnode="16">
+    <div id="congrats" class="slide" data-currentnode="22">
       <div class="row" style="text-align: center;">
         <!-- <h3 style="color: white">Congratulations!</h3> -->
         <div class="inner-c">
@@ -1841,7 +1841,7 @@
   <!-- END TIME SPENT -->
 
   <!-- 12. SUCCESSFUL PICKUP -->
-  <div id="successful-pickup" class="slide" data-currentnode="11" data-nextnode="12">
+  <div id="successful-pickup" class="slide" data-currentnode="14" data-nextnode="20">
     <div class="sun-bg">
       <%= render 'sunBeamBg' %>
     </div>
@@ -1930,7 +1930,7 @@
   <!-- END TIMER PICKUP QUESTIONS -->
 
   <!-- 15. WILLING TO WAIT -->
-  <div id="willing-to-wait" class="slide" data-currentnode="10" data-nextnode="11">
+  <div id="willing-to-wait" class="slide" data-currentnode="10" data-nextnode="8">
     <div class="content-c">
       <div class="timer-c">
         <div class="inner">

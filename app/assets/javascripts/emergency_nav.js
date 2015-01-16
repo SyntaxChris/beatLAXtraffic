@@ -5,7 +5,8 @@ $(document).ready(function(){
   //listeners
   $body
     .on('click', '.emergency-next', findNextNode)
-    .on('findNextNode', findNextNode);
+    .on('findNextNode', findNextNode)
+    .on('findSpecificNode', findSpecificNode);
 
   function findNextNode(e) {
     e.preventDefault();
@@ -23,6 +24,13 @@ $(document).ready(function(){
 
     $body.find('.slide[data-currentnode="'+currentNode+'"]').toggleClass('current', false);
     $body.find('.slide[data-currentnode="'+nextNode+'"]').toggleClass('current', true);
+  }
+
+  function findSpecificNode(e, node) {
+    var $currentPanel = $('.slide.current');
+
+    $currentPanel.toggleClass('current', false);
+    $body.find('.slide[data-currentnode="'+node+'"]').toggleClass('current', true);
   }
 
 });

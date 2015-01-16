@@ -1,7 +1,29 @@
 $(document).ready(function(){
+	var $body = $('body');
+
+		$body
+			.on('click', '#spin-pickup-win', handleNextNode)
+			.on('click', '#spin-pickup-lose', handleNextNode);
+
+	function handleNextNode(e){
+		e.preventDefault();
+		e.stopImmediatePropagation();
+
+		var result = $(this).data('result');
+
+		var node = '4';
+		if (result == 'yes') {
+			node = '14';
+		}
+
+		$body.trigger('findSpecificNode',[node]);
+	}
+
  	$('.spin-button').click(function(){
  		var spinButtonId = $(this).attr("id");
 		var chanceLogic = Math.floor(Math.random()*2);
+
+
 
 		// parking spinner
 		if(spinButtonId === 'parking'){
