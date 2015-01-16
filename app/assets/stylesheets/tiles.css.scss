@@ -34,6 +34,7 @@
 .other-txt-bbl:before {
    content:"";
    position: absolute;
+   z-index: 30;
    left: 	-7%;
    top: 80px;
    width: 0;

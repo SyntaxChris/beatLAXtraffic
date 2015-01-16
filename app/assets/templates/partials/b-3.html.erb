@@ -15,9 +15,9 @@
         <div class="large-4 medium-6 small-6 columns">
           <div class="tile-container tile-1">
             <div class="check-mark-container">
-              <%= render 'unchecked' %>
+              <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
             </div>
-            <%= render 'phone' %>
+            <div ng-include="'<%= asset_path 'svgs/_phone.html' %>'"></div>
           </div>
           <div class="row tile-title" style="font-size: 2vw">
             On my phone
@@ -27,9 +27,9 @@
         <div class="large-4 medium-6 small-6 columns">
           <div class="tile-container tile-2">
             <div class="check-mark-container">
-              <%= render 'unchecked' %>
+              <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
             </div>
-            <%= render 'shop' %>
+            <div ng-include="'<%= asset_path 'svgs/_shop.html' %>'"></div>
           </div>
           <div class="row tile-title" style="font-size: 2vw">
             Shop in the terminal
@@ -37,12 +37,12 @@
         </div>
 
         <div class="show-for-large-only">
-          <div class="large-4 medium-0 small-0 columns">
+          <div class="large-4 columns">
             <div class="tile-container tile-3">
               <div class="check-mark-container">
-                <%= render 'unchecked' %>
+                <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
               </div>
-              <%= render 'hangout' %>
+              <div ng-include="'<%= asset_path 'svgs/_hangout.html' %>'"></div>
             </div>
             <div class="row tile-title" style="font-size: 2vw">
               Hang out
@@ -56,9 +56,9 @@
          <div class="large-4 medium-6 small-6 columns">
             <div class="tile-container tile-4">
               <div class="check-mark-container">
-                <%= render 'unchecked' %>
+                <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
               </div>
-              <%= render 'eat' %>
+              <div ng-include="'<%= asset_path 'svgs/_eat.html' %>'"></div>
             </div>
             <div class="row tile-title" style="font-size: 2vw">
               Eat or drink
@@ -69,16 +69,20 @@
             <!-- always other -->
             <div class="tile-container tile-5">
               <div class="check-mark-container">
-                <%= render 'unchecked' %>
+                <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
               </div>
-              <%= render 'other' %>
+              <div ng-include="'<%= asset_path 'svgs/_other.html' %>'"></div>
               <div class="row tile-title" style="font-size: 2vw">
                 Other (Specify)
               </div>
             </div>
           </div> 
-          <!-- TEXT BUBBLE -->
+          <!-- === -->
+
+         
           <div class="large-4 columns">
+
+            <!-- TEXT BUBBLE -->
             <div class="other-txt-bbl" style="display: none">
               <textarea class="purple" id="tile-text" cols="1" rows="3" maxlength="140" placeholder="Please write here"></textarea>
               <div class="char-count">
@@ -97,21 +101,23 @@
                 </div>
               </div>
             </div>
+            <!-- END TEXT BUBBLE -->
 
             <div class="tile-next">
               Next
             </div>
+
           </div> 
-          <!-- END TEXT BUBBLE -->
+
         </div>
 
         <div class="hide-for-large-only">
           <div class="large-4 medium-6 small-6 columns">
             <div class="tile-container tile-3">
               <div class="check-mark-container">
-                <%= render 'unchecked' %>
+                <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
               </div>
-              <%= render 'hangout' %>
+              <div ng-include="'<%= asset_path 'svgs/_hangout.html' %>'"></div>
             </div>
             <div class="row tile-title" style="font-size: 2vw">
               Hang out
@@ -121,9 +127,9 @@
           <div class="large-4 medium-6 small-6 columns">
             <div class="tile-container tile-4">
               <div class="check-mark-container">
-                <%= render 'unchecked' %>
+                <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
               </div>
-              <%= render 'eat' %>
+              <div ng-include="'<%= asset_path 'svgs/_eat.html' %>'"></div>
             </div>
             <div class="row tile-title" style="font-size: 2vw">
               Eat or drink
@@ -138,13 +144,14 @@
             <!-- always other -->
             <div class="tile-container tile-5">
               <div class="check-mark-container">
-                <%= render 'unchecked' %>
+                <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
               </div>
-              <%= render 'other' %>
+              <div ng-include="'<%= asset_path 'svgs/_other.html' %>'"></div>
             </div>
             <div class="row tile-title other">
               Other (Specify)
             </div>
+            <!-- === -->
           </div>
         </div>
 
@@ -168,11 +175,13 @@
           </div>
         </div>
         <!-- END TEXT BUBBLE - Medium/Small screens -->
-        <div class="tile-next small" style="display:block">
+
+        <div class="tile-next small">
           Next
         </div>
+
       </div>
     </div>
   </div>
 </div>  
-<!-- END TILE QUESTIONS -->
+<!-- END TILE QUESTIONS

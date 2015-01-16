@@ -9,8 +9,8 @@ $(document).ready(function(){
 
 	$body
 	.on('click', '.tile-container', function(){
-		var tileId = $(this).children().eq(1).attr('id');
-	
+		var tileId = $(".ng-scope div", this).attr('id');
+
 		switch(tileId){
 			case 'phone-landscape':
 				if(phoneTog === 0){
