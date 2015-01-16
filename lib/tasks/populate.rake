@@ -33,14 +33,14 @@ namespace :populate do
       sq22q = Question.create(
         node_id: sq22.id,
         question: "You are the chosen one, selected to pick up XXX. There will be X passengers you need to pick up. They will have XXX with them",
-        question_type_id: single_choice.name
+        question_type_id: single_choice.id
       )
 
     sq31 = Node.create(nickname: "SQ 3.1", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "sq-3-3")
       sq31q = Question.create(
         node_id: sq31.id,
         question: "Flight Number XXX from XXX is coming and will land in X. The traffic forecast is XXX.",
-        question_type_id: single_choice.name
+        question_type_id: single_choice.id
       )
 
     sq35 = Node.create(nickname: "SQ 3.5", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "sq-3-5")
@@ -61,7 +61,7 @@ namespace :populate do
       noitf1q = Question.create(
         node_id: noitf1.id,
         question: "To avoid all of this, we're trying to build an airport rail system that would make it easy for a passenger to meet you at a nearby location outside of the airport! \nWould you meet your passenger at this new location outside of the airport in light of the experience you had today?",
-        question_type_id: single_choice.name
+        question_type_id: single_choice.id
       )
         noitf1a1 = Answer.create(question_id: noitf1q.id, answer: "yes", icon_name: nil)
         noitf1a1 = Answer.create(question_id: noitf1q.id, answer: "no", icon_name: nil)
@@ -70,7 +70,7 @@ namespace :populate do
       itf2q = Question.create(
         node_id: itf2.id,
         question: "Imagine that you have the power to customize this off site location. \nPick your top 3 amenities. ",
-        question_type_id: rank.name
+        question_type_id: rank.id
       )
         itf2a1= Answer.create(question_id: itf2q.id, answer: "Free short-term parking", icon_name: nil)
         itf2a2= Answer.create(question_id: itf2q.id, answer: "A way to make sure I know the status of my passenger’s flight.", icon_name: nil)
@@ -141,7 +141,7 @@ namespace :populate do
       a2q = Question.create(
         node_id: a2.id,
         question: "You're circling and don't see your passenger and think they may be late. How do you check for that information?",
-        question_type_id: single_choice.name
+        question_type_id: single_choice.id
       )
         a2a1 = Answer.create(question_id: a2q.id, answer: "Check mobile phone for flight information", icon_name: nil)
         a2a2 = Answer.create(question_id: a2q.id, answer: "Try to reach passenger", icon_name: nil)
@@ -149,15 +149,15 @@ namespace :populate do
 
 
     # ending questions
-    e1 = Node.create(nickname: "E 1", is_decision_point: false , branch_id: ending_questions_branch.id, template_name: "e-1")
-      e1q = Question.create(node_id: e1.id, question: "Passenger Pick Up Success!")
-        e1a1 = Answer.create(question_id: e1q.id, answer: "Next", icon_name: nil)
+    #e1 = Node.create(nickname: "E 1", is_decision_point: false , branch_id: ending_questions_branch.id, template_name: "e-1")
+    #  e1q = Question.create(node_id: e1.id, question: "Passenger Pick Up Success!")
+    #    e1a1 = Answer.create(question_id: e1q.id, answer: "Next", icon_name: nil)
 
     e2 = Node.create(nickname: "E 2", is_decision_point: false , branch_id: ending_questions_branch.id, template_name: "e-2")
       e2q = Question.create(
         node_id: e2.id,
         question: "Based on this scenario, we estimated you have circled around the terminal [X] times before picking up your passenger.\nIs this typical?",
-        question_type_id: single_choice.name
+        question_type_id: single_choice.id
       )
         e2a1 = Answer.create(question_id: e2q.id, answer: "Yes", icon_name: nil)
         e2a2 = Answer.create(question_id: e2q.id, answer: "No", icon_name: nil)
@@ -166,7 +166,7 @@ namespace :populate do
       e3q = Question.create(
         node_id: e3.id,
         question: "Based on this scenario, we estimated you spent [Calculated Game Time in Minutes] getting your passenger at the airport.\nIs this typical?",
-        question_type_id: single_choice.name
+        question_type_id: single_choice.id
       )
         e3a1 = Answer.create(question_id: e3q.id, answer: "Yes", icon_name: nil)
         e3a2 = Answer.create(question_id: e3q.id, answer: "No", icon_name: nil)
@@ -175,7 +175,7 @@ namespace :populate do
       e4q = Question.create(
         node_id: e4.id,
         question: "What was the reason for your last trip to LAX?",
-        question_type_id: single_choice.name
+        question_type_id: single_choice.id
       )
         e4a1 = Answer.create(question_id: e4q.id, answer: "Business or business-related travel", icon_name: nil)
         e4a2 = Answer.create(question_id: e4q.id, answer: "Leisure/vacation/visiting", icon_name: nil)
@@ -187,7 +187,7 @@ namespace :populate do
       e5q = Question.create(
         node_id: e5.id,
         question: "About how often do you go to LAX?",
-        question_type_id: single_choice.name
+        question_type_id: single_choice.id
       )
         e5a1 = Answer.create(question_id: e5q.id, answer: "Less than once a year", icon_name: nil)
         e5a2 = Answer.create(question_id: e5q.id, answer: "1 - 2 times a year", icon_name: nil)
@@ -199,7 +199,7 @@ namespace :populate do
       e6q = Question.create(
         node_id: e6.id,
         question: "And finally, my esteemed driver: How old are you?",
-        question_type_id: single_choice.name
+        question_type_id: single_choice.id
       )
         e6a1 = Answer.create(question_id: e6q.id, answer: "18 - 24", icon_name: nil)
         e6a2 = Answer.create(question_id: e6q.id, answer: "25 - 34", icon_name: nil)
@@ -213,7 +213,7 @@ namespace :populate do
       e7q = Question.create(
         node_id: e7.id,
         question: "You made it home!\nThank you for playing. All this information will help LAX better serve you in the future. If you want to keep in touch with our progress towards the new location please join our mailing list or visit us at http://connectinglax.com",
-        question_type_id: single_choice.name
+        question_type_id: single_choice.id
       )
         e7a1 = Answer.create(question_id: e7q.id, answer: "Email Input", icon_name: nil)
 

@@ -1,5 +1,4 @@
 json.array! @nodes do |node|
-  binding.pry
   json.node_id node.id
   json.is_decision_point node.is_decision_point
 
@@ -14,6 +13,7 @@ json.array! @nodes do |node|
       json.destination_node_id decision.destination_node.id
     end
   elsif !node.is_decision_point
+    binding.pry
     json.question do
       json.id node.question.id
       json.question_type node.question.question_type.name
