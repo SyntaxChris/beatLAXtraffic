@@ -21,7 +21,7 @@ namespace :populate do
     # TODO: add icon names for all
 
     sq1 = Node.create(nickname: "SQ 1", is_decision_point: false, branch_id: scenario_questions_branch.id, template_name: "sq-1")
-      sq1q = Question.create(node_id: sq1.id, question: "About how far away from LAX do you live?", question_type_id: single_choice.name)
+      sq1q = Question.create(node_id: sq1.id, question: "About how far away from LAX do you live?", question_type_id: single_choice.id)
       # ^ needs a question type
         sq1a1 = Answer.create(question_id: sq1q.id, answer: "Less than 30 minute drive away", icon_name: nil)
         sq1a2 = Answer.create(question_id: sq1q.id, answer: "30 - 60 minutes away", icon_name: nil)
@@ -44,11 +44,11 @@ namespace :populate do
       )
 
     sq35 = Node.create(nickname: "SQ 3.5", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "sq-3-5")
-      sq35q = Question.create(node_id: sq35.id, question: "There is a friend in the car helping you with this pick-up ", question_type_id: single_choice.name)
+      sq35q = Question.create(node_id: sq35.id, question: "There is a friend in the car helping you with this pick-up ", question_type_id: single_choice.id)
       # ^ This will either say this or an alternate based on a random generation
 
     gq1 = Node.create(nickname: "GQ 1", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "gq-1")
-      gq1q = Question.create(node_id: gq1.id, question: "Why do you choose this strategy? Select all that apply (minimum 1)", question_type_id: many_choice.name)
+      gq1q = Question.create(node_id: gq1.id, question: "Why do you choose this strategy? Select all that apply (minimum 1)", question_type_id: many_choice.id)
         gq1a1 = Answer.create(question_id: gq1q.id, answer: "To minimize the hassle for me", icon_name: nil)
         gq1a2 = Answer.create(question_id: gq1q.id, answer: "To make it convenient for my passenger", icon_name: nil)
         gq1a3 = Answer.create(question_id: gq1q.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil)
@@ -83,14 +83,14 @@ namespace :populate do
 
     # wait offsite
     c1 = Node.create(nickname: "C 1", is_decision_point: false , branch_id: wait_offsite_branch.id, template_name: "c-1")
-      c1q = Question.create(node_id: c1.id, question: "Where do you usually wait for your passenger?", question_type_id: single_choice.name)
+      c1q = Question.create(node_id: c1.id, question: "Where do you usually wait for your passenger?", question_type_id: single_choice.id)
         c1a1= Answer.create(question_id: c1q.id, answer: "Cellphone waiting lot", icon_name: nil)
         c1a2= Answer.create(question_id: c1q.id, answer: "Roadside near the airport", icon_name: nil)
         c1a3= Answer.create(question_id: c1q.id, answer: "Nearby Store", icon_name: nil)
         c1a4= Answer.create(question_id: c1q.id, answer: "Nearby Restaurant", icon_name: nil)
 
     c2 = Node.create(nickname: "C 2", is_decision_point: false , branch_id: wait_offsite_branch.id, template_name: "c-2")
-      c2q = Question.create(node_id: c2.id, question: "How long do you expect to wait before driving into the terminal area?", question_type_id: single_choice.name)
+      c2q = Question.create(node_id: c2.id, question: "How long do you expect to wait before driving into the terminal area?", question_type_id: single_choice.id)
         c2a1= Answer.create(question_id: c2q.id, answer: "Less than 15 minutes", icon_name: nil)
         c2a2= Answer.create(question_id: c2q.id, answer: "15 - 30 minutes", icon_name: nil)
         c2a3= Answer.create(question_id: c2q.id, answer: "30 - 60 minutes", icon_name: nil)
@@ -98,12 +98,12 @@ namespace :populate do
         c2a4= Answer.create(question_id: c2q.id, answer: "More than 90 minutes", icon_name: nil)
 
     c4 = Node.create(nickname: "C 4", is_decision_point: false , branch_id: wait_offsite_branch.id, template_name: "c-4")
-      c4q = Question.create(node_id: c4.id, question: "What is the longest you are willing to wait for your passenger?", question_type_id: single_choice.name)
+      c4q = Question.create(node_id: c4.id, question: "What is the longest you are willing to wait for your passenger?", question_type_id: single_choice.id)
         c4a1= Answer.create(question_id: c4q.id, answer: "Set duration...", icon_name: nil)
 
     # park and meet
     b1 = Node.create(nickname: "B 1", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-1")
-      b1q = Question.create(node_id: b1.id, question: "Why do you choose to park your car? Select all that apply:", question_type_id: many_choice.name)
+      b1q = Question.create(node_id: b1.id, question: "Why do you choose to park your car? Select all that apply:", question_type_id: many_choice.id)
       # ^ this will need alt question text
         b1a1= Answer.create(question_id: b1q.id, answer: "When convenient parking is available", icon_name: nil)
         b1a2= Answer.create(question_id: b1q.id, answer: "To avoid driving in traffic", icon_name: nil)
@@ -111,7 +111,7 @@ namespace :populate do
         b1a4= Answer.create(question_id: b1q.id, answer: "Other (Specify)", icon_name: nil)
 
     b2 = Node.create(nickname: "B 2", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-2")
-      b2q = Question.create(node_id: b2.id, question: "How long do you usually park for?", question_type_id: single_choice.name)
+      b2q = Question.create(node_id: b2.id, question: "How long do you usually park for?", question_type_id: single_choice.id)
       # ^ this will need alt question text
         b2a1= Answer.create(question_id: b2q.id, answer: "Less than 30 minutes", icon_name: nil)
         b2a2= Answer.create(question_id: b2q.id, answer: "30 - 60 minutes", icon_name: nil)
@@ -119,7 +119,7 @@ namespace :populate do
         b2a4= Answer.create(question_id: b2q.id, answer: "More than 90 minutes", icon_name: nil)
 
     b3 = Node.create(nickname: "B 3", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-3")
-      b3q = Question.create(node_id: b3.id, question: "What are you doing while you're parked? Select all that apply:", question_type_id: many_choice.name)
+      b3q = Question.create(node_id: b3.id, question: "What are you doing while you're parked? Select all that apply:", question_type_id: many_choice.id)
         b3a1= Answer.create(question_id: b3q.id, answer: "Waiting in my car", icon_name: nil)
         b3a2= Answer.create(question_id: b3q.id, answer: "Waiting in the terminal", icon_name: nil)
         b3a3= Answer.create(question_id: b3q.id, answer: "Shopping in the terminal", icon_name: nil)
@@ -127,12 +127,12 @@ namespace :populate do
         b3a5= Answer.create(question_id: b3q.id, answer: "Other (Specify)", icon_name: nil)
 
     b4 = Node.create(nickname: "B 4", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-4")
-      b4q = Question.create(node_id: b4.id, question: "What is the longest you are willing to look for parking?", question_type_id: single_choice.name)
+      b4q = Question.create(node_id: b4.id, question: "What is the longest you are willing to look for parking?", question_type_id: single_choice.id)
         b4a1 = Answer.create(question_id: b4q.id, answer: "Set duration...", icon_name: nil)
 
     # hope to catch
     a1 = Node.create(nickname: "A 1", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id, template_name: "a-1")
-      a1q = Question.create(node_id: a1.id, question: "How well do you think this strategy will work?", question_type_id: single_choice.name)
+      a1q = Question.create(node_id: a1.id, question: "How well do you think this strategy will work?", question_type_id: single_choice.id)
         a1a1 = Answer.create(question_id: a1q.id, answer: "Works like a charm every time", icon_name: nil)
         a1a2 = Answer.create(question_id: a1q.id, answer: "I might have to circle a few times, but it will eventually work", icon_name: nil)
         a1a3 = Answer.create(question_id: a1q.id, answer: "It's always bad, but it's better than parking", icon_name: nil)

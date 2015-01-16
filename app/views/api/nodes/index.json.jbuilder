@@ -1,4 +1,5 @@
 json.array! @nodes do |node|
+  binding.pry
   json.node_id node.id
   json.is_decision_point node.is_decision_point
 
