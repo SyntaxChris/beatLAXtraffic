@@ -31,11 +31,19 @@ angular.module('lawaApp')
       $scope.setCurrentNodeById = function(nodeId){
         $scope.currentNode = $scope.fetchNodeById(nodeId);
         $scope.currentTemplateName = $scope.getTemplateName(nodeId);
+        console.log($scope.currentNode);
       };
 
       $scope.setCurrentDecision = function(decision){
         $scope.currentDecisionDestination = $scope.fetchNodeById(decision.destination_node_id);
         $scope.submit(decision.id);
+      };
+
+      // wrapper "add answer" method
+      $scope.chooseAnswer = function(answer){
+      //  within, determine if multiple choice or not
+      //    - if so, use addAnserToCurrent
+      //    - otherwise merely select/replace answer
       };
 
       $scope.addAnswerToCurrentAnswers = function(answer){
@@ -105,7 +113,6 @@ angular.module('lawaApp')
       <% end %>
 
       $scope.getTemplateName = function(nodeId){
-        debugger;
         return templates[nodeId].template;
       }
 
