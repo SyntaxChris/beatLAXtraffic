@@ -22,8 +22,7 @@ $(document).ready(function(){
 
  	$body.on('click', '.spin-button', function(){
  		var spinButtonId = $(this).attr("id");
-		// var chanceLogic = Math.floor(Math.random()*2);
-		var chanceLogic = 1;
+		var chanceLogic = Math.floor(Math.random()*2);
 
 
 
