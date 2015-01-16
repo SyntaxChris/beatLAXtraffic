@@ -11,9 +11,10 @@ describe Respondent do
         current_node_id: 7,
         flight_code: "JFK",
         passenger_count: 2,
-        luggage_count: 4,
+        luggage_count: 1,
+        luggage_type: 'Large Suitcase',
+        picking_up_number: 2,
         original_who_picking_up: "Boss",
-        final_who_picking_up: "Friend",
         times_circled: 3,
         originating_location: "JFK",
         landing_time: 120,
@@ -51,15 +52,19 @@ describe Respondent do
     end
 
     it "has a number of luggage" do
-      expect(respondent.luggage_count).to eq 4
+      expect(respondent.luggage_count).to eq 1
+    end
+
+    it "has a type of luggage" do
+      expect(respondent.luggage_type).to eq "Large Suitcase"
+    end
+
+    it "has a pickup target number" do
+      expect(respondent.picking_up_number).to eq 2
     end
 
     it "has an original pickup target party" do
       expect(respondent.original_who_picking_up).to eq "Boss"
-    end
-
-    it "has a final pickup target party" do
-      expect(respondent.final_who_picking_up).to eq "Friend"
     end
 
     it "has an originating_location" do
@@ -88,10 +93,49 @@ describe Respondent do
   end
 
   describe "Features" do
-
     it "on creation, current_node_id equals the starting node" do
       new_respondent = Respondent.create
       expect(new_respondent.current_node_id).to eq 1
+    end
+
+    it "on creation, 'flight_code' is set" do
+      new_respondent = Respondent.create
+      expect(new_respondent.flight_code).to be_between(Respondent::FLIGHT_NUMBERS.min, Respondent::FLIGHT_NUMBERS.max)
+    end
+
+    it "on creation, 'luggage_count' is set" do
+      new_respondent = Respondent.create
+      expect(new_respondent.luggage_count).to be_between(1,3)
+    end
+
+    it "on creation, 'luggage_type' is set" do
+      new_respondent = Respondent.create
+      expect(Respondent::LUGGAGE_TYPES).to include(new_respondent.luggage_type)
+    end
+
+    it "on creation, 'originating_location' is set" do
+      new_respondent = Respondent.create
+      expect(Respondent::ORIGINATING_LOCATIONS).to include(new_respondent.originating_location)
+    end
+
+    it "on creation, 'picking_up_number' is set" do
+      new_respondent = Respondent.create
+      expect(new_respondent.picking_up_number).to be_between(1,3)
+    end
+
+    it "on creation, 'original_who_picking_up' is set" do
+      new_respondent = Respondent.create
+      expect(Respondent::PICKUP_TARGETS).to include(new_respondent.original_who_picking_up)
+    end
+
+    it "on creation, 'travel_companion' is set" do
+      new_respondent = Respondent.create
+      expect([true, false]).to include(new_respondent.travel_companion)
+    end
+
+    it "on creation, 'landing_time' is set" do
+      new_respondent = Respondent.create
+      expect(Respondent::TIME_TILL_LANDS).to include(new_respondent.landing_time)
     end
 
     describe "get_or_create_by_session(session_id)" do

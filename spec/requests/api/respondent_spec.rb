@@ -4,7 +4,14 @@ describe "respondents API" do
   describe "find_or_create respondent" do
     context "when a resopndent is new" do
       it "returns an new respondent's id and session id" do
-        existing = create(:respondent)
+        existing = create(
+          :respondent,
+          flight_code: '1234',
+          passenger_count: 1,
+          luggage_count: 2,
+          original_who_picking_up: 'Boss',
+          originating_location: 'MEX'
+        )
         previous_count = Respondent.count
         get '/api/respondents/get_or_create', format: :json
 
@@ -13,6 +20,11 @@ describe "respondents API" do
         expect(cookies["survey_session_id"]).to eq new_respondent.session_id
         expect(json['session_id']).to eq new_respondent.session_id
         expect(json['respondent_id']).to eq new_respondent.id
+        expect(json['flight_code']).to eq '1234'
+        expect(json['passenger_count']).to eq 1
+        expect(json['luggage_count']).to eq 2
+        expect(json['original_who_picking_up']).to eq 'Boss'
+        expect(json['originating_location']).to eq 'MEX'
       end
     end
 
