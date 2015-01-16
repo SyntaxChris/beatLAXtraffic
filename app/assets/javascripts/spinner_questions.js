@@ -126,24 +126,54 @@ $(document).ready(function(){
  	});
 
 
- 	$body.on('click', ".continue-btn", function(){
- 		$(".wheel").removeClass("full");
- 		$(".wheel").removeClass("not-full");
- 		$(".wheel").removeClass("there");
- 		$(".wheel").removeClass("not-not");
- 		$(".lose").css("fill", "#AAAAAA");
- 		$(".win").css("fill", "#ECF0F1");
- 		$(".win.parking").css("fill", "#AAAAAA");
- 		$(".lose.parking").css("fill", "#ECF0F1");
- 		$(".yes-font").css("fill", "#AAAAAA");
- 		$(".full-font").css("fill", "#D89235");
- 		$(".chance-time").show();
-		$(".spin-button").show();
-		$(".spinner-components").show();
-		$(".fail").hide();
-		$(".congrats").hide();
-		$(".trophey").hide();
+ 	// $body.on('click', ".continue-btn", function(){
+ 	// 	$(".wheel").removeClass("full");
+ 	// 	$(".wheel").removeClass("not-full");
+ 	// 	$(".wheel").removeClass("there");
+ 	// 	$(".wheel").removeClass("not-not");
+ 	// 	$(".lose").css("fill", "#AAAAAA");
+ 	// 	$(".win").css("fill", "#ECF0F1");
+ 	// 	$(".win.parking").css("fill", "#AAAAAA");
+ 	// 	$(".lose.parking").css("fill", "#ECF0F1");
+ 	// 	$(".yes-font").css("fill", "#AAAAAA");
+ 	// 	$(".full-font").css("fill", "#D89235");
+ 	// 	$(".chance-time").show();
+		// $(".spin-button").show();
+		// $(".spinner-components").show();
+		// $(".fail").hide();
+		// $(".congrats").hide();
+		// $(".trophey").hide();
+ 	// });
+
+ 	// $body.on('click', '#spin-pickup-win, #spin-pickup-lose', function(){
+
+ 	// 	$(".failed-spin").hide();
+
+ 	// 	$(".wheel").removeClass("full");
+ 	// 	$(".wheel").removeClass("not-full");
+ 	// 	$(".wheel").removeClass("there");
+ 	// 	$(".wheel").removeClass("not-not");
+ 		
+ 	// 	$(".lose").css("fill", "#AAAAAA");
+ 	// 	$(".win").css("fill", "#ECF0F1");
+ 	// 	$(".win.parking").css("fill", "#AAAAAA");
+ 	// 	$(".lose.parking").css("fill", "#ECF0F1");
+ 	// 	$(".yes-font").css("fill", "#AAAAAA");
+ 	// 	$(".full-font").css("fill", "#D89235");
+
+ 	// 	$(".fail").hide();
+		// $(".congrats").hide();
+		// $(".trophey").hide();
+
+ 	// });
+
+ 	$body.on('click', '#spin-pickup-lose', function(){
+ 		console.log('clicked continue');
+ 		// clear fail
+    	$(".fail").hide();
+    	$(".failed-spin").hide();
  	});
 
+ 	
 
 });
