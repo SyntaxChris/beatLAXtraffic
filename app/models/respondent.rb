@@ -36,6 +36,7 @@ class Respondent < ActiveRecord::Base
     self.original_who_picking_up = Respondent.evenly_distributed_pickup_target
     self.travel_companion = [true,false].sample
     self.landing_time = TIME_TILL_LANDS.sample
+    self.save
   end
 
   def self.evenly_distributed_pickup_target
@@ -49,34 +50,21 @@ class Respondent < ActiveRecord::Base
       "Friend" => friend.count,
       "Coworker" => coworker.count
     }
+
+    # get single minimum, to be used later
     winner = results.min_by{|k,v| v}
+
+    # get the NUMBER of the minimum count
     minimum = results.values.sort.min
 
+    # if there are more than one of the minimums...
     if results.values.count{|n| n == minimum} > 1
+      # get the ties and give back a random one of them
       ties = results.select{|name, count| count == minimum}
       return ties.keys.sample
     else
+      # otherwise, use the single minimum from before
       return winner.first
     end
   end
 end
-
-# flight number: xxx - should be any INT between 100 - 999
-# airport codes:
-# - JFK (New York City)
-# - DFW (Dallas)
-# - ORD (Chicago)
-# - HNL (Honolulu)
-# - MEX (Mexico City)
-# - YVR (Vancouver)
-# - HKG (Hong Kong)
-# - LHR (London)
-# - SYD (Sydney)
-# passenger number: 1,2,3
-# passenger type: pending
-# luggage_count: 1,2,3
-# luggage_type:
-# - Carry-on bag
-# - Large Suitcase
-# FRIENDS, COWORKERS, PARENTS
-
