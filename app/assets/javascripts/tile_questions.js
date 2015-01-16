@@ -1,32 +1,68 @@
 $(document).ready(function(){
-
+	var $body = $('body');
 	var inputToggle = 0;
-	$("[id='other-landscape']").click(function(){
-		if(inputToggle === 0){
-			$("#user-text-input").fadeIn(200);
-			inputToggle = 1;
-		}
-		else{
-			$("#user-text-input").fadeOut(1000);
-			inputToggle = 0;
-		}
-	});
 
-	$('.other-submit').click(function() {
-	    $('[id=user-text-input]').hide();
-	    $('[id=other-small-textbox]').hide();
-	    $('.next').show();
-	    if (otherCheck === 0){
-			$(".unchecked-other-tile svg path").attr("fill", "#AA75D3");
-    		$(".unchecked-other-tile svg polyline").attr("stroke", "white");
-    		otherCheck = 1;
-    	}
-    	else {
-			$(".unchecked-other-tile svg path").attr("fill", "#FFFFFF");
-    		$(".unchecked-other-tile svg polyline").attr("stroke", "#757575");
-    		otherCheck = 0;
-    	}
-	});
+	$body
+		.on('click', "[id='other-landscape']", function(){
+			if(inputToggle === 0){
+				$("#user-text-input").fadeIn(200);
+				inputToggle = 1;
+			}
+			else{
+				$("#user-text-input").fadeOut(1000);
+				inputToggle = 0;
+			}
+		})
+		.on('click', '.other-submit', function(){
+			$('[id=user-text-input]').hide();
+		    $('[id=other-small-textbox]').hide();
+		    $('.next').show();
+
+		    if (otherCheck === 0){
+				$(".unchecked-other-tile svg path").attr("fill", "#AA75D3");
+	    		$(".unchecked-other-tile svg polyline").attr("stroke", "white");
+	    		otherCheck = 1;
+	    	}
+	    	else {
+				$(".unchecked-other-tile svg path").attr("fill", "#FFFFFF");
+	    		$(".unchecked-other-tile svg polyline").attr("stroke", "#757575");
+	    		otherCheck = 0;
+    		}
+
+		})
+		.on('click', "[id=small-other]", function(){
+			
+		})
+		.on('click', "[id='other-landscape']", function(){
+			
+		})
+
+	// $("[id='other-landscape']").click(function(){
+	// 	if(inputToggle === 0){
+	// 		$("#user-text-input").fadeIn(200);
+	// 		inputToggle = 1;
+	// 	}
+	// 	else{
+	// 		$("#user-text-input").fadeOut(1000);
+	// 		inputToggle = 0;
+	// 	}
+	// });
+
+	// $('.other-submit').click(function() {
+	//     $('[id=user-text-input]').hide();
+	//     $('[id=other-small-textbox]').hide();
+	//     $('.next').show();
+	//     if (otherCheck === 0){
+	// 		$(".unchecked-other-tile svg path").attr("fill", "#AA75D3");
+ //    		$(".unchecked-other-tile svg polyline").attr("stroke", "white");
+ //    		otherCheck = 1;
+ //    	}
+ //    	else {
+	// 		$(".unchecked-other-tile svg path").attr("fill", "#FFFFFF");
+ //    		$(".unchecked-other-tile svg polyline").attr("stroke", "#757575");
+ //    		otherCheck = 0;
+ //    	}
+	// });
 	$('[id=small-other]').click(function(){
 		$('[id=other-small-textbox]').show();
 	});
