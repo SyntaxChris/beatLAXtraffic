@@ -24,7 +24,7 @@ angular.module('lawaApp')
       };
 
       $scope.fetchNodeById = function(nodeId){
-        var currentNode = _.where($scope.nodes, {node_id: nodeId})
+        var currentNode = _.where($scope.nodes, {node_id: nodeId});
         return currentNode[0];
       };
 
