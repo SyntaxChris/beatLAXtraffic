@@ -19,7 +19,7 @@ $(document).ready(function(){
 		$body.trigger('findSpecificNode',[node]);
 	}
 
- 	$('.spin-button').click(function(){
+ 	$body.on('click', '.spin-button', function(){
  		var spinButtonId = $(this).attr("id");
 		var chanceLogic = Math.floor(Math.random()*2);
 
@@ -126,7 +126,7 @@ $(document).ready(function(){
  	});
 
 
- 	$(".continue-btn").click(function(){
+ 	$body.on('click', ".continue-btn", function(){
  		$(".wheel").removeClass("full");
  		$(".wheel").removeClass("not-full");
  		$(".wheel").removeClass("there");

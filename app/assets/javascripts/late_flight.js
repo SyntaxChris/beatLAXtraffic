@@ -1,10 +1,11 @@
 $(document).ready(function(){
   //set some vars
-  var $lateFlight = $('#late-flight');
+  var $lateFlight = $('#late-flight'),
+      $body = $('body');
 
   //listeners
-  $lateFlight
-    .on('click', '.select-btn', toggleSelection);
+  $body
+    .on('click', '#late-flight .select-btn', toggleSelection);
 
   function toggleSelection(e){
     e.preventDefault();
@@ -14,10 +15,10 @@ $(document).ready(function(){
 
     if ($btn.hasClass('selected')) {return;}
 
-    $lateFlight.find('.selected').toggleClass('selected', false);
+    $body.find('#late-flight .selected').toggleClass('selected', false);
     $btn.toggleClass('selected', true);
 
-    $lateFlight.find('#x-btn-late-flight-next').fadeIn();
+    $body.find('#x-btn-late-flight-next').fadeIn();
 
   }
 });

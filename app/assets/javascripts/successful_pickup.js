@@ -1,9 +1,10 @@
 $(document).ready(function(){
   //set some vars
-  var $successfulPickup = $('#successful-pickup');
+  var $successfulPickup = $('#successful-pickup'),
+      $body = $('body');
 
   //listeners
-  $successfulPickup.on('click', '.red-car', animateRedCar);
+  $body.on('click', '#successful-pickup .red-car', animateRedCar);
 
   function animateRedCar(e){
     e.preventDefault();

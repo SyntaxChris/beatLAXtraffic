@@ -1,8 +1,9 @@
 $(document).ready(function(){
 	var otherBoxCount = 0;
   var qClicks = 0;
+  var $body = $('body');
  	
-  	$("#other-last").click(function(){
+  	$body.on('click',"#other-last", function(){
   		if(otherBoxCount === 0){
   			$("#last-questions-other-container").show();
   		}
@@ -11,30 +12,30 @@ $(document).ready(function(){
   		}
   	}); 
 
-  	$("#last-other-cancel").click(function(){
+  	$body.on('click', "#last-other-cancel", function(){
   		$("#last-questions-other-container").hide();
   	});
 
-  	$("#last-other-save").click(function(){
+  	$body.on('click', "#last-other-save", function(){
   		$("#last-questions-other-container").hide();
   	});
 
-  	$(".question-wrapper-1").click(function(){
+  	$body.on('click', ".question-wrapper-1", function(){
   		$("#question-set-1").hide();
   		$("#question-set-2").fadeIn();
   	});
 
-  	$("#last-other-save").click(function(){
+  	$body.on('click', "#last-other-save", function(){
   		$("#question-set-1").hide();
   		$("#question-set-2").fadeIn();
   	});
 
-  	$(".question-wrapper-2").click(function(){
+  	$body.on('click', ".question-wrapper-2", function(){
   		$("#question-set-2").hide();
   		$("#question-set-3").fadeIn();
   	});
 
-    $('.question-wrapper-3').click(function(){
+    $body.on('click', '.question-wrapper-3', function(){
       $('.question-wrapper-3').removeClass('q3-clicked');
       $(this).addClass('q3-clicked');
       $('.next').fadeIn();
