@@ -11,6 +11,9 @@ $(document).ready(function(){
     e.stopImmediatePropagation();
 
     $(this).toggleClass('animate', true);
+    setTimeout(function(){
+      $body.trigger('findNextNode');
+    },1200);
   }
 
 });

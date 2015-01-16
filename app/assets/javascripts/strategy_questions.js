@@ -124,7 +124,7 @@ $(document).ready(function(){
 
     $body.on('click', ".bubble-icon-container", function(){
     	var toggleTally = guyToggle + stopWatchToggle + carParkingToggle + hassleToggle + otherToggle;
-    	debugger;
+    	// debugger;
     	if(toggleTally === 0){
  			$(".next#strategy-large-temp").hide();
  		}
