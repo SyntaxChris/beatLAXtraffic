@@ -39,24 +39,32 @@ angular.module('lawaApp')
         $scope.submit(decision.id);
       };
 
-      // wrapper "add answer" method
-      $scope.chooseAnswer = function(answer){
-      //  within, determine if multiple choice or not
-      //    - if so, use addAnserToCurrent
-      //    - otherwise merely select/replace answer
+      $scope.addMultipleChoice = function(answer) {
+        if (_.findWhere($scope.currentAnswers, answer)){
+          // answer is already in current list, remove it.
+          $scope.currentAnswers = _.without($scope.currentAnswers, _.findWhere($scope.currentAnswers, answer));
+        } else {
+          $scope.currentAnswers.push(answer);
+        }
       };
 
-      $scope.addAnswerToCurrentAnswers = function(answer){
+      $scope.addSingleChoice = function(answer) {
+        $scope.currentAnswers = [answer];
+      };
 
-        // if this is a multiple choice:
-        // (make below into a single method?)
-          if (_.findWhere($scope.currentAnswers, answer)){
-            // answer is already in current list, remove it.
-            $scope.currentAnswers = _.without($scope.currentAnswers, _.findWhere($scope.currentAnswers, answer));
-          } else {
-            $scope.currentAnswers.push(answer);
-          }
-        // otherwise, select single and replace upon next single click
+      $scope.addRankedChoice = function(answer, rank) {
+        //TODO: need function for rank
+        debugger;
+      }
+
+      $scope.addAnswerToCurrentAnswers = function(answer, rank){
+        if($scope.currentNode.question.question_type === "select-one") {
+          $scope.addSingleChoice(answer);
+        } else if ($scope.currentNode.question_type === "select-multiple") {
+          $scope.addMultipleChoice(answer);
+        } else if ($scope.currentNode.question_type === "rank") {
+          $scope.addRankedChoice(answer, rank);
+        };
       };
 
       $scope.goToNextNode = function(){
