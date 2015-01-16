@@ -5,6 +5,7 @@ $(document).ready(function(){
 			.on('click', '#spin-pickup-win', handleNextNode)
 			.on('click', '#spin-pickup-lose', handleNextNode);
 
+
 	function handleNextNode(e){
 		e.preventDefault();
 		e.stopImmediatePropagation();
@@ -20,17 +21,20 @@ $(document).ready(function(){
 		resetSpinner();
 	}
 
+
  	$body.on('click', '.spin-button', function(){
  		var spinButtonId = $(this).attr("id");
- 		var chanceLogic = $('#spinner-chance').data('outcome');
-		// var chanceLogic = Math.floor(Math.random()*2);
+ 		var parkingLogic = $('#parking-chance').data('outcome');
+ 		var pickupLogic = $('#pickup-chance').data('outcome');
+
+		// var parkingLogic = Math.floor(Math.random()*2);
 
 
 
 
 		// parking spinner
 		if(spinButtonId === 'parking'){
-			if (chanceLogic === 1){
+			if (parkingLogic === 1){
 		 		$(".wheel").addClass("full");
 				setTimeout(
 			 		function(){
@@ -80,7 +84,7 @@ $(document).ready(function(){
 
 		// pickup spinner
 		else if (spinButtonId === 'pickup'){
-			if (chanceLogic === 1){
+			if (pickupLogic === 1){
 		 		$(".wheel").addClass("not-there");
 
 
@@ -132,14 +136,14 @@ $(document).ready(function(){
 
  	function resetSpinner(){
     	$(".failed-spin").hide();
- 		// $(".wheel").removeClass("full");
- 		// $(".wheel").removeClass("not-full");
- 		// $(".wheel").removeClass("there");
+ 		$(".wheel").removeClass("full");
+ 		$(".wheel").removeClass("not-full");
+ 		$(".wheel").removeClass("there");
  		$(".wheel").removeClass("not-there");
  		$(".lose").css("fill", "#AAAAAA");
  		$(".win").css("fill", "#ECF0F1");
- 		// $(".win.parking").css("fill", "#AAAAAA");
- 		// $(".lose.parking").css("fill", "#ECF0F1");
+ 		$(".win.parking").css("fill", "#AAAAAA");
+ 		$(".lose.parking").css("fill", "#ECF0F1");
  		$(".yes-font").css("fill", "#AAAAAA");
  		$(".full-font").css("fill", "#D89235");
  		$(".chance-time").show();
