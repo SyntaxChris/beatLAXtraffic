@@ -90,10 +90,9 @@ angular.module('lawaApp')
         });
       };
 
-
-        $scope.getMinigameName = function(area){
-            return minigames[area.minigame_type_id].name;
-        };
+      $scope.getMinigameName = function(area){
+          return minigames[area.minigame_type_id].name;
+      };
 
       var templates = {}
       <% Node.all.each do |node| %>

@@ -1,0 +1,187 @@
+<!-- TILE QUESTIONS -->
+<div id="tile-questions">
+  <div class="row">
+    <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
+      <div id="question-header-landscape">
+          <h3 class="main-question" id="main-landscape">What are you doing while you wait?</h3>
+          <h5 id="foot-landscape">Select all that apply</h5> 
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 medium-12 small-12 columns">
+      <div class="row top">
+        <div class="large-4 medium-6 small-6 columns">
+          <div class="tile-container tile-1">
+            <div class="check-mark-container">
+              <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+            </div>
+            <div ng-include="'<%= asset_path 'svgs/_phone.html' %>'"></div>
+          </div>
+          <div class="row tile-title" style="font-size: 2vw">
+            On my phone
+          </div>
+        </div>
+
+        <div class="large-4 medium-6 small-6 columns">
+          <div class="tile-container tile-2">
+            <div class="check-mark-container">
+              <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+            </div>
+            <div ng-include="'<%= asset_path 'svgs/_shop.html' %>'"></div>
+          </div>
+          <div class="row tile-title" style="font-size: 2vw">
+            Shop in the terminal
+          </div>
+        </div>
+
+        <div class="show-for-large-only">
+          <div class="large-4 columns">
+            <div class="tile-container tile-3">
+              <div class="check-mark-container">
+                <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+              </div>
+              <div ng-include="'<%= asset_path 'svgs/_hangout.html' %>'"></div>
+            </div>
+            <div class="row tile-title" style="font-size: 2vw">
+              Hang out
+            </div>
+          </div>
+        </div>  
+      </div>
+
+      <div class="row">
+        <div class="show-for-large-only">
+         <div class="large-4 medium-6 small-6 columns">
+            <div class="tile-container tile-4">
+              <div class="check-mark-container">
+                <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+              </div>
+              <div ng-include="'<%= asset_path 'svgs/_eat.html' %>'"></div>
+            </div>
+            <div class="row tile-title" style="font-size: 2vw">
+              Eat or drink
+            </div>
+          </div> 
+   
+          <div class="large-4 medium-6 small-6 columns">
+            <!-- always other -->
+            <div class="tile-container tile-5">
+              <div class="check-mark-container">
+                <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+              </div>
+              <div ng-include="'<%= asset_path 'svgs/_other.html' %>'"></div>
+              <div class="row tile-title" style="font-size: 2vw">
+                Other (Specify)
+              </div>
+            </div>
+          </div> 
+          <!-- === -->
+
+         
+          <div class="large-4 columns">
+
+            <!-- TEXT BUBBLE -->
+            <div class="other-txt-bbl" style="display: none">
+              <textarea class="purple" id="tile-text" cols="1" rows="3" maxlength="140" placeholder="Please write here"></textarea>
+              <div class="char-count">
+                140 Characters left
+              </div>
+              <div class="row">
+                <div class="large-6 columns bbl-btn">
+                  <div class="bbl-btn cancel" style="background-color: #B2C4D4">
+                    Cancel
+                  </div>
+                </div>
+                <div class="large-6 columns bbl-btn">
+                  <div class="bbl-btn save" style="background-color: #AA75D3">
+                    Save
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END TEXT BUBBLE -->
+
+            <div class="tile-next">
+              Next
+            </div>
+
+          </div> 
+
+        </div>
+
+        <div class="hide-for-large-only">
+          <div class="large-4 medium-6 small-6 columns">
+            <div class="tile-container tile-3">
+              <div class="check-mark-container">
+                <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+              </div>
+              <div ng-include="'<%= asset_path 'svgs/_hangout.html' %>'"></div>
+            </div>
+            <div class="row tile-title" style="font-size: 2vw">
+              Hang out
+            </div>
+          </div>    
+
+          <div class="large-4 medium-6 small-6 columns">
+            <div class="tile-container tile-4">
+              <div class="check-mark-container">
+                <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+              </div>
+              <div ng-include="'<%= asset_path 'svgs/_eat.html' %>'"></div>
+            </div>
+            <div class="row tile-title" style="font-size: 2vw">
+              Eat or drink
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hide-for-large-only">
+        <div class="row">
+          <div class="medium-6 small-6 medium-centered small-centered columns">
+            <!-- always other -->
+            <div class="tile-container tile-5">
+              <div class="check-mark-container">
+                <div ng-include="'<%= asset_path 'svgs/_unchecked.html' %>'"></div>
+              </div>
+              <div ng-include="'<%= asset_path 'svgs/_other.html' %>'"></div>
+            </div>
+            <div class="row tile-title other">
+              Other (Specify)
+            </div>
+            <!-- === -->
+          </div>
+        </div>
+
+        <!-- TEXT BUBBLE - Medium/Small screens -->
+        <div class="other-txt-bbl-sm" style="display:none">
+          <textarea class="purple small" cols="1" rows="3" maxlength="140" placeholder="Please write here"></textarea>
+          <div class="char-count">
+            140 Characters left
+          </div>
+          <div class="row">
+            <div class="medium-6 small-6 columns bbl-btn">
+              <div class="bbl-btn cancel" style="background-color: #B2C4D4">
+                Cancel
+              </div>
+            </div>
+            <div class="medium-6 small-6 columns bbl-btn">
+              <div class="bbl-btn save" style="background-color: #AA75D3">
+                Save
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END TEXT BUBBLE - Medium/Small screens -->
+
+        <div class="tile-next small">
+          Next
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>  
+<!-- END TILE QUESTIONS
