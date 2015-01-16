@@ -24,7 +24,7 @@ angular.module('lawaApp')
       };
 
       $scope.fetchNodeById = function(nodeId){
-        var currentNode = _.where($scope.nodes, {node_id: nodeId})
+        var currentNode = _.where($scope.nodes, {node_id: nodeId});
         return currentNode[0];
       };
 
@@ -90,10 +90,9 @@ angular.module('lawaApp')
         });
       };
 
-
-        $scope.getMinigameName = function(area){
-            return minigames[area.minigame_type_id].name;
-        };
+      $scope.getMinigameName = function(area){
+          return minigames[area.minigame_type_id].name;
+      };
 
       var templates = {}
       <% Node.all.each do |node| %>

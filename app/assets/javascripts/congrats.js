@@ -1,9 +1,10 @@
 $(document).ready(function(){
   //set some vars
-  var $congrats = $('#congrats');
+  var $congrats = $('#congrats'),
+      $body = $('body');
 
   //listeners
-  $congrats
+  $body
     .on('click', '#x-btn-share-story', function(e){
       toggleShareStoryOverlay(e,'open');
     })
@@ -11,11 +12,11 @@ $(document).ready(function(){
       toggleShareOverlay(e,'open');
     });
 
-  $('#x-btn-close-story-overlay').on('click', function(e){
+  $body.on('click', '#x-btn-close-story-overlay', function(e){
     toggleShareStoryOverlay(e,'close');
   });
 
-  $('#x-btn-close-share-overlay').on('click', function(e){
+  $body.on('click', '#x-btn-close-share-overlay', function(e){
     toggleShareOverlay(e,'close');
   });
   

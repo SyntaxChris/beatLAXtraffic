@@ -116,6 +116,7 @@ $(document).ready(function(){
   function continueMission(){
     //do something to continue the mission
     console.log('continue mission!');
+    $body.trigger('findNextNode');
   }
 
   //function to animate the carousel

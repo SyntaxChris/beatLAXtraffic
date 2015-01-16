@@ -1,160 +1,136 @@
 $(document).ready(function(){
 
-	var inputToggle = 0;
-	$("[id='other-landscape']").click(function(){
-		if(inputToggle === 0){
-			$("#user-text-input").fadeIn(200);
-			inputToggle = 1;
+	var $body = $('body');
+	var phoneTog = 0;
+	var shopTog = 0;
+	var hangTog = 0;
+	var eatTog = 0;
+	var otherTog = 0;
+
+	$body
+	.on('click', '.tile-container', function(){
+		var tileId = $(".ng-scope div", this).attr('id');
+
+		switch(tileId){
+			case 'phone-landscape':
+				if(phoneTog === 0){
+
+					$('.check-mark-container svg .circle-state', this).css('stroke-width', '0');
+					$('.check-mark-container svg .circle-state', this).css('fill', '#FC9C52');
+					$('.check-mark-container svg .checkmark-fill', this).css('stroke', 'white');
+
+					phoneTog = 1;
+				}
+				else{
+
+					$('.check-mark-container svg .circle-state', this).css('stroke-width', '3');
+					$('.check-mark-container svg .circle-state', this).css('fill', 'white');
+					$('.check-mark-container svg .checkmark-fill', this).css('stroke', 'gray');
+					phoneTog = 0;
+				}
+			break;
+
+			case 'shop-landscape':
+			if(shopTog === 0){
+				$('.check-mark-container svg .circle-state', this).css('stroke-width', '0');
+				$('.check-mark-container svg .circle-state', this).css('fill', '#F7C001');
+				$('.check-mark-container svg .checkmark-fill', this).css('stroke', 'white');
+
+				shopTog = 1;
+			}
+			else{
+				$('.check-mark-container svg .circle-state', this).css('stroke-width', '3');
+				$('.check-mark-container svg .circle-state', this).css('fill', 'white');
+				$('.check-mark-container svg .checkmark-fill', this).css('stroke', 'gray');
+
+				shopTog = 0;
+			}
+			break;
+
+			case 'hang-out-landscape':
+			if(hangTog === 0){
+				$('.check-mark-container svg .circle-state', this).css('stroke-width', '0');
+				$('.check-mark-container svg .circle-state', this).css('fill', '#39BAD8');
+				$('.check-mark-container svg .checkmark-fill', this).css('stroke', 'white');
+
+				hangTog = 1;
+			}
+			else{
+				$('.check-mark-container svg .circle-state', this).css('stroke-width', '3');
+				$('.check-mark-container svg .circle-state', this).css('fill', 'white');
+				$('.check-mark-container svg .checkmark-fill', this).css('stroke', 'gray');
+
+				hangTog = 0;
+			}
+			break;
+
+			case 'eat-landscape':
+			if(eatTog === 0){
+				$('.check-mark-container svg .circle-state', this).css('stroke-width', '0');
+				$('.check-mark-container svg .circle-state', this).css('fill', '#558AD8');
+				$('.check-mark-container svg .checkmark-fill', this).css('stroke', 'white');
+
+				eatTog = 1;
+			}
+			else{
+				$('.check-mark-container svg .circle-state', this).css('stroke-width', '3');
+				$('.check-mark-container svg .circle-state', this).css('fill', 'white');
+				$('.check-mark-container svg .checkmark-fill', this).css('stroke', 'gray');
+				eatTog = 0;
+			}
+			break;
+
+			case 'other-landscape':
+				$('.other-txt-bbl').fadeIn();
+				$('.other-txt-bbl-sm').fadeIn();
+			break;
+		}
+
+        var tallyTot = phoneTog + shopTog + hangTog + eatTog + otherTog;
+
+		if(tallyTot > 0){
+			$(".tile-next").fadeIn(500);
 		}
 		else{
-			$("#user-text-input").fadeOut(1000);
-			inputToggle = 0;
+			$(".tile-next").fadeOut(300);
 		}
-	});
-
-	$('.other-submit').click(function() {
-	    $('[id=user-text-input]').hide();
-	    $('[id=other-small-textbox]').hide();
-	    $('.next').show();
-	    if (otherCheck === 0){
-			$(".unchecked-other-tile svg path").attr("fill", "#AA75D3");
-    		$(".unchecked-other-tile svg polyline").attr("stroke", "white");
-    		otherCheck = 1;
-    	}
-    	else {
-			$(".unchecked-other-tile svg path").attr("fill", "#FFFFFF");
-    		$(".unchecked-other-tile svg polyline").attr("stroke", "#757575");
-    		otherCheck = 0;
-    	}
-	});
-	$('[id=small-other]').click(function(){
-		$('[id=other-small-textbox]').show();
-	});
-	$('[id=other-cancel]').click(function(){
-		$('[id=other-small-textbox]').hide();
-	});
-
-
-	$.fn.toggleAttr = function(attr,val){
-    	return this.each(function(){
-	        var $this = $(this);
-	        if ($this.is("[" + attr + "]")) {
-	            $this.removeAttr(attr);
-	        }
-	        else {
-	            $this.attr(attr,val);            
-	        }
-    	});
-	}
-
-	var phoneCheck = 0;
-	var shopCheck = 0;
-	var hangoutCheck = 0;
-	var eatCheck = 0;
-	var otherCheck = 0;
-
-	$(".other-cancel").click(function(){
-		$('#user-text-input').hide();
-		$(".unchecked-other-tile svg:nth-child(1) .checkmark-fill").css("stroke", "#757575");
-	    $(".unchecked-other-tile svg:nth-child(1) g .circle-state").css("stroke-width", 3);
-		$(".unchecked-other-tile svg:nth-child(1) g .circle-state").css("fill", "#FFFFFF");	
-		otherCheck = 0;
-	});
-
-	$("[id='tally']").click(function(){
 		
-		var tileClass = $("div:nth-child(1)", this).attr("class");
-		switch(tileClass){
-			case 'unchecked-phone-tile':
-			    if (phoneCheck === 0){
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FC9C52");
-			    	phoneCheck = 1;	
-			    }
-			    else {
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");
-			    	phoneCheck = 0;
-			    }
-				
-			break;
+	})
+	.on('click', '.cancel', function(){
+		$('.other-txt-bbl').fadeOut();
+		$('.other-txt-bbl-sm').fadeOut();
+		$('.tile-container.tile-5 .check-mark-container svg .circle-state').css('stroke-width', '3');
+		$('.tile-container.tile-5 .check-mark-container svg .circle-state').css('fill', 'white');
+		$('.tile-container.tile-5 .check-mark-container svg .checkmark-fill').css('stroke', 'gray');
+		$('textarea#tile-text').val("");
 
-			case 'unchecked-shop-tile':
-				if (shopCheck === 0){
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#F7C001");
-			    	shopCheck = 1;	
-			    }
-			    else {
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
-			    	shopCheck = 0;
-			    }
-			break;
+		otherTog = 0;
 
-			case 'unchecked-hangout-tile':
-				if (hangoutCheck === 0){
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#39BAD8");
-			    	hangoutCheck = 1;	
-			    }
-			    else {
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
-			    	hangoutCheck = 0;
-			    }
+		var tallyTot = phoneTog + shopTog + hangTog + eatTog + otherTog;
 
-			break;
-
-			case 'unchecked-eat-tile':
-			    if (eatCheck === 0){
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#558AD8");
-			    	eatCheck = 1;	
-			    }
-			    else {
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
-			    	eatCheck = 0;
-			    }
-
-			break;
-
-			case 'unchecked-other-tile':
-				if (otherCheck === 0){
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "white");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 0);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#AA75D3");
-			    	$('#user-text-input').show();
-			    	otherCheck = 1;	
-			    }
-			    else {
-			    	$("svg:nth-child(1) .checkmark-fill", this).css("stroke", "#757575");
-			    	$("svg:nth-child(1) g .circle-state", this).css("stroke-width", 3);
-			    	$("svg:nth-child(1) g .circle-state", this).css("fill", "#FFFFFF");	
-			    	$('#user-text-input').hide();
-			    	otherCheck = 0;
-			    }
-
-			break;
-		}
-
-		var tallyTiles = phoneCheck + shopCheck + hangoutCheck + eatCheck + otherCheck;
-
-		if(tallyTiles > 0){
-			$(".next").fadeIn(500);
+		if(tallyTot > 0){
+			$(".tile-next").fadeIn(500);
 		}
 		else{
-			$(".next").fadeOut(300);
+			$(".tile-next").fadeOut(300);
 		}
-	});
+	})
+	.on('click', '.save', function(){
+		if($("textarea.purple").val() !== "" || $("textarea.purple.small").val() !== ""){
+			$('.other-txt-bbl').fadeOut();
+			$('.other-txt-bbl-sm').fadeOut();
+			$('.tile-container.tile-5 .check-mark-container svg .circle-state').css('stroke-width', '0');
+			$('.tile-container.tile-5 .check-mark-container svg .circle-state').css('fill', '#AA75D3');
+			$('.tile-container.tile-5 .check-mark-container svg .checkmark-fill').css('stroke', 'white');
+			otherTog = 1;
+		}
 
+		
+
+		var tallyTot = phoneTog + shopTog + hangTog + eatTog + otherTog;
+
+		if(tallyTot > 0){
+			$(".tile-next").fadeIn(500);
+		}
+	})
 });

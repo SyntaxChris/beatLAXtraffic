@@ -5,8 +5,9 @@ $(document).ready(function(){
  	var hassleToggle = 0;
  	var otherToggle = 0;
  	var saveToggle = 0;
+ 	var $body = $('body');
 
- 	$('#guy').click(function(){
+ 	$body.on('click', '#guy', function(){
  		if(guyToggle === 0){
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "#98CC2D");
  			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
@@ -27,7 +28,7 @@ $(document).ready(function(){
  		}
  	});
 
- 	$('#stopwatch').click(function(){
+ 	$body.on('click', '#stopwatch', function(){
  		if(stopWatchToggle === 0){
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "#D05E4B");
  			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
@@ -46,7 +47,7 @@ $(document).ready(function(){
  		}
  	});
 
- 	$('#no-parking').click(function(){
+ 	$body.on('click', '#no-parking', function(){
  		if(carParkingToggle === 0){
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "#2FA3CA");
  			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
@@ -69,7 +70,7 @@ $(document).ready(function(){
  		}
  	});
 
- 	$('#hassle').click(function(){
+ 	$body.on('click', '#hassle', function(){
  		if(hassleToggle === 0){
  			$(this).siblings(0).children().children("g").children("circle").css("fill", "#DD734E");
  			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
@@ -92,7 +93,7 @@ $(document).ready(function(){
  		}
  	});
 
- 	$('#strategy-other').click(function(){
+ 	$body.on('click', '#strategy-other', function(){
 		$(this).siblings(0).children().children("g").children("circle").css("fill", "#FFD93B");
 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
 		$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
@@ -110,7 +111,7 @@ $(document).ready(function(){
 		otherToggle = 1;
  	});
 
-	$(".save-large").click(function(){
+	$body.on('click', ".save-large", function(){
 		$("#text-container").animate({width: '0%'});
  		$("#text-container-filler").animate({width: '93%'});
  		$("#slide-content").fadeOut();
@@ -121,9 +122,9 @@ $(document).ready(function(){
    
     
 
-    $(".bubble-icon-container").click(function(){
+    $body.on('click', ".bubble-icon-container", function(){
     	var toggleTally = guyToggle + stopWatchToggle + carParkingToggle + hassleToggle + otherToggle;
-    	debugger;
+    	// debugger;
     	if(toggleTally === 0){
  			$(".next#strategy-large-temp").hide();
  		}
@@ -133,7 +134,7 @@ $(document).ready(function(){
     });
 
 
-    $(".cancel-large").click(function(){
+    $body.on('click', ".cancel-large", function(){
     	if(guyToggle + stopWatchToggle + carParkingToggle + hassleToggle === 0){
     		$(".next#strategy-large-temp").hide();
     	}
@@ -163,7 +164,7 @@ $(document).ready(function(){
 	var otherTog = 0;
 	var otherPop = 0;
 
-	$(".bubble-container-small").click(function(){
+	$body.on('click', ".bubble-container-small", function(){
 		var bubbleId = $(this).attr("id");
 
 
@@ -315,14 +316,14 @@ $(document).ready(function(){
 		}
 	});
 
-	$(".save").click(function(){
+	$body.on('click', ".save", function(){
 		if(otherPop === 1){
 			$("#s-other-ctnr").hide();
 			otherPop = 0;
 		}
 	});
 
-	$(".cancel").click(function(){
+	$body.on('click', ".cancel", function(){
 		var hideNext = passengerTog + stopWatchTog + parkingTog + hassleTog;
 
 		if(hideNext === 0){

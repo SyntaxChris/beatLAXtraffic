@@ -106,7 +106,7 @@ $(document).ready(function(){
 			$("#last-question-set").show();
 		}
 		else if(pageClicks === 20){
-      		
+   		
 			$("#last-question-set").hide();
 			$("#think-strategy").show();
 		}

@@ -1,7 +1,30 @@
 $(document).ready(function(){
- 	$('.spin-button').click(function(){
+	var $body = $('body');
+
+		$body
+			.on('click', '#spin-pickup-win', handleNextNode)
+			.on('click', '#spin-pickup-lose', handleNextNode);
+
+	function handleNextNode(e){
+		e.preventDefault();
+		e.stopImmediatePropagation();
+
+		var result = $(this).data('result');
+
+		var node = '4';
+		if (result == 'yes') {
+			node = '14';
+		}
+
+		$body.trigger('findSpecificNode',[node]);
+		resetSpinner();
+	}
+
+ 	$body.on('click', '.spin-button', function(){
  		var spinButtonId = $(this).attr("id");
 		var chanceLogic = Math.floor(Math.random()*2);
+
+
 
 		// parking spinner
 		if(spinButtonId === 'parking'){
@@ -104,15 +127,17 @@ $(document).ready(function(){
  	});
 
 
- 	$(".continue-btn").click(function(){
- 		$(".wheel").removeClass("full");
- 		$(".wheel").removeClass("not-full");
- 		$(".wheel").removeClass("there");
- 		$(".wheel").removeClass("not-not");
+
+ 	function resetSpinner(){
+    	$(".failed-spin").hide();
+ 		// $(".wheel").removeClass("full");
+ 		// $(".wheel").removeClass("not-full");
+ 		// $(".wheel").removeClass("there");
+ 		$(".wheel").removeClass("not-there");
  		$(".lose").css("fill", "#AAAAAA");
  		$(".win").css("fill", "#ECF0F1");
- 		$(".win.parking").css("fill", "#AAAAAA");
- 		$(".lose.parking").css("fill", "#ECF0F1");
+ 		// $(".win.parking").css("fill", "#AAAAAA");
+ 		// $(".lose.parking").css("fill", "#ECF0F1");
  		$(".yes-font").css("fill", "#AAAAAA");
  		$(".full-font").css("fill", "#D89235");
  		$(".chance-time").show();
@@ -121,7 +146,7 @@ $(document).ready(function(){
 		$(".fail").hide();
 		$(".congrats").hide();
 		$(".trophey").hide();
- 	});
-
+ 	}
+ 	
 
 });

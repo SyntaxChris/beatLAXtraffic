@@ -1,7 +1,8 @@
 $(document).ready(function(){
-	var timeSpent = 5;
+	var timeSpent = 5,
+      $body = $('body');
 
-	$('#x-btn-keep-looking').click(function(){
+	$body.on('click', '#x-btn-keep-looking', function(){
 		timeSpent += 5;
 		$('.timer-c .inner .timer-number').text(timeSpent);
 	});

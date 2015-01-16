@@ -6,7 +6,7 @@ $(document).ready(function(){
       animating = false;
 
   //listeners
-  $circlePickup
+  $body
     .on('click', '#x-btn-circle-less', decrementCircle)
     .on('click', '#x-btn-circle-more', incrementCircle);
 
@@ -45,7 +45,7 @@ $(document).ready(function(){
   }
 
   function updateCircleCount(direction){
-    $circlePickup.find('.circle-number').text(circleCount);
+    $body.find('#circle-pickup .circle-number').text(circleCount);
     animateCar(direction);
   }
 
