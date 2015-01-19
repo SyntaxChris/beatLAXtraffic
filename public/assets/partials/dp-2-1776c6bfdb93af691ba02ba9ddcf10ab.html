@@ -1,0 +1,69 @@
+<!-- Pickup spinner  -->
+  <div id="pickup-spinner-question">
+    <div class="chance-time">
+      <h1>Chance Time!</h1>
+      <h3 class="main-question">
+        You're almost at the Terminal. <span style="font-weight: 700">Is your passenger there?</span>
+      </h3>
+    </div>
+
+    <div class="congrats" style="display:none;">
+      <h1>Nice!</h1>
+      <h3 class="main-question" style="margin-top: -20px">Your passenger is at the curb!</h3>
+      <div class="next spinner-continue-btn" id="spin-pickup-win" data-result="yes">
+        Continue
+      </div>
+    </div>
+
+    <div class="fail" style="display:none">
+      <h1>Dang!</h1>
+      <h3 class="main-question">Our pick-up wasn't there.</h3>
+      <div class="next spinner-continue-btn" id="spin-pickup-lose" data-result="no">
+        Continue
+      </div>
+    </div>
+
+    <div class="spin-button" id="pickup">
+      Spin
+    </div>
+    
+    <div class="spinner-components">
+      <div class="row">
+        <div class="large-7 medium-8 small-12 large-centered medium-centered small-centered columns">
+          <div style="width: 100%; padding-bottom: 50%; padding-left: 2%">
+            <div style="width: 100%; position: absolute; z-index: 3">
+              <div class="row" style="padding: 0">
+                <div class="large-4 medium-4 small-4 large-centered medium-centered small-centered columns" style="padding-left: 0">
+                  <div style="width: 100%; padding-bottom: 10%;">
+                    <div id="wheel-pointer" style="padding-right: 25%; padding-left: 10%">
+                      <div ng-include="'/assets/svgs/_wheelPointer.html'"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="position: relative; z-index: 1; width: 100%; padding-top: 4%; margin: 0">
+              <div class="wheel" id="num-2">
+                <div ng-include="'/assets/svgs/_pickupWheel.html'"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-5 medium-5 small-9 columns large-centered medium-centered small-centered columns">
+        <div class="trophey" style="display: none">
+          <div ng-include="'/assets/svgs/_pickupTrophy.html'"></div>
+        </div>
+        <div class="failed-spin" style="display: none">
+          <div ng-include="'/assets/svgs/_missingPassenger.html'"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- pickup logic -->
+    <div id="pickup-chance" data-outcome=1></div>
+  </div>
+  <!-- end pickup spinner
