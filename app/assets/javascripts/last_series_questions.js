@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	var otherBoxCount = 0;
-  var qClicks = 0;
   var $body = $('body');
 
   $body.on('click', '.question-wrapper-1', function(){
