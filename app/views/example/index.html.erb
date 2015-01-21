@@ -80,19 +80,16 @@
   <!-- 2. MISSION INTRO -->
   <!-- <div id="mission-intro"  class="slide" data-currentnode="3" data-nextnode="2"> -->
   <div id="mission-intro">
-    <h4 id="stage-1-header" style="display: none">
+    <h4 id="stage-1-header" style="">
       There's always a moment where everything is going right, but something like this happens
     </h4>
     <h4 id="stage-2-header" style="display:none">
       As you rush into your car, your trusty smart <br> phone provides the following information:
     </h4>
-    <h1 id="stage-3-header" style="">
-      Yay Speeding!
+    <h1 id="stage-4-header" style="display:none">
+      You made it just in time! Your phone reads:
     </h1>
-    <h2 id="stage-4-header" style="display:none">
-      Stage 4 Header
-    </h4>
-    <div id="stage-1" style="display: none">
+    <div id="stage-1" style="">
       <div class="stage-container">
         <div class="container-contents" id="intro-phone" style="width: 90%">
            <%= render 'introPhone' %> 
@@ -228,9 +225,23 @@
       </div>
     </div>   
 
-    <div id="stage-3">
+    <div id="stage-3" style="display:none">
       <div id="speeding-bg">
-        <div id="road" style=""></div>
+        <div id="palm-1">
+          <%= render 'palmTree2' %>
+        </div>
+        <div id="road">
+          <div id="line"></div>
+          <div id="speeding-car">
+            <div id="speeding-bbl">
+              Yay Speeding!
+            </div>
+            <%= render 'boxster' %>
+          </div>
+          <div id="palm-2">
+            <%= render 'palmTree1' %>
+          </div>
+        </div>
       </div>
     </div>
 

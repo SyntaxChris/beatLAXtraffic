@@ -210,18 +210,99 @@
 
   #stage-3{
     #speeding-bg{
-      position: absolute; 
+      position: absolute;
+      z-index: 0; 
       width: 100%; 
-      padding-bottom: 30%; 
+      padding-bottom: 28%; 
       background-color: #A0E1CB; 
       bottom: 0; 
       left: 0;
+      #la-city-bg{
+        position: absolute;
+        width: 100%;
+        top: -220px;
+        .buildings{
+          padding:0;
+          svg{
+            width: 100%;
+          }
+        }
+      }
+      #palm-1{
+        position: absolute;
+        z-index: 1;
+        width: 10%;
+        top: -40%;
+        right: -10%;
+        -webkit-animation: palm-far 4s linear infinite;
+        svg{
+          width: 60%;
+          height: 60%;
+        }
+      }
       #road{
         position: absolute; 
+        z-index: 2;
         width: 100%; 
         padding-bottom: 5%; 
         background-color: #A6AEB3; 
-        top: 20px;
+        top: 50px;
+        #line{
+          position: absolute;
+          z-index: 3;
+          width: 100%;
+          padding-bottom: 0.4%;
+          top: 35%;;
+          background-color: white;
+        }
+        #speeding-bbl{
+          position: absolute;
+          z-index: 5;
+          width: 100%;
+          bottom: 100%;
+          background-color: white;
+          color: black;
+          font-size: 2vw;
+          font-weight: 700;
+          text-align: center;
+          padding: 5%;
+          border-radius: 15px;
+        }
+        #speeding-bbl:before {
+           content:"";
+           position: absolute;
+           right: 50%;
+           top: 100%;
+           width: 0;
+           height: 0;
+           border-left: 10px solid transparent;
+           border-top: 20px solid white;
+           border-right: 10px solid transparent;
+        }
+        #speeding-car{
+          position: absolute;
+          z-index: 4;
+          top: -35%;
+          width: 20%;
+          left: -20%;
+          -webkit-animation: car-rumble 0.5s infinite;
+          // -webkit-animation: car-race 3s linear;
+          svg{
+            width: 100%;
+          }
+        }
+        #palm-2{
+          position: absolute;
+          z-index: 6;
+          width: 20%;
+          top: -80px;
+          right: -20%;
+          -webkit-animation: palm-near 1s linear infinite;
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
       } 
     }
   }
@@ -238,6 +319,27 @@
     50%  {background-color: #FB9499;}
     75%  {background-color: #FA797F;}
     100% {background-color: #F84048;}
+}
+
+@-webkit-keyframes car-race {
+  0% {left: -20%;}
+  100% {left: 120%;}
+}
+
+@-webkit-keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+
+@-webkit-keyframes palm-near {
+  0% {right: -10%;}
+  100% {right: 100%;}
+}
+
+@-webkit-keyframes palm-far {
+  0% {right: -20%;}
+  100% {right: 100%;}
 }
 
 
