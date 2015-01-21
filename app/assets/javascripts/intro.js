@@ -2,6 +2,16 @@ $(document).ready(function(){
 
   var $body = $('body'); 
 
+    //continue the current mission
+  function continueMission(){
+    //do something to continue the mission
+    console.log('continue mission!');
+    $body.trigger('findNextNode');
+  };
+
+  $body
+    .on('click', '#mission-intro #stage-4-btn', continueMission);
+
   $body
     .on('click', '#phone-next-btn', function(){
       $('#stage-1').hide();
@@ -20,5 +30,7 @@ $(document).ready(function(){
         $('#stage-4, #stage-4-header, #intro-phone').show();
       }, 5500);
       
-    })
+    });
+
+
 });
