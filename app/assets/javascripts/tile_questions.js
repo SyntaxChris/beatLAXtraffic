@@ -115,6 +115,9 @@ $(document).ready(function(){
 			$(".tile-next").fadeOut(300);
 		}
 	})
+	.on('click', '.bbl-btn.cancel', function(){
+		$('textarea.purple.small').val("");
+	})
 	.on('click', '.save', function(){
 		if($("textarea.purple").val() !== "" || $("textarea.purple.small").val() !== ""){
 			$('.other-txt-bbl').fadeOut();

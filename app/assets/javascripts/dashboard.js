@@ -3,6 +3,7 @@ $(document).ready(function(){
     var landTime = ["30", "1", "2"][Math.floor(Math.random() * 3)];
     var hour = $('#time').data('hours');
     var min = $('#time').data('minutes');
+    
     var movePlane = function(incrementNum){
         var currentProgress = $('#plane-progress').data('plane-progress');
         var totalProgress = incrementNum + currentProgress;
@@ -144,9 +145,6 @@ $(document).ready(function(){
     setPlane(landTime);
 
     
- 
-    
-
     // target elements that increase counter time
     $(".sign, #x-btn-keep-looking, #x-btn-cirle-next, #x-btn-timer-more, #spin-parking-lose, .next#spin-pickup-lose, .next#timer-question, #x-btn-circle-next, #x-btn-timer-next, #x-btn-wait-next").click(function(){
         var idClicked = $(this).attr('id'); 
