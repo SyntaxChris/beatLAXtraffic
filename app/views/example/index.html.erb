@@ -80,22 +80,28 @@
   <!-- 2. MISSION INTRO -->
   <!-- <div id="mission-intro"  class="slide" data-currentnode="3" data-nextnode="2"> -->
   <div id="mission-intro">
+
     <h4 id="stage-1-header" style="">
       There's always a moment where everything is going right, but something like this happens
     </h4>
     <h4 id="stage-2-header" style="display:none">
       As you rush into your car, your trusty smart <br> phone provides the following information:
     </h4>
-    <h1 id="stage-4-header" style="display:none">
+    <h4 id="stage-4-header" style="display: none">
       You made it just in time! Your phone reads:
-    </h1>
-    <div id="stage-1" style="">
-      <div class="stage-container">
-        <div class="container-contents" id="intro-phone" style="width: 90%">
-           <%= render 'introPhone' %> 
-        </div>
-      </div>
+    </h4>
 
+    <div class="stage-container">
+      <div class="container-contents" id="intro-phone" style="width: 100%">
+         <%= render 'introPhone' %> 
+      </div>
+    </div>
+
+
+
+
+
+    <div id="stage-1" style="">
       <div class="stage-container">
         <div class="container-contents" id="txt-msg-container">
           <div class="row" style="margin: 0; background-color: #E5E5EA; font-size: 12px">
@@ -153,6 +159,10 @@
       </div>
     </div>
   
+
+
+
+
     <div id="stage-2" style="display: none">
 
       <div id="stage-2-header">
@@ -225,6 +235,11 @@
       </div>
     </div>   
 
+
+
+
+
+
     <div id="stage-3" style="display:none">
       <div id="speeding-bg">
         <div id="palm-1">
@@ -245,14 +260,73 @@
       </div>
     </div>
 
-    <div id="stage-4" style="display:none">
-      <h4>
-        Stage 4
-      </h4>
+
+
+
+
+
+    <div id="stage-4" style="display: none">
+
+      <div class="row" style="margin: 0; background-color: #E5E5EA; font-size: 12px">
+        <div class="large-4 medium-4 small-4 columns">
+          <div class="row">
+            <div class="large-6 medium-6 small-6 columns">LAWA</div>
+            <div class="large-6 medium-6 small-6 columns" style="padding-left:0"><%= render 'signal' %></div>
+          </div>
+        </div>
+        <div class="large-4 medium-4 small-4 columns" style="text-align: center"><span>9:41</span> <span>AM</span></div>
+        <div class="large-4 medium-4 small-4 columns">
+          <div class="row">
+            <div class="large-6 medium-6 small-6 columns" style="padding-right: 0">42%</div>
+            <div class="large-6 medium-6 small-6 columns" style="margin-top: 2%; padding-left: 0; opacity: 0.8"><%= render 'battery' %></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin: 0; background-color: #E5E5EA">
+        <div class="large-4 medium-4 small-4 columns" style="color: #49B9FB;">&lt;Messages</div>
+        <div class="large-4 medium-4 small-4 columns" style="font-size: 14px; font-weight: 700; padding:0; text-align: center">Flight status</div>
+        <div class="large-4 medium-4 small-4 columns" style="color: #49B9FB">Contact&gt;</div>
+      </div>
+
+      <div class="row" style="margin: 0">
+        <div id="timer-backdrop">            
+          <%= render 'introstopwatch' %>
+          <div id="bd-content">
+            <div class="row" id="flight-display">
+              Flight <span>1234</span> <br>
+              Will Land In
+            </div>
+          </div>
+          <div id="display-time"><span id="mn-time">30</span><span id="mn-unit">min</span></div>
+        </div>
+      </div>
+
+      <div class="row" style="margin:0; padding-top: 30px">
+        <div class="small-11 small-centered columns" style="text-align:center; font-size: 20px; color: #59CFEF">
+          You now need to make some choices to get your passenger on Time.
+        </div>
+      </div>
+
+      <div class="row" style="margin:0">
+        <div class="small-11 small-centered columns" style="text-align:center; font-size: 30px; padding-top: 20px; color: #59CFEF">
+          Good Luck!
+        </div>
+      </div>
+
+      <div id="stage-4-btn">
+        Let's Go!
+      </div>
+
     </div>
   </div>
   </div>
   <!-- END MISSION INTRO -->
+
+
+
+
+
 
 
   <!-- 3. INTERACTIVE MAP -->

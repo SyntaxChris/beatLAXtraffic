@@ -16,15 +16,16 @@
     }
   }
 
-  #stage-1{
-    position: absolute; left: 50%;
-
-    #intro-phone{
-      svg {
-        width: 650px;
-        height: 650px;
-      }
+  #intro-phone{
+    svg {
+      width: 650px;
+      height: 650px;
     }
+  }
+
+  #stage-1{
+    position: absolute; 
+    left: 50%;
 
     #txt-msg-container{
       width: 330px; 
@@ -125,7 +126,8 @@
     margin-left:auto; 
     margin-right:auto; 
     background-color: white; 
-    margin-top: 40px; 
+    margin-top: 100px;
+    border: 1px solid black; 
     #stage-2-header{
       background-color: #00B8E5; 
       color: white; 
@@ -297,7 +299,7 @@
           width: 20%;
           top: -80px;
           right: -20%;
-          -webkit-animation: palm-near 1s linear infinite;
+          -webkit-animation: palm-near 0.5s linear infinite;
           svg {
             width: 100%;
             height: 100%;
@@ -308,7 +310,67 @@
   }
 
   #stage-4{
-
+    position: relative; 
+    width: 330px; 
+    margin-left:auto; 
+    margin-right:auto; 
+    background-color: white; 
+    margin-top: 100px;
+    border: 1px solid black; 
+    #timer-backdrop{
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+      width: 90%;
+      height: 120px;
+      background-color: #F2F2F2;
+      border-radius: 60px;
+      svg {
+        position: absolute;
+        top: -20px;
+        left: 60px;
+        width: 120%;
+        height: 120%;
+      }
+      #bd-content{
+        #flight-display{
+          margin:0; 
+          padding-top: 35px; 
+          font-size: 20px; 
+          font-weight: 700; 
+          padding-left: 30px; 
+          opacity: 0.6;
+        }
+      }
+      #display-time{
+        position: absolute;
+        top: 45px;
+        left: 190px;
+        width: 120px;
+        color: white;
+        span#mn-time{
+          font-size: 50px;
+        }
+        span#mn-unit{
+          position: absolute;
+          margin-top: 20px;
+          font-size: 18px;
+          top: -15px;
+          left: 63px;
+        }
+      }
+    }
+    #stage-4-btn{
+      margin-top: 40px;
+      background-color: #F84048; 
+      color: white; 
+      text-align: center; 
+      font-size: 25px; 
+      font-weight: 700; 
+      padding: 20px 0 20px 0; 
+      cursor: pointer;
+    }
   }
 }
 
@@ -348,12 +410,10 @@
   #intro-phone{
     display:none;
   }
-  #txt-msg-container{
-    width: 330px; 
-    text-align: center; 
+  #txt-msg-container,
+  #stage-2,
+  #stage-4{
     top: -80px;
-    background-color: white; 
-    border: 1px solid black;
   }
 
 }
