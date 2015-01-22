@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require 'emergency_nav'
+//= require 'background'
 //= require 'dashboard'
 //= require 'car_dash'
 //= require 'toggle_questions'
@@ -46,3 +47,5 @@
 //
 
 $(function(){ $(document).foundation(); });
+
+
