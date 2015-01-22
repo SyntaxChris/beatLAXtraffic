@@ -115,7 +115,11 @@
         margin-top: -7px; 
         font-size: 16px;
         margin-bottom: 0;
-        -webkit-animation: run-to-car 2s linear infinite; /* Chrome, Safari, Opera */
+        -webkit-animation: run-to-car 2s linear infinite;
+        -moz-animation: run-to-car 2s linear infinite;
+        -o-animation: run-to-car 2s linear infinite;
+        -ms-animation: run-to-car 2s linear infinite;
+        animation: run-to-car 2s linear infinite;
       }
     }
   }
@@ -236,7 +240,11 @@
         width: 10%;
         top: -40%;
         right: -10%;
-        -webkit-animation: palm-far 4s linear infinite;
+        -webkit-animation: palm-far 3s linear infinite;
+        -moz-animation: palm-far 3s linear infinite;
+        -o-animation: palm-far 3s linear infinite;
+        -ms-animation: palm-far 3s linear infinite;
+        animation: palm-far 3s linear infinite;
         svg{
           width: 60%;
           height: 60%;
@@ -288,7 +296,10 @@
           width: 20%;
           left: -20%;
           -webkit-animation: car-rumble 0.5s infinite;
-          // -webkit-animation: car-race 3s linear;
+          -moz-animation: car-rumble 0.5s infinite;
+          -o-animation: car-rumble 0.5s infinite;
+          -ms-animation: car-rumble 0.5s infinite;
+          animation: car-rumble 0.5s infinite;
           svg{
             width: 100%;
           }
@@ -300,6 +311,10 @@
           top: -80px;
           right: -20%;
           -webkit-animation: palm-near 0.5s linear infinite;
+          -moz-animation: palm-near 0.5s linear infinite;
+          -o-animation: palm-near 0.5s linear infinite;
+          -ms-animation: palm-near 0.5s linear infinite;
+          animation: palm-near 0.5s linear infinite;
           svg {
             width: 100%;
             height: 100%;
@@ -384,31 +399,131 @@
     75%  {background-color: #FA797F;}
     100% {background-color: #F84048;}
 }
+@-moz-keyframes run-to-car {
+    0%   {background-color: #F84048;}
+    25%  {background-color: #FA797F;}
+    50%  {background-color: #FB9499;}
+    75%  {background-color: #FA797F;}
+    100% {background-color: #F84048;}
+}
+@-o-keyframes run-to-car {
+    0%   {background-color: #F84048;}
+    25%  {background-color: #FA797F;}
+    50%  {background-color: #FB9499;}
+    75%  {background-color: #FA797F;}
+    100% {background-color: #F84048;}
+}
+@-ms-keyframes run-to-car {
+    0%   {background-color: #F84048;}
+    25%  {background-color: #FA797F;}
+    50%  {background-color: #FB9499;}
+    75%  {background-color: #FA797F;}
+    100% {background-color: #F84048;}
+}
+@keyframes run-to-car {
+    0%   {background-color: #F84048;}
+    25%  {background-color: #FA797F;}
+    50%  {background-color: #FB9499;}
+    75%  {background-color: #FA797F;}
+    100% {background-color: #F84048;}
+}
+
 
 @-webkit-keyframes car-race {
   0% {left: -20%;}
   100% {left: 120%;}
 }
+@-moz-keyframes car-race {
+  0% {left: -20%;}
+  100% {left: 120%;}
+}
+@-o-keyframes car-race {
+  0% {left: -20%;}
+  100% {left: 120%;}
+}
+@-ms-keyframes car-race {
+  0% {left: -20%;}
+  100% {left: 120%;}
+}
+@keyframes car-race {
+  0% {left: -20%;}
+  100% {left: 120%;}
+}
+
 
 @-webkit-keyframes car-rumble {
   0% {-webkit-transform:rotate(1deg);}
   50% {-webkit-transform:rotate(-1deg);}
   100% {-webkit-transform:rotate(1deg);}
 }
+@-moz-keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+@-o-keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+@-ms-keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+@keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+
 
 @-webkit-keyframes palm-near {
   0% {right: -10%;}
   100% {right: 100%;}
 }
+@-moz-keyframes palm-near {
+  0% {right: -10%;}
+  100% {right: 100%;}
+}
+@-o-keyframes palm-near {
+  0% {right: -10%;}
+  100% {right: 100%;}
+}
+@-ms-keyframes palm-near {
+  0% {right: -10%;}
+  100% {right: 100%;}
+}
+@keyframes palm-near {
+  0% {right: -10%;}
+  100% {right: 100%;}
+}
+
 
 @-webkit-keyframes palm-far {
+  0% {right: -20%;}
+  100% {right: 100%;}
+}
+@-moz-keyframes palm-far {
+  0% {right: -20%;}
+  100% {right: 100%;}
+}
+@-o-keyframes palm-far {
+  0% {right: -20%;}
+  100% {right: 100%;}
+}
+@-ms-keyframes palm-far {
+  0% {right: -20%;}
+  100% {right: 100%;}
+}
+@keyframes palm-far {
   0% {right: -20%;}
   100% {right: 100%;}
 }
 
 
 
-@media only screen and (max-width : 400px) { //iPhone 6 Plus
+@media only screen and (max-width : 400px) { 
   #intro-phone{
     display:none;
   }
