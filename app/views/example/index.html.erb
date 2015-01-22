@@ -80,7 +80,7 @@
   <!-- 2. MISSION INTRO -->
   <div id="mission-intro"  class="slide" data-currentnode="3" data-nextnode="2">
  
-    <h4 id="stage-1-header" style="">
+    <h4 id="stage-1-header" style="display:none">
       There's always a moment where everything is going right, but something like this happens
     </h4>
     <h4 id="stage-2-header" style="display:none">
@@ -90,7 +90,7 @@
       You made it just in time! Your phone reads:
     </h4>
 
-    <div class="stage-container">
+    <div class="stage-container" style="">
       <div class="container-contents" id="intro-phone" style="width: 100%">
          <%= render 'introPhone' %> 
       </div>
@@ -239,10 +239,41 @@
 
 
     <div id="stage-3" style="display:none">
+
+      
       <div id="speeding-bg">
+
+        <div id="city-bg">
+          <span class="building-container">
+            <%= render 'laBuildings2' %>
+          </span>
+          <span class="building-container">
+            <%= render 'laBuildings' %>
+          </span>
+          <span class="building-container">
+            <%= render 'laBuildings2' %>
+          </span>
+          <span class="building-container">
+            <%= render 'laBuildings2' %>
+          </span>
+          <span class="building-container">
+            <%= render 'laBuildings' %>
+          </span>
+          <span class="building-container">
+            <%= render 'laBuildings2' %>
+          </span>
+          <span class="building-container">
+            <%= render 'laBuildings2' %>
+          </span>
+          <span class="building-container">
+            <%= render 'laBuildings' %>
+          </span>
+        </div>
+
         <div id="palm-1">
           <%= render 'palmTree2' %>
         </div>
+
         <div id="road">
           <div id="line"></div>
           <div id="speeding-car">
@@ -255,6 +286,7 @@
             <%= render 'palmTree1' %>
           </div>
         </div>
+
       </div>
     </div>
 

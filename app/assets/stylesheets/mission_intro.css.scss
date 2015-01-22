@@ -215,6 +215,7 @@
 
 
   #stage-3{
+
     #speeding-bg{
       position: absolute;
       z-index: 0; 
@@ -223,17 +224,30 @@
       background-color: #A0E1CB; 
       bottom: 0; 
       left: 0;
-      #la-city-bg{
-        position: absolute;
-        width: 100%;
-        top: -220px;
-        .buildings{
-          padding:0;
+
+      #city-bg{
+        position:absolute; 
+        padding:0;
+        margin:0;
+        width: 130%; 
+        left: 0; 
+        top: -18%;
+        -webkit-animation: buildings 20s linear infinite;
+        -moz-animation: buildings 20s linear infinite;
+        -o-animation: buildings 20s linear infinite;
+        -ms-animation: buildings 20s linear infinite;
+        animation: buildings 20s linear infinite;
+        span.building-container{
+          padding: 0;
+          margin: 0;
           svg{
-            width: 100%;
+            width: 10%;
+            height: 10%;
           }
         }
       }
+
+
       #palm-1{
         position: absolute;
         z-index: 1;
@@ -519,6 +533,27 @@
 @keyframes palm-far {
   0% {right: -20%;}
   100% {right: 100%;}
+}
+
+@-webkit-keyframes buildings {
+  0% {left: 0%;}
+  100% {left: -30%;}
+}
+@-moz-keyframes buildings {
+  0% {left: 0%;}
+  100% {left: -30%;}
+}
+@-o-keyframes buildings {
+  0% {left: 0%;}
+  100% {left: -30%;}
+}
+@-ms-keyframes buildings {
+  0% {left: 0%;}
+  100% {left: -30%;}
+}
+@keyframes buildings {
+  0% {left: 0%;}
+  100% {left: -30%;}
 }
 
 
