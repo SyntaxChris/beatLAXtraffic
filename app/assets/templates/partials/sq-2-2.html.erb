@@ -1,6 +1,6 @@
 <div id="mission-intro">
  
-    <h4 id="stage-1-header" style="">
+    <h4 id="stage-1-header" style="display:none">
       There's always a moment where everything is going right, but something like this happens
     </h4>
     <h4 id="stage-2-header" style="display:none">
@@ -20,7 +20,7 @@
 
 
 
-    <div id="stage-1" style="">
+    <div id="stage-1" style="display:none">
       <div class="stage-container">
         <div class="container-contents" id="txt-msg-container">
           <div class="row" style="margin: 0; background-color: #E5E5EA; font-size: 12px">
@@ -117,28 +117,26 @@
           </div>
         </div>
 
-        <div class="row" style="text-align: center; margin:0; padding-top: 20px">
-          <!-- render 2 trafficCar svgs for fast, 4 for med, and 6 for slow -->
-          <!-- class names for car colors: .fast, .med, .slow -->
-          <div class="large-2 medium-2 small-2 columns med"><div ng-include="'<%= asset_path 'svgs/_trafficCar.html' %>'"></div></div>
-          <div class="large-2 medium-2 small-2 columns med"><div ng-include="'<%= asset_path 'svgs/_trafficCar.html' %>'"></div></div>
-          <div class="large-2 medium-2 small-2 columns med"><div ng-include="'<%= asset_path 'svgs/_trafficCar.html' %>'"></div></div>
-          <div class="large-2 medium-2 small-2 columns med"><div ng-include="'<%= asset_path 'svgs/_trafficCar.html' %>'"></div></div>
-          <div class="large-2 medium-2 small-2 columns med"><div ng-include="'<%= asset_path 'svgs/_trafficCar.html' %>'"></div></div>
-          <div class="large-2 medium-2 small-2 columns med"><div ng-include="'<%= asset_path 'svgs/_trafficCar.html' %>'"></div></div>
+        <div class="row" style="text-align: center; margin:0;">
+          <!-- class names for car colors: .fast, .medium, .slow -->
+          <div class="large-3 medium-3 small-3 columns traffic-level-label"><div ng-include="'<%= asset_path 'svgs/_home.html' %>'"></div></div>
+          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium"></div></div>
+          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium"></div></div>
+          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium"></div></div>
+          <div class="large-3 medium-3 small-3 columns traffic-level"><div ng-include="'<%= asset_path 'svgs/_trafficCar.html' %>'"></div></div>
         </div>
 
         <div class="row" style="text-align: center; margin: 0">
           <div class="large-8 medium-8 small-8 large-centered medium-centered small-centered columns">
             <div class="large-3 medium-3 small-3 columns" style="font-size: 12px; color: #808080">Fast</div>
             <div  class="large-2 medium-2 small-2 columns" style="padding: 0">
-              <div id="fast"></div>
+              <div class="fast"></div>
             </div>
             <div class="large-2 medium-2 small-2 columns" style="padding: 0">
-              <div id="medium"></div>
+              <div class="medium"></div>
             </div>
             <div class="large-2 medium-2 small-2 columns" style="padding: 0">
-              <div id="slow"></div>
+              <div class="slow"></div>
             </div>
             <div class="large-3 medium-3 small-3 columns" style="font-size: 12px; text-align: left; color: #808080">Slow</div>
           </div>
@@ -159,11 +157,40 @@
 
 
 
-    <div id="stage-3" style="display:none">
+    <div id="stage-3" style="">
       <div id="speeding-bg">
+
+        <div id="city-bg">
+          
+            <div class="skyline-container" ng-include="'<%= asset_path 'svgs/_laBuildings2.html' %>'"></div>
+        
+          
+            <div class="skyline-container" ng-include="'<%= asset_path 'svgs/_laBuildings.html' %>'"></div>
+        
+          
+            <div class="skyline-container" ng-include="'<%= asset_path 'svgs/_laBuildings2.html' %>'"></div>
+        
+          
+            <div class="skyline-container" ng-include="'<%= asset_path 'svgs/_laBuildings2.html' %>'"></div>
+        
+          
+            <div class="skyline-container" ng-include="'<%= asset_path 'svgs/_laBuildings2.html' %>'"></div>
+        
+          
+            <div class="skyline-container" ng-include="'<%= asset_path 'svgs/_laBuildings2.html' %>'"></div>
+        
+          
+            <div class="skyline-container" ng-include="'<%= asset_path 'svgs/_laBuildings2.html' %>'"></div>
+        
+          
+            <div class="skyline-container" ng-include="'<%= asset_path 'svgs/_laBuildings.html' %>'"></div>
+        
+        </div>
+
         <div id="palm-1">
           <div ng-include="'<%= asset_path 'svgs/_palmTree2.html' %>'"></div>
         </div>
+
         <div id="road">
           <div id="line"></div>
           <div id="speeding-car">
@@ -176,6 +203,7 @@
             <div ng-include="'<%= asset_path 'svgs/_palmTree1.html' %>'"></div>
           </div>
         </div>
+
       </div>
     </div>
 
