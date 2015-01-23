@@ -17,6 +17,10 @@
   }
 
   #intro-phone{
+    #ear-piece{
+      position: absolute;
+      top: 20%;
+    }
     svg {
       width: 650px;
       height: 650px;
@@ -30,7 +34,7 @@
     #txt-msg-container{
       width: 330px; 
       text-align: center; 
-      margin-top: 90px; 
+      margin-top: 75px; 
       background-color: white; 
       border: 1px solid black;
     }
@@ -41,7 +45,7 @@
         text-align: left;
         width: 60%; 
         font-size: 13px; 
-        margin-top: 3%; 
+        margin-top: 4%; 
         margin-bottom: 5%; 
         margin-left: 5%; 
         border-radius: 10px; 
@@ -77,7 +81,7 @@
         content:"";
         position: absolute;
         left: 94.5%;
-        top: 348px;
+        top: 351px;
         width: 0;
         height: 0;
         border-top: 7px solid transparent;
@@ -131,7 +135,7 @@
     margin-left:auto; 
     margin-right:auto; 
     background-color: white; 
-    margin-top: 100px;
+    margin-top: 85px;
     border: 1px solid black; 
     #stage-2-header{
       background-color: #00B8E5; 
@@ -154,49 +158,39 @@
         }
       }
 
+      .traffic-level-label{
+        padding: 0;
+        margin: 0;
+      }
+
+      .traffic-level-car{
+        padding: 0;
+        margin: 0;
+      }
+
+      .traffic-level{
+        padding: 0;
+        margin: 12px 0 0 0;
+        svg{
+          path{
+            fill: #00B8E5;
+          }
+        }
+      }
+
       .fast{
-        padding: 0;
-        svg{
-          width: 100%;
-          path{
-            fill: #00A916;
-          }
-        } 
-      }
-
-      .med{
-        padding: 0;
-        svg{
-          width: 100%;
-          path{
-            fill: #FF9E00;
-          }
-        } 
-      }
-
-      .slow{
-        padding: 0;
-        svg{
-          width: 100%;
-          path{
-            fill: #F84048;
-          }
-        } 
-      }
-
-      #fast{
         margin-top: 9px; 
         width: 95%; 
         height: 7px; 
         background-color: #00A916;
       }
-      #medium{
+      .medium{
         margin-top: 9px; 
         width: 95%; 
         height: 7px; 
         background-color: #FF9E00;
       }
-      #slow{
+      .slow{
         margin-top: 9px; 
         width: 95%; 
         height: 7px; 
@@ -206,6 +200,7 @@
     #stage-2-btn{
       background-color: #F84048; 
       color: white; 
+      // margin-top: 15px;
       text-align: center; 
       font-size: 25px; 
       font-weight: 700; 
@@ -340,13 +335,13 @@
     margin-left:auto; 
     margin-right:auto; 
     background-color: white; 
-    margin-top: 100px;
+    margin-top: 85px;
     border: 1px solid black; 
     #timer-backdrop{
       position: relative;
       margin-left: auto;
       margin-right: auto;
-      margin-top: 30px;
+      margin-top: 40px;
       width: 90%;
       height: 120px;
       background-color: #F2F2F2;
@@ -533,7 +528,7 @@
 
 
 @media only screen and (max-width : 400px) { 
-  #intro-phone{
+  #phone-container{
     display:none;
   }
   #txt-msg-container,
