@@ -27,7 +27,7 @@ $(document).ready(function(){
       $("#speeding-car").animate({left: "110%"}, 5000);
       window.setTimeout(function () {
         $('#stage-3').fadeOut();
-        $('#stage-4, #stage-4-header, #intro-phone').show();
+        $('#stage-4, #stage-4-header, #intro-phone').delay(400).fadeIn();
       }, 5500);
       
     });
