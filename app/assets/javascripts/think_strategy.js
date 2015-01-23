@@ -17,6 +17,7 @@ $(document).ready(function(){
 
     $body.find('#think-strategy .selected').toggleClass('selected', false);
     $btn.toggleClass('selected', true);
+    $('#x-btn-next-though').fadeIn();
   }
 
 });
