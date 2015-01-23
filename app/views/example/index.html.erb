@@ -80,7 +80,7 @@
   <!-- 2. MISSION INTRO -->
   <div id="mission-intro"  class="slide" data-currentnode="3" data-nextnode="2">
  
-    <h4 id="stage-1-header" style="display:none">
+    <h4 id="stage-1-header" style="">
       There's always a moment where everything is going right, but something like this happens
     </h4>
     <h4 id="stage-2-header" style="display:none">
@@ -1737,27 +1737,29 @@
       <h3 class="main-question">
         How well do you think this strategy will work?
       </h3>
-      <div class="content-c">
-        <button class="thought-button left-button">
-          <div class="text">Works like a charm every time</div>
-          <%= render 'thoughtBubble' %>
-        </button>
-        <button class="thought-button center-button">
-          <div class="text">I might have to  circle a few times, but it will eventually work</div>
-          <%= render 'thoughtBubble' %>
-        </button>
-        <button class="thought-button right-button">
-          <div class="text">It’s always bad,  but it’s better than parking</div>
-          <%= render 'thoughtBubble' %>
-        </button>
+      <div class="row">
+        <div class="content-c">
+          <button class="thought-button left-button">
+            <div class="text">Works like a charm every time</div>
+            <%= render 'thoughtBubble' %>
+          </button>
+          <button class="thought-button center-button">
+            <div class="text">I might have to  circle a few times, but it will eventually work</div>
+            <%= render 'thoughtBubble' %>
+          </button>
+          <button class="thought-button right-button">
+            <div class="text">It’s always bad,  but it’s better than parking</div>
+            <%= render 'thoughtBubble' %>
+          </button>
 
-        <div class="thought-head">
-          <%= render 'head' %>
+          <div class="thought-head">
+            <%= render 'head' %>
+          </div>
+
+          <button id="x-btn-next-though" class="next-thought-btn emergency-next" style="display: none">
+            Next
+          </button>
         </div>
-
-        <button id="x-btn-next-though" class="next-thought-btn emergency-next">
-          Next
-        </button>
       </div>
     </div>
     <!-- END WHY DO YOU THINK THIS STRATEGY WILL WORK -->
