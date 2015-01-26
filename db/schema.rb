@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150112213646) do
+ActiveRecord::Schema.define(version: 20150116211204) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,8 @@ ActiveRecord::Schema.define(version: 20150112213646) do
     t.boolean  "travel_companion"
     t.string   "final_who_picking_up"
     t.boolean  "active"
+    t.string   "luggage_type"
+    t.integer  "picking_up_number"
   end
 
   create_table "responses", force: true do |t|
