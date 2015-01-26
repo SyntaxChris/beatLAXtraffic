@@ -12,6 +12,7 @@ angular.module('lawaApp')
             $scope.surveySessionId = data.session_id;
             $scope.respondentId = data.respondent_id;
             $scope.setCurrentNodeById(data.current_node_id);
+            $scope.variables = data.variables;
           })
 
           $scope.currentDecisionDestination = null;

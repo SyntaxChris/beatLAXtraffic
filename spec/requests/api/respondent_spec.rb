@@ -3,8 +3,15 @@ require 'rails_helper'
 describe "respondents API" do
   describe "find_or_create respondent" do
     context "when a resopndent is new" do
-      it "returns an new respondent's id and session id" do
+      it "returns an new respondent's id, session id and random variables" do
         existing = create(:respondent)
+        existing.update(
+          flight_code: "123",
+          passenger_count: 1,
+          luggage_count: 2,
+          original_who_picking_up: 'Boss',
+          originating_location: 'MEX'
+        )
         previous_count = Respondent.count
         get '/api/respondents/get_or_create', format: :json
 
@@ -13,11 +20,16 @@ describe "respondents API" do
         expect(cookies["survey_session_id"]).to eq new_respondent.session_id
         expect(json['session_id']).to eq new_respondent.session_id
         expect(json['respondent_id']).to eq new_respondent.id
+        expect(json['variables']['flight_code']).to eq new_respondent.flight_code.to_i
+        expect(json['variables']['picking_up_number']).to eq new_respondent.picking_up_number
+        expect(json['variables']['luggage_count']).to eq new_respondent.luggage_count
+        expect(json['variables']['original_who_picking_up']).to eq new_respondent.original_who_picking_up
+        expect(json['variables']['originating_location']).to eq new_respondent.originating_location
       end
     end
 
     context "when a respondent is returning" do
-      it "returns an existing respondent's id and session id" do
+      it "returns an existing respondent's id, session id and random variables" do
         existing = create(:respondent, session_id: "10abc")
         previous_count = Respondent.count
         cookies["survey_session_id"] = existing.session_id
@@ -27,6 +39,11 @@ describe "respondents API" do
         expect(cookies["survey_session_id"]).to eq existing.session_id
         expect(json['session_id']).to eq existing.session_id
         expect(json['respondent_id']).to eq existing.id
+        expect(json['variables']['flight_code']).to eq existing.flight_code.to_s
+        expect(json['variables']['picking_up_number']).to eq existing.picking_up_number
+        expect(json['variables']['luggage_count']).to eq existing.luggage_count
+        expect(json['variables']['original_who_picking_up']).to eq existing.original_who_picking_up
+        expect(json['variables']['originating_location']).to eq existing.originating_location
       end
 
       it "returns respondent's current_node_id" do
