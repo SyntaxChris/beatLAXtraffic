@@ -6,7 +6,7 @@ describe "respondents API" do
       it "returns an new respondent's id, session id and random variables" do
         existing = create(:respondent)
         existing.update(
-          flight_code: 1234,
+          flight_code: "123",
           passenger_count: 1,
           luggage_count: 2,
           original_who_picking_up: 'Boss',
@@ -20,11 +20,11 @@ describe "respondents API" do
         expect(cookies["survey_session_id"]).to eq new_respondent.session_id
         expect(json['session_id']).to eq new_respondent.session_id
         expect(json['respondent_id']).to eq new_respondent.id
-        expect(json['flight_code']).to eq new_respondent.flight_code.to_i
-        expect(json['passenger_count']).to eq new_respondent.passenger_count
-        expect(json['luggage_count']).to eq new_respondent.luggage_count
-        expect(json['original_who_picking_up']).to eq new_respondent.original_who_picking_up
-        expect(json['originating_location']).to eq new_respondent.originating_location
+        expect(json['variables']['flight_code']).to eq new_respondent.flight_code.to_i
+        expect(json['variables']['picking_up_number']).to eq new_respondent.picking_up_number
+        expect(json['variables']['luggage_count']).to eq new_respondent.luggage_count
+        expect(json['variables']['original_who_picking_up']).to eq new_respondent.original_who_picking_up
+        expect(json['variables']['originating_location']).to eq new_respondent.originating_location
       end
     end
 
@@ -39,6 +39,11 @@ describe "respondents API" do
         expect(cookies["survey_session_id"]).to eq existing.session_id
         expect(json['session_id']).to eq existing.session_id
         expect(json['respondent_id']).to eq existing.id
+        expect(json['variables']['flight_code']).to eq existing.flight_code.to_s
+        expect(json['variables']['picking_up_number']).to eq existing.picking_up_number
+        expect(json['variables']['luggage_count']).to eq existing.luggage_count
+        expect(json['variables']['original_who_picking_up']).to eq existing.original_who_picking_up
+        expect(json['variables']['originating_location']).to eq existing.originating_location
       end
 
       it "returns respondent's current_node_id" do
