@@ -200,7 +200,7 @@
     #stage-2-btn{
       background-color: #F84048; 
       color: white; 
-      // margin-top: 15px;
+      margin-top: 10px;
       text-align: center; 
       font-size: 25px; 
       font-weight: 700; 
@@ -228,7 +228,8 @@
         width: 130%; 
         left: 0; 
         top: -18%;
-        span.building-container{
+        .building-container{
+          display: inline-block;
           padding: 0;
           margin: 0;
           svg{
