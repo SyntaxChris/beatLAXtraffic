@@ -144,13 +144,7 @@ describe Respondent do
         let!(:respondent) { FactoryGirl.create(:respondent, session_id: "1234") }
           it "returns that active session" do
             expect(Respondent.all.count).to eq 1
-            expect(Respondent.get_or_create_by_session("1234")).to eq(
-              {
-                session_id: respondent.session_id,
-                respondent_id: respondent.id,
-                current_node_id: respondent.current_node_id
-              }
-            )
+            expect(Respondent.get_or_create_by_session("1234")).to eq respondent
             expect(Respondent.all.count).to eq 1
           end
         end
@@ -158,38 +152,27 @@ describe Respondent do
         context "when session doesn't exist" do
           it "creates a session and returns it" do
             expect(Respondent.all.count).to eq 0
-            expect(Respondent.get_or_create_by_session("1234")).to eq(
-              {
-                session_id: Respondent.last.session_id,
-                respondent_id: Respondent.last.id,
-                current_node_id: Respondent.last.current_node_id
-              }
-            )
+            expect(Respondent.get_or_create_by_session("1234")).to eq Respondent.last
             expect(Respondent.all.count).to eq 1
           end
         end
       end
 
       describe "evenly_distributed_pickup_target" do
-        context "when there is one least-used" do
-          let!(:respondent) { FactoryGirl.create(
-            :respondent, original_who_picking_up: "Friend"
-          )}
-          let!(:respondent_1) { FactoryGirl.create(
-            :respondent, original_who_picking_up: "Friend"
-          )}
-          let!(:respondent_2) { FactoryGirl.create(
-            :respondent, original_who_picking_up: "Coworker"
-          )}
+        let!(:f1) { FactoryGirl.create(:respondent) }
+        let!(:f2) { FactoryGirl.create(:respondent) }
 
+        context "when there is one least-used" do
           it "returns the pickup target with the lowest occurance" do
+            f1.update(original_who_picking_up: "Friend")
+            f2.update(original_who_picking_up: "Coworker")
             expect(Respondent.evenly_distributed_pickup_target).to eq "Parent"
           end
         end
         context "when there are two or more least-used" do
           it "returns a random selection of the lowest occurances" do
-            f1 = FactoryGirl.create(:respondent, original_who_picking_up: "Friend")
-            f1 = FactoryGirl.create(:respondent, original_who_picking_up: "Friend")
+            f1.update(original_who_picking_up: "Friend")
+            f2.update(original_who_picking_up: "Friend")
             expect(["Coworker", "Parent"]).to include(Respondent.evenly_distributed_pickup_target)
           end
           it "returns a random selection of the lowest occurances" do

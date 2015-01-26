@@ -13,13 +13,13 @@ class Respondent < ActiveRecord::Base
     respondent = Respondent.find_by_session_id(searched_session_id) ||
       Respondent.create(session_id: searched_session_id)
 
-    result = {
-      session_id: respondent.session_id,
-      respondent_id: respondent.id,
-      current_node_id: respondent.current_node_id
-    }
+    #result = {
+    #  session_id: respondent.session_id,
+    #  respondent_id: respondent.id,
+    #  current_node_id: respondent.current_node_id
+    #}
 
-    return result
+    return respondent
   end
 
   private
