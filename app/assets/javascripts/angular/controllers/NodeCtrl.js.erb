@@ -6,6 +6,12 @@ angular.module('lawaApp')
         // get and set up all nodes
         $http.get('/api/nodes').success(function(data){
           $scope.nodes = data;
+          // for development purposes only. add fully-working nodes here
+          // to remove debugging printing out on front end:
+          $scope.nodesWorking = [
+            // add the clean template name, like this:
+            // 'sq-1'
+          ];
 
           // find or create a respondent with session and current node data
           $http.get('/api/respondents/get_or_create/').success(function(data){
@@ -18,6 +24,14 @@ angular.module('lawaApp')
           $scope.currentDecisionDestination = null;
           $scope.currentAnswers = [];
         });
+      };
+
+      $scope.nodeIncludedInWhitelist = function(clean_template_name){
+        if(_.findWhere($scope.nodesWorking, clean_template_name)){
+          return true;
+        } else {
+          return false;
+        }
       };
 
       $scope.setCurrentNodeBySession = function() {
