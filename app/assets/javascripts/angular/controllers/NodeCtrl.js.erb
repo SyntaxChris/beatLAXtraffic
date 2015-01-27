@@ -19,13 +19,40 @@ angular.module('lawaApp')
             $scope.respondentId = data.respondent_id;
             $scope.setCurrentNodeById(data.current_node_id);
             $scope.variables = data.variables;
-            debugger;
+
+            $scope.variables["text_from"] = null;
+            if($scope.variables.original_who_picking_up === "Coworker"){
+              $scope.variables.text_from = "Mr. Manager";
+            }else if($scope.variables.original_who_picking_up === "Friend"){
+              $scope.variables.text_from = "Best Friend";
+            }else if($scope.variables.original_who_picking_up === "Parent"){
+              $scope.variables.text_from = "Mom";
+            };
+
             if($scope.variables.luggage_count > 1){
               $scope.variables.luggage_type = $scope.variables.luggage_type + 's';
             }
             if($scope.variables.picking_up_number > 1){
               $scope.variables.original_who_picking_up = $scope.variables.original_who_picking_up + 's';
             }
+
+            var time = new Date();
+            $scope.currentTime = time.toLocaleTimeString(
+                'en-US', { hour12: true, hour:"numeric", minute:"numeric"}
+              );
+
+            var oneHourAhead = new Date();
+            oneHourAhead.setTime(oneHourAhead.getTime() + (60*60*1000));
+            $scope.oneHourFromNow = oneHourAhead.toLocaleTimeString(
+                'en-US', { hour12: true, hour:"numeric", minute:"numeric"}
+              );
+
+            var tenMinutesBack = new Date();
+            tenMinutesBack.setTime(tenMinutesBack.getTime() - (10*60*1000));
+            $scope.tenMinutesAgo = tenMinutesBack.toLocaleTimeString(
+                'en-US', { hour12: true, hour:"numeric", minute:"numeric"}
+              );
+
           })
 
           $scope.currentDecisionDestination = null;

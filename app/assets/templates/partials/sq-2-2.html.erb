@@ -30,7 +30,7 @@
                 <div class="large-6 medium-6 small-6 columns" style="padding-left:0"><div ng-include="'<%= asset_path 'svgs/_signal.html' %>'"></div></div>
               </div>
             </div>
-            <div class="large-4 medium-4 small-4 columns"><span>9:41</span> <span>AM</span></div>
+            <div class="large-4 medium-4 small-4 columns"><span>{{ currentTime }}</span></div>
             <div class="large-4 medium-4 small-4 columns">
               <div class="row">
                 <div class="large-6 medium-6 small-6 columns" style="padding-right: 0">50%</div>
@@ -40,7 +40,7 @@
           </div>
           <div class="row" style="margin: 0; background-color: #E5E5EA">
             <div class="large-4 medium-4 small-4 columns" style="color: #49B9FB;">&lt;Messages</div>
-            <div class="large-4 medium-4 small-4 columns" style="font-weight: 700"><span>Person</span></div>
+            <div class="large-4 medium-4 small-4 columns" style="font-weight: 700"><span>{{ variables.text_from }}</span></div>
             <div class="large-4 medium-4 small-4 columns" style="color: #49B9FB">Contact&gt;</div>
           </div>
           <div class="row" style="margin: 0; background-color: #E5E5EA">
@@ -48,13 +48,13 @@
           </div>
 
           <div class="row" id="recieved-txt-time" style="font-size: 12px; color: #979A9C; margin:0 ">
-            Today <span>9:32</span> <span>AM</span>
+            Today <span>{{ tenMinutesAgo }}</span>
           </div>
 
 
           <div class="row" id="txt-bbl-content" style="margin: 0; background-color: white">
             <div id="recieved-txt">
-              Hey there! Just wanted to remind you to pick me up today at LAX! It would be terrible if you forgot to pick up your favorite <span>{{ variables.original_who_picking_up }}</span> from the airport! I should arrive today around <span>TIME</span>.  See you soon! :D
+              Hey there! Just wanted to remind you to pick me up today at LAX! It would be terrible if you forgot to pick up your favorite <span>{{ variables.original_who_picking_up }}</span> from the airport! I should arrive today around <span>{{ oneHourFromNow }}</span>.  See you soon! :D
             </div>
             <div id="sent-txt" style="">
                Uhh... yeah of course!
@@ -104,14 +104,30 @@
       <div id="stage-2-body">
         <div class="row" style="text-align: center; margin: 0; padding-top: 7px">
           <div id="pickup-person" class="large-6 medium-6 small-6 columns">
-            <div ng-include="'<%= asset_path 'svgs/_suitguy.html' %>'"></div>
+            <div
+              ng-show="variables.original_who_picking_up === 'Coworker' ||
+                       variables.original_who_picking_up === 'Coworkers'"
+              ng-include="'<%= asset_path 'svgs/_suitguy.html' %>'">
+            </div>
+
+            <div
+              ng-show="variables.original_who_picking_up === 'Friend' ||
+                       variables.original_who_picking_up === 'Friends'"
+              ng-include="'<%= asset_path 'svgs/_friend.html' %>'">
+            </div>
+
+            <div
+              ng-show="variables.original_who_picking_up === 'Parent' ||
+                       variables.original_who_picking_up === 'Parents'"
+              ng-include="'<%= asset_path 'svgs/_familyGuy.html' %>'">
+            </div>
           </div>
           <div id="pickup-luggage" class="large-6 medium-6 small-6 columns">
             <div ng-include="'<%= asset_path 'svgs/_briefcase.html' %>'"></div>
           </div>
         </div>
         <div class="row" style="text-align: center; margin: 0;">
-          <div class="large-6 medium-6 small-6 columns"><span>1</span> <span>{{ variables.original_who_picking_up }}</span></div>
+          <div class="large-6 medium-6 small-6 columns"><span>{{ variables.picking_up_number }}</span> <span>{{ variables.original_who_picking_up }}</span></div>
           <div class="large-6 medium-6 small-6 columns" style="padding: 0">
             with <span>{{ variables.luggage_count }}</span> <span>{{ variables.luggage_type }}</span>
           </div>
@@ -124,11 +140,11 @@
           </div>
 
           <!-- class names for car colors: .fast, .medium, .slow -->
-          
+
           <div class="large-2 medium-2 small-2 columns traffic-level"><div ng-class="variables.traffic_level" id="level-1"></div></div>
           <div class="large-2 medium-2 small-2 columns traffic-level"><div ng-class="variables.traffic_level" id="level-2"></div></div>
           <div class="large-2 medium-2 small-2 columns traffic-level"><div ng-class="variables.traffic_level" id="level-3"></div></div>
-          
+
           <div class="large-3 medium-3 small-3 columns traffic-level">
             <div ng-include="'<%= asset_path 'svgs/_trafficCar.html' %>'"></div>
           </div>
