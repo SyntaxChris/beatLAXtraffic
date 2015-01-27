@@ -28,6 +28,7 @@ describe "respondents API" do
         expect(json['variables']['luggage_count']).to eq new_respondent.luggage_count
         expect(json['variables']['luggage_type']).to eq new_respondent.luggage_type
         expect(json['variables']['original_who_picking_up']).to eq new_respondent.original_who_picking_up
+        expect(json['variables']['landing_time']).to eq new_respondent.landing_time
       end
     end
 
@@ -50,6 +51,7 @@ describe "respondents API" do
         expect(json['variables']['luggage_count']).to eq existing.luggage_count
         expect(json['variables']['luggage_type']).to eq existing.luggage_type
         expect(json['variables']['original_who_picking_up']).to eq existing.original_who_picking_up
+        expect(json['variables']['landing_time']).to eq existing.landing_time
       end
 
       it "returns respondent's current_node_id" do

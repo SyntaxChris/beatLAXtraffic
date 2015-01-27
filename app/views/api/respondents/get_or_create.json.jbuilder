@@ -10,4 +10,5 @@ json.variables do
   json.original_who_picking_up @respondent.original_who_picking_up
   json.originating_city @respondent.originating_location
   json.originating_airport_code @respondent.originating_airport_code
+  json.landing_time @respondent.landing_time
 end

@@ -245,7 +245,7 @@
               <div class="large-6 medium-6 small-6 columns" style="padding-left:0"><div ng-include="'<%= asset_path 'svgs/_signal.html' %>'"></div></div>
             </div>
           </div>
-          <div class="large-4 medium-4 small-4 columns" style="text-align: center"><span>9:41</span> <span>AM</span></div>
+          <div class="large-4 medium-4 small-4 columns" style="text-align: center"><span>{{ currentTime }}</span></div>
           <div class="large-4 medium-4 small-4 columns">
             <div class="row">
               <div class="large-6 medium-6 small-6 columns" style="padding-right: 0">42%</div>
@@ -261,15 +261,16 @@
         </div>
 
         <div class="row" style="margin: 0">
-          <div id="timer-backdrop">            
+          <div id="timer-backdrop">
             <div ng-include="'<%= asset_path 'svgs/_introstopwatch.html' %>'"></div>
             <div id="bd-content">
               <div class="row" id="flight-display">
-                Flight <span>1234</span> <br>
+                Flight <span>{{ variables.flight_code }}</span> <br>
                 Will Land In
               </div>
             </div>
-            <div id="display-time"><span id="mn-time">30</span><span id="mn-unit">min</span></div>
+            {{ variables }}
+            <div id="display-time"><span id="mn-time">{{ variables.landing_time }}</span><span id="mn-unit">min</span></div>
           </div>
         </div>
 
