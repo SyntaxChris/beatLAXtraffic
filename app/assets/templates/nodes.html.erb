@@ -1,14 +1,16 @@
 <div ng-controller="NodeCtrl">
-  {{ variables }}
-  <div class="current-node-container" style="background-color:white">
-    <div ng-if="!currentNode.is_decision_point">
-      <div ng-include="'<%= asset_path 'partials/question.html' %>'"></div>
+  <div ng-if="!nodeIncludedInWhitelist(currentNode.clean_template_name)">
+    <div class="current-node-container" style="background-color:white">
+      <div ng-if="!currentNode.is_decision_point">
+        <div ng-include="'<%= asset_path 'partials/question.html' %>'"></div>
+      </div>
+      <div ng-if="currentNode.is_decision_point">
+        <div ng-include="'<%= asset_path 'partials/decision.html' %>'"></div>
+      </div>
     </div>
-    <div ng-if="currentNode.is_decision_point">
-      <div ng-include="'<%= asset_path 'partials/decision.html' %>'"></div>
-    </div>
-    {{ getTemplateName(currentNode.node_id)}}
   </div>
+  {{ getTemplateName(currentNode.node_id)}}
+  {{ variables }}
   <div class="row">
     <div ng-include="currentTemplateName">
     </div>
