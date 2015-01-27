@@ -169,9 +169,19 @@
   .tram {
     position: absolute;
     z-index: 1;
-    bottom: 16%;
-    right: 34%;
+    bottom: 19%;
+    right: 26%;
     width: 10%;
+    -webkit-transform: rotate(-20deg);
+    -moz-transform: rotate(-20deg);
+    -o-transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+    svg{
+      path{
+        fill: #2B6DA9;
+      }
+    }
   }
 }
 
