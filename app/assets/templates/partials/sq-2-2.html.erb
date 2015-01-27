@@ -269,7 +269,6 @@
                 Will Land In
               </div>
             </div>
-            {{ variables }}
             <div id="display-time"><span id="mn-time">{{ variables.landing_time }}</span><span id="mn-unit">min</span></div>
           </div>
         </div>
@@ -286,7 +285,7 @@
           </div>
         </div>
 
-        <div id="stage-4-btn">
+        <div id="stage-4-btn" ng-click="submit()">
           Let's Go!
         </div>
 
