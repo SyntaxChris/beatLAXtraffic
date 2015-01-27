@@ -1,5 +1,5 @@
 <!-- remove style for final template -->
-<div id="interactive-map" style="top: 50%;">
+<div id="interactive-map">
   <div class="top-half">
         <h3>What is your strategy for picking up your passenger?</h3>
       </div>
@@ -10,7 +10,7 @@
             Choose a letter to select an approach
           </div>
           <div ng-repeat="decision in currentNode.decisions">
-            <a ng-click="setCurrentDecisionNoSubmit(decision)" ng-class="x-btn-select-path select-path-btn" href="javascipt:void(0)">{{ decision.decision }}</a>
+            <a ng-click="setCurrentDecisionNoSubmit(decision)" ng-class="x-btn-select-path select-path-btn">{{ decision.decision }}</a>
           </div>
 
           <a href="javascript:void(0)" class="x-btn-select-path select-path-btn selected" data-path="yellow">
