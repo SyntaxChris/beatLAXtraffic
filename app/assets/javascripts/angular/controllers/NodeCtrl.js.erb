@@ -10,7 +10,7 @@ angular.module('lawaApp')
           // to remove debugging printing out on front end:
           $scope.nodesWorking = [
             // add the clean template name, like this:
-            'sq-1'
+            'assets/partials/sq-1.html'
           ];
 
           // find or create a respondent with session and current node data
@@ -60,8 +60,8 @@ angular.module('lawaApp')
         });
       };
 
-      $scope.nodeIncludedInWhitelist = function(clean_template_name){
-        if(_.findWhere($scope.nodesWorking, clean_template_name)){
+      $scope.nodeIncludedInWhitelist = function(template_name){
+        if(_.findWhere($scope.nodesWorking, template_name)){
           return true;
         } else {
           return false;
@@ -86,6 +86,10 @@ angular.module('lawaApp')
       $scope.setCurrentDecision = function(decision){
         $scope.currentDecisionDestination = $scope.fetchNodeById(decision.destination_node_id);
         $scope.submit(decision.id);
+      };
+
+      $scope.setCurrentDecisionNoSubmit = function(decision){
+        $scope.currentDecisionDestination = $scope.fetchNodeById(decision.destination_node_id);
       };
 
       $scope.addMultipleChoice = function(answer) {
