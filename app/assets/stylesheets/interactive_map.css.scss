@@ -177,9 +177,14 @@
     -o-transform: rotate(-20deg);
     -ms-transform: rotate(-20deg);
     transform: rotate(-20deg);
-    svg{
+    .blue-tram{
       path{
         fill: #2B6DA9;
+      }
+    }
+    .gray-tram{
+      path{
+        fill: #B4B4B6;
       }
     }
   }

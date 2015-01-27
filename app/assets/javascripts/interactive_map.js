@@ -38,6 +38,18 @@ $(document).ready(function(){
       .find('#interactive-map .x-btn-select-path[data-path="'+path+'"]').toggleClass('selected', true).end()
       .find('#interactive-map .map-path.'+path).toggleClass('selected', true).end()
       .find('#interactive-map .instructions .path-'+path).toggleClass('showing', true);
+
+    // add selected class to tram svg
+    if (path === 'blue') {
+      if($('.tram svg').attr('class') === 'blue-tram')
+        $('.tram svg').attr('class', 'gray-tram')
+      else{
+        $('.tram svg').attr('class', 'blue-tram')
+      }
+    } 
+    else{
+      $('.tram svg').attr('class', 'gray-tram')
+    }
   }
 
   function selectNextNode(e){
