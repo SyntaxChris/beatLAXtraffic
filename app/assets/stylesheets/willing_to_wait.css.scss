@@ -6,17 +6,6 @@
   margin-left: auto;
   margin-right: auto;
   top: -30px;
-  // top: 0;
-  // left: 0;
-  // &:after {
-  //   content: "";
-  //   position: absolute;
-  //   background: rgba(255,255,255,.6);
-  //   height: 100%;
-  //   width: 100%;
-  //   top: 0;
-  //   left: 0;
-  // }
   .timer-c {
     margin-top: 50px;
     height: 150px;
@@ -49,12 +38,13 @@
     margin: 8px auto;
   }
   button {
+    font-family: 'Quicksand', sans-serif;
     outline: none;
     padding: 6px 0;
     width: 45%;
     background: none;
     border: 2px solid #36C2E2;
-    color: #0CA4DC;
+    color: white;
     -moz-border-radius: 25px;
     -webkit-border-radius: 25px;
     border-radius: 25px;
