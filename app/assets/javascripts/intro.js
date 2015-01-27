@@ -23,7 +23,7 @@ $(document).ready(function(){
       window.setTimeout(function () {
         $('#level-1').delay(850).fadeIn(100);
         $('#level-2').delay(1400).fadeIn(200);
-        $('#level-3').delay(2000).fadeIn(300);
+        $('#level-3').delay(2000).fadeIn(270);
         $('.traffic-car').animate({left: "5px"}, 2300)
       }, 1200);
 
