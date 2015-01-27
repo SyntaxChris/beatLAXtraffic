@@ -1,6 +1,6 @@
 <div id="mission-intro">
  
-    <h4 id="stage-1-header" style="display:none">
+    <h4 id="stage-1-header" style="">
       There's always a moment where everything is going right, but something like this happens
     </h4>
     <h4 id="stage-2-header" style="display:none">
@@ -20,7 +20,7 @@
 
 
 
-    <div id="stage-1" style="display:none">
+    <div id="stage-1" style="">
       <div class="stage-container">
         <div class="container-contents" id="txt-msg-container">
           <div class="row" style="margin: 0; background-color: #E5E5EA; font-size: 12px">
@@ -118,12 +118,20 @@
         </div>
 
         <div class="row" style="text-align: center; margin:0;">
+
+          <div class="large-3 medium-3 small-3 columns traffic-level-label">
+            <div ng-include="'<%= asset_path 'svgs/_home.html' %>'"></div>
+          </div>
+
           <!-- class names for car colors: .fast, .medium, .slow -->
-          <div class="large-3 medium-3 small-3 columns traffic-level-label"><div ng-include="'<%= asset_path 'svgs/_home.html' %>'"></div></div>
-          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium"></div></div>
-          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium"></div></div>
-          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium"></div></div>
-          <div class="large-3 medium-3 small-3 columns traffic-level"><div ng-include="'<%= asset_path 'svgs/_trafficCar.html' %>'"></div></div>
+          
+          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium" id="level-1"></div></div>
+          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium" id="level-2"></div></div>
+          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium" id="level-3"></div></div>
+          
+          <div class="large-3 medium-3 small-3 columns traffic-level">
+            <div ng-include="'<%= asset_path 'svgs/_trafficCar.html' %>'"></div>
+          </div>
         </div>
 
         <div class="row" style="text-align: center; margin: 0">
@@ -157,7 +165,7 @@
 
 
 
-    <div id="stage-3" style="">
+    <div id="stage-3" style="display: none">
       <div id="speeding-bg">
 
 <!--         <div id="city-bg">
