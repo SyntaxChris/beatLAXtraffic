@@ -14,7 +14,7 @@ class Respondent < ActiveRecord::Base
     { code: "SYD", city: "Sydney"}
   ]
   PICKUP_TARGETS = ["Friend", "Coworker", "Parent"]
-  TRAFFIC_LEVELS = ["Slow", "Medium", "Fast"]
+  TRAFFIC_LEVELS = ["slow", "medium", "fast"]
 
   has_many :responses
   after_create :set_starting_node
