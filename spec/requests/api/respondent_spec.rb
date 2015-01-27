@@ -21,10 +21,14 @@ describe "respondents API" do
         expect(json['session_id']).to eq new_respondent.session_id
         expect(json['respondent_id']).to eq new_respondent.id
         expect(json['variables']['flight_code']).to eq new_respondent.flight_code.to_i
+        expect(json['variables']['originating_city']).to eq new_respondent.originating_location
+        expect(json['variables']['originating_airport_code']).to eq new_respondent.originating_airport_code
+        expect(json['variables']['traffic_level']).to eq new_respondent.traffic_level
         expect(json['variables']['picking_up_number']).to eq new_respondent.picking_up_number
         expect(json['variables']['luggage_count']).to eq new_respondent.luggage_count
+        expect(json['variables']['luggage_type']).to eq new_respondent.luggage_type
         expect(json['variables']['original_who_picking_up']).to eq new_respondent.original_who_picking_up
-        expect(json['variables']['originating_location']).to eq new_respondent.originating_location
+        expect(json['variables']['landing_time']).to eq new_respondent.landing_time
       end
     end
 
@@ -40,10 +44,14 @@ describe "respondents API" do
         expect(json['session_id']).to eq existing.session_id
         expect(json['respondent_id']).to eq existing.id
         expect(json['variables']['flight_code']).to eq existing.flight_code.to_s
+        expect(json['variables']['originating_city']).to eq existing.originating_location
+        expect(json['variables']['originating_airport_code']).to eq existing.originating_airport_code
+        expect(json['variables']['traffic_level']).to eq existing.traffic_level
         expect(json['variables']['picking_up_number']).to eq existing.picking_up_number
         expect(json['variables']['luggage_count']).to eq existing.luggage_count
+        expect(json['variables']['luggage_type']).to eq existing.luggage_type
         expect(json['variables']['original_who_picking_up']).to eq existing.original_who_picking_up
-        expect(json['variables']['originating_location']).to eq existing.originating_location
+        expect(json['variables']['landing_time']).to eq existing.landing_time
       end
 
       it "returns respondent's current_node_id" do
