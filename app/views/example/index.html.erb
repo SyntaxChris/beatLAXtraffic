@@ -162,7 +162,7 @@
 
 
 
-    <div id="stage-2" style="display: none">
+    <div id="stage-2" style="display:none">
 
       <div id="stage-2-header">
         <div class="row" style="text-align: center; margin: 0">
@@ -198,12 +198,20 @@
         </div>
 
         <div class="row" style="text-align: center; margin:0;">
-          <!-- class names for car colors: .fast, .medium, .slow -->
+          
           <div class="large-3 medium-3 small-3 columns traffic-level-label"><%= render 'home' %></div>
-          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium"></div></div>
-          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium"></div></div>
-          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium"></div></div>
-          <div class="large-3 medium-3 small-3 columns traffic-level"><%= render 'trafficCar' %></div>
+
+          <!-- class names for car colors: .fast, .medium, .slow -->
+          
+          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium" id="level-1"></div></div>
+          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium" id="level-2"></div></div>
+          <div class="large-2 medium-2 small-2 columns traffic-level"><div class="medium" id="level-3"></div></div>
+          
+          
+
+          <div class="large-3 medium-3 small-3 columns traffic-level">
+            <%= render 'trafficCar' %>
+          </div>
         </div>
 
         <div class="row" style="text-align: center; margin: 0">

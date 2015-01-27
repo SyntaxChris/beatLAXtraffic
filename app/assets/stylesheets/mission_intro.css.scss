@@ -152,6 +152,11 @@
       }
       #pickup-luggage{
         svg{
+          -webkit-animation: traffic-car 2s linear infinite;
+          -moz-animation: traffic-car 2s linear infinite;
+          -o-animation: traffic-car 2s linear infinite;
+          -ms-animation: traffic-car 2s linear infinite;
+          animation: traffic-car 2s linear infinite;
           margin-top: -5px;
           width: 110px;
           height: 110px;
@@ -161,6 +166,7 @@
       .traffic-level-label{
         padding: 0;
         margin: 0;
+        padding-left: 28px;
       }
 
       .traffic-level-car{
@@ -171,7 +177,15 @@
       .traffic-level{
         padding: 0;
         margin: 12px 0 0 0;
+        #level-1,
+        #level-2,
+        #level-3{
+          display: none;
+        }
         svg{
+          // -webkit-animation: traffic-car 1.8s linear;
+          position: absolute;
+          left: -163px;
           path{
             fill: #00B8E5;
           }
@@ -433,6 +447,13 @@
     75%  {background-color: #FA797F;}
     100% {background-color: #F84048;}
 }
+
+
+@-webkit-keyframes traffic-car {
+  0% {left: -163px;}
+  100% {left: 5px;}
+}
+
 
 
 @-webkit-keyframes car-race {
