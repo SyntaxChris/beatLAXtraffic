@@ -54,7 +54,7 @@
 
           <div class="row" id="txt-bbl-content" style="margin: 0; background-color: white">
             <div id="recieved-txt">
-              Hey there! Just wanted to remind you to pick me up today at LAX! It would be terrible if you forgot to pick up your favorite <span>PERSON</span> from the airport! I should arrive today around <span>TIME</span>.  See you soon! :D
+              Hey there! Just wanted to remind you to pick me up today at LAX! It would be terrible if you forgot to pick up your favorite <span>{{ variables.original_who_picking_up }}</span> from the airport! I should arrive today around <span>TIME</span>.  See you soon! :D
             </div>
             <div id="sent-txt" style="">
                Uhh... yeah of course!
@@ -90,14 +90,14 @@
           <div class="large-6 medium-6 small-6 columns" style="text-align: right; font-size: 15px">Arriving</div>
         </div>
         <div class="row" style="text-align: center; margin: 0">
-          <div class="large-5 medium-5 small-5 columns" style="font-size: 35px; padding-top: 10px; text-align: left; font-weight: 700"><span>ORD</span></div>
+          <div class="large-5 medium-5 small-5 columns" style="font-size: 35px; padding-top: 10px; text-align: left; font-weight: 700"><span>{{ variables.originating_location }}</span></div>
           <div class="large-2 medium-2 small-2 columns" style="padding:0"><div ng-include="'<%= asset_path 'svgs/_introplane.html' %>'"></div></div>
           <div class="large-5 medium-5 small-5 columns" style="font-size: 35px; padding-top: 10px; text-align: right; font-weight: 700">LAX</div>
         </div>
         <div class="row" style="text-align: center; margin: 0">
-          <div class="large-4 medium-4 small-4 columns" style="font-size: 12px; text-align: left"><span>Chicago</span></div>
-          <div class="large-4 medium-4 small-4 columns" style="font-size: 12px; text-align: center">Flight <span>1254</span></div>
-          <div class="large-4 medium-4 small-4 columns" style="font-size: 12px; text-align: right">Los Angeles</div>
+          <!-- <div class="large-4 medium-4 small-4 columns" style="font-size: 12px; text-align: left"><span>Chicago</span></div> -->
+          <div class="large-4 medium-4 small-4 columns push-4" style="font-size: 12px; text-align: center">Flight <span>{{ variables.flight_code }}</span></div>
+          <!-- <div class="large-4 medium-4 small-4 columns" style="font-size: 12px; text-align: right">Los Angeles</div> -->
         </div>
       </div>
 
@@ -111,9 +111,9 @@
           </div>
         </div>
         <div class="row" style="text-align: center; margin: 0;">
-          <div class="large-6 medium-6 small-6 columns"><span>1</span> <span>Client</span></div>
+          <div class="large-6 medium-6 small-6 columns"><span>1</span> <span>{{ variables.original_who_picking_up }}</span></div>
           <div class="large-6 medium-6 small-6 columns" style="padding: 0">
-            with <span>2</span> <span>Large Suitcases</span>
+            with <span>{{ variables.luggage_count }}</span> <span>{{ variables.luggage_type }}</span>
           </div>
         </div>
 

@@ -10,6 +10,7 @@ describe Respondent do
         time_elapsed: 15,
         current_node_id: 7,
         flight_code: "JFK",
+        traffic_level: "slow",
         passenger_count: 2,
         luggage_count: 1,
         luggage_type: 'Large Suitcase',
@@ -41,6 +42,10 @@ describe Respondent do
 
     it "has a current node location" do
       expect(respondent.current_node_id).to eq 7
+    end
+
+    it "has a traffic level" do
+      expect(respondent.traffic_level).to eq "slow"
     end
 
     it "has an originating flight airport code" do
@@ -108,6 +113,11 @@ describe Respondent do
       expect(new_respondent.luggage_count).to be_between(1,3)
     end
 
+    it "on creation, 'traffic_level' is set" do
+      new_respondent = Respondent.create
+      expect(Respondent::TRAFFIC_LEVELS).to include(new_respondent.traffic_level)
+    end
+
     it "on creation, 'luggage_type' is set" do
       new_respondent = Respondent.create
       expect(Respondent::LUGGAGE_TYPES).to include(new_respondent.luggage_type)
@@ -115,7 +125,12 @@ describe Respondent do
 
     it "on creation, 'originating_location' is set" do
       new_respondent = Respondent.create
-      expect(Respondent::ORIGINATING_LOCATIONS).to include(new_respondent.originating_location)
+      expect(Respondent::ORIGINATING_LOCATIONS.collect{|hash| hash[:city]}).to include(new_respondent.originating_location)
+    end
+
+    it "on creation, 'originating_airport_code' is set" do
+      new_respondent = Respondent.create
+      expect(Respondent::ORIGINATING_LOCATIONS.collect{|hash| hash[:code]}).to include(new_respondent.originating_airport_code)
     end
 
     it "on creation, 'picking_up_number' is set" do

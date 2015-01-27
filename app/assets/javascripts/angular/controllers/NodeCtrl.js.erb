@@ -10,7 +10,7 @@ angular.module('lawaApp')
           // to remove debugging printing out on front end:
           $scope.nodesWorking = [
             // add the clean template name, like this:
-            // 'sq-1'
+            'sq-1'
           ];
 
           // find or create a respondent with session and current node data
@@ -19,6 +19,13 @@ angular.module('lawaApp')
             $scope.respondentId = data.respondent_id;
             $scope.setCurrentNodeById(data.current_node_id);
             $scope.variables = data.variables;
+            debugger;
+            if($scope.variables.luggage_count > 1){
+              $scope.variables.luggage_type = $scope.variables.luggage_type + 's';
+            }
+            if($scope.variables.picking_up_number > 1){
+              $scope.variables.original_who_picking_up = $scope.variables.original_who_picking_up + 's';
+            }
           })
 
           $scope.currentDecisionDestination = null;
