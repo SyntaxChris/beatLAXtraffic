@@ -36,7 +36,7 @@
     top: 0;
     height: 100%;
     width: 100%;
-    background: rgba(255,255,255,.6);
+    // background: rgba(255,255,255,.6);
     z-index: 1;
   }
   .content {
@@ -44,8 +44,8 @@
     z-index: 2;
   }
   h3 {
-    color: #71777D;
-    font-family: 'Helvetica Neue';
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,.3);
     width: 80%;
     margin: 10px auto 10px;
     text-align: center;
@@ -53,6 +53,7 @@
     letter-spacing: .8px;
   }
   button {
+    font-family: 'Quicksand', sans-serif;
     outline: none;
   }
   .content-c {
@@ -159,7 +160,8 @@
     -webkit-border-radius: 25px;
     border-radius: 25px;
     border: 2px solid #EB7374;
-    color: #9C212A;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,.3);
     text-align: center;
     width: 100px;
     padding: 8px 0;
