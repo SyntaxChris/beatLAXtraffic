@@ -61,6 +61,13 @@
     width: 290px;
     margin: 0 auto;
     position: relative;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,.3);
+    .inner-question{
+      font-size: 18px;
+      padding-bottom: 20px;
+      padding-top: 0px;
+    }
   }
   .red-circle {
     height: 150px;
