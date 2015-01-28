@@ -1,9 +1,17 @@
 <!--  WHY DO YOU THINK THIS STRATEGY WILL WORK -->
 <div id="think-strategy">
   <h3 class="main-question">
-    How well do you think this strategy will work?
+    {{ currentNode.question.question }}
   </h3>
   <div class="content-c">
+    {{ currentNode }}
+    {{ currentNode.answers }}
+    <div ng-repeat="answer in currentNode.answers">
+      <button class="thought-button left-button">
+        <div class="text">{{ answer.answer }}</div>
+        <div ng-include="'<%= asset_path 'svgs/_thoughtBubble.html' %>'"></div>
+      </button>
+    </div>
     <button class="thought-button left-button">
       <div class="text">Works like a charm every time</div>
       <div ng-include="'<%= asset_path 'svgs/_thoughtBubble.html' %>'"></div>

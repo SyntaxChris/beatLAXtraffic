@@ -38,7 +38,8 @@
             <%= image_tag('map_blue.jpg', width: '100%') %>
           </div>
         </div>
-        <div ng-click="submit(currentDecisionDestination)">
+        <div ng-click="submit(currentDecision.id)">
+          {{ currentDecisionDestination }}
           Let's Go!
         </div>
       </div>
