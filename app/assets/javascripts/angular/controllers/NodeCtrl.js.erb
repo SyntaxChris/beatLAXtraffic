@@ -68,6 +68,12 @@ angular.module('lawaApp')
         }
       };
 
+      $scope.findDecisionByString = function(string){
+        var spunDecision = _.where($scope.currentNode.decisions, {decision: string})
+        $scope.setCurrentDecisionNoSubmit(spunDecision[0]);
+        return spunDecision[0];
+      }
+
       $scope.setCurrentNodeBySession = function() {
         $scope.currentNode = $scope.fetchNodeById(sessionCurrentNodeId);
       };
