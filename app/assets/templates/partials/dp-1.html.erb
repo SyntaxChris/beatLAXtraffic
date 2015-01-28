@@ -9,6 +9,7 @@
           <div class="instructions">
             Choose a letter to select an approach
           </div>
+          <!-- temporary display of api stuff until this template is fixed: -->
           <div ng-repeat="decision in currentNode.decisions">
             <a ng-click="setCurrentDecisionNoSubmit(decision)" ng-class="x-btn-select-path select-path-btn">{{ decision.decision }}</a>
           </div>
@@ -39,7 +40,6 @@
           </div>
         </div>
         <div ng-click="submit(currentDecision.id)">
-          {{ currentDecisionDestination }}
           Let's Go!
         </div>
       </div>
