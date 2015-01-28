@@ -91,6 +91,8 @@ $(document).ready(function(){
 	    		break;	
 		}
 
+
+
 		var parkingIconTally = carPark + avoidTraffic + people + otherPark;
 
 		if (parkingIconTally > 0){
@@ -103,49 +105,47 @@ $(document).ready(function(){
     
 	var toggleOther = 0;
 
-    $body.on('click', ".parking-question-other-font", function(){
 
-    	if(toggleOther === 0){
-			$(".parking-bubble-other").animate({height: "250px"});
-			$(this).text("Please write here");
-			$(this).animate({top: "5%"});
-			$('.other-icon').fadeOut();
+	var icon = $('.other-icon')[0];
+
+    $body.on('click', ".parking-bubble-other", function(){
+			$(this).animate({height: "250px"});
+			$('.other-description').text("Please write here");
 			$("[id='char-count']").fadeIn();
 			$(".parking-other-text-area").fadeIn();
 			$('.parking-ok-btn').fadeIn();
+			$('.other-icon').hide();
+			$(".next#why-park").hide();
 	    	toggleOther = 1;
-    	}
-    	else {
-	    	$(".parking-bubble-other").animate({height: "100px"});	
-			$( ".parking-question-other-font").text("Other (Specify)");
-			$(".parking-question-other-font").animate({top: "5%"});
-			$("[id='char-count']").fadeOut();
-			$(".parking-other-text-area").fadeOut();
-			$('.parking-ok-btn').fadeOut();
-			$('.other-icon').show();
+	    	otherPark = 0;
+	});
+
+    
+    $body.on('click', ".parking-ok-btn", function(e){
+    	e.stopPropagation();
+    	
+
+    	if($('#other-info').val() !== ""){
+    		$('.parking-bubble-other .parking-question-other-font').css('color', '#AA75D3');
+			$('.parking-bubble-other .circle-state').css('fill', '#AA75D3');
+			$('.parking-bubble-other .circle-state').css('stroke-width', 0);
+			$('.parking-bubble-other .checkmark-fill').css('stroke', 'white');	
+			$(".next#why-park").fadeIn();
+			otherPark = 1;
+    	}else{
+    		$('.parking-bubble-other .parking-question-other-font').css('color', '#A0A0A0');
 			$('.parking-bubble-other .circle-state').css('fill', '#FFFFFF');
 			$('.parking-bubble-other .circle-state').css('stroke-width', 3);
 			$('.parking-bubble-other .checkmark-fill').css('stroke', '#757575');
-	    	$('.parking-bubble-other .parking-question-other-font').css('color', '#A0A0A0');
-	    	otherPark = 0;
-	    	toggleOther = 0;
-    	};
-	});
-    
-    $body.on('click', ".parking-ok-btn", function(){
+			otherPark = 0;	
+    	}
 
-    	otherPark = 1;
-    	$('.parking-bubble-other .circle-state').css('fill', '#AA75D3');
-		$('.parking-bubble-other .circle-state').css('stroke-width', 0);
-		$('.parking-bubble-other .checkmark-fill').css('stroke', 'white');
-    	$('.parking-bubble-other .parking-question-other-font').css('color', '#AA75D3');
-    	$(".parking-bubble-other").animate({height: "100px"});	
-		$( ".parking-question-other-font").text("Other (Specify)");
-		$(".parking-question-other-font").animate({top: "5%"});
+    	$( ".parking-question-other-font").text("Other (Specify)");
+    	$(".parking-bubble-other").animate({height: "100px"});
 		$("[id='char-count']").fadeOut();
 		$(".parking-other-text-area").fadeOut();
 		$(".parking-ok-btn").fadeOut();
-		$(".next#why-park").fadeIn();
+		
   	})
 });
 
