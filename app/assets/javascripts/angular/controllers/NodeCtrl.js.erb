@@ -6,6 +6,12 @@ angular.module('lawaApp')
         // get and set up all nodes
         $http.get('/api/nodes').success(function(data){
           $scope.nodes = data;
+          // for development purposes only. add fully-working nodes here
+          // to remove debugging printing out on front end:
+          $scope.nodesWorking = [
+            // add the clean template name, like this:
+            'assets/partials/sq-1.html'
+          ];
 
           // find or create a respondent with session and current node data
           $http.get('/api/respondents/get_or_create/').success(function(data){
@@ -13,11 +19,53 @@ angular.module('lawaApp')
             $scope.respondentId = data.respondent_id;
             $scope.setCurrentNodeById(data.current_node_id);
             $scope.variables = data.variables;
+
+            $scope.variables["text_from"] = null;
+            if($scope.variables.original_who_picking_up === "Coworker"){
+              $scope.variables.text_from = "Mr. Manager";
+            }else if($scope.variables.original_who_picking_up === "Friend"){
+              $scope.variables.text_from = "Best Friend";
+            }else if($scope.variables.original_who_picking_up === "Parent"){
+              $scope.variables.text_from = "Mom";
+            };
+
+            if($scope.variables.luggage_count > 1){
+              $scope.variables.luggage_type = $scope.variables.luggage_type + 's';
+            }
+            if($scope.variables.picking_up_number > 1){
+              $scope.variables.original_who_picking_up = $scope.variables.original_who_picking_up + 's';
+            }
+
+            var time = new Date();
+            $scope.currentTime = time.toLocaleTimeString(
+                'en-US', { hour12: true, hour:"numeric", minute:"numeric"}
+              );
+
+            var oneHourAhead = new Date();
+            oneHourAhead.setTime(oneHourAhead.getTime() + (60*60*1000));
+            $scope.oneHourFromNow = oneHourAhead.toLocaleTimeString(
+                'en-US', { hour12: true, hour:"numeric", minute:"numeric"}
+              );
+
+            var tenMinutesBack = new Date();
+            tenMinutesBack.setTime(tenMinutesBack.getTime() - (10*60*1000));
+            $scope.tenMinutesAgo = tenMinutesBack.toLocaleTimeString(
+                'en-US', { hour12: true, hour:"numeric", minute:"numeric"}
+              );
+
           })
 
           $scope.currentDecisionDestination = null;
           $scope.currentAnswers = [];
         });
+      };
+
+      $scope.nodeIncludedInWhitelist = function(template_name){
+        if(_.findWhere($scope.nodesWorking, template_name)){
+          return true;
+        } else {
+          return false;
+        }
       };
 
       $scope.setCurrentNodeBySession = function() {
@@ -38,6 +86,10 @@ angular.module('lawaApp')
       $scope.setCurrentDecision = function(decision){
         $scope.currentDecisionDestination = $scope.fetchNodeById(decision.destination_node_id);
         $scope.submit(decision.id);
+      };
+
+      $scope.setCurrentDecisionNoSubmit = function(decision){
+        $scope.currentDecisionDestination = $scope.fetchNodeById(decision.destination_node_id);
       };
 
       $scope.addMultipleChoice = function(answer) {

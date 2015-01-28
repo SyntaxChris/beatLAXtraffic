@@ -36,15 +36,15 @@ namespace :populate do
         question_type_id: single_choice.id
       )
 
-    sq31 = Node.create(nickname: "SQ 3.1", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "sq-3-3")
-      sq31q = Question.create(
-        node_id: sq31.id,
-        question: "Flight Number XXX from XXX is coming and will land in X. The traffic forecast is XXX.",
-        question_type_id: single_choice.id
-      )
+    #sq31 = Node.create(nickname: "SQ 3.1", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "sq-3-3")
+    #  sq31q = Question.create(
+    #    node_id: sq31.id,
+    #    question: "Flight Number XXX from XXX is coming and will land in X. The traffic forecast is XXX.",
+    #    question_type_id: single_choice.id
+    #  )
 
-    sq35 = Node.create(nickname: "SQ 3.5", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "sq-3-5")
-      sq35q = Question.create(node_id: sq35.id, question: "There is a friend in the car helping you with this pick-up ", question_type_id: single_choice.id)
+    #sq35 = Node.create(nickname: "SQ 3.5", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "sq-3-5")
+    #  sq35q = Question.create(node_id: sq35.id, question: "There is a friend in the car helping you with this pick-up ", question_type_id: single_choice.id)
       # ^ This will either say this or an alternate based on a random generation
 
     gq1 = Node.create(nickname: "GQ 1", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "gq-1")
@@ -277,9 +277,9 @@ namespace :populate do
 
     # Update all existing question nodes to have next_node_ids
     sq1.update(next_node_id: sq22.id)
-    sq22.update(next_node_id: sq31.id)
-    sq31.update(next_node_id: sq35.id)
-    sq35.update(next_node_id: dp1.id)
+    sq22.update(next_node_id: dp1.id)
+    # sq31.update(next_node_id: sq35.id)
+    # sq35.update(next_node_id: dp1.id)
     a1.update(next_node_id: a2.id)
     a2.update(next_node_id: dp2.id)
     b1.update(next_node_id: b2.id)

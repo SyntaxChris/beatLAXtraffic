@@ -1,5 +1,5 @@
 <!-- remove style for final template -->
-<div id="interactive-map">
+<div id="interactive-map" style="top: 50%;">
   <div class="top-half">
         <h3>What is your strategy for picking up your passenger?</h3>
       </div>
@@ -9,37 +9,30 @@
           <div class="instructions">
             Choose a letter to select an approach
           </div>
-          <div ng-repeat="decision in currentNode.decisions">
-            <a ng-click="setCurrentDecisionNoSubmit(decision)" ng-class="x-btn-select-path select-path-btn">{{ decision.decision }}</a>
-          </div>
-
           <a href="javascript:void(0)" class="x-btn-select-path select-path-btn selected" data-path="yellow">
-
+            
           </a>
           <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="green">
-
+            
           </a>
           <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="orange">
-
+            
           </a>
           <a href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
-
+            
           </a>
           <div class="map-path yellow selected">
-            <%= image_tag('map_yellow.jpg', width: '100%') %>
+            <img alt="Map yellow" src="/images/map_yellow.jpg" width="100%" />
           </div>
           <div class="map-path green">
-            <%= image_tag('map_green.jpg', width: '100%') %>
+            <img alt="Map green" src="/images/map_green.jpg" width="100%" />
           </div>
           <div class="map-path orange">
-            <%= image_tag('map_orange.jpg', width: '100%') %>
+            <img alt="Map orange" src="/images/map_orange.jpg" width="100%" />
           </div>
           <div class="map-path blue">
-            <%= image_tag('map_blue.jpg', width: '100%') %>
+            <img alt="Map blue" src="/images/map_blue.jpg" width="100%" />
           </div>
-        </div>
-        <div ng-click="submit(currentDecisionDestination)">
-          Let's Go!
         </div>
       </div>
     </div>

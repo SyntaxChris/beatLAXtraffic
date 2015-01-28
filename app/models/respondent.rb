@@ -2,8 +2,19 @@ class Respondent < ActiveRecord::Base
   FLIGHT_NUMBERS = *(100..999)
   TIME_TILL_LANDS = [15, 30, 45, 60]
   LUGGAGE_TYPES = ["Carry-on bag", "Large suitcase"]
-  ORIGINATING_LOCATIONS = ["JFK", "DFW", "ORD", "HNL", "MEX", "YVR", "HKG", "LHR", "SYD"]
+  ORIGINATING_LOCATIONS = [
+    { code: "JFK", city: "New York"},
+    { code: "DFW", city: "Dallas" },
+    { code: "ORD", city: "Orlando"},
+    { code: "HNL", city: "Chicago"},
+    { code: "MEX", city: "Mexico City"},
+    { code: "YVR", city: "Vancouver"},
+    { code: "HKG", city: "Hong Kong"},
+    { code: "LHR", city: "London"},
+    { code: "SYD", city: "Sydney"}
+  ]
   PICKUP_TARGETS = ["Friend", "Coworker", "Parent"]
+  TRAFFIC_LEVELS = ["slow", "medium", "fast"]
 
   has_many :responses
   after_create :set_starting_node
@@ -12,12 +23,6 @@ class Respondent < ActiveRecord::Base
   def self.get_or_create_by_session(searched_session_id)
     respondent = Respondent.find_by_session_id(searched_session_id) ||
       Respondent.create(session_id: searched_session_id)
-
-    #result = {
-    #  session_id: respondent.session_id,
-    #  respondent_id: respondent.id,
-    #  current_node_id: respondent.current_node_id
-    #}
 
     return respondent
   end
@@ -31,8 +36,12 @@ class Respondent < ActiveRecord::Base
     self.flight_code = FLIGHT_NUMBERS.sample
     self.luggage_count = [1,2,3].sample
     self.luggage_type = LUGGAGE_TYPES.sample
+    self.traffic_level = TRAFFIC_LEVELS.sample
     self.picking_up_number = [1,2,3].sample
-    self.originating_location = ORIGINATING_LOCATIONS.sample
+    self.originating_airport_code = ORIGINATING_LOCATIONS.sample[:code]
+    self.originating_location = ORIGINATING_LOCATIONS.find do |location|
+      location[:code] == self.originating_airport_code
+    end[:city]
     self.original_who_picking_up = Respondent.evenly_distributed_pickup_target
     self.travel_companion = [true,false].sample
     self.landing_time = TIME_TILL_LANDS.sample
