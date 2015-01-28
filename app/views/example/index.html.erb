@@ -30,7 +30,7 @@
       <div id="distance-bg"></div>
       <div class="row" id="dis-row" style="text-align:center">
         <h3 class="main-question">
-          How far away do you live from LAX?
+          How long is the drive from your home to LAX?
         </h3>
       </div>
      
@@ -1957,7 +1957,7 @@
   <!-- END AFTER PARKING QUESTIONS -->
 
   <!-- 10. START TIME SPENT -->
-  <div id="time-spent" style="display:none">
+  <div id="time-spent" style="display: none">
     <div class="content-c">
       <h3>
         You have spent
@@ -1985,6 +1985,8 @@
        <button id="x-btn-give-up" class="give-up-btn">Give Up</button>
        <button id="x-btn-keep-looking" class="keep-looking-btn">Keep Looking</button> 
       </div>
+
+      <div class="parking-result"></div>
     </div>
   </div>
   <!-- END TIME SPENT -->
@@ -2019,7 +2021,7 @@
   <div id="circle-pickup" class="slide" data-currentnode="12" data-nextnode="13">
     <div class="content">
       <h3>
-        How many times do you typically circle around the terminal when picking up your passenger?
+        You would have circled LAX:
       </h3>
 
       <div class="content-c">
@@ -2039,6 +2041,10 @@
       </div>
 
       <div class="content-c buttons-c">
+        <div class="inner-question">
+          How many times do you typically circle around LAX when picking up somebody?  
+        </div>
+        
         <div>
            <button id="x-btn-circle-less" class="counter-btn">-1</button>
            <button id="x-btn-circle-more" class="counter-btn">+1</button> 
@@ -2055,7 +2061,7 @@
   <div id="timer-pickup" class="slide" data-currentnode="13" data-nextnode="14">
     <div class="content">
       <h3 class="main-question">
-        How long does it typically take for you to pick up your passenger at the terminal?
+        You would have spent: 
       </h3>
 
       <div class="content-c">
@@ -2063,12 +2069,17 @@
           <div class="timer-number" id="min">0</div>
           <div>min</div>
         </div>
+        Picking up your passenger at the airport
       </div>
 
+
       <div class="content-c buttons-c">
+        <div class="inner-question">
+          How long does it typically take you to pick up your passenger at LAX?
+        </div>
         <div>
-           <button id="x-btn-timer-less" class="counter-btn">-5 min</button>
-           <button id="x-btn-timer-more" class="counter-btn">+5 min</button> 
+           <button id="x-btn-timer-less" class="counter-btn">-</button>
+           <button id="x-btn-timer-more" class="counter-btn">+</button> 
         </div>
         <div>
           <button id="x-btn-timer-next" class="next emergency-next">Next</button>
