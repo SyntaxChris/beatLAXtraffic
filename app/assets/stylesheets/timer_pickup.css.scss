@@ -25,6 +25,14 @@
     display: block;
     width: 290px;
     margin: 0 auto;
+    margin-top: -35px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,.3);
+    .inner-question{
+      font-size: 18px;
+      padding-bottom: 20px;
+      padding-top: 50px;
+    }
   }
   .timer-c {
     height: 150px;
@@ -75,6 +83,8 @@
   }
 }
 
+
+
 @media only screen and (min-width : 360px) { 
   #timer-pickup {
     h3 {
@@ -103,6 +113,11 @@
     .content-c {
       display: inline-block;
       vertical-align: middle;
+      .inner-question{
+        font-size: 18px;
+        padding-bottom: 35px;
+        padding-top: 0px;
+      }
     }
     .buttons-c {
       width: 275px;
@@ -110,3 +125,4 @@
     }
   }
 }
+
