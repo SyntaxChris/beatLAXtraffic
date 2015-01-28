@@ -177,6 +177,10 @@
     -o-transform: rotate(-20deg);
     -ms-transform: rotate(-20deg);
     transform: rotate(-20deg);
+    svg{
+      width: 100%;
+      height: 100%;
+    }
     .blue-tram{
       path{
         fill: #2B6DA9;
