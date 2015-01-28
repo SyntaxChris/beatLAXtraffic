@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe "responses API" do
   describe "create" do
+    let!(:starting_node) { FactoryGirl.create(:node, template_name: 'sq-2-2') }
     let!(:respondent) { create(:respondent) }
     let!(:node) { create(:node) }
     let!(:answer) { create(:answer) }

@@ -276,8 +276,8 @@ namespace :populate do
         dp2d2 = Decision.create(decision_point_id: dp2dp.id, decision: "No", destination_node_id: dp3.id)
 
     # Update all existing question nodes to have next_node_ids
-    sq1.update(next_node_id: sq22.id)
-    sq22.update(next_node_id: dp1.id)
+    sq22.update(next_node_id: sq1.id)
+    sq1.update(next_node_id: dp1.id)
     # sq31.update(next_node_id: sq35.id)
     # sq35.update(next_node_id: dp1.id)
     a1.update(next_node_id: a2.id)
