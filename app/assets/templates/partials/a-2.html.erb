@@ -1,47 +1,43 @@
 <!-- LATE FLIGHT -->
   <div id="late-flight">
     <div class="content-c">
-      <h3 class="main-question">You think your passenger's flight could be late.</h3>
+      <h3 class="main-question">{{ currentNode.question.question }}</h3>
       <p>How would you check for that?</p>
-      
-      <div class="dIB vAT button-c">
-        <button class="select-btn call">
-          <div ng-include="'<%= asset_path 'svgs/_call.html' %>'"></div>
-          <div class="checkmark">
-            <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
-          </div>
-        </button>
-        <div>
-          Try to Reach Passenger
-        </div>
-      </div>
 
-      <div class="dIB vAT button-c">
-        <button class="select-btn parking">
-          <div ng-include="'<%= asset_path 'svgs/_parkingTile.html' %>'"></div>
-          <div class="checkmark">
-            <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
+      <div ng-repeat="answer in currentNode.answers">
+        <div ng-click="addAnswerToCurrentAnswers(answer)" class="dIB vAT button-c">
+          <div ng-if="answer.answer.indexOf('mobile') > -1">
+            <button class="select-btn call">
+              <div ng-include="'<%= asset_path 'svgs/_call.html' %>'"></div>
+              <div class="checkmark">
+                <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
+              </div>
+            </button>
           </div>
-        </button>
-        <div>
-          Park and go Inside Terminal
-        </div>
-      </div>
-
-      <div class="dIB vAT button-c">
-        <button class="select-btn check-phone">
-          <div ng-include="'<%= asset_path 'svgs/_checkPhone.html' %>'"></div>
-          <div class="checkmark">
-            <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
+          <div ng-if="answer.answer.indexOf('Park') > -1">
+            <button class="select-btn parking">
+              <div ng-include="'<%= asset_path 'svgs/_parkingTile.html' %>'"></div>
+              <div class="checkmark">
+                <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
+              </div>
+            </button>
           </div>
-        </button>
-        <div>
-          Check Mobile Phone for Flight Information
+          <div ng-if="answer.answer.indexOf('reach') > -1">
+            <button class="select-btn check-phone">
+              <div ng-include="'<%= asset_path 'svgs/_checkPhone.html' %>'"></div>
+              <div class="checkmark">
+                <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
+              </div>
+            </button>
+          </div>
+          <div>
+            {{ answer.answer }}
+          </div>
         </div>
       </div>
 
       <div>
-        <button id="x-btn-late-flight-next" class="late-flight-next-btn">Next</button>
+        <button id="x-btn-late-flight-next" class="late-flight-next-btn" ng-click="submit()">Next</button>
       </div>
 
     </div>
