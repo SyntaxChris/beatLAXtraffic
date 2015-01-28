@@ -273,7 +273,7 @@ namespace :populate do
     dp2 = Node.create(nickname: "DP 2", is_decision_point: true , branch_id: hope_to_catch_curb_branch.id, template_name: "dp-2")
       dp2dp = DecisionPoint.create(node_id: dp2.id, situation: "You're almost at the terminal. Is your passenger there?")
         dp2d1 = Decision.create(decision_point_id: dp2dp.id, decision: "Yes", destination_node_id: e1.id)
-        dp2d2 = Decision.create(decision_point_id: dp2dp.id, decision: "No", destination_node_id: dp3.id)
+        dp2d2 = Decision.create(decision_point_id: dp2dp.id, decision: "No", destination_node_id: dp1.id)
 
     # Update all existing question nodes to have next_node_ids
     sq22.update(next_node_id: sq1.id)
