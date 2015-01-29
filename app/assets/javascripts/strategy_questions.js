@@ -7,109 +7,144 @@ $(document).ready(function(){
  	var saveToggle = 0;
  	var $body = $('body');
 
- 	$body.on('click', '#guy', function(){
- 		if(guyToggle === 0){
- 			$(this).siblings(0).children().children("g").children("circle").css("fill", "#98CC2D");
- 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
- 			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
- 			$("#guy-answer").css("color", "#98CC2D");
- 			$("#guy-background").css("fill", "#98CC2D");
-	 		$("#shirt").css("fill", "#FBDD61");
- 			guyToggle = 1;
- 		}
- 		else {
- 			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
- 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
- 			$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
- 			$("#guy-answer").css("color", "#BCBCBC");
- 			$("#guy-background").css("fill", "#CCCCCC");
-			$("#shirt").css("fill", "#A3A3A3");
- 			guyToggle = 0;
- 		}
+ 	$body.on('click', '.strategy-bbl.other-bbl', function(){
+ 
+ 		$(this).animate({
+ 			width: '220%',
+ 			left: '-160%',
+ 		});
+
+ 		$('.strategy-icon', this).css({
+ 			'padding-right': '5%',
+ 			'text-align': 'right',
+ 		});
+
+ 		$('.strategy-icon svg', this).animate({
+ 			width: '14%',
+ 		}, 400);
+
+ 		$('.bbl-title', this).animate({
+ 			'margin-top': '2%',
+ 			'padding-right': '1%',
+ 			'padding-bottom': '5%'
+ 		});
+
+
+ 		$('.bbl-title', this).css({
+ 			'text-align': 'right'
+ 		});
+
+ 		$('.other-text-form').delay(250).fadeIn();
+
+
+ 	});
+ 	$body.on('click', '.text-form-btn, textarea', function(e){
+ 		e.stopPropagation();
  	});
 
- 	$body.on('click', '#stopwatch', function(){
- 		if(stopWatchToggle === 0){
- 			$(this).siblings(0).children().children("g").children("circle").css("fill", "#D05E4B");
- 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
- 			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
- 			$("#stopwatch-answer").css("color", "#D05E4B");
- 			$("#timer-face").css("fill", "#D05E4B");
- 			stopWatchToggle = 1;
- 		}
- 		else {
- 			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
- 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
- 			$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
- 			$("#stopwatch-answer").css("color", "#BCBCBC");
- 			$("#timer-face").css("fill", "#BCBCBC");
- 			stopWatchToggle = 0;
- 		}
- 	});
+ 	// $body.on('click', '#guy', function(){
+ 	// 	if(guyToggle === 0){
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "#98CC2D");
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
+ 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
+ 	// 		$("#guy-answer").css("color", "#98CC2D");
+ 	// 		$("#guy-background").css("fill", "#98CC2D");
+	 // 		$("#shirt").css("fill", "#FBDD61");
+ 	// 		guyToggle = 1;
+ 	// 	}
+ 	// 	else {
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
+ 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
+ 	// 		$("#guy-answer").css("color", "#BCBCBC");
+ 	// 		$("#guy-background").css("fill", "#CCCCCC");
+		// 	$("#shirt").css("fill", "#A3A3A3");
+ 	// 		guyToggle = 0;
+ 	// 	}
+ 	// });
 
- 	$body.on('click', '#no-parking', function(){
- 		if(carParkingToggle === 0){
- 			$(this).siblings(0).children().children("g").children("circle").css("fill", "#2FA3CA");
- 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
- 			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
- 			$("#parking-answer").css("color", "#2FA3CA");
- 			$(".parking-background").css("fill", "#2FA3CA");
- 			$(".car-color").css("fill", "#FCC859")
- 			$("#parking-sign-bg").css("fill", "#24B7EA");
- 			carParkingToggle = 1;
- 		}
- 		else {
- 			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
- 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
- 			$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
- 			$("#parking-answer").css("color", "#BCBCBC");
-			$(".parking-background").css("fill", "#BCBCBC");
-			$(".car-color").css("fill", "#CCCCCC")
-			$("#parking-sign-bg").css("fill", "#CCCCCC");
- 			carParkingToggle = 0;
- 		}
- 	});
+ 	// $body.on('click', '#stopwatch', function(){
+ 	// 	if(stopWatchToggle === 0){
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "#D05E4B");
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
+ 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
+ 	// 		$("#stopwatch-answer").css("color", "#D05E4B");
+ 	// 		$("#timer-face").css("fill", "#D05E4B");
+ 	// 		stopWatchToggle = 1;
+ 	// 	}
+ 	// 	else {
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
+ 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
+ 	// 		$("#stopwatch-answer").css("color", "#BCBCBC");
+ 	// 		$("#timer-face").css("fill", "#BCBCBC");
+ 	// 		stopWatchToggle = 0;
+ 	// 	}
+ 	// });
 
- 	$body.on('click', '#hassle', function(){
- 		if(hassleToggle === 0){
- 			$(this).siblings(0).children().children("g").children("circle").css("fill", "#DD734E");
- 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
- 			$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
- 			$("#hassle-answer").css("color", "#DD734E");
- 			$("#hassle-background").css("fill", "#DD734E");
- 			$("#hassle-edge").css("fill", "#DDBD03");
- 			$("#hassle-face").css("fill", "#F9D43A");
- 			hassleToggle = 1;
- 		}
- 		else {
- 			$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
- 			$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
- 			$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
- 			$("#hassle-answer").css("color", "#BCBCBC");
- 			$("#hassle-background").css("fill", "#BCBCBC");
-			$("#hassle-edge").css("fill", "#999999");
-			$("#hassle-face").css("fill", "#D8D8D8");
- 			hassleToggle = 0;
- 		}
- 	});
+ 	// $body.on('click', '#no-parking', function(){
+ 	// 	if(carParkingToggle === 0){
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "#2FA3CA");
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
+ 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
+ 	// 		$("#parking-answer").css("color", "#2FA3CA");
+ 	// 		$(".parking-background").css("fill", "#2FA3CA");
+ 	// 		$(".car-color").css("fill", "#FCC859")
+ 	// 		$("#parking-sign-bg").css("fill", "#24B7EA");
+ 	// 		carParkingToggle = 1;
+ 	// 	}
+ 	// 	else {
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
+ 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
+ 	// 		$("#parking-answer").css("color", "#BCBCBC");
+		// 	$(".parking-background").css("fill", "#BCBCBC");
+		// 	$(".car-color").css("fill", "#CCCCCC")
+		// 	$("#parking-sign-bg").css("fill", "#CCCCCC");
+ 	// 		carParkingToggle = 0;
+ 	// 	}
+ 	// });
 
- 	$body.on('click', '#strategy-other', function(){
-		$(this).siblings(0).children().children("g").children("circle").css("fill", "#FFD93B");
-		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
-		$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
-		$("#other-strategy-answer").css("color", "#F29532");
-		$("#pencil-left").css("fill", "#F0822C");
-		$("#pencil-middle").css("fill", "#F29532");
-		$("#pencil-right").css("fill", "#F3B43C");
-		$("#text-container").animate({width: '93%'}, function(){
-			$(this).css({
-				"position":"absolute"
-			});
-		});
-		$("#text-container-filler").animate({width: '0%'});
-		$("#slide-content").fadeIn();
-		otherToggle = 1;
- 	});
+ 	// $body.on('click', '#hassle', function(){
+ 	// 	if(hassleToggle === 0){
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "#DD734E");
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
+ 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
+ 	// 		$("#hassle-answer").css("color", "#DD734E");
+ 	// 		$("#hassle-background").css("fill", "#DD734E");
+ 	// 		$("#hassle-edge").css("fill", "#DDBD03");
+ 	// 		$("#hassle-face").css("fill", "#F9D43A");
+ 	// 		hassleToggle = 1;
+ 	// 	}
+ 	// 	else {
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
+ 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
+ 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
+ 	// 		$("#hassle-answer").css("color", "#BCBCBC");
+ 	// 		$("#hassle-background").css("fill", "#BCBCBC");
+		// 	$("#hassle-edge").css("fill", "#999999");
+		// 	$("#hassle-face").css("fill", "#D8D8D8");
+ 	// 		hassleToggle = 0;
+ 	// 	}
+ 	// });
+
+ 	// $body.on('click', '#strategy-other', function(){
+		// $(this).siblings(0).children().children("g").children("circle").css("fill", "#FFD93B");
+		// $(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
+		// $(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
+		// $("#other-strategy-answer").css("color", "#F29532");
+		// $("#pencil-left").css("fill", "#F0822C");
+		// $("#pencil-middle").css("fill", "#F29532");
+		// $("#pencil-right").css("fill", "#F3B43C");
+		// $("#text-container").animate({width: '93%'}, function(){
+		// 	$(this).css({
+		// 		"position":"absolute"
+		// 	});
+		// });
+		// $("#text-container-filler").animate({width: '0%'});
+		// $("#slide-content").fadeIn();
+		// otherToggle = 1;
+ 	// });
 
 	$body.on('click', ".save-large", function(){
 		$("#text-container").animate({width: '0%'});
