@@ -800,11 +800,13 @@
                 Other (specify)
               </div>
             </div>
-
+            
+            <!-- unique id for this text area -->
             <div class="row" style="padding-top: 50px">
-              <textarea id="park-bbl" cols="30" rows="5" maxlength="140"></textarea>
+              <textarea id="park-bbl-small" cols="30" rows="5" maxlength="140"></textarea>
               <div class="text-counter"></div>
             </div>
+            <!-- end -->
             
 
             <div class="row">
@@ -829,8 +831,10 @@
 
     <!-- these two containers are shown on small screens only -->
     <div class="show-for-small-only">
-      <div class="row">
-        <div class="large-3 medium-3 small-6 columns">
+
+
+
+      <div class="large-3 medium-3 small-6 columns">
           <div class="parking-bbl">
             <div class="unchecked">
               <%= render 'bblCheck' %>
@@ -843,6 +847,7 @@
             </div>
           </div>
         </div>
+
         <div class="large-3 medium-3 small-6 columns">
           <div class="parking-bbl other-bbl">
 
@@ -879,7 +884,9 @@
             </div>
           </div>
         </div>
-      </div>
+
+
+
     </div>
     <!-- end -->
 

@@ -95,9 +95,11 @@ $(document).ready(function(){
 	});
 
 	$body.on('click', '.ok-btn', function(e){
+
 		e.stopPropagation();
 
-		if($('.other-bbl textarea').val() !== ""){
+		if($('textarea#park-bbl').val() !== "" || $('textarea#park-bbl-small').val() !== ""){
+			debugger;
 			$('.other-bbl-icon').find('path').css('fill', '#AA75D3');
 			$('.other-bbl .bbl-title').css("color", "#AA75D3");
             $('.other-bbl .unchecked g circle').css('stroke-width', "0");
