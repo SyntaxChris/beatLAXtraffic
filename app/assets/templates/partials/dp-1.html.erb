@@ -1,7 +1,7 @@
 <!-- remove style for final template -->
 <div id="interactive-map">
   <div class="top-half">
-        <h3>What is your strategy for picking up your passenger?</h3>
+    <h3>{{ currentNode.decision_point.situation }}</h3>
       </div>
    <div id="confirm-btn" ng-click="submit()"><b>Next</b></div>
       <div class="bottom-half">
@@ -9,6 +9,7 @@
           <div class="instructions">
             Choose a letter to select an approach
           </div>
+          <!-- temporary display of api stuff until this template is fixed: -->
           <div ng-repeat="decision in currentNode.decisions">
             <a ng-click="setCurrentDecisionNoSubmit(decision)" ng-class="x-btn-select-path select-path-btn">{{ decision.decision }}</a>
           </div>
@@ -38,7 +39,7 @@
             <%= image_tag('map_blue.jpg', width: '100%') %>
           </div>
         </div>
-        <div ng-click="submit(currentDecisionDestination)">
+        <div ng-click="submit(currentDecision.id)">
           Let's Go!
         </div>
       </div>

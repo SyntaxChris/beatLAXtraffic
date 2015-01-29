@@ -1,4 +1,5 @@
 class Node < ActiveRecord::Base
+  STARTING_NODE = find_by_template_name("sq-2-2")
   has_one :question
   has_one :decision_point
   has_many :responses

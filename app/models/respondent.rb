@@ -29,7 +29,11 @@ class Respondent < ActiveRecord::Base
 
   private
   def set_starting_node
-    self.update(current_node_id: 1)
+    # I think this way would be better and result in fewer database calls:
+    # self.update(current_node_id: Node::STARTING_NODE.id)
+    # but testing it is proving difficult and I am taking that as a red flag
+    #  - vinney
+    self.update(current_node_id: Node.find_by_template_name('sq-2-2').id)
   end
 
   def set_variables

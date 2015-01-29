@@ -7,6 +7,7 @@ $(document).ready(function(){
 	$("[id='char-count-last-questions']").text("140 characters left");
 
 	$(".char-count").text("140 characters left");
+	$(".text-counter").text("140 characters left");
 
 	$body
 	.on('keyup', "[id='tile-text']", function(){
@@ -28,5 +29,9 @@ $(document).ready(function(){
 	.on('keyup', "textarea.purple.small", function(){
 		var cs = 140 - $(this).val().length;
 	    $('.char-count').text(cs + " characters left");
+	})
+	.on('keyup', "textarea#park-bbl", function(){
+		var cs = 140 - $(this).val().length;
+	    $('.text-counter').text(cs + " characters left");
 	})
 });
