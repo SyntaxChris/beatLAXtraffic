@@ -457,7 +457,8 @@
 
 
   <!-- 4. STRATEGY questions -->
-  <div id="strategy-questions" class="slide" data-currentnode="5" data-nextnode="6">
+  <!-- <div id="strategy-questions" class="slide" data-currentnode="5" data-nextnode="6"> -->
+  <div id="strategy-questions"></div>
 
     <div class="row" style="text-align: center;">
       <h3 class="main-question">Why do you choose this strategy?</h3>
@@ -465,9 +466,14 @@
     </div>
 
     <div id="large-strategy">
+      
       <div class="row">
         <div class="large-12 medium-12 small-12 columns">
+
+
           <div class="row">
+            
+
             <div class="large-4 medium-4 small-4 columns">
               <div class="bubble-icon-container" id="container-1">
                 <%= render 'strategyStopWatch' %>
@@ -476,6 +482,7 @@
                 </div>
               </div>
             </div>
+            
             <div class="large-4 medium-4 small-4 columns">
               <div class="bubble-icon-container" id="container-2">
                 <%= render 'grayParking' %>
@@ -485,6 +492,7 @@
               </div>
               <div class="next emergency-next" id="strategy-large-temp" style="z-index: 10;">Next</div>
             </div>
+            
             <div class="large-4 medium-4 small-4 columns">
               <div class="bubble-icon-container" id="container-3">
                 <%= render 'hassle' %>
@@ -493,9 +501,14 @@
                 </div>
               </div>
             </div>
+
+
           </div>
+
+
         </div>
       </div>
+
       <div class="row" style="margin-top: 40px;">
         <div class="large-12 medium-12 small-12 columns">
           <div class="row">
@@ -737,10 +750,12 @@
     <div class="row">
 
       <div class="large-3 medium-3 small-6 columns">
+        
+        <div class="unchecked">
+          <%= render 'bblCheck' %>
+        </div>
+
         <div class="parking-bbl">
-          <div class="unchecked">
-            <%= render 'bblCheck' %>
-          </div>
           <div class="bbl-icon">
             <%= render 'carParkBubble' %>
           </div>
@@ -752,10 +767,12 @@
 
 
       <div class="large-3 medium-3 small-6 columns">
-        <div class="parking-bbl">
-          <div class="unchecked">
+
+                <div class="unchecked">
             <%= render 'bblCheck' %>
           </div>
+        <div class="parking-bbl">
+
           <div class="bbl-icon">
             <%= render 'avoidTraffic' %>
           </div>
@@ -771,10 +788,12 @@
 
 
         <div class="large-3 medium-3 small-6 columns">
+
+          <div class="unchecked">
+            <%= render 'bblCheck' %>
+          </div>
+
           <div class="parking-bbl">
-            <div class="unchecked">
-              <%= render 'bblCheck' %>
-            </div>
             <div class="bbl-icon">
               <%= render 'peopleParkBubble'%>
             </div>
@@ -785,11 +804,81 @@
         </div>
 
         <div class="large-3 medium-3 small-6 columns">
+
+
+          <div class="unchecked">
+            <%= render 'bblCheck' %>
+          </div>
+
           <div class="parking-bbl other-bbl">
 
-            <div class="unchecked">
-              <%= render 'bblCheck' %>
+            <div class="bbl-icon">
+              <%= render 'questionBubble' %>
             </div>
+            
+            <div class="row">
+              <div class="bbl-title">
+                Other (specify)
+              </div>
+            </div>
+            
+            <!-- unique id for this text area -->
+            <div class="row" style="padding-top: 50px">
+              <textarea id="park-bbl" cols="30" rows="5" maxlength="140"></textarea>
+              <div class="text-counter"></div>
+            </div>
+            <!-- end -->
+            
+
+            <div class="row">
+              <div class="ok-btn">
+                Ok
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="park-btn-next">
+              Next
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+    <!-- end -->
+
+    <!-- these two containers are shown on small screens only -->
+    <div class="show-for-small-only">
+
+
+
+      <div class="large-3 medium-3 small-6 columns">
+
+          <div class="unchecked">
+            <%= render 'bblCheck' %>
+          </div>
+
+          <div class="parking-bbl">
+            <div class="bbl-icon">
+              <%= render 'peopleParkBubble'%>
+            </div>
+            <div class="bbl-title">
+              To meet my passenger in the terminal
+            </div>
+          </div>
+        </div>
+
+        <div class="large-3 medium-3 small-6 columns">
+
+
+          <div class="unchecked">
+            <%= render 'bblCheck' %>
+          </div>
+
+          <div class="parking-bbl other-bbl">
 
             <div class="bbl-icon">
               <%= render 'questionBubble' %>
@@ -824,66 +913,6 @@
         </div>
 
       </div>
-
-
-    </div>
-    <!-- end -->
-
-    <!-- these two containers are shown on small screens only -->
-    <div class="show-for-small-only">
-
-
-
-      <div class="large-3 medium-3 small-6 columns">
-          <div class="parking-bbl">
-            <div class="unchecked">
-              <%= render 'bblCheck' %>
-            </div>
-            <div class="bbl-icon">
-              <%= render 'peopleParkBubble'%>
-            </div>
-            <div class="bbl-title">
-              To meet my passenger in the terminal
-            </div>
-          </div>
-        </div>
-
-        <div class="large-3 medium-3 small-6 columns">
-          <div class="parking-bbl other-bbl">
-
-            <div class="unchecked">
-              <%= render 'bblCheck' %>
-            </div>
-
-            <div class="bbl-icon">
-              <%= render 'questionBubble' %>
-            </div>
-            
-            <div class="row">
-              <div class="bbl-title">
-                Other (specify)
-              </div>
-            </div>
-
-            <div class="row" style="padding-top: 50px">
-              <textarea id="park-bbl" cols="30" rows="5" maxlength="140"></textarea>
-              <div class="text-counter"></div>
-            </div>
-            
-
-            <div class="row">
-              <div class="ok-btn">
-                Ok
-              </div>
-            </div>
-
-          </div>
-          <div class="row">
-            <div class="park-btn-next">
-              Next
-            </div>
-          </div>
-        </div>
 
 
 

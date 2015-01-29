@@ -34,4 +34,8 @@ $(document).ready(function(){
 		var cs = 140 - $(this).val().length;
 	    $('.text-counter').text(cs + " characters left");
 	})
+	.on('keyup', "textarea#park-bbl-small", function(){
+		var cs = 140 - $(this).val().length;
+	    $('.text-counter').text(cs + " characters left");
+	});
 });

@@ -1,5 +1,14 @@
 #why-park-car{
-
+	.unchecked{
+		position: absolute;
+		z-index: 3;
+		right: 0;
+		top: 30px;
+		svg{
+		width: 45px;
+		height: 45px;
+		}
+	}
 	.parking-bbl{
 		cursor: pointer;
 		position: relative;
@@ -9,15 +18,7 @@
 		border-radius: 30px;
 		margin-top: 20%;
 		text-align: center;
-		.unchecked{
-			position: absolute;
-			right: -5%;;
-			top: -5%;
-			svg{
-			width: 45px;
-			height: 45px;
-			}
-		}
+
 		.bbl-icon svg{
 			fill: #A0A0A0;
 			padding-top: 5%;
