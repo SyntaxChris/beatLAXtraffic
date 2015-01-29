@@ -1,383 +1,192 @@
 $(document).ready(function(){
-	var guyToggle = 0;
- 	var stopWatchToggle = 0;
- 	var carParkingToggle = 0;
- 	var hassleToggle = 0;
- 	var otherToggle = 0;
- 	var saveToggle = 0;
- 	var $body = $('body');
+	var guy = 0,
+		stopwatch = 0,
+		noParking = 0,
+		hassle = 0,
+		other = 0,
+		$body = $('body');
 
  	$body.on('click', '.strategy-bbl.other-bbl', function(){
- 
+ 		
  		$(this).animate({
  			width: '220%',
  			left: '-160%',
  		});
-
  		$('.strategy-icon', this).css({
  			'padding-right': '5%',
- 			'text-align': 'right',
+ 			'text-align': 'right'
  		});
-
  		$('.strategy-icon svg', this).animate({
  			width: '14%',
  		}, 400);
-
  		$('.bbl-title', this).animate({
- 			'margin-top': '2%',
- 			'padding-right': '1%',
- 			'padding-bottom': '5%'
+ 			'margin-top': '2%'
  		});
-
-
  		$('.bbl-title', this).css({
- 			'text-align': 'right'
+ 			'text-align': 'right',
+ 			'right': '3%'
  		});
-
  		$('.other-text-form').delay(250).fadeIn();
+ 	});
 
+ 	$body.on('click', '#save, #cancel', function(){
+ 		var thisId = $(this).attr('id');
+ 		var checkmark = $(this).parents().eq(4).find('.checkmark');
+
+ 		if(thisId === 'save' && $('textarea#strategy-text').val() !== ""){
+ 			checkmark.find('circle').css('fill', '#F0943F');
+ 			checkmark.find('circle').css('stroke-width', '0');
+ 			checkmark.find('polyline').css('stroke', 'white');
+ 			$("#pencil-left").css("fill", "#F0822C");
+			$("#pencil-middle").css("fill", "#F29532");
+			$("#pencil-right").css("fill", "#F3B43C");
+			other = 1;
+
+ 		}else{
+ 			checkmark.find('circle').css('fill', '#FFFFFF');
+ 			checkmark.find('circle').css('stroke-width', '3');
+ 			checkmark.find('polyline').css('stroke', '#757575');
+ 			$("#pencil-left").css("fill", "#777777");
+			$("#pencil-middle").css("fill", "#919191");
+			$("#pencil-right").css("fill", "#B7B7B7");
+			$('textarea#strategy-text').val('')
+			other = 0;
+ 		}
+
+
+ 		$('.strategy-bbl.other-bbl').animate({
+ 			width: '65%',
+ 			left: '0',
+ 		});
+        $('.strategy-bbl.other-bbl .strategy-icon').css({
+        	'padding-right': '0',
+ 			'text-align': 'center'
+ 		});
+ 		$('.strategy-bbl.other-bbl .strategy-icon svg').animate({
+ 			width: '50%',
+ 		});
+ 		$('.strategy-bbl.other-bbl .bbl-title').animate({
+ 			'margin-top': '0',
+ 			'padding-right': '0',
+ 			// 'padding-bottom': '10%'
+ 		});
+ 		$('.strategy-bbl.other-bbl .bbl-title').css({
+ 			'text-align': 'center'
+ 		});
+ 		$('.other-text-form').fadeOut(350);
 
  	});
+
  	$body.on('click', '.text-form-btn, textarea', function(e){
  		e.stopPropagation();
  	});
 
- 	// $body.on('click', '#guy', function(){
- 	// 	if(guyToggle === 0){
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "#98CC2D");
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
- 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
- 	// 		$("#guy-answer").css("color", "#98CC2D");
- 	// 		$("#guy-background").css("fill", "#98CC2D");
-	 // 		$("#shirt").css("fill", "#FBDD61");
- 	// 		guyToggle = 1;
- 	// 	}
- 	// 	else {
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
- 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
- 	// 		$("#guy-answer").css("color", "#BCBCBC");
- 	// 		$("#guy-background").css("fill", "#CCCCCC");
-		// 	$("#shirt").css("fill", "#A3A3A3");
- 	// 		guyToggle = 0;
- 	// 	}
- 	// });
 
- 	// $body.on('click', '#stopwatch', function(){
- 	// 	if(stopWatchToggle === 0){
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "#D05E4B");
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
- 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
- 	// 		$("#stopwatch-answer").css("color", "#D05E4B");
- 	// 		$("#timer-face").css("fill", "#D05E4B");
- 	// 		stopWatchToggle = 1;
- 	// 	}
- 	// 	else {
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
- 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
- 	// 		$("#stopwatch-answer").css("color", "#BCBCBC");
- 	// 		$("#timer-face").css("fill", "#BCBCBC");
- 	// 		stopWatchToggle = 0;
- 	// 	}
- 	// });
+ 	$body.on('click', '.strategy-bbl', function(){
+ 		var bubbleId = $(this).find('.strategy-icon').children().attr('id'),
+        	checkmark = $(this).parents().eq(0).find('.checkmark'),
+        	font = $('.bbl-title', this);
 
- 	// $body.on('click', '#no-parking', function(){
- 	// 	if(carParkingToggle === 0){
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "#2FA3CA");
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
- 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
- 	// 		$("#parking-answer").css("color", "#2FA3CA");
- 	// 		$(".parking-background").css("fill", "#2FA3CA");
- 	// 		$(".car-color").css("fill", "#FCC859")
- 	// 		$("#parking-sign-bg").css("fill", "#24B7EA");
- 	// 		carParkingToggle = 1;
- 	// 	}
- 	// 	else {
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
- 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
- 	// 		$("#parking-answer").css("color", "#BCBCBC");
-		// 	$(".parking-background").css("fill", "#BCBCBC");
-		// 	$(".car-color").css("fill", "#CCCCCC")
-		// 	$("#parking-sign-bg").css("fill", "#CCCCCC");
- 	// 		carParkingToggle = 0;
- 	// 	}
- 	// });
+ 		debugger;
 
- 	// $body.on('click', '#hassle', function(){
- 	// 	if(hassleToggle === 0){
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "#DD734E");
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
- 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
- 	// 		$("#hassle-answer").css("color", "#DD734E");
- 	// 		$("#hassle-background").css("fill", "#DD734E");
- 	// 		$("#hassle-edge").css("fill", "#DDBD03");
- 	// 		$("#hassle-face").css("fill", "#F9D43A");
- 	// 		hassleToggle = 1;
- 	// 	}
- 	// 	else {
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("fill", "none");
- 	// 		$(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "2.963,4.9383");
- 	// 		$(this).siblings(0).children().children("polyline").css("stroke", "#757575");
- 	// 		$("#hassle-answer").css("color", "#BCBCBC");
- 	// 		$("#hassle-background").css("fill", "#BCBCBC");
-		// 	$("#hassle-edge").css("fill", "#999999");
-		// 	$("#hassle-face").css("fill", "#D8D8D8");
- 	// 		hassleToggle = 0;
- 	// 	}
- 	// });
+ 		switch(bubbleId){
+ 			case 'guy':
+ 				if(guy === 0){
+ 					checkmark.find('circle').css('fill', '#98CC2D');
+ 					checkmark.find('circle').css('stroke-width', '0');
+ 					checkmark.find('polyline').css('stroke', 'white');
+ 					$("#guy-answer").css("color", "#98CC2D");
+ 			        $("#guy-background").css("fill", "#98CC2D");
+ 			        font.css('color', '#98CC2D');
+ 					guy = 1;
+ 				}else{
+ 					checkmark.find('circle').css('fill', '#FFFFFF');
+ 					checkmark.find('circle').css('stroke-width', '3');
+ 					checkmark.find('polyline').css('stroke', '#757575');
+ 					$("#guy-answer").css("color", "#BCBCBC");
+ 			        $("#guy-background").css("fill", "#CCCCCC");
+ 			        font.css('color', '#BCBCBC');
+ 					guy = 0;
+ 				}
+ 			break;
 
- 	// $body.on('click', '#strategy-other', function(){
-		// $(this).siblings(0).children().children("g").children("circle").css("fill", "#FFD93B");
-		// $(this).siblings(0).children().children("g").children("circle").css("stroke-dasharray", "0");
-		// $(this).siblings(0).children().children("polyline").css("stroke", "#FFFFFF");
-		// $("#other-strategy-answer").css("color", "#F29532");
-		// $("#pencil-left").css("fill", "#F0822C");
-		// $("#pencil-middle").css("fill", "#F29532");
-		// $("#pencil-right").css("fill", "#F3B43C");
-		// $("#text-container").animate({width: '93%'}, function(){
-		// 	$(this).css({
-		// 		"position":"absolute"
-		// 	});
-		// });
-		// $("#text-container-filler").animate({width: '0%'});
-		// $("#slide-content").fadeIn();
-		// otherToggle = 1;
- 	// });
+ 			case 'stopwatch':
+ 			 	if(stopwatch === 0){
+ 			 		checkmark.find('circle').css('fill', '#D05E4B');
+ 					checkmark.find('circle').css('stroke-width', '0');
+ 					checkmark.find('polyline').css('stroke', 'white');
+		 			$("#stopwatch-answer").css("color", "#D05E4B");
+		 			$("#timer-face").css("fill", "#D05E4B");
+		 			font.css('color', '#D05E4B');
+ 					stopwatch = 1;
+ 				}else{
+ 					checkmark.find('circle').css('fill', '#FFFFFF');
+ 					checkmark.find('circle').css('stroke-width', '3');
+ 					checkmark.find('polyline').css('stroke', '#757575');
+		 			$("#stopwatch-answer").css("color", "#BCBCBC");
+		 			$("#timer-face").css("fill", "#BCBCBC");
+		 			font.css('color', '#BCBCBC'); 					
+ 					stopwatch = 0;
+ 				}
+ 			break;
 
-	$body.on('click', ".save-large", function(){
-		$("#text-container").animate({width: '0%'});
- 		$("#text-container-filler").animate({width: '93%'});
- 		$("#slide-content").fadeOut();
- 		otherToggle = 1;
- 		saveToggle = 1;
-	});
-
-   
-    
-
-    $body.on('click', ".bubble-icon-container", function(){
-    	var toggleTally = guyToggle + stopWatchToggle + carParkingToggle + hassleToggle + otherToggle;
-    	// debugger;
-    	if(toggleTally === 0){
- 			$(".next#strategy-large-temp").hide();
- 		}
- 		else{
- 			$(".next#strategy-large-temp").fadeIn();
- 		}
-    });
-
-
-    $body.on('click', ".cancel-large", function(){
-    	if(guyToggle + stopWatchToggle + carParkingToggle + hassleToggle === 0){
-    		$(".next#strategy-large-temp").hide();
-    	}
-    	otherToggle = 0;
-    	
-		$("#text-container").animate({width: '0%'});
- 		$("#text-container-filler").animate({width: '93%'});
- 		$("#slide-content").fadeOut();
-
- 		$("#other-strategy-answer").css("color", "#BCBCBC");
-		$("#other-strategy-answer").css("color", "#BCBCBC");
-		$("#pencil-left").css("fill", "#777777");
-		$("#pencil-middle").css("fill", "#919191");
-		$("#pencil-right").css("fill", "#B7B7B7");
-
-		$("#container-5 .unchecked-bubble svg g .circle-state").css("stroke-width", 3);
-		$("#container-5 .unchecked-bubble svg g .circle-state").css("fill", "white");
-		$("#container-5 .unchecked-bubble svg g .circle-state").css("stroke-dasharray", "2.963,4.9383");
-		$("#container-5 .unchecked-bubble svg .checkmark-fill").css("stroke", "#757575");
-	});
-	
-
-	var passengerTog = 0;
-	var stopWatchTog = 0;
-	var parkingTog = 0;
-	var hassleTog = 0;
-	var otherTog = 0;
-	var otherPop = 0;
-
-	$body.on('click', ".bubble-container-small", function(){
-		var bubbleId = $(this).attr("id");
-
-
-		switch(bubbleId){
-			case 'passenger':
-				if(passengerTog === 0){
-					$(".check-ctnr svg g .circle-state", this).css("stroke-width", 0);
-					$(".check-ctnr svg g .circle-state", this).css("fill", "#98CC2D");
-					$(".check-ctnr svg .checkmark", this).css("stroke", "white");
-					$(".strategy-answer", this).css("color", "#98CC2D");
-
-
- 					$("#passenger-background").css("fill", "#98CC2D");
-	 				$("#passenger-shirt").css("fill", "#FBDD61");
-	 				
-					passengerTog += 1;
-				}
-				else{
-					$(".check-ctnr svg g .circle-state", this).css("stroke-width", 3);
-					$(".check-ctnr svg g .circle-state", this).css("fill", "white");
-					$(".check-ctnr svg .checkmark", this).css("stroke", "#757575");
-					$(".strategy-answer", this).css("color", "#BCBCBC");
-					
- 					$("#passenger-background").css("fill", "#CCCCCC");
-					$("#passenger-shirt").css("fill", "#A3A3A3");
-					passengerTog = 0;
-				}
-			break;
-
-			case 'stop-watch':
-				if(stopWatchTog === 0){
-					$(".check-ctnr svg g .circle-state", this).css("stroke-width", 0);
-					$(".check-ctnr svg g .circle-state", this).css("fill", "#D05E4B");
-					$(".check-ctnr svg .checkmark", this).css("stroke", "white");
-                    $(".strategy-answer", this).css("color", "#D05E4B");
-					
- 					$("#face").css("fill", "#D05E4B");
-
-					stopWatchTog += 1;
-				}
-				else{
-					$(".check-ctnr svg g .circle-state", this).css("stroke-width", 3);
-					$(".check-ctnr svg g .circle-state", this).css("fill", "white");
-					$(".check-ctnr svg .checkmark", this).css("stroke", "#757575");
-					$(".strategy-answer", this).css("color", "#BCBCBC");
-
-					
- 					$("#face").css("fill", "#BCBCBC");
-
-					stopWatchTog = 0;
-				}
-			break;
-
-			case 'parking':
-				if(parkingTog === 0){
-					$(".check-ctnr svg g .circle-state", this).css("stroke-width", 0);
-					$(".check-ctnr svg .checkmark", this).css("stroke", "white");
-					$(".check-ctnr svg g .circle-state", this).css("fill", "#2FA3CA");
-					$(".strategy-answer", this).css("color", "#2FA3CA");
-
-					$(".parking-background").css("fill", "#2FA3CA");
+ 			case 'no-parking':
+ 			 	if(noParking === 0){
+ 			 		checkmark.find('circle').css('fill', '#2FA3CA');
+ 					checkmark.find('circle').css('stroke-width', '0');
+ 					checkmark.find('polyline').css('stroke', 'white');
+ 					$(".parking-background").css("fill", "#2FA3CA");
  					$(".car-color").css("fill", "#FCC859")
- 					$("#parking-sign").css("fill", "#24B7EA");
-					parkingTog += 1;
-				}
-				else{
-					$(".check-ctnr svg g .circle-state", this).css("stroke-width", 3);
-					$(".check-ctnr svg g .circle-state", this).css("fill", "white");
-					$(".check-ctnr svg .checkmark", this).css("stroke", "#757575");
-					$(".strategy-answer", this).css("color", "#BCBCBC");
-
-					$(".parking-background").css("fill", "#BCBCBC");
+ 					$("#parking-sign-bg").css("fill", "#24B7EA");
+ 					font.css('color', '#2FA3CA');
+ 					noParking = 1;
+ 				}else{
+ 					checkmark.find('circle').css('fill', '#FFFFFF');
+ 					checkmark.find('circle').css('stroke-width', '3');
+ 					checkmark.find('polyline').css('stroke', '#757575');
+ 					$(".parking-background").css("fill", "#BCBCBC");
 					$(".car-color").css("fill", "#CCCCCC")
-					$("#parking-sign").css("fill", "#CCCCCC");
+					$("#parking-sign-bg").css("fill", "#CCCCCC");
+ 					font.css('color', '#BCBCBC');
+ 					noParking = 0;
+ 				}
+ 			break;
 
-					parkingTog = 0;
-				}
-			break;
+ 			case 'hassle':
+ 			 	if(hassle === 0){
+ 			 		checkmark.find('circle').css('fill', '#DDBD03');
+ 					checkmark.find('circle').css('stroke-width', '0');
+ 					checkmark.find('polyline').css('stroke', 'white');
+ 					$("#hassle-answer").css("color", "#DD734E");
+ 					$("#hassle-background").css("fill", "#DD734E");
+ 					$("#hassle-edge").css("fill", "#DDBD03");
+ 					$("#hassle-face").css("fill", "#F9D43A");
+ 					font.css('color', '#DDBD03');
+ 					hassle = 1;
+ 				}else{
+ 					checkmark.find('circle').css('fill', '#FFFFFF');
+ 					checkmark.find('circle').css('stroke-width', '3');
+ 					checkmark.find('polyline').css('stroke', '#757575');
+ 					$("#hassle-answer").css("color", "#BCBCBC");
+		 			$("#hassle-background").css("fill", "#BCBCBC");
+					$("#hassle-edge").css("fill", "#999999");
+					$("#hassle-face").css("fill", "#D8D8D8");
+ 					font.css('color', '#BCBCBC');
+ 					hassle = 0;
+ 				}
+ 			break;
 
-			case 'hassle':
-				if(hassleTog === 0){
-					$(".check-ctnr svg g .circle-state", this).css("stroke-width", 0);
-					$(".check-ctnr svg .checkmark", this).css("stroke", "white");
-					$(".check-ctnr svg g .circle-state", this).css("fill", "#FCC859");
-					$(".strategy-answer", this).css("color", "#FCC859");
+ 		}
 
-					$("#hassle-bg").css("fill", "#DD734E");
- 					$("#edge").css("fill", "#DDBD03");
- 					$("#hassle-fce").css("fill", "#F9D43A");
-					hassleTog += 1;
-				}
-				else{
-					$(".check-ctnr svg g .circle-state", this).css("stroke-width", 3);
-					$(".check-ctnr svg g .circle-state", this).css("fill", "white");
-					$(".check-ctnr svg .checkmark", this).css("stroke", "#757575");
-					$(".strategy-answer", this).css("color", "#BCBCBC");
+ 		var total = guy + stopwatch + noParking + hassle + other;
 
-					$("#hassle-bg").css("fill", "#BCBCBC");
-					$("#edge").css("fill", "#999999");
-					$("#hassle-fce").css("fill", "#D8D8D8");
+		// if(total > 0){
+		// 	$('.park-btn-next').fadeIn();
+		// }else{
+		// 	$('.park-btn-next').fadeOut();
+		// }
+ 	});
 
-					hassleTog = 0;
-				}
-			break;
-
-			case 's-other':
-				if(otherTog === 0){
-					$(".check-ctnr svg g .circle-state", this).css("stroke-width", 0);
-					$(".check-ctnr svg .checkmark", this).css("stroke", "white");
-					$(".check-ctnr svg g .circle-state", this).css("fill", "#F0822C");
-					$(".strategy-answer", this).css("color", "#F0822C");
-
-					$("#pencil-l").css("fill", "#F0822C");
- 					$("#pencil-m").css("fill", "#F29532");
- 					$("#pencil-r").css("fill", "#F3B43C");
-
- 					$("#s-other-ctnr").fadeIn();
-
-					otherTog = 1;
-					otherPop = 1;
-				}
-				else if(otherTog === 1 && otherPop === 0){
-					$("#s-other-ctnr").fadeIn();
-				}
-				else{
-					$(".check-ctnr svg g .circle-state", this).css("stroke-width", 3);
-					$(".check-ctnr svg g .circle-state", this).css("fill", "white");
-					$(".check-ctnr svg .checkmark", this).css("stroke", "#757575");
-					$(".strategy-answer", this).css("color", "#BCBCBC");
-
-					$("#pencil-l").css("fill", "#777777");
- 					$("#pencil-m").css("fill", "#919191");
- 					$("#pencil-r").css("fill", "#B7B7B7");
-
- 					$("#s-other-ctnr").hide();
- 					otherPop = 0;
-					otherTog = 0;
-				}
-			break;
-		}
-
-		var showNext = passengerTog + stopWatchTog + parkingTog + hassleTog + otherTog
-
-		if(showNext > 0){
-			$(".next#strategy-small-temp").fadeIn();
-		}
-		else{
-			$(".next#strategy-small-temp").hide();
-		}
-	});
-
-	$body.on('click', ".save", function(){
-		if(otherPop === 1){
-			$("#s-other-ctnr").hide();
-			otherPop = 0;
-		}
-	});
-
-	$body.on('click', ".cancel", function(){
-		var hideNext = passengerTog + stopWatchTog + parkingTog + hassleTog;
-
-		if(hideNext === 0){
-			$(".strategy-submit").hide();
-		}
-
-		$("#s-other-ctnr").hide();
-		$(".bubble-container-small#s-other .check-ctnr svg g .circle-state").css("stroke-width", 3);
-		$(".bubble-container-small#s-other .check-ctnr svg g .circle-state").css("fill", "white");
-		$(".bubble-container-small#s-other .check-ctnr svg .checkmark").css("stroke", "#757575");
-		$(".bubble-container-small#s-other .strategy-answer").css("color", "#BCBCBC");
-
-		$("#pencil-l").css("fill", "#777777");
-		$("#pencil-m").css("fill", "#919191");
-		$("#pencil-r").css("fill", "#B7B7B7");
-
-		otherPop = 0;
-		otherTog = 0;
-	});
 
 
 

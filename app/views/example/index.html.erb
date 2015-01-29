@@ -467,6 +467,11 @@
 
     <div class="row">
       <div class="large-12 medium-12 small-12 large-centered medium-centered small-centered columns">
+
+        <div class="row boxster">
+          <%= render 'boxster' %>
+        </div>
+
         <div class="row">
           <!-- left row -->
           <div class="large-4 medium-4 small-4 columns">
@@ -517,10 +522,11 @@
                   To avoid paying for parking
                 </div>
               </div>
+              <div class="strategy-next">
+                Next
+              </div>
             </div>
-            <div class="row boxster">
-              <%= render 'boxster' %>
-            </div>
+
           </div>
           <!-- end middle row -->
 
@@ -557,18 +563,15 @@
                     <div class="large-3 medium-3 small-3 columns">
                       <div class="text-form-btn" id="save">Save</div>
                       <div class="text-form-btn" id="cancel">Cancel</div>
+                      <div class="char-counter"></div>
                     </div>
                     <div class="large-9 medium-9 small-9 columns">
-                      <textarea id="strategy-text" cols="1" rows="6" maxlength="140" placeholder="Please write here."></textarea>
-                      <div class="char-counter"></div>
+                      <textarea id="strategy-text" cols="1" rows="7" maxlength="140" placeholder="Please write here."></textarea>
                     </div>
                   </div>
                 </div>
                 <!-- end text form -->
               </div>
-              
-     
-
             </div>
 
           </div>

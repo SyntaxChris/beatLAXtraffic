@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 	$(".char-count").text("140 characters left");
 	$(".text-counter").text("140 characters left");
-	$('.char-counter').text("140 characters left");
+	$('.char-counter').text("140 chars left");
 
 	$body
 	.on('keyup', "[id='tile-text']", function(){
@@ -41,6 +41,6 @@ $(document).ready(function(){
 	})
 	.on('keyup', "textarea#strategy-text", function(){
 		var cs = 140 - $(this).val().length;
-	    $('.char-counter').text(cs + " characters left");
+	    $('.char-counter').text(cs + " chars left");
 	});
 });
