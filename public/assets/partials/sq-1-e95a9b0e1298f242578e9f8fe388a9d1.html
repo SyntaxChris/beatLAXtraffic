@@ -1,0 +1,34 @@
+    <div id="distance-questions">
+      <div id="distance-bg"></div>
+      <div class="row" id="dis-row" style="text-align:center">
+        <h3 class="main-question">
+          {{ currentNode.question.question }}
+        </h3>
+      </div>
+
+      <div ng-repeat="answer in currentNode.answers.slice().reverse()"
+        ng-click="addAnswerToCurrentAnswers(answer)"
+        ng-attr-id="row-{{$index + 1}}"
+        class="row" data-rowid="{{$index + 1}}">
+          {{answer.answer}}
+      </div>
+
+      <div class="row" id="row-6">
+        <div id="confirm-btn" ng-click="submit()"><b>Next</b></div>
+
+        <div ng-include="'/assets/svgs/tower-b7ff02c96651804d7ba36b92db7691b4.html'"></div>
+        <div ng-include="'/assets/svgs/laxArch-07235fa81dc50092de8f8db8200f9c49.html'"></div>
+
+      </div>
+
+      <div id="arrow-contents">
+        <div ng-include="'/assets/svgs/distance-arrow-45e9c4743737a3b4c1cbdde637c00a40.html'"></div>
+        <div class="grayed-circle" id="circle-1"></div>
+        <div class="grayed-circle" id="circle-2"></div>
+        <div class="grayed-circle" id="circle-3"></div>
+        <div class="grayed-circle" id="circle-4"></div>
+        <div class="grayed-circle" id="circle-5"></div>
+        <div ng-include="'/assets/svgs/house-71f645130fae7f936055115f7b6a06ad.html'"></div>
+        <div ng-include="'/assets/svgs/arrow-plane-769047d908a5a18fa9c3c43b642b3d43.html'"></div>
+      </div>
+  </div>
