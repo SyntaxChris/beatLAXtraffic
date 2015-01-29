@@ -44,29 +44,71 @@
 		border-right: 20px solid transparent;
 		border-top: 30px solid white;
 	}
+	.parking-bbl.other-bbl{
+		height: 130px;
+	}
+
 
 	.other-bbl{
-		padding-bottom: 30%;
+		.row{
+			margin: 0;
+			padding: 0;
+		}
 		.unchecked{
 			position: absolute;
-			right: -5%;;
-			top: -9%;
+			z-index: 40;
+			right: -5%;
+			top: -7%;
 			svg{
-			width: 45px;
-			height: 45px;
+				width: 45px;
+				height: 45px;
 			}
 		} 
+
 		.bbl-icon svg{
 			fill: #A0A0A0;
-			padding-top: 10%;
 			width: 40%;
 			height: 40%;
 		}
+
 		.bbl-title{
-			margin-top: 2%;
+			text-align: center;
+			margin-top: -5px; 
+			margin-bottom: 20px;
+		}
+
+		textarea{
+			display: none;
+			position: relative;
+			top: 20%;
+		}
+		.text-counter{
+			display: none;
+			// position: absolute;
+			// top: 60%;
+			margin-top: -10px;
+			width: 100%;
+			text-align: center;
+        	color: #A0A0A0;
+		}
+		.ok-btn{
+			cursor: pointer;
+			display:none;
+			position: relative;
+			margin: 0 auto;
+			// margin-top: 75%;
+			padding: 10px 0;
+			width: 150px;
+			color: white;
+			background-color: #079BED;
+		}
+		.ok-btn:hover{
+			opacity: 0.8;
 		}
 	}
 	.park-btn-next{
+		display: none;
+		cursor: pointer;
 		position: relative;
 		margin-left: auto;
 		margin-right: auto;
@@ -82,192 +124,4 @@
 }
 
 
-
-// .parking-bubble {
-// 	width: 100%; 
-// 	text-align: center;
-// 	padding-bottom: 100%; 
-// 	background-color: white; 
-// 	border-radius: 25px;
-// 	cursor: pointer;
-// 	.bubble-logo {
-// 		position: absolute; 
-// 		width: 80%; 
-// 		height: 70px; 
-// 		margin-top: 7%; 
-// 		margin-left: 4%;
-
-// 		div svg#car-park {
-// 			margin-top: 10px;
-// 			width: 90%;
-// 			height: 90%;
-// 		}
-
-// 		div svg#avoid-traffic {
-// 			width: 50%;
-// 			height: 50%;
-// 		}
-
-// 		div svg#people {
-// 			width: 70%;
-// 			height: 70%;
-// 		}
-// 	}
-// }
-
-// .parking-bubble:before {
-// 	content:"";
-// 	position: absolute;
-// 	top: 100%;
-// 	left: 42%;
-// 	width: 0;
-// 	height: 0;
-// 	border-left: 20px solid transparent;
-// 	border-right: 20px solid transparent;
-// 	border-top: 30px solid white;
-// }
-
-// .parking-bubble-other {
-// 	width: 100%; 
-// 	height: 100px;
-// 	padding-bottom: 45%; 
-// 	background-color: white; 
-// 	border-radius: 30px;
-// 	.other-icon{
-// 		position: relative;
-// 		z-index: 40;
-// 		svg {
-// 			margin-top: 14%;
-// 			width: 35%;
-// 			height: 35%;
-// 		}
-// 	}
-// }
-
-// .parking-question-font {
-// 	position: absolute; 
-// 	width: 80%;
-// 	top: 50%; 
-// 	margin-left: 4%; 
-// 	text-align: center; 
-// 	color: #A0A0A0;
-// }
-
-// .parking-question-other-font {
-// 	cursor: pointer;
-// 	position: absolute; 
-// 	margin-left: auto;
-// 	margin-right: auto;
-// 	top: 5%;
-// 	width: 90%;
-// 	height: 60%; 
-// }
-
-
-// .parking-ok-btn {
-// 	display: none;
-// 	cursor: pointer;
-// 	width: 150px; 
-// 	height: 50px; 
-// 	text-align: center;
-// 	font-size: 20px;
-// 	background-color: #079BED;
-// 	margin-right: auto;
-// 	margin-left: auto;
-// 	margin-top: 30px;
-// 	padding-top: 12px;
-// 	border-radius: 10px;
-// 	color: white;
-// }
-
-// .next#why-park {
-// 	text-align: center;
-// 	padding: 10px; 
-// 	width: 100px; 
-// 	margin-left: 59%;
-// 	margin-top: 30%;
-// 	// margin-left: auto; 
-// 	// margin-right: auto; 
-// 	// margin-top: 20%; 
-// 	border-radius: 5px; 
-// 	background-color: #079BED; 
-// 	color: white;
-// 	cursor: pointer
-// }
-
-// div[data-car=uncolored],
-// div[data-traffic=uncolored],
-// div[data-people=uncolored],
-// div[data-other=uncolored]{
-// 	color: #A0A0A0;
-// }
-
-// div[data-car=colored] {
-// 	color: #2FA3CA;
-// }
-
-// div[data-traffic=colored] {
-// 	color: #DD734E;
-// }
-
-// div[data-people=colored] {
-// 	color: #97CE11;
-// }
-
-// div[data-other=colored] {
-// 	color: #A370C4;
-// }
-
-// .car-park.bubble-fill[data-car=filled],
-// .circle-state[data-car=closed] {
-// 	fill: #2FA3CA;
-// }
-
-// #traffic-fill[data-traffic=filled],
-// .circle-state[data-traffic=closed] {
-// 	fill: #DD734E;
-// }
-
-// #people-fill[data-people=filled],
-// .circle-state[data-people=closed] {
-// 	fill: #97CE11;
-// }
-
-// .circle-state[data-other=closed]{
-// 	fill: #A370C4
-// }
-
-// .car-park.bubble-fill[data-car=unfilled],
-// #traffic-fill[data-traffic=unfilled],
-// #people-fill[data-people=unfilled] {
-// 	fill: #A0A0A0;
-// }
-
-// .circle-state[data-car=closed],
-// .circle-state[data-traffic=closed],
-// .circle-state[data-people=closed],
-// .circle-state[data-other=closed] {
-// 	stroke: none;
-// }
-
-// .circle-state[data-car=open],
-// .circle-state[data-traffic=open],
-// .circle-state[data-people=open],
-// .circle-state[data-other=open] {
-// 	stroke-dasharray: 2.963,4.9383;
-// }
-
-// .checkmark-fill[data-car=gray],
-// .checkmark-fill[data-traffic=gray],
-// .checkmark-fill[data-people=gray],
-// .checkmark-fill[data-other=gray] {
-// 	stroke: #757575;
-// }
-
-// .checkmark-fill[data-car=white],
-// .checkmark-fill[data-traffic=white],
-// .checkmark-fill[data-people=white],
-// .checkmark-fill[data-other=white] {
-// 	stroke: white;
-// }
 

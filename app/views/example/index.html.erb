@@ -731,6 +731,7 @@
 
     <div class="row" style="text-align:center">
       <h3 class="main-question">Why do you choose to park your car?</h3>
+      <h6 class="sub-header">(Select all that apply)</h6>
     </div>
 
     <div class="row">
@@ -785,15 +786,33 @@
 
         <div class="large-3 medium-3 small-6 columns">
           <div class="parking-bbl other-bbl">
+
             <div class="unchecked">
               <%= render 'bblCheck' %>
             </div>
+
             <div class="bbl-icon">
               <%= render 'questionBubble' %>
             </div>
-            <div class="bbl-title">
-              Other (specify)
+            
+            <div class="row">
+              <div class="bbl-title">
+                Other (specify)
+              </div>
             </div>
+
+            <div class="row" style="padding-top: 50px">
+              <textarea id="park-bbl" cols="30" rows="5" maxlength="140"></textarea>
+              <div class="text-counter"></div>
+            </div>
+            
+
+            <div class="row">
+              <div class="ok-btn">
+                Ok
+              </div>
+            </div>
+
           </div>
           <div class="row">
             <div class="park-btn-next">
@@ -826,21 +845,39 @@
         </div>
         <div class="large-3 medium-3 small-6 columns">
           <div class="parking-bbl other-bbl">
+
             <div class="unchecked">
               <%= render 'bblCheck' %>
             </div>
+
             <div class="bbl-icon">
               <%= render 'questionBubble' %>
             </div>
-            <div class="bbl-title">
-              Other (specify)
-            </div>
-          </div>
-          <div class="row">
-              <div class="park-btn-next">
-                Next
+            
+            <div class="row">
+              <div class="bbl-title">
+                Other (specify)
               </div>
             </div>
+
+            <div class="row" style="padding-top: 50px">
+              <textarea id="park-bbl" cols="30" rows="5" maxlength="140"></textarea>
+              <div class="text-counter"></div>
+            </div>
+            
+
+            <div class="row">
+              <div class="ok-btn">
+                Ok
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="park-btn-next">
+              Next
+            </div>
+          </div>
         </div>
       </div>
     </div>
