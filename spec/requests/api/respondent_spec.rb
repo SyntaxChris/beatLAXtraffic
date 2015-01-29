@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe "respondents API" do
   describe "find_or_create respondent" do
+    let!(:starting_node) { FactoryGirl.create(:node, template_name: 'sq-2-2') }
     context "when a resopndent is new" do
       it "returns an new respondent's id, session id and random variables" do
         existing = create(:respondent)

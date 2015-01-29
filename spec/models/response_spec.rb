@@ -186,6 +186,7 @@ RSpec.describe Response, :type => :model do
   describe "Features" do
     describe "create_all_from_node_interaction" do
       context "survey questions" do
+        let!(:starting_node) { FactoryGirl.create(:node, template_name: 'sq-2-2') }
         let!(:respondent) { create(:respondent) }
         let!(:next_node) { create(:node) }
         let!(:node) { create(:node, next_node_id: next_node.id) }
@@ -369,6 +370,7 @@ RSpec.describe Response, :type => :model do
         end
       end
       context "decision points" do
+        let!(:starting_node) { FactoryGirl.create(:node, template_name: 'sq-2-2') }
         let!(:respondent) { create(:respondent) }
         let!(:next_node) { create(:node) }
         let!(:node) { create(:node, next_node_id: next_node.id) }

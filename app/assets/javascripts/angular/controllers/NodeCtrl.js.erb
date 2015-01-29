@@ -68,6 +68,12 @@ angular.module('lawaApp')
         }
       };
 
+      $scope.findDecisionByString = function(string){
+        var spunDecision = _.where($scope.currentNode.decisions, {decision: string})
+        $scope.setCurrentDecisionNoSubmit(spunDecision[0]);
+        return spunDecision[0];
+      }
+
       $scope.setCurrentNodeBySession = function() {
         $scope.currentNode = $scope.fetchNodeById(sessionCurrentNodeId);
       };
@@ -89,6 +95,7 @@ angular.module('lawaApp')
       };
 
       $scope.setCurrentDecisionNoSubmit = function(decision){
+        $scope.currentDecision = decision;
         $scope.currentDecisionDestination = $scope.fetchNodeById(decision.destination_node_id);
       };
 
@@ -130,6 +137,12 @@ angular.module('lawaApp')
         }
 
         $scope.setCurrentNodeById(destinationNodeId);
+
+          // clear decision prepping for next question (can move to own method)
+          $scope.currentDecisionDestination = null;
+          $scope.currentDecision = null;
+          // clear answers prepping for next question (can move into above-mentioned)
+          $scope.currentAnswers = [];
       };
 
       var answersForParams = function(answersArray) {
@@ -149,16 +162,11 @@ angular.module('lawaApp')
           node_id: $scope.currentNode.node_id,
           decision_id: decisionId || null,
           answers: paramSafeAnswers || null,
-          next_node_id: $scope.currentNode.next_node_id
+          next_node_id: $scope.currentNode.next_node_id || $scope.currentDecisionDestination.node_id
         }
         $http.post('/api/response', { response: params }).success(function(data){
           // post to API and then on success:
           $scope.goToNextNode();
-
-          // clear decision prepping for next question (can move to own method)
-          $scope.currentDecisionDestination = null;
-          // clear answers prepping for next question (can move into above-mentioned)
-          $scope.currentAnswers = [];
         });
       };
 

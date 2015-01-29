@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe Respondent do
   describe "Attributes" do
+    let(:starting_node) { FactoryGirl.create(:node, template_name: 'sq-2-2')}
     let(:respondent) {
       FactoryGirl.build(
         :respondent,
@@ -98,62 +99,63 @@ describe Respondent do
   end
 
   describe "Features" do
-    it "on creation, current_node_id equals the starting node" do
-      new_respondent = Respondent.create
-      expect(new_respondent.current_node_id).to eq 1
-    end
+    context "on create hooks" do
+      let!(:starting_node) { FactoryGirl.create(:node, template_name: 'sq-2-2') }
+      # not doing the below. see comment in Respondent#set_starting_node
+      # before :each do
+      #   starting_node = FactoryGirl.create(:node, template_name: 'sq-2-2')
+      #   allow_any_instance_of(Respondent)
+      #     .to receive(:set_starting_node).and_return(starting_node.id)
+      # end
+      let!(:new_respondent) { FactoryGirl.create(:respondent) }
 
-    it "on creation, 'flight_code' is set" do
-      new_respondent = Respondent.create
-      expect(new_respondent.flight_code).to be_between(Respondent::FLIGHT_NUMBERS.min, Respondent::FLIGHT_NUMBERS.max)
-    end
+      it "on creation, current_node_id equals the starting node" do
+        expect(new_respondent.current_node_id).to eq Node.find_by_template_name("sq-2-2").id
+      end
 
-    it "on creation, 'luggage_count' is set" do
-      new_respondent = Respondent.create
-      expect(new_respondent.luggage_count).to be_between(1,3)
-    end
+      it "on creation, 'flight_code' is set" do
+        expect(new_respondent.flight_code).to be_between(Respondent::FLIGHT_NUMBERS.min, Respondent::FLIGHT_NUMBERS.max)
+      end
 
-    it "on creation, 'traffic_level' is set" do
-      new_respondent = Respondent.create
-      expect(Respondent::TRAFFIC_LEVELS).to include(new_respondent.traffic_level)
-    end
+      it "on creation, 'luggage_count' is set" do
+        expect(new_respondent.luggage_count).to be_between(1,3)
+      end
 
-    it "on creation, 'luggage_type' is set" do
-      new_respondent = Respondent.create
-      expect(Respondent::LUGGAGE_TYPES).to include(new_respondent.luggage_type)
-    end
+      it "on creation, 'traffic_level' is set" do
+        expect(Respondent::TRAFFIC_LEVELS).to include(new_respondent.traffic_level)
+      end
 
-    it "on creation, 'originating_location' is set" do
-      new_respondent = Respondent.create
-      expect(Respondent::ORIGINATING_LOCATIONS.collect{|hash| hash[:city]}).to include(new_respondent.originating_location)
-    end
+      it "on creation, 'luggage_type' is set" do
+        expect(Respondent::LUGGAGE_TYPES).to include(new_respondent.luggage_type)
+      end
 
-    it "on creation, 'originating_airport_code' is set" do
-      new_respondent = Respondent.create
-      expect(Respondent::ORIGINATING_LOCATIONS.collect{|hash| hash[:code]}).to include(new_respondent.originating_airport_code)
-    end
+      it "on creation, 'originating_location' is set" do
+        expect(Respondent::ORIGINATING_LOCATIONS.collect{|hash| hash[:city]}).to include(new_respondent.originating_location)
+      end
 
-    it "on creation, 'picking_up_number' is set" do
-      new_respondent = Respondent.create
-      expect(new_respondent.picking_up_number).to be_between(1,3)
-    end
+      it "on creation, 'originating_airport_code' is set" do
+        expect(Respondent::ORIGINATING_LOCATIONS.collect{|hash| hash[:code]}).to include(new_respondent.originating_airport_code)
+      end
 
-    it "on creation, 'original_who_picking_up' is set" do
-      new_respondent = Respondent.create
-      expect(Respondent::PICKUP_TARGETS).to include(new_respondent.original_who_picking_up)
-    end
+      it "on creation, 'picking_up_number' is set" do
+        expect(new_respondent.picking_up_number).to be_between(1,3)
+      end
 
-    it "on creation, 'travel_companion' is set" do
-      new_respondent = Respondent.create
-      expect([true, false]).to include(new_respondent.travel_companion)
-    end
+      it "on creation, 'original_who_picking_up' is set" do
+        expect(Respondent::PICKUP_TARGETS).to include(new_respondent.original_who_picking_up)
+      end
 
-    it "on creation, 'landing_time' is set" do
-      new_respondent = Respondent.create
-      expect(Respondent::TIME_TILL_LANDS).to include(new_respondent.landing_time)
+      it "on creation, 'travel_companion' is set" do
+        expect([true, false]).to include(new_respondent.travel_companion)
+      end
+
+      it "on creation, 'landing_time' is set" do
+        expect(Respondent::TIME_TILL_LANDS).to include(new_respondent.landing_time)
+      end
     end
 
     describe "get_or_create_by_session(session_id)" do
+      let!(:starting_node) { FactoryGirl.create(:node, template_name: 'sq-2-2') }
       describe "looks up a session to see if it has an active respondent session" do
         context "when session exists" do
         let!(:respondent) { FactoryGirl.create(:respondent, session_id: "1234") }

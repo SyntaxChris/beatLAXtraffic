@@ -1,5 +1,6 @@
 <div ng-controller="NodeCtrl">
-  current template: {{ getTemplateName(currentNode.node_id)}}
+  current template: {{ getTemplateName(currentNode.node_id)}} |
+  current nodeId: {{ currentNode.node_id }}
   <br>
   <div ng-if="!currentNode.is_decision_point">
     next node template name: {{ getTemplateName(currentNode.next_node_id) }}
