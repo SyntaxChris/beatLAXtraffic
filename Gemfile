@@ -61,9 +61,9 @@ end
 
 group :test do
   gem 'rspec-rails', '~> 3.0.0'
-  gem 'jasmine-headless-webkit'
-  gem 'guard-jasmine'
-  gem 'guard-jasmine-headless-webkit'
+  #gem 'jasmine-headless-webkit'
+  #gem 'guard-jasmine'
+  #gem 'guard-jasmine-headless-webkit'
   gem 'guard-rspec', require: false
   gem 'database_cleaner'
   gem 'simplecov', '~> 0.9.0', :require => false

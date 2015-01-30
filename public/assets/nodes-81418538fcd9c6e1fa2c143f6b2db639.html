@@ -1,0 +1,25 @@
+<div ng-controller="NodeCtrl">
+  current template: {{ getTemplateName(currentNode.node_id)}} |
+  current nodeId: {{ currentNode.node_id }}
+  <br>
+  <div ng-if="!currentNode.is_decision_point">
+    next node template name: {{ getTemplateName(currentNode.next_node_id) }}
+  </div>
+  <div ng-if="currentNode.is_decision_point">
+    selected choice's template: {{ getTemplateName(currentDecisionDestination.node_id) }}
+  </div>
+  <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))">
+    <div class="current-node-container" style="background-color:white">
+      <div ng-if="!currentNode.is_decision_point">
+        <div ng-include="'/assets/partials/question-7c2f8d2d6ea2eae3fa6e207c5cffd21f.html'"></div>
+      </div>
+      <div ng-if="currentNode.is_decision_point">
+        <div ng-include="'/assets/partials/decision-9b4c760eccb6e317dd5b5b01fc0cf72e.html'"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div ng-include="currentTemplateName">
+    </div>
+  </div>
+</div>
