@@ -2,14 +2,18 @@
 <div id="clock-questions">
   <!-- questions header -->
   <div class="row">
-    <h3 class="main-question">How long do you usually park for?</h3>
+    <h3 class="main-question">{{ currentNode.question.question }}</h3>
   </div>
-
   <div class="row">
     <div class="large-12 medium-12 small-12 large-centered medium-centered small-centerd columns">
       <div id="clock-container">
+        <div ng-repeat="answer in currentNode.answers">
+          <div ng-click="addSingleChoice(answer)" class="large-6 medium-6 small-6 columns times">
+            {{ answer.answer }}
+          </div>
+        </div>
         <div ng-include="'<%= asset_path 'svgs/_timerquestion.html' %>'"></div>
-        <div class="next" id="timer-question" style="display:none">Next</div>
+        <div class="next" id="timer-question" ng-click="submit()" >Next</div>
       </div>
     </div>
   </div>
