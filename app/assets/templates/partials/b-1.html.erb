@@ -1,4 +1,187 @@
  <!-- Why do you choose to park your car? -->
+  <div id="why-park-car">
+  <!-- <div id="why-park-car"> -->
+
+    <div class="row" style="text-align:center">
+      <h3 class="main-question">Why do you choose to park your car?</h3>
+      <h6 class="sub-header">(Select all that apply)</h6>
+    </div>
+
+    <div class="row">
+
+      <div class="large-3 medium-3 small-6 columns">
+        
+        <div class="unchecked">
+          <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
+        </div>
+
+        <div class="parking-bbl">
+          <div class="bbl-icon">
+            <div ng-include="'<%= asset_path 'svgs/_carParkBubble.html' %>'"></div>
+          </div>
+          <div class="bbl-title">
+            When convenient parking is available
+          </div>
+        </div>
+      </div>
+
+
+      <div class="large-3 medium-3 small-6 columns">
+
+                <div class="unchecked">
+                  <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
+          </div>
+        <div class="parking-bbl">
+
+          <div class="bbl-icon">
+            <div ng-include="'<%= asset_path 'svgs/_avoidTraffic.html' %>'"></div>
+          </div>
+          <div class="bbl-title">
+            To avoid driving in traffic
+          </div>
+        </div>
+      </div>
+
+
+      <!-- these two containers are hidden on small screens -->
+      <div class="hide-for-small-only">
+
+
+        <div class="large-3 medium-3 small-6 columns">
+
+          <div class="unchecked">
+            <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
+          </div>
+
+          <div class="parking-bbl">
+            <div class="bbl-icon">
+              <div ng-include="'<%= asset_path 'svgs/_peopleParkBubble.html' %>'"></div>
+            </div>
+            <div class="bbl-title">
+              To meet my passenger in the terminal
+            </div>
+          </div>
+        </div>
+
+        <div class="large-3 medium-3 small-6 columns">
+
+
+          <div class="unchecked">
+            <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
+          </div>
+
+          <div class="parking-bbl other-bbl">
+
+            <div class="bbl-icon">
+              <div ng-include="'<%= asset_path 'svgs/_questionBubble.html' %>'"></div>
+            </div>
+            
+            <div class="row">
+              <div class="bbl-title">
+                Other (specify)
+              </div>
+            </div>
+            
+            <!-- unique id for this text area -->
+            <div class="row" style="padding-top: 50px">
+              <textarea id="park-bbl" cols="30" rows="5" maxlength="140"></textarea>
+              <div class="text-counter"></div>
+            </div>
+            <!-- end -->
+            
+
+            <div class="row">
+              <div class="ok-btn">
+                Ok
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="park-btn-next">
+              Next
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+    <!-- end -->
+
+    <!-- these two containers are shown on small screens only -->
+    <div class="show-for-small-only">
+
+
+
+      <div class="large-3 medium-3 small-6 columns">
+
+          <div class="unchecked">
+            <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
+          </div>
+
+          <div class="parking-bbl">
+            <div class="bbl-icon">
+              <div ng-include="'<%= asset_path 'svgs/_peopleParkBubble'%>'"></div>
+            </div>
+            <div class="bbl-title">
+              To meet my passenger in the terminal
+            </div>
+          </div>
+        </div>
+
+        <div class="large-3 medium-3 small-6 columns">
+
+
+          <div class="unchecked">
+            <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
+          </div>
+
+          <div class="parking-bbl other-bbl">
+
+            <div class="bbl-icon">
+              <div ng-include="'<%= asset_path 'svgs/_questionBubble.html' %>'"></div>
+            </div>
+            
+            <div class="row">
+              <div class="bbl-title">
+                Other (specify)
+              </div>
+            </div>
+            
+            <!-- unique id for this text area -->
+            <div class="row" style="padding-top: 50px">
+              <textarea id="park-bbl-small" cols="30" rows="5" maxlength="140"></textarea>
+              <div class="text-counter"></div>
+            </div>
+            <!-- end -->
+            
+
+            <div class="row">
+              <div class="ok-btn">
+                Ok
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="park-btn-next">
+              Next
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </div>
+    <!-- end -->
+
+  </div>
+  <!-- END TODO: 5. Why do you choose to park your car? -->
+  <% if false %>
 <div id="why-park-car">
   <div class="row" style="text-align:center">
     <h3 class="main-question">{{ currentNode.question.question }}</h3>
@@ -126,4 +309,5 @@
     </div>
   </div>
 </div>
+<% end %>
   <!-- END Why do you choose to park your car? -->
