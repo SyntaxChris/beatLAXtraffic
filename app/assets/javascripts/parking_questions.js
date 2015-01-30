@@ -8,28 +8,24 @@ $(document).ready(function(){
 		otherHeight = $('.other-bbl').height(),
 		$body = $('body');
 
-	$body.on('click', 'textarea', function(e){
-
-	});
-
 	$body.on('click', '.parking-bbl', function(){
 		
 		var icon = $('.bbl-icon svg', this).attr('class');
-	
+		
 		switch(icon){
 			case "convenient":
 				if(convenient === 0){
 					$(".convenient").find("path, polygon, rect").css("fill", "#2FA3CA");
-					$('.unchecked svg g circle', this).css('stroke-width', "0");
-					$('.unchecked svg g path', this).css('fill', '#2FA3CA');
-					$('.unchecked svg polyline', this).css('stroke', 'white');
+					$(this).parent().find('.unchecked svg g circle').css('stroke-width', "0");
+					$(this).parent().find('.unchecked svg g path').css('fill', '#2FA3CA');
+					$(this).parent().find('.unchecked svg polyline').css('stroke', 'white');
 					$(".bbl-title", this).css("color", "#2FA3CA");
 					convenient = 1;
 				}else{
 					$(".convenient").find("path, polygon, rect").css("fill", "#A0A0A0");
-					$('.unchecked svg g circle', this).css('stroke-width', "3");
-					$('.unchecked svg g path', this).css('fill', '#FFFFFF');
-					$('.unchecked svg polyline', this).css('stroke', '#757575');
+					$(this).parent().find('.unchecked svg g circle').css('stroke-width', "3");
+					$(this).parent().find('.unchecked svg g path').css('fill', '#FFFFFF');
+					$(this).parent().find('.unchecked svg polyline').css('stroke', '#757575');
 					$(".bbl-title", this).css("color", "#A0A0A0");
 					convenient = 0;
 				}	
@@ -38,16 +34,16 @@ $(document).ready(function(){
 			case "traffic":
 				if(traffic === 0){
 					$('.traffic').find('path').css('fill', '#DD734E');
-					$('.unchecked svg g circle', this).css('stroke-width', "0");
-					$('.unchecked svg g path', this).css('fill', '#DD734E');
-					$('.unchecked svg polyline', this).css('stroke', 'white');
+					$(this).parent().find('.unchecked svg g circle').css('stroke-width', "0");
+					$(this).parent().find('.unchecked svg g path').css('fill', '#DD734E');
+					$(this).parent().find('.unchecked svg polyline').css('stroke', 'white');
 					$(".bbl-title", this).css("color", "#DD734E");
 					traffic = 1;
 				}else{
 					$('.traffic').find('path').css('fill', '#A0A0A0');
-					$('.unchecked svg g circle', this).css('stroke-width', "3");
-					$('.unchecked svg g path', this).css('fill', '#FFFFFF');
-					$('.unchecked svg polyline', this).css('stroke', '#757575');
+					$(this).parent().find('.unchecked svg g circle').css('stroke-width', "3");
+					$(this).parent().find('.unchecked svg g path').css('fill', '#FFFFFF');
+					$(this).parent().find('.unchecked svg polyline').css('stroke', '#757575');
 					$(".bbl-title", this).css("color", "#A0A0A0");
 					traffic = 0;
 				}   
@@ -56,16 +52,16 @@ $(document).ready(function(){
 			case "people":
 				if(people === 0){
 					$('.people').find('path').css('fill', '#97CE11');
-					$('.unchecked svg g circle', this).css('stroke-width', "0");
-					$('.unchecked svg g path', this).css('fill', '#97CE11');
-					$('.unchecked svg polyline', this).css('stroke', 'white');
+					$(this).parent().find('.unchecked svg g circle').css('stroke-width', "0");
+					$(this).parent().find('.unchecked svg g path').css('fill', '#97CE11');
+					$(this).parent().find('.unchecked svg polyline').css('stroke', 'white');
 					$(".bbl-title", this).css("color", "#97CE11");
 					people = 1;
 				}else{
 					$('.people').find('path').css('fill', '#A0A0A0');
-					$('.unchecked svg g circle', this).css('stroke-width', "3");
-					$('.unchecked svg g path', this).css('fill', '#FFFFFF');
-					$('.unchecked svg polyline', this).css('stroke', '#757575');
+					$(this).parent().find('.unchecked svg g circle').css('stroke-width', "3");
+					$(this).parent().find('.unchecked svg g path').css('fill', '#FFFFFF');
+					$(this).parent().find('.unchecked svg polyline').css('stroke', '#757575');
 					$(".bbl-title", this).css("color", "#A0A0A0");
 					people = 0;
 				}  
@@ -97,25 +93,52 @@ $(document).ready(function(){
 	$body.on('click', '.ok-btn', function(e){
 
 		e.stopPropagation();
+		var textArea = $(this).parents().eq(2).find('textarea');
+		var textAreaId = textArea.attr('id');
 
-		if($('textarea#park-bbl').val() !== "" || $('textarea#park-bbl-small').val() !== ""){
-			debugger;
-			$('.other-bbl-icon').find('path').css('fill', '#AA75D3');
-			$('.other-bbl .bbl-title').css("color", "#AA75D3");
-            $('.other-bbl .unchecked g circle').css('stroke-width', "0");
-			$('.other-bbl .unchecked g path').css('fill', '#AA75D3');
-			$('.other-bbl .unchecked polyline').css('stroke', 'white');
-	
-			otherBbl = 1;
-		}else{
-			$('.other-bbl-icon').find('path').css('fill', '#A0A0A0');
-			$('.other-bbl .bbl-title').css("color", "#A0A0A0");
-            $('.other-bbl .unchecked g circle').css('stroke-width', "3");
-			$('.other-bbl .unchecked g path').css('fill', 'white');
-			$('.other-bbl .unchecked polyline').css('stroke', '#757575');
-	
-			otherBbl = 0;
-		}
+		switch(textAreaId){
+			case'park-bbl':
+				if( textArea.val() !== ""){
+					
+					$('.other-bbl-icon').find('path').css('fill', '#AA75D3');
+					$('.other-bbl .bbl-title').css("color", "#AA75D3");
+		            $('.other-bbl').parent().find('.unchecked g circle').css('stroke-width', "0");
+					$('.other-bbl').parent().find('.unchecked g path').css('fill', '#AA75D3');
+					$('.other-bbl').parent().find('.unchecked polyline').css('stroke', 'white');
+			
+					otherBbl = 1;
+				}else{
+					$('.other-bbl-icon').find('path').css('fill', '#A0A0A0');
+					$('.other-bbl .bbl-title').css("color", "#A0A0A0");
+		            $('.other-bbl').parent().find('.unchecked g circle').css('stroke-width', "3");
+					$('.other-bbl').parent().find('.unchecked g path').css('fill', 'white');
+					$('.other-bbl').parent().find('.unchecked polyline').css('stroke', '#757575');
+			
+					otherBbl = 0;
+				}
+			break;
+
+			case'park-bbl-small':
+				if( textArea.val() !== ""){
+					$('.other-bbl-icon').find('path').css('fill', '#AA75D3');
+					$('.other-bbl .bbl-title').css("color", "#AA75D3");
+		            $('.other-bbl').parent().find('.unchecked g circle').css('stroke-width', "0");
+					$('.other-bbl').parent().find('.unchecked g path').css('fill', '#AA75D3');
+					$('.other-bbl').parent().find('.unchecked polyline').css('stroke', 'white');
+			
+					otherBbl = 1;
+				}else{
+					$('.other-bbl-icon').find('path').css('fill', '#A0A0A0');
+					$('.other-bbl .bbl-title').css("color", "#A0A0A0");
+		            $('.other-bbl').parent().find('.unchecked g circle').css('stroke-width', "3");
+					$('.other-bbl').parent().find('.unchecked g path').css('fill', 'white');
+					$('.other-bbl').parent().find('.unchecked polyline').css('stroke', '#757575');
+			
+					otherBbl = 0;
+				}
+			break;
+
+		};
 
 		$('.other-bbl').css({cursor: "pointer"});
 		$('.other-bbl .bbl-icon').fadeIn();
