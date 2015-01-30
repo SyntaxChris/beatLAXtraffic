@@ -1,15 +1,12 @@
   <!-- 7. TILE QUESTIONS -->
   <div id="tile-questions">
 
-    {{ currentNode.question }}
-    {{ currentAnswers }}
     <div class="row">
     <h3 class="main-question" id="main-landscape">{{ currentNode.question.question }}</h3>
       <h5 class="sub-header">Select all that apply</h5>
     </div>
 
     <div class="row">
-
       <div ng-repeat="answer in currentNode.answers">
         <div class="large-3 medium-3 small-6 columns">
           <div class="row">
@@ -30,61 +27,10 @@
           </div>
         </div>
       </div>
-
-      <!--
-        <div class="large-3 medium-3 small-6 columns">
-          <div class="row">
-            <div class="tile-bbl">
-              <div class="tile-checkmark">
-              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
-              </div>
-              <div class="tile"><div ng-include="'<%= asset_path 'svgs/_shop.html' %>'"%></div></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="tile-title">
-              Shop in the terminal
-            </div>
-          </div>
-        </div>
-
-        <div class="large-3 medium-3 small-6 columns">
-          <div class="row">
-            <div class="tile-bbl">
-              <div class="tile-checkmark">
-              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
-              </div>
-              <div class="tile"><div ng-include="'<%= asset_path 'svgs/_hangout.html' %>'"%></div></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="tile-title">
-              Hang out
-            </div>
-          </div>
-        </div>
-
-        <div class="large-3 medium-3 small-6 columns">
-          <div class="row">
-            <div class="tile-bbl">
-              <div class="tile-checkmark">
-              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
-              </div>
-              <div class="tile"><div ng-include="'<%= asset_path 'svgs/_eat.html' %>'"%></div></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="tile-title">
-              Eat or drink
-            </div>
-          </div>
-        </div>
-        -->
-
     </div>
 
     <div class="row">
-      <div class="tile-next">
+      <div ng-click="submit()" class="tile-next">
         Next
       </div>
     </div>
