@@ -1028,22 +1028,58 @@
 
 
     <!-- 11. TIMER QUESTIONS -->
-    <div id="clock-questions" class="slide" data-currentnode="7" data-nextnode="8">
+    <!-- <div id="clock-questions" class="slide" data-currentnode="7" data-nextnode="8"> -->
+    <div id="clock-questions">
       <!-- questions header -->
       <div class="row">
         <h3 class="main-question">How long do you usually park for?</h3>
       </div>
 
-      <div class="row">
-        <div class="large-12 medium-12 small-12 large-centered medium-centered small-centerd columns">
+        <div class="row">      
           <div id="clock-container">
-            <%= render 'timerquestion' %>
-            <div class="next emergency-next" id="timer-question" style="display:none">Next</div>
+
+            <div id="test">
+              <div id="inner-test">
+                <div class="large-6 medium-6 small-6 columns text">
+                  <div class='text-test'>Less than 30 minutes</div>
+                </div>
+
+                <div class="large-6 medium-6 small-6 columns text">
+                  <div class='text-test'>30 - 60 minutes</div>
+                </div>
+
+                <div class="large-6 medium-6 small-6 columns text btm">
+                  <div class='text-test'>60 - 90 minutes</div>
+                </div>
+
+                <div class="large-6 medium-6 small-6 columns text btm">
+                  <div class='text-test'>More than 90 minutes</div>
+                </div>
+
+              </div>
+            </div> 
+
+            <%= render 'timerquestion' %>  
+
+            <div class="next emergency-next" id="timer-question" style="display:none">
+              Next
+            </div>
+
           </div>
         </div>
-      </div>
+ 
+      
     </div>
     <!-- END TIMER QUESTIONS -->
+
+
+  
+
+
+
+
+
+
 
     <!-- PAGES 8 - 13 ARE OUTSIDE OF THIS CONTAINER -->
 
