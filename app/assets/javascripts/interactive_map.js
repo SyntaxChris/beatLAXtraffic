@@ -14,7 +14,7 @@ $(document).ready(function(){
     //prevent the default and propagation
     e.preventDefault();
     e.stopImmediatePropagation();
-k
+
     //set the path
     var $btn = $(this),
         path = $btn.data('path'),

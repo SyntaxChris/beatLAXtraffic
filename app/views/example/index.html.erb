@@ -458,268 +458,132 @@
 
   <!-- 4. STRATEGY questions -->
   <div id="strategy-questions" class="slide" data-currentnode="5" data-nextnode="6">
+  <!-- <div id="strategy-questions"> -->
 
     <div class="row" style="text-align: center;">
       <h3 class="main-question">Why do you choose this strategy?</h3>
       <h5 class="sub-header">Select all that apply</h5>
     </div>
 
-    <div id="large-strategy">
-      <div class="row">
-        <div class="large-12 medium-12 small-12 columns">
-          <div class="row">
-            <div class="large-4 medium-4 small-4 columns">
-              <div class="bubble-icon-container" id="container-1">
-                <%= render 'strategyStopWatch' %>
-                <div class="strategy-answer" id="stopwatch-answer">
+    <div class="row">
+      <div class="large-12 medium-12 small-12 large-centered medium-centered small-centered columns">
+
+        <div class="row boxster">
+          <%= render 'boxster' %>
+        </div>
+
+
+        <div class="row">
+          <!-- left row -->
+          <div class="large-4 medium-4 small-4 columns">
+
+            <div class="row rt tp">
+              <div class="checkmark">
+                <%= render 'bblCheck' %>
+              </div>
+              <div class="strategy-bbl">
+                <div class="strategy-icon">
+                  <%= render 'strategyStopWatch' %>
+                </div>
+                <div class="bbl-title">
                   To get in and out of the airport as quickly as possible
+                  
                 </div>
               </div>
             </div>
-            <div class="large-4 medium-4 small-4 columns">
-              <div class="bubble-icon-container" id="container-2">
-                <%= render 'grayParking' %>
-                <div class="strategy-answer" id="parking-answer">
+            <div class="row lft btm">
+              <div class="checkmark">
+                <%= render 'bblCheck' %>
+              </div>
+              <div class="strategy-bbl">
+                <div class="strategy-icon">
+                  <%= render 'guy' %>
+                </div>
+                <div class="bbl-title">
+                  To make it convenient fo my passengers
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- end left row -->
+
+          <!-- middle row -->
+          <div class="large-4 medium-4 small-4 columns">
+
+            <div class="row">
+              <div class="checkmark">
+                <%= render 'bblCheck' %>
+              </div>
+              <div class="strategy-bbl">
+                <div class="strategy-icon">
+                  <%= render 'grayParking' %>
+                </div>
+                <div class="bbl-title">
                   To avoid paying for parking
                 </div>
               </div>
-              <div class="next emergency-next" id="strategy-large-temp" style="z-index: 10;">Next</div>
             </div>
-            <div class="large-4 medium-4 small-4 columns">
-              <div class="bubble-icon-container" id="container-3">
-                <%= render 'hassle' %>
-                <div class="strategy-answer" id="hassle-answer">
+
+          </div>
+          <!-- end middle row -->
+
+          <!-- right row -->
+          <div class="large-4 medium-4 small-4 columns">
+
+            <div class="row lft tp">
+              <div class="checkmark">
+                <%= render 'bblCheck' %>
+              </div>
+              <div class="strategy-bbl">
+                <div class="strategy-icon">
+                  <%= render 'hassle' %>
+                </div>
+                <div class="bbl-title">
                   To minimize the hassle for me
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="row" style="margin-top: 40px;">
-        <div class="large-12 medium-12 small-12 columns">
-          <div class="row">
-            <div class="large-3 medium-3 small-3 columns">
-              <div class="bubble-icon-container" id="container-4">
-                <%= render 'guy' %>
-                <div class="strategy-answer" id="guy-answer" style="margin-top: -10px">
-                  To make it convenient for my passengers
+            <div class="row rt btm">
+              <div class="checkmark">
+                <%= render 'bblCheck' %>
+              </div>
+              <div class="strategy-bbl other-bbl">
+                <div class="strategy-icon">
+                  <%= render 'strategyOther' %>
                 </div>
-              </div>
-            </div>
-            <div class="large-6 medium-6 columns">
-              <div id="boxter-cntnr">
-                <%= render 'boxster' %>
-              </div>
-            </div>
-            <div class="large-3 medium-3 small-3 columns">
-
-              <div class="bubble-icon-container" id="container-5">
-                <%= render 'strategyOther' %>
-                <div class="strategy-answer" id="other-strategy-answer">
+                <div class="bbl-title">
                   Other (Explain)
                 </div>
-              </div>
-
-              <!-- other text container -->
-              <div id="strategy-other-container">
-                <div id="container-positioner">
-                  <div id="text-container-filler"></div>
-                  <div id="text-container">
-                    <div id="other-strategy-buttons">
-                      <div class="row" id="slide-content" style="display: none">
-                        <div class="large-3 medium-3 small-3 columns">
-                          <div class="save-large" style="margin-top: 15px; text-align: center; color: white; background-color: #F25053; padding: 5%; margin-left: 25px; margin-right: 15px; font-size: 1.5vw; border-radius: 5px">
-                            Save
-                          </div>
-
-                          <div class="cancel-large" style="margin-top: 15px; text-align: center; color: white; background-color: #C1C1C1; padding: 5%; margin-left: 25px; margin-right: 15px; font-size: 1.5vw; border-radius: 5px">
-                            Cancel
-                          </div>
-
-                          <div id="char-count-strategy" style="text-align:center; color: #C1C1C1; font-size: 12px; margin-left: 8%"></div>
-                        </div>
-                        <div class="large-7 medium-7 columns">
-                          <textarea class="other-strategy" placeholder="Please write here." cols="1" rows="6" maxlength="140" style="margin-top: 3%; background-color: #F0943F; color: white; postion: absolute; left: 40px; top: 20px"></textarea>
-                        </div>
-                        <div class="large-2 medium-2 small-2 columns"></div>
-                      </div>
+                <!-- text form with buttons -->
+                <div class="other-text-form">
+                  <div class="row">
+                    <div class="large-3 medium-3 small-3 columns">
+                      <div class="text-form-btn" id="save">Save</div>
+                      <div class="text-form-btn" id="cancel">Cancel</div>
+                      <div class="char-counter"></div>
+                    </div>
+                    <div class="large-9 medium-9 small-9 columns">
+                      <textarea id="strategy-text" cols="1" rows="7" maxlength="140" placeholder="Please write here."></textarea>
                     </div>
                   </div>
                 </div>
+                <!-- end text form -->
               </div>
-              <!-- end other text container -->
-
             </div>
+
           </div>
+          <!-- end right row -->
         </div>
       </div>
+
     </div>
 
-    <div id="small-strategy">
-      <div class="row">
-        <div id="main-ctnr">
-          <div class="medium-11 small-11 medium-centered small-centered columns">
-
-            <div class="row" style="margin-bottom: 5%">
-              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
-                <div class="bubble-container-small" id="passenger">
-                  <div class="check-ctnr" style="position: absolute; z-index: 5; right: 0; top: -5%">
-                    <%= render 'sUnchecked'%>
-                  </div>
-                  <div class="row" style="padding-top: 5px">
-                    <div class="small-5 small-centered columns">
-                      <div class="logo-cntr" style="position: absolute; left:0">
-                        <%= render 'sPassenger' %>
-                      </div> 
-                    </div>
-                  </div>
-                  <div style="position:absolute; width: 100%; margin-top: 65%; left:0;">
-                     <div class="row">
-                      <div class="small-11 small-centered columns">
-                        <div class="strategy-answer" style="font-size: 3vw; padding-left: 5px; padding-right: 5px">
-                          To make it convienient for my passengers
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px; text-align: center">
-                  <div class="bubble-container-small" id="stop-watch">
-                    <div class="check-ctnr" style="position: absolute; z-index: 5; right: -5% ; top: -5%">
-                      <%= render 'sUnchecked'%>
-                    </div>
-                    <div class="row" >
-                      <div class="small-5 small-centered columns">
-                        <div class="logo-cntr" style="position: absolute; left:0">
-                          <%= render 'sStopWatch' %>
-                        </div> 
-                      </div>
-                    </div>
-                    <div style="position:absolute; width: 100%; margin-top: 75%; left:0;">
-                      <div class="row">
-                        <div class="small-11 small-centered columns">
-                          <div class="strategy-answer" style="font-size: 2.6vw;">
-                            To get in and out of the airport as quickly as possible
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div id="boxster-ctnr">
-                    <%= render 'boxster' %>
-                  </div>
-
-                  <div class="next emergency-next" id="strategy-small-temp" style="display: none; z-index: 10;">Next</div>
-
-              </div>
-
-              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
-                <div class="bubble-container-small" id="parking">
-                  <div class="check-ctnr" style="position: absolute; z-index: 5; right: 0; top: -5%">
-                    <%= render 'sUnchecked'%>
-                  </div>
-                  <div class="row">
-                    <div class="small-5 small-centered columns" style="padding-top: 3px">
-                      <div class="logo-cntr" style="position: absolute; left:0">
-                        <%= render 'sParking' %>
-                      </div> 
-                    </div>
-                  </div>
-                  <div style="position:absolute; width: 100%; margin-top: 70%; left:0;">
-                     <div class="row">
-                      <div class="small-11 small-centered columns">
-                        <div class="strategy-answer" style="font-size: 3vw; padding-left: 5px; padding-right: 5px">
-                          To avoid paying for parking
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
-                <div class="bubble-container-small" id="hassle">
-                  <div class="check-ctnr" style="position: absolute; z-index: 5; right: 0; top: -5%">
-                    <%= render 'sUnchecked'%>
-                  </div>
-                  <div class="row">
-                    <div class="small-5 small-centered columns" style="padding-top: 3px">
-                      <div class="logo-cntr" style="position: absolute; left:0">
-                        <%= render 'sHassle' %>
-                      </div> 
-                    </div>
-                  </div>
-                  <div style="position:absolute; width: 100%; margin-top: 70%; left:0;">
-                     <div class="row">
-                      <div class="small-11 small-centered columns">
-                        <div class="strategy-answer" style="font-size: 3vw; padding-left: 5px; padding-right: 5px">
-                          To minimize the hassle for me
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="medium-4 small-4 columns"></div style="padding-left: 10px; padding-right: 10px">
-
-              <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
-                <div class="bubble-container-small" id="s-other">
-                  <div class="check-ctnr" style="position: absolute; z-index: 5; right:0; top: -5%">
-                    <%= render 'sUnchecked'%>
-                  </div>
-                  <div class="row">
-                    <div class="small-5 small-centered columns" style="padding-top: 3px">
-                      <div class="logo-cntr" style="position: absolute; left:0">
-                        <%= render 'sOther' %>
-                      </div> 
-                    </div>
-                  </div>
-                  <div style="position:absolute; width: 100%; margin-top: 75%; left:0;">
-                     <div class="row">
-                      <div class="small-11 small-centered columns">
-                        <div class="strategy-answer" style="font-size: 3vw; padding-left: 5px; padding-right: 5px">
-                          Other (Explain)
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <div id="s-other-ctnr" style="display: none; position: absolute; z-index: 6; top: 0; margin-top: 25%; left: 8%; width: 85%; background-color: white; padding-top: 15px; border: 1px solid #C1C1C1; border-radius: 10px">
-          <div class="small-3 columns">
-            <div class="row">
-              <div class="save" style="text-align: center; color: white; background-color: #F25053; padding: 8%; margin-left: 10px; font-size: 2.8vw; border-radius: 5px">
-                Save
-              </div>
-            </div>
-            <div class="row" style="margin-top: 15px">
-              <div class="cancel" style="text-align: center; color: white; background-color: #C1C1C1; padding: 8%; margin-left: 10px; font-size: 2.8vw; border-radius: 5px">
-                Cancel
-              </div>
-            </div>
-            <div class="row" style="text-align: center; color">
-              <div id="char-count-strategy" style="color: #C1C1C1; padding:0; margin:0; font-size: 2vw; text-align: center"></div>
-            </div>
-          </div>
-          <div class="small-9 columns">
-            <textarea class="other-strategy" cols="1" rows="7" maxlength="140" style="background-color: #F0943F; color: white" placeholder="Please write here"></textarea>
-          </div>
-
+    <div class="next-container">
+      <div class="strategy-next">
+        Next
       </div>
     </div>
-
 
   </div>
   <!-- END STRATEGY QUESTIONS -->
@@ -727,143 +591,185 @@
 
   <!-- TODO: 5. Why do you choose to park your car? -->
   <div id="why-park-car" class="slide" data-currentnode="6" data-nextnode="13">
+  <!-- <div id="why-park-car"> -->
+
     <div class="row" style="text-align:center">
       <h3 class="main-question">Why do you choose to park your car?</h3>
+      <h6 class="sub-header">(Select all that apply)</h6>
     </div>
 
-    <div class="hide-for-small-only">
-      <div class="row" style="padding: 0 10px 0 10px; margin-top: 5%">
-        <div class="large-3 medium-3 columns">
-          <div class="parking-bubble">
-            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
-              <%= render 'unchecked' %>
-            </div>
-            <div class="bubble-logo">
-              <%= render 'carParkBubble' %>
-            </div>
-            <div class="parking-question-font" data-car="uncolored">
-              When convenient parking is available
-            </div>
+    <div class="row">
+
+      <div class="large-3 medium-3 small-6 columns">
+        
+        <div class="unchecked">
+          <%= render 'bblCheck' %>
+        </div>
+
+        <div class="parking-bbl">
+          <div class="bbl-icon">
+            <%= render 'carParkBubble' %>
+          </div>
+          <div class="bbl-title">
+            When convenient parking is available
           </div>
         </div>
-        <div class="large-3 medium-3 columns">
-          <div class="parking-bubble">
-            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
-              <%= render 'unchecked' %>
-            </div>
-            <div class="bubble-logo">
-              <%= render 'avoidTraffic' %>
-            </div>
-            <div class="parking-question-font" data-traffic="uncolored">
-              To avoid driving in traffic
-            </div>
+      </div>
+
+
+      <div class="large-3 medium-3 small-6 columns">
+
+                <div class="unchecked">
+            <%= render 'bblCheck' %>
+          </div>
+        <div class="parking-bbl">
+
+          <div class="bbl-icon">
+            <%= render 'avoidTraffic' %>
+          </div>
+          <div class="bbl-title">
+            To avoid driving in traffic
           </div>
         </div>
-        <div class="large-3 medium-3 columns">
-          <div class="parking-bubble">
-            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
-              <%= render 'unchecked' %>
+      </div>
+
+
+      <!-- these two containers are hidden on small screens -->
+      <div class="hide-for-small-only">
+
+
+        <div class="large-3 medium-3 small-6 columns">
+
+          <div class="unchecked">
+            <%= render 'bblCheck' %>
+          </div>
+
+          <div class="parking-bbl">
+            <div class="bbl-icon">
+              <%= render 'peopleParkBubble'%>
             </div>
-            <div class="bubble-logo">
-              <%= render 'peopleParkBubble' %>
-            </div>
-            <div class="parking-question-font" data-people="uncolored">
+            <div class="bbl-title">
               To meet my passenger in the terminal
             </div>
           </div>
         </div>
-        <div class="large-3 medium-3 columns" style="text-align: center">
-          <div class="parking-bubble parking-bubble-other">
-            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
-              <%= render 'unchecked' %>
+
+        <div class="large-3 medium-3 small-6 columns">
+
+
+          <div class="unchecked">
+            <%= render 'bblCheck' %>
+          </div>
+
+          <div class="parking-bbl other-bbl">
+
+            <div class="bbl-icon">
+              <%= render 'questionBubble' %>
             </div>
-            <div class="parking-question-other-font" data-other="uncolored">
-              <div class="other-icon" style="width: 30%; text-align: center; margin-left: auto; margin-right: auto">
-                <%=render 'questionBubble'%>
-              </div>
-              Other (specify)
-            </div>
-            <div class="parking-other-text-area" style="display: none; position: relative; top: 30%; position: relative; z-index: 20">
-              <textarea id="other-info" cols="1" rows="5" maxlength="140"></textarea>
-            </div>
-            <br>
-            <div id="char-count" style="display: none; position: absolute; margin-left: 15%; text-align:center; color: #B2C4D4; font-size: 12px; width: 90%; margin-left: auto; margin-right: auto"></div>
             
-            <div class="parking-ok-btn">OK</div>
-        
+            <div class="row">
+              <div class="bbl-title">
+                Other (specify)
+              </div>
+            </div>
+            
+            <!-- unique id for this text area -->
+            <div class="row" style="padding-top: 50px">
+              <textarea id="park-bbl" cols="30" rows="5" maxlength="140"></textarea>
+              <div class="text-counter"></div>
+            </div>
+            <!-- end -->
+            
+
+            <div class="row">
+              <div class="ok-btn">
+                Ok
+              </div>
+            </div>
+
           </div>
-          <div class="next emergency-next" id="why-park" style="display:none; margin-left: 25%; position: absolute; text-align: center">Next</div>
+          <div class="row">
+            <div class="park-btn-next">
+              Next
+            </div>
+          </div>
         </div>
 
       </div>
-    </div>
 
+
+    </div>
+    <!-- end -->
+
+    <!-- these two containers are shown on small screens only -->
     <div class="show-for-small-only">
-      <div class="row" style="padding: 0 20px 0 20px">
-        <div class="small-6 columns" style="padding: 0 2% 0 3%">
-          <div class="parking-bubble">
-            <div class="unchecked" style="position: absolute; right: 5px; top: -10%">
-              <%= render 'unchecked' %>
+
+
+
+      <div class="large-3 medium-3 small-6 columns">
+
+          <div class="unchecked">
+            <%= render 'bblCheck' %>
+          </div>
+
+          <div class="parking-bbl">
+            <div class="bbl-icon">
+              <%= render 'peopleParkBubble'%>
             </div>
-            <div class="bubble-logo" class="bubble-logo">
-              <%= render 'carParkBubble' %>
-              <div style="width: "></div>
-            </div>
-            <div class="parking-question-font" data-state="uncolored">
-              Convenient parking available
+            <div class="bbl-title">
+              To meet my passenger in the terminal
             </div>
           </div>
         </div>
-        <div class="small-6 columns" style="padding: 0 3% 0 2%">
-          <div class="parking-bubble">
-            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
-              <%= render 'unchecked' %>
+
+        <div class="large-3 medium-3 small-6 columns">
+
+
+          <div class="unchecked">
+            <%= render 'bblCheck' %>
+          </div>
+
+          <div class="parking-bbl other-bbl">
+
+            <div class="bbl-icon">
+              <%= render 'questionBubble' %>
             </div>
-            <div  class="bubble-logo">
-              <%= render 'avoidTraffic' %>
+            
+            <div class="row">
+              <div class="bbl-title">
+                Other (specify)
+              </div>
             </div>
-            <div class="parking-question-font" data-state="uncolored">
-              Convenient parking available
+            
+            <!-- unique id for this text area -->
+            <div class="row" style="padding-top: 50px">
+              <textarea id="park-bbl-small" cols="30" rows="5" maxlength="140"></textarea>
+              <div class="text-counter"></div>
+            </div>
+            <!-- end -->
+            
+
+            <div class="row">
+              <div class="ok-btn">
+                Ok
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="park-btn-next">
+              Next
             </div>
           </div>
         </div>
+
       </div>
-      <div class="row" style=" margin-top: 10%; padding: 0 20px 0 20px">
-        <div class="small-6 columns" style="padding: 0 2% 0 3%">
-          <div class="parking-bubble">
-            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
-              <%= render 'unchecked' %>
-            </div>
-            <div class="bubble-logo">
-              <%= render 'peopleParkBubble' %>
-            </div>
-            <div class="parking-question-font" data-state="uncolored">
-              Convenient parking available
-            </div>
-          </div>
-        </div>
-        <div class="small-6 columns" style="padding: 0 3% 0 2%; text-align: center">
-          <div class="parking-bubble parking-bubble-other">
-            <div class="unchecked" style="position: absolute; right: 5px; top: -5%">
-              <%= render 'unchecked' %>
-            </div>
-            <div class="parking-question-other-font" data-other="uncolored">
-              Other (specify)
-            </div>
-            <div class="parking-other-text-area" style="display: none; position: relative; top: 30%; margin-bottom: 20px">
-              <textarea id="other-info" cols="1" rows="5" maxlength="140"></textarea>
-            </div>
-            <br>
-            <div id="char-count" style="position: absolute; margin-left: auto; margin-right: auto; text-align:center; color: #B2C4D4; font-size: 12px; width: 90%"></div>
-            <div class="parking-submit">
-              <div class="parking-submit-btn" style="display:none">OK</div>
-            </div>
-          </div>
-          <div class="next emergency-next" id="why-park" style="display:none">Next</div>
-        </div>
-        
-      </div>
+
+
+
     </div>
+    <!-- end -->
+
   </div>
   <!-- END TODO: 5. Why do you choose to park your car? -->
 
@@ -1006,288 +912,140 @@
   <!-- END SPINNER QUESTIONS -->
 
 
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- 7. TILE QUESTIONS -->
-  <div class="large-12 medium-12 small-12 columns">
-    <div id="tile-questions" class="slide" data-currentnode="9" data-nextnode="10">
-    
-      <!-- questions header -->
-      <div class="show-for-landscape">
-        <div class="row">
-          <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
-            <div id="question-header-landscape">
-                <h3 class="main-question" id="main-landscape">What are you doing while you wait?</h3>
-                <h5 id="foot-landscape">Select all that apply</h5> 
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="show-for-portrait">
-        <div class="row">
-          <div class="large-9 medium-9 small-12 large-centered medium-centered small-centered columns">
-            <div id="question-header" style="text-align: center">
-              <h3 class="main-question" id="main">What are you doing while you wait?</h3>
-              <h5 id="foot" style="text-align:center">
-                Select all that apply
-                <div class="next emergency-next" id="tiles-large" style="">Next</div>
-              </h5> 
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end questions header -->
-
-      <!-- landscape -->
-      <div class="show-for-landscape">
-
-        <div id="large-landscape">
-          <div class="row">
-            <div class="large-12 medium-12 large-centered medium-centered columns">
-              <div class="row">
-                <div class="large-4 medium-4 small-4 columns phone" id="tally">
-                  <%= render 'phone' %>
-                  <div class="row" style="text-align: center; color: white">
-                    On my phone
-                  </div>
-                </div>
-                <div class="large-4 medium-4 small-4 columns" id="tally">
-                  <%= render 'shop' %>
-                  <div class="row" style="text-align: center; color: white">
-                    Shop in the terminal
-                  </div>
-                </div>
-                <div class="large-4 medium-4 small-4 columns" id="tally">
-                  <%= render 'hangout' %>
-                  <div class="row" style="text-align: center; color: white">
-                    Hang out
-                  </div>
-                </div>
-              </div>
-
-              <div class="row" style="margin-top: 10px;">
-                <div class="large-4 medium-4 small-4 columns" id="tally">
-                  <%= render 'eat' %>
-                  <div class="row" style="text-align: center; color: white">
-                    Eat or drink
-                  </div>
-                </div>
-                <div class="large-4 medium-4 small-4 columns" id="tally">
-                  <%= render 'other' %>
-                  <div class="row" style="text-align: center; color: white">
-                    Other
-                  </div>
-                </div>
-                
-                <!-- text area -->
-                <div class="large-4 medium-4 small-4 columns">
-                  <div class="next emergency-next" id="tiles-medium">Next</div>
-                  <div class="row">
-                    <div class="large-12 medium-12 small-12 columns">
-                      <div id="user-text-input">
-                        <div class="arrow-left" style="position:absolute; z-index: 1;"></div>
-                        <div class="row" style="padding-top: 15px">
-                          <textarea class="purple" id="other-info-large" cols="1" rows="3" maxlength="140" placeholder="Please write here"></textarea> 
-                        </div>
-                        <div class="row" style="text-align: center">
-                          <div class="large-6 medium-6 columns" style="padding: 0">
-                            <div class="other-cancel">
-                              Cancel
-                            </div>
-                          </div>
-                          <div class="large-6 medium-6 columns" style="text-align: center">
-                            <div class="other-submit">
-                              Save
-                            </div>
-                          </div>
-                          
-                          <div id="char-count-large" style="text-align: center"></div>
-                          
-                          
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end text area -->
-              </div>
-            </div>    
-          </div>
-        </div>
-        
-        <div id="small-landscape">
-          <div class="row">
-            <div class="small-3 medium-3 columns" id="tally">
-              <%= render 'phone' %>
-              <div class="row tile-title" style="text-align: center; color: white">
-                On my phone
-              </div>
-            </div>
-            <div class="small-3 medium-3 columns" id="tally">
-              <%= render 'shop' %>
-              <div class="row tile-title" style="text-align: center; color: white">
-                Shop in the terminal
-              </div>
-            </div>
-            <div class="small-3 medium-3 columns" id="tally">
-              <%= render 'hangout' %>
-              <div class="row tile-title" style="text-align: center; color: white">
-                Hang out
-              </div>
-            </div>
-            <div class="small-3 medium-3 columns" id="tally">
-              <%= render 'eat' %>
-              <div class="row tile-title" style="text-align: center; color: white">
-                Eat or drink
-              </div>
-            </div> 
-          </div>
-          <div class="row">
-            <div class="small-8 medium-8 small-centered medium-centered columns">
-              <div class="row" style="margin-top: 15px">
-                <div class="medium-6 small-6 columns"><%= render 'smallother' %></div>
-                <div class="medium-6 small-6 columns" style="padding: 6px 0 0 0">
-                  <div class="small-tile-label-landscape" style="text-align: left; color: white">Other (Specify)</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="small-11 small-centered columns" id="other-small-textbox" style="display:none; bottom: 200px ">
-              <div id="other-text-area">
-                <div class="row">
-                  <div class="small-12 small-centered columns">
-                    <textarea class="purple" id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
-                      <div class="row">
-                        <div class="small-7 columns">
-                          <div id="char-count-small" style="font-size: 16px"></div>
-                      </div>
-                      <div class="small-5 columns" style="text-align: center;">
-                        <div class="next emergency-next" style="color:white; background-color: #9B69CC; padding: 10px 0 10px 0; border-radius: 5px; margin-right: 5px; margin-bottom: 2px">
-                          <div>Next</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="small-6 columns" style="height: 120px; background-color: #C39AE8"></div>
-                <div class="small-6 columns" style="height: 120px; background-color: #AB75D3"></div>
-              </div>
-              <div class="row">
-                <div class="small-6 columns" style="height: 120px; background-color: #9B69CC;">
-                  <div style="position: absolute; bottom:5px; color: white">
-                    Other <span style="font-size: 12px">(Specify)</span>
-                  </div>
-                </div>
-                <div class="small-6 columns" style="height: 120px; background-color: #8B5DC0; color: white">
-                  <div id="other-cancel">
-                    Cancel
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="medium-4 small-4 medium-centered small-centered columns">
-              <div class="next emergency-next" id="tiles-small">
-                Next
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <!-- end landscape -->
-      
-      <!-- portrait -->
-      <div class="show-for-portrait">
-
-        <div class="row" id="tiles-small">
-          <div class="medium-10 small-11 medium-centered small-centered columns">
-
-            <div class="row">
-              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
-                <%= render 'phone' %>
-                <div class="row small-tile-label" style="text-align: center; color: white">
-                  On my phone
-                </div>
-              </div>
-              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
-                <%= render 'shop' %>
-                <div class="row small-tile-label" style="text-align: center; color: white">
-                  Shop in the terminal
-                </div>
-              </div>
-            </div>
-
-            <div class="row" id="bottom-tile-row">
-              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
-                <%= render 'hangout' %>
-                <div class="row small-tile-label" style="text-align: center; color: white">
-                  Hang out
-                </div>
-              </div>
-              <div class="medium-6 small-6 columns" id="tally" style="padding: 0">
-                <%= render 'eat' %>
-                <div class="row small-tile-label" style="text-align: center; color: white">
-                  Food and drinks
-                </div>
-              </div>
-            </div>
-
-            <div class="row" id="small-other-row">
-              <div class="medium-8 small-10 medium-centered small-centered columns">
-                <div class="row" style="margin-top: 15px">
-                  <div class="medium-6 small-6 columns" id="tally" style="padding: 0"><%= render 'smallother' %></div>
-                  <div class="medium-6 small-6 columns" style="padding: 6px 0 0 0"><div class="small-tile-label" style="text-align: left; color: white; font-size: 12px">Other (Specify)</div></div>
-                </div>
-                <div class="row">
-                  <div class="small-11 small-centered columns" id="other-small-textbox" style="display:none">
-                    <div id="other-text-area">
-                      <div class="row">
-                        <div class="small-12 small-centered columns">
-                          <textarea class="purple" id="other-info-small" cols="1" rows="5" maxlength="150" placeholder="Please write here." style="color: #B2C4D4"></textarea>
-                          <div class="row">
-                            <div class="small-7 columns">
-                              <div id="char-count-small"></div>
-                            </div>
-                            <div class="small-5 columns" style="text-align: center">
-                              <div class="other-submit" style="color: white; background-color: #8B5DC0; padding: 5px; margin-bottom: 5px; border-radius: 5px; margin-right: 5px">
-                                Save
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="small-6 columns" style="height: 120px; background-color: #C39AE8"></div>
-                      <div class="small-6 columns" style="height: 120px; background-color: #AB75D3"></div>
-                    </div>
-                    <div class="row">
-                      <div class="small-6 columns" style="height: 120px; background-color: #9B69CC;">
-                        <div style="position: absolute; bottom:5px; color: white">
-                          Other <span style="font-size: 12px">(Specify)</span>
-                        </div>
-                      </div>
-                      <div class="small-6 columns" style="height: 120px; background-color: #8B5DC0; color: white">
-                        <div id="other-cancel">
-                          Cancel
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    <!-- end portrait -->
+  <div id="tile-questions">
+    <div class="row">
+      <h3 class="main-question" id="main-landscape">What are you doing while you wait?</h3>
+      <h5 class="sub-header">Select all that apply</h5>
     </div>
-    <!-- END TILE QUESTIONS -->
+    <div class="row">
+
+      <div class="large-4 medium-6 small-6 columns">
+        <div class="row">
+          <div class="tile-bbl">
+            <div class="tile-checkmark">
+              <%= render 'bblCheck' %>
+            </div>
+            <div class="tile"><%= render 'phone' %></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="tile-title">
+            On my phone
+          </div>
+        </div>
+      </div>
+
+      <div class="large-4 medium-6 small-6 columns">
+        <div class="row">
+          <div class="tile-bbl">
+            <div class="tile-checkmark">
+              <%= render 'bblCheck' %>
+            </div>
+            <div class="tile"><%= render 'shop' %></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="tile-title">
+            Shop in the terminal
+          </div>
+        </div>
+      </div>
+
+      <div class="show-for-large-only">
+        <div class="large-4 medium-6 small-6 columns">
+          <div class="row">
+            <div class="tile-bbl">
+              <div class="tile-checkmark">
+                <%= render 'bblCheck' %>
+              </div>
+              <div class="tile"><%= render 'hangout' %></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="tile-title">
+              Hang out
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="large-4 medium-6 small-6 columns">
+        <div class="row">
+          <div class="tile-bbl">
+            <div class="tile-checkmark">
+              <%= render 'bblCheck' %>
+            </div>
+            <div class="tile"><%= render 'eat' %></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="tile-title">
+            Eat or drink
+          </div>
+        </div>
+      </div>
+
+      <div class="large-4 medium-6 small-6 columns">
+        <div class="row">
+          <div class="tile-bbl">
+            <div class="tile-checkmark">
+              <%= render 'bblCheck' %>
+            </div>
+            <div class="tile"><%= render 'other' %></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="tile-title">
+            Other (Specify)
+          </div>
+        </div>
+      </div>
+      <!-- text area -->
+      <div class="show-for-large-only">
+        <div class="large-4 medium-6 small-6 columns">
+          <div class="other-text-bbl">
+            
+          </div>
+        </div>
+      </div>
+      <!-- end text area -->
+    </div>
+  </div>
+  <!-- END TILE QUESTIONS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- 11. TIMER QUESTIONS -->
     <div id="clock-questions" class="slide" data-currentnode="7" data-nextnode="8">
