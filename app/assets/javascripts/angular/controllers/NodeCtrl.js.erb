@@ -74,6 +74,14 @@ angular.module('lawaApp')
         return spunDecision[0];
       }
 
+      $scope.findAnswerByString = function(string){
+        debugger;
+        var foundAnswer = _.where($scope.currentNode.answers, {answer: string})
+        // do something with it
+        // $scope.setCurrentDecisionNoSubmit(spunDecision[0]);
+        return foundAnswer[0];
+      }
+
       $scope.setCurrentNodeBySession = function() {
         $scope.currentNode = $scope.fetchNodeById(sessionCurrentNodeId);
       };
