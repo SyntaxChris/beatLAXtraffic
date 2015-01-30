@@ -2,6 +2,7 @@ module Api
   class ResponseController < ApplicationController
 
     def create
+      binding.pry
       result = Response.create_all_from_node_interaction(response_params)
       if result[:status] == "success"
         render json: result, status: 200

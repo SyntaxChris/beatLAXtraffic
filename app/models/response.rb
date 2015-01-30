@@ -15,10 +15,14 @@ class Response < ActiveRecord::Base
       response.skipped = true unless response_params[:decision_id].present?
     else
       # a single freeform response?
-      if response_params[:freeform_response]
+      if response_params[:freeform_response][:response].present?
         response.create_freeform_response(
           response_text: response_params[:freeform_response][:response]
         )
+      #elsif answers_array.first[:custom_answer].present?
+      #  binding.pry
+      #  response.answer_id = answers_array.first[:id]
+      #  response.answer.answer = answers_array.first[:custom_answer]
       end
       response.answer_id = answers_array.first[:id]
     end

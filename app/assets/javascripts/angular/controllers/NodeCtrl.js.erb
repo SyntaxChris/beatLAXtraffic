@@ -62,6 +62,7 @@ angular.module('lawaApp')
             text: null,
             answerId: null
           };
+          $scope.currentTimeInterval = 0;
         });
       };
 
@@ -136,13 +137,22 @@ angular.module('lawaApp')
       $scope.determineOtherText = function(currentOtherText, answerId) {
         if($scope.currentOtherText === null){
           $scope.currentOther.present = false;
-        }else if (currentOtherText.length === 0 || !currentOtherText.trim()){
+        }else if (currentOtherText.length === 0){
           $scope.currentOther.present = false;
         }else{
           $scope.currentOther.present = true;
           $scope.currentOther.answerId = answerId;
         };
       };
+
+      $scope.addTimeInterval = function(timeAmount) {
+        if($scope.currentTimeInterval >= 0){
+          $scope.currentTimeInterval = Math.max(0, ($scope.currentTimeInterval += timeAmount))
+          $scope.addSingleChoice($scope.currentNode.answers[0])
+          $scope.determineOtherText($scope.currentTimeInterval, $scope.currentAnswers[0].id);
+          $scope.currentOther.text = $scope.currentTimeInterval;
+        };
+      }
 
       $scope.addAnswerToCurrentAnswers = function(answer, rank){
         if($scope.currentNode.question.question_type === "select-one") {
@@ -179,7 +189,6 @@ angular.module('lawaApp')
         return _.map(answersArray, function(answerObject){
           return {
             id: answerObject.id
-            // TODO: add rank
           }
         })
       }
