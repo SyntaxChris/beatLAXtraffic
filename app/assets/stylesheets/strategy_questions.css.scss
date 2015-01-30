@@ -1,5 +1,7 @@
 #strategy-questions{
-	
+	.sub-header{
+		margin-top: -1%;
+	}
 	.row{
 		position: relative;
 	}
@@ -15,13 +17,14 @@
 		width: 110%;
 	}
 	.btm{
-		margin-top: 75%;
+		margin-top: 70%;
 	}
 	.boxster{
 		width: 100%;
-		top: 100%;
+		top: 120%;
 		position: absolute;
 		margin: auto 0;
+		z-index: -1;
 		text-align: center;
 		padding-right: 4%;
 		svg{
@@ -39,24 +42,33 @@
 			height: 45px;
 		}
 	}
-	.strategy-next{
-		position: relative;
-		text-align: center;
-		margin-top: 80%;
-		margin-right: auto;
-		margin-left: auto;
-		border-radius: 5px;
-		color: white;
-		padding: 10px;
-		width: 40%;
-		background-color: #079BED;
+	.next-container{
+		position: absolute; 
+		margin-top: 1%;
+		left: 50%;
+		z-index: -1;
+		.strategy-next{
+			display: none;
+			position: relative; 
+			left: -50%;
+			cursor: pointer;
+			text-align: center;
+			top: 70%;	
+			margin: 0 auto;
+			border-radius: 5px;
+			color: white;
+			padding: 10px;
+			width: 150px;
+			background-color: #079BED;
+		}
 	}
+	
 	.strategy-bbl{
 		cursor: pointer;
 		position: absolute;
 		margin: 0 auto;
 		padding: 10px;
-		padding-bottom: 25%;
+		padding-bottom: 20%;
 	    left: 0;
 	    right: 0;
 		text-align: center;
@@ -74,7 +86,7 @@
 			text-align: center;
 			color: #BCBCBC;
 			position: absolute;
-			font-size: 1.5vw;
+			font-size: 1.3vw;
 			line-height: 20px;
 		}
 	}
@@ -94,7 +106,7 @@
 	.strategy-bbl.other-bbl{
 		.checkmark{
 			position: absolute;
-			z-index: 3;
+			z-index: 4;
 		}
 
 		.strategy-icon{

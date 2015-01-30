@@ -33,6 +33,7 @@ $(document).ready(function(){
  		var thisId = $(this).attr('id');
  		var checkmark = $(this).parents().eq(4).find('.checkmark');
 
+ 		
  		if(thisId === 'save' && $('textarea#strategy-text').val() !== ""){
  			checkmark.find('circle').css('fill', '#F0943F');
  			checkmark.find('circle').css('stroke-width', '0');
@@ -52,6 +53,14 @@ $(document).ready(function(){
 			$('textarea#strategy-text').val('')
 			other = 0;
  		}
+
+ 		var total = guy + stopwatch + noParking + hassle + other;
+
+		if(total > 0){
+			$('.strategy-text').fadeIn();
+		}else{
+			$('.strategy-next').fadeOut();
+		}
 
 
  		$('.strategy-bbl.other-bbl').animate({
@@ -86,8 +95,6 @@ $(document).ready(function(){
  		var bubbleId = $(this).find('.strategy-icon').children().attr('id'),
         	checkmark = $(this).parents().eq(0).find('.checkmark'),
         	font = $('.bbl-title', this);
-
- 		debugger;
 
  		switch(bubbleId){
  			case 'guy':
@@ -154,7 +161,7 @@ $(document).ready(function(){
 
  			case 'hassle':
  			 	if(hassle === 0){
- 			 		checkmark.find('circle').css('fill', '#DDBD03');
+ 			 		checkmark.find('circle').css('fill', '#F9D43A');
  					checkmark.find('circle').css('stroke-width', '0');
  					checkmark.find('polyline').css('stroke', 'white');
  					$("#hassle-answer").css("color", "#DD734E");
@@ -179,12 +186,12 @@ $(document).ready(function(){
  		}
 
  		var total = guy + stopwatch + noParking + hassle + other;
-
-		// if(total > 0){
-		// 	$('.park-btn-next').fadeIn();
-		// }else{
-		// 	$('.park-btn-next').fadeOut();
-		// }
+		
+		if(total > 0){
+			$('.strategy-next').fadeIn();
+		}else{
+			$('.strategy-next').fadeOut();
+		}
  	});
 
 

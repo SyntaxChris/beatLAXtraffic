@@ -8,10 +8,6 @@ $(document).ready(function(){
 		otherHeight = $('.other-bbl').height(),
 		$body = $('body');
 
-	$body.on('click', 'textarea', function(e){
-
-	});
-
 	$body.on('click', '.parking-bbl', function(){
 		
 		var icon = $('.bbl-icon svg', this).attr('class');
