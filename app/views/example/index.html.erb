@@ -925,14 +925,16 @@
 
 
   <!-- 7. TILE QUESTIONS -->
-  <div id="tile-questions">
+  <div id="tile-questions" class="slide" data-currentnode="9" data-nextnode="10">
+
     <div class="row">
       <h3 class="main-question" id="main-landscape">What are you doing while you wait?</h3>
       <h5 class="sub-header">Select all that apply</h5>
     </div>
+
     <div class="row">
 
-      <div class="large-4 medium-6 small-6 columns">
+      <div class="large-3 medium-3 small-6 columns">
         <div class="row">
           <div class="tile-bbl">
             <div class="tile-checkmark">
@@ -948,7 +950,7 @@
         </div>
       </div>
 
-      <div class="large-4 medium-6 small-6 columns">
+      <div class="large-3 medium-3 small-6 columns">
         <div class="row">
           <div class="tile-bbl">
             <div class="tile-checkmark">
@@ -964,28 +966,23 @@
         </div>
       </div>
 
-      <div class="show-for-large-only">
-        <div class="large-4 medium-6 small-6 columns">
-          <div class="row">
-            <div class="tile-bbl">
-              <div class="tile-checkmark">
-                <%= render 'bblCheck' %>
-              </div>
-              <div class="tile"><%= render 'hangout' %></div>
+      <div class="large-3 medium-3 small-6 columns">
+        <div class="row">
+          <div class="tile-bbl">
+            <div class="tile-checkmark">
+              <%= render 'bblCheck' %>
             </div>
+            <div class="tile"><%= render 'hangout' %></div>
           </div>
-          <div class="row">
-            <div class="tile-title">
-              Hang out
-            </div>
+        </div>
+        <div class="row">
+          <div class="tile-title">
+            Hang out
           </div>
         </div>
       </div>
 
-    </div>
-    <div class="row">
-
-      <div class="large-4 medium-6 small-6 columns">
+      <div class="large-3 medium-3 small-6 columns">
         <div class="row">
           <div class="tile-bbl">
             <div class="tile-checkmark">
@@ -1001,31 +998,14 @@
         </div>
       </div>
 
-      <div class="large-4 medium-6 small-6 columns">
-        <div class="row">
-          <div class="tile-bbl">
-            <div class="tile-checkmark">
-              <%= render 'bblCheck' %>
-            </div>
-            <div class="tile"><%= render 'other' %></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="tile-title">
-            Other (Specify)
-          </div>
-        </div>
-      </div>
-      <!-- text area -->
-      <div class="show-for-large-only">
-        <div class="large-4 medium-6 small-6 columns">
-          <div class="other-text-bbl">
-            
-          </div>
-        </div>
-      </div>
-      <!-- end text area -->
     </div>
+
+    <div class="row">
+      <div class="tile-next">
+        Next
+      </div>
+    </div>
+
   </div>
   <!-- END TILE QUESTIONS -->
 
