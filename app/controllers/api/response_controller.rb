@@ -2,6 +2,7 @@ module Api
   class ResponseController < ApplicationController
 
     def create
+      binding.pry
       result = Response.create_all_from_node_interaction(response_params)
       if result[:status] == "success"
         render json: result, status: 200
@@ -19,6 +20,7 @@ module Api
         :respondent_id,
         :decision_id,
         :next_node_id,
+        freeform_response: [:response, :answer_id],
         answers: [[:id, :rank]]
       )
     end

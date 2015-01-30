@@ -72,7 +72,7 @@ $(document).ready(function(){
 					$(this).css({cursor: "auto"});
 					$('')
 					$('.bbl-icon', this).hide();
-					$('textarea', this).fadeIn();
+					$('textarea#park-bbl', this).fadeIn();
 					$('.text-counter').fadeIn();
 					$('.ok-btn').show();
 					$(this).animate({height: "250px"});	

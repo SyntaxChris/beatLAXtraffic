@@ -57,6 +57,11 @@ angular.module('lawaApp')
 
           $scope.currentDecisionDestination = null;
           $scope.currentAnswers = [];
+          $scope.currentOther = {
+            present: false,
+            text: null,
+            answerId: null
+          };
         });
       };
 
@@ -125,6 +130,17 @@ angular.module('lawaApp')
         debugger;
       }
 
+      $scope.determineOtherText = function(currentOtherText, answerId) {
+        if($scope.currentOtherText === null){
+          $scope.currentOther.present = false;
+        }else if (currentOtherText.length === 0 || !currentOtherText.trim()){
+          $scope.currentOther.present = false;
+        }else{
+          $scope.currentOther.present = true;
+          $scope.currentOther.answerId = answerId;
+        };
+      };
+
       $scope.addAnswerToCurrentAnswers = function(answer, rank){
         if($scope.currentNode.question.question_type === "select-one") {
           $scope.addSingleChoice(answer);
@@ -151,6 +167,9 @@ angular.module('lawaApp')
           $scope.currentDecision = null;
           // clear answers prepping for next question (can move into above-mentioned)
           $scope.currentAnswers = [];
+          $scope.currentOther.present = false;
+          $scope.currentOther.text = null;
+          $scope.currentOther.answerId = null;
       };
 
       var answersForParams = function(answersArray) {
@@ -163,6 +182,13 @@ angular.module('lawaApp')
       }
 
       $scope.submit = function(decisionId){
+        if($scope.currentOther.present){
+          var freeformResponse = $scope.currentOther.text;
+          var freeformAnswerId = $scope.currentOther.answerId;
+        }else {
+          var freeformResponse = null;
+        };
+
         var paramSafeAnswers = answersForParams($scope.currentAnswers);
         var params = {
           is_decision: $scope.currentNode.is_decision_point,
@@ -170,7 +196,8 @@ angular.module('lawaApp')
           node_id: $scope.currentNode.node_id,
           decision_id: decisionId || null,
           answers: paramSafeAnswers || null,
-          next_node_id: $scope.currentNode.next_node_id || $scope.currentDecisionDestination.node_id
+          next_node_id: $scope.currentNode.next_node_id || $scope.currentDecisionDestination.node_id,
+          freeform_response: { response: freeformResponse, answer_id: freeformAnswerId } || null
         }
         $http.post('/api/response', { response: params }).success(function(data){
           // post to API and then on success:
