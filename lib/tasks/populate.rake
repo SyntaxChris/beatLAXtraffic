@@ -124,7 +124,6 @@ namespace :populate do
         b3a2= Answer.create(question_id: b3q.id, answer: "Waiting in the terminal", icon_name: nil)
         b3a3= Answer.create(question_id: b3q.id, answer: "Shopping in the terminal", icon_name: nil)
         b3a4= Answer.create(question_id: b3q.id, answer: "Getting something to eat or drink in the terminal", icon_name: nil)
-        b3a5= Answer.create(question_id: b3q.id, answer: "Other (Specify)", icon_name: nil)
 
     b4 = Node.create(nickname: "B 4", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-4")
       b4q = Question.create(node_id: b4.id, question: "What is the longest you are willing to look for parking?", question_type_id: single_choice.id)

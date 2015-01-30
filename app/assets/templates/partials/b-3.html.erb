@@ -1,50 +1,61 @@
+  <!-- 7. TILE QUESTIONS -->
   <div id="tile-questions">
+
+    {{ currentAnswers }}
     <div class="row">
-      <h3 class="main-question" id="main-landscape">What are you doing while you wait?</h3>
+    <h3 class="main-question" id="main-landscape">{{ currentNode.question.question }}</h3>
       <h5 class="sub-header">Select all that apply</h5>
     </div>
+
     <div class="row">
 
-      <div class="large-4 medium-6 small-6 columns">
-        <div class="row">
-          <div class="tile-bbl">
-            <div class="tile-checkmark">
-              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
-            </div>
-            <div class="tile"><div ng-include="'<%= asset_path 'svgs/_phone.html' %>'"></div></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="tile-title">
-            On my phone
-          </div>
-        </div>
-      </div>
-
-      <div class="large-4 medium-6 small-6 columns">
-        <div class="row">
-          <div class="tile-bbl">
-            <div class="tile-checkmark">
-              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
-            </div>
-            <div class="tile"><div ng-include="'<%= asset_path 'svgs/_shop.html' %>'"></div></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="tile-title">
-            Shop in the terminal
-          </div>
-        </div>
-      </div>
-
-      <div class="show-for-large-only">
-        <div class="large-4 medium-6 small-6 columns">
+      <div ng-repeat="answer in currentNode.answers">
+        <div class="large-3 medium-3 small-6 columns">
           <div class="row">
             <div class="tile-bbl">
               <div class="tile-checkmark">
-                <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
+              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
               </div>
-              <div class="tile"><div ng-include="'<%= asset_path 'svgs/_hangout.html' %>'"></div></div>
+
+              <div ng-if="answer.answer.indexOf('phone') > -1" ng-include="'<%= asset_path 'svgs/_phone.html' %>'" class="tile"></div>
+              <div ng-if="answer.answer.indexOf('shop') > -1" ng-include="'<%= asset_path 'svgs/_shop.html' %>'" class="tile"></div>
+              <div ng-if="answer.answer.indexOf('Hang') > -1" ng-include="'<%= asset_path 'svgs/_hangout.html' %>'" class="tile"></div>
+              <div ng-if="answer.answer.indexOf('Eat') > -1" ng-include="'<%= asset_path 'svgs/_eat.html' %>'" class="tile"></div>
+              <div class="tile"><div ng-include="'<%= asset_path 'svgs/_phone.html' %>'"%></div></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="tile-title">
+              {{ answer.answer }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        <div class="large-3 medium-3 small-6 columns">
+          <div class="row">
+            <div class="tile-bbl">
+              <div class="tile-checkmark">
+              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
+              </div>
+              <div class="tile"><div ng-include="'<%= asset_path 'svgs/_shop.html' %>'"%></div></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="tile-title">
+              Shop in the terminal
+            </div>
+          </div>
+        </div>
+
+        <div class="large-3 medium-3 small-6 columns">
+          <div class="row">
+            <div class="tile-bbl">
+              <div class="tile-checkmark">
+              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
+              </div>
+              <div class="tile"><div ng-include="'<%= asset_path 'svgs/_hangout.html' %>'"%></div></div>
             </div>
           </div>
           <div class="row">
@@ -53,50 +64,31 @@
             </div>
           </div>
         </div>
-      </div>
+
+        <div class="large-3 medium-3 small-6 columns">
+          <div class="row">
+            <div class="tile-bbl">
+              <div class="tile-checkmark">
+              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
+              </div>
+              <div class="tile"><div ng-include="'<%= asset_path 'svgs/_eat.html' %>'"%></div></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="tile-title">
+              Eat or drink
+            </div>
+          </div>
+        </div>
+        -->
 
     </div>
+
     <div class="row">
-
-      <div class="large-4 medium-6 small-6 columns">
-        <div class="row">
-          <div class="tile-bbl">
-            <div class="tile-checkmark">
-              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
-            </div>
-            <div class="tile"><div ng-include="'<%= asset_path 'svgs/_eat.html' %>'"></div></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="tile-title">
-            Eat or drink
-          </div>
-        </div>
+      <div class="tile-next">
+        Next
       </div>
-
-      <div class="large-4 medium-6 small-6 columns">
-        <div class="row">
-          <div class="tile-bbl">
-            <div class="tile-checkmark">
-              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
-            </div>
-            <div class="tile"><div ng-include="'<%= asset_path 'svgs/_other.html' %>'"></div></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="tile-title">
-            Other (Specify)
-          </div>
-        </div>
-      </div>
-      <!-- text area -->
-      <div class="show-for-large-only">
-        <div class="large-4 medium-6 small-6 columns">
-          <div class="other-text-bbl">
-            
-          </div>
-        </div>
-      </div>
-      <!-- end text area -->
     </div>
+
   </div>
+  <!-- END TILE QUESTIONS -->
