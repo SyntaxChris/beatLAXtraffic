@@ -1,78 +1,80 @@
-#clock-container {
-	text-align: center;
+#clock-questions{
+	#clock-container {
+		text-align: center;
 
-	#q-pnl{
-		position: relative;
-		z-index: 5;
-		width: 30%;
-		margin-left: auto;
-		margin-right: auto;
-		#inner-cnr{
-			position: absolute;
-			margin-top: 53%;
-			width: 100%;
-			color: white;
-			font-weight: 700;
-			font-size: 1.6vw;
-			text-shadow: 0 0 10px rgba(0,0,0,.3);
-			text-align: center;
-			#text-0,
-			#text-1,
-			#text-2,
-			#text-3{
-				cursor: pointer;
+		#q-pnl{
+			position: relative;
+			z-index: 5;
+			width: 30%;
+			margin-left: auto;
+			margin-right: auto;
+			#inner-cnr{
+				position: absolute;
+				margin-top: 53%;
+				width: 100%;
+				color: white;
+				font-weight: 700;
+				font-size: 1.6vw;
+				text-shadow: 0 0 10px rgba(0,0,0,.3);
 				text-align: center;
-				position: relative;
-				padding-left: 0;
-				padding-right: 0;
-				padding-bottom: 40%;
-				.text-test{
-					width: 100%;
+				#text-0,
+				#text-1,
+				#text-2,
+				#text-3{
+					cursor: pointer;
 					text-align: center;
-					margin-bottom: 50%;
-					position: absolute;
+					position: relative;
+					padding-left: 0;
+					padding-right: 0;
+					padding-bottom: 40%;
+					.text-test{
+						width: 100%;
+						text-align: center;
+						margin-bottom: 50%;
+						position: absolute;
+					}
 				}
-			}
-			.btm{
-				.text-test{
-					text-align: center;
-					width: 100%;
-					margin-top: 28%;
-					position: absolute;
-					top: 25%;
+				.btm{
+					.text-test{
+						text-align: center;
+						width: 100%;
+						margin-top: 28%;
+						position: absolute;
+						top: 25%;
+					}
 				}
 			}
 		}
+
+		svg {
+			position: relative;
+			margin: 0 auto;
+			height: 50%;
+			width: 50%;
+			.timer-question-font {
+				font-size: 20px;
+			}
+
+		}
 	}
 
-	svg {
+	.next#timer-question {
+		display:block;
 		position: relative;
-		margin: 0 auto;
-		height: 50%;
-		width: 50%;
-		.timer-question-font {
-			font-size: 20px;
-		}
-
+		z-index: 20;
+		cursor: pointer;
+		width: 150px; 
+		height: 50px; 
+		text-align: center;
+		font-size: 20px;
+		background-color: #EE4444;
+		margin-top: 10px;
+		margin-right: auto;
+		margin-left: auto;
+		padding-top: 12px;
+		bottom: 0px;
+		color: white;
 	}
-}
-
-.next#timer-question {
-	display:block;
-	position: relative;
-	z-index: 20;
-	cursor: pointer;
-	width: 150px; 
-	height: 50px; 
-	text-align: center;
-	font-size: 20px;
-	background-color: #EE4444;
-	margin-top: 10px;
-	margin-right: auto;
-	margin-left: auto;
-	padding-top: 12px;
-	bottom: 0px;
-	color: white;
 }
 
 
