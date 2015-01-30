@@ -4,15 +4,22 @@ class Response < ActiveRecord::Base
   belongs_to :answer
   belongs_to :decision
   has_one :freeform_response
+  accepts_nested_attributes_for :freeform_response
 
   validates :node_id, presence: true
   validates :respondent_id, presence: true
 
   def self.create_from_options!(response_params, answers_array = [])
-    response = Response.new(response_params.except(:next_node_id))
+    response = Response.new(response_params.except(:next_node_id, :freeform_response))
     if answers_array.empty? || answers_array.nil?
       response.skipped = true unless response_params[:decision_id].present?
     else
+      # a single freeform response?
+      if response_params[:freeform_response]
+        response.create_freeform_response(
+          response_text: response_params[:freeform_response][:response]
+        )
+      end
       response.answer_id = answers_array.first[:id]
     end
     response.calculate_seen_before
@@ -40,10 +47,20 @@ class Response < ActiveRecord::Base
 
     successes = 0
     answers_array.each do |answer_hash|
-      response = Response.new(response_params.except(:next_node_id))
-      response.answer_id = answer_hash[:id]
-      response.rank = answer_hash[:rank]
-      response.times_seen = multi_times_seen
+      if answer_hash[:id] == response_params[:freeform_response][:answer_id]
+        # one of these is a freeform response
+        response = Response.new(response_params.except(:next_node_id, :freeform_response))
+        response.create_freeform_response(
+          response_text: response_params[:freeform_response][:response]
+        )
+        response.answer_id = answer_hash[:id]
+        response.times_seen = multi_times_seen
+      else
+        response = Response.new(response_params.except(:next_node_id, :freeform_response))
+        response.answer_id = answer_hash[:id]
+        response.rank = answer_hash[:rank]
+        response.times_seen = multi_times_seen
+      end
 
       if response.save
         successes += 1
