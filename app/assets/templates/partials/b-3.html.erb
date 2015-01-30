@@ -1,6 +1,7 @@
   <!-- 7. TILE QUESTIONS -->
   <div id="tile-questions">
 
+    {{ currentNode.question }}
     {{ currentAnswers }}
     <div class="row">
     <h3 class="main-question" id="main-landscape">{{ currentNode.question.question }}</h3>
@@ -14,14 +15,12 @@
           <div class="row">
             <div class="tile-bbl">
               <div class="tile-checkmark">
-              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
+                <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
               </div>
-
-              <div ng-if="answer.answer.indexOf('phone') > -1" ng-include="'<%= asset_path 'svgs/_phone.html' %>'" class="tile"></div>
-              <div ng-if="answer.answer.indexOf('shop') > -1" ng-include="'<%= asset_path 'svgs/_shop.html' %>'" class="tile"></div>
-              <div ng-if="answer.answer.indexOf('Hang') > -1" ng-include="'<%= asset_path 'svgs/_hangout.html' %>'" class="tile"></div>
-              <div ng-if="answer.answer.indexOf('Eat') > -1" ng-include="'<%= asset_path 'svgs/_eat.html' %>'" class="tile"></div>
-              <div class="tile"><div ng-include="'<%= asset_path 'svgs/_phone.html' %>'"%></div></div>
+              <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'car')" ng-include="'<%= asset_path 'svgs/_phone.html' %>'" class="tile"></div>
+              <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'Shop')" ng-include="'<%= asset_path 'svgs/_shop.html' %>'" class="tile"></div>
+              <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'Waiting') && matchAnswerString(answer, 'terminal')" ng-include="'<%= asset_path 'svgs/_hangout.html' %>'" class="tile"></div>
+              <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'eat')" ng-include="'<%= asset_path 'svgs/_eat.html' %>'" class="tile"></div>
             </div>
           </div>
           <div class="row">

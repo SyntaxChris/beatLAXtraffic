@@ -87,6 +87,10 @@ angular.module('lawaApp')
         return foundAnswer[0];
       }
 
+      $scope.matchAnswerString = function(answer, string){
+        return (answer.answer.indexOf(string) > -1)
+      }
+
       $scope.setCurrentNodeBySession = function() {
         $scope.currentNode = $scope.fetchNodeById(sessionCurrentNodeId);
       };
@@ -144,9 +148,9 @@ angular.module('lawaApp')
       $scope.addAnswerToCurrentAnswers = function(answer, rank){
         if($scope.currentNode.question.question_type === "select-one") {
           $scope.addSingleChoice(answer);
-        } else if ($scope.currentNode.question_type === "select-multiple") {
+        } else if ($scope.currentNode.question.question_type === "select-multiple") {
           $scope.addMultipleChoice(answer);
-        } else if ($scope.currentNode.question_type === "rank") {
+        } else if ($scope.currentNode.question.question_type === "rank") {
           $scope.addRankedChoice(answer, rank);
         };
       };
