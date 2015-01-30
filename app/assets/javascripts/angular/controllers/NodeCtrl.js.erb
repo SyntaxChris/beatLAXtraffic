@@ -80,7 +80,6 @@ angular.module('lawaApp')
       }
 
       $scope.findAnswerByString = function(string){
-        debugger;
         var foundAnswer = _.where($scope.currentNode.answers, {answer: string})
         // do something with it
         // $scope.setCurrentDecisionNoSubmit(spunDecision[0]);
