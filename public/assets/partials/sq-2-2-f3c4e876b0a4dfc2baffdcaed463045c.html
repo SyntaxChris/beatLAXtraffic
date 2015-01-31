@@ -1,0 +1,295 @@
+<div id="mission-intro">
+ 
+    <h4 id="stage-1-header" style="">
+      There's always a moment where everything is going right, but something like this happens
+    </h4>
+    <h4 id="stage-2-header" style="display:none">
+      As you rush into your car, your trusty smart <br> phone provides the following information:
+    </h4>
+    <h4 id="stage-4-header" style="display: none">
+      You made it just in time! Your phone reads:
+    </h4>
+
+    <div class="stage-container">
+      <div class="container-contents" id="intro-phone" style="width: 100%">
+         <div ng-include="'/assets/svgs/_introPhone-c173e7c675c649a8a6c49a8ff13bd25e.html'"></div> 
+      </div>
+    </div>
+
+
+
+
+
+    <div id="stage-1" style="">
+      <div class="stage-container">
+        <div class="container-contents" id="txt-msg-container">
+          <div class="row" style="margin: 0; background-color: #E5E5EA; font-size: 12px">
+            <div class="large-4 medium-4 small-4 columns">
+              <div class="row">
+                <div class="large-6 medium-6 small-6 columns">LAWA</div>
+                <div class="large-6 medium-6 small-6 columns" style="padding-left:0"><div ng-include="'/assets/svgs/_signal-a8133a5a5659fbbd38fc985279e32e1a.html'"></div></div>
+              </div>
+            </div>
+            <div class="large-4 medium-4 small-4 columns"><span>{{ currentTime }}</span></div>
+            <div class="large-4 medium-4 small-4 columns">
+              <div class="row">
+                <div class="large-6 medium-6 small-6 columns" style="padding-right: 0">50%</div>
+                <div class="large-6 medium-6 small-6 columns" style="margin-top: 2%; padding-left: 0; opacity: 0.8"><div ng-include="'/assets/svgs/_battery-d9d41a194e2994417a68fa83ae1fdc42.html'"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin: 0; background-color: #E5E5EA">
+            <div class="large-4 medium-4 small-4 columns" style="color: #49B9FB;">&lt;Messages</div>
+            <div class="large-4 medium-4 small-4 columns" style="font-weight: 700"><span>{{ variables.text_from }}</span></div>
+            <div class="large-4 medium-4 small-4 columns" style="color: #49B9FB">Contact&gt;</div>
+          </div>
+          <div class="row" style="margin: 0; background-color: #E5E5EA">
+            <div class="large-12 medium-12 small-12 columns"></div>
+          </div>
+
+          <div class="row" id="recieved-txt-time" style="font-size: 12px; color: #979A9C; margin:0 ">
+            Today <span>{{ tenMinutesAgo }}</span>
+          </div>
+
+
+          <div class="row" id="txt-bbl-content" style="margin: 0; background-color: white">
+            <div id="recieved-txt">
+              Hey there! Just wanted to remind you to pick me up today at LAX! It would be terrible if you forgot to pick up your favorite <span>{{ variables.original_who_picking_up }}</span> from the airport! I should arrive today around <span>{{ oneHourFromNow }}</span>.  See you soon! :D
+            </div>
+            <div id="sent-txt" style="">
+               Uhh... yeah of course!
+            </div>
+          </div>
+
+          <div class="row" id="txt-footer-container">
+            <div class="large-2 medium-2 small-2 columns" id="camera-wrapper"><div ng-include="'/assets/svgs/_phoneCamera-8faa74be3313b358d38cf91d478b7a43.html'"></div></div>
+            <div class="large-5 medium-5 small-5 columns" style="padding-left: 0">
+              <div id="phone-txt-input">
+                I FORGOT D:
+              </div>
+            </div>
+            <div class="large-5 medium-5 small-5 columns" style="padding:0">
+              <div id="phone-next-btn">
+                Run to your car
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+
+
+
+    <div id="stage-2" style="display: none">
+
+      <div id="stage-2-header">
+        <div class="row" style="text-align: center; margin: 0">
+          <div class="large-6 medium-6 small-6 columns" style="text-align: left; font-size: 15px">Departing</div>
+          <div class="large-6 medium-6 small-6 columns" style="text-align: right; font-size: 15px">Arriving</div>
+        </div>
+        <div class="row" style="text-align: center; margin: 0">
+          <div class="large-5 medium-5 small-5 columns" style="font-size: 35px; padding-top: 10px; text-align: left; font-weight: 700"><span>{{ variables.originating_airport_code }}</span></div>
+          <div class="large-2 medium-2 small-2 columns" style="padding:0"><div ng-include="'/assets/svgs/_introplane-0b43179502fe3cc4f556059dcd58db35.html'"></div></div>
+          <div class="large-5 medium-5 small-5 columns" style="font-size: 35px; padding-top: 10px; text-align: right; font-weight: 700">LAX</div>
+        </div>
+        <div class="row" style="text-align: center; margin: 0">
+          <div class="large-4 medium-4 small-4 columns" style="font-size: 12px; text-align: left"><span>{{ variables.originating_city }}</span></div>
+          <div class="large-4 medium-4 small-4 columns" style="font-size: 12px; text-align: center">Flight <span>{{ variables.flight_code }}</span></div>
+          <div class="large-4 medium-4 small-4 columns" style="font-size: 12px; text-align: right">Los Angeles</div>
+        </div>
+      </div>
+
+      <div id="stage-2-body">
+        <div class="row" style="text-align: center; margin: 0; padding-top: 7px">
+          <div id="pickup-person" class="large-6 medium-6 small-6 columns">
+            <div
+              ng-show="variables.original_who_picking_up === 'Coworker' ||
+                       variables.original_who_picking_up === 'Coworkers'"
+              ng-include="'/assets/svgs/_suitguy-b7265938983f0f9f324282aa7b94a0c7.html'">
+            </div>
+
+            <div
+              ng-show="variables.original_who_picking_up === 'Friend' ||
+                       variables.original_who_picking_up === 'Friends'"
+              ng-include="'/assets/svgs/_friend-a700771ebce7b1d133c4bb656d41ca35.html'">
+            </div>
+
+            <div
+              ng-show="variables.original_who_picking_up === 'Parent' ||
+                       variables.original_who_picking_up === 'Parents'"
+              ng-include="'/assets/svgs/_familyGuy-8d4e2e69b643b6044b946c14ae366535.html'">
+            </div>
+          </div>
+          <div id="pickup-luggage" class="large-6 medium-6 small-6 columns">
+            <div ng-include="'/assets/svgs/_briefcase-869c855ea6c9dfa9d68e582204831bb1.html'"></div>
+          </div>
+        </div>
+        <div class="row" style="text-align: center; margin: 0;">
+          <div class="large-6 medium-6 small-6 columns"><span>{{ variables.picking_up_number }}</span> <span>{{ variables.original_who_picking_up }}</span></div>
+          <div class="large-6 medium-6 small-6 columns" style="padding: 0">
+            with <span>{{ variables.luggage_count }}</span> <span>{{ variables.luggage_type }}</span>
+          </div>
+        </div>
+
+        <div class="row" style="text-align: center; margin:0;">
+
+          <div class="large-3 medium-3 small-3 columns traffic-level-label">
+            <div ng-include="'/assets/svgs/_home-2c2cefd66717b24648e2bbf9aa963ba6.html'"></div>
+          </div>
+
+          <!-- class names for car colors: .fast, .medium, .slow -->
+
+          <div class="large-2 medium-2 small-2 columns traffic-level"><div ng-class="variables.traffic_level" id="level-1"></div></div>
+          <div class="large-2 medium-2 small-2 columns traffic-level"><div ng-class="variables.traffic_level" id="level-2"></div></div>
+          <div class="large-2 medium-2 small-2 columns traffic-level"><div ng-class="variables.traffic_level" id="level-3"></div></div>
+
+          <div class="large-3 medium-3 small-3 columns traffic-level">
+            <div ng-include="'/assets/svgs/_trafficCar-532a8307534ed49fca459ab2f257f69c.html'"></div>
+          </div>
+        </div>
+
+        <div class="row" style="text-align: center; margin: 0">
+          <div class="large-8 medium-8 small-8 large-centered medium-centered small-centered columns">
+            <div class="large-3 medium-3 small-3 columns" style="font-size: 12px; color: #808080">Fast</div>
+            <div  class="large-2 medium-2 small-2 columns" style="padding: 0">
+              <div class="fast"></div>
+            </div>
+            <div class="large-2 medium-2 small-2 columns" style="padding: 0">
+              <div class="medium"></div>
+            </div>
+            <div class="large-2 medium-2 small-2 columns" style="padding: 0">
+              <div class="slow"></div>
+            </div>
+            <div class="large-3 medium-3 small-3 columns" style="font-size: 12px; text-align: left; color: #808080">Slow</div>
+          </div>
+        </div>
+        <div class="row" style="text-align: center; margin: 0; padding-bottom: 20px;">
+          <div class="large-10 medium-10 small-10 large-centered medium-centered small-centered columns">
+            LAX Traffic Level
+          </div>
+        </div>
+      </div>
+
+      <div id="stage-2-btn">
+        Let's Go!
+      </div>
+    </div>   
+
+
+
+
+
+    <div id="stage-3" style="display: none">
+      <div id="speeding-bg">
+
+<!--         <div id="city-bg">
+          
+            <div class="building-container" ng-include="'/assets/svgs/_laBuildings2-159174801f7ed6840963118ba093ac09.html'"></div>
+        
+          
+            <div class="building-container" ng-include="'/assets/svgs/_laBuildings-adf0d2fe63156230290900ce09b1b432.html'"></div>
+        
+          
+            <div class="building-container" ng-include="'/assets/svgs/_laBuildings2-159174801f7ed6840963118ba093ac09.html'"></div>
+        
+          
+            <div class="building-container" ng-include="'/assets/svgs/_laBuildings2-159174801f7ed6840963118ba093ac09.html'"></div>
+        
+          
+            <div class="building-container" ng-include="'/assets/svgs/_laBuildings2-159174801f7ed6840963118ba093ac09.html'"></div>
+        
+          
+            <div class="building-container" ng-include="'/assets/svgs/_laBuildings2-159174801f7ed6840963118ba093ac09.html'"></div>
+        
+          
+            <div class="building-container" ng-include="'/assets/svgs/_laBuildings2-159174801f7ed6840963118ba093ac09.html'"></div>
+        
+          
+            <div class="building-container" ng-include="'/assets/svgs/_laBuildings-adf0d2fe63156230290900ce09b1b432.html'"></div>
+        
+        </div> -->
+
+        <div id="palm-1">
+          <div ng-include="'/assets/svgs/_palmTree2-b9bbcff580e6749c288063179a845a7e.html'"></div>
+        </div>
+
+        <div id="road">
+          <div id="line"></div>
+          <div id="speeding-car">
+            <div id="speeding-bbl">
+              Yay Speeding!
+            </div>
+            <div ng-include="'/assets/svgs/_boxster-c05923336929f04d3329470e3c6e14ff.html'"></div>
+          </div>
+          <div id="palm-2">
+            <div ng-include="'/assets/svgs/_palmTree1-2594491d5c329cede44411bf8cd6d51f.html'"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+
+    <div id="stage-4" style="display: none">
+
+        <div class="row" style="margin: 0; background-color: #E5E5EA; font-size: 12px">
+          <div class="large-4 medium-4 small-4 columns">
+            <div class="row">
+              <div class="large-6 medium-6 small-6 columns">LAWA</div>
+              <div class="large-6 medium-6 small-6 columns" style="padding-left:0"><div ng-include="'/assets/svgs/_signal-a8133a5a5659fbbd38fc985279e32e1a.html'"></div></div>
+            </div>
+          </div>
+          <div class="large-4 medium-4 small-4 columns" style="text-align: center"><span>{{ currentTime }}</span></div>
+          <div class="large-4 medium-4 small-4 columns">
+            <div class="row">
+              <div class="large-6 medium-6 small-6 columns" style="padding-right: 0">42%</div>
+              <div class="large-6 medium-6 small-6 columns" style="margin-top: 2%; padding-left: 0; opacity: 0.8"><div ng-include="'/assets/svgs/_battery-d9d41a194e2994417a68fa83ae1fdc42.html'"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin: 0; background-color: #E5E5EA">
+          <div class="large-4 medium-4 small-4 columns" style="color: #49B9FB;">&lt;Messages</div>
+          <div class="large-4 medium-4 small-4 columns" style="font-size: 14px; font-weight: 700; padding:0; text-align: center">Flight status</div>
+          <div class="large-4 medium-4 small-4 columns" style="color: #49B9FB">Contact&gt;</div>
+        </div>
+
+        <div class="row" style="margin: 0">
+          <div id="timer-backdrop">
+            <div ng-include="'/assets/svgs/_introstopwatch-67ab92c08cc0f51e9b13d03022c01568.html'"></div>
+            <div id="bd-content">
+              <div class="row" id="flight-display">
+                Flight <span>{{ variables.flight_code }}</span> <br>
+                Will Land In
+              </div>
+            </div>
+            <div id="display-time"><span id="mn-time">{{ variables.landing_time }}</span><span id="mn-unit">min</span></div>
+          </div>
+        </div>
+
+        <div class="row" style="margin:0; padding-top: 30px">
+          <div class="small-11 small-centered columns" style="text-align:center; font-size: 20px; color: #59CFEF">
+            You now need to make some choices to get your passenger on Time.
+          </div>
+        </div>
+
+        <div class="row" style="margin:0">
+          <div class="small-11 small-centered columns" style="text-align:center; font-size: 30px; padding-top: 20px; color: #59CFEF">
+            Good Luck!
+          </div>
+        </div>
+
+        <div id="stage-4-btn" ng-click="submit()">
+          Let's Go!
+        </div>
+
+      </div>  
+    </div>
+  </div>
+  <!-- END MISSION INTRO -->
