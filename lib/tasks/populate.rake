@@ -113,10 +113,10 @@ namespace :populate do
     b2 = Node.create(nickname: "B 2", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-2")
       b2q = Question.create(node_id: b2.id, question: "How long do you usually park for?", question_type_id: single_choice.id)
       # ^ this will need alt question text
-        b2a1= Answer.create(question_id: b2q.id, answer: "Less than 30 minutes", icon_name: nil)
-        b2a2= Answer.create(question_id: b2q.id, answer: "30 - 60 minutes", icon_name: nil)
-        b2a3= Answer.create(question_id: b2q.id, answer: "60 - 90 minutes", icon_name: nil)
-        b2a4= Answer.create(question_id: b2q.id, answer: "More than 90 minutes", icon_name: nil)
+        b2a1= Answer.create(question_id: b2q.id, answer: "Less than 30 minutes", icon_name: nil, custom_order: 2)
+        b2a2= Answer.create(question_id: b2q.id, answer: "30 - 60 minutes", icon_name: nil, custom_order: 4)
+        b2a3= Answer.create(question_id: b2q.id, answer: "60 - 90 minutes", icon_name: nil, custom_order: 3)
+        b2a4= Answer.create(question_id: b2q.id, answer: "More than 90 minutes", icon_name: nil, custom_order: 1)
 
     b3 = Node.create(nickname: "B 3", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-3")
       b3q = Question.create(node_id: b3.id, question: "What are you doing while you're parked? Select all that apply:", question_type_id: many_choice.id)

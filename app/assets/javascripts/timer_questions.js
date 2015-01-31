@@ -3,7 +3,6 @@ $(document).ready(function(){
 
 	$body.on('click', '.txt', function(){
 		var panel = $(this).attr('id');
-		debugger;
 
 		switch(panel){
 			case 'text-0':
