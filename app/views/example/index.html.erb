@@ -1029,43 +1029,45 @@
 
     <!-- 11. TIMER QUESTIONS -->
     <div id="clock-questions" class="slide" data-currentnode="7" data-nextnode="8">
-      <!-- questions header -->
+
       <div class="row">
         <h3 class="main-question">How long do you usually park for?</h3>
       </div>
 
-        <div class="row">      
-          <div id="clock-container">
+      <div class="row">  
 
-            <div id="q-pnl">
-              <div id="inner-cnr">
-                <div class="large-6 medium-6 small-6 columns txt" id="text-0">
-                  <div class='text-test'>Less than 30 minutes</div>
-                </div>
+        <div id="clock-container">
+          <div id="q-pnl">
+            <div id="inner-cnr">
 
-                <div class="large-6 medium-6 small-6 columns txt" id="text-1">
-                  <div class='text-test'>30 - 60 minutes</div>
-                </div>
-
-                <div class="large-6 medium-6 small-6 columns txt btm" id="text-2">
-                  <div class='text-test'>60 - 90 minutes</div>
-                </div>
-
-                <div class="large-6 medium-6 small-6 columns txt btm" id="text-3">
-                  <div class='text-test'>More than 90 minutes</div>
-                </div>
-
+              <div class="large-6 medium-6 small-6 columns txt" id="text-0">
+                <div class='text-test'>Less than 30 minutes</div>
               </div>
-            </div> 
 
-            <%= render 'timerquestion' %>  
+              <div class="large-6 medium-6 small-6 columns txt" id="text-1">
+                <div class='text-test'>30 - 60 minutes</div>
+              </div>
 
-            <div class="next emergency-next" id="timer-question" style="display:none">
-              Next
+              <div class="large-6 medium-6 small-6 columns txt btm" id="text-2">
+                <div class='text-test'>60 - 90 minutes</div>
+              </div>
+
+              <div class="large-6 medium-6 small-6 columns txt btm" id="text-3">
+                <div class='text-test'>More than 90 minutes</div>
+              </div>
+
             </div>
+          </div> 
 
+          <%= render 'timerquestion' %> 
+
+          <div class="next emergency-next" id="timer-question" style="display:none">
+            Next
           </div>
+          
         </div>
+
+      </div>
  
     </div>
     <!-- END TIMER QUESTIONS -->
