@@ -81,8 +81,7 @@ angular.module('lawaApp')
           $scope.currentAnswers = [];
           $scope.currentOther = {
             present: false,
-            text: null,
-            answerId: null
+            text: null, answerId: null
           };
           $scope.currentTimeInterval = 0;
         });
@@ -128,7 +127,7 @@ angular.module('lawaApp')
         $scope.currentTemplateName = $scope.getTemplateName(nodeId);
         // set default for gps question
         if($scope.currentNode.template_name === "dp-1"){
-          $scope.currentDecision = _.findWhere($scope.currentNode.decisions, decision = "Hope to catch your passenger at the curb");
+          $scope.currentDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
         }
       };
 
