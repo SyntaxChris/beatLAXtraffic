@@ -1,16 +1,18 @@
 <div ng-controller="NodeCtrl">
-  <div ng-if="!inWhitelist">
-    current template: {{ getTemplateName(currentNode.node_id)}} |
-    current nodeId: {{ currentNode.node_id }}
-    in whitelist? {{ inWhitelist }}
-    <br>
-    <div ng-if="!currentNode.is_decision_point">
-      next node template name: {{ getTemplateName(currentNode.next_node_id) }}
+  <% if Rails.env.development? %>
+    <div ng-if="!inWhitelist">
+      current template: {{ getTemplateName(currentNode.node_id)}} |
+      current nodeId: {{ currentNode.node_id }}
+      in whitelist? {{ inWhitelist }}
+      <br>
+      <div ng-if="!currentNode.is_decision_point">
+        next node template name: {{ getTemplateName(currentNode.next_node_id) }}
+      </div>
+      <div ng-if="currentNode.is_decision_point">
+        selected choice's template: {{ getTemplateName(currentDecisionDestination.node_id) }}
+      </div>
     </div>
-    <div ng-if="currentNode.is_decision_point">
-      selected choice's template: {{ getTemplateName(currentDecisionDestination.node_id) }}
-    </div>
-  </div>
+  <% end %>
   <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))">
     <!--
     <div class="current-node-container" style="background-color:white">
