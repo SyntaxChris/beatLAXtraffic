@@ -6,7 +6,8 @@ RSpec.describe Answer, :type => :model do
       FactoryGirl.build(
         :answer,
         answer: "Yes, please",
-        icon_name: "on-phone"
+        icon_name: "on-phone",
+        custom_order: 2
       )
     }
 
@@ -16,6 +17,10 @@ RSpec.describe Answer, :type => :model do
 
     it "has an icon_name" do
       expect(answer.icon_name).to eq "on-phone"
+    end
+
+    it "has a custom_order" do
+      expect(answer.custom_order).to eq 2
     end
   end
 

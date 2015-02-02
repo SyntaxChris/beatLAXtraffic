@@ -3,7 +3,6 @@ $(document).ready(function(){
 
 	$body.on('click', '.txt', function(){
 		var tile = $(this).attr('id');
-		debugger;
 
 		switch(tile){
 			case 'text-0':

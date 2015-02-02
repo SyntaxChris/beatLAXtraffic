@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127202753) do
+ActiveRecord::Schema.define(version: 20150131012749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150127202753) do
     t.integer  "question_id"
     t.text     "answer"
     t.string   "icon_name"
+    t.integer  "custom_order"
   end
 
   create_table "branches", force: true do |t|

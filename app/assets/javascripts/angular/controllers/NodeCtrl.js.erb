@@ -6,12 +6,7 @@ angular.module('lawaApp')
         // get and set up all nodes
         $http.get('/api/nodes').success(function(data){
           $scope.nodes = data;
-          // for development purposes only. add fully-working nodes here
-          // to remove debugging printing out on front end:
-          $scope.nodesWorking = [
-            // add the clean template name, like this:
-            'assets/partials/sq-1.html'
-          ];
+
 
           // find or create a respondent with session and current node data
           $http.get('/api/respondents/get_or_create/').success(function(data){
@@ -19,6 +14,26 @@ angular.module('lawaApp')
             $scope.respondentId = data.respondent_id;
             $scope.setCurrentNodeById(data.current_node_id);
             $scope.variables = data.variables;
+
+            ///////////
+              // for development purposes only. add fully-working nodes here
+              // to remove debugging printing out on front end:
+              $scope.nodesWorking = [
+                // add the clean template name, like this:
+                '/assets/partials/sq-2-2.html',
+                '/assets/partials/sq-1.html',
+                '/assets/partials/dp-1.html',
+                '/assets/partials/a-1.html',
+                '/assets/partials/a-2.html',
+                '/assets/partials/dp-2.html',
+                '/assets/partials/b-1.html',
+                '/assets/partials/b-2.html',
+                '/assets/partials/b-3.html',
+                '/assets/partials/dp-5.html',
+                '/assets/partials/b-4.html'
+              ];
+              $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
+            ///////////
 
             $scope.variables["text_from"] = null;
             if($scope.variables.original_who_picking_up === "Coworker"){
@@ -57,21 +72,35 @@ angular.module('lawaApp')
 
           $scope.currentDecisionDestination = null;
           $scope.currentAnswers = [];
+          $scope.currentOther = {
+            present: false,
+            text: null,
+            answerId: null
+          };
+          $scope.currentTimeInterval = 0;
         });
+
       };
 
       $scope.nodeIncludedInWhitelist = function(template_name){
-        if(_.findWhere($scope.nodesWorking, template_name)){
-          return true;
-        } else {
-          return false;
-        }
+        return _.contains($scope.nodesWorking, template_name);
       };
 
       $scope.findDecisionByString = function(string){
         var spunDecision = _.where($scope.currentNode.decisions, {decision: string})
         $scope.setCurrentDecisionNoSubmit(spunDecision[0]);
         return spunDecision[0];
+      }
+
+      $scope.findAnswerByString = function(string){
+        var foundAnswer = _.where($scope.currentNode.answers, {answer: string})
+        // do something with it
+        // $scope.setCurrentDecisionNoSubmit(spunDecision[0]);
+        return foundAnswer[0];
+      }
+
+      $scope.matchAnswerString = function(answer, string){
+        return (answer.answer.indexOf(string) > -1)
       }
 
       $scope.setCurrentNodeBySession = function() {
@@ -86,7 +115,6 @@ angular.module('lawaApp')
       $scope.setCurrentNodeById = function(nodeId){
         $scope.currentNode = $scope.fetchNodeById(nodeId);
         $scope.currentTemplateName = $scope.getTemplateName(nodeId);
-        console.log($scope.currentNode);
       };
 
       $scope.setCurrentDecision = function(decision){
@@ -117,12 +145,32 @@ angular.module('lawaApp')
         debugger;
       }
 
+      $scope.determineOtherText = function(currentOtherText, answerId) {
+        if($scope.currentOtherText === null){
+          $scope.currentOther.present = false;
+        }else if (currentOtherText.length === 0){
+          $scope.currentOther.present = false;
+        }else{
+          $scope.currentOther.present = true;
+          $scope.currentOther.answerId = answerId;
+        };
+      };
+
+      $scope.addTimeInterval = function(timeAmount) {
+        if($scope.currentTimeInterval >= 0){
+          $scope.currentTimeInterval = Math.max(0, ($scope.currentTimeInterval += timeAmount))
+          $scope.addSingleChoice($scope.currentNode.answers[0])
+          $scope.determineOtherText($scope.currentTimeInterval, $scope.currentAnswers[0].id);
+          $scope.currentOther.text = $scope.currentTimeInterval;
+        };
+      }
+
       $scope.addAnswerToCurrentAnswers = function(answer, rank){
         if($scope.currentNode.question.question_type === "select-one") {
           $scope.addSingleChoice(answer);
-        } else if ($scope.currentNode.question_type === "select-multiple") {
+        } else if ($scope.currentNode.question.question_type === "select-multiple") {
           $scope.addMultipleChoice(answer);
-        } else if ($scope.currentNode.question_type === "rank") {
+        } else if ($scope.currentNode.question.question_type === "rank") {
           $scope.addRankedChoice(answer, rank);
         };
       };
@@ -143,18 +191,30 @@ angular.module('lawaApp')
           $scope.currentDecision = null;
           // clear answers prepping for next question (can move into above-mentioned)
           $scope.currentAnswers = [];
+          $scope.currentOther.present = false;
+          $scope.currentOther.text = null;
+          $scope.currentOther.answerId = null;
+
+          //for debugging:
+          $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
       };
 
       var answersForParams = function(answersArray) {
         return _.map(answersArray, function(answerObject){
           return {
             id: answerObject.id
-            // TODO: add rank
           }
         })
       }
 
       $scope.submit = function(decisionId){
+        if($scope.currentOther.present){
+          var freeformResponse = $scope.currentOther.text;
+          var freeformAnswerId = $scope.currentOther.answerId;
+        }else {
+          var freeformResponse = null;
+        };
+
         var paramSafeAnswers = answersForParams($scope.currentAnswers);
         var params = {
           is_decision: $scope.currentNode.is_decision_point,
@@ -162,7 +222,8 @@ angular.module('lawaApp')
           node_id: $scope.currentNode.node_id,
           decision_id: decisionId || null,
           answers: paramSafeAnswers || null,
-          next_node_id: $scope.currentNode.next_node_id || $scope.currentDecisionDestination.node_id
+          next_node_id: $scope.currentNode.next_node_id || $scope.currentDecisionDestination.node_id,
+          freeform_response: { response: freeformResponse, answer_id: freeformAnswerId } || null
         }
         $http.post('/api/response', { response: params }).success(function(data){
           // post to API and then on success:

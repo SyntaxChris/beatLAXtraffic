@@ -12,7 +12,7 @@ describe "nodes API" do
       select_type = create(:question_type, name:"select-one")
 
       q1.question = create(:question, node_id: q1.id, question: "what?", question_type_id: select_type.id)
-      a1 = create(:answer, question_id: q1.question.id, answer: "this")
+      a1 = create(:answer, question_id: q1.question.id, answer: "this", custom_order: 2)
       a2 = create(:answer, question_id: q1.question.id, answer: "that")
 
       q2.question = create(:question, node_id: q2.id, question: "what again?", question_type_id: select_type.id)
@@ -32,6 +32,7 @@ describe "nodes API" do
       expect(json.first["question"]["question"]).to eq "what?"
       expect(json.first["answers"]).to be_a(Array)
       expect(json.first["answers"].first["answer"]).to eq "this"
+      expect(json.first["answers"].first["custom_order"]).to eq 2
     end
 
     it "question nodes also have a next node to go to next" do

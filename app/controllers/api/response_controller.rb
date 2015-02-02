@@ -19,6 +19,7 @@ module Api
         :respondent_id,
         :decision_id,
         :next_node_id,
+        freeform_response: [:response, :answer_id],
         answers: [[:id, :rank]]
       )
     end

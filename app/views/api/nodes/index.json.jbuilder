@@ -21,6 +21,9 @@ json.array! @nodes do |node|
     json.answers node.question.answers.each do |answer|
        json.id answer.id
        json.answer answer.answer
+       if answer.custom_order.present?
+         json.custom_order answer.custom_order
+       end
     end
     json.next_node_id node.next_node_id
   else
