@@ -84,6 +84,8 @@ angular.module('lawaApp')
             text: null, answerId: null
           };
           $scope.currentTimeInterval = 0;
+          $scope.currentTimeElapsed = 0;
+          $scope.currentFlightTimeRemaining = $scope.variables.landing_time;
         });
 
       };
@@ -226,6 +228,9 @@ angular.module('lawaApp')
       }
 
       $scope.submit = function(decisionId){
+        debugger;
+        $scope.currentTimeElapsed =- 5;
+        $scope.currentFlightTimeRemaining -= 5;
         if($scope.currentOther.present){
           var freeformResponse = $scope.currentOther.text;
           var freeformAnswerId = $scope.currentOther.answerId;
@@ -234,7 +239,7 @@ angular.module('lawaApp')
         };
 
         var paramSafeAnswers = answersForParams($scope.currentAnswers);
-        var params = {
+        var responseParams = {
           is_decision: $scope.currentNode.is_decision_point,
           respondent_id: $scope.respondentId,
           node_id: $scope.currentNode.node_id,
@@ -243,9 +248,16 @@ angular.module('lawaApp')
           next_node_id: $scope.currentNode.next_node_id || $scope.currentDecisionDestination.node_id,
           freeform_response: { response: freeformResponse, answer_id: freeformAnswerId } || null
         }
-        $http.post('/api/response', { response: params }).success(function(data){
-          // post to API and then on success:
-          $scope.goToNextNode();
+        var respondentParams = {
+          time_elapsed: $scope.currentTimeElapsed,
+          flight_time_remaining: $scope.currentFlightTimeRemaining
+        }
+        $http.post('/api/response', { response: responseParams }).success(function(data){
+          // post to response to API and then on success update session flight information:
+          $http.post('/api/respondents/update', { respondentParams }).success(function(){
+            // finally, go to the next node:
+            $scope.goToNextNode();
+          })
         });
       };
 

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :nodes, only: [:index, :show]
     resources :response, only: [:create]
     get '/respondents/get_or_create/' => 'respondents#get_or_create'
+    patch '/respondents/update' => 'respondents#update'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
