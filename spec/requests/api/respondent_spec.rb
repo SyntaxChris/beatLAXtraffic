@@ -73,20 +73,20 @@ describe "respondents API" do
     let!(:respondent) { create(:respondent, session_id: "123abc") }
     it "finds a respondent by session id" do
       cookies["survey_session_id"] = respondent.session_id
-      patch '/api/respondents/update'
+      post '/api/respondents/update'
       expect(assigns(:respondent)).to eq respondent
     end
     it "updates the respondent's elapsed_time" do
       params = { time_elapsed: 20 }
       cookies["survey_session_id"] = respondent.session_id
-      patch '/api/respondents/update', params
+      post '/api/respondents/update', params
 
       expect(Respondent.last.time_elapsed).to eq 20
     end
     it "updates the respondent's flight_time_remaining" do
       params = { flight_time_remaining: 45 }
       cookies["survey_session_id"] = respondent.session_id
-      patch '/api/respondents/update', params
+      post '/api/respondents/update', params
 
       expect(Respondent.last.flight_time_remaining).to eq 45
     end

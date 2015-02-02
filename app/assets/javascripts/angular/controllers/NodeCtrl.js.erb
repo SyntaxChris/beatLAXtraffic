@@ -14,6 +14,7 @@ angular.module('lawaApp')
             $scope.respondentId = data.respondent_id;
             $scope.setCurrentNodeById(data.current_node_id);
             $scope.variables = data.variables;
+            $scope.currentFlightTimeRemaining = $scope.variables.landing_time;
 
             // if current node is the first one, don't show dashboard
             if($scope.currentNode.template_name === "sq-2-2" || $scope.currentNode.template_name === "sq-1"){
@@ -85,7 +86,6 @@ angular.module('lawaApp')
           };
           $scope.currentTimeInterval = 0;
           $scope.currentTimeElapsed = 0;
-          $scope.currentFlightTimeRemaining = $scope.variables.landing_time;
         });
 
       };
@@ -227,10 +227,11 @@ angular.module('lawaApp')
         })
       }
 
-      $scope.submit = function(decisionId){
-        debugger;
-        $scope.currentTimeElapsed =- 5;
-        $scope.currentFlightTimeRemaining -= 5;
+      $scope.submit = function(decisionId, decreaseTime){
+        if(decreaseTime || decreaseTime === undefined){
+          $scope.currentTimeElapsed += 5;
+          $scope.currentFlightTimeRemaining -= 5;
+        };
         if($scope.currentOther.present){
           var freeformResponse = $scope.currentOther.text;
           var freeformAnswerId = $scope.currentOther.answerId;
@@ -254,7 +255,7 @@ angular.module('lawaApp')
         }
         $http.post('/api/response', { response: responseParams }).success(function(data){
           // post to response to API and then on success update session flight information:
-          $http.post('/api/respondents/update', { respondentParams }).success(function(){
+          $http.post('/api/respondents/update', respondentParams).success(function(){
             // finally, go to the next node:
             $scope.goToNextNode();
           })
