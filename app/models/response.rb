@@ -15,7 +15,7 @@ class Response < ActiveRecord::Base
       response.skipped = true unless response_params[:decision_id].present?
     else
       # a single freeform response?
-      if response_params[:freeform_response][:response].present?
+      if response_params[:freeform_response].present?
         response.create_freeform_response(
           response_text: response_params[:freeform_response][:response]
         )
@@ -30,7 +30,6 @@ class Response < ActiveRecord::Base
 
     if response.save
       Respondent.find(response_params[:respondent_id]).update(current_node_id: response_params[:next_node_id])
-      # TODO: update current_node_id for respondent
       return {status: "success"}
     else
       return {status: "fail", message: response.errors.messages}
@@ -51,7 +50,7 @@ class Response < ActiveRecord::Base
 
     successes = 0
     answers_array.each do |answer_hash|
-      if answer_hash[:id] == response_params[:freeform_response][:answer_id]
+      if response_params[:freeform_response].present? && answer_hash[:id] == response_params[:freeform_response][:answer_id]
         # one of these is a freeform response
         response = Response.new(response_params.except(:next_node_id, :freeform_response))
         response.create_freeform_response(
