@@ -14,7 +14,7 @@
       </div>
 
       <div class="row" id="row-6">
-        <div id="confirm-btn" ng-click="submit()"><b>Next</b></div>
+        <div id="confirm-btn" ng-click="submit(); setShowDashboard(true)"><b>Next</b></div>
 
         <div ng-include="'<%= asset_path 'svgs/tower.html' %>'"></div>
         <div ng-include="'<%= asset_path 'svgs/laxArch.html' %>'"></div>

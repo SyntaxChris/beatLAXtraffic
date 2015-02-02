@@ -1,0 +1,106 @@
+<div id="dashboard">
+  <div id="clock-contents">
+    <div id="clock-face" data-opac="0"></div>
+      <div id="clock-hand-cntr" data-rot="0">
+        <div id="long-hand"></div>
+      </div>
+      <div id="clock">
+        <div ng-include="'<%= asset_path 'svgs/_timer.html' %>'"></div>
+      </div>
+  </div>
+    <div id="dash-contents">
+      <div id="section-1">
+        <div id="time-container">
+
+          <span id="hr">1</span><span id="hr-unit">hr</span><span id="min">20</span><span id="min-unit">min</span>
+
+          <div id="landing-label">Spent picking up</div>
+          
+        </div>
+        
+      </div>
+      <div id="section-2">
+        <div class="content-size">
+          <div class="row main-icn-rw">
+            <div class="large-6 medium-6 small-6 columns icon-row">
+              <div ng-include="'<%= asset_path 'svgs/_personicon.html' %>'"></div>
+            </div>
+            <div class="large-6 medium-6 small-6 columns count-row">
+            <div class="dash-count">X<span id="passenger-count">{{ variables.picking_up_number }}</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-3">
+        <div class="content-size">
+          <div class="row main-icn-rw">
+            <div class="large-6 medium-6 small-6 columns icon-row">
+              <div ng-include="'<%= asset_path 'svgs/_briefcase.html' %>'"></div>
+            </div>
+            <div class="large-6 medium-6 small-6 columns count-row">
+            <div class="dash-count">X<span id="luggage-count">{{ variables.luggage_count }}</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="section-4">
+        <div style="position: relative; margin-left: 15%; width: 80%">
+          <div class="row" style="margin-top: 5px">
+            <div id="plane-container" class="large-3 medium-3 small-3 columns" style="margin-top: 25px; padding-left: 7%">
+              <div ng-include="'<%= asset_path 'svgs/_planelogo.html' %>'"></div>
+            </div>
+            <div class="large-9 medium-9 small-9 columns" style="padding-top: 25px">
+            <div class="row" style="font-size: 2vw">FLIGHT <span id="dash-flight-num">{{ variables.flight_code }}</span></div>
+            <div class="row" style="font-size: 1.4vw"><span id="flight-status">Inbound</span> from <span id="inbound-from">{{ variables.originating_airport_code }}</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="grad-container">
+      <div id="grad-4"></div>
+      <div id="grad-3"></div>
+      <div id="grad-2"></div>
+      <div id="grad-1"></div>
+    </div>
+  <div id="gradient-1"></div>
+  <div id="gradient-2"></div>
+  <div id="gradient-3"></div>
+  <div id="gradient-4" style="padding: 0"></div>
+
+  <div id="progress-bar">
+    <div id="ord"></div>
+    <div id="bar-back">
+      <div id="plane-bar"></div>
+      <div id="filler">
+        <div id="circular-plane">
+          <div ng-include="'<%= asset_path 'svgs/_progressplane.html' %>'"></div>
+        </div>
+      </div>
+    </div>
+    <div id="lax">LAX</div>
+  </div>
+</div>
+
+
+<div id="car-slider" style="display: none">
+  <div style="height: 50px; width: 100%; background-color: #ABD9F4; margin-top: 15px">
+    <div id="car-start-tag">
+      LAX
+    </div>
+    <div id="progression-bar"></div>
+    <div id="car-container">
+        <div ng-include="'<%= asset_path 'svgs/_car.html' %>'"></div>
+        <!-- <#%= render 'car' %> -->
+    </div>
+    <div id="car-end-tag">
+      <div id="home-container">
+        <div ng-include="'<%= asset_path 'svgs/_home.html' %>'"></div>
+        <!-- <#%= render 'home' %> -->
+        <div class="row" id="end">
+          FINISH
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

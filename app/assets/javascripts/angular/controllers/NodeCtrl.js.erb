@@ -15,6 +15,13 @@ angular.module('lawaApp')
             $scope.setCurrentNodeById(data.current_node_id);
             $scope.variables = data.variables;
 
+            // if current node is the first one, don't show dashboard
+            if($scope.currentNode.template_name === "sq-2-2" || $scope.currentNode.template_name === "sq-1"){
+              $scope.setShowDashboard(false);
+            // else if the home dashboard should be seen, show that.
+            } else {
+              $scope.setShowDashboard(true);
+            };
             ///////////
               // for development purposes only. add fully-working nodes here
               // to remove debugging printing out on front end:
@@ -33,7 +40,7 @@ angular.module('lawaApp')
                 '/assets/partials/b-4.html'
               ];
               $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
-            ///////////
+            ///////////template_name
 
             $scope.variables["text_from"] = null;
             if($scope.variables.original_who_picking_up === "Coworker"){
@@ -101,6 +108,10 @@ angular.module('lawaApp')
 
       $scope.matchAnswerString = function(answer, string){
         return (answer.answer.indexOf(string) > -1)
+      }
+
+      $scope.setShowDashboard = function(value){
+        $scope.showDashboard = value;
       }
 
       $scope.setCurrentNodeBySession = function() {

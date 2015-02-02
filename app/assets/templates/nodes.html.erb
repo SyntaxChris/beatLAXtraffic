@@ -29,4 +29,8 @@
     <div ng-include="currentTemplateName">
     </div>
   </div>
+
+  <div ng-if="showDashboard">
+    <div ng-include="'<%= asset_path 'partials/dashboard.html' %>'"></div>
+  </div>
 </div>
