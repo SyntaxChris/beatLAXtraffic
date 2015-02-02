@@ -6,12 +6,7 @@ angular.module('lawaApp')
         // get and set up all nodes
         $http.get('/api/nodes').success(function(data){
           $scope.nodes = data;
-          // for development purposes only. add fully-working nodes here
-          // to remove debugging printing out on front end:
-          $scope.nodesWorking = [
-            // add the clean template name, like this:
-            'assets/partials/sq-1.html'
-          ];
+
 
           // find or create a respondent with session and current node data
           $http.get('/api/respondents/get_or_create/').success(function(data){
@@ -19,6 +14,26 @@ angular.module('lawaApp')
             $scope.respondentId = data.respondent_id;
             $scope.setCurrentNodeById(data.current_node_id);
             $scope.variables = data.variables;
+
+            ///////////
+              // for development purposes only. add fully-working nodes here
+              // to remove debugging printing out on front end:
+              $scope.nodesWorking = [
+                // add the clean template name, like this:
+                '/assets/partials/sq-2-2.html',
+                '/assets/partials/sq-1.html',
+                '/assets/partials/dp-1.html',
+                '/assets/partials/a-1.html',
+                '/assets/partials/a-2.html',
+                '/assets/partials/dp-2.html',
+                '/assets/partials/b-1.html',
+                '/assets/partials/b-2.html',
+                '/assets/partials/b-3.html',
+                '/assets/partials/dp-5.html',
+                '/assets/partials/b-4.html'
+              ];
+              $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
+            ///////////
 
             $scope.variables["text_from"] = null;
             if($scope.variables.original_who_picking_up === "Coworker"){
@@ -64,14 +79,11 @@ angular.module('lawaApp')
           };
           $scope.currentTimeInterval = 0;
         });
+
       };
 
       $scope.nodeIncludedInWhitelist = function(template_name){
-        if(_.findWhere($scope.nodesWorking, template_name)){
-          return true;
-        } else {
-          return false;
-        }
+        return _.contains($scope.nodesWorking, template_name);
       };
 
       $scope.findDecisionByString = function(string){
@@ -103,7 +115,6 @@ angular.module('lawaApp')
       $scope.setCurrentNodeById = function(nodeId){
         $scope.currentNode = $scope.fetchNodeById(nodeId);
         $scope.currentTemplateName = $scope.getTemplateName(nodeId);
-        console.log($scope.currentNode);
       };
 
       $scope.setCurrentDecision = function(decision){
@@ -183,6 +194,9 @@ angular.module('lawaApp')
           $scope.currentOther.present = false;
           $scope.currentOther.text = null;
           $scope.currentOther.answerId = null;
+
+          //for debugging:
+          $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
       };
 
       var answersForParams = function(answersArray) {
