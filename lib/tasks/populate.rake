@@ -251,7 +251,7 @@ namespace :populate do
 
       dp11dp = DecisionPoint.create(node_id: dp11.id, situation: "You've been looking for XX minutes with no luck. What now?")
         dp11d1 = Decision.create(decision_point_id: dp11dp.id, decision: "Keep trying", destination_node_id: dp10.id)
-        dp11d2 = Decision.create(decision_point_id: dp11dp.id, decision: "Give up on parking", destination_node_id: dp6.id)
+        dp11d2 = Decision.create(decision_point_id: dp11dp.id, decision: "Give up", destination_node_id: dp6.id)
 
       dp10dp = DecisionPoint.create(node_id: dp10.id, situation: "Do you find parking?")
         dp10d1 = Decision.create(decision_point_id: dp10dp.id, decision: "Yes", destination_node_id: b4.id)
