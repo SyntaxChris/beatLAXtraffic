@@ -44,10 +44,22 @@
 				font-size: 40px;
 				.clone-container{
 					position: absolute;
+					top: -11%;
+					left: -11%;
+					width: 120%;
+					height: 120%;
+					svg{
+						width: 100%;
+						height: 100%;
+					}
+				}
+				.icon-remove{
+					display: none;
+					position: absolute;
+					width: 30px;
+					height: 30px;
 					top: -5%;
-					left: -5%;
-					width: 110%;
-					height: 110%;
+					right: -2%;
 					svg{
 						width: 100%;
 						height: 100%;
