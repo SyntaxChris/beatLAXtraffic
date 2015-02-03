@@ -1,1 +1,108 @@
-<h1 style="text-align: center">Redirect to GPS Template</h1>
+<!-- remove style for final template -->
+<div id="interactive-map">
+  <div class="top-half">
+    <h3>{{ currentNode.decision_point.situation }}</h3>
+    deci:: {{ currentDecision }}
+  </div>
+  <div class="bottom-half">
+    <div style="display: inline-block; position: relative;">
+      <div class="instructions">
+        <div class="path-message showing">Choose a letter to select an approach</div>
+        <div ng-repeat="decision in currentNode.decisions">
+          <div ng-if="decision.decision.indexOf('circling') > -1">
+            <div class="path-yellow path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
+              <div class="dIB vAM">{{ decision.decision }}</div>
+              <div class="dIB vAM">
+                <div class="dIB vAM double">
+                  <div ng-include="'<%= asset_path 'svgs/_gpsRefresh.html' %>'"></div>
+                </div>
+                <div class="dIB vAM double">
+                  <div ng-include="'<%= asset_path 'svgs/_gpsCar.html' %>'"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div ng-if="decision.decision.indexOf('Park') > -1">
+            <div class="path-green path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
+              <div class="dIB vAM">{{ decision.decision }}</div>
+              <div class="dIB vAM icon">
+                  <div ng-include="'<%= asset_path 'svgs/_parking.html' %>'"></div>
+              </div>
+            </div>
+          </div>
+          <div ng-if="decision.decision.indexOf('Central') > -1">
+            <div class="path-orange path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
+              <div class="dIB vAM">{{ decision.decision }}</div>
+              <div class="dIB vAM">
+                <div class="dIB vAM double">
+                  <div ng-include="'<%= asset_path 'svgs/_gpsEats.html' %>'"></div>
+                </div>
+                <div class="dIB vAM double">
+                  <div ng-include="'<%= asset_path 'svgs/_gpsBag.html' %>'"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div ng-if="decision.decision.indexOf('offsite') > -1">
+            <div class="path-blue path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
+              <div class="dIB vAM">{{ decision.decision }}</div>
+              <div class="dIB vAM">
+                <div class="dIB vAM double">
+                  <div ng-include="'<%= asset_path 'svgs/_gpsTrain.html' %>'"></div>
+                </div>
+                <div class="dIB vAM double">
+                  <div ng-include="'<%= asset_path 'svgs/_gpsHandicapable.html' %>'"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- end angular iterator for instructions -->
+
+        <button ng-click="submit(currentDecision.id, true)" id="x-btn-confirm-map-choice" class="confirm-map-choice-btn show">
+          CONFIRM
+        </button>
+      </div>
+
+      <div ng-repeat="decision in currentNode.decisions">
+        <div ng-if="decision.decision.indexOf('circling') > -1">
+          <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="yellow">
+
+          </a>
+          <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path yellow">
+            <%= image_tag('map_yellow.jpg', width: '100%') %>
+          </div>
+        </div>
+
+        <div ng-if="decision.decision.indexOf('Park') > -1">
+          <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="green">
+
+          </a>
+          <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path green">
+            <%= image_tag('map_green.jpg', width: '100%') %>
+          </div>
+        </div>
+
+        <div ng-if="decision.decision.indexOf('Central') > -1">
+          <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="orange">
+
+          </a>
+          <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path orange">
+            <%= image_tag('map_orange.jpg', width: '100%') %>
+          </div>
+        </div>
+
+        <div ng-if="decision.decision.indexOf('offsite') > -1">
+          <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
+
+          </a>
+          <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path blue">
+            <%= image_tag('map_blue.jpg', width: '100%') %>
+          </div>
+        </div>
+      </div> <!-- end angular iterator for images -->
+      <div class="tram">
+        <div ng-include="'<%= asset_path 'svgs/_gpsTram.html' %>'"></div>
+      </div>
+    </div>
+  </div>
+</div>

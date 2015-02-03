@@ -1,0 +1,39 @@
+<!-- 13. CIRCLE PICKUP QUESTIONS -->
+<div id="circle-pickup">
+  <div class="content">
+    <h3>
+      You would have circled LAX:
+    </h3>
+
+    <div class="content-c">
+      <div class="count-c">
+        <div class="circle-number">X</div>
+        <div>times</div>
+      </div>
+      <div class="red-circle">
+        <div class="circle-car">
+          <div ng-include="'<%= asset_path 'svgs/_blueCircleCar.html' %>'"></div>
+        </div>
+        <div class="outer-container">
+          <div class="inner-circle">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-c buttons-c">
+      <div class="inner-question">
+        How many times do you typically circle around LAX when picking up somebody?  
+      </div>
+      
+      <div>
+         <button id="x-btn-circle-less" class="counter-btn">-1</button>
+         <button id="x-btn-circle-more" class="counter-btn">+1</button> 
+      </div>
+      <div id>
+        <button ng-click="submit()" id="x-btn-circle-next">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END CIRCLE PICKUP QUESTIONS -->

@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe "respondents API" do
+  let!(:starting_node) { FactoryGirl.create(:node, template_name: 'sq-2-2') }
   describe "find_or_create respondent" do
-    let!(:starting_node) { FactoryGirl.create(:node, template_name: 'sq-2-2') }
     context "when a resopndent is new" do
       it "returns an new respondent's id, session id and random variables" do
         existing = create(:respondent)
@@ -67,6 +67,28 @@ describe "respondents API" do
         expect(json['respondent_id']).to eq existing.id
         expect(json['current_node_id']).to eq existing.current_node_id
       end
+    end
+  end
+  describe "update" do
+    let!(:respondent) { create(:respondent, session_id: "123abc") }
+    it "finds a respondent by session id" do
+      cookies["survey_session_id"] = respondent.session_id
+      post '/api/respondents/update'
+      expect(assigns(:respondent)).to eq respondent
+    end
+    it "updates the respondent's elapsed_time" do
+      params = { time_elapsed: 20 }
+      cookies["survey_session_id"] = respondent.session_id
+      post '/api/respondents/update', params
+
+      expect(Respondent.last.time_elapsed).to eq 20
+    end
+    it "updates the respondent's flight_time_remaining" do
+      params = { flight_time_remaining: 45 }
+      cookies["survey_session_id"] = respondent.session_id
+      post '/api/respondents/update', params
+
+      expect(Respondent.last.flight_time_remaining).to eq 45
     end
   end
 end

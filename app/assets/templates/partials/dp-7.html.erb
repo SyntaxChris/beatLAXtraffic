@@ -3,22 +3,22 @@
     <div class="chance-time">
       <h1>Chance Time!</h1>
       <h3 class="main-question">
-        You're almost at the Terminal. <span style="font-weight: 700">Is your passenger there?</span>
+        {{ currentNode.decision_point.situation }}
       </h3>
     </div>
 
     <div class="congrats" style="display:none;">
       <h1>Nice!</h1>
-      <h3 class="main-question" style="margin-top: -20px">Your passenger is at the curb!</h3>
-      <div class="next spinner-continue-btn" id="spin-pickup-win" data-result="yes">
+      <h3 class="main-question" style="margin-top: -20px">Your passenger called and is ready to be picked up!</h3>
+      <div ng-click="submit(findDecisionByString('Yes').id, true)" class="next spinner-continue-btn" id="spin-pickup-win" data-result="yes">
         Continue
       </div>
     </div>
 
     <div class="fail" style="display:none">
       <h1>Dang!</h1>
-      <h3 class="main-question">Our pick-up wasn't there.</h3>
-      <div class="next spinner-continue-btn" id="spin-pickup-lose" data-result="no">
+      <h3 class="main-question">You haven't heard from your passenger yet..</h3>
+      <div ng-click="submit(findDecisionByString('No').id, true)" class="next spinner-continue-btn" id="spin-pickup-lose" data-result="no">
         Continue
       </div>
     </div>
