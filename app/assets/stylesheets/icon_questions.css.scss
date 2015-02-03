@@ -1,531 +1,669 @@
-#icons-small-screen {
-	display: none;
-}
-
-
-
-.icon {
-	cursor: pointer;
-	z-index: 6;
-	position: relative;
-}
-
-#drop-box {
-	height: 300px;
-	width: 400px;
-	background-color: white;
-	border-radius: 40px;
-	#title {
-		color: #78D2EA;
-		text-align: center;
-		padding-top: 30px;
-		font-size: 20px;
+#icon-questions{
+	.no-gutter {
+		padding: 0;
+		margin: 0;
 	}
-	#dotted-circle-row {
+
+
+	h3.main-question{
+		margin-bottom: 7%;
+	}
+
+
+	.answer-container{
+		position: relative;
+		width: 90%;
+		height: 90%;
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 60px;
-		height: 76px;
-		width: 260px;
-		#circle-1 {
-			display: inline-block;
-			height: 76px;
-			width: 76px;
-			margin-right: 10px;
-			border-radius: 100%;
-			border: 2px dotted #78D2EA;
-			color: #78D2EA;
-			font-size: 35px;
+		margin-bottom: 5%;
+		margin-top: 2%;
+		text-align: center;
+		background-color: white;
+		border-radius: 50px;
+		.ac-header{
+			padding-top: 40px;
+			text-align: center;
+			color: #24B7EA;
+			font-size: 2.1vw;
 		}
-		#circle-2 {
-			display: inline-block;
-			height: 76px;
-			width: 76px;
-			margin-right: 10px;
-			border-radius: 100%;
-			border: 2px dotted #78D2EA;
-			color: #78D2EA;
-			font-size: 35px;
+		.row.holder{
+			padding-top: 15%;
+			
+			.icon-holder{
+				position: relative;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+				width: 90px;
+				height: 90px;
+				padding-top: 28px;
+				border-radius: 150px;
+				border: 3px dotted #24B7EA;
+				color: #24B7EA;
+				font-size: 40px;
+				.clone-container{
+					position: absolute;
+					top: -5%;
+					left: -5%;
+					width: 110%;
+					height: 110%;
+					svg{
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
 		}
-		#circle-3 {
-			display: inline-block;
-			height: 76px;
-			width: 76px;
-			border-radius: 100%;
-			border: 2px dotted #78D2EA;
-			color: #78D2EA;
-			font-size: 35px;
-		}
-	}
 
-	#icon-place-holder-row {
-		position: absolute;
-		z-index: 5;
-		height: 76px;
-		width: 257px;
-		bottom: 116px;
-		left: 78px;
-		.remove-icon {
+		.next-btn{
+			// visibility: hidden;
 			cursor: pointer;
 			position: relative;
-			height: 30px;
-			width: 30px;
-			top: -90px;
-			left: 60px;
-		}
-		#holder-1 {	
-			display: inline-block;
-			height: 76px;
-			width: 85px;
-			margin-right: 2px;
-			// padding-right: 10px;
-			// margin-right: 20px;
-			// padding: 0;
-
-		}
-		#holder-2 {
-			display: inline-block;
-			height: 76px;
-			width: 76px;
-			margin-right: 9px;
-		}
-		#holder-3 {
-			// display: inline-block;
-			position: absolute;
-			top: -1px;
-			left: 183px;
-			height: 76px;
-			width: 76px;
-		}
-	}
-	.submit-row {
-		margin-top: 30px;
-		text-align: center;
-		#icon-submit {
-			cursor: pointer;
-			width: 150px; 
-			height: 50px; 
-			text-align: center;
-			font-size: 20px;
-			background-color: #079BED;
-			margin-top: 10px;
-			margin-right: auto;
 			margin-left: auto;
-			padding-top: 12px;
-			border-radius: 10px;
-			bottom: 0px;
+			margin-right: auto;
+			margin-top: 7%;
+			margin-bottom: 5%;
+			padding: 10px;
+			width: 150px;
+			border-radius: 5px;
+			background-color: #079BED;
 			color: white;
 		}
-	}
-
-	#icon-submit:hover, #icon-submit:active {
-		background-color: #24B7EA;
-	}
-}
-
-#icon-box {
-	right: 15%;
-	width: 300px;
-	margin-right: auto;
-	margin-left: auto;
-	#icon-web {
-		height: 300px;
-		width: 300px;
-		padding-top: 0px;
-		margin-right: auto;
-		margin-left: auto;
-	}
-	.remove-icon {
-		position: relative;
-		top: -90px;
-		left: 60px;
-		z-index: 6;
-	}
-	#dog {
-		position: absolute;
-		z-index: 6;
-		top: 0;
-	}
-	#couch {
-		position: absolute;
-		z-index: 6;
-		margin-left: 22.5%;
-		top: 0
-	}
-	#family {
-		position: absolute;
-		z-index: 6;
-		top: 0;
-		padding: 0;
-		margin-left: 44.5%;
-	}
-	#computer {
-		position: absolute;
-		z-index: 6; 
-		top: 105px;
-	}
-	#food {
-		position: absolute;
-		z-index: 6;
-		margin-left: 22.5%; 
-		top: 105px;
-	}
-	#wifi {
-		position: absolute;
-		z-index: 6;
-		top: 105px;
-		margin-left: 44.5%;
-	}
-	#parking {
-		position: absolute;
-		z-index: 6;
-		top: 215px;
-	}
-	#exit {
-		position: absolute;
-		z-index: 6;
-		top: 215px;
-		margin-left: 22%;
-	}
-	#help-desk {
-		position: absolute;
-		z-index: 6;
-		top: 215px;
-		margin-left: 44.5%;
-	}
-}
-
-#icon-pop-up {
-	position: absolute; 
-	z-index: 20;
-	top: 0px; 
-	left: 15%; 
-	border-radius: 40px; 
-	height: 300px; 
-	width: 400px; 
-	background-color: white;
-	.i-want{
-		text-align: center; 
-		font-size: 30px; 
-		margin-top: 15px;
-		color: #78D2EA;
+		.next-btn:hover{
+			opacity: 0.7;
+		}
 
 	}
-	#icon-description {
-		width: 300px;
-		text-align: center;
-		color: #78D2EA;
-		font-size: 20px;
-		margin-top: 25px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	#choice-row {
-		width: 200px;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 40px;
-		#yea {
-			cursor: pointer;
-			display: inline-block;
-			width: 76px;
-			height: 76px;
-			margin-right: 43px;
-		}
-		#nah {
-			cursor: pointer;
-			display: inline-block;
-			width: 76px;
-			height: 76px;
-			border-radius: 100%;
-		}
-	}
-}
 
 
-
-@media screen and (max-width: 640px) and (min-width: 0px) {
-	#icons-large-screen {
-		display: none;
-	}
-	#icons-small-screen {
-		display: block;
-	}
-
-	.icon {
-		height: 60px;
-		width: 60px;
-		svg {
-			height: 60px;
-			width: 60px;
-		}
-		.remove-icon {
-			height: 20px;
-			width: 20px;
-			position: relative;
-			bottom: 65px;
-			left: 40px;
-			svg {
-				height: 20px;
-				width: 20px;
-			}
-		}
-	}
-
-	#holder-and-description-row {
-		width: 280px; 
-		height: 105px;
-		margin-top: -5px;
-		margin-left: auto;
-		margin-bottom: 5px; 
-		margin-right: auto;
-		background-color: white;
-		border-radius: 20px;
-		padding-top: 10px;
-		#icon-holder-description {
-			width: 280px;
-			margin-left: auto;
-			margin-right: auto;
-			color: #78D2EA;
-			text-align: center;
-			font-size: 20px;
-		}
-		#circle-1 {
-			position: relative;
-			height: 55px;
-			width: 55px;
-			bottom: 7px;
-			right: 10px;
-			padding-top: 13px;
-			padding-left: 17px;
-			margin-top: 12px;
-			margin-left: 22px;
-			margin-right: 40px;
-			border-radius: 100%;
-			border: 2px dotted #78D2EA;
-			color: #78D2EA;
-			font-size: 35px;
-			div#1.icon-holder{
-				margin-left: 20px;
-			}
-		}
-		#circle-2 {
-			position: relative;
-			bottom: 62px;
-			left: 115px;
-			padding-top: 13px;
-			padding-left: 17px;
-			height: 55px;
-			width: 55px;
-			margin-right: 35px;
-			border-radius: 100%;
-			border: 2px dotted #78D2EA;
-			color: #78D2EA;
-			font-size: 35px;
-		}
-		#circle-3 {
-			position: relative;
-			bottom: 117px;
-			left: 212px;
-			padding-top: 13px;
-			padding-left: 17px;
-			height: 55px;
-			width: 55px;
-			border-radius: 100%;
-			border: 2px dotted #78D2EA;
-			color: #78D2EA;
-			font-size: 35px;
-		}
-		#holder-1-small {
-			position: absolute;	
-			top: -6px;
-			left: -7px; 
-			height: 55px;
-			width: 55px;
-			.icon{
-				svg {
-					height: 110%;
-					width: 110%;
-				}
-			}
-		}
-		#holder-2-small {
-			position: absolute;	
-			top: -6px;
-			left: -7px; 
-			height: 55px;
-			width: 55px;
-			.icon{
-				svg {
-					height: 110%;
-					width: 110%;
-				}
-			}
-		}
-		#holder-3-small {
-			position: absolute;	
-			top: -7px;
-			left: -7px; 
-			height: 55px;
-			width: 55px;
-			.icon{
-				svg {
-					height: 110%;
-					width: 110%;
-				}
-			}
-		}
-	}
-	#icon-box-small {
-		display: block;
-		width: 300px; 
-		height: 300px;
-		margin-left: auto; 
-		margin-right: auto;
-		#dog {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			// bottom: 248px;
-			left: 20px;
-		}
-		#couch {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 77px;
-			left: 123px;
-		}
-		#family {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 153px;
-			left: 220px;
-		}
-		#computer {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 145px;
-			left: 20px;
-		}
-		#food {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 220px;
-			left: 123px;
-		}
-		#wifi {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 297px;
-			left: 220px;
-		}
-		#parking {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 290px;
-			left: 20px;
-		}
-		#exit {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 366px;
-			left: 122px;
-		}
-		#help-desk {
-			width: 76px;
-			height: 76px;
-			position: relative;
-			bottom: 442px;
-			left: 220px;
-		}
-		
-	}
-
-	#icon-pop-up-small {
-		position: relative; 
-		bottom: 670px;
-		z-index: 10;
-		margin-left: auto;
-		margin-right: auto;
-		border-radius: 20px; 
-		height: 200px; 
-		width: 280px; 
-		background-color: white;
-		opacity: 0.9;
-	    .i-want{
-			text-align: center; 
-			font-size: 30px; 
-			padding-top: 10px;
-			color: #78D2EA;
-		}
-		#icon-description-small {
-			position: relative;
-			width: 280px;
-			margin-left: auto;
-			margin-right: auto;
-			text-align: center;
-			color: #78D2EA;
-			font-size: 20px;
-			padding: 20px 5px 0 5px;
-		}
-		#choice-row {
-			width: 250px;
-			margin-left: 40px;
-			margin-right: auto;
-			margin-top: 10px;
-			#yea-small {
-				cursor: pointer;
-				display: inline-block;
-				width: 76px;
-				height: 76px;
-				margin-right: 43px;
-				svg {
-					width: 90%;
-					height: 90%;
-				}
-			}
-			#nah-small {
-				cursor: pointer;
-				display: inline-block;
-				width: 76px;
-				height: 76px;
-				border-radius: 100%;
-				svg {
-					width: 90%;
-					height: 90%;
-				}
-			}
-		}
-		.submit-row {
-			position: absolute;
-			z-index: 10;
-			margin-top: 75px;
-			margin-left: 65px;
-			text-align: center;
-			#icon-submit {
-				cursor: pointer;
-				width: 150px; 
-				height: 50px; 
-				text-align: center;
-				font-size: 20px;
-				background-color: #079BED;
+	.icon-container{
+		.row{
+			margin-bottom: 3.8%;
+			.icon-holder{
+				width: 100px; 
+				height: 100px; 
+				position: relative; 
+				margin-left: auto; 
 				margin-right: auto;
-				margin-left: auto;
-				padding-top: 12px;
-				border-radius: 10px;
-				bottom: 0px;
-				color: white;
+				svg{
+					cursor: pointer;
+					width: 100%;
+					height: 100%;
+				}
+
+				svg:hover{
+					-webkit-animation: wiggle 0.4s infinite;
+          			-moz-animation: wiggle 0.4s infinite;
+          			-o-animation: wiggle 0.4s infinite;
+          			-ms-animation: wiggle 0.4s infinite;
+          			animation: wiggle 0.4s infinite;
+				}
 			}
 		}
+
+		.selection-container{
+
+		}
 	}
-	
 }
+
+
+@-webkit-keyframes wiggle {
+  0% {-webkit-transform:rotate(7deg);}
+  50% {-webkit-transform:rotate(-7deg);}
+  100% {-webkit-transform:rotate(7deg);}
+}
+@-moz-keyframes wiggle {
+  0% {-webkit-transform:rotate(7deg);}
+  50% {-webkit-transform:rotate(-7deg);}
+  100% {-webkit-transform:rotate(7deg);}
+}
+@-o-keyframes wiggle {
+  0% {-webkit-transform:rotate(7deg);}
+  50% {-webkit-transform:rotate(-7deg);}
+  100% {-webkit-transform:rotate(7deg);}
+}
+@-ms-keyframes wiggle {
+  0% {-webkit-transform:rotate(7deg);}
+  50% {-webkit-transform:rotate(-7deg);}
+  100% {-webkit-transform:rotate(7deg);}
+}
+@keyframes wiggle {
+  0% {-webkit-transform:rotate(7deg);}
+  50% {-webkit-transform:rotate(-7deg);}
+  100% {-webkit-transform:rotate(7deg);}
+}
+
+
+// #icons-small-screen {
+// 	display: none;
+// }
+
+
+
+// .icon {
+// 	cursor: pointer;
+// 	z-index: 6;
+// 	position: relative;
+// }
+
+// #drop-box {
+// 	height: 300px;
+// 	width: 400px;
+// 	background-color: white;
+// 	border-radius: 40px;
+// 	#title {
+// 		color: #78D2EA;
+// 		text-align: center;
+// 		padding-top: 30px;
+// 		font-size: 20px;
+// 	}
+// 	#dotted-circle-row {
+// 		margin-left: auto;
+// 		margin-right: auto;
+// 		margin-top: 60px;
+// 		height: 76px;
+// 		width: 260px;
+// 		#circle-1 {
+// 			display: inline-block;
+// 			height: 76px;
+// 			width: 76px;
+// 			margin-right: 10px;
+// 			border-radius: 100%;
+// 			border: 2px dotted #78D2EA;
+// 			color: #78D2EA;
+// 			font-size: 35px;
+// 		}
+// 		#circle-2 {
+// 			display: inline-block;
+// 			height: 76px;
+// 			width: 76px;
+// 			margin-right: 10px;
+// 			border-radius: 100%;
+// 			border: 2px dotted #78D2EA;
+// 			color: #78D2EA;
+// 			font-size: 35px;
+// 		}
+// 		#circle-3 {
+// 			display: inline-block;
+// 			height: 76px;
+// 			width: 76px;
+// 			border-radius: 100%;
+// 			border: 2px dotted #78D2EA;
+// 			color: #78D2EA;
+// 			font-size: 35px;
+// 		}
+// 	}
+
+// 	#icon-place-holder-row {
+// 		position: absolute;
+// 		z-index: 5;
+// 		height: 76px;
+// 		width: 257px;
+// 		bottom: 116px;
+// 		left: 78px;
+// 		.remove-icon {
+// 			cursor: pointer;
+// 			position: relative;
+// 			height: 30px;
+// 			width: 30px;
+// 			top: -90px;
+// 			left: 60px;
+// 		}
+// 		#holder-1 {	
+// 			display: inline-block;
+// 			height: 76px;
+// 			width: 85px;
+// 			margin-right: 2px;
+// 			// padding-right: 10px;
+// 			// margin-right: 20px;
+// 			// padding: 0;
+
+// 		}
+// 		#holder-2 {
+// 			display: inline-block;
+// 			height: 76px;
+// 			width: 76px;
+// 			margin-right: 9px;
+// 		}
+// 		#holder-3 {
+// 			// display: inline-block;
+// 			position: absolute;
+// 			top: -1px;
+// 			left: 183px;
+// 			height: 76px;
+// 			width: 76px;
+// 		}
+// 	}
+// 	.submit-row {
+// 		margin-top: 30px;
+// 		text-align: center;
+// 		#icon-submit {
+// 			cursor: pointer;
+// 			width: 150px; 
+// 			height: 50px; 
+// 			text-align: center;
+// 			font-size: 20px;
+// 			background-color: #079BED;
+// 			margin-top: 10px;
+// 			margin-right: auto;
+// 			margin-left: auto;
+// 			padding-top: 12px;
+// 			border-radius: 10px;
+// 			bottom: 0px;
+// 			color: white;
+// 		}
+// 	}
+
+// 	#icon-submit:hover, #icon-submit:active {
+// 		background-color: #24B7EA;
+// 	}
+// }
+
+// #icon-box {
+// 	right: 15%;
+// 	width: 300px;
+// 	margin-right: auto;
+// 	margin-left: auto;
+// 	#icon-web {
+// 		height: 300px;
+// 		width: 300px;
+// 		padding-top: 0px;
+// 		margin-right: auto;
+// 		margin-left: auto;
+// 	}
+// 	.remove-icon {
+// 		position: relative;
+// 		top: -90px;
+// 		left: 60px;
+// 		z-index: 6;
+// 	}
+// 	#dog {
+// 		position: absolute;
+// 		z-index: 6;
+// 		top: 0;
+// 	}
+// 	#couch {
+// 		position: absolute;
+// 		z-index: 6;
+// 		margin-left: 22.5%;
+// 		top: 0
+// 	}
+// 	#family {
+// 		position: absolute;
+// 		z-index: 6;
+// 		top: 0;
+// 		padding: 0;
+// 		margin-left: 44.5%;
+// 	}
+// 	#computer {
+// 		position: absolute;
+// 		z-index: 6; 
+// 		top: 105px;
+// 	}
+// 	#food {
+// 		position: absolute;
+// 		z-index: 6;
+// 		margin-left: 22.5%; 
+// 		top: 105px;
+// 	}
+// 	#wifi {
+// 		position: absolute;
+// 		z-index: 6;
+// 		top: 105px;
+// 		margin-left: 44.5%;
+// 	}
+// 	#parking {
+// 		position: absolute;
+// 		z-index: 6;
+// 		top: 215px;
+// 	}
+// 	#exit {
+// 		position: absolute;
+// 		z-index: 6;
+// 		top: 215px;
+// 		margin-left: 22%;
+// 	}
+// 	#help-desk {
+// 		position: absolute;
+// 		z-index: 6;
+// 		top: 215px;
+// 		margin-left: 44.5%;
+// 	}
+// }
+
+// #icon-pop-up {
+// 	position: absolute; 
+// 	z-index: 20;
+// 	top: 0px; 
+// 	left: 15%; 
+// 	border-radius: 40px; 
+// 	height: 300px; 
+// 	width: 400px; 
+// 	background-color: white;
+// 	.i-want{
+// 		text-align: center; 
+// 		font-size: 30px; 
+// 		margin-top: 15px;
+// 		color: #78D2EA;
+
+// 	}
+// 	#icon-description {
+// 		width: 300px;
+// 		text-align: center;
+// 		color: #78D2EA;
+// 		font-size: 20px;
+// 		margin-top: 25px;
+// 		margin-left: auto;
+// 		margin-right: auto;
+// 	}
+// 	#choice-row {
+// 		width: 200px;
+// 		margin-left: auto;
+// 		margin-right: auto;
+// 		margin-top: 40px;
+// 		#yea {
+// 			cursor: pointer;
+// 			display: inline-block;
+// 			width: 76px;
+// 			height: 76px;
+// 			margin-right: 43px;
+// 		}
+// 		#nah {
+// 			cursor: pointer;
+// 			display: inline-block;
+// 			width: 76px;
+// 			height: 76px;
+// 			border-radius: 100%;
+// 		}
+// 	}
+// }
+
+
+
+// @media screen and (max-width: 640px) and (min-width: 0px) {
+// 	#icons-large-screen {
+// 		display: none;
+// 	}
+// 	#icons-small-screen {
+// 		display: block;
+// 	}
+
+// 	.icon {
+// 		height: 60px;
+// 		width: 60px;
+// 		svg {
+// 			height: 60px;
+// 			width: 60px;
+// 		}
+// 		.remove-icon {
+// 			height: 20px;
+// 			width: 20px;
+// 			position: relative;
+// 			bottom: 65px;
+// 			left: 40px;
+// 			svg {
+// 				height: 20px;
+// 				width: 20px;
+// 			}
+// 		}
+// 	}
+
+// 	#holder-and-description-row {
+// 		width: 280px; 
+// 		height: 105px;
+// 		margin-top: -5px;
+// 		margin-left: auto;
+// 		margin-bottom: 5px; 
+// 		margin-right: auto;
+// 		background-color: white;
+// 		border-radius: 20px;
+// 		padding-top: 10px;
+// 		#icon-holder-description {
+// 			width: 280px;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			color: #78D2EA;
+// 			text-align: center;
+// 			font-size: 20px;
+// 		}
+// 		#circle-1 {
+// 			position: relative;
+// 			height: 55px;
+// 			width: 55px;
+// 			bottom: 7px;
+// 			right: 10px;
+// 			padding-top: 13px;
+// 			padding-left: 17px;
+// 			margin-top: 12px;
+// 			margin-left: 22px;
+// 			margin-right: 40px;
+// 			border-radius: 100%;
+// 			border: 2px dotted #78D2EA;
+// 			color: #78D2EA;
+// 			font-size: 35px;
+// 			div#1.icon-holder{
+// 				margin-left: 20px;
+// 			}
+// 		}
+// 		#circle-2 {
+// 			position: relative;
+// 			bottom: 62px;
+// 			left: 115px;
+// 			padding-top: 13px;
+// 			padding-left: 17px;
+// 			height: 55px;
+// 			width: 55px;
+// 			margin-right: 35px;
+// 			border-radius: 100%;
+// 			border: 2px dotted #78D2EA;
+// 			color: #78D2EA;
+// 			font-size: 35px;
+// 		}
+// 		#circle-3 {
+// 			position: relative;
+// 			bottom: 117px;
+// 			left: 212px;
+// 			padding-top: 13px;
+// 			padding-left: 17px;
+// 			height: 55px;
+// 			width: 55px;
+// 			border-radius: 100%;
+// 			border: 2px dotted #78D2EA;
+// 			color: #78D2EA;
+// 			font-size: 35px;
+// 		}
+// 		#holder-1-small {
+// 			position: absolute;	
+// 			top: -6px;
+// 			left: -7px; 
+// 			height: 55px;
+// 			width: 55px;
+// 			.icon{
+// 				svg {
+// 					height: 110%;
+// 					width: 110%;
+// 				}
+// 			}
+// 		}
+// 		#holder-2-small {
+// 			position: absolute;	
+// 			top: -6px;
+// 			left: -7px; 
+// 			height: 55px;
+// 			width: 55px;
+// 			.icon{
+// 				svg {
+// 					height: 110%;
+// 					width: 110%;
+// 				}
+// 			}
+// 		}
+// 		#holder-3-small {
+// 			position: absolute;	
+// 			top: -7px;
+// 			left: -7px; 
+// 			height: 55px;
+// 			width: 55px;
+// 			.icon{
+// 				svg {
+// 					height: 110%;
+// 					width: 110%;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	#icon-box-small {
+// 		display: block;
+// 		width: 300px; 
+// 		height: 300px;
+// 		margin-left: auto; 
+// 		margin-right: auto;
+// 		#dog {
+// 			width: 76px;
+// 			height: 76px;
+// 			position: relative;
+// 			// bottom: 248px;
+// 			left: 20px;
+// 		}
+// 		#couch {
+// 			width: 76px;
+// 			height: 76px;
+// 			position: relative;
+// 			bottom: 77px;
+// 			left: 123px;
+// 		}
+// 		#family {
+// 			width: 76px;
+// 			height: 76px;
+// 			position: relative;
+// 			bottom: 153px;
+// 			left: 220px;
+// 		}
+// 		#computer {
+// 			width: 76px;
+// 			height: 76px;
+// 			position: relative;
+// 			bottom: 145px;
+// 			left: 20px;
+// 		}
+// 		#food {
+// 			width: 76px;
+// 			height: 76px;
+// 			position: relative;
+// 			bottom: 220px;
+// 			left: 123px;
+// 		}
+// 		#wifi {
+// 			width: 76px;
+// 			height: 76px;
+// 			position: relative;
+// 			bottom: 297px;
+// 			left: 220px;
+// 		}
+// 		#parking {
+// 			width: 76px;
+// 			height: 76px;
+// 			position: relative;
+// 			bottom: 290px;
+// 			left: 20px;
+// 		}
+// 		#exit {
+// 			width: 76px;
+// 			height: 76px;
+// 			position: relative;
+// 			bottom: 366px;
+// 			left: 122px;
+// 		}
+// 		#help-desk {
+// 			width: 76px;
+// 			height: 76px;
+// 			position: relative;
+// 			bottom: 442px;
+// 			left: 220px;
+// 		}
+		
+// 	}
+
+// 	#icon-pop-up-small {
+// 		position: relative; 
+// 		bottom: 670px;
+// 		z-index: 10;
+// 		margin-left: auto;
+// 		margin-right: auto;
+// 		border-radius: 20px; 
+// 		height: 200px; 
+// 		width: 280px; 
+// 		background-color: white;
+// 		opacity: 0.9;
+// 	    .i-want{
+// 			text-align: center; 
+// 			font-size: 30px; 
+// 			padding-top: 10px;
+// 			color: #78D2EA;
+// 		}
+// 		#icon-description-small {
+// 			position: relative;
+// 			width: 280px;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			text-align: center;
+// 			color: #78D2EA;
+// 			font-size: 20px;
+// 			padding: 20px 5px 0 5px;
+// 		}
+// 		#choice-row {
+// 			width: 250px;
+// 			margin-left: 40px;
+// 			margin-right: auto;
+// 			margin-top: 10px;
+// 			#yea-small {
+// 				cursor: pointer;
+// 				display: inline-block;
+// 				width: 76px;
+// 				height: 76px;
+// 				margin-right: 43px;
+// 				svg {
+// 					width: 90%;
+// 					height: 90%;
+// 				}
+// 			}
+// 			#nah-small {
+// 				cursor: pointer;
+// 				display: inline-block;
+// 				width: 76px;
+// 				height: 76px;
+// 				border-radius: 100%;
+// 				svg {
+// 					width: 90%;
+// 					height: 90%;
+// 				}
+// 			}
+// 		}
+// 		.submit-row {
+// 			position: absolute;
+// 			z-index: 10;
+// 			margin-top: 75px;
+// 			margin-left: 65px;
+// 			text-align: center;
+// 			#icon-submit {
+// 				cursor: pointer;
+// 				width: 150px; 
+// 				height: 50px; 
+// 				text-align: center;
+// 				font-size: 20px;
+// 				background-color: #079BED;
+// 				margin-right: auto;
+// 				margin-left: auto;
+// 				padding-top: 12px;
+// 				border-radius: 10px;
+// 				bottom: 0px;
+// 				color: white;
+// 			}
+// 		}
+// 	}
+	
+// }
 
 
