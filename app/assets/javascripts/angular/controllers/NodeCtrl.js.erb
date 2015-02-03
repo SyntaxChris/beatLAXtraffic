@@ -88,6 +88,12 @@ angular.module('lawaApp')
           $scope.currentTimeElapsed = 0;
         });
 
+        $scope.signColors = {
+          1: 'blue',
+          2: 'indigo',
+          3: 'purple',
+          4: 'magenta'
+        }
       };
 
       $scope.nodeIncludedInWhitelist = function(template_name){
@@ -191,6 +197,11 @@ angular.module('lawaApp')
         };
       };
 
+      $scope.immediateSubmitAnswer = function(answer){
+        $scope.addAnswerToCurrentAnswers(answer);
+        $scope.submit(null, true);
+      };
+
       $scope.goToNextNode = function(){
         if(!$scope.currentNode.is_decision_point){
           // go to next node based on current Q's destination
@@ -210,6 +221,7 @@ angular.module('lawaApp')
           $scope.currentOther.present = false;
           $scope.currentOther.text = null;
           $scope.currentOther.answerId = null;
+
 
           //for debugging:
           $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
