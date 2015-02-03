@@ -31,7 +31,7 @@
           </div>
           <div ng-if="decision.decision.indexOf('ready') > -1">
             <div class="path-orange path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
-              <div class="dIB vAM">Wait off site until passenger is ready to be picked up</div>
+              <div class="dIB vAM">{{ decision.decision }}</div>
               <div class="dIB vAM">
                 <div class="dIB vAM double">
                   <div ng-include="'<%= asset_path 'svgs/_gpsEats.html' %>'"></div>
@@ -44,7 +44,7 @@
           </div>
           <div ng-if="decision.decision.indexOf('train') > -1">
             <div class="path-blue path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
-              <div class="dIB vAM">Go to an offsite location with a connecting tram</div>
+              <div class="dIB vAM">{{ decision.decision }}</div>
               <div class="dIB vAM">
                 <div class="dIB vAM double">
                   <div ng-include="'<%= asset_path 'svgs/_gpsTrain.html' %>'"></div>
