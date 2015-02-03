@@ -141,7 +141,41 @@
       background-color: #00B8E5; 
       color: white; 
       padding: 7px 0 7px 0;
-
+      .depart{
+        text-align: left; 
+        font-size: 15px;
+        padding-left: 17px;
+      }
+      .arrive{
+        text-align: right; 
+        font-size: 15px;
+        padding-right: 17px;
+      }
+      .from{
+        font-size: 35px; 
+        padding-top: 10px; 
+        text-align: left; 
+        font-weight: 700
+      }
+      .to{
+        font-size: 35px; 
+        padding-top: 10px; 
+        text-align: right; 
+        font-weight: 700
+      }
+      .from-name{
+        font-size: 12px; 
+        text-align: left;
+        padding-left: 25px;
+      }
+      .flight{
+        font-size: 12px; 
+        text-align: center
+      }
+      .to-name{
+        font-size: 12px; 
+        text-align: right
+      }
     }
     #stage-2-body{
       #pickup-person{
