@@ -17,7 +17,15 @@ angular.module('lawaApp')
             $scope.currentFlightTimeRemaining = $scope.variables.landing_time;
 
             // if current node is the first one, don't show dashboard
-            if($scope.currentNode.template_name === "sq-2-2" || $scope.currentNode.template_name === "sq-1"){
+            // TODO: pls no:
+            if(
+                $scope.currentNode.template_name === "sq-2-2" ||
+                $scope.currentNode.template_name === "sq-1" ||
+                $scope.currentNode.template_name === "e-1" ||
+                $scope.currentNode.template_name === "e-2" ||
+                $scope.currentNode.template_name === "e-3" ||
+                $scope.currentNode.template_name === "e-4"
+              ){
               $scope.setShowDashboard(false);
             // else if the home dashboard should be seen, show that.
             } else {
@@ -34,6 +42,7 @@ angular.module('lawaApp')
                 '/assets/partials/a-1.html',
                 '/assets/partials/a-2.html',
                 '/assets/partials/dp-2.html',
+                '/assets/partials/dp-3.html',
                 '/assets/partials/b-1.html',
                 '/assets/partials/b-2.html',
                 '/assets/partials/b-3.html',
@@ -42,7 +51,10 @@ angular.module('lawaApp')
                 '/assets/partials/c-1.html',
                 '/assets/partials/c-2.html',
                 '/assets/partials/dp-7.html',
-                '/assets/partials/dp-6.html'
+                '/assets/partials/dp-6.html',
+                '/assets/partials/dp-10.html',
+                '/assets/partials/dp-11.html',
+                '/assets/partials/e-1.html'
               ];
               $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
             ///////////template_name
@@ -238,10 +250,19 @@ angular.module('lawaApp')
 
         //for debugging:
         $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
-        // set default for gps question
+
+
+        // TODO: this is gross and should be handled in a better way. not least of all
+        //       because it needs to be replicated up in the setup in the case of reloads
+        // set default for gps question and other templates-specific settings
         if($scope.currentNode.template_name === "dp-1" || $scope.currentNode.template_name === "dp-6"){
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+        } else if($scope.currentNode.template_name === "dp-3"){
+          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Continue circling around terminal"});
+          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+        } else if($scope.currentNode.template_name === "e-1"){
+          $scope.setShowDashboard(false);
         }
       };
 
