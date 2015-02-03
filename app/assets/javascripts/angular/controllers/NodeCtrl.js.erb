@@ -127,10 +127,6 @@ angular.module('lawaApp')
       $scope.setCurrentNodeById = function(nodeId){
         $scope.currentNode = $scope.fetchNodeById(nodeId);
         $scope.currentTemplateName = $scope.getTemplateName(nodeId);
-        // set default for gps question
-        if($scope.currentNode.template_name === "dp-1"){
-          $scope.currentDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
-        }
       };
 
       $scope.thisDecisionIsSelected = function(decision){
@@ -217,6 +213,11 @@ angular.module('lawaApp')
 
           //for debugging:
           $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
+          // set default for gps question
+          if($scope.currentNode.template_name === "dp-1"){
+            var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
+            $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+          }
       };
 
       var answersForParams = function(answersArray) {
@@ -228,7 +229,7 @@ angular.module('lawaApp')
       }
 
       $scope.submit = function(decisionId, decreaseTime){
-        if(decreaseTime || decreaseTime === undefined){
+        if(decreaseTime){
           $scope.currentTimeElapsed += 5;
           $scope.currentFlightTimeRemaining -= 5;
         };

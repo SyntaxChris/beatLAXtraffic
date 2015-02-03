@@ -10,7 +10,7 @@
   <div class="congrats" style="display:none;">
     <h1>Congratulations!</h1>
     <h3 class="main-question">You got a parking spot!</h3>
-    <div ng-click="submit(findDecisionByString('Not Full').id)" class="next" id="spin-parking-win">
+    <div ng-click="submit(findDecisionByString('Not Full').id, true)" class="next" id="spin-parking-win">
       Continue
     </div>
   </div>
@@ -18,7 +18,7 @@
   <div class="fail" style="display:none">
     <h1 style="color: white; text-align: center;">Dang!</h1>
     <h3 class="main-question">The parking lot is full.</h3>
-    <div ng-click="submit(findDecisionByString('Full').id)" class="next" id="spin-parking-lose">
+    <div ng-click="submit(findDecisionByString('Full').id, true)" class="next" id="spin-parking-lose">
       Continue
     </div>
   </div>
