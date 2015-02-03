@@ -115,26 +115,34 @@
 		}
 
 		.selection-container{
+			display: none;
 			position: absolute;
 			top: 0;
 			width: 94%;
-			padding-top: 10%;
+			padding-top: 13%;
 			background-color: white;
 			border-radius: 40px;
 			text-align: center;
 			color: #24B7EA;
 			font-size: 2.1vw;
-			// opacity: 0.5;
-			.ok-btn{
+			.row{
+				padding-left: 5%;
+				padding-right: 5%;
+				padding-bottom: 4%;
+			}
+			.needy{
+				font-size: 3vw;
+			}
+			svg {
 				position: relative;
 				margin-left: auto;
 				margin-right: auto;
-				width: 150px;	
-				color: white;
-				background-color: #079BED;
-				border-radius: 5px;
-				padding: 15px;
+				cursor: pointer;
+				width: 95%;
+				height: 95%;
 			}
+			// opacity: 0.5;
+
 		}
 	}
 }

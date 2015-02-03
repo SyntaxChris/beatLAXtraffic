@@ -5,6 +5,14 @@ $(document).ready(function(){
 		alert("clone container!");
 	});
 
+	$body.on('click', ".icon-holder svg", function(){
+		$(".selection-container").fadeIn();
+	});
+
+	$body.on('click', ".yea, .nah", function(){
+		$(".selection-container").fadeOut();
+	});
+
 
 
 	// var tallyIcons = 0,
