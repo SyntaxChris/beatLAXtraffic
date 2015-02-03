@@ -44,10 +44,10 @@
 				font-size: 40px;
 				.clone-container{
 					position: absolute;
-					top: -11%;
+					top: -12%;
 					left: -11%;
-					width: 120%;
-					height: 120%;
+					width: 125%;
+					height: 125%;
 					svg{
 						width: 100%;
 						height: 100%;
@@ -55,6 +55,9 @@
 				}
 				.icon-remove{
 					display: none;
+					&.show{
+						display: block;
+					}
 					position: absolute;
 					width: 30px;
 					height: 30px;
@@ -69,7 +72,10 @@
 		}
 
 		.next-btn{
-			// visibility: hidden;
+			visibility: hidden;
+			&.show{
+				visibility: visible;
+			}
 			cursor: pointer;
 			position: relative;
 			margin-left: auto;
