@@ -30,6 +30,7 @@ $(document).ready(function(){
 
   }
 
+
   function updateTimerCount(){
     $body.find('#timer-pickup .timer-number').text(timerCount);
   }

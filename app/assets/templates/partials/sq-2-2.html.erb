@@ -152,17 +152,17 @@
 
         <div class="row" style="text-align: center; margin: 0">
           <div class="large-8 medium-8 small-8 large-centered medium-centered small-centered columns">
-            <div class="large-3 medium-3 small-3 columns" style="font-size: 12px; color: #808080">Fast</div>
+            <div class="large-3 medium-3 small-3 columns traffic-label">Slow</div>
             <div  class="large-2 medium-2 small-2 columns" style="padding: 0">
-              <div class="fast"></div>
+              <div class="slow"></div>
             </div>
             <div class="large-2 medium-2 small-2 columns" style="padding: 0">
               <div class="medium"></div>
             </div>
             <div class="large-2 medium-2 small-2 columns" style="padding: 0">
-              <div class="slow"></div>
+              <div class="fast"></div>
             </div>
-            <div class="large-3 medium-3 small-3 columns" style="font-size: 12px; text-align: left; color: #808080">Slow</div>
+            <div class="large-3 medium-3 small-3 columns traffic-label rt">Fast</div>
           </div>
         </div>
         <div class="row" style="text-align: center; margin: 0; padding-bottom: 20px;">
@@ -285,11 +285,11 @@
           </div>
         </div>
 
-        <div id="stage-4-btn" ng-click="submit()">
+        <div id="stage-4-btn" ng-click="submit(null, false)">
           Let's Go!
         </div>
 
-      </div>  
+      </div>
     </div>
   </div>
   <!-- END MISSION INTRO -->

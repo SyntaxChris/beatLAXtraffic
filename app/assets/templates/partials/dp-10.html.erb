@@ -3,14 +3,14 @@
   <div class="chance-time">
     <h1>Chance Time!</h1>
     <h3 class="main-question">
-      You arrive at the parking lot and <span style="font-weight: 700">see that the parking lot is...</span>
+      {{ currentNode.decision_point.situation }}
     </h3>
   </div>
 
   <div class="congrats" style="display:none;">
     <h1>Congratulations!</h1>
     <h3 class="main-question">You got a parking spot!</h3>
-    <div class="next" id="spin-parking-win">
+    <div ng-click="submit(findDecisionByString('Yes').id, true)" class="next" id="spin-parking-win">
       Continue
     </div>
   </div>
@@ -18,7 +18,7 @@
   <div class="fail" style="display:none">
     <h1 style="color: white; text-align: center;">Dang!</h1>
     <h3 class="main-question">The parking lot is full.</h3>
-    <div class="next" id="spin-parking-lose">
+    <div ng-click="submit(findDecisionByString('No').id, true)" class="next" id="spin-parking-lose">
       Continue
     </div>
   </div>
@@ -26,7 +26,7 @@
   <div class="spin-button" id="parking">
     Spin
   </div>
-  
+
   <div class="spinner-components">
     <div class="row">
       <div class="large-7 medium-8 small-12 large-centered medium-centered small-centered columns">
@@ -63,6 +63,6 @@
     </div>
   </div>
   <!-- spinner logic -->
-  <div id="parking-chance" data-outcome=0></div>
+  <div id="parking-chance" data-outcome=1></div>
 </div>
-<!-- end parking spinner
+<!-- end parking spinner -->

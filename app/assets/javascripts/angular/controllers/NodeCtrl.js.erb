@@ -14,7 +14,23 @@ angular.module('lawaApp')
             $scope.respondentId = data.respondent_id;
             $scope.setCurrentNodeById(data.current_node_id);
             $scope.variables = data.variables;
+            $scope.currentFlightTimeRemaining = $scope.variables.landing_time;
 
+            // if current node is the first one, don't show dashboard
+            // TODO: pls no:
+            if(
+                $scope.currentNode.template_name === "sq-2-2" ||
+                $scope.currentNode.template_name === "sq-1" ||
+                $scope.currentNode.template_name === "e-1" ||
+                $scope.currentNode.template_name === "e-2" ||
+                $scope.currentNode.template_name === "e-3" ||
+                $scope.currentNode.template_name === "e-4"
+              ){
+              $scope.setShowDashboard(false);
+            // else if the home dashboard should be seen, show that.
+            } else {
+              $scope.setShowDashboard(true);
+            };
             ///////////
               // for development purposes only. add fully-working nodes here
               // to remove debugging printing out on front end:
@@ -26,14 +42,22 @@ angular.module('lawaApp')
                 '/assets/partials/a-1.html',
                 '/assets/partials/a-2.html',
                 '/assets/partials/dp-2.html',
+                '/assets/partials/dp-3.html',
                 '/assets/partials/b-1.html',
                 '/assets/partials/b-2.html',
                 '/assets/partials/b-3.html',
                 '/assets/partials/dp-5.html',
-                '/assets/partials/b-4.html'
+                '/assets/partials/b-4.html',
+                '/assets/partials/c-1.html',
+                '/assets/partials/c-2.html',
+                '/assets/partials/dp-7.html',
+                '/assets/partials/dp-6.html',
+                '/assets/partials/dp-10.html',
+                '/assets/partials/dp-11.html',
+                '/assets/partials/e-1.html'
               ];
               $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
-            ///////////
+            ///////////template_name
 
             $scope.variables["text_from"] = null;
             if($scope.variables.original_who_picking_up === "Coworker"){
@@ -62,24 +86,31 @@ angular.module('lawaApp')
                 'en-US', { hour12: true, hour:"numeric", minute:"numeric"}
               );
 
+
             var tenMinutesBack = new Date();
             tenMinutesBack.setTime(tenMinutesBack.getTime() - (10*60*1000));
             $scope.tenMinutesAgo = tenMinutesBack.toLocaleTimeString(
                 'en-US', { hour12: true, hour:"numeric", minute:"numeric"}
               );
-
           })
 
           $scope.currentDecisionDestination = null;
           $scope.currentAnswers = [];
           $scope.currentOther = {
             present: false,
-            text: null,
-            answerId: null
+            text: null, answerId: null
           };
           $scope.currentTimeInterval = 0;
+          // TODO: use time from current respondent if there is any:
+          $scope.currentTimeElapsed = 0;
         });
 
+        $scope.signColors = {
+          1: 'blue',
+          2: 'indigo',
+          3: 'purple',
+          4: 'magenta'
+        }
       };
 
       $scope.nodeIncludedInWhitelist = function(template_name){
@@ -103,6 +134,10 @@ angular.module('lawaApp')
         return (answer.answer.indexOf(string) > -1)
       }
 
+      $scope.setShowDashboard = function(value){
+        $scope.showDashboard = value;
+      }
+
       $scope.setCurrentNodeBySession = function() {
         $scope.currentNode = $scope.fetchNodeById(sessionCurrentNodeId);
       };
@@ -115,11 +150,23 @@ angular.module('lawaApp')
       $scope.setCurrentNodeById = function(nodeId){
         $scope.currentNode = $scope.fetchNodeById(nodeId);
         $scope.currentTemplateName = $scope.getTemplateName(nodeId);
+        // set default for gps questions
+        if($scope.currentNode.template_name === "dp-1" || $scope.currentNode.template_name === "dp-6"){
+          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
+          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+        } else if($scope.currentNode.template_name === "dp-3"){
+          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Continue circling around terminal"});
+          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+        }
+      };
+
+      $scope.thisDecisionIsSelected = function(decision){
+        return $scope.currentDecision === decision
       };
 
       $scope.setCurrentDecision = function(decision){
         $scope.currentDecisionDestination = $scope.fetchNodeById(decision.destination_node_id);
-        $scope.submit(decision.id);
+        $scope.submit(decision.id, true);
       };
 
       $scope.setCurrentDecisionNoSubmit = function(decision){
@@ -175,6 +222,11 @@ angular.module('lawaApp')
         };
       };
 
+      $scope.immediateSubmitAnswer = function(answer){
+        $scope.addAnswerToCurrentAnswers(answer);
+        $scope.submit(null, true);
+      };
+
       $scope.goToNextNode = function(){
         if(!$scope.currentNode.is_decision_point){
           // go to next node based on current Q's destination
@@ -186,17 +238,32 @@ angular.module('lawaApp')
 
         $scope.setCurrentNodeById(destinationNodeId);
 
-          // clear decision prepping for next question (can move to own method)
-          $scope.currentDecisionDestination = null;
-          $scope.currentDecision = null;
-          // clear answers prepping for next question (can move into above-mentioned)
-          $scope.currentAnswers = [];
-          $scope.currentOther.present = false;
-          $scope.currentOther.text = null;
-          $scope.currentOther.answerId = null;
+        // clear decision prepping for next question (can move to own method)
+        $scope.currentDecisionDestination = null;
+        $scope.currentDecision = null;
+        // clear answers prepping for next question (can move into above-mentioned)
+        $scope.currentAnswers = [];
+        $scope.currentOther.present = false;
+        $scope.currentOther.text = null;
+        $scope.currentOther.answerId = null;
+        $scope.currentTimeInterval = 0;
 
-          //for debugging:
-          $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
+        //for debugging:
+        $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
+
+
+        // TODO: this is gross and should be handled in a better way. not least of all
+        //       because it needs to be replicated up in the setup in the case of reloads
+        // set default for gps question and other templates-specific settings
+        if($scope.currentNode.template_name === "dp-1" || $scope.currentNode.template_name === "dp-6"){
+          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
+          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+        } else if($scope.currentNode.template_name === "dp-3"){
+          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Continue circling around terminal"});
+          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+        } else if($scope.currentNode.template_name === "e-1"){
+          $scope.setShowDashboard(false);
+        }
       };
 
       var answersForParams = function(answersArray) {
@@ -207,7 +274,11 @@ angular.module('lawaApp')
         })
       }
 
-      $scope.submit = function(decisionId){
+      $scope.submit = function(decisionId, decreaseTime){
+        if(decreaseTime){
+          $scope.currentTimeElapsed += 5;
+          $scope.currentFlightTimeRemaining -= 5;
+        };
         if($scope.currentOther.present){
           var freeformResponse = $scope.currentOther.text;
           var freeformAnswerId = $scope.currentOther.answerId;
@@ -216,7 +287,7 @@ angular.module('lawaApp')
         };
 
         var paramSafeAnswers = answersForParams($scope.currentAnswers);
-        var params = {
+        var responseParams = {
           is_decision: $scope.currentNode.is_decision_point,
           respondent_id: $scope.respondentId,
           node_id: $scope.currentNode.node_id,
@@ -225,9 +296,16 @@ angular.module('lawaApp')
           next_node_id: $scope.currentNode.next_node_id || $scope.currentDecisionDestination.node_id,
           freeform_response: { response: freeformResponse, answer_id: freeformAnswerId } || null
         }
-        $http.post('/api/response', { response: params }).success(function(data){
-          // post to API and then on success:
-          $scope.goToNextNode();
+        var respondentParams = {
+          time_elapsed: $scope.currentTimeElapsed,
+          flight_time_remaining: $scope.currentFlightTimeRemaining
+        }
+        $http.post('/api/response', { response: responseParams }).success(function(data){
+          // post to response to API and then on success update session flight information:
+          $http.post('/api/respondents/update', respondentParams).success(function(){
+            // finally, go to the next node:
+            $scope.goToNextNode();
+          })
         });
       };
 
