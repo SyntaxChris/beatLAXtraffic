@@ -123,14 +123,14 @@
 		.selection-container{
 			display: none;
 			position: absolute;
-			top: 0;
+			top: 1%;
 			width: 94%;
-			padding-top: 13%;
+			padding-top: 15%;
 			background-color: white;
 			border-radius: 40px;
 			text-align: center;
 			color: #24B7EA;
-			font-size: 2.1vw;
+			font-size: 1.8vw;
 			.row{
 				padding-left: 5%;
 				padding-right: 5%;
@@ -146,6 +146,13 @@
 				cursor: pointer;
 				width: 95%;
 				height: 95%;
+			}
+			svg:hover{
+				-webkit-animation: spin 0.4s;
+      			-moz-animation: spin 0.4s;
+      			-o-animation: spin 0.4s;
+      			-ms-animation: spin 0.4s;
+      			animation: spin 0.4s;
 			}
 		}
 	}
@@ -176,6 +183,27 @@
   0% {-webkit-transform:rotate(7deg);}
   50% {-webkit-transform:rotate(-7deg);}
   100% {-webkit-transform:rotate(7deg);}
+}
+
+@-webkit-keyframes spin {
+  0% {-webkit-transform:rotate(0deg);}
+  100% {-webkit-transform:rotate(360deg);}
+}
+@-moz-keyframes spin {
+  0% {-webkit-transform:rotate(0deg);}
+  100% {-webkit-transform:rotate(360deg);}
+}
+@-o-keyframes spin {
+  0% {-webkit-transform:rotate(0deg);}
+  100% {-webkit-transform:rotate(360deg);}
+}
+@-ms-keyframes spin {
+  0% {-webkit-transform:rotate(0deg);}
+  100% {-webkit-transform:rotate(360deg);}
+}
+@keyframes spin {
+  0% {-webkit-transform:rotate(0deg);}
+  100% {-webkit-transform:rotate(360deg);}
 }
 
 
