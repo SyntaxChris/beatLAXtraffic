@@ -91,11 +91,10 @@ namespace :populate do
 
     c2 = Node.create(nickname: "C 2", is_decision_point: false , branch_id: wait_offsite_branch.id, template_name: "c-2")
       c2q = Question.create(node_id: c2.id, question: "How long do you expect to wait before driving into the terminal area?", question_type_id: single_choice.id)
-        c2a1= Answer.create(question_id: c2q.id, answer: "Less than 15 minutes", icon_name: nil)
-        c2a2= Answer.create(question_id: c2q.id, answer: "15 - 30 minutes", icon_name: nil)
-        c2a3= Answer.create(question_id: c2q.id, answer: "30 - 60 minutes", icon_name: nil)
-        c2a4= Answer.create(question_id: c2q.id, answer: "60 - 90 minutes", icon_name: nil)
-        c2a4= Answer.create(question_id: c2q.id, answer: "More than 90 minutes", icon_name: nil)
+        c2a1= Answer.create(question_id: c2q.id, answer: "Less than 15 minutes", icon_name: nil, custom_order: 2)
+        c2a2= Answer.create(question_id: c2q.id, answer: "15 - 30 minutes", icon_name: nil, custom_order: 4)
+        c2a3= Answer.create(question_id: c2q.id, answer: "30 - 60 minutes", icon_name: nil, custom_order: 3)
+        c2a4= Answer.create(question_id: c2q.id, answer: "More than 60 minutes", icon_name: nil, custom_order: 1)
 
     c4 = Node.create(nickname: "C 4", is_decision_point: false , branch_id: wait_offsite_branch.id, template_name: "c-4")
       c4q = Question.create(node_id: c4.id, question: "What is the longest you are willing to wait for your passenger?", question_type_id: single_choice.id)
@@ -229,10 +228,18 @@ namespace :populate do
 
     # TODO: need to re-do 7s. consult updated map
     dp7 = Node.create(nickname: "DP 7", is_decision_point: true , branch_id: wait_offsite_branch.id, template_name: "dp-7")
-      dp7dp = DecisionPoint.create(node_id: dp7.id, situation: "The passenger is late. What do you do next?")
-        dp7d1 = Decision.create(decision_point_id: dp7dp.id, decision: "Go park in the terminal parking area", destination_node_id: b1.id)
-        dp7d2 = Decision.create(decision_point_id: dp7dp.id, decision: "Hope to catch your passenger at the curb", destination_node_id: a2.id)
-        dp7d3 = Decision.create(decision_point_id: dp7dp.id, decision: "Keep waiting", destination_node_id: c4.id)
+      dp7dp = DecisionPoint.create(node_id: dp7.id, situation: "Has your passenger called to be picked up?")
+        dp7d1 = Decision.create(decision_point_id: dp7dp.id, decision: "Yes", destination_node_id: e1.id)
+        dp7d2 = Decision.create(decision_point_id: dp7dp.id, decision: "No", destination_node_id: dp8.id)
+
+    # dp8 = Node.create(nickname: "DP 8", is_decision_point: true , branch_id: wait_offsite_branch.id, template_name: "dp-8")
+    #   dp8dp = DecisionPoint.create(node_id: dp8.id, situation: "Your pick-up isn't calling and you can't reach them. What do you do now?")
+        # TODO: ask ivan - does it make sense to try and call them if the plane hasn't landed...?
+        # TODO: check the destinations below
+    #     dp8d1 = Decision.create(decision_point_id: dp8dp.id, decision: "Go park in the terminal parking area", destination_node_id: b1.id)
+    #     dp8d2 = Decision.create(decision_point_id: dp8dp.id, decision: "Hope to catch your passenger at the curb", destination_node_id: a2.id)
+    #     dp8d3 = Decision.create(decision_point_id: dp8dp.id, decision: "Keep waiting", destination_node_id: c4.id)
+    #     dp8d4 = Decision.create(decision_point_id: dp8dp.id, decision: "Go to an offsite location", #something about itf
 
     dp7a = Node.create(nickname: "DP 7a", is_decision_point: true , branch_id: wait_offsite_branch.id, template_name: "dp-7a")
       dp7adp = DecisionPoint.create(node_id: dp7a.id, situation: "Is the passenger late?")

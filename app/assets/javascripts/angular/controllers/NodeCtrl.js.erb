@@ -38,7 +38,9 @@ angular.module('lawaApp')
                 '/assets/partials/b-2.html',
                 '/assets/partials/b-3.html',
                 '/assets/partials/dp-5.html',
-                '/assets/partials/b-4.html'
+                '/assets/partials/b-4.html',
+                '/assets/partials/c-1.html',
+                '/assets/partials/c-2.html'
               ];
               $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
             ///////////template_name
@@ -221,7 +223,6 @@ angular.module('lawaApp')
           $scope.currentOther.present = false;
           $scope.currentOther.text = null;
           $scope.currentOther.answerId = null;
-
 
           //for debugging:
           $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
