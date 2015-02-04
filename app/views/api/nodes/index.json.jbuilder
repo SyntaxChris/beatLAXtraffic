@@ -1,5 +1,6 @@
 json.array! @nodes do |node|
   json.node_id node.id
+  json.template_name node.template_name
   json.is_decision_point node.is_decision_point
 
   if node.is_decision_point

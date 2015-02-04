@@ -30,8 +30,8 @@ $(document).ready(function(){
 
   }
 
-  function updateTimerCount(){
-    $body.find('#willing-to-wait .timer-number').text(timerCount);
-  }
+  // function updateTimerCount(){
+  //   $body.find('#willing-to-wait .timer-number').text(timerCount);
+  // }
 
 });
