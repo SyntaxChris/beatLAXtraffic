@@ -1,7 +1,10 @@
 #clock-questions{
 	#clock-container {
 		text-align: center;
-
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
 		#q-pnl{
 			position: relative;
 			z-index: 5;
@@ -14,7 +17,7 @@
 				width: 100%;
 				color: white;
 				font-weight: 700;
-				font-size: 1.6vw;
+				font-size: 1.3vw;
 				text-shadow: 0 0 10px rgba(0,0,0,.3);
 				text-align: center;
 				#text-0,
@@ -74,6 +77,22 @@
 		padding-top: 12px;
 		bottom: 0px;
 		color: white;
+	}
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 640px) {
+	#clock-questions{
+		#clock-container {
+			width: 70%;
+		}
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	#clock-questions{
+		#clock-container {
+			width: 100%;
+		}
 	}
 }
 

@@ -127,7 +127,7 @@
           </div>
         </div>
 
-        <div class="row" style="text-align: center; margin:0;">
+        <div class="row" style="text-align: center; margin:0; margin-top: 20px;">
 
           <div class="large-3 medium-3 small-3 columns traffic-level-label">
             <div ng-include="'<%= asset_path 'svgs/_home.html' %>'"></div>
@@ -144,26 +144,16 @@
           </div>
         </div>
 
-        <div class="row" style="text-align: center; margin: 0">
-          <div class="large-8 medium-8 small-8 large-centered medium-centered small-centered columns">
-            <div class="large-3 medium-3 small-3 columns traffic-label">Slow</div>
-            <div  class="large-2 medium-2 small-2 columns" style="padding: 0">
-              <div class="slow"></div>
-            </div>
-            <div class="large-2 medium-2 small-2 columns" style="padding: 0">
-              <div class="medium"></div>
-            </div>
-            <div class="large-2 medium-2 small-2 columns" style="padding: 0">
-              <div class="fast"></div>
-            </div>
-            <div class="large-3 medium-3 small-3 columns traffic-label rt">Fast</div>
-          </div>
-        </div>
-        <div class="row" style="text-align: center; margin: 0; padding-bottom: 20px;">
+        <div class="row" style="text-align: center; margin: 0;">
           <div class="large-10 medium-10 small-10 large-centered medium-centered small-centered columns">
             LAX Traffic Level
           </div>
         </div>
+
+        <div ng-class="variables.traffic_level " class="row" style="text-align: center; margin: 10px 0 0 0;">
+          {{variables.traffic_level | uppercase}}
+        </div>
+
       </div>
 
       <div id="stage-2-btn">
