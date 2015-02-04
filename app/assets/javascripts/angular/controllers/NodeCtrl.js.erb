@@ -101,7 +101,7 @@ angular.module('lawaApp')
             text: null, answerId: null
           };
           $scope.currentTimeInterval = 0;
-          // TODO: use time from current respondent if there is any:
+          // TODO: use currentTimeElapsed from session if it has one:
           $scope.currentTimeElapsed = 0;
         });
 
@@ -202,10 +202,16 @@ angular.module('lawaApp')
           $scope.currentOther.answerId = answerId;
         };
       };
+      $scope.addTimesCircled = function(circleAmount) {
+        $scope.variables.times_circled = Math.max(0, ($scope.variables.times_circled += circleAmount));
+          $scope.addSingleChoice($scope.currentNode.answers[0])
+          $scope.determineOtherText($scope.variables.times_circled, $scope.currentAnswers[0].id);
+          $scope.currentOther.text = $scope.variables.times_circled;
+      }
 
       $scope.addTimeInterval = function(timeAmount) {
         if($scope.currentTimeInterval >= 0){
-          $scope.currentTimeInterval = Math.max(0, ($scope.currentTimeInterval += timeAmount))
+          $scope.currentTimeInterval = Math.max(0, ($scope.currentTimeInterval += timeAmount));
           $scope.addSingleChoice($scope.currentNode.answers[0])
           $scope.determineOtherText($scope.currentTimeInterval, $scope.currentAnswers[0].id);
           $scope.currentOther.text = $scope.currentTimeInterval;

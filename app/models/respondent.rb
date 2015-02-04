@@ -49,6 +49,7 @@ class Respondent < ActiveRecord::Base
     self.original_who_picking_up = Respondent.evenly_distributed_pickup_target
     self.travel_companion = [true,false].sample
     self.landing_time = TIME_TILL_LANDS.sample
+    self.times_circled = 0
     self.save
   end
 
