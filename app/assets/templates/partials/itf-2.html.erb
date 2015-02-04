@@ -64,29 +64,32 @@
         </div>
       </div>
 
-      <div ng-repeat="answer in currentNode.answers">
-        <div ng-click="addAnswerToCurrentAnswers(answer)">{{ answer.answer }}</div>
-      </div>
+
 
 
       <div class="large-5 medium-5 small-12 columns">
         <div class="icon-container">
+          <div ng-repeat="answer in currentNode.answers">
+            <div ng-click="addAnswerToCurrentAnswers(answer)">
+              <div ng-include="getAnswerIconPath(answer.id)"></div>
+            </div>
+          </div>
           
           <div class="row">
-            <div class="small-4 columns">
-              <div class="icon-holder">
-                <div ng-include="answer.iconPath">
-                <div ng-include="'<%= asset_path 'svgs/_dog.html' %>'"></div>
+              <div class="small-4 columns">
+                <div class="icon-holder">
+                  <div ng-include="'<%= asset_path 'svgs/_dog.html' %>'"></div>
+                </div>
               </div>
-            </div>
-            <div class="small-4 columns">
-              <div class="icon-holder">
-                <div ng-include="'<%= asset_path 'svgs/_couch.html' %>'"></div>
+              <div class="small-4 columns">
+                <div class="icon-holder">
+                  <div ng-include="'<%= asset_path 'svgs/_couch.html' %>'"></div>
+                </div>
               </div>
-            </div>
-            <div class="small-4 columns">
-              <div class="icon-holder">
-                <div ng-include="'<%= asset_path 'svgs/_family.html' %>'"></div>
+              <div class="small-4 columns">
+                <div class="icon-holder">
+                  <div ng-include="'<%= asset_path 'svgs/_family.html' %>'"></div>
+                </div>
               </div>
             </div>
           </div>

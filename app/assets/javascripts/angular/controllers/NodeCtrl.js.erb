@@ -384,7 +384,15 @@ angular.module('lawaApp')
         return templates[nodeId].template;
       }
 
-      // TODO:
+      var iconPaths = {}
+      <% Answer.all.each do |a| %>
+        <%= "iconPaths['#{a.id}'] = {iconPath: '#{asset_path "svgs/_#{a.icon_name}.html"}'}" %>
+      <% end%>
+
+      $scope.getAnswerIconPath = function(answerId){
+        return iconPaths[answerId].iconPath;
+      }
+
       //get all icon paths for answers
       // go through all answers in RUBY, create an icon path from their icon-name
       // follow pattern of above of adding answer by id with icon_path
