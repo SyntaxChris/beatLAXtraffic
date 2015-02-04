@@ -1,22 +1,23 @@
 
 #tile-questions{
 	.tile-bbl{
-		margin-top: 5%;
+		margin-top: 25%;
 		text-align: center;
 
 		.tile-checkmark{
 			position: absolute;
 			right: 22%;
-			top: 2%;
-      z-index: 2;
+			// top: 0;
+			margin-top: -4%;
+      		z-index: 2;
 		}
 
 		.tile{
-      width: 50%;
-      position: relative;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
+      		width: 50%;
+      		position: relative;
+      		margin-left: auto;
+      		margin-right: auto;
+      		text-align: center;
 			svg {
 				cursor: pointer;
 				width: 100%%;
@@ -67,8 +68,10 @@
 	.tile-title{
 		text-align: center;
 		color: white;
+		font-size: 1.3vw;
 		font-weight: 700;
 		text-shadow: 0 0 10px rgba(0,0,0,.3);
+		margin-bottom: 20%;
 	}
 
 	.row{
@@ -76,7 +79,7 @@
 		.tile-next{
 			display: none;
 			cursor: pointer;
-			margin-top: 3%;
+			// margin-top: 3%;
 			position: relative;
 			margin-left: auto;
 			margin-right: auto;
@@ -107,10 +110,107 @@
 
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (max-width: 640px) {
 
 	.sub-header{
-		margin-bottom: 15%;
+		margin-bottom: 7%;
+	}
+
+	#tile-questions{
+		.tile-bbl{
+			margin-top: -10%;
+			text-align: center;
+
+			.tile-checkmark{
+				position: absolute;
+				left: 65%;
+				top: -15%;
+	      		z-index: 2;
+			}
+
+			.tile{
+	      		width: 50%;
+	      		position: relative;
+	      		margin-left: auto;
+	      		margin-right: auto;
+	      		text-align: center;
+				svg {
+					cursor: pointer;
+					width: 100%%;
+					height: 100%;
+				}	
+			}
+
+			#phone svg:hover, #phone svg:active {
+				#phone-background{
+					fill: #EF8E4B;
+				}
+				#phone-shadow {
+					fill: #FC9C52;
+				}
+			}
+
+			
+			#shop svg:hover, #shop svg:active {
+				#shop-background{
+					fill: #F2A700;
+				}
+				#shop-shadow {
+					fill: #F7C001;
+				}
+			}
+
+			
+			#hang-out svg:hover, #hang-out svg:active {
+				#hang-out-background{
+					fill: #3AB1D6;
+				}
+				#hang-out-shadow {
+					fill: #39BAD8;
+				}
+			}
+
+			
+			#eat svg:hover, #eat svg:active {
+				#eat-background{
+					fill: #4983C9;
+				}
+				#eat-shadow {
+					fill: #558AD8;
+				}
+			}
+		}
+
+		.tile-title{
+			position: relative;
+			width: 70%;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+			color: white;
+			font-size: 2.8vw;
+			font-weight: 700;
+			text-shadow: 0 0 10px rgba(0,0,0,.3);
+			margin-bottom: 20%;
+		}
+
+		.row{
+			text-align: center;
+			.tile-next{
+				display: none;
+				cursor: pointer;
+				margin-top: -10%;
+				position: relative;
+				margin-left: auto;
+				margin-right: auto;
+				width: 150px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				border-radius: 5px;
+				color: white;
+				background-color: #079BED;
+			}
+		}
 	}
 
 }
