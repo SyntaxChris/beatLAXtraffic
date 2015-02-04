@@ -54,7 +54,9 @@ angular.module('lawaApp')
                 '/assets/partials/dp-6.html',
                 '/assets/partials/dp-10.html',
                 '/assets/partials/dp-11.html',
-                '/assets/partials/e-1.html'
+                '/assets/partials/e-1.html',
+                '/assets/partials/e-2.html',
+                '/assets/partials/e-3.html'
               ];
               $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
             ///////////template_name
@@ -101,8 +103,6 @@ angular.module('lawaApp')
             text: null, answerId: null
           };
           $scope.currentTimeInterval = 0;
-          // TODO: use currentTimeElapsed from session if it has one:
-          $scope.currentTimeElapsed = 0;
         });
 
         $scope.signColors = {
@@ -192,6 +192,24 @@ angular.module('lawaApp')
         debugger;
       }
 
+      // wrapper for all above answer selection options:
+      $scope.addAnswerToCurrentAnswers = function(answer, rank){
+        if($scope.currentNode.question.question_type === "select-one") {
+          $scope.addSingleChoice(answer);
+        } else if ($scope.currentNode.question.question_type === "select-multiple") {
+          $scope.addMultipleChoice(answer);
+        } else if ($scope.currentNode.question.question_type === "rank") {
+          $scope.addRankedChoice(answer, rank);
+        };
+      };
+
+      // if experience should movee on without 'submit' button:
+      $scope.immediateSubmitAnswer = function(answer){
+        $scope.addAnswerToCurrentAnswers(answer);
+        $scope.submit(null, true);
+      };
+
+      // for freeform responses:
       $scope.determineOtherText = function(currentOtherText, answerId) {
         if($scope.currentOtherText === null){
           $scope.currentOther.present = false;
@@ -202,11 +220,26 @@ angular.module('lawaApp')
           $scope.currentOther.answerId = answerId;
         };
       };
+
       $scope.addTimesCircled = function(circleAmount) {
         $scope.variables.times_circled = Math.max(0, ($scope.variables.times_circled += circleAmount));
           $scope.addSingleChoice($scope.currentNode.answers[0])
           $scope.determineOtherText($scope.variables.times_circled, $scope.currentAnswers[0].id);
           $scope.currentOther.text = $scope.variables.times_circled;
+      }
+
+      $scope.addTimeElapsed = function(elapsedAmount) {
+        // this one doesn't actually change the time_elapsed variable in the session,
+        // it only posts the change to the responses api so we can record it for 
+        // survey puposes. it's good to keep both to compare
+        if($scope.adjustedTimeElapsed === undefined){
+          $scope.adjustedTimeElapsed = Math.max(0, ($scope.variables.time_elapsed + elapsedAmount));
+        }else{
+          $scope.adjustedTimeElapsed = Math.max(0, ($scope.adjustedTimeElapsed += elapsedAmount));
+        };
+          $scope.addSingleChoice($scope.currentNode.answers[0])
+          $scope.determineOtherText($scope.adjustedTimeElapsed, $scope.currentAnswers[0].id);
+          $scope.currentOther.text = $scope.adjustedTimeElapsed;
       }
 
       $scope.addTimeInterval = function(timeAmount) {
@@ -218,21 +251,7 @@ angular.module('lawaApp')
         };
       }
 
-      $scope.addAnswerToCurrentAnswers = function(answer, rank){
-        if($scope.currentNode.question.question_type === "select-one") {
-          $scope.addSingleChoice(answer);
-        } else if ($scope.currentNode.question.question_type === "select-multiple") {
-          $scope.addMultipleChoice(answer);
-        } else if ($scope.currentNode.question.question_type === "rank") {
-          $scope.addRankedChoice(answer, rank);
-        };
-      };
-
-      $scope.immediateSubmitAnswer = function(answer){
-        $scope.addAnswerToCurrentAnswers(answer);
-        $scope.submit(null, true);
-      };
-
+      // a bunch of things to do in between nodes:
       $scope.goToNextNode = function(){
         if(!$scope.currentNode.is_decision_point){
           // go to next node based on current Q's destination
@@ -281,10 +300,19 @@ angular.module('lawaApp')
       }
 
       $scope.submit = function(decisionId, decreaseTime){
+        // user doesn't add time to time elapsed guess, but we need to record the answer anyway:
+        if($scope.currentNode.template_name === 'e-3' && $scope.adjustedTimeElapsed === undefined){
+          $scope.addTimeElapsed(0);
+        }
+
+        // time should count down for plane landing and up for total time elapsed
+        // for this submit click:
         if(decreaseTime){
-          $scope.currentTimeElapsed += 5;
-          $scope.currentFlightTimeRemaining -= 5;
+          $scope.variables.time_elapsed += 5;
+          $scope.variables.flight_time_remaining -= 5
         };
+
+        // there is a freeform_response for this submit click:
         if($scope.currentOther.present){
           var freeformResponse = $scope.currentOther.text;
           var freeformAnswerId = $scope.currentOther.answerId;
@@ -292,6 +320,7 @@ angular.module('lawaApp')
           var freeformResponse = null;
         };
 
+        // set up params for posting:
         var paramSafeAnswers = answersForParams($scope.currentAnswers);
         var responseParams = {
           is_decision: $scope.currentNode.is_decision_point,
@@ -303,8 +332,9 @@ angular.module('lawaApp')
           freeform_response: { response: freeformResponse, answer_id: freeformAnswerId } || null
         }
         var respondentParams = {
-          time_elapsed: $scope.currentTimeElapsed,
-          flight_time_remaining: $scope.currentFlightTimeRemaining
+          time_elapsed: $scope.variables.time_elapsed,
+          flight_time_remaining: $scope.variables.flight_time_remaining,
+          times_circled: $scope.variables.times_circled
         }
         $http.post('/api/response', { response: responseParams }).success(function(data){
           // post to response to API and then on success update session flight information:
@@ -315,10 +345,7 @@ angular.module('lawaApp')
         });
       };
 
-      $scope.getMinigameName = function(area){
-          return minigames[area.minigame_type_id].name;
-      };
-
+      // set up object with all template names from database:
       var templates = {}
       <% Node.all.each do |node| %>
           <% if !node.is_decision_point %>
