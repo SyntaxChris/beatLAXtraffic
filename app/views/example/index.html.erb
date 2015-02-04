@@ -216,17 +216,17 @@
 
         <div class="row" style="text-align: center; margin: 0">
           <div class="large-8 medium-8 small-8 large-centered medium-centered small-centered columns">
-            <div class="large-3 medium-3 small-3 columns" style="font-size: 12px; color: #808080">Fast</div>
+            <div class="large-3 medium-3 small-3 columns traffic-label" style="text-align: center">Slow</div>
             <div  class="large-2 medium-2 small-2 columns" style="padding: 0">
-              <div class="fast"></div>
+              <div class="slow"></div>
             </div>
             <div class="large-2 medium-2 small-2 columns" style="padding: 0">
               <div class="medium"></div>
             </div>
             <div class="large-2 medium-2 small-2 columns" style="padding: 0">
-              <div class="slow"></div>
+              <div class="fast"></div>
             </div>
-            <div class="large-3 medium-3 small-3 columns" style="font-size: 12px; text-align: left; color: #808080">Slow</div>
+            <div class="large-3 medium-3 small-3 columns traffic-label rt">Fast</div>
           </div>
         </div>
         <div class="row" style="text-align: center; margin: 0; padding-bottom: 20px;">
@@ -1069,18 +1069,9 @@
     </div>
     <!-- END TIMER QUESTIONS -->
 
-
-  
-
-
-
-
-
-
-
     <!-- PAGES 8 - 13 ARE OUTSIDE OF THIS CONTAINER -->
 
-    <!-- TODO: 15. RAIL SYSTEM QUESTIONS -->
+    <!-- 15. RAIL SYSTEM QUESTIONS -->
     <div id="rail-system" class="part-1 slide" style="padding-top: 10%" data-currentnode="18" data-nextnode="19">
         <div class="stage-1">
           <div class="question-bubble">
@@ -1120,193 +1111,155 @@
     <!-- END RAIL SYSTEM QUESTIONS -->
 
 
+
     <!-- 17. ICON QUESTIONS -->
     <div id="icon-questions" class="slide" data-currentnode="19" data-nextnode="20">
-      <div class="row">
-        <h3 class="main-question">Imagine that you could customize this future location.</h3>
-      </div>
-      <div class="row" id="icons-large-screen" style="margin-top: 90px;">
-        <div class="large-6 medium-6 small-6 columns">
-          <div id="drop-box">
-            <div id="title">Pick your top 3 desired amenities</div>
-            <div id="dotted-circle-row">
-              <div id="circle-1">
-                <div class="icon-holder" id="1" style="position:absolute; left: 115px; top: 138px">1</div>
-              </div>
-              <div id="circle-2">
-                <div class="icon-holder" id="2" style="position:absolute; left: 205px; top: 138px">2</div>
-              </div>
-              <div id="circle-3">
-                <div class="icon-holder" id="3" style="position:absolute; left: 296px; top: 138px">3</div>
-              </div>
-            </div>
-            <div id="icon-place-holder-row">
-              <div id="holder-1"></div>
-              <div id="holder-2"></div>
-              <div id="holder-3"></div>
-            </div>
-            <div class="submit-row" style="display: none">
-              <div id="icon-submit" class="emergency-next">Next</div>
-            </div>
-          </div>
-        </div>
-        <div class="large-6 medium-6 small-6 columns">
-          <div id="icon-box">
-            <div class="icon" id="dog">
-              <%= render 'dog' %>
-              <div style="display:none">A dog run/relief area</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="couch">
-              <%= render 'couch' %>
-              <div style="display:none">A comfortable place to wait for my passenger</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="family">
-              <%= render 'family' %>
-              <div style="display:none">A childrens Play Area</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="computer">
-              <%= render 'computer' %>
-              <div style="display:none">A way to make sure I know my passenger's flight status</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="food">
-              <%= render 'food' %>
-              <div style="display:none">A place to get food or coffee</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="wifi">
-              <%= render 'wifi' %>
-              <div style="display:none">Wifi</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="parking">
-              <%= render 'parking' %>
-              <div style="display:none">Free short-term parking</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="exit">
-              <%= render 'exit' %>
-              <div style="display:none">Easy ways to get in and out of the location</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="help-desk">
-              <%= render 'helpdesk' %>
-              <div style="display:none">Passenger Assistance</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-          </div>
-          <div id="icon-pop-up" style="display: none">
-            <div class="i-want">I want...</div>
-            <div id="icon-description"></div>
-            <div id="choice-row">
-              <div id="yea">
-                <%= render 'yea' %>
-              </div>
-              <div id="nah">
-                <%= render 'nah' %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="icons-small-screen">
-          <div id="holder-and-description-row">
-            <div id="dotted-circle-row">
-              <div id="icon-holder-description">
-                  Pick your top 3 amenities
-              </div>
-              <div id="circle-1">
-                <div id="one">1</div>
-                <div id="holder-1-small"></div>
-              </div>
-              <div id="circle-2">
-                <div id="two">2</div>
-                <div id="holder-2-small"></div>
-              </div>
-              <div id="circle-3">
-                <div id="three">3</div>
-                <div id="holder-3-small"></div>
-              </div>
-            </div>
-          </div>
     
-          <div id="icon-box-small">
-            <div class="icon" id="dog">
-              <%= render 'dog' %>
-              <div style="display:none;">Dog run/relief area</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="couch">
-              <%= render 'couch' %>
-              <div style="display:none;">A comfortable place to wait for my passenger</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="family">
-              <%= render 'family' %>
-              <div style="display:none;">A childrens Play Area</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
+      <div class="large-12 medium-12 small-12 columns">
+
+        <div class="row">
+          <h3 class="main-question">
+            Imagine that you could customize this future location
+          </h3>
+        </div>
+
+
+        <div class="row">
+        
+          <div class="large-7 medium-7 small-12 columns">
+            
+
+            <div class="answer-container">
+
+              <div class="row no-gutter">
+                <div class="ac-header">
+                  Pick your top 3 desired amenities
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="small-9 small-centered columns">
+                  
+                  <div class="row holder">
+                    <div class="small-4 columns">
+                      <div class="icon-holder">
+                        1
+                        <div class="clone-container"></div>
+                        <div class="icon-remove">
+                          <%= render 'removeIcon' %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="small-4 columns">
+                      <div class="icon-holder">
+                        2
+                        <div class="clone-container"></div>
+                        <div class="icon-remove">
+                          <%= render 'removeIcon' %>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="small-4 columns">
+                      <div class="icon-holder">
+                        3
+                        <div class="clone-container"></div>
+                        <div class="icon-remove">
+                          <%= render 'removeIcon' %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="next-btn">Next</div>
 
             </div>
-            <div class="icon" id="computer">
-              <%= render 'computer' %>
-              <div style="display:none;">A way to make sure I know my passenger's flight status</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="food">
-              <%= render 'food' %>
-              <div style="display:none;">A place to get food or coffee</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="wifi">
-              <%= render 'wifi' %>
-              <div style="display:none;">Wifi</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="parking">
-              <%= render 'parking' %>
-              <div style="display:none;">Free short-term parking</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="exit">
-              <%= render 'exit' %>
-              <div style="display:none;">easy ways to get in and out of the location</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div class="icon" id="help-desk">
-              <%= render 'helpdesk' %>
-              <div style="display:none;">Passenger Assistance</div>
-              <div class="remove-icon" style="display: none"><%= render 'removeIcon' %></div>
-            </div>
-            <div id="icon-pop-up-small" style="display: none">
-              <div class="i-want">I want...</div>
-              <div id="discription-group">
-                <div id="icon-description-small"></div>
-                <div id="choice-row">
-                  <div id="yea-small">
-                    <%= render 'yea' %>
+          </div>
+
+
+
+          <div class="large-5 medium-5 small-12 columns">
+            <div class="icon-container">
+              
+              <div class="row">
+                <div class="small-4 columns">
+                  <div class="icon-holder">
+                    <%= render 'dog' %>
                   </div>
-                  <div id="nah-small">
-                    <%= render 'nah' %>
+                </div>
+                <div class="small-4 columns">
+                  <div class="icon-holder">
+                    <%= render 'couch' %>
+                  </div>
+                </div>
+                <div class="small-4 columns">
+                  <div class="icon-holder">
+                    <%= render 'family' %>
                   </div>
                 </div>
               </div>
               
-              <div class="submit-row" style="display:none">
-                <div id="icon-submit">Next</div>
+              <div class="row">
+                <div class="small-4 columns">
+                  <div class="icon-holder">
+                    <%= render 'computer' %>
+                  </div>
+                </div>
+                <div class="small-4 columns">
+                  <div class="icon-holder">
+                    <%= render 'food' %>
+                  </div>
+                </div>
+                <div class="small-4 columns">
+                  <div class="icon-holder">
+                    <%= render 'wifi' %>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="small-4 columns">
+                  <div class="icon-holder">
+                    <%= render 'parking' %>
+                  </div>
+                </div>
+                <div class="small-4 columns">
+                  <div class="icon-holder">
+                    <%= render 'exit' %>
+                  </div>
+                </div>
+                <div class="small-4 columns">
+                  <div class="icon-holder">
+                    <%= render 'helpdesk' %>
+                  </div>
+                </div>
+              </div>
+
+              <div class="selection-container">
+                <div class="row no-gutter needy">I want...</div>
+                <div class="row no-gutter">Dynamic answer magic here</div>
+                <div class="row no-gutter">
+                  <div class="large-10 medium-10 small-10 large-centered medium-centered small-centered columns">
+                    <div class="row">
+                      <div class="large-6 medium-6 small-6 columns"><%= render 'yea' %></div>
+                      <div class="large-6 medium-6 small-6 columns"><%= render 'nah' %></div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
             </div>
+
           </div>
 
-            
         </div>
+
       </div>
     </div>
     <!-- END ICON QUESTIONS -->
+
 
 
     <!-- 14. LAST QUESTION SET -->
