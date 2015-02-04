@@ -124,7 +124,6 @@ angular.module('lawaApp')
       $scope.restart = function(){
         // TODO: post to some api restart route that clears cookies, etc.
       }
-
       $scope.nodeIncludedInWhitelist = function(template_name){
         return _.contains($scope.nodesWorking, template_name);
       };
@@ -200,8 +199,13 @@ angular.module('lawaApp')
       };
 
       $scope.addRankedChoice = function(answer, rank) {
-        //TODO: need function for rank
-        debugger;
+        //TODO: Remove this
+        if (_.findWhere($scope.currentAnswers, answer)){
+          // answer is already in current list, remove it.
+          $scope.currentAnswers = _.without($scope.currentAnswers, _.findWhere($scope.currentAnswers, answer));
+        } else {
+          $scope.currentAnswers.push(answer);
+        }
       }
 
       // wrapper for all above answer selection options:
@@ -374,12 +378,17 @@ angular.module('lawaApp')
           <% elsif node.is_decision_point %>
             <%= "templates['#{node.id}'] = {template: '#{asset_path "partials/#{node.clean_template_name}.html"}'}" %>
           <% end %>
-
       <% end %>
 
       $scope.getTemplateName = function(nodeId){
         return templates[nodeId].template;
       }
+
+      // TODO:
+      //get all icon paths for answers
+      // go through all answers in RUBY, create an icon path from their icon-name
+      // follow pattern of above of adding answer by id with icon_path
+      // create function like above for answer icon path by answerId
 
       $scope.setup();
     }

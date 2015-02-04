@@ -70,7 +70,7 @@ namespace :populate do
       itf2q = Question.create(
         node_id: itf2.id,
         question: "Which of these amenities would you prioritize having? Select your top 3.",
-        question_type_id: rank.id
+        question_type_id: many_choice.id
       )
         itf2a1= Answer.create(question_id: itf2q.id, answer: "Free short-term parking", icon_name: nil)
         itf2a2= Answer.create(question_id: itf2q.id, answer: "A way to make sure I know the status of my passenger’s flight.", icon_name: nil)
@@ -233,7 +233,7 @@ namespace :populate do
         dp1d1 = Decision.create(decision_point_id: dp1dp.id, decision: "Park and meet your passenger inside the terminal", destination_node_id: b1.id)
         dp1d2 = Decision.create(decision_point_id: dp1dp.id, decision: "Hope to catch your passenger at the curb", destination_node_id: a1.id)
         dp1d3 = Decision.create(decision_point_id: dp1dp.id, decision: "Wait off site until passenger is ready to be picked up at the curb", destination_node_id: c1.id)
-        dp1d4 = Decision.create(decision_point_id: dp1dp.id, decision: "Meet at an offsite location that has a short train ride to the terminals", destination_node_id: itf2.id)
+        dp1d4 = Decision.create(decision_point_id: dp1dp.id, decision: "Meet at an offsite location that has a short train ride to the terminals", destination_node_id: ns4.id)
 
     dp8 = Node.create(nickname: "DP 8", is_decision_point: true , branch_id: wait_offsite_branch.id, template_name: "dp-8")
       dp8dp = DecisionPoint.create(node_id: dp8.id, situation: "Your pick-up isn't calling and you can't reach them. What do you do now?")
