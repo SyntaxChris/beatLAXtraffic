@@ -110,7 +110,7 @@ namespace :populate do
         b1a4= Answer.create(question_id: b1q.id, answer: "Other (Specify)", icon_name: nil)
 
     b2 = Node.create(nickname: "B 2", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-2")
-      b2q = Question.create(node_id: b2.id, question: "How long do you usually park for?", question_type_id: single_choice.id)
+      b2q = Question.create(node_id: b2.id, question: "You need to time your parking correctly. How much time will you put in the meter?", question_type_id: single_choice.id)
       # ^ this will need alt question text
         b2a1= Answer.create(question_id: b2q.id, answer: "Less than 30 minutes", icon_name: nil, custom_order: 2)
         b2a2= Answer.create(question_id: b2q.id, answer: "30 - 60 minutes", icon_name: nil, custom_order: 4)

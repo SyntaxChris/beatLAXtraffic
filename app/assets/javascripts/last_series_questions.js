@@ -3,8 +3,8 @@ $(document).ready(function(){
   var $body = $('body');
 
   $body.on('click', '.question-wrapper-1', function(){
-    $("#question-set-1").hide();
-    $("#question-set-2").fadeIn();
+   // $("#question-set-1").hide();
+   // $("#question-set-2").fadeIn();
   })
   .on('click',"#other-last", function(){
     if(otherBoxCount === 0){
@@ -17,8 +17,8 @@ $(document).ready(function(){
     }
   })
   .on('click', '.question-wrapper-2', function(){
-    $("#question-set-2").hide();
-    $("#question-set-3").fadeIn();
+    // $("#question-set-2").hide();
+    // $("#question-set-3").fadeIn();
   })
   .on('click', '.question-wrapper-3', function(){
     $('.question-wrapper-3').removeClass('q3-clicked');

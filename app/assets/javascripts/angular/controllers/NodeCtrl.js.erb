@@ -24,7 +24,10 @@ angular.module('lawaApp')
                 $scope.currentNode.template_name === "e-1" ||
                 $scope.currentNode.template_name === "e-2" ||
                 $scope.currentNode.template_name === "e-3" ||
-                $scope.currentNode.template_name === "e-4"
+                $scope.currentNode.template_name === "e-4" ||
+                $scope.currentNode.template_name === "e-5" ||
+                $scope.currentNode.template_name === "e-6" ||
+                $scope.currentNode.template_name === "e-7"
               ){
               $scope.setShowDashboard(false);
             // else if the home dashboard should be seen, show that.
@@ -58,7 +61,10 @@ angular.module('lawaApp')
                 '/assets/partials/dp-8.html',
                 '/assets/partials/e-1.html',
                 '/assets/partials/e-2.html',
-                '/assets/partials/e-3.html'
+                '/assets/partials/e-3.html',
+                '/assets/partials/e-4.html',
+                '/assets/partials/e-5.html',
+                '/assets/partials/e-6.html'
               ];
               $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
             ///////////template_name
@@ -114,6 +120,10 @@ angular.module('lawaApp')
           4: 'magenta'
         }
       };
+
+      $scope.restart = function(){
+        // TODO: post to some api restart route that clears cookies, etc.
+      }
 
       $scope.nodeIncludedInWhitelist = function(template_name){
         return _.contains($scope.nodesWorking, template_name);
@@ -205,10 +215,15 @@ angular.module('lawaApp')
         };
       };
 
-      // if experience should movee on without 'submit' button:
-      $scope.immediateSubmitAnswer = function(answer){
+      // if experience should move on without 'submit' button:
+      $scope.immediateSubmitAnswer = function(answer, timeAdvanceBoolean){
+        // if boolean argument is left out, advance time by default.
+        // only passing in 'false' is useful
+        if(timeAdvanceBoolean === undefined){
+          var timeAdvanceBoolean = true;
+        };
         $scope.addAnswerToCurrentAnswers(answer);
-        $scope.submit(null, true);
+        $scope.submit(null, timeAdvanceBoolean);
       };
 
       // for freeform responses:
@@ -225,9 +240,13 @@ angular.module('lawaApp')
 
       $scope.addTimesCircled = function(circleAmount) {
         $scope.variables.times_circled = Math.max(0, ($scope.variables.times_circled += circleAmount));
-          $scope.addSingleChoice($scope.currentNode.answers[0])
-          $scope.determineOtherText($scope.variables.times_circled, $scope.currentAnswers[0].id);
-          $scope.currentOther.text = $scope.variables.times_circled;
+        $scope.addSingleChoice($scope.currentNode.answers[0])
+        $scope.determineOtherText($scope.variables.times_circled, $scope.currentAnswers[0].id);
+        $scope.currentOther.text = $scope.variables.times_circled;
+      }
+
+      $scope.addOneToCircling = function(){
+        $scope.variables.times_cirled += 1;
       }
 
       $scope.addTimeElapsed = function(elapsedAmount) {
