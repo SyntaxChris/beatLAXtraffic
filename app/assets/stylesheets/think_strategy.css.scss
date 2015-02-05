@@ -49,6 +49,7 @@
 
 @media only screen and (min-width : 360px) { 
   #think-strategy {
+
     .thought-button {
       margin-top: -10px;
     }
@@ -79,10 +80,6 @@
       left: 10px;
       top: 20%;
       svg {
-        //-moz-transform: scaleX(-1);
-        //-o-transform: scaleX(-1);
-        //-webkit-transform: scaleX(-1);
-        //transform: scaleX(-1);
         filter: FlipH;
         -ms-filter: "FlipH";
         -webkit-transform: rotate(-25deg) scaleX(-1);
@@ -112,3 +109,42 @@
     }
   }
 }
+
+@media only screen and (max-width : 768px) {
+    #think-strategy {
+    .content-c {
+      position: absolute;
+      width: 100%;
+      height: 70%;
+      overflow: hidden;
+      overflow-y: scroll;
+
+    }
+    .thought-button {
+      margin-top: -10px;
+    }
+    .next-thought-btn {
+      margin-top: 0px;
+    }
+  }
+} 
+
+@media only screen and (max-width : 400px) {
+    #think-strategy {
+    .content-c {
+      position: absolute;
+      width: 100%;
+      height: 60%;
+ 
+      overflow: hidden;
+      overflow-y: scroll;
+
+    }
+    .thought-button {
+      margin-top: -10px;
+    }
+    .next-thought-btn {
+      margin-top: 0px;
+    }
+  }
+} 
