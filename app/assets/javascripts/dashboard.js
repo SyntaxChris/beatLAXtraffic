@@ -117,7 +117,7 @@ $(document).ready(function(){
         $('#counter-num').data('counter-number', currentMin)
     }
 
-    $body.on('click', '#plane-progress', function(){
+    $body.on('click', '.plane-advance', function(){
         movePlane();
     });
 
