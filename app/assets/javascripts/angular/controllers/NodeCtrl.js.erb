@@ -121,7 +121,6 @@ angular.module('lawaApp')
         }
 
         $scope.amenities = [];
-
       };
 
       $scope.restart = function(){
@@ -188,8 +187,27 @@ angular.module('lawaApp')
         $scope.currentDecisionDestination = $scope.fetchNodeById(decision.destination_node_id);
       };
 
+      $scope.setCurrentlyConsideredAmenity = function(answer){
+        // do nothing if already have three amenities:
+        if($scope.amenities.length === 3){
+          return;
+        }else{
+          // this will be triggerd on the "nah" X of the confirm popup:
+          if(answer === null){
+            $scope.currentlyConsideredAmenity = answer;
+            return;
+          }
+          if (_.findWhere($scope.amenities, answer)){
+            return;
+          }else{
+            $scope.currentlyConsideredAmenity = answer;
+          }
+        }
+      };
+
       // show numbers 1, 2, 3
       $scope.addToAmenities = function(answer){
+        $scope.setCurrentlyConsideredAmenity(null);
         if($scope.amenities.length === 3){
           if (_.findWhere($scope.amenities, answer)){
             // amenity is already in current list, remove it.

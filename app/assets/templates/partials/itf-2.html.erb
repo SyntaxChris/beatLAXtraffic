@@ -6,7 +6,8 @@
     <div class="row">
       <h3 class="main-question">
         Imagine that you could customize this future location
-        <br>amenities: {{ amenities }}</br>
+        <br>amenities: {{ amenities }}</br>currently considered amenity: {{ currentlyConsideredAmenity }}
+        <br> currently considered is null or undefined? {{ currentlyConsideredAmenity === null || currentlyConsideredAmenity === undefined }}
       </h3>
     </div>
 
@@ -23,8 +24,6 @@
             <div class="small-9 small-centered columns">
               <div class="row holder">
                 <div class="small-4 columns">
-                  <!-- need an angular if that either shows the number function,
-                       or the ng-include for the amenity at that index -->
                   <div ng-click="addToAmenities(amenities[0])" class="icon-holder">
                     1
                     <div ng-if="amenities[0] != null" ng-include="getAnswerIconPath(amenities[0].id)"></div>
@@ -35,8 +34,6 @@
                   </div>
                 </div>
                 <div class="small-4 columns">
-                  <!-- need an angular if that either shows the number function,
-                       or the ng-include for the amenity at that index -->
                   <div ng-click="addToAmenities(amenities[1])" class="icon-holder">
                     2
                     <div ng-if="amenities[1] != null" ng-include="getAnswerIconPath(amenities[1].id)"></div>
@@ -47,8 +44,6 @@
                   </div>
                 </div>
                 <div class="small-4 columns">
-                  <!-- need an angular if that either shows the number function,
-                       or the ng-include for the amenity at that index -->
                   <div ng-click="addToAmenities(amenities[2])" class="icon-holder">
                     3
                     <div ng-if="amenities[2] != null" ng-include="getAnswerIconPath(amenities[2].id)"></div>
@@ -61,23 +56,47 @@
               </div>
             </div>
           </div>
+          <!-- TODO: change over amenities array to current answers! -->
           <div class="next-btn">Next</div>
+          <!-- TODO: change over amenities array to current answers! -->
         </div>
       </div>
 
       <div class="large-5 medium-5 small-12 columns">
         <div class="icon-container">
-          <div ng-repeat="answer in currentNode.answers">
-            <div ng-click="addToAmenities(answer)">
-              <div class="small-4 columns">
-                <div class="icon-holder">
-                  <div ng-include="getAnswerIconPath(answer.id)"></div>
+            <div class="row">
+              <div ng-repeat="answer in currentNode.answers.slice(0, 3)">
+                <div ng-click="setCurrentlyConsideredAmenity(answer)">
+                  <div class="small-4 columns">
+                    <div class="icon-holder">
+                      <div ng-include="getAnswerIconPath(answer.id)"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
+          <div class="row">
+            <div ng-repeat="answer in currentNode.answers.slice(3, 6)">
+              <div ng-click="setCurrentlyConsideredAmenity(answer)">
+                <div class="small-4 columns">
+                  <div class="icon-holder">
+                    <div ng-include="getAnswerIconPath(answer.id)"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div ng-repeat="answer in currentNode.answers.slice(6, 9)">
+              <div ng-click="setCurrentlyConsideredAmenity(answer)">
+                <div class="small-4 columns">
+                  <div class="icon-holder">
+                    <div ng-include="getAnswerIconPath(answer.id)"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
       <!-- 
           <div class="row">
               <div class="small-4 columns">
@@ -133,14 +152,14 @@
           </div>
           -->
 
-          <div class="selection-container">
+          <div ng-show="currentlyConsideredAmenity && amenities.length < 3" class="selection-container">
             <div class="row no-gutter needy">I want...</div>
-            <div class="row no-gutter">Dynamic answer magic here</div>
+            <div class="row no-gutter">{{ currentlyConsideredAmenity.answer }}</div>
             <div class="row no-gutter">
               <div class="large-10 medium-10 small-10 large-centered medium-centered small-centered columns">
                 <div class="row">
-                  <div class="large-6 medium-6 small-6 columns"><div ng-include="'<%= asset_path 'svgs/_yea.html' %>'"></div></div>
-                    <div class="large-6 medium-6 small-6 columns"><div ng-include="'<%= asset_path 'svgs/_nah.html' %>'"></div></div>
+                  <div ng-click="addToAmenities(currentlyConsideredAmenity)" class="large-6 medium-6 small-6 columns"><div class="yea" ng-include="'<%= asset_path 'svgs/_yea.html' %>'"></div></div>
+                  <div ng-click="setCurrentlyConsideredAmenity(null)" class="large-6 medium-6 small-6 columns"><div class="nah" ng-include="'<%= asset_path 'svgs/_nah.html' %>'"></div></div>
                 </div>
               </div>
             </div>
