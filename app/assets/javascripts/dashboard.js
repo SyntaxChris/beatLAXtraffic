@@ -3,6 +3,7 @@ $(document).ready(function(){
   
     var movePlane = function(n){
         var currentProgress = parseInt($('#plane-progress').text());
+        debugger;
 
         if( currentProgress < 85){
             $('#plane-progress').text(currentProgress);
@@ -21,6 +22,8 @@ $(document).ready(function(){
                 $("span#flight-status").text('Arrived');
             }, 5000);
         } 
+    
+    var currentProgress = parseInt($('#plane-progress').text());
     }
 
     var moveClock = function(){
@@ -119,6 +122,7 @@ $(document).ready(function(){
 
     $body.on('click', '.plane-advance', function(){
         movePlane();
+        moveClock();
     });
 
 
