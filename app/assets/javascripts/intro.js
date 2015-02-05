@@ -25,7 +25,7 @@ $(document).ready(function(){
         $('#level-2').delay(1400).fadeIn(200);
         $('#level-3').delay(2000).fadeIn(270);
         $('.traffic-car').animate({left: "5px"}, 2300)
-      }, 1000);
+      }, 500);
 
     })
     .on('click', '#stage-2-btn', function(){
