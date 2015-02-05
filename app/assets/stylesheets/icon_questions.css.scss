@@ -54,7 +54,7 @@
 					}
 				}
 				.icon-remove{
-					display: none;
+					// display: none;
 					&.show{
 						display: block;
 					}
@@ -121,7 +121,7 @@
 		}
 
 		.selection-container{
-			display: none;
+			// display: none;
 			position: absolute;
 			top: 1%;
 			width: 94%;

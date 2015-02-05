@@ -2,12 +2,17 @@
 <div id="timer-pickup">
   <div class="content">
     <h3 class="main-question">
-      You would have spent: 
+      You would have spent:
     </h3>
 
     <div class="content-c">
       <div class="timer-c">
-        <div class="timer-number" id="min">X</div>
+        <div ng-if="!adjustedTimeElapsed">
+          <div class="timer-number" id="min">{{ variables.time_elapsed }}</div>
+        </div>
+        <div ng-if="adjustedTimeElapsed != undefined">
+          <div class="timer-number" id="min">{{ adjustedTimeElapsed }}</div>
+        </div>
         <div>min</div>
       </div>
       Picking up your passenger at the airport
@@ -19,11 +24,16 @@
         How long does it typically take you to pick up your passenger at LAX?
       </div>
       <div>
-         <button id="x-btn-timer-less" class="counter-btn">-</button>
-         <button id="x-btn-timer-more" class="counter-btn">+</button> 
+         <button ng-click="addTimeElapsed(-5)" id="x-btn-timer-less" class="counter-btn">-</button>
+         <button ng-click="addTimeElapsed(5)" id="x-btn-timer-more" class="counter-btn">+</button> 
       </div>
       <div>
-        <button ng-click="submit()" id="x-btn-timer-next">Next</button>
+        <div ng-if="!adjustedTimeElapsed">
+          <button ng-click="submit()" id="x-btn-timer-next">Next</button>
+        </div>
+        <div ng-if="adjustedTimeElapsed">
+          <button ng-click="submit()" id="x-btn-timer-next">Next</button>
+        </div>
       </div>
     </div>
   </div>

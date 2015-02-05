@@ -45,7 +45,8 @@ $(document).ready(function(){
   }
 
   function updateCircleCount(direction){
-    $body.find('#circle-pickup .circle-number').text(circleCount);
+    // $body.find('#circle-pickup .circle-number').text(circleCount);
+    // above removed because it is stomping on angular display
     animateCar(direction);
   }
 

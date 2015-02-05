@@ -11,4 +11,7 @@ json.variables do
   json.originating_city @respondent.originating_location
   json.originating_airport_code @respondent.originating_airport_code
   json.landing_time @respondent.landing_time
+  json.flight_time_remaining @respondent.flight_time_remaining
+  json.time_elapsed @respondent.time_elapsed
+  json.times_circled @respondent.times_circled
 end

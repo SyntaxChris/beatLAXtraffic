@@ -8,16 +8,16 @@ $(document).ready(function(){
 	})
 	.on('click', ".icon-container .icon-holder svg", function(){
 		// icon = $(this);
-		$(".selection-container").fadeIn();
+		// $(".selection-container").fadeIn();  - angular
 	})
 	.on('click', ".nah", function(){
-		$(".selection-container").fadeOut();		
+		// $(".selection-container").fadeOut(); - angular
 	})
 	.on('click', ".yea", function(){
 		var contentCounter = 0;
 		var insert = 0;
 
-		$(".selection-container").fadeOut();
+		// $(".selection-container").fadeOut(); - angular
 		$('.clone-container').each(function(){
 			
   			if ( $.trim($(this).html()).length ) {
