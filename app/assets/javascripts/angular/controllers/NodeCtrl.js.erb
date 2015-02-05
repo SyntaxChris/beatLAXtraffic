@@ -208,6 +208,10 @@ angular.module('lawaApp')
       // show numbers 1, 2, 3
       $scope.addToAmenities = function(answer){
         $scope.setCurrentlyConsideredAmenity(null);
+        // if user is clicking an empty circle:
+        if(answer === null || answer === undefined){
+          return;
+        };
         if($scope.amenities.length === 3){
           if (_.findWhere($scope.amenities, answer)){
             // amenity is already in current list, remove it.

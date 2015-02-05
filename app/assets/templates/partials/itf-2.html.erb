@@ -26,30 +26,31 @@
                 <div class="small-4 columns">
                   <div ng-click="addToAmenities(amenities[0])" class="icon-holder">
                     1
-                    <div ng-if="amenities[0] != null" ng-include="getAnswerIconPath(amenities[0].id)"></div>
-                    <div class="clone-container"></div>
-                    <div class="icon-remove">
-                      <div ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'"></div>
+                    <div ng-show="amenities[0] != null" ng-include="getAnswerIconPath(amenities[0].id)" class="clone-container">
+                    </div>
+                    <div ng-show="amenities[0] != null" class="icon-remove">
+                      <svg ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'"></svg>
                     </div>
                   </div>
                 </div>
                 <div class="small-4 columns">
                   <div ng-click="addToAmenities(amenities[1])" class="icon-holder">
                     2
-                    <div ng-if="amenities[1] != null" ng-include="getAnswerIconPath(amenities[1].id)"></div>
-                    <div class="clone-container"></div>
-                    <div class="icon-remove">
-                      <div ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'"></div>
+                    <div ng-show="amenities[1] != null" ng-include="getAnswerIconPath(amenities[1].id)" class="clone-container">
+                    </div>
+                    <div ng-show="amenities[1] != null" class="icon-remove">
+                      <svg ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'"></svg>
                     </div>
                   </div>
                 </div>
                 <div class="small-4 columns">
                   <div ng-click="addToAmenities(amenities[2])" class="icon-holder">
                     3
-                    <div ng-if="amenities[2] != null" ng-include="getAnswerIconPath(amenities[2].id)"></div>
-                    <div class="clone-container"></div>
-                    <div class="icon-remove">
-                      <div ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'"></div>
+                    <div ng-show="amenities[2] != null" ng-include="getAnswerIconPath(amenities[2].id)" class="clone-container">
+                      <!-- <svg ng-show="amenities[2] != null" ng-include="getAnswerIconPath(amenities[2].id)"></svg> -->
+                    </div>
+                    <div ng-show="amenities[2] != null" class="icon-remove">
+                      <svg ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'"></svg>
                     </div>
                   </div>
                 </div>
@@ -57,7 +58,7 @@
             </div>
           </div>
           <!-- TODO: change over amenities array to current answers! -->
-          <div class="next-btn">Next</div>
+          <div ng-class="{show: amenities.length === 3}" class="next-btn">Next</div>
           <!-- TODO: change over amenities array to current answers! -->
         </div>
       </div>
