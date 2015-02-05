@@ -3,7 +3,6 @@ $(document).ready(function(){
   
     var movePlane = function(n){
         var currentProgress = parseInt($('#plane-progress').text());
-        debugger;
 
         if( currentProgress < 85){
             $('#plane-progress').text(currentProgress);

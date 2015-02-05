@@ -390,8 +390,8 @@ angular.module('lawaApp')
       }
 
       $scope.submit = function(decisionId, decreaseTime){
-        console.log('flight time remaining variable: '+ $scope.variables.flight_time_remaining);
-        console.log('calculated plane progress: '+ $scope.planeProgress);
+        // console.log('flight time remaining variable: '+ $scope.variables.flight_time_remaining);
+        // console.log('calculated plane progress: '+ $scope.planeProgress);
         // user doesn't add time to time elapsed guess, but we need to record the answer anyway:
         if($scope.currentNode.template_name === 'e-3' && $scope.adjustedTimeElapsed === undefined){
           $scope.addTimeElapsed(0);
