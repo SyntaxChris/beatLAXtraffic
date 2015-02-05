@@ -23,14 +23,16 @@
       </button>
 
       <div>
-        <button ng-click="restart()" class="replay-btn emergency-next" id="x-btn-replay">
-          <span class="" style="display: inline-block; vertical-align: middle; height: 20px; width: 20px;" ng-include="'<%= asset_path 'svgs/_congratsReplay.html' %>'">
+        <button class="replay-btn emergency-next" id="x-btn-replay">
+          <span class="" style="display: inline-block; vertical-align: middle; height: 20px; width: 20px;">
+            <%= render 'congratsReplay' %>
           </span>
           <span>Replay</span>
         </button>
 
         <button class="share-btn" id="x-btn-share">
-          <span style="display: inline-block; vertical-align: middle; height: 20px; width: 20px;" ng-include="'<%= asset_path 'svgs/_congratsShare.html' %>'">
+          <span style="display: inline-block; vertical-align: middle; height: 20px; width: 20px;">
+            <%= render 'congratsShare' %>
           </span>
           <span>Share</span>
         </button>

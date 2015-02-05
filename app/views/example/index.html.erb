@@ -80,7 +80,7 @@
   <!-- 2. MISSION INTRO -->
   <div id="mission-intro"  class="slide" data-currentnode="3" data-nextnode="2">
  
-    <h4 id="stage-1-header" style="">
+    <h4 id="stage-1-header">
       There's always a moment where everything is going right, but something like this happens...
     </h4>
     <h4 id="stage-2-header" style="display:none">
@@ -100,7 +100,7 @@
 
 
 
-    <div id="stage-1" style="">
+    <div id="stage-1">
       <div class="stage-container">
         <div class="container-contents" id="txt-msg-container">
           <div class="row" style="margin: 0; background-color: #E5E5EA; font-size: 12px">
@@ -136,7 +136,7 @@
             <div id="recieved-txt">
               Hey there! Just wanted to remind you to pick me up today at LAX! It would be terrible if you forgot to pick up your favorite <span>PERSON</span> from the airport! I should arrive today around <span>TIME</span>.  See you soon! :D
             </div>
-            <div id="sent-txt" style="">
+            <div id="sent-txt">
                Uhh... yeah of course!
             </div>
           </div>
@@ -166,18 +166,18 @@
 
       <div id="stage-2-header">
         <div class="row" style="text-align: center; margin: 0">
-          <div class="large-6 medium-6 small-6 columns" style="text-align: left; font-size: 15px">Departing</div>
-          <div class="large-6 medium-6 small-6 columns" style="text-align: right; font-size: 15px">Arriving</div>
+          <div class="large-6 medium-6 small-6 columns depart">Departing</div>
+          <div class="large-6 medium-6 small-6 columns arrive">Arriving</div>
         </div>
         <div class="row" style="text-align: center; margin: 0">
-          <div class="large-5 medium-5 small-5 columns" style="font-size: 35px; padding-top: 10px; text-align: left; font-weight: 700"><span>ORD</span></div>
+          <div class="large-5 medium-5 small-5 columns from"><span>ORD</span></div>
           <div class="large-2 medium-2 small-2 columns" style="padding:0"><%= render 'introplane' %></div>
-          <div class="large-5 medium-5 small-5 columns" style="font-size: 35px; padding-top: 10px; text-align: right; font-weight: 700">LAX</div>
+          <div class="large-5 medium-5 small-5 columns to">LAX</div>
         </div>
         <div class="row" style="text-align: center; margin: 0">
-          <div class="large-4 medium-4 small-4 columns" style="font-size: 12px; text-align: left"><span>Chicago</span></div>
-          <div class="large-4 medium-4 small-4 columns" style="font-size: 12px; text-align: center">Flight <span>1254</span></div>
-          <div class="large-4 medium-4 small-4 columns" style="font-size: 12px; text-align: right">Los Angeles</div>
+          <div class="large-4 medium-4 small-4 columns from-name"><span>Chicago</span></div>
+          <div class="large-4 medium-4 small-4 columns flight">Flight <span>1254</span></div>
+          <div class="large-4 medium-4 small-4 columns to-name">Los Angeles</div>
         </div>
       </div>
 
@@ -245,37 +245,27 @@
 
 
 
-    <div id="stage-3" style="display:none">
+    <div id="stage-3" style="display: none">
 
       
       <div id="speeding-bg">
 
-<!--         <div id="city-bg">
-          <span class="building-container">
-            <%= render 'laBuildings2' %>
-          </span>
-          <span class="building-container">
-            <%= render 'laBuildings' %>
-          </span>
-          <span class="building-container">
-            <%= render 'laBuildings2' %>
-          </span>
-          <span class="building-container">
-            <%= render 'laBuildings2' %>
-          </span>
-          <span class="building-container">
-            <%= render 'laBuildings2' %>
-          </span>
-          <span class="building-container">
-            <%= render 'laBuildings2' %>
-          </span>
-          <span class="building-container">
-            <%= render 'laBuildings2' %>
-          </span>
-          <span class="building-container">
-            <%= render 'laBuildings' %>
-          </span>
-        </div> -->
+        <div id="city-bg">
+          <div class="row">
+            <div class="large-1 medium-1 small-1 columns" style="padding: 0"><%= render 'laBuildings' %></div>
+            <div class="large-1 medium-1 small-1 columns" style="padding: 0"><%= render 'laBuildings2' %></div>
+            <div class="large-1 medium-1 small-1 columns" style="padding: 0"><%= render 'laBuildings2' %></div>
+            <div class="large-1 medium-1 small-1 columns" style="padding: 0"><%= render 'laBuildings2' %></div>
+            <div class="large-1 medium-1 small-1 columns" style="padding: 0"><%= render 'laBuildings2' %></div>
+            <div class="large-1 medium-1 small-1 columns" style="padding: 0"><%= render 'laBuildings' %></div>
+            <div class="large-1 medium-1 small-1 columns" style="padding: 0"><%= render 'laBuildings2' %></div>
+            <div class="large-1 medium-1 small-1 columns" style="padding: 0"><%= render 'laBuildings2' %></div>
+            <div class="large-1 medium-1 small-1 columns" style="padding: 0"><%= render 'laBuildings2' %></div>
+            <div class="large-1 medium-1 small-1 columns" style="padding: 0"><%= render 'laBuildings' %></div>
+            <div class="large-1 medium-1 small-1 columns" style="padding: 0"><%= render 'laBuildings' %></div>
+            <div class="large-1 medium-1 small-1 columns" style="padding: 0"><%= render 'laBuildings' %></div>
+          </div>
+        </div>
 
         <div id="palm-1">
           <%= render 'palmTree2' %>

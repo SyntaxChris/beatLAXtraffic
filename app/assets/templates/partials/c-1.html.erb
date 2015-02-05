@@ -7,7 +7,7 @@
       <div ng-include="'<%= asset_path 'svgs/_signPole.html' %>'"></div>
     </div>
 
-      <button ng-click="immediateSubmitAnswer(answer)" ng-repeat="answer in currentNode.answers" class="sign" ng-id="{{ 'cntr-' + $index+1 }}">
+      <button ng-click="addOneToCircling(); immediateSubmitAnswer(answer)" ng-repeat="answer in currentNode.answers" class="sign" ng-id="{{ 'cntr-' + $index+1 }}">
         <div class="holder">
           <div ng-include="'<%= asset_path 'svgs/_signHolder.html' %>'"></div>
         </div>

@@ -32,7 +32,7 @@ $(document).ready(function(){
 
 
   function updateTimerCount(){
-    $body.find('#timer-pickup .timer-number').text(timerCount);
-  }
+    // $body.find('#timer-pickup .timer-number').text(timerCount);
+  } // above is stomping out angular display
 
 });
