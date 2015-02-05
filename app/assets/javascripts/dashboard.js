@@ -120,7 +120,7 @@ $(document).ready(function(){
     }
 
     $body.on('click', '.plane-advance', function(){
-        movePlane();
+       // movePlane();
         moveClock();
     });
 
