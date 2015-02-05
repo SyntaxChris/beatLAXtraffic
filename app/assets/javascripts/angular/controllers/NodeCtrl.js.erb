@@ -188,6 +188,7 @@ angular.module('lawaApp')
         $scope.currentDecisionDestination = $scope.fetchNodeById(decision.destination_node_id);
       };
 
+      // show numbers 1, 2, 3
       $scope.addToAmenities = function(answer){
         if($scope.amenities.length === 3){
           if (_.findWhere($scope.amenities, answer)){
