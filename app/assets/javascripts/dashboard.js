@@ -21,6 +21,8 @@ $(document).ready(function(){
                 $("span#flight-status").text('Arrived');
             }, 5000);
         } 
+    
+    var currentProgress = parseInt($('#plane-progress').text());
     }
 
     var moveClock = function(){
@@ -117,8 +119,9 @@ $(document).ready(function(){
         $('#counter-num').data('counter-number', currentMin)
     }
 
-    $body.on('click', '#plane-progress', function(){
+    $body.on('click', '.plane-advance', function(){
         movePlane();
+        moveClock();
     });
 
 
