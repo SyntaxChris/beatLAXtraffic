@@ -6,11 +6,8 @@
     <div class="row">
       <h3 class="main-question">
         Imagine that you could customize this future location
-        <br>amenities: {{ amenities }}</br>currently considered amenity: {{ currentlyConsideredAmenity }}
-        <br> currently considered is null or undefined? {{ currentlyConsideredAmenity === null || currentlyConsideredAmenity === undefined }}
       </h3>
     </div>
-
 
     <div class="row">
       <div class="large-7 medium-7 small-12 columns">
@@ -57,9 +54,7 @@
               </div>
             </div>
           </div>
-          <!-- TODO: change over amenities array to current answers! -->
-          <div ng-class="{show: amenities.length === 3}" class="next-btn">Next</div>
-          <!-- TODO: change over amenities array to current answers! -->
+          <div ng-class="{show: amenities.length === 3}" ng-click="addAmenitiesToAnswers(); submit()" class="next-btn">Next</div>
         </div>
       </div>
 
@@ -98,61 +93,6 @@
               </div>
             </div>
           </div>
-      <!-- 
-          <div class="row">
-              <div class="small-4 columns">
-                <div class="icon-holder">
-                  <div ng-include="'<%= asset_path 'svgs/_dog.html' %>'"></div>
-                </div>
-              </div>
-              <div class="small-4 columns">
-                <div class="icon-holder">
-                  <div ng-include="'<%= asset_path 'svgs/_couch.html' %>'"></div>
-                </div>
-              </div>
-              <div class="small-4 columns">
-                <div class="icon-holder">
-                  <div ng-include="'<%= asset_path 'svgs/_family.html' %>'"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="small-4 columns">
-              <div class="icon-holder">
-                <div ng-include="'<%= asset_path 'svgs/_computer.html' %>'"></div>
-              </div>
-            </div>
-            <div class="small-4 columns">
-              <div class="icon-holder">
-                <div ng-include="'<%= asset_path 'svgs/_food.html' %>'"></div>
-              </div>
-            </div>
-            <div class="small-4 columns">
-              <div class="icon-holder">
-                <div ng-include="'<%= asset_path 'svgs/_wifi.html' %>'"></div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="small-4 columns">
-              <div class="icon-holder">
-                <div ng-include="'<%= asset_path 'svgs/_parking.html' %>'"></div>
-              </div>
-            </div>
-            <div class="small-4 columns">
-              <div class="icon-holder">
-                <div ng-include="'<%= asset_path 'svgs/_exit.html' %>'"></div>
-              </div>
-            </div>
-            <div class="small-4 columns">
-              <div class="icon-holder">
-                <div ng-include="'<%= asset_path 'svgs/_helpdesk.html' %>'"></div>
-              </div>
-            </div>
-          </div>
-          -->
-
           <div ng-show="currentlyConsideredAmenity && amenities.length < 3" class="selection-container">
             <div class="row no-gutter needy">I want...</div>
             <div class="row no-gutter">{{ currentlyConsideredAmenity.answer }}</div>
