@@ -119,6 +119,9 @@ angular.module('lawaApp')
           3: 'purple',
           4: 'magenta'
         }
+
+        $scope.amenities = [];
+
       };
 
       $scope.restart = function(){
@@ -185,7 +188,26 @@ angular.module('lawaApp')
         $scope.currentDecisionDestination = $scope.fetchNodeById(decision.destination_node_id);
       };
 
-      $scope.addMultipleChoice = function(answer) {
+      $scope.addToAmenities = function(answer){
+        if($scope.amenities.length === 3){
+          if (_.findWhere($scope.amenities, answer)){
+            // amenity is already in current list, remove it.
+            $scope.amenities = _.without($scope.amenities, _.findWhere($scope.amenities, answer));
+          }
+          // if it's not in the list, don't do anything
+          return
+        }else{
+          // add it if it's not present
+          if (_.findWhere($scope.amenities, answer)){
+            // amenity is already in current list, remove it.
+            $scope.amenities = _.without($scope.amenities, _.findWhere($scope.amenities, answer));
+          } else {
+            $scope.amenities.push(answer);
+          }
+        }
+      }
+
+      $scope.addMultipleChoice = function(answer){
         if (_.findWhere($scope.currentAnswers, answer)){
           // answer is already in current list, remove it.
           $scope.currentAnswers = _.without($scope.currentAnswers, _.findWhere($scope.currentAnswers, answer));
@@ -194,7 +216,7 @@ angular.module('lawaApp')
         }
       };
 
-      $scope.addSingleChoice = function(answer) {
+      $scope.addSingleChoice = function(answer){
         $scope.currentAnswers = [answer];
       };
 

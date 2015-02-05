@@ -21,10 +21,10 @@
           <div class="row">
             <div class="small-9 small-centered columns">
               <div class="row holder">
-                <div ng-repeat="answer in currentAnswers">
+                <div ng-repeat="amenity in amenities">
                   <div class="small-4 columns">
-                    <div class="icon-holder">
-                      <div ng-include="getAnswerIconPath(answer.id)"></div>
+                    <div ng-click="addToAmenities(amenity)" class="icon-holder">
+                      <div ng-include="getAnswerIconPath(amenity.id)"></div>
                       <div class="clone-container"></div>
                       <div class="icon-remove">
                         <div ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'"></div>
@@ -34,14 +34,15 @@
                 </div>
               </div>
             </div>
-            <div class="next-btn">Next</div>
           </div>
+          <div class="next-btn">Next</div>
         </div>
+      </div>
 
       <div class="large-5 medium-5 small-12 columns">
         <div class="icon-container">
           <div ng-repeat="answer in currentNode.answers">
-            <div ng-click="addAnswerToCurrentAnswers(answer)">
+            <div ng-click="addToAmenities(answer)">
               <div class="small-4 columns">
                 <div class="icon-holder">
                   <div ng-include="getAnswerIconPath(answer.id)"></div>
