@@ -1,1 +1,29 @@
-<div ng-include="'<%= asset_path 'svgs/_wheelPointer.html' %>'"></div>
+<!-- 15. RAIL SYSTEM QUESTIONS -->
+<div id="rail-system">
+    <div class="stage-2">
+      <div class="question-bubble">
+        <div class="rail-car">
+          <svg ng-include="'<%= asset_path 'svgs/_railCar.html' %>'"></svg>
+        </div>
+
+        {{ currentNode.decisions }}
+        <p>
+          To avoid all of this, we're trying to build an airport rail system that would make it easy for a passenger to meet you at a nearby location outside of the airport!
+        </p>
+
+        <p>
+          Would you meet your passenger at this new location outside of the airport in light of the experience you had today?
+        </p>
+
+      <button ng-click="submit(findDecisionByString('Yes').id)" id="x-btn-upvote" class="upvote-btn emergency-next">
+        <span class="text">YES</span>
+        <svg ng-include="'<%= asset_path 'svgs/_thumbsUp.html' %>'"></svg>
+      </button>
+      <button ng-click="submit(findDecisionByString('No').id)" id="x-btn-downvote" class="downvote-btn emergency-next">
+        <span class="text">NO</span>
+        <svg ng-include="'<%= asset_path 'svgs/_thumbsDown.html' %>'"></svg>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- END RAIL SYSTEM QUESTIONS -->

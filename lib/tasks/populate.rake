@@ -245,13 +245,13 @@ namespace :populate do
     # TODO: need to re-do 7s. consult updated map
     dp7 = Node.create(nickname: "DP 7", is_decision_point: true , branch_id: wait_offsite_branch.id, template_name: "dp-7")
       dp7dp = DecisionPoint.create(node_id: dp7.id, situation: "Has your passenger called to be picked up?")
-        dp7d1 = Decision.create(decision_point_id: dp7dp.id, decision: "Yes", destination_node_id: e1.id)
+        dp7d1 = Decision.create(decision_point_id: dp7dp.id, decision: "Yes", destination_node_id: noitf1.id)
         dp7d2 = Decision.create(decision_point_id: dp7dp.id, decision: "No", destination_node_id: dp8.id)
 
     dp7a = Node.create(nickname: "DP 7a", is_decision_point: true , branch_id: wait_offsite_branch.id, template_name: "dp-7a")
       dp7adp = DecisionPoint.create(node_id: dp7a.id, situation: "Is the passenger late?")
         dp7ad1 = Decision.create(decision_point_id: dp7adp.id, decision: "Yes", destination_node_id: dp7.id)
-        dp7ad2 = Decision.create(decision_point_id: dp7adp.id, decision: "No", destination_node_id: e1.id)
+        dp7ad2 = Decision.create(decision_point_id: dp7adp.id, decision: "No", destination_node_id: noitf1.id)
 
     ## start weird intertwined DPs
     dp11 = Node.create(nickname: "DP 11", is_decision_point: true , branch_id: park_and_meet_branch.id, template_name: "dp-11")
@@ -287,7 +287,7 @@ namespace :populate do
 
     dp2 = Node.create(nickname: "DP 2", is_decision_point: true , branch_id: hope_to_catch_curb_branch.id, template_name: "dp-2")
       dp2dp = DecisionPoint.create(node_id: dp2.id, situation: "You're trying to find a way to pull-over and pick up your passenger. Are you successful?")
-        dp2d1 = Decision.create(decision_point_id: dp2dp.id, decision: "Yes", destination_node_id: e1.id)
+        dp2d1 = Decision.create(decision_point_id: dp2dp.id, decision: "Yes", destination_node_id: noitf1.id)
         dp2d2 = Decision.create(decision_point_id: dp2dp.id, decision: "No", destination_node_id: dp3.id)
     # update for dp3 after dp2's creation:
     dp3d2.update(destination_node_id: dp2.id)
@@ -302,10 +302,10 @@ namespace :populate do
     b1.update(next_node_id: b2.id)
     b2.update(next_node_id: b3.id)
     b3.update(next_node_id: dp5.id)
-    b4.update(next_node_id: e1.id)
+    b4.update(next_node_id: noitf1.id)
     c1.update(next_node_id: c2.id)
     c2.update(next_node_id: dp7.id)
-    c4.update(next_node_id: e1.id)
+    c4.update(next_node_id: noitf1.id)
     e1.update(next_node_id: e2.id)
     e2.update(next_node_id: e3.id)
     e3.update(next_node_id: e4.id)
