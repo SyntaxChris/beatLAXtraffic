@@ -14,6 +14,9 @@ angular.module('lawaApp')
             $scope.respondentId = data.respondent_id;
             $scope.setCurrentNodeById(data.current_node_id);
             $scope.variables = data.variables;
+            $scope.hours_elapsed = Math.floor($scope.variables.time_elapsed / 60);
+            $scope.minutes_elapsed = $scope.variables.time_elapsed % 60;
+            $scope.planeProgress = $scope.calculatePlaneProgress($scope.variables.flight_time_remaining);
             $scope.currentFlightTimeRemaining = $scope.variables.landing_time;
 
             // if current node is the first one, don't show dashboard
@@ -66,6 +69,8 @@ angular.module('lawaApp')
                 '/assets/partials/e-5.html',
                 '/assets/partials/e-6.html',
                 '/assets/partials/itf-2.html',
+                '/assets/partials/no-itf-1.html',
+                '/assets/partials/ns-5.html',
                 '/assets/partials/ns-4.html'
               ];
               $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
@@ -143,6 +148,15 @@ angular.module('lawaApp')
         // do something with it
         // $scope.setCurrentDecisionNoSubmit(spunDecision[0]);
         return foundAnswer[0];
+      }
+
+      $scope.calculatePlaneProgress = function(flightTimeRemaining){
+        // min 0, max 85
+        // our max = variables.landing_time
+        // 85 / landing_time = modifier for adding to our time
+        $scope.flightTimeModifier = 85 / $scope.variables.landing_time;
+        var calculatedTimeRemaining = 85 - (flightTimeRemaining * $scope.flightTimeModifier);
+        return Math.min(85, calculatedTimeRemaining);
       }
 
       $scope.matchAnswerString = function(answer, string){
@@ -376,6 +390,8 @@ angular.module('lawaApp')
       }
 
       $scope.submit = function(decisionId, decreaseTime){
+        // console.log('flight time remaining variable: '+ $scope.variables.flight_time_remaining);
+        // console.log('calculated plane progress: '+ $scope.planeProgress);
         // user doesn't add time to time elapsed guess, but we need to record the answer anyway:
         if($scope.currentNode.template_name === 'e-3' && $scope.adjustedTimeElapsed === undefined){
           $scope.addTimeElapsed(0);
@@ -386,6 +402,9 @@ angular.module('lawaApp')
         if(decreaseTime){
           $scope.variables.time_elapsed += 5;
           $scope.variables.flight_time_remaining -= 5
+          $scope.hours_elapsed = Math.floor($scope.variables.time_elapsed / 60);
+          $scope.minutes_elapsed = $scope.variables.time_elapsed % 60;
+          $scope.planeProgress = $scope.calculatePlaneProgress($scope.variables.flight_time_remaining);
         };
 
         // there is a freeform_response for this submit click:
