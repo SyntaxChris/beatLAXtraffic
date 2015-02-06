@@ -1,4 +1,42 @@
-    <div id="distance-questions">
+<div id="zip-code-template">
+  <div class="row">
+    <h3 class="main-question">What is your zip code?</h3>
+  </div>
+  <div class="row">
+    <div class="ferrari-container">
+      <div ng-include="'<%= asset_path 'svgs/_ferrari.html' %>'"></div>
+      <div class="zip-container">
+        <div class="text-container">
+          <textarea id="zip-input" cols="1" rows="1" maxlength="5"></textarea>
+          <div class="zip-next">Next</div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--     <div id="distance-questions">
       <div id="distance-bg"></div>
       <div class="row" id="dis-row" style="text-align:center">
         <h3 class="main-question">
@@ -31,4 +69,4 @@
         <div ng-include="'<%= asset_path 'svgs/house.html' %>'"></div>
         <div ng-include="'<%= asset_path 'svgs/arrow-plane.html' %>'"></div>
       </div>
-  </div>
+  </div> -->
