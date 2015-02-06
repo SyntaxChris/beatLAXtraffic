@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	var $body = $('body');
-
-
+	
 	$body
 	.on('keypress', "#zip-input", function(e){
 		var a = [];
