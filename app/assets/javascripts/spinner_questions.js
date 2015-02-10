@@ -40,7 +40,7 @@ $(document).ready(function(){
 			 		function(){
 			   			$(".lose.parking").css('fill', 'red');
 			   			$(".full-font").css('fill', 'white');
-			  		}, 6000
+			  		}, 3000
 			  	);
 			 	setTimeout(
 			 		function(){
@@ -52,7 +52,7 @@ $(document).ready(function(){
 			   			$("#parking-lot").fadeIn();
 			   			$("#lines").fadeIn();
 			   			$("#cars").fadeIn();
-			  		}, 6700
+			  		}, 3700
 			  	);
 		 	}
 		 	else {
@@ -62,7 +62,7 @@ $(document).ready(function(){
 			 		function(){
 			   			$(".win.parking").css('fill', 'red');
 			   			$(".yes-font").css('fill', 'white');
-			  		}, 6000
+			  		}, 3000
 			  	);
 
 		 		
@@ -77,7 +77,7 @@ $(document).ready(function(){
 			   			$(".win").css("fill", "red");
 			   			$("#parking-lot").fadeIn();
 			   			$("#lines").fadeIn();
-			  		}, 6700
+			  		}, 3700
 		  		);
 		 	}
 		}
@@ -91,7 +91,7 @@ $(document).ready(function(){
 				setTimeout(
 			 		function(){
 			   			$(".lose").css('fill', 'red');
-			  		}, 6000
+			  		}, 3000
 			  	);
 
 
@@ -102,7 +102,7 @@ $(document).ready(function(){
 			   			$(".chance-time").hide();
 			   			$(".fail").show();
 			   			$(".failed-spin").fadeIn();
-			  		}, 6700
+			  		}, 3700
 			  	);
 		 	}
 		 	else {
@@ -112,7 +112,7 @@ $(document).ready(function(){
 			 		function(){
 			   			$(".win").css('fill', 'red');
 			   			$(".yes-font").css('fill', 'white');
-			  		}, 6000
+			  		}, 3000
 			  	);
 
 		 		
@@ -126,7 +126,7 @@ $(document).ready(function(){
 			 			$(".trophey").fadeIn();
 			   			$(".win").css("fill", "red");
 			   			$("#lines").fadeIn();
-			  		}, 6700
+			  		}, 3700
 		  		);
 		 	}
 		}
