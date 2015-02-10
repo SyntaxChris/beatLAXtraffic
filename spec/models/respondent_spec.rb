@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe Respondent do
+  let(:starting_node) { FactoryGirl.create(:node, template_name: 'splash')}
   describe "Attributes" do
-    let(:starting_node) { FactoryGirl.create(:node, template_name: 'sq-2-2')}
     let(:respondent) {
       FactoryGirl.build(
         :respondent,
@@ -99,8 +99,8 @@ describe Respondent do
   end
 
   describe "Features" do
+    let!(:starting_node) { FactoryGirl.create(:node, template_name: 'splash') }
     context "on create hooks" do
-      let!(:starting_node) { FactoryGirl.create(:node, template_name: 'sq-2-2') }
       # not doing the below. see comment in Respondent#set_starting_node
       # before :each do
       #   starting_node = FactoryGirl.create(:node, template_name: 'sq-2-2')
@@ -110,7 +110,7 @@ describe Respondent do
       let!(:new_respondent) { FactoryGirl.create(:respondent) }
 
       it "on creation, current_node_id equals the starting node" do
-        expect(new_respondent.current_node_id).to eq Node.find_by_template_name("sq-2-2").id
+        expect(new_respondent.current_node_id).to eq Node.find_by_template_name("splash").id
       end
 
       it "on creation, 'flight_code' is set" do
@@ -155,7 +155,7 @@ describe Respondent do
     end
 
     describe "get_or_create_by_session(session_id)" do
-      let!(:starting_node) { FactoryGirl.create(:node, template_name: 'sq-2-2') }
+    let!(:starting_node) { FactoryGirl.create(:node, template_name: 'splash') }
       describe "looks up a session to see if it has an active respondent session" do
         context "when session exists" do
         let!(:respondent) { FactoryGirl.create(:respondent, session_id: "1234") }

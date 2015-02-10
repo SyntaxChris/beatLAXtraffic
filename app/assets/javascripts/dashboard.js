@@ -5,7 +5,6 @@ $(document).ready(function(){
         var currentProgress = parseInt($('#plane-progress').text());
 
         if( currentProgress < 85){
-            $('#plane-progress').text(currentProgress);
             $("#plane-bar").animate({width: currentProgress+"%"}, 200);
             $("#filler").animate({marginLeft: currentProgress+"%"}, 200);
         }
@@ -22,7 +21,7 @@ $(document).ready(function(){
             }, 5000);
         } 
     
-    var currentProgress = parseInt($('#plane-progress').text());
+      var currentProgress = parseInt($('#plane-progress').text());
     }
 
     var moveClock = function(){
@@ -120,7 +119,7 @@ $(document).ready(function(){
     }
 
     $body.on('click', '.plane-advance', function(){
-       // movePlane();
+        movePlane();
         moveClock();
     });
 

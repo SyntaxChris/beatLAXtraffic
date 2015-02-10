@@ -22,6 +22,7 @@ angular.module('lawaApp')
             // if current node is the first one, don't show dashboard
             // TODO: pls no:
             if(
+                $scope.currentNode.template_name === "splash" ||
                 $scope.currentNode.template_name === "sq-2-2" ||
                 $scope.currentNode.template_name === "sq-1" ||
                 $scope.currentNode.template_name === "e-1" ||
@@ -37,11 +38,13 @@ angular.module('lawaApp')
             } else {
               $scope.setShowDashboard(true);
             };
+
             ///////////
               // for development purposes only. add fully-working nodes here
               // to remove debugging printing out on front end:
               $scope.nodesWorking = [
                 // add the clean template name, like this:
+                '/assets/partials/splash.html',
                 '/assets/partials/sq-2-2.html',
                 '/assets/partials/sq-1.html',
                 '/assets/partials/dp-1.html',
