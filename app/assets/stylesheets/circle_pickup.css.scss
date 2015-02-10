@@ -167,14 +167,32 @@
     -webkit-border-radius: 25px;
     border-radius: 25px;
     border: 2px solid #EB7374;
+    font-size: 30px;
     color: white;
     text-shadow: 0 0 10px rgba(0,0,0,.3);
     text-align: center;
     width: 100px;
-    padding: 8px 0;
+    padding: 4px 0;
     background: none;
     &:hover {
       background: #EB7374;
+      color: white;
+    }
+  }
+  .counter-btn#x-btn-circle-more {
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    border: 2px solid #1CC95C;
+    font-size: 30px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,.3);
+    text-align: center;
+    width: 100px;
+    padding: 4px 0;
+    background: none;
+    &:hover {
+      background: #1CC95C;
       color: white;
     }
   }

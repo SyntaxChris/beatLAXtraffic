@@ -9,23 +9,23 @@
       </div>
     </div>
     <div class="chance-time">
-      <h1>Chance Time!</h1>
-      <h3 class="main-question">
+      <h3 class="main-question">Test Your Luck!</h3>
+      <h3>
         {{ currentNode.decision_point.situation }}
       </h3>
     </div>
 
     <div class="congrats" style="display:none;">
-      <h1>Nice!</h1>
-      <h3 class="main-question" style="margin-top: -20px">Your passenger is at the curb!</h3>
+      <h3 class="main-question">Nice!</h1>
+      <h3>Your passenger is at the curb!</h3>
       <div ng-click="submit(findDecisionByString('Yes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
         Continue
       </div>
     </div>
 
     <div class="fail" style="display:none">
-      <h1>Dang!</h1>
-      <h3 class="main-question">Our pick-up wasn't there.</h3>
+      <h3 class="main-question">Dang!</h3>
+      <h3>Our pick-up wasn't there.</h3>
       <div ng-click="submit(findDecisionByString('No').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-lose" data-result="no">
         Continue
       </div>

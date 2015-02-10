@@ -17,6 +17,7 @@
  *= require 'car_dash'
  *= require 'parking_lot'
  *= require 'distance_questions'
+ *= require 'zip_code_template'
  *= require 'tiles'
  *= require 'late_flight'
  *= require 'timer_questions'

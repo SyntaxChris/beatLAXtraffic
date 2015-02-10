@@ -10,25 +10,12 @@
   }
 }
 
-.chance-time {
-	h1{
-		color: white;
-	}
-	h3 {
-		margin-top: -20px;
-	}
+h3.main-question{
+	margin-top: 0;
 }
-
-.fail{
-	h1{
-		color: white;
-	}
-}
-
-.congrats{
-	h1{
-		color: white;
-	}
+h3 {
+	margin-top: -20px;
+	color: white;
 }
 
 .spin-button {
@@ -109,70 +96,70 @@
 }
 
 .full {
-	-webkit-animation: lot-full 6s;
+	-webkit-animation: lot-full 3s;
 	-webkit-animation-fill-mode: forwards;
 
-	-moz-animation: lot-full 6s;
+	-moz-animation: lot-full 3s;
 	-moz-animation-fill-mode: forwards;
 
-	-ms-animation: lot-full 6s;
+	-ms-animation: lot-full 3s;
 	-ms-animation-fill-mode: forwards;
 
-	-o-animation: lot-full 6s;
+	-o-animation: lot-full 3s;
 	-o-animation-fill-mode: forwards;
 
-	animation: lot-full 6s;
+	animation: lot-full 3s;
 	animation-fill-mode: forwards;
 }
 
 .not-full {
-	-webkit-animation: lot-not-full 6s;
+	-webkit-animation: lot-not-full 3s;
 	-webkit-animation-fill-mode: forwards;
 
-	-moz-animation: lot-not-full 6s;
+	-moz-animation: lot-not-full 3s;
 	-moz-animation-fill-mode: forwards;
 
-	-ms-animation: lot-not-full 6s;
+	-ms-animation: lot-not-full 3s;
 	-ms-animation-fill-mode: forwards;
 
-	-o-animation: lot-not-full 6s;
+	-o-animation: lot-not-full 3s;
 	-o-animation-fill-mode: forwards;
 
-	animation: lot-not-full 6s;
+	animation: lot-not-full 3s;
 	animation-fill-mode: forwards;
 }
 
 .there {
-	-webkit-animation: not-missing 6s;
+	-webkit-animation: not-missing 3s;
 	-webkit-animation-fill-mode: forwards;
 
-	-moz-animation: not-missing 6s;
+	-moz-animation: not-missing 3s;
 	-moz-animation-fill-mode: forwards;
 
-	-ms-animation: not-missing 6s;
+	-ms-animation: not-missing 3s;
 	-ms-animation-fill-mode: forwards;
 
-	-o-animation: not-missing 6s;
+	-o-animation: not-missing 3s;
 	-o-animation-fill-mode: forwards;
 
-	animation: not-missing 6s;
+	animation: not-missing 3s;
 	animation-fill-mode: forwards;
 }
 
 .not-there {
-	-webkit-animation: missing 6s;
+	-webkit-animation: missing 3s;
 	-webkit-animation-fill-mode: forwards;
 
-	-moz-animation: missing 6s;
+	-moz-animation: missing 3s;
 	-moz-animation-fill-mode: forwards;
 
-	-ms-animation: missing 6s;
+	-ms-animation: missing 3s;
 	-ms-animation-fill-mode: forwards;
 
-	-o-animation: missing 6s;
+	-o-animation: missing 3s;
 	-o-animation-fill-mode: forwards;
 
-	animation: missing 6s;
+	animation: missing 3s;
 	animation-fill-mode: forwards;
 }
 
