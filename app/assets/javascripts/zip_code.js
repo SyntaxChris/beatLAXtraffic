@@ -24,6 +24,15 @@ $(document).ready(function(){
 				$('.zip-next').fadeOut(200);
 			}
 		});
+
+	$body.on('click', '.zip-next', function(){
+		if($(window).width() > 640){
+			$('.ferrari-container svg').animate({marginLeft: "200%"}, 1000);	
+		}
+		else{
+			$('.ferrari-container svg').animate({marginTop: "200%"}, 1000);
+		}
+	});
 });
 
 
