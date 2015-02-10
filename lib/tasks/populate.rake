@@ -20,6 +20,10 @@ namespace :populate do
     # scenario questions
     # TODO: add icon names for all
 
+    splash = Node.create(nickname: "Splash", is_decision_point: false, branch_id: scenario_questions_branch.id, template_name: "splash")
+      splashq = Question.create(node_id: splash.id, question: " ", question_type_id: single_choice.id)
+        splashqa1 = Answer.create(question_id: splashq.id, answer: "Splash screen seen", icon_name: nil)
+
     sq1 = Node.create(nickname: "SQ 1", is_decision_point: false, branch_id: scenario_questions_branch.id, template_name: "sq-1")
       sq1q = Question.create(node_id: sq1.id, question: "About how far away from LAX do you live?", question_type_id: single_choice.id)
       # ^ needs a question type
@@ -293,6 +297,7 @@ namespace :populate do
     dp3d2.update(destination_node_id: dp2.id)
 
     # Update all existing question nodes to have next_node_ids
+    splash.update(next_node_id: sq22.id)
     sq22.update(next_node_id: sq1.id)
     sq1.update(next_node_id: dp1.id)
     # sq31.update(next_node_id: sq35.id)
