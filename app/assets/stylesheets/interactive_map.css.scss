@@ -228,6 +228,16 @@
   }
 }
 
+@media screen and (max-width: 400px) and (min-width: 0px) and (orientation: landscape) {
+  #interactive-map {
+    .top-half{
+          h3.main-question{
+          font-size: 10px;
+        }
+      }
+  }
+}
+
 @media screen and (max-width: 620px) and (min-width: 0px) and (orientation: landscape) {
   #interactive-map {
     .bottom-half {
