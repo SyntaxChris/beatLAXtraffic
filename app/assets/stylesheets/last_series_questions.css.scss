@@ -6,15 +6,20 @@
 	border: 3px solid #E0BF42;
 }
 
-.question-wrapper-1,
-.question-wrapper-2{
-	padding-bottom: 16%; 
+.question-wrapper-1{
+	padding-bottom: 7%; 
 	width: 100%; 
 	border-radius: 100px;
 }
 
+.question-wrapper-2{
+	padding-bottom: 5%; 
+	width: 100%; 
+	border-radius: 100px;	
+}
+
 .question-wrapper-1-other{
-	padding-bottom: 20%; 
+	padding-bottom: 7%; 
 	width: 100%; 
 	border-radius: 100px;
 }
@@ -29,6 +34,10 @@
 }
 .question-wrapper-2{
 	border: 3px solid #0682C7;
+}
+.question-text-2 {
+	color: white;
+	padding-top: 5%;
 }
 .question-wrapper-2:hover {
 	background-color: #0682C7;
@@ -64,6 +73,7 @@
 .question-text {
 	color: white;
 	text-align: center;
+	margin-top: 5%;
 }
 .question-text-2 {
 	color: #0682C7;

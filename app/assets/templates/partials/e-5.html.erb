@@ -1,61 +1,27 @@
+<div id="last-question-set">
+  <!-- set 2 -->
+  <div id="question-set-2">
+    <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
+      <h3 class="main-question">{{ currentNode.question.question }}</h3>
+    </div>
 
-    <div id="last-question-set">
-      <!-- set 2 -->
-      <div id="question-set-2">
-        <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
-          <h3 class="main-question">{{ currentNode.question.question }}</h3>
-        </div>
-
-        <div ng-click="immediateSubmitAnswer(answer, false)" ng-repeat="answer in currentNode.answers">
-          <div class="row" style="margin-bottom: 1.5%; margin-top: 3%">
-            <div class="large-6 medium-6 small-9 large-centered medium-centered small-centered columns last-questions">
-              <div class="question-wrapper-2">
-                <div class="question-text-2" ng-id="{{ 'q' + $index + '-2' }}">
-                  {{ answer.answer }}
-                </div>
-              </div>
+    <div ng-click="immediateSubmitAnswer(answer, false)" ng-repeat="answer in currentNode.answers">
+      <div class="row" style="margin-bottom: 1.5%; margin-top: 3%">
+        <div class="large-6 medium-6 small-9 large-centered medium-centered small-centered columns last-questions">
+          <div class="question-wrapper-2">
+            <div class="question-text-2" ng-id="{{ 'q' + $index + '-2' }}">
+              {{ answer.answer }}
             </div>
           </div>
         </div>
       </div>
-        <!--
-        <div class="row" style="margin-bottom: 1.5%">
-          <div class="large-5 medium-5 small-10 large-centered medium-centered small-centered columns last-questions">
-            <div class="question-wrapper-2" style="padding-bottom: 20%; width: 100%; border-radius: 100px">
-              <div class="question-text-2" id="q2-2">
-                1-2 times a year
-              </div>
-            </div> 
-          </div>
-        </div>
-        <div class="row" style="margin-bottom: 1.5%">
-          <div class="large-6 medium-6 small-9 large-centered medium-centered small-centered columns last-questions">
-            <div class="question-wrapper-2">
-              <div class="question-text-2" id="q3-2">
-                3-6 times a year
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row" style="margin-bottom: 1.5%">
-          <div class="large-5 medium-5 small-10 large-centered medium-centered small-centered columns last-questions">
-            <div class="question-wrapper-2" style="padding-bottom: 20%; width: 100%; border-radius: 100px">
-              <div class="question-text-2" id="q4-2">
-                6-9 times a year
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-6 medium-6 small-9 large-centered medium-centered small-centered columns last-questions">
-            <div class="question-wrapper-2">
-              <div class="question-text-2" id="q5-2">
-                More than 9 times a year
-              </div>
-            </div>
-          </div>
-        </div>
-      -->
-
-      <!-- end set 2 -->
     </div>
+  </div>
+  <!-- end set 2 -->
+<!--   <h3 class="main-question">{{ currentNode.question.question }}</h3>
+
+  <div class="large-8 medium-8 small-8 columns">
+    div.an
+  </div> -->
+
+</div>

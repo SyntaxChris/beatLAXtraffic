@@ -7,7 +7,7 @@
 
       <div class="timer-c">
         <div class="inner">
-          <div class="timer-number">5</div>
+          <div class="timer-number">{{ parkingTimeSpent }}</div>
           <div>Minutes</div>
         </div>
       </div>
@@ -25,10 +25,9 @@
 
       <div ng-repeat="decision in currentNode.decisions" class="buttons-c">
         <button ng-click="setCurrentDecision(decision)" ng-if="decision.decision.indexOf('Give') > -1" id="x-btn-give-up" class="give-up-btn plane-advance">{{ decision.decision }}</button>
-        <button ng-click="setCurrentDecision(decision)" ng-if="decision.decision.indexOf('Keep') > -1" id="x-btn-keep-looking" class="keep-looking-btn plane-advance">{{ decision.decision }}</button> 
+        <button ng-click="setCurrentDecision(decision); incrementOutcome()" ng-if="decision.decision.indexOf('Keep') > -1" id="x-btn-keep-looking" class="keep-looking-btn plane-advance">{{ decision.decision }}</button> 
       </div>
-
-      <div class="parking-result"></div>
+      <div class="parking-result">{{ parkingTextOutcome[parkingTextIndex] }}</div>
     </div>
   </div>
   <!-- END TIME SPENT -->

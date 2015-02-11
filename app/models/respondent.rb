@@ -33,7 +33,7 @@ class Respondent < ActiveRecord::Base
     # self.update(current_node_id: Node::STARTING_NODE.id)
     # but testing it is proving difficult and I am taking that as a red flag
     #  - vinney
-    self.update(current_node_id: Node.find_by_template_name('sq-2-2').id)
+    self.update(current_node_id: Node.find_by_template_name('splash').id)
   end
 
   def set_variables

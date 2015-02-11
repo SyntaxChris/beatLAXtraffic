@@ -1,6 +1,6 @@
 angular.module('lawaApp')
   .controller("NodeCtrl", [
-    '$scope','$http','_', function($scope,$http,_) {
+    '$scope','$http','_', '$timeout', function($scope,$http,_,$timeout) {
 
       $scope.setup = function(){
         // get and set up all nodes
@@ -22,6 +22,7 @@ angular.module('lawaApp')
             // if current node is the first one, don't show dashboard
             // TODO: pls no:
             if(
+                $scope.currentNode.template_name === "splash" ||
                 $scope.currentNode.template_name === "sq-2-2" ||
                 $scope.currentNode.template_name === "sq-1" ||
                 $scope.currentNode.template_name === "e-1" ||
@@ -37,11 +38,13 @@ angular.module('lawaApp')
             } else {
               $scope.setShowDashboard(true);
             };
+
             ///////////
               // for development purposes only. add fully-working nodes here
               // to remove debugging printing out on front end:
               $scope.nodesWorking = [
                 // add the clean template name, like this:
+                '/assets/partials/splash.html',
                 '/assets/partials/sq-2-2.html',
                 '/assets/partials/sq-1.html',
                 '/assets/partials/dp-1.html',
@@ -118,6 +121,10 @@ angular.module('lawaApp')
             text: null, answerId: null
           };
           $scope.currentTimeInterval = 0;
+
+          $scope.parkingTimeSpent = 5;
+          $scope.parkingTextOutcome = ["Nope, no parking", "This lot's all full", "Completely packed", "None here either", "No spaces", "Can't fit there"];
+          $scope.parkingTextIndex = 0;
         });
 
         $scope.signColors = {
@@ -244,6 +251,15 @@ angular.module('lawaApp')
             $scope.amenities.push(answer);
           }
         }
+      };
+
+      $scope.incrementOutcome = function(){
+        $scope.parkingTimeSpent += 5;
+
+        if($scope.parkingTextIndex <= 4)
+          $scope.parkingTextIndex += 1
+        else
+          $scope.parkingTextIndex = 0;
       };
 
       $scope.addAmenitiesToAnswers = function(){
@@ -393,6 +409,7 @@ angular.module('lawaApp')
         // console.log('flight time remaining variable: '+ $scope.variables.flight_time_remaining);
         // console.log('calculated plane progress: '+ $scope.planeProgress);
         // user doesn't add time to time elapsed guess, but we need to record the answer anyway:
+
         if($scope.currentNode.template_name === 'e-3' && $scope.adjustedTimeElapsed === undefined){
           $scope.addTimeElapsed(0);
         }
@@ -440,6 +457,10 @@ angular.module('lawaApp')
         });
       };
 
+      $scope.delaySubmit = function(decisionId, decreaseTime){
+        _.delay($scope.submit, 800, decisionId, decreaseTime);
+      }
+
       // set up object with all template names from database:
       var templates = {}
       <% Node.all.each do |node| %>
@@ -462,6 +483,7 @@ angular.module('lawaApp')
       $scope.getAnswerIconPath = function(answerId){
         return iconPaths[answerId].iconPath;
       }
+      
 
       //get all icon paths for answers
       // go through all answers in RUBY, create an icon path from their icon-name
