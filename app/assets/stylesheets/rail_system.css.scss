@@ -12,9 +12,11 @@
   }
 }
 #rail-system {
+  position: relative;
   text-align: center;
-  max-width: 768px;
-  margin: 0 auto;
+  // max-width: 768px;
+  width: 70%;
+  margin: 5% auto;
   h3 {
     color: white;
   }
@@ -45,9 +47,13 @@
     margin: 0 auto;
   }
   p {
+    position: relative;
+    margin: 2% auto;
     color: #E79A77;
+    font-size: 1.8vw;
     font-weight: 600;
     line-height: 1.3;
+    width: 90%;
   }
   &.part-1 .stage-2, &.part-2 .stage-1 {
     display: none;

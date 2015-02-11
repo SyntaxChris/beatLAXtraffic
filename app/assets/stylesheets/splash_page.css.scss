@@ -1,5 +1,12 @@
 #splash-page {
 	overflow-y: hidden;
+	h2{
+		color: white;
+		text-shadow: 0 3px 5px rgba(0,0,0,.5);
+		span{
+			font-weight: 700;
+		}
+	}
 }
 
 #start-button {
@@ -17,7 +24,7 @@
 
 #splash-page-container {
 	position: absolute;
-  left: 0;
+  	left: 0;
 	top: 30px;
 	width: 100%;
 	top: 28%;
