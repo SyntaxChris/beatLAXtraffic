@@ -61,8 +61,25 @@
     text-align: center;
     width: 100%;
     bottom: 180px;
-    background: #f8f8f8;
     max-height: 64%;
+    //background: #f8f8f8;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -65px;
+      left: 50%;
+      width: 1060px;
+      height: 447px;
+      margin-left: -530px;
+      background: image_url('phone-landscape-3.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center center;
+    }
+  }
+  .map-container-inside {
+    top: -31px;
+    left: 1.4%;
   }
   .top-half {
     text-align: center;
@@ -195,6 +212,13 @@
     .bottom-half {
       bottom: auto;//145px;
       top: 100px;
+      &:before {
+        background: none;
+      }
+    }
+    .map-container-inside {
+      top: 0;
+      left: 0;
     }
     .instructions {
       top: 110%;
