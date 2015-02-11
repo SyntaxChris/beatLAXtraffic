@@ -113,24 +113,15 @@
       height: 100%;
       width: 100%;
     }
-    >div {
-      &:first-child {
-        width: 69%;
-      }
-      &:last-child {
-        width: 29%;
-        text-align: right;
-        >svg {
-          width: 50%;
-        }
-        .double {
-          width: 47%;
-        }
-      }
-    }
     .icon {
       height: auto;
       width: auto;
+    }
+    >div {
+      text-align: center;
+      font-size: 1.2em;
+      font-size: 1.6vw;
+      margin-top: 6px;
     }
   }
   .path-yellow {
@@ -224,6 +215,10 @@
         border-bottom-color: #FFF;
         border-width: 20px 20px 10px 20px;
       }
+    }
+    .path-message > div {
+      font-size: 1.6em;
+      font-size: 3vw;
     }
   }
 }

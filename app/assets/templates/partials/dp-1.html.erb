@@ -10,49 +10,22 @@
         <div ng-repeat="decision in currentNode.decisions">
           <div ng-if="decision.decision.indexOf('catch') > -1">
             <div class="path-yellow path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
-              <div class="dIB vAM">{{ decision.decision }}</div>
-              <div class="dIB vAM">
-                <div class="dIB vAM double">
-                  <div ng-include="'<%= asset_path 'svgs/_gpsRefresh.html' %>'"></div>
-                </div>
-                <div class="dIB vAM double">
-                  <div ng-include="'<%= asset_path 'svgs/_gpsCar.html' %>'"></div>
-                </div>
-              </div>
+              <div>{{ decision.decision }}</div>
             </div>
           </div>
           <div ng-if="decision.decision.indexOf('meet') > -1">
             <div class="path-green path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
-              <div class="dIB vAM">{{ decision.decision }}</div>
-              <div class="dIB vAM icon">
-                  <div ng-include="'<%= asset_path 'svgs/_parking.html' %>'"></div>
-              </div>
+              <div>{{ decision.decision }}</div>
             </div>
           </div>
           <div ng-if="decision.decision.indexOf('ready') > -1">
             <div class="path-orange path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
-              <div class="dIB vAM">{{ decision.decision }}</div>
-              <div class="dIB vAM">
-                <div class="dIB vAM double">
-                  <div ng-include="'<%= asset_path 'svgs/_gpsEats.html' %>'"></div>
-                </div>
-                <div class="dIB vAM double">
-                  <div ng-include="'<%= asset_path 'svgs/_gpsBag.html' %>'"></div>
-                </div>
-              </div>
+              <div>{{ decision.decision }}</div>
             </div>
           </div>
           <div ng-if="decision.decision.indexOf('train') > -1">
             <div class="path-blue path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
-              <div class="dIB vAM">{{ decision.decision }}</div>
-              <div class="dIB vAM">
-                <div class="dIB vAM double">
-                  <div ng-include="'<%= asset_path 'svgs/_gpsTrain.html' %>'"></div>
-                </div>
-                <div class="dIB vAM double">
-                  <div ng-include="'<%= asset_path 'svgs/_gpsHandicapable.html' %>'"></div>
-                </div>
-              </div>
+              <div>{{ decision.decision }}</div>
             </div>
           </div>
         </div><!-- end angular iterator for instructions -->

@@ -7,7 +7,6 @@ angular.module('lawaApp')
         $http.get('/api/nodes').success(function(data){
           $scope.nodes = data;
 
-
           // find or create a respondent with session and current node data
           $http.get('/api/respondents/get_or_create/').success(function(data){
             $scope.surveySessionId = data.session_id;
