@@ -20,12 +20,12 @@ $(document).ready(function(){
         path = $btn.data('path'),
         $confirmPathBtn = $body.find('#interactive-map #x-btn-confirm-map-choice');
 
-    //check if this one is selected already
-    if ($btn.hasClass('selected')) { return; }
-
     if ( !$confirmPathBtn.hasClass('show') ) {
       $confirmPathBtn.toggleClass('show', true);
     }
+
+    //check if this one is selected already
+    if ($btn.hasClass('selected')) { return; }
 
     //deselect selected classes
     $body

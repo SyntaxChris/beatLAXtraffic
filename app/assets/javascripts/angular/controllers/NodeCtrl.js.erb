@@ -186,7 +186,11 @@ angular.module('lawaApp')
         $scope.currentNode = $scope.fetchNodeById(nodeId);
         $scope.currentTemplateName = $scope.getTemplateName(nodeId);
         // set default for gps questions
-        if($scope.currentNode.template_name === "dp-1" || $scope.currentNode.template_name === "dp-6"){
+        if ($scope.currentNode.template_name === "dp-1") {
+          console.log(190);
+          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
+          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+        } else if($scope.currentNode.template_name === "dp-6"){
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
         } else if($scope.currentNode.template_name === "dp-3"){
