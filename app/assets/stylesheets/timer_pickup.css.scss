@@ -5,6 +5,7 @@
   top: 0;
   height: 100%;
   width: 100%;
+  margin-top: 7%;
   .content {
     position: relative;
     z-index: 2;
@@ -16,6 +17,23 @@
     text-align: center;
     font-size: 1.1em;
     letter-spacing: .8px;
+  }
+  .sudo-header{
+    color: white;
+    text-shadow: 0 3px 5px rgba(0,0,0,.5);
+    font-weight: 700;
+    text-align: center;
+    font-size: 2vw;
+    width: 100%;
+  }
+  .bottom-question{
+    color: white;
+    margin-top: 10%;
+    text-shadow: 0 3px 5px rgba(0,0,0,.5);
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.5vw;
+    width: 100%;
   }
   button {
     font-family: 'Quicksand', sans-serif;
@@ -35,7 +53,8 @@
     .inner-question{
       font-size: 18px;
       padding-bottom: 20px;
-      padding-top: 50px;
+      padding-top: 60px;
+      text-shadow: 0 3px 5px rgba(0,0,0,.5);
     }
   }
   .timer-c {
@@ -87,20 +106,21 @@
       color: white;
     }
   }
-  .next#x-btn-timer-next {
+  #x-btn-timer-next {
+    cursor: pointer;
     display: block;
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    width: 200px;
-    background: #EB7374;
+    width: 150px;
+    background-color: #EE4444;
     color: white;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    border-radius: 25px;
+    // -moz-border-radius: 25px;
+    // -webkit-border-radius: 25px;
+    // border-radius: 25px;
     padding: 10px 0;
     text-align: center;
-    font-size: 1.4em;
+    font-size: 20px;
   }
 }
 
