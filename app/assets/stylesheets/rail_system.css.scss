@@ -1,3 +1,16 @@
+#x-btn-rail-system-next{
+  cursor: pointer;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 3%;
+  background-color: #EE4444;
+  font-family: 'Quicksand';
+  color: white;
+  width: 150px;
+  font-size: 20px;
+  padding: 5px;
+}
+
 .rail-background {
   display: none;
 }
@@ -111,5 +124,7 @@
       transform: rotate(180deg);
     }
   }
+
+
 
 }

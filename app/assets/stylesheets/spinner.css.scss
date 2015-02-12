@@ -28,7 +28,7 @@ h3 {
 	text-align: center;
 	padding: 10px 15px 10px 15px;
 	color: white;
-	background-color: red;
+	background-color: #EE4444;
 }
 
 .spin-button::hover {
@@ -63,7 +63,7 @@ h3 {
 	width: 200px;
 	padding: 10px 15px 10px 15px;
 	color: white;
-	background-color: red;
+	background-color: #EE4444; 
 
 }
 
@@ -87,7 +87,8 @@ h3 {
 }
 
 .failed-spin {
-	// margin-top:-30px;
+	position: relative;
+	// margin-top: -40px;
 	text-align: center;
 	svg {
 		width: 90%;
@@ -270,10 +271,6 @@ h3 {
 		margin-right: auto;
 		width: 100%;
 		margin-top: 0;
-	}
-
-	.fail {
-		margin-bottom: 6%;
 	}
 }
 

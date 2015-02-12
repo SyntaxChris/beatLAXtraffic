@@ -5,10 +5,10 @@
       <h3 class="main-question">{{ currentNode.question.question }}</h3>
     </div>
 
-    <div ng-click="immediateSubmitAnswer(answer, false)" ng-repeat="answer in currentNode.answers">
+    <div ng-repeat="answer in currentNode.answers">
       <div class="row" style="margin-bottom: 1.5%; margin-top: 3%">
         <div class="large-6 medium-6 small-9 large-centered medium-centered small-centered columns last-questions">
-          <div class="question-wrapper-2">
+          <div class="question-wrapper-2" ng-click="immediateSubmitAnswer(answer, false)">
             <div class="question-text-2" ng-id="{{ 'q' + $index + '-2' }}">
               {{ answer.answer }}
             </div>

@@ -11,16 +11,16 @@ $(document).ready(function(){
     });
     
 	$body.on('click', '#x-btn-keep-looking', function(){
-		timeSpent += 5;
+		// timeSpent += 5;
 
-		if(outcomePicker <= 5){
-			outcomePicker += 1;
-		}
-		else{
-			outcomePicker = 0;
-		}
+		// if(outcomePicker <= 5){
+		// 	outcomePicker += 1;
+		// }
+		// else{
+		// 	outcomePicker = 0;
+		// }
 
-		$('.timer-c .inner .timer-number').text(timeSpent);
-		$('.parking-result').text(outcomeAry[outcomePicker]);
+		// $('.timer-c .inner .timer-number').text(timeSpent);
+		// $('.parking-result').text(outcomeAry[outcomePicker]);
 	});
 });

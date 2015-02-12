@@ -42,7 +42,7 @@
 					.text-test{
 						text-align: center;
 						width: 100%;
-						margin-top: 28%;
+						margin-top: 15%;
 						position: absolute;
 						top: 25%;
 					}
@@ -63,7 +63,7 @@
 	}
 
 	.next#timer-question {
-		display:block;
+		display:none;
 		position: relative;
 		z-index: 20;
 		cursor: pointer;
@@ -168,7 +168,7 @@
 						.text-test{
 							text-align: center;
 							width: 100%;
-							margin-top: 28%;
+							margin-top: 15%;
 							position: absolute;
 							top: 25%;
 						}
