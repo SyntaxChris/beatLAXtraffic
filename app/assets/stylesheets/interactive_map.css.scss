@@ -127,6 +127,13 @@
   }
   .path-message {
     text-align: center;
+    h5 {
+      font-weight: 700;
+      font-size: .95em;
+      font-size: 1.2vw;
+      text-align: center;
+      margin: 2px 0 0;
+    }
     svg {
       height: 100%;
       width: 100%;
@@ -241,9 +248,15 @@
         border-width: 20px 20px 10px 20px;
       }
     }
-    .path-message > div {
-      font-size: 1.6em;
-      font-size: 3vw;
+    .path-message {
+      h5 {
+        font-size: .6em;
+        font-size: 2vw;
+      }
+      > div {
+        font-size: 1.6em;
+        font-size: 2.4vw;
+      }
     }
   }
 }

@@ -10,21 +10,25 @@
         <div ng-repeat="decision in currentNode.decisions">
           <div ng-if="decision.decision.indexOf('catch') > -1">
             <div class="path-yellow path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
+              <h5>A - Circle</h5>
               <div>{{ decision.decision }}</div>
             </div>
           </div>
           <div ng-if="decision.decision.indexOf('meet') > -1">
             <div class="path-green path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
+              <h5>B - Park</h5>
               <div>{{ decision.decision }}</div>
             </div>
           </div>
           <div ng-if="decision.decision.indexOf('ready') > -1">
             <div class="path-orange path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
+              <h5>C - Meet Offsite</h5>
               <div>{{ decision.decision }}</div>
             </div>
           </div>
           <div ng-if="decision.decision.indexOf('tram') > -1">
             <div class="path-blue path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
+              <h5>D - Meet at Future Tram</h5>
               <div>{{ decision.decision }}</div>
             </div>
           </div>
