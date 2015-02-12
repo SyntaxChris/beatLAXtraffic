@@ -168,7 +168,7 @@ namespace :populate do
     e3 = Node.create(nickname: "E 3", is_decision_point: false , branch_id: ending_questions_branch.id, template_name: "e-3")
       e3q = Question.create(
         node_id: e3.id,
-        question: "Based on this scenario, we estimated you spent [Calculated Game Time in Minutes] getting your passenger at the airport.\nIs this typical?",
+        question: "Based on this game, we estimated you spent [Calculated Game Time in Minutes] getting your passenger at the airport.\nIs this typical?",
         question_type_id: single_choice.id
       )
         e3a1 = Answer.create(question_id: e3q.id, answer: "Yes", icon_name: nil)
@@ -184,7 +184,7 @@ namespace :populate do
         e4a2 = Answer.create(question_id: e4q.id, answer: "Leisure/vacation/visiting", icon_name: nil)
         e4a3 = Answer.create(question_id: e4q.id, answer: "Not travelling: Picking-up passenger", icon_name: nil)
         e4a4 = Answer.create(question_id: e4q.id, answer: "Not travelling: Dropping-off passenger", icon_name: nil)
-        e4a5 = Answer.create(question_id: e4q.id, answer: "Antoher reason (Specify)", icon_name: nil)
+        e4a5 = Answer.create(question_id: e4q.id, answer: "Anoher reason (Specify)", icon_name: nil)
 
     e5 = Node.create(nickname: "E 5", is_decision_point: false , branch_id: ending_questions_branch.id, template_name: "e-5")
       e5q = Question.create(
