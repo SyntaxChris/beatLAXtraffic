@@ -187,15 +187,17 @@ angular.module('lawaApp')
         $scope.currentTemplateName = $scope.getTemplateName(nodeId);
         // set default for gps questions
         if ($scope.currentNode.template_name === "dp-1") {
-          console.log(190);
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+          $scope.addOneToCircling();
         } else if($scope.currentNode.template_name === "dp-6"){
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+          $scope.addOneToCircling();
         } else if($scope.currentNode.template_name === "dp-3"){
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Continue circling around terminal"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+          $scope.addOneToCircling();
         }
       };
 
@@ -392,12 +394,15 @@ angular.module('lawaApp')
         if ($scope.currentNode.template_name === "dp-1") {
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+          $scope.addOneToCircling();
         } else if ($scope.currentNode.template_name === "dp-6"){
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+          $scope.addOneToCircling();
         } else if($scope.currentNode.template_name === "dp-3"){
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Continue circling around terminal"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+          $scope.addOneToCircling();
         } else if($scope.currentNode.template_name === "e-1"){
           $scope.setShowDashboard(false);
         }

@@ -20,6 +20,11 @@ $(document).ready(function(){
         path = $btn.data('path'),
         $confirmPathBtn = $body.find('#interactive-map #x-btn-confirm-map-choice');
 
+    $btn.toggleClass('animate', true);
+    setTimeout(function(){
+      $btn.toggleClass('animate', false);
+    },2000);
+
     if ( !$confirmPathBtn.hasClass('show') ) {
       $confirmPathBtn.toggleClass('show', true);
     }
