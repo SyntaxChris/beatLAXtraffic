@@ -6,7 +6,7 @@
   <div class="bottom-half">
     <div style="display: inline-block; position: relative;" class="map-container-inside">
       <div class="instructions">
-        <div class="path-message showing">Choose a letter to select an approach</div>
+        <div class="path-message showing">Pick your path!</div>
         <div ng-repeat="decision in currentNode.decisions">
           <div ng-if="decision.decision.indexOf('catch') > -1">
             <div class="path-yellow path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
@@ -23,7 +23,7 @@
               <div>{{ decision.decision }}</div>
             </div>
           </div>
-          <div ng-if="decision.decision.indexOf('train') > -1">
+          <div ng-if="decision.decision.indexOf('tram') > -1">
             <div class="path-blue path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
               <div>{{ decision.decision }}</div>
             </div>
@@ -31,7 +31,7 @@
         </div><!-- end angular iterator for instructions -->
 
         <button ng-click="submit(currentDecision.id, true)" id="x-btn-confirm-map-choice" class="plane-advance confirm-map-choice-btn">
-          CONFIRM
+          GO!
         </button>
       </div>
 
@@ -69,7 +69,7 @@
           </div>
         </div>
 
-        <div ng-if="decision.decision.indexOf('train') > -1">
+        <div ng-if="decision.decision.indexOf('tram') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
 
           </a>

@@ -389,7 +389,10 @@ angular.module('lawaApp')
         // TODO: this is gross and should be handled in a better way. not least of all
         //       because it needs to be replicated up in the setup in the case of reloads
         // set default for gps question and other templates-specific settings
-        if($scope.currentNode.template_name === "dp-1" || $scope.currentNode.template_name === "dp-6"){
+        if ($scope.currentNode.template_name === "dp-1") {
+          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
+          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+        } else if ($scope.currentNode.template_name === "dp-6"){
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
         } else if($scope.currentNode.template_name === "dp-3"){
