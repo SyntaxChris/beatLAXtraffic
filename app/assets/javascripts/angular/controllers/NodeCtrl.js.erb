@@ -470,6 +470,7 @@ angular.module('lawaApp')
             <%= "templates['#{node.id}'] = {template: '#{asset_path "partials/#{node.clean_template_name}.html"}'}" %>
           <% end %>
       <% end %>
+      
 
       $scope.getTemplateName = function(nodeId){
         return templates[nodeId].template;

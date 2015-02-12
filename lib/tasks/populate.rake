@@ -81,7 +81,7 @@ namespace :populate do
         itf2a3= Answer.create(question_id: itf2q.id, answer: "A nice waiting area, where I could get a cup of coffee or something to eat", icon_name: "food")
         itf2a4= Answer.create(question_id: itf2q.id, answer: "Easy ways to get in and out of the location", icon_name: "exit")
         itf2a5= Answer.create(question_id: itf2q.id, answer: "WIFi", icon_name: "wifi")
-        itf2a6= Answer.create(question_id: itf2q.id, answer: "Passenger Assistants", icon_name: "helpdesk")
+        itf2a6= Answer.create(question_id: itf2q.id, answer: "A comfortable waiting area", icon_name: "couch")
         itf2a7= Answer.create(question_id: itf2q.id, answer: "Wheelchair/Disabled Assistants", icon_name: "helpdesk")
         itf2a8= Answer.create(question_id: itf2q.id, answer: "Dog run/relief area", icon_name: "dog")
         itf2a9= Answer.create(question_id: itf2q.id, answer: "Children’s Play Area", icon_name: "family")

@@ -1,5 +1,8 @@
 <!-- WILLING TO WAIT -->
 <div id="willing-to-wait">
+    <h3 class="main-question">
+      {{ currentNode.question.question }}
+    </h3>
   <div class="content-c">
     <div class="timer-c">
       <div class="inner">
@@ -7,15 +10,12 @@
         <div>Mins</div>
       </div>
     </div>
-    <h3>
-      {{ currentNode.question.question }}
-    </h3>
   </div>
 
   <div class="content-c buttons-c">
     <div>
-      <button ng-click="addTimeInterval(-10)" id="x-btn-remove-wait-time" class="remove-wait-time-btn">-10 min</button>
-      <button ng-click="addTimeInterval(10)" id="x-btn-add-wait-time" class="add-wait-time-btn">+10 min</button>
+      <button ng-click="addTimeInterval(-10)" id="x-btn-remove-wait-time">-</button>
+      <button ng-click="addTimeInterval(10)" id="x-btn-add-wait-time">+</button>
     </div>
     <div>
       <button id="x-btn-wait-next" ng-click="submit(null, true)" class="plane-advance next wait-next-btn emergency-next">NEXT</button>

@@ -1,15 +1,21 @@
 #willing-to-wait {
   text-align: center;
   position: relative;
-  width: 50%;
+  width: 100%;
   height: 100%;
   margin-left: auto;
   margin-right: auto;
-  top: -30px;
+  h3.main-question{
+    color: white;
+    text-shadow: 0 3px 5px rgba(0,0,0,.5);
+    font-weight: 700;
+    text-align: center;
+    font-size: 3vw;
+  }
   .timer-c {
-    margin-top: 50px;
-    height: 150px;
-    width: 150px;
+    // margin-top: 50px;
+    // height: 100%;
+    // width: 100%;
     margin: 0 auto;
     position: relative;
     background-image: image_url('timer_stopwatch.svg');
@@ -28,7 +34,13 @@
   }
   .content-c {
     position: relative;
+    margin: 0 auto;
     z-index: 1;
+    // margin-top: 70px;
+    // display: inline-block;
+    // vertical-align: middle;
+    width: 100%;
+    max-width: 300px;
   }
   h3 {
     color: white;
@@ -43,18 +55,12 @@
     padding: 6px 0;
     width: 45%;
     background: none;
-    border: 2px solid #36C2E2;
-    color: white;
-    -moz-border-radius: 25px;
-    -webkit-border-radius: 25px;
-    border-radius: 25px;
     -webkit-transition: all 300ms;
     -moz-transition: all 300ms;
     -ms-transition: all 300ms;
     -o-transition: all 300ms;
     transition: all 300ms;
     &:hover {
-      background: #36C2E2;
       color: white;
     }
   }
@@ -67,7 +73,56 @@
     border: none;
     color: white;
   }
+  #x-btn-add-wait-time{
+    color: white;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    border: 2px solid #1CC95C;
+    // display: block;
+    // position: relative;
+    // margin-left: auto;
+    // margin-right: auto;
+    // // background: #EC7173;
+    // border: none;
+    // color: white;
+  }
+  #x-btn-add-wait-time:hover{
+    background: #1CC95C;
 
+  }
+
+  #x-btn-remove-wait-time{
+    color: white;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    border: 2px solid #EB7374;
+    // display: block;
+    // position: relative;
+    // margin-left: auto;
+    // margin-right: auto;
+    // // background: #EC7173;
+    // border: none;
+    // color: white;
+  }
+  #x-btn-remove-wait-time:hover{
+    background: #EB7374;
+
+  }
+
+}
+
+@media only screen and (max-width: 640px){
+  #willing-to-wait{
+    h3.main-question{
+      color: white;
+      text-shadow: 0 3px 5px rgba(0,0,0,.5);
+      font-weight: 700;
+      text-align: center;
+      font-size: 5vw;  
+    }
+  }
 }
 
 @media only screen and (min-width : 360px) { 
@@ -90,14 +145,14 @@
   }
 }
 
-@media only screen and (min-width : 768px) { 
-  #willing-to-wait {
-    .content-c {
-      margin-top: 70px;
-      display: inline-block;
-      vertical-align: middle;
-      width: 45%;
-      max-width: 300px;
-    }
-  }
-}
+// @media only screen and (min-width : 768px) { 
+//   #willing-to-wait {
+//     .content-c {
+//       margin-top: 70px;
+//       display: inline-block;
+//       vertical-align: middle;
+//       width: 45%;
+//       max-width: 300px;
+//     }
+//   }
+// }
