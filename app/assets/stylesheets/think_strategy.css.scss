@@ -36,14 +36,18 @@
     margin-top: -40px;
   }
   .thought-head {
-    display: none;
-  }
-  .next-thought-btn {
-    width: 80%;
-    padding: 8px 0;
-    background: #EF4545;
-    display: block;
-    margin: -20px auto 0;
+    position: relative;
+    .think-next-btn{
+      cursor: pointer;
+      display: none;
+      position: absolute;
+      background-color: #EE4444;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      top: 30%;
+      font-size: 20px;
+    }
   }
 }
 

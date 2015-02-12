@@ -32,11 +32,10 @@
 
     <div class="thought-head">
       <div ng-include="'<%= asset_path 'svgs/_head.html' %>'"></div>
+        <div ng-click="addOneToCircling(); submit(null, true)" class="think-next-btn plane-advance">
+          NEXT
+        </div>
     </div>
-
-    <button id="x-btn-next-though" ng-click="addOneToCircling(); submit(null, true)" class="next-thought-btn plane-advance">
-      Next
-    </button>
   </div>
 </div>
 <!-- END WHY DO YOU THINK THIS STRATEGY WILL WORK -->

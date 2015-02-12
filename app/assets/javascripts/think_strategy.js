@@ -10,14 +10,17 @@ $(document).ready(function(){
   function toggleSelected(e){
     e.preventDefault();
     e.stopImmediatePropagation();
-
     var $btn = $(this);
+    $('.think-next-btn').fadeIn();
+
+    $('#x-btn-next-though').show();
+
+    $('.next-thought-btn').fadeIn();
 
     if ( $btn.hasClass('selected') ) { return; }
 
     $body.find('#think-strategy .selected').toggleClass('selected', false);
     $btn.toggleClass('selected', true);
-    $('#x-btn-next-though').fadeIn();
   }
 
 });

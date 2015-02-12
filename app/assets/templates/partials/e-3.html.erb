@@ -4,7 +4,7 @@
     <div class="content-c">
       <div class="sudo-header">You would have spent:</div>
       <div class="timer-c">
-        <div ng-if="!adjustedTimeElapsed">
+        <div ng-if="!adjustedTimeElapsed && adjustedTimeElapsed != 0">
           <div class="timer-number" id="min">{{ variables.time_elapsed }}</div>
         </div>
         <div ng-if="adjustedTimeElapsed != undefined">
@@ -12,9 +12,8 @@
         </div>
         <div>min</div>
       </div>
-      Picking up your passenger at the airport
+      <div class="bottom-question">Picking up your passenger at the airport</div>
     </div>
-
 
     <div class="content-c buttons-c">
       <div class="inner-question">
@@ -26,10 +25,10 @@
       </div>
       <div>
         <div ng-if="!adjustedTimeElapsed">
-          <button ng-click="submit()" id="x-btn-timer-next">Next</button>
+          <div ng-click="submit()" id="x-btn-timer-next">NEXT</div>
         </div>
         <div ng-if="adjustedTimeElapsed">
-          <button ng-click="submit()" id="x-btn-timer-next">Next</button>
+          <div ng-click="submit()" id="x-btn-timer-next">NEXT</div>
         </div>
       </div>
     </div>

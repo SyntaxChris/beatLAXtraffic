@@ -24,7 +24,6 @@ $(document).ready(function(){
   function toggleShareStoryOverlay(e,action){
     e.preventDefault();
     e.stopImmediatePropagation();
-
     if (action == 'open') {
       $('#share-story-overlay').toggleClass('show', true);
     } else {

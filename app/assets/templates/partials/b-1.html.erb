@@ -2,7 +2,7 @@
   <div id="why-park-car">
     <div class="row" style="text-align:center">
       <h3 class="main-question">{{ currentNode.question.question }}</h3>
-      <!-- <h6 class="sub-header">(Select all that apply)</h6> -->
+      <h6 class="sub-header">(Select all that apply)</h6>
     </div>
     <div class="row">
       <div ng-repeat="answer in currentNode.answers" ng-click="addMultipleChoice(answer)">
@@ -38,7 +38,7 @@
     </div>
     <div class="row">
       <div ng-click="addOneToCircling(); submit(null, true)" class="park-btn-next plane-advance">
-        Next
+        NEXT
       </div>
     </div>
   </div>
