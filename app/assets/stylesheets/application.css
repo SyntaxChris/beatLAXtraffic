@@ -39,6 +39,32 @@
  *= require foundation_and_overrides
 
  */
+
+//usage: 
+@mixin animate($name, $duration, $timing, $iteration){
+  -webkit-animation-name: $name;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-timing-function: $timing;
+  -webkit-animation-iteration-count: $iteration;
+  -moz-animation-name: $name;
+  -moz-animation-duration: $duration;
+  -moz-animation-timing-function: $timing;
+  -moz-animation-iteration-count: $iteration;
+  -ms-animation-name: $name;
+  -ms-animation-duration: $duration;
+  -ms-animation-timing-function: $timing;
+  -ms-animation-iteration-count: $iteration;
+  -o-animation-name: $name;
+  -o-animation-duration: $duration;
+  -o-animation-timing-function: $timing;
+  -o-animation-iteration-count: $iteration;
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $timing;
+  animation-iteration-count: $iteration;
+}
+
+
 body, html { 
 	font-family: 'Quicksand', sans-serif;
     overflow-x: hidden; 
