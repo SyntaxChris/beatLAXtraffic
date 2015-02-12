@@ -42,5 +42,9 @@ $(document).ready(function(){
 	.on('keyup', "textarea#strategy-text", function(){
 		var cs = 140 - $(this).val().length;
 	    $('.char-counter').text(cs + " chars left");
+	})
+	.on('keyup', "textarea#other-info-last-questions", function(){
+		var cs = 140 - $(this).val().length;
+	    $('#char-count-last-questions').text(cs + " characters left");
 	});
 });

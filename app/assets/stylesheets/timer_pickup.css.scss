@@ -23,8 +23,9 @@
     text-shadow: 0 3px 5px rgba(0,0,0,.5);
     font-weight: 700;
     text-align: center;
-    font-size: 2vw;
-    width: 100%;
+    font-size: 3vw;
+    width: 200%;
+    margin-left: -50%;
   }
   .bottom-question{
     color: white;
@@ -32,12 +33,17 @@
     text-shadow: 0 3px 5px rgba(0,0,0,.5);
     font-weight: 700;
     text-align: center;
-    font-size: 1.5vw;
-    width: 100%;
+    font-size: 2vw;
+    width: 150%;
+    margin-left: -25%;
+    line-height: 3vw;
   }
   button {
     font-family: 'Quicksand', sans-serif;
     outline: none;
+  }
+  .content-c.buttons-c{
+    margin-top: 0;
   }
   .content-c {
     display: block;
@@ -50,8 +56,11 @@
       margin-top: 20%;
     }
 
-    .inner-question{
-      font-size: 18px;
+    .inner-question#how-long{
+      width: 120%;
+      font-weight: 700;
+      margin-left: -10%;
+      font-size: 1.8vw;
       padding-bottom: 20px;
       padding-top: 60px;
       text-shadow: 0 3px 5px rgba(0,0,0,.5);

@@ -1,15 +1,20 @@
 #time-spent {
   text-align: center;
-  .timer-c {
-    height: 150px;
-    width: 150px;
-    margin: 0 auto;
-    position: relative;
-    background-image: image_url('timer_stopwatch.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    font-weight: 600;
-    color: white;
+  div.sudo-header{
+    font-size: 5vw;
+  }
+  .content{
+    .timer-c {
+      height: 150px;
+      width: 150px;
+      margin: 0 auto;
+      position: relative;
+      background-image: image_url('timer_stopwatch.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-weight: 600;
+      color: white;
+    }
   }
   .inner {
     position: absolute;
