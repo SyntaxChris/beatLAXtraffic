@@ -60,7 +60,7 @@ namespace :populate do
         gq1a5 = Answer.create(question_id: gq1q.id, answer: "Other (Explain)", icon_name: nil)
 
     ns4 = Node.create(nickname: "NS 4", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "ns-4")
-      ns4q = Question.create(node_id: ns4.id, question: "Nice! You chose an option that is currently being built and will be finished by [YEAR]. We want your input on how we should build this location", question_type_id: single_choice.id)
+      ns4q = Question.create(node_id: ns4.id, question: "Nice! This location is part of the largest improvement project ever at LAX.\nWe'd love to hear how this project can help you and your passengers navigate LAX better", question_type_id: single_choice.id)
         ns4qa1 = Answer.create(question_id: ns4q.id, answer: "NS 4 answer", icon_name: nil)
 
     ns5 = Node.create(nickname: "NS 5", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "ns-5")
