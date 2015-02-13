@@ -1,39 +1,39 @@
-  <!-- 7. TILE QUESTIONS -->
-  <div id="tile-questions">
+<div class="skip" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
+<!-- 7. TILE QUESTIONS -->
+<div id="tile-questions">
+  <div class="row">
+  <h3 class="main-question" id="main-landscape">{{ currentNode.question.question }}</h3>
+    <h5 class="sub-header">Select all that apply</h5>
+  </div>
 
-    <div class="row">
-    <h3 class="main-question" id="main-landscape">{{ currentNode.question.question }}</h3>
-      <h5 class="sub-header">Select all that apply</h5>
-    </div>
-
-    <div class="row">
-      <div ng-repeat="answer in currentNode.answers">
-        <div class="large-3 medium-3 small-6 columns">
-          <div class="row">
-            <div class="tile-bbl">
-              <div class="tile-checkmark">
-                <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
-              </div>
-              <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'car')" ng-include="'<%= asset_path 'svgs/_phone.html' %>'" class="tile"></div>
-              <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'Shop')" ng-include="'<%= asset_path 'svgs/_shop.html' %>'" class="tile"></div>
-              <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'Waiting') && matchAnswerString(answer, 'terminal')" ng-include="'<%= asset_path 'svgs/_hangout.html' %>'" class="tile"></div>
-              <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'eat')" ng-include="'<%= asset_path 'svgs/_eat.html' %>'" class="tile"></div>
+  <div class="row">
+    <div ng-repeat="answer in currentNode.answers">
+      <div class="large-3 medium-3 small-6 columns">
+        <div class="row">
+          <div class="tile-bbl">
+            <div class="tile-checkmark">
+              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
             </div>
+            <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'car')" ng-include="'<%= asset_path 'svgs/_phone.html' %>'" class="tile"></div>
+            <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'Shop')" ng-include="'<%= asset_path 'svgs/_shop.html' %>'" class="tile"></div>
+            <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'Waiting') && matchAnswerString(answer, 'terminal')" ng-include="'<%= asset_path 'svgs/_hangout.html' %>'" class="tile"></div>
+            <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'Eating')" ng-include="'<%= asset_path 'svgs/_eat.html' %>'" class="tile"></div>
           </div>
-          <div class="row">
-            <div class="tile-title">
-              {{ answer.answer }}
-            </div>
+        </div>
+        <div class="row">
+          <div class="tile-title">
+            {{ answer.answer }}
           </div>
         </div>
       </div>
     </div>
-
-    <div class="row">
-      <div ng-click="submit(null, true)" class="tile-next plane-advance">
-        NEXT
-      </div>
-    </div>
-
   </div>
-  <!-- END TILE QUESTIONS -->
+
+  <div class="row">
+    <div ng-click="submit(null, true)" class="tile-next plane-advance">
+      NEXT
+    </div>
+  </div>
+
+</div>
+<!-- END TILE QUESTIONS -->
