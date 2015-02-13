@@ -45,10 +45,11 @@
     }
     .path-letter {
       position: absolute;
-      top: 8px;
-      width: 100%;
+      top: 2px;
+      width: 60%;
+      left: 50%;
+      margin-left: -32%;
       text-align: center;
-      left: 0;
       font-weight: 700;
       color: white;
       font-size: 3vw;
@@ -59,6 +60,9 @@
       top: 50%;
       height: 15%;
       width: 9%;
+      .path-letter {
+        top: 6px;
+      }
       &.selected {
         .color-fill {
           fill: #F6C84E;
@@ -89,6 +93,18 @@
       top: 49%;
       height: 15%;
       width: 9%;
+      .path-letter {
+        #parking {
+          height: 80%;
+          width: 80%;
+        }
+        .icon-background {
+          fill: #FFFFFF;
+        }
+        .letter-p {
+          fill: #AAAAAA;
+        }
+      }
       &.selected {
         .color-fill {
           fill: #ADD48A;
@@ -105,7 +121,9 @@
       height: 15%;
       width: 9%;
       .path-letter {
-        top: 17px;
+        top: 12px;
+        width: 45%;
+        margin-left: -20.5%;
       }
       &.selected {
         .color-fill {
@@ -340,8 +358,17 @@
         font-size: 2.4vw;
       }
     }
-    .select-path-btn .path-letter, .select-path-btn[data-path="orange"] .path-letter {
-      top: -2px;
+    .select-path-btn .path-letter {
+      top: 2px;
+    }
+    .select-path-btn[data-path="yellow"] .path-letter {
+      top: 2px;
+    }
+    .select-path-btn[data-path="orange"] .path-letter {
+      top: 7px;
+    }
+    .select-path-btn[data-path="blue"] .path-letter {
+      top: -1px;
     }
   }
 }

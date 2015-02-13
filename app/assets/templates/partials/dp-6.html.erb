@@ -123,25 +123,21 @@
         <div ng-repeat="decision in currentNode.decisions">
           <div ng-if="decision.decision.indexOf('catch') > -1">
             <div class="path-yellow path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
-              <h5>A - Circle</h5>
               <div>{{ decision.decision }}</div>
             </div>
           </div>
           <div ng-if="decision.decision.indexOf('structure') > -1">
             <div class="path-green path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
-              <h5>B - Park</h5>
               <div>{{ decision.decision }}</div>
             </div>
           </div>
           <div ng-if="decision.decision.indexOf('ready') > -1">
             <div class="path-orange path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
-              <h5>C - Meet Offsite</h5>
               <div>{{ decision.decision }}</div>
             </div>
           </div>
           <div ng-if="decision.decision.indexOf('train') > -1">
             <div class="path-blue path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
-              <h5>D - Meet at Future Tram</h5>
               <div>{{ decision.decision }}</div>
             </div>
           </div>
@@ -162,7 +158,7 @@
         <div ng-if="decision.decision.indexOf('catch') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="yellow">
             <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
-            <span class="path-letter">A</span>
+            <span ng-include="'<%= asset_path 'svgs/_racetrack.html' %>'" class="path-letter"></span>
           </a>
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path yellow">
             <%= image_tag('map_yellow-02.jpg', width: '100%') %>
@@ -172,7 +168,7 @@
         <div ng-if="decision.decision.indexOf('structure') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="green">
             <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
-            <span class="path-letter">B</span>
+            <span ng-include="'<%= asset_path 'svgs/_parking.html' %>'" class="path-letter"></span>
           </a>
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path green">
             <%= image_tag('map_green-02.jpg', width: '100%') %>
@@ -182,7 +178,7 @@
         <div ng-if="decision.decision.indexOf('ready') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="orange">
             <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
-            <span class="path-letter">C</span>
+            <span ng-include="'<%= asset_path 'svgs/_burger.html' %>'" class="path-letter"></span>
           </a>
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path orange">
             <%= image_tag('map_orange-02.jpg', width: '100%') %>
@@ -192,7 +188,7 @@
         <div ng-if="decision.decision.indexOf('train') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
             <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
-            <span class="path-letter">D</span>
+            <span ng-include="'<%= asset_path 'svgs/_newTram.html' %>'" class="path-letter"></span>
           </a>
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path blue">
             <%= image_tag('map_blue-02.jpg', width: '100%') %>
