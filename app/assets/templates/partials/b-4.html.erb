@@ -1,4 +1,8 @@
+<div class="skip" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
 <!-- WILLING TO WAIT -->
+<h3 class="main-question">
+  {{ currentNode.question.question }}
+</h3>
 <div id="willing-to-wait">
   <div class="content-c">
     <div class="timer-c">
@@ -7,9 +11,6 @@
         <div>Mins</div>
       </div>
     </div>
-    <h3>
-      {{ currentNode.question.question }}
-    </h3>
   </div>
 
   <div class="content-c buttons-c">

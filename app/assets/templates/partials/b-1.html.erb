@@ -1,46 +1,47 @@
- <!-- Why do you choose to park your car? -->
-  <div id="why-park-car">
-    <div class="row" style="text-align:center">
-      <h3 class="main-question">{{ currentNode.question.question }}</h3>
-      <h6 class="sub-header">(Select all that apply)</h6>
-    </div>
-    <div class="row">
-      <div ng-repeat="answer in currentNode.answers" ng-click="addMultipleChoice(answer)">
-        <div class="large-3 medium-3 small-6 columns">
-          <div class="unchecked">
-            <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
-          </div>
+<div class="skip" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
+<!-- Why do you choose to park your car? -->
+<div id="why-park-car">
+  <div class="row" style="text-align:center">
+    <h3 class="main-question">{{ currentNode.question.question }}</h3>
+    <h6 class="sub-header">(Select all that apply)</h6>
+  </div>
+  <div class="row">
+    <div ng-repeat="answer in currentNode.answers" ng-click="addMultipleChoice(answer)">
+      <div class="large-3 medium-3 small-6 columns">
+        <div class="unchecked">
+          <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
+        </div>
 
-          <div class="parking-bbl" ng-class="{'other-bbl': answer.answer.indexOf('Other') > -1}">
-            <div class="bbl-icon">
-              <div ng-if="answer.answer.indexOf('convenient') > -1" ng-include="'<%= asset_path 'svgs/_carParkBubble.html' %>'"></div>
-              <div ng-if="answer.answer.indexOf('avoid') > -1" ng-include="'<%= asset_path 'svgs/_avoidTraffic.html' %>'"></div>
-              <div ng-if="answer.answer.indexOf('terminal') > -1" ng-include="'<%= asset_path 'svgs/_peopleParkBubble.html' %>'"></div>
-              <div ng-if="answer.answer.indexOf('Other') > -1" ng-include="'<%= asset_path 'svgs/_questionBubble.html' %>'"></div>
+        <div class="parking-bbl" ng-class="{'other-bbl': answer.answer.indexOf('Other') > -1}">
+          <div class="bbl-icon">
+            <div ng-if="answer.answer.indexOf('convenient') > -1" ng-include="'<%= asset_path 'svgs/_carParkBubble.html' %>'"></div>
+            <div ng-if="answer.answer.indexOf('avoid') > -1" ng-include="'<%= asset_path 'svgs/_avoidTraffic.html' %>'"></div>
+            <div ng-if="answer.answer.indexOf('terminal') > -1" ng-include="'<%= asset_path 'svgs/_peopleParkBubble.html' %>'"></div>
+            <div ng-if="answer.answer.indexOf('Other') > -1" ng-include="'<%= asset_path 'svgs/_questionBubble.html' %>'"></div>
+          </div>
+          <div class="bbl-title">
+            {{ answer.answer }}
+          </div>
+          <div ng-if="answer.answer.indexOf('Other') > -1">
+            <div class="row" style="padding-top: 50px">
+              <textarea ng-model="currentOther.text" ng-change="determineOtherText(currentOther.text, answer.id)" id="park-bbl" cols="30" rows="5" maxlength="140"></textarea>
+              <div class="text-counter"></div>
             </div>
-            <div class="bbl-title">
-              {{ answer.answer }}
-            </div>
-            <div ng-if="answer.answer.indexOf('Other') > -1">
-              <div class="row" style="padding-top: 50px">
-                <textarea ng-model="currentOther.text" ng-change="determineOtherText(currentOther.text, answer.id)" id="park-bbl" cols="30" rows="5" maxlength="140"></textarea>
-                <div class="text-counter"></div>
-              </div>
-              <div class="row">
-                <div class="ok-btn">
-                  Ok
-                </div>
+            <div class="row">
+              <div class="ok-btn">
+                Ok
               </div>
             </div>
           </div>
         </div>
-      </div><!-- end answer iterator -->
-    </div>
-    <div class="row">
-      <div ng-click="addOneToCircling(); submit(null, true)" class="park-btn-next plane-advance">
-        NEXT
       </div>
+    </div><!-- end answer iterator -->
+  </div>
+  <div class="row">
+    <div ng-click="addOneToCircling(); submit(null, true)" class="park-btn-next plane-advance">
+      NEXT
     </div>
   </div>
-  <!-- END TODO: 5. Why do you choose to park your car? -->
+</div>
+<!-- END TODO: 5. Why do you choose to park your car? -->
 

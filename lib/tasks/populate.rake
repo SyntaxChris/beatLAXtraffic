@@ -52,7 +52,7 @@ namespace :populate do
       # ^ This will either say this or an alternate based on a random generation
 
     gq1 = Node.create(nickname: "GQ 1", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "gq-1")
-      gq1q = Question.create(node_id: gq1.id, question: "Why do you choose this strategy? Select all that apply (minimum 1)", question_type_id: many_choice.id)
+      gq1q = Question.create(node_id: gq1.id, question: "Why do you choose this strategy?", question_type_id: many_choice.id)
         gq1a1 = Answer.create(question_id: gq1q.id, answer: "To minimize the hassle for me", icon_name: nil)
         gq1a2 = Answer.create(question_id: gq1q.id, answer: "To make it convenient for my passenger", icon_name: nil)
         gq1a3 = Answer.create(question_id: gq1q.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil)
@@ -107,7 +107,7 @@ namespace :populate do
 
     # park and meet
     b1 = Node.create(nickname: "B 1", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-1")
-      b1q = Question.create(node_id: b1.id, question: "Why do you choose to park your car? Select all that apply:", question_type_id: many_choice.id)
+      b1q = Question.create(node_id: b1.id, question: "Why do you choose to park your car?", question_type_id: many_choice.id)
       # ^ this will need alt question text
         b1a1= Answer.create(question_id: b1q.id, answer: "When convenient parking is available", icon_name: nil)
         b1a2= Answer.create(question_id: b1q.id, answer: "To avoid driving in traffic", icon_name: nil)
@@ -123,11 +123,11 @@ namespace :populate do
         b2a4= Answer.create(question_id: b2q.id, answer: "More than 90 minutes", icon_name: nil, custom_order: 1)
 
     b3 = Node.create(nickname: "B 3", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-3")
-      b3q = Question.create(node_id: b3.id, question: "What are you doing while you're parked? Select all that apply:", question_type_id: many_choice.id)
+      b3q = Question.create(node_id: b3.id, question: "What are you doing while you're parked?", question_type_id: many_choice.id)
         b3a1= Answer.create(question_id: b3q.id, answer: "Waiting in my car", icon_name: nil)
         b3a2= Answer.create(question_id: b3q.id, answer: "Waiting in the terminal", icon_name: nil)
         b3a3= Answer.create(question_id: b3q.id, answer: "Shopping in the terminal", icon_name: nil)
-        b3a4= Answer.create(question_id: b3q.id, answer: "Getting something to eat or drink in the terminal", icon_name: nil)
+        b3a4= Answer.create(question_id: b3q.id, answer: "Eating drinking in the terminal", icon_name: nil)
 
     b4 = Node.create(nickname: "B 4", is_decision_point: false , branch_id: park_and_meet_branch.id, template_name: "b-4")
       b4q = Question.create(node_id: b4.id, question: "What is the longest you are willing to look for parking?", question_type_id: single_choice.id)
@@ -184,7 +184,7 @@ namespace :populate do
         e4a2 = Answer.create(question_id: e4q.id, answer: "Leisure/vacation/visiting", icon_name: nil)
         e4a3 = Answer.create(question_id: e4q.id, answer: "Not travelling: Picking-up passenger", icon_name: nil)
         e4a4 = Answer.create(question_id: e4q.id, answer: "Not travelling: Dropping-off passenger", icon_name: nil)
-        e4a5 = Answer.create(question_id: e4q.id, answer: "Anoher reason (Specify)", icon_name: nil)
+        e4a5 = Answer.create(question_id: e4q.id, answer: "Another reason (Specify)", icon_name: nil)
 
     e5 = Node.create(nickname: "E 5", is_decision_point: false , branch_id: ending_questions_branch.id, template_name: "e-5")
       e5q = Question.create(
