@@ -17,7 +17,7 @@ $(document).ready(function(){
 
     if ( timerCount < 0 ) { timerCount = 0; }
 
-    updateTimerCount();
+    //updateTimerCount();
 
   }
   function incrementTimer(e){
@@ -26,7 +26,7 @@ $(document).ready(function(){
 
     timerCount += 5;
 
-    updateTimerCount();
+    //updateTimerCount();
 
   }
 
