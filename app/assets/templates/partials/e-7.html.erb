@@ -83,15 +83,26 @@
     <div class="share-btns-c btcf">
       <div class="row">
         <div class="large-6 medium-6 small-6 columns">
-          <div class="share-btn"></div>
+          <div class="twitter-share-btn" ng-include="'<%= asset_path 'svgs/tweet.html' %>'" >
+          </div>
         </div>
         <div class="large-6 medium-6 small-6 columns">
-          <div class="share-btn"></div>
+          <div class="tweet-link">
+            <a class="twitter-share-button" 
+              href="https://twitter.com/share"
+              data-url="https://someawesomewebsiteexample.com"
+              data-text="I just played the LAX Pickup Artist Survey Game. Check it out!"
+              data-count="horizontal">
+            </a>
+          </div>
         </div>
       </div>
-      <!-- <button id="x-btn-twitter-share" class="twitter-share-btn">Share on Twitter</button>
-      <button id="x-btn-facebook-share" class="facebook-share-btn">Share on Facebook</button> -->
     </div>
+
+
   </div>
 </div>
+<script>
+window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+</script>
 <!-- END CONGRATULATIONS -->
