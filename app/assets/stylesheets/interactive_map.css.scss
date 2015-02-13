@@ -141,7 +141,7 @@
     position: absolute;
     text-align: center;
     width: 100%;
-    bottom: 180px;
+    bottom: 200px;
     max-height: 64%;
     //background: #f8f8f8;
     &:before {
@@ -387,7 +387,7 @@
 
 @media screen and (max-width: 1580px) and (min-width: 1025px) and (orientation: landscape) {
   #interactive-map .bottom-half {
-    bottom: 180px;
+    bottom: 200px;
   }
 }
 
