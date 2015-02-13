@@ -25,7 +25,7 @@ namespace :populate do
         splashqa1 = Answer.create(question_id: splashq.id, answer: "Splash screen seen", icon_name: nil)
 
     sq1 = Node.create(nickname: "SQ 1", is_decision_point: false, branch_id: scenario_questions_branch.id, template_name: "sq-1")
-      sq1q = Question.create(node_id: sq1.id, question: "About how far away from LAX do you live?", question_type_id: single_choice.id)
+      sq1q = Question.create(node_id: sq1.id, question: "Where in LA are you coming from?", question_type_id: single_choice.id)
       # ^ needs a question type
         sq1a1 = Answer.create(question_id: sq1q.id, answer: "Less than 30 minute drive away", icon_name: nil)
         sq1a2 = Answer.create(question_id: sq1q.id, answer: "30 - 60 minutes away", icon_name: nil)
