@@ -123,10 +123,27 @@
       }
     }
     .twitter-share-btn {
-      background: #49C6EB;
+      position: relative;
+      margin: 0 auto;
+      margin-top: 7px;
+      margin-left:70px;
+      width: 60px;
+      height: 60px;
+      background: white;
+      border-radius: 50px;
+      svg {
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 110%;
+        height: 110%;
+      }
     }
-    .facebook-share-btn {
-      background: #456EA1;
+    .tweet-link{
+      position: relative;
+      margin-left: -35px;
+      margin-top: 25px;
+      text-align: left;
     }
   }
 }
