@@ -31,10 +31,13 @@
       left:50%;
       margin-left: -35%;
     }
+    .circle-state {
+      stroke-dasharray: 5,7;
+    }
     &.selected {
       .circle-state {
         fill: #2FA3CA;
-        stroke: none;
+        stroke-dasharray: 0;
       }
       .checkmark {
         stroke: white;
