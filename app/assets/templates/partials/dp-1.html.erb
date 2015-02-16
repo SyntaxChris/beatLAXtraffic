@@ -38,7 +38,7 @@
       <div ng-repeat="decision in currentNode.decisions">
         <div ng-if="decision.decision.indexOf('Default') > -1">
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path all">
-            <%= image_tag('map_all-02.jpg', width: '100%') %>
+            <%= image_tag('map_all-04.jpg', width: '100%') %>
           </div>
         </div>
 
@@ -48,7 +48,7 @@
             <span ng-include="'<%= asset_path 'svgs/_racetrack.html' %>'" class="path-letter"></span>
           </a>
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path yellow">
-            <%= image_tag('map_yellow-02.jpg', width: '100%') %>
+            <%= image_tag('map_yellow-04.jpg', width: '100%') %>
           </div>
         </div>
 
@@ -58,7 +58,7 @@
             <span ng-include="'<%= asset_path 'svgs/_parking.html' %>'" class="path-letter"></span>
           </a>
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path green">
-            <%= image_tag('map_green-02.jpg', width: '100%') %>
+            <%= image_tag('map_green-04.jpg', width: '100%') %>
           </div>
         </div>
 
@@ -68,7 +68,7 @@
             <span ng-include="'<%= asset_path 'svgs/_burger.html' %>'" class="path-letter"></span>
           </a>
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path orange">
-            <%= image_tag('map_orange-02.jpg', width: '100%') %>
+            <%= image_tag('map_orange-04.jpg', width: '100%') %>
           </div>
         </div>
 
@@ -78,7 +78,7 @@
             <span ng-include="'<%= asset_path 'svgs/_newTram.html' %>'" class="path-letter"></span>
           </a>
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path blue">
-            <%= image_tag('map_blue-02.jpg', width: '100%') %>
+            <%= image_tag('map_blue-04.jpg', width: '100%') %>
           </div>
         </div>
       </div> <!-- end angular iterator for images -->
