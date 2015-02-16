@@ -3,7 +3,6 @@
   <div id="late-flight">
     <div class="content-c">
       <h3 class="main-question">{{ currentNode.question.question }}</h3>
-      <p>How would you check for that?</p>
 
       <div ng-repeat="answer in currentNode.answers" ng-click="addAnswerToCurrentAnswers(answer)" class="dIB vAT button-c">
         <div ng-if="answer.answer.indexOf('mobile') > -1">
