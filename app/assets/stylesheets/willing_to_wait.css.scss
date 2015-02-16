@@ -123,25 +123,25 @@
 //   }
 // }
 
-// @media only screen and (min-width : 360px) { 
-//   #willing-to-wait {
-//     .timer-c {
-//       height: 250px;
-//       width: 250px;
-//     }
-//     .inner {
-//       top: 50%;
-//     }
-//     .timer-number {
-//       font-size: 5em;
-//       height: 48px;
-//     }
-//     button {
-//       padding: 10px 0;
-//       max-width: 200px;
-//     }
-//   }
-// }
+@media only screen and (min-width : 360px) { 
+  #willing-to-wait {
+    .timer-c {
+      height: 250px;
+      width: 250px;
+    }
+    .inner {
+      top: 50%;
+    }
+    .timer-number {
+      font-size: 5em;
+      height: 48px;
+    }
+    button {
+      padding: 10px 0;
+      max-width: 200px;
+    }
+  }
+}
 
 // @media only screen and (min-width : 768px) { 
 //   #willing-to-wait {
