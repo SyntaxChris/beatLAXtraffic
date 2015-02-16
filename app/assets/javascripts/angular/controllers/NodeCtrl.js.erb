@@ -309,9 +309,11 @@ angular.module('lawaApp')
       $scope.immediateSubmitAnswer = function(answer, timeAdvanceBoolean){
         // if boolean argument is left out, advance time by default.
         // only passing in 'false' is useful
+
         if(timeAdvanceBoolean === undefined){
           var timeAdvanceBoolean = true;
         };
+
         $scope.addAnswerToCurrentAnswers(answer);
         $scope.submit(null, timeAdvanceBoolean);
       };
@@ -442,9 +444,10 @@ angular.module('lawaApp')
         }else {
           var freeformResponse = null;
         };
-
         // set up params for posting:
+
         var paramSafeAnswers = answersForParams($scope.currentAnswers);
+
         var responseParams = {
           is_decision: $scope.currentNode.is_decision_point,
           respondent_id: $scope.respondentId,

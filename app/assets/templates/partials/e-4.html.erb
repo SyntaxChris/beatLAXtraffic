@@ -30,28 +30,29 @@
       </div>
     </div>
 
-  <div id="last-questions-other-container" style="display: none">
-    <div class="row" style="padding-top: 17px">
-      <div class="large-10 medium-11 small-11 large-centered medium-centered small-centered columns">
-        <textarea id="other-info-last-questions" cols="1" rows="5" maxlength="140"></textarea>
+    <div id="last-questions-other-container" style="display: none">
+      <div class="row" style="padding-top: 17px">
+        <div class="large-10 medium-11 small-11 large-centered medium-centered small-centered columns">
+          <textarea id="other-info-last-questions" cols="1" rows="5" maxlength="140" ng-model="currentOther.text" ng-change="determineOtherText(currentOther.text, answer.id)" ></textarea>
+        </div>
       </div>
-    </div>
-    <div class="row" style="position: absolute; margin: 0 auto; width: 80%">
-      <div class="large-6 medium-6 small-4 columns" style="text-align: center">
-        <div id="char-count-last-questions" style="color: #B2C4D4"></div>
-      </div>
-      <div class="large-6 medium-6 small-8 columns">
-        <div class="row">
-          <div class="large-5 medium-5 small-5 columns" style="text-align: left">
-            <div class="other-btn" id="last-other-cancel">Cancel</div>
-          </div>
-          <div class="large-2 medium-2 small-2 columns"></div>
-          <div class="large-5 medium-5 small-5 columns" style="text-align: right">
-            <div class="other-btn" id="last-other-save">Save</div>
+      <div class="row" style="position: absolute; margin: 0 auto; width: 80%">
+        <div class="large-6 medium-6 small-4 columns" style="text-align: center">
+          <div id="char-count-last-questions" style="color: #B2C4D4"></div>
+        </div>
+        <div class="large-6 medium-6 small-8 columns">
+          <div class="row">
+            <div class="large-5 medium-5 small-5 columns" style="text-align: left">
+              <div class="other-btn" id="last-other-cancel">Cancel</div>
+            </div>
+            <div class="large-2 medium-2 small-2 columns"></div>
+            <div class="large-5 medium-5 small-5 columns" style="text-align: right">
+              <div class="other-btn" id="last-other-save" ng-click="immediateSubmitAnswer(answer)">Save</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   <!-- end set 1 -->
+  </div>
 </div>

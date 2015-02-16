@@ -1,5 +1,5 @@
 <div class="skip" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
-<div id="rail-system">
+<!-- <div id="rail-system">
     <div class="stage-1">
       <div class="question-bubble">
         <div class="rail-car">
@@ -12,5 +12,22 @@
       <div ng-click="submit()"  id="x-btn-rail-system-next">NEXT</div>
 
     </div>
-</div>
+</div> -->
 
+
+
+<div id="rail-system">
+  <div class="rail-bg">
+    <div class="row">
+      <div class="rail-car-svg" ng-include="'<%= asset_path 'svgs/_railCar.html' %>'"></div>
+    </div>
+    <div class="row">
+      <p class="question">
+        {{ currentNode.question.question }}
+      </p>  
+    </div>
+    <div class="row">
+      <div ng-click="submit()"  id="x-btn-rail-system-next" style="margin-bottom: 2%;">NEXT</div>
+    </div>
+  </div>
+</div>
