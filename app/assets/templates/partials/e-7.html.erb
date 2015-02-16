@@ -1,4 +1,6 @@
 <!-- CONGRATULATIONS! -->
+<div id="fb-root"></div>
+
 <div id="congrats">
   <div class="row" style="text-align: center;">
     <div class="inner-c">
@@ -80,29 +82,32 @@
       http://dfdsfgsdfgdfgsdfg.com/asdfsdfsdf
     </div>
 
-    <div class="share-btns-c btcf">
-      <div class="row">
-        <div class="large-6 medium-6 small-6 columns">
-          <div class="twitter-share-btn" ng-include="'<%= asset_path 'svgs/tweet.html' %>'" >
-          </div>
-        </div>
-        <div class="large-6 medium-6 small-6 columns">
-          <div class="tweet-link">
-            <a class="twitter-share-button" 
-              href="https://twitter.com/share"
-              data-url="https://someawesomewebsiteexample.com"
-              data-text="I just played the LAX Pickup Artist Survey Game. Check it out!"
-              data-count="horizontal">
-            </a>
-          </div>
-        </div>
+    <div class="share-btns">
+      <div class="large-6 medium-6 small-6 columns" id="tweet">
+        <a class="twitter-share-button" 
+          href="https://twitter.com/share"
+          data-url="https://someawesomewebsiteexample.com"
+          data-text="I just played the LAX Pickup Artist Survey Game. Check it out!"
+          data-count="horizontal">
+        </a>
+      </div>
+      <div class="large-6 medium-6 small-6 columns">
+        <div class="fb-share-button" data-href="https://localhost:3000/test" data-layout="button_count"></div>
       </div>
     </div>
-
-
+    </div>
   </div>
 </div>
+
 <script>
-window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+  window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 </script>
 <!-- END CONGRATULATIONS -->
