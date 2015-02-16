@@ -106,44 +106,12 @@
     padding: 6px;
     margin-bottom: 8px;
   }
-  .share-btns-c {
-    button {
-      padding: 6px 4px;
-      width: 45%;
-      margin: 0;
-      background: none;
-      font-size: .8em;
-      display: block;
-      border-radius: 4px;
-      &:first-child {
-        float: left;
-      }
-      &:last-child {
-        float: right;
-      }
-    }
-    .twitter-share-btn {
-      position: relative;
-      margin: 0 auto;
-      margin-top: 7px;
-      margin-left:70px;
-      width: 60px;
-      height: 60px;
-      background: white;
-      border-radius: 50px;
-      svg {
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        width: 110%;
-        height: 110%;
-      }
-    }
-    .tweet-link{
-      position: relative;
-      margin-left: -35px;
-      margin-top: 25px;
-      text-align: left;
+  .share-btns{
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+    #tweet{
+      margin-top: 2.5%;
     }
   }
 }
