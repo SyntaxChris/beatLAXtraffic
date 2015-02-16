@@ -177,9 +177,10 @@
     }
   }
   .map-container-inside {
-    top: -13px;
-    left: 2%;
+    top: -13px;//-11px;
+    left: 1%;//2%;
     border: 1px solid #333;
+    width: 765px;//72%;
   }
   .top-half {
     text-align: center;
@@ -326,6 +327,7 @@
     .map-container-inside {
       top: 0;
       left: 0;
+      width: 100%;
     }
     .instructions {
       top: 110%;
