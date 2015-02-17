@@ -5,7 +5,7 @@
       <h3 class="main-question">{{ currentNode.question.question }}</h3>
 
       <div ng-repeat="answer in currentNode.answers" ng-click="addAnswerToCurrentAnswers(answer)" class="dIB vAT button-c">
-        <div ng-if="answer.answer.indexOf('mobile') > -1">
+        <div ng-if="answer.answer.indexOf('reach') > -1">
           <button class="select-btn call">
             <div ng-include="'<%= asset_path 'svgs/_call.html' %>'"></div>
             <div class="checkmark">
@@ -21,7 +21,7 @@
             </div>
           </button>
         </div>
-        <div ng-if="answer.answer.indexOf('reach') > -1">
+        <div ng-if="answer.answer.indexOf('mobile') > -1">
           <button class="select-btn check-phone">
             <div ng-include="'<%= asset_path 'svgs/_checkPhone.html' %>'"></div>
             <div class="checkmark">

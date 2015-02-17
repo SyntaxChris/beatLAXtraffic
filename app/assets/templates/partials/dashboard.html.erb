@@ -1,12 +1,12 @@
 <div id="dashboard">
   <div id="clock-contents">
     <div id="clock-face" data-opac="0"></div>
-      <div id="clock-hand-cntr" data-rot="0">
-        <div id="long-hand"></div>
-      </div>
-      <div id="clock">
-        <svg ng-include="'<%= asset_path 'svgs/_timer.html' %>'"></svg>
-      </div>
+    <div id="clock-hand-cntr" data-rot="0">
+      <div id="long-hand"></div>
+    </div>
+    <div id="clock">
+      <svg ng-include="'<%= asset_path 'svgs/_timer.html' %>'"></svg>
+    </div>
   </div>
     <div id="dash-contents">
       <div id="section-1">
@@ -91,13 +91,11 @@
     </div>
     <div id="progression-bar"></div>
     <div id="car-container">
-        <div ng-include="'<%= asset_path 'svgs/_car.html' %>'"></div>
-        <!-- <#%= render 'car' %> -->
+      <div ng-include="'<%= asset_path 'svgs/_car.html' %>'"></div>
     </div>
     <div id="car-end-tag">
       <div id="home-container">
         <div ng-include="'<%= asset_path 'svgs/_home.html' %>'"></div>
-        <!-- <#%= render 'home' %> -->
         <div class="row" id="end">
           FINISH
         </div>
