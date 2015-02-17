@@ -143,7 +143,7 @@ namespace :populate do
     a2 = Node.create(nickname: "A 2", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id, template_name: "a-2")
       a2q = Question.create(
         node_id: a2.id,
-        question: "You're circling and don't see your passenger and think they may be late. How do you check for that information?",
+        question: "You're circling and don't see your passenger and think they may be late. How do you check for that?",
         question_type_id: single_choice.id
       )
         a2a1 = Answer.create(question_id: a2q.id, answer: "Check mobile phone for flight information", icon_name: nil)

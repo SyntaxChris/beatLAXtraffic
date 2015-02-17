@@ -1,7 +1,9 @@
 #late-flight {
   text-align: center;
-  h3 {
+  h3.main-question {
     color: white;
+    font-size: 3vw;
+    margin-bottom: 10%;
   }
   p {
     color: #008CBA;
@@ -24,7 +26,7 @@
     border-radius: 12px;
     outline: none;
     >svg {
-      width: 70%;
+      width: 100%;
       position: absolute;
       display: block;
       top: 0;
@@ -112,6 +114,26 @@
     }
     .button-c {
       width: 150px;
+    }
+  }
+}
+
+@media only screen and (max-width : 640px) {
+  #late-flight {
+    h3.main-question {
+      color: white;
+      font-size: 4vw;
+      margin-bottom: 10%;
+    }
+  }
+}
+
+@media only screen and (max-width : 400px) {
+  #late-flight {
+    h3.main-question {
+      color: white;
+      font-size: 4.7vw;
+      margin-bottom: 10%;
     }
   }
 }
