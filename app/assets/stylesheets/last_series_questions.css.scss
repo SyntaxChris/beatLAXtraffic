@@ -1,3 +1,53 @@
+.free-form-popup{
+	display: none;
+	position: absolute;
+	top: 20%;
+	left:0;
+	width: 100%;
+	.free-form-bg{
+		position: relative;
+		margin: 0 auto;
+		width: 70%;
+		max-width: 600px;
+		min-width: 300px;
+		text-align: center;
+		padding: 20px;
+		border-radius: 20px;
+		background-color: white;
+		textarea{
+			resize: none;
+			border-radius: 10px 10px 0 0;
+		}
+		.flextainer{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			.item-1{
+				order: 1;
+				padding: 5px;
+				width: 50%;
+				#char-count-last-questions{
+					font-size: 1.5vw;
+					margin-top: 3%;
+				}
+			}
+			.item-2{
+				order: 2;
+				width: 25%;
+				padding: 5px;
+			}
+			.item-3{
+				order: 3;
+				width: 25%;
+				padding: 5px;
+			}
+		}
+	}
+}
+
+#last-question-set{
+	overflow: hidden;
+}
 .last-questions {
 	cursor: pointer;
 }
@@ -135,22 +185,24 @@
 
 #last-other-cancel{
 	text-align: center; 
-	width: 100px; 
+	width: 100%; 
 	padding: 10px; 
 	color: white;
 	background-color: #B5B5B5; 
 	border-radius: 5px; 
-	cursor: pointer
+	cursor: pointer;
+	font-size: 1.5vw;
 }
 
 #last-other-save {
 	text-align: center; 
-	width: 100px; 
+	width: 100%; 
 	padding: 10px; 
 	color: white; 
 	background-color: #E0BF42; 
 	border-radius: 5px; 
-	cursor:pointer
+	cursor:pointer;
+	font-size: 1.5vw;
 }
 
 .next#last-question-set{
@@ -165,7 +217,56 @@
 	background-color: #EE4444;
 }
 
+@media screen and (max-width: 640px) {
+	.free-form-popup{
+		.free-form-bg{
+			.flextainer{
+				.item-1{
+					#char-count-last-questions{
+						font-size: 3vw;
+					}
+				}
+			}
+		}
+	}
+	#last-other-cancel{
+		cursor: pointer;
+		font-size: 3vw;
+	}
 
+	#last-other-save {
+		cursor: pointer;
+		font-size: 3vw;
+	}
+	.question-text {
+		font-size: 3vw;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.free-form-popup{
+		.free-form-bg{
+			padding: 10px;
+			.flextainer{
+				.item-1{
+					#char-count-last-questions{
+						font-size: 3.2vw;
+					}
+				}
+			}
+		}
+	}
+	#last-other-cancel{
+		font-size: 3.2vw;
+	}
+
+	#last-other-save {
+		font-size: 3.2vw;
+	}
+	.question-text {
+		font-size: 3.5vw;
+	}
+}
 
 
 
