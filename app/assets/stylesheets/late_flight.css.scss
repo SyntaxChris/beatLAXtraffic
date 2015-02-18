@@ -40,7 +40,7 @@
     &.selected {
       .circle-state {
         fill: #2FA3CA;
-        stroke-dasharray: 0;
+        stroke-width: 0;
       }
       .checkmark {
         stroke: white;

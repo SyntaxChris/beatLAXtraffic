@@ -13,6 +13,9 @@ $(document).ready(function(){
 
     var $btn = $(this);
 
+    $('.select-btn').css('opacity', 0.5);
+    $btn.css('opacity', 1);
+
     if ($btn.hasClass('selected')) {return;}
 
     $body.find('#late-flight .selected').toggleClass('selected', false);
