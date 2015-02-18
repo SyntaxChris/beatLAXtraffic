@@ -1,13 +1,9 @@
 #after-parking-questions {
-  h3 {
+  h3.main-question {
     text-align: center;
     font-weight: 700;
     line-height: 1;
-  }
-
-  h3#pole{
-    color: #008CBA;
-    font-weight: 500; 
+    font-size: 3vw;
   }
 
   .wide {
@@ -86,7 +82,7 @@
     width: 15%;
   }
   .text {
-    text-align: right;
+    text-align: center;
     padding: 6px 10px 6px 0;
     color: white;
     width: 72%;
@@ -95,15 +91,23 @@
   }
   .blue {
     background: #1BB9EF;
+    font-size: 1.3em;
+    text-shadow: 0 3px 5px rgba(0,0,0,.5);
   }
   .indigo {
     background: #607BEA;
+    font-size: 1.3em;
+    text-shadow: 0 3px 5px rgba(0,0,0,.5);
   }
   .purple {
     background: #7341E0;
+    font-size: 1.3em;
+    text-shadow: 0 3px 5px rgba(0,0,0,.5);
   }
   .magenta {
     background: #A240E2;
+    font-size: 1.3em;
+    text-shadow: 0 3px 5px rgba(0,0,0,.5);
   }
 }
 
@@ -117,6 +121,17 @@
     }
   }
 }
+
+@media only screen and (max-width: 640px){
+  #after-parking-questions{
+    h3.main-question{
+      font-size: 5vw;
+      padding: 3%;
+    }
+  }
+
+}
+@media only screen and (max-width: 400px){}
 
 @media only screen and (min-width : 768px) { 
   #after-parking-questions {
