@@ -31,14 +31,17 @@
     .rail-answer{
       padding-top: 3%;
       .rail-answer-font{
-        // position: absolute;
+        color: #6292E8;
         width: 100%;
-        // top: 45%;
         left: 0;
         bottom: 38%;
         font-size: 1.8vw;
-        font-weight: 700;
+        font-weight: 900;
+        text-shadow: 0 2px 3px rgba(0,0,0,.5);
         z-index: 5;
+      }
+      .yes{
+        color: #937AED;
       }
       svg{
         cursor: pointer;
