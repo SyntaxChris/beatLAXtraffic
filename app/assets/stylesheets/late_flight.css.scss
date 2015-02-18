@@ -1,7 +1,10 @@
 #late-flight {
   text-align: center;
-  h3 {
+
+  h3.main-question {
     color: white;
+    font-size: 2.3vw;
+    margin-bottom: 10%;
   }
   p {
     color: #008CBA;
@@ -24,7 +27,7 @@
     border-radius: 12px;
     outline: none;
     >svg {
-      width: 70%;
+      width: 100%;
       position: absolute;
       display: block;
       top: 0;
@@ -37,7 +40,7 @@
     &.selected {
       .circle-state {
         fill: #2FA3CA;
-        stroke-dasharray: 0;
+        stroke-width: 0;
       }
       .checkmark {
         stroke: white;
@@ -104,6 +107,19 @@
   }
 }
 
+@media only screen and (max-width : 1025px) and (min-width: 641px) {
+  #late-flight {
+    h3.main-question {
+      color: white;
+      font-size: 2.3vw;
+      margin: 5%;
+      padding-left: 0;
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+}
+
 @media only screen and (min-width : 768px) {
   #late-flight {
     .select-btn {
@@ -112,6 +128,32 @@
     }
     .button-c {
       width: 150px;
+    }
+  }
+}
+
+@media only screen and (max-width : 640px) {
+  #late-flight {
+    h3.main-question {
+      color: white;
+      font-size: 2.6vw;
+      margin: 5%; 
+      margin-left: 0;
+      text-shadow: 0 0 5px rgba(0,0,0,.5);
+    }
+  }
+}
+
+@media only screen and (max-width : 400px) {
+  #late-flight {
+    h3.main-question {
+      color: white;
+      font-size: 5vw;
+      padding-left: 0;
+      margin-top: 7%;
+      margin-right: 10%;
+      margin-bottom: 10%;
+      text-shadow: 0 0 5px rgba(0,0,0,.5);
     }
   }
 }

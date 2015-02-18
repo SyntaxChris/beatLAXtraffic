@@ -101,33 +101,28 @@
       background-color: #E5E5EA; 
       margin: 0; 
       margin-bottom: 0;
-      padding-top: 5%; 
-      padding-bottom: 5%;
-
-      #camera-wrapper{
-        padding: 3px 0 0 0;
-      }
+      padding: 5% 0 5% 0;
 
       #phone-txt-input{
-        width: 100%; 
+        position: relative;
+        margin: 0 auto;
+        width: 90%; 
         border-radius: 12px; 
         background-color: white; 
         border: 1px solid #85878B; 
-        margin-top: 0px;
         color: #85878B; 
-        margin-left: 2px;
       }
 
       #phone-next-btn{
-        background-color: #F84048; 
-        color: white; 
-        border-radius: 5px; 
-        padding: 7px 3px 7px 3px; 
         cursor: pointer; 
-        margin-right: 10px;
-        margin-top: -7px; 
-        font-size: 14px;
-        margin-bottom: 0;
+        position: relative;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: -16px;
+        padding: 20px;
+        font-size: 25px;
+        color: white;
+        background-color: #F84048; 
         -webkit-animation: run-to-car 2s linear infinite;
         -moz-animation: run-to-car 2s linear infinite;
         -o-animation: run-to-car 2s linear infinite;
@@ -471,7 +466,7 @@
       }
     }
     #stage-4-btn{
-      margin-top: 40px;
+      margin-top: 70px;
       background-color: #F84048; 
       color: white; 
       text-align: center; 
@@ -485,39 +480,29 @@
 
 
 @-webkit-keyframes run-to-car {
-    0%   {background-color: #F84048;}
-    25%  {background-color: #FA797F;}
-    50%  {background-color: #FB9499;}
-    75%  {background-color: #FA797F;}
-    100% {background-color: #F84048;}
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
 }
 @-moz-keyframes run-to-car {
-    0%   {background-color: #F84048;}
-    25%  {background-color: #FA797F;}
-    50%  {background-color: #FB9499;}
-    75%  {background-color: #FA797F;}
-    100% {background-color: #F84048;}
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
 }
 @-o-keyframes run-to-car {
-    0%   {background-color: #F84048;}
-    25%  {background-color: #FA797F;}
-    50%  {background-color: #FB9499;}
-    75%  {background-color: #FA797F;}
-    100% {background-color: #F84048;}
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
 }
 @-ms-keyframes run-to-car {
-    0%   {background-color: #F84048;}
-    25%  {background-color: #FA797F;}
-    50%  {background-color: #FB9499;}
-    75%  {background-color: #FA797F;}
-    100% {background-color: #F84048;}
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
 }
 @keyframes run-to-car {
-    0%   {background-color: #F84048;}
-    25%  {background-color: #FA797F;}
-    50%  {background-color: #FB9499;}
-    75%  {background-color: #FA797F;}
-    100% {background-color: #F84048;}
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
 }
 
 

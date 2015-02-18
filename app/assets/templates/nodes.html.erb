@@ -1,5 +1,5 @@
 <div ng-controller="NodeCtrl">
-  <% if Rails.env.development? %>
+  <!-- <% if Rails.env.development? %>
     <div ng-if="!inWhitelist">
       current template: {{ getTemplateName(currentNode.node_id)}} |
       current nodeId: {{ currentNode.node_id }}
@@ -12,7 +12,7 @@
         selected choice's template: {{ getTemplateName(currentDecisionDestination.node_id) }}
       </div>
     </div>
-  <% end %>
+  <% end %> -->
   <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))">
     <!--
     <div class="current-node-container" style="background-color:white">
