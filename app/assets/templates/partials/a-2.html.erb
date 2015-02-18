@@ -2,7 +2,18 @@
 <div class="skip" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
   <div id="late-flight">
     <div class="content-c">
-      <h3 class="main-question">{{ currentNode.question.question }}</h3>
+      <h3 class="main-question">
+        <div class="show-for-large-only">
+          <pre>{{ currentNode.question.question }}</pre>
+        </div>
+        <div class="hide-for-large-only">
+          {{ currentNode.question.question }}
+        </div>
+      </h3>
+<!-- 
+      <div class="header">
+        {{ currentNode.question.question }}
+      </div> -->
 
       <div ng-repeat="answer in currentNode.answers" ng-click="addAnswerToCurrentAnswers(answer)" class="dIB vAT button-c">
         <div ng-if="answer.answer.indexOf('reach') > -1">

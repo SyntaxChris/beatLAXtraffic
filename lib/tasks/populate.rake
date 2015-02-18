@@ -1,6 +1,10 @@
 namespace :populate do
   desc "creates all the nodes for the flow map"
   task create_nodes: :environment do
+    # Drop, create and migrate database
+    Rake::Task['db:drop'].invoke 
+    Rake::Task['db:create'].invoke 
+    Rake::Task['db:migrate'].invoke 
 
     # create branches
     scenario_questions_branch = Branch.create(name: "scenario questions")
@@ -78,7 +82,7 @@ namespace :populate do
       )
         itf2a1= Answer.create(question_id: itf2q.id, answer: "Free short-term parking", icon_name: "parking")
         itf2a2= Answer.create(question_id: itf2q.id, answer: "A way to make sure I know the status of my passenger’s flight.", icon_name: "computer")
-        itf2a3= Answer.create(question_id: itf2q.id, answer: "A nice waiting area, where I could get a cup of coffee or something to eat", icon_name: "food")
+        itf2a3= Answer.create(question_id: itf2q.id, answer: "A place to get food or a drink", icon_name: "food")
         itf2a4= Answer.create(question_id: itf2q.id, answer: "Easy ways to get in and out of the location", icon_name: "exit")
         itf2a5= Answer.create(question_id: itf2q.id, answer: "WIFi", icon_name: "wifi")
         itf2a6= Answer.create(question_id: itf2q.id, answer: "A comfortable waiting area", icon_name: "couch")
@@ -143,7 +147,7 @@ namespace :populate do
     a2 = Node.create(nickname: "A 2", is_decision_point: false , branch_id: hope_to_catch_curb_branch.id, template_name: "a-2")
       a2q = Question.create(
         node_id: a2.id,
-        question: "You're circling and don't see your passenger and think they may be late. How do you check for that?",
+        question: "You're circling and don't see your passenger and think they may be late.\n How do you check for that?",
         question_type_id: single_choice.id
       )
         a2a1 = Answer.create(question_id: a2q.id, answer: "Check mobile phone for flight information", icon_name: nil)
@@ -227,7 +231,7 @@ namespace :populate do
     noitf1 = Node.create(nickname: "No-ITF 1", is_decision_point: true , branch_id: meet_offsite_branch.id, template_name: "no-itf-1")
       noitf1dp = DecisionPoint.create(
         node_id: noitf1.id,
-        situation: "To avoid all of this, we're trying to build an airport rail system that would make it easy for a passenger to meet you at a nearby location outside of the airport! \nWould you meet your passenger at this new location outside of the airport in light of the experience you had today?"
+        situation: "To avoid all of this, we're trying to build an airport rail system that would make it easy for a passenger to meet you at a nearby location outside of the airport! \nIn the real world, would you consider picking up passengers at this new location for a better experience?"
       )
         noitf1d1 = Decision.create(decision_point_id: noitf1dp.id, decision: "Yes", destination_node_id: ns4.id)
         noitf1d2 = Decision.create(decision_point_id: noitf1dp.id, decision: "No", destination_node_id: ns5.id)
