@@ -39,43 +39,43 @@ angular.module('lawaApp')
             };
 
             ///////////
-              // for development purposes only. add fully-working nodes here
-              // to remove debugging printing out on front end:
-              $scope.nodesWorking = [
-                // add the clean template name, like this:
-                '/assets/partials/splash.html',
-                '/assets/partials/sq-2-2.html',
-                '/assets/partials/sq-1.html',
-                '/assets/partials/dp-1.html',
-                '/assets/partials/a-1.html',
-                '/assets/partials/a-2.html',
-                '/assets/partials/dp-2.html',
-                '/assets/partials/dp-3.html',
-                '/assets/partials/b-1.html',
-                '/assets/partials/b-2.html',
-                '/assets/partials/b-3.html',
-                '/assets/partials/dp-5.html',
-                '/assets/partials/b-4.html',
-                '/assets/partials/c-1.html',
-                '/assets/partials/c-2.html',
-                '/assets/partials/c-4.html',
-                '/assets/partials/dp-7.html',
-                '/assets/partials/dp-6.html',
-                '/assets/partials/dp-10.html',
-                '/assets/partials/dp-11.html',
-                '/assets/partials/dp-8.html',
-                '/assets/partials/e-1.html',
-                '/assets/partials/e-2.html',
-                '/assets/partials/e-3.html',
-                '/assets/partials/e-4.html',
-                '/assets/partials/e-5.html',
-                '/assets/partials/e-6.html',
-                '/assets/partials/itf-2.html',
-                '/assets/partials/no-itf-1.html',
-                '/assets/partials/ns-5.html',
-                '/assets/partials/ns-4.html'
-              ];
-              $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
+            // for development purposes only. add fully-working nodes here
+            // to remove debugging printing out on front end:
+            $scope.nodesWorking = [
+              // add the clean template name, like this:
+              '/assets/partials/splash.html',
+              '/assets/partials/sq-2-2.html',
+              '/assets/partials/sq-1.html',
+              '/assets/partials/dp-1.html',
+              '/assets/partials/a-1.html',
+              '/assets/partials/a-2.html',
+              '/assets/partials/dp-2.html',
+              '/assets/partials/dp-3.html',
+              '/assets/partials/b-1.html',
+              '/assets/partials/b-2.html',
+              '/assets/partials/b-3.html',
+              '/assets/partials/dp-5.html',
+              '/assets/partials/b-4.html',
+              '/assets/partials/c-1.html',
+              '/assets/partials/c-2.html',
+              '/assets/partials/c-4.html',
+              '/assets/partials/dp-7.html',
+              '/assets/partials/dp-6.html',
+              '/assets/partials/dp-10.html',
+              '/assets/partials/dp-11.html',
+              '/assets/partials/dp-8.html',
+              '/assets/partials/e-1.html',
+              '/assets/partials/e-2.html',
+              '/assets/partials/e-3.html',
+              '/assets/partials/e-4.html',
+              '/assets/partials/e-5.html',
+              '/assets/partials/e-6.html',
+              '/assets/partials/itf-2.html',
+              '/assets/partials/no-itf-1.html',
+              '/assets/partials/ns-5.html',
+              '/assets/partials/ns-4.html'
+            ];
+            $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
             ///////////template_name
 
             $scope.variables["text_from"] = null;
@@ -111,7 +111,7 @@ angular.module('lawaApp')
             $scope.tenMinutesAgo = tenMinutesBack.toLocaleTimeString(
                 'en-US', { hour12: true, hour:"numeric", minute:"numeric"}
               );
-          })
+          });
 
           $scope.currentDecisionDestination = null;
           $scope.currentAnswers = [];
@@ -125,6 +125,7 @@ angular.module('lawaApp')
           $scope.parkingTextOutcome = ["Nope, no parking", "This lot's all full", "Completely packed", "None here either", "No spaces", "Can't fit there"];
           $scope.parkingTextIndex = 0;
         });
+        // end get and set up all nodes
 
         $scope.signColors = {
           1: 'blue',

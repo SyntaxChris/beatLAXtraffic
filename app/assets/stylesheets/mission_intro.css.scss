@@ -607,28 +607,32 @@
 
 
 @media only screen and (max-width : 400px) { 
+
   #intro-phone{
     svg{
       display: none;
     }
   }
-  #txt-msg-container,
-  #stage-2,
-  #stage-4{
-    top: -40px;
-    width: 100px;
+  #stage-1{
+    width: 50px;
   }
+  // #txt-msg-container,
+  // #stage-2,
+  // #stage-4{
+  //   top: -40px;
+  //   width: 100px;
+  // }
 
-  #mission-intro{
-    #stage-3{
-      #speeding-bg{
-        #road{
-          #speeding-bbl{
-            bottom: 130%;
-          }
-        }
-      }
-    }
-  }
+  // #mission-intro{
+  //   #stage-3{
+  //     #speeding-bg{
+  //       #road{
+  //         #speeding-bbl{
+  //           bottom: 130%;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }
 
