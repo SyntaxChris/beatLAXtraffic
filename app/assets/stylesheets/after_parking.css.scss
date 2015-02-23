@@ -131,10 +131,15 @@
   }
 
 }
-@media only screen and (max-width: 400px){}
 
-@media only screen and (min-width : 768px) { 
+@media only screen and (min-width : 768px) {
   #after-parking-questions {
+      h3.main-question {
+        text-align: center;
+        font-weight: 700;
+        line-height: 1;
+        font-size: 2.3vw;
+      } 
     .mobile {
       display: none !important;
     }

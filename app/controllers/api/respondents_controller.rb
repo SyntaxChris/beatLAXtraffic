@@ -12,7 +12,7 @@ module Api
       if @respondent.update(session_params)
         render json: {}, status: 200
       else
-        render json: @resopndent.errors, status: 402
+        render json: @respondent.errors, status: 402
       end
     end
 
