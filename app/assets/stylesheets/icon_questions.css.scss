@@ -1,4 +1,9 @@
+.amenity-selected{
+	opacity: 0.5;
+}
+
 #icon-questions{
+
 	.no-gutter {
 		padding: 0;
 		margin: 0;
@@ -38,6 +43,9 @@
 				border: 3px dotted #24B7EA;
 				color: #24B7EA;
 				font-size: 40px;
+				.next-btn{
+					display: none;
+				}
 				.clone-container{
 					position: absolute;
 					top: -12%;

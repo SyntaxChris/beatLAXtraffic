@@ -30,9 +30,9 @@ $(document).ready(function(){
   				insert += 1;
   			}
 
-  			if (contentCounter === 3){
-  				$('.next-btn').toggleClass('show', true);
-  			}
+  			// if (contentCounter === 3){
+  			// 	$('.next-btn').toggleClass('show', true);
+  			// }
 		});
 	});
 

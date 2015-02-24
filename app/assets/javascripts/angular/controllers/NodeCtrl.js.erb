@@ -230,17 +230,27 @@ angular.module('lawaApp')
             return;
           }else{
             $scope.currentlyConsideredAmenity = answer;
+            
           }
         }
+      };
+
+
+
+      $scope.amenitySelected = function(answer){
+        if(_.findWhere($scope.amenities, answer))
+          return false
       };
 
       // show numbers 1, 2, 3
       $scope.addToAmenities = function(answer){
         $scope.setCurrentlyConsideredAmenity(null);
         // if user is clicking an empty circle:
+
         if(answer === null || answer === undefined){
           return;
         };
+
         if($scope.amenities.length === 3){
           if (_.findWhere($scope.amenities, answer)){
             // amenity is already in current list, remove it.
@@ -250,6 +260,19 @@ angular.module('lawaApp')
           return
         }else{
           // add it if it's not present
+
+
+
+          $scope.amenitySelected(answer);
+          debugger;
+
+
+
+
+
+
+
+
           if (_.findWhere($scope.amenities, answer)){
             // amenity is already in current list, remove it.
             $scope.amenities = _.without($scope.amenities, _.findWhere($scope.amenities, answer));
@@ -258,6 +281,8 @@ angular.module('lawaApp')
           }
         }
       };
+
+
 
       $scope.incrementOutcome = function(){
         $scope.parkingTimeSpent += 5;

@@ -24,20 +24,32 @@
                 <div class="small-4 columns">
                   <div ng-click="addToAmenities(amenities[0])" class="icon-holder">
                     1
-                    <div ng-show="amenities[0] != null" ng-include="getAnswerIconPath(amenities[0].id)" class="clone-container">
+                    <div 
+                      ng-show="amenities[0] != null" 
+                      ng-include="getAnswerIconPath(amenities[0].id)" class="clone-container">
                     </div>
-                    <div ng-show="amenities[0] != null" class="icon-remove">
-                      <svg ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'"></svg>
+                    <div 
+                      ng-show="amenities[0] != null" 
+                      class="icon-remove">
+                      <svg 
+                        ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'">
+                      </svg>
                     </div>
                   </div>
                 </div>
                 <div class="small-4 columns">
                   <div ng-click="addToAmenities(amenities[1])" class="icon-holder">
                     2
-                    <div ng-show="amenities[1] != null" ng-include="getAnswerIconPath(amenities[1].id)" class="clone-container">
+                    <div 
+                      ng-show="amenities[1] != null" 
+                      ng-include="getAnswerIconPath(amenities[1].id)" 
+                      class="clone-container">
                     </div>
-                    <div ng-show="amenities[1] != null" class="icon-remove">
-                      <svg ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'"></svg>
+                    <div 
+                      ng-show="amenities[1] != null" class="icon-remove">
+                      <svg 
+                        ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'">
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -68,7 +80,10 @@
               <div ng-click="setCurrentlyConsideredAmenity(answer)">
                 <div class="small-4 columns">
                   <div class="icon-holder">
-                    <div ng-include="getAnswerIconPath(answer.id)"></div>
+                    <div 
+                      ng-include="getAnswerIconPath(answer.id)" 
+                      ng-class="{'amenity-selected': amenitySelected(answer) == false}">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -79,7 +94,10 @@
               <div ng-click="setCurrentlyConsideredAmenity(answer)">
                 <div class="small-4 columns">
                   <div class="icon-holder">
-                    <div ng-include="getAnswerIconPath(answer.id)"></div>
+                    <div 
+                      ng-include="getAnswerIconPath(answer.id)" 
+                      ng-class="{'amenity-selected': amenitySelected(answer) == false}">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -90,7 +108,10 @@
               <div ng-click="setCurrentlyConsideredAmenity(answer)">
                 <div class="small-4 columns">
                   <div class="icon-holder">
-                    <div ng-include="getAnswerIconPath(answer.id)"></div>
+                    <div 
+                      ng-include="getAnswerIconPath(answer.id)"
+                      ng-class="{'amenity-selected': amenitySelected(answer) == false}">
+                    </div>
                   </div>
                 </div>
               </div>
