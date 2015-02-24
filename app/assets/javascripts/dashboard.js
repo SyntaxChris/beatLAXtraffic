@@ -12,16 +12,25 @@ $(document).ready(function(){
             $("#plane-bar").animate({width: "85%"}, 200);
             $("#filler").animate({marginLeft: "85%"}, 200);
             $("#plane-alert").attr("class", "clock-pulse");
-            $('#landing-plane').addClass("land-ze-plane");
+            $('.plane-cntr').addClass("land-ze-plane");
             $('svg circle#timer-fill').attr("class", "clock-pulse");
 
             window.setTimeout(function () {
-                $("#landing-label").text('Plane landed');
                 $("span#flight-status").text('Arrived');
             }, 5000);
         } 
     
       var currentProgress = parseInt($('#plane-progress').text());
+    }
+
+    var completeLanding = function(){
+        var currentProgress = $('#plane-progress').text("85");
+        
+        $("#plane-bar").animate({width: "85%"}, 200);
+        $("#filler").animate({marginLeft: "85%"}, 200);
+        $("#plane-alert").attr("class", "clock-pulse");
+        $('#landing-plane').addClass("land-ze-plane");
+        $('svg circle#timer-fill').attr("class", "clock-pulse");
     }
 
     var moveClock = function(){
@@ -123,6 +132,8 @@ $(document).ready(function(){
         moveClock();
     });
 
-
+    $body.on('click', '.land-ze-plane', function(){
+        completeLanding();
+    });
 
 });
