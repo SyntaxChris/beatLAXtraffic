@@ -71,6 +71,15 @@
         </div>
       </div>
 
+
+
+
+
+
+
+
+
+
       <div class="large-5 medium-5 small-12 columns">
         <div class="icon-container">
 
@@ -82,7 +91,7 @@
                   <div class="icon-holder">
                     <div 
                       ng-include="getAnswerIconPath(answer.id)" 
-                      ng-class="{'amenity-selected': amenitySelected(answer) == false}">
+                      ng-class="{'amenity-selected': amenitySelected(answer) == false, 'wiggle': amenitySelected(answer) != false }">
                     </div>
                   </div>
                 </div>
@@ -96,7 +105,7 @@
                   <div class="icon-holder">
                     <div 
                       ng-include="getAnswerIconPath(answer.id)" 
-                      ng-class="{'amenity-selected': amenitySelected(answer) == false}">
+                      ng-class="{'amenity-selected': amenitySelected(answer) == false, 'wiggle': amenitySelected(answer) != false }">
                     </div>
                   </div>
                 </div>
@@ -110,7 +119,7 @@
                   <div class="icon-holder">
                     <div 
                       ng-include="getAnswerIconPath(answer.id)"
-                      ng-class="{'amenity-selected': amenitySelected(answer) == false}">
+                      ng-class="{'amenity-selected': amenitySelected(answer) == false, 'wiggle': amenitySelected(answer) != false }">
                     </div>
                   </div>
                 </div>
@@ -134,10 +143,14 @@
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
+
+
+
+
+
+
     </div>
   </div>
 <!-- END ICON QUESTIONS -->
