@@ -331,6 +331,10 @@ angular.module('lawaApp')
         };
       };
 
+      $scope.landPlane = function(){
+        $scope.variables.flight_time_remaining = 0;
+      }
+
       $scope.addTimesCircled = function(circleAmount) {
         $scope.variables.times_circled = Math.max(0, ($scope.variables.times_circled += circleAmount));
         $scope.addSingleChoice($scope.currentNode.answers[0])

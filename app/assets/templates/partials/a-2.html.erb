@@ -17,7 +17,7 @@
 
       <div ng-repeat="answer in currentNode.answers" ng-click="addAnswerToCurrentAnswers(answer)" class="dIB vAT button-c">
         <div ng-if="answer.answer.indexOf('reach') > -1">
-          <button class="select-btn call">
+          <button class="select-btn call" ng-click="landPlane();">
             <div ng-include="'<%= asset_path 'svgs/_call.html' %>'"></div>
             <div class="checkmark">
               <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
@@ -25,7 +25,7 @@
           </button>
         </div>
         <div ng-if="answer.answer.indexOf('Park') > -1">
-          <button class="select-btn parking">
+          <button class="select-btn parking" ng-click="landPlane();">
             <div ng-include="'<%= asset_path 'svgs/_parkingTile.html' %>'"></div>
             <div class="checkmark">
               <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
@@ -33,7 +33,7 @@
           </button>
         </div>
         <div ng-if="answer.answer.indexOf('mobile') > -1">
-          <button class="select-btn check-phone">
+          <button class="select-btn check-phone" ng-click="landPlane();">
             <div ng-include="'<%= asset_path 'svgs/_checkPhone.html' %>'"></div>
             <div class="checkmark">
               <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
