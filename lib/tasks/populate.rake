@@ -295,7 +295,7 @@ namespace :populate do
         dp3d4 = Decision.create(decision_point_id: dp3dp.id, decision: "Go to an offsite location", destination_node_id: itf2.id)
 
     dp2 = Node.create(nickname: "DP 2", is_decision_point: true , branch_id: hope_to_catch_curb_branch.id, template_name: "dp-2")
-      dp2dp = DecisionPoint.create(node_id: dp2.id, situation: "You're trying to find a way to pull-over and pick up your passenger. Are you successful?")
+      dp2dp = DecisionPoint.create(node_id: dp2.id, situation: "You're trying to pull-over and pick up your passenger in traffic. Are you successful?")
         dp2d1 = Decision.create(decision_point_id: dp2dp.id, decision: "Yes", destination_node_id: noitf1.id)
         dp2d2 = Decision.create(decision_point_id: dp2dp.id, decision: "No", destination_node_id: dp3.id)
     # update for dp3 after dp2's creation:
