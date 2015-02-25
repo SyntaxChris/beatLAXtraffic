@@ -92,7 +92,7 @@
 }
 
 @media only screen and (max-width: 780px) {
-	.main-question{
+	h3.main-question{
 		position: relative;
 		width: 95%;
 		margin-left: auto;
@@ -104,6 +104,9 @@
 
 @media only screen and (max-width: 640px) {
 	#clock-questions{
+		h3.main-question{
+			font-size: 3.6vw;
+		}
 		#clock-container {
 			width: 100%;
 		}
@@ -213,12 +216,12 @@
 @media only screen and (max-width: 400px) {
 	#clock-questions{
 
-		.main-question{
+		h3.main-question{
 			position: relative;
 			width: 90%;
 			margin-left: auto;
 			margin-right: auto;
-			font-size: 5vw;
+			font-size: 4.7vw;
 
 		}
 

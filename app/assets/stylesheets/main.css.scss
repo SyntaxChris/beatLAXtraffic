@@ -4,8 +4,6 @@
 
 body, html,button,pre { 
 	font-family: 'Quicksand', sans-serif;
-    // overflow-x: hidden; 
-    // overflow-y: auto;
 }
 
 .skip{
@@ -13,7 +11,7 @@ body, html,button,pre {
 	position: absolute;
 	z-index: 100;
 	right: -2%;
-	top: 0;
+	top: 5%;
 	width: 10%;
 	min-width: 50px;
 	padding-right: 0;
