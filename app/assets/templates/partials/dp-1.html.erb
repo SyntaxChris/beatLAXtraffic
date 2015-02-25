@@ -1,4 +1,3 @@
-<!-- remove style for final template -->
 <div id="interactive-map">
   <div class="top-half">
     <h3 class="main-question">{{ currentNode.decision_point.situation }}</h3>
@@ -73,7 +72,7 @@
         </div>
 
         <div ng-if="decision.decision.indexOf('tram') > -1">
-          <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
+          <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision); landPlane()" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
             <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
             <span ng-include="'<%= asset_path 'svgs/itfIcon.html' %>'" class="path-letter"></span>
           </a>

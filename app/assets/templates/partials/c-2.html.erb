@@ -11,7 +11,7 @@
         <div id="q-pnl">
           <div id="inner-cnr">
             <div ng-repeat="answer in currentNode.answers | orderBy:'custom_order'">
-              <div ng-click="addSingleChoice(answer)" class="large-6 medium-6 small-6 columns txt" ng-class="{btm: $index > 1}" id="{{'text-' + $index}}">
+              <div ng-click="addSingleChoice(answer); planeLand()" class="large-6 medium-6 small-6 columns txt" ng-class="{btm: $index > 1}" id="{{'text-' + $index}}">
                 <div class="text-test">{{ answer.answer }}</div>
               </div>
             </div>

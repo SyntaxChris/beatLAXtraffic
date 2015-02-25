@@ -1,54 +1,56 @@
-<!-- LATE FLIGHT -->
+
 <div class="skip" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
-  <div id="late-flight">
-    <div class="content-c">
-      <h3 class="main-question">
-        <div class="show-for-large-only">
-          <pre>{{ currentNode.question.question }}</pre>
-        </div>
-        <div class="hide-for-large-only">
-          {{ currentNode.question.question }}
-        </div>
-      </h3>
-<!-- 
-      <div class="header">
+
+<!-- LATE FLIGHT -->
+<div id="late-flight">
+  <div class="content-c">
+    <h3 class="main-question">
+      <div class="show-for-large-only">
+        <pre>{{ currentNode.question.question }}</pre>
+      </div>
+      <div class="hide-for-large-only">
         {{ currentNode.question.question }}
-      </div> -->
-
-      <div ng-repeat="answer in currentNode.answers" ng-click="addAnswerToCurrentAnswers(answer)" class="dIB vAT button-c">
-        <div ng-if="answer.answer.indexOf('reach') > -1">
-          <button class="select-btn call" ng-click="landPlane();">
-            <div ng-include="'<%= asset_path 'svgs/_call.html' %>'"></div>
-            <div class="checkmark">
-              <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
-            </div>
-          </button>
-        </div>
-        <div ng-if="answer.answer.indexOf('Park') > -1">
-          <button class="select-btn parking" ng-click="landPlane();">
-            <div ng-include="'<%= asset_path 'svgs/_parkingTile.html' %>'"></div>
-            <div class="checkmark">
-              <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
-            </div>
-          </button>
-        </div>
-        <div ng-if="answer.answer.indexOf('mobile') > -1">
-          <button class="select-btn check-phone" ng-click="landPlane();">
-            <div ng-include="'<%= asset_path 'svgs/_checkPhone.html' %>'"></div>
-            <div class="checkmark">
-              <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
-            </div>
-          </button>
-        </div>
-        <div>
-          {{ answer.answer }}
-        </div>
       </div>
+    </h3>
+<!-- 
+    <div class="header">
+      {{ currentNode.question.question }}
+    </div> -->
 
+    <div ng-repeat="answer in currentNode.answers" ng-click="addAnswerToCurrentAnswers(answer)" class="dIB vAT button-c">
+      <div ng-if="answer.answer.indexOf('reach') > -1">
+        <button class="select-btn call" ng-click="landPlane();">
+          <div ng-include="'<%= asset_path 'svgs/_call.html' %>'"></div>
+          <div class="checkmark">
+            <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
+          </div>
+        </button>
+      </div>
+      <div ng-if="answer.answer.indexOf('Park') > -1">
+        <button class="select-btn parking" ng-click="landPlane();">
+          <div ng-include="'<%= asset_path 'svgs/_parkingTile.html' %>'"></div>
+          <div class="checkmark">
+            <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
+          </div>
+        </button>
+      </div>
+      <div ng-if="answer.answer.indexOf('mobile') > -1">
+        <button class="select-btn check-phone" ng-click="landPlane();">
+          <div ng-include="'<%= asset_path 'svgs/_checkPhone.html' %>'"></div>
+          <div class="checkmark">
+            <div ng-include="'<%= asset_path 'svgs/_sUnchecked.html' %>'"></div>
+          </div>
+        </button>
+      </div>
       <div>
-        <button id="x-btn-late-flight-next" class="late-flight-next-btn plane-advance" ng-click="submit(null, true)">NEXT</button>
+        {{ answer.answer }}
       </div>
-
     </div>
+
+    <div>
+      <button id="x-btn-late-flight-next" class="late-flight-next-btn plane-advance" ng-click="submit(null, true)">NEXT</button>
+    </div>
+
   </div>
-  <!-- END LATE FLIGHT -->
+</div>
+<!-- END LATE FLIGHT -->

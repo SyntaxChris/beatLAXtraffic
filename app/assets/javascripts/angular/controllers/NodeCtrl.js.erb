@@ -20,6 +20,7 @@ angular.module('lawaApp')
 
             // if current node is the first one, don't show dashboard
             // TODO: pls no:
+
             if(
                 $scope.currentNode.template_name === "splash" ||
                 $scope.currentNode.template_name === "sq-2-2" ||
@@ -37,6 +38,8 @@ angular.module('lawaApp')
             } else {
               $scope.setShowDashboard(true);
             };
+
+
 
             ///////////
             // for development purposes only. add fully-working nodes here
@@ -168,11 +171,16 @@ angular.module('lawaApp')
 
       $scope.matchAnswerString = function(answer, string){
         return (answer.answer.indexOf(string) > -1)
-      }
+      };
 
       $scope.setShowDashboard = function(value){
         $scope.showDashboard = value;
-      }
+      };
+
+      $scope.setCarDash = function(value){
+        debugger;
+        $scope.showCarDash = value;
+      };
 
       $scope.setCurrentNodeBySession = function() {
         $scope.currentNode = $scope.fetchNodeById(sessionCurrentNodeId);
@@ -239,7 +247,7 @@ angular.module('lawaApp')
 
       $scope.amenitySelected = function(answer){
         if(_.findWhere($scope.amenities, answer))
-          return false
+          return false;
       };
 
       // show numbers 1, 2, 3
@@ -260,18 +268,7 @@ angular.module('lawaApp')
           return
         }else{
           // add it if it's not present
-
-
-
           $scope.amenitySelected(answer);
-          debugger;
-
-
-
-
-
-
-
 
           if (_.findWhere($scope.amenities, answer)){
             // amenity is already in current list, remove it.

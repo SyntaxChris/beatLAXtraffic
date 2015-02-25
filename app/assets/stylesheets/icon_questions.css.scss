@@ -1,5 +1,5 @@
 .amenity-selected{
-	opacity: 0.5;
+	opacity: 0.3;
 }
 
 #icon-questions{
@@ -115,8 +115,7 @@
 					width: 100%;
 					height: 100%;
 				}
-
-				svg:hover{
+				.wiggle:hover{
 					-webkit-animation: wiggle 0.4s infinite;
           			-moz-animation: wiggle 0.4s infinite;
           			-o-animation: wiggle 0.4s infinite;
@@ -127,7 +126,6 @@
 		}
 
 		.selection-container{
-			// display: none;
 			position: absolute;
 			top: 1%;
 			width: 94%;
