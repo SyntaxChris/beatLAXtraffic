@@ -60,7 +60,7 @@
       width: 120%;
       font-weight: 700;
       margin-left: -10%;
-      font-size: 1.8vw;
+      font-size: 2vw;
       padding-bottom: 20px;
       padding-top: 30px;
       text-shadow: 0 3px 5px rgba(0,0,0,.5);
@@ -172,6 +172,127 @@
     .buttons-c {
       width: 275px;
       margin-top: 80px;
+    }
+  }
+}
+
+@media only screen and (max-width : 640px) {
+  #timer-pickup {
+
+    .sudo-header{
+      text-shadow: 0 3px 5px rgba(0,0,0,.5);
+      font-weight: 700;
+      font-size: 8vw;
+    }
+    .bottom-question{
+      text-shadow: 0 3px 5px rgba(0,0,0,.5);
+      font-size: 4vw;
+      line-height: 3vw;
+    }
+
+    .content-c {
+      text-shadow: 0 0 10px rgba(0,0,0,.3);
+      .inner-question#how-long{
+        font-weight: 700;
+        font-size: 4vw;
+        margin-left: -10%;
+        text-shadow: 0 3px 5px rgba(0,0,0,.5);
+      }
+    }
+    .timer-c {
+      line-height: 1;
+      font-size: 1.5em;
+    }
+
+    .counter-btn {
+      font-size: 30px;
+      &:hover {
+        background: #EB7374;
+        color: white;
+      }
+    }
+    .counter-btn#x-btn-timer-more {
+      font-size: 30px;
+      &:hover {
+        background: #1CC95C;
+        color: white;
+      }
+    }
+    #x-btn-timer-next {
+      cursor: pointer;
+      display: block;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      width: 150px;
+      background-color: #EE4444;
+      color: white;
+      // -moz-border-radius: 25px;
+      // -webkit-border-radius: 25px;
+      // border-radius: 25px;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+}
+
+
+@media only screen and (max-width : 640px) {
+  #timer-pickup {
+    margin-top: -4%;
+    .sudo-header{
+      text-shadow: 0 3px 5px rgba(0,0,0,.5);
+      font-weight: 700;
+      font-size: 8vw;
+    }
+    .bottom-question{
+      text-shadow: 0 3px 5px rgba(0,0,0,.5);
+      font-size: 4vw;
+      line-height: 3vw;
+    }
+
+    .content-c {
+      text-shadow: 0 0 10px rgba(0,0,0,.3);
+      .inner-question#how-long{
+        padding: 5%;
+        font-weight: 700;
+        font-size: 4vw;
+        margin-left: -10%;
+        text-shadow: 0 3px 5px rgba(0,0,0,.5);
+      }
+    }
+    .timer-c {
+      line-height: .9;
+      font-size: 1.2em;
+    }
+
+    .counter-btn {
+      font-size: 30px;
+      &:hover {
+        background: #EB7374;
+        color: white;
+      }
+    }
+    .counter-btn#x-btn-timer-more {
+      font-size: 30px;
+      &:hover {
+        background: #1CC95C;
+        color: white;
+      }
+    }
+    #x-btn-timer-next {
+      cursor: pointer;
+      display: block;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      width: 150px;
+      background-color: #EE4444;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 20px;
     }
   }
 }
