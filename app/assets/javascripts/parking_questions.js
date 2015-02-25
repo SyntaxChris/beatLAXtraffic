@@ -70,12 +70,12 @@ $(document).ready(function(){
 			case "other-bbl-icon":
 				if(otherTog === 0){
 					$(this).css({cursor: "auto"});
-					$('')
+					$('.bbl-title', this).hide();
 					$('.bbl-icon', this).hide();
 					$('textarea#park-bbl', this).fadeIn();
 					$('.text-counter').fadeIn();
 					$('.ok-btn').show();
-					$(this).animate({height: "250px"});	
+					$(this).animate({height: "170px"});	
 					otherTog = 1;
 				}  
 			break;
@@ -145,6 +145,7 @@ $(document).ready(function(){
 		$('.other-bbl textarea').hide();
 		$('.text-counter').hide();
 		$('.ok-btn').hide();
+		$('.other-bbl .bbl-title').show();
 		$('.other-bbl').animate({height: "130px"});	
 
 		var total = convenient + traffic + people + otherBbl;

@@ -7,12 +7,12 @@
   margin-left: auto;
   margin-right: auto;
   h3.main-question{
-  color: white;
-  text-shadow: 0 3px 5px rgba(0,0,0,.5);
-  font-weight: 700;
-  text-align: center;
-  font-size: 3vw;
-}
+    color: white;
+    text-shadow: 0 3px 5px rgba(0,0,0,.5);
+    font-weight: 700;
+    text-align: center;
+    font-size: 3vw;
+  }
   .timer-c {
     margin: 0 auto;
     position: relative;
@@ -136,6 +136,18 @@
     button {
       padding: 10px 0;
       max-width: 200px;
+    }
+  }
+}
+
+@media only screen and (max-width: 400px){
+  #willing-to-wait {
+    h3.main-question{
+      color: white;
+      text-shadow: 0 3px 5px rgba(0,0,0,.5);
+      font-weight: 700;
+      text-align: center;
+      font-size: 6vw;
     }
   }
 }

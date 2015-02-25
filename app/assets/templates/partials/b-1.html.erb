@@ -5,7 +5,7 @@
     <h3 class="main-question">{{ currentNode.question.question }}</h3>
     <h6 class="sub-header">(Select all that apply)</h6>
   </div>
-  <div class="row">
+  <div class="row bbl-top">
     <div ng-repeat="answer in currentNode.answers" ng-click="addMultipleChoice(answer)">
       <div class="large-3 medium-3 small-6 columns">
         <div class="unchecked">
@@ -24,7 +24,7 @@
           </div>
           <div ng-if="answer.answer.indexOf('Other') > -1">
             <div class="row" style="padding-top: 50px">
-              <textarea ng-model="currentOther.text" ng-change="determineOtherText(currentOther.text, answer.id)" id="park-bbl" cols="30" rows="5" maxlength="140"></textarea>
+              <textarea placeholder="Please write here." ng-model="currentOther.text" ng-change="determineOtherText(currentOther.text, answer.id)" id="park-bbl" cols="30" rows="5" maxlength="140"></textarea>
               <div class="text-counter"></div>
             </div>
             <div class="row">
