@@ -15,8 +15,7 @@
 		position: relative;
 		width: 90%;
 		height: 90%;
-		margin-left: auto;
-		margin-right: auto;
+		margin: 0 auto;
 		margin-bottom: 5%;
 		margin-top: 2%;
 		text-align: center;
@@ -30,7 +29,9 @@
 		}
 		.row.holder{
 			padding-top: 15%;
-			
+			width: 100%;
+			text-align: center;
+			padding-left: 5%;
 			.icon-holder{
 				position: relative;
 				margin-left: auto;
@@ -102,6 +103,7 @@
 
 
 	.icon-container{
+		padding-right: 10%;
 		.row{
 			margin-bottom: 3.8%;
 			.icon-holder{
@@ -143,20 +145,24 @@
 			.needy{
 				font-size: 3vw;
 			}
-			svg {
-				position: relative;
-				margin-left: auto;
-				margin-right: auto;
-				cursor: pointer;
-				width: 95%;
-				height: 95%;
-			}
-			svg:hover{
-				-webkit-animation: spin 0.4s;
-      			-moz-animation: spin 0.4s;
-      			-o-animation: spin 0.4s;
-      			-ms-animation: spin 0.4s;
-      			animation: spin 0.4s;
+			.selection{
+				width: 100%;
+				padding: 0;
+				margin: 0;
+				svg {
+					position: relative;
+					margin: 0 auto;
+					cursor: pointer;
+					width: 100%;
+					height: 100%;
+				}
+				svg:hover{
+					-webkit-animation: spin 0.4s;
+	      			-moz-animation: spin 0.4s;
+	      			-o-animation: spin 0.4s;
+	      			-ms-animation: spin 0.4s;
+	      			animation: spin 0.4s;
+				}
 			}
 		}
 	}
@@ -210,4 +216,447 @@
   100% {-webkit-transform:rotate(360deg);}
 }
 
+
+@media screen and (max-width: 750px) {
+	#icon-questions{
+		.answer-container{
+			text-align: center;
+			// padding: 20%;
+			.row.holder{
+				width: 100%;
+				// text-align: center;
+				.icon-holder{
+
+					position: relative;
+					margin-left: auto;
+					margin-right: auto;
+					text-align: center;
+					width: 70px;
+					height: 70px;
+					padding-top: 18px;
+					border-radius: 150px;
+					border: 3px dotted #24B7EA;
+					color: #24B7EA;
+					font-size: 30px;
+					.clone-container{
+						position: absolute;
+						top: -12%;
+						left: -11%;
+						width: 125%;
+						height: 125%;
+						svg{
+							cursor: pointer;
+							width: 100%;
+							height: 100%;
+						}
+					}
+					.icon-remove{
+						&.show{
+							display: block;
+						}
+						position: absolute;
+						width: 30px;
+						height: 10px;
+						top: -5%;
+						right: -2%;
+						svg{
+							cursor: pointer;
+							width: 100%;
+							height: 100%;
+						}
+					}
+				}
+			}
+		}
+
+
+		.icon-container{
+			// padding-right: 0;
+			.row{
+				margin-bottom: 6.5%;
+				.icon-holder{
+					width: 80px; 
+					height: 80px; 
+					position: relative; 
+					margin-left: auto; 
+					margin-right: auto;
+					svg{
+						cursor: pointer;
+						width: 100%;
+						height: 100%;
+					}
+					.wiggle:hover{
+						-webkit-animation: wiggle 0.4s infinite;
+	          			-moz-animation: wiggle 0.4s infinite;
+	          			-o-animation: wiggle 0.4s infinite;
+	          			-ms-animation: wiggle 0.4s infinite;
+	          			animation: wiggle 0.4s infinite;
+					}
+				}
+			}
+
+			.selection-container{
+				position: absolute;
+				top: 1%;
+				width: 94%;
+				padding-top: 15%;
+				background-color: white;
+				border-radius: 40px;
+				text-align: center;
+				color: #24B7EA;
+				font-size: 1.8vw;
+				.row{
+					padding-left: 5%;
+					padding-right: 5%;
+					padding-bottom: 4%;
+				}
+				.needy{
+					font-size: 3vw;
+				}
+				.selection{
+					width: 100%;
+					padding: 0;
+					margin: 0;
+					svg {
+						position: relative;
+						margin: 0 auto;
+						cursor: pointer;
+						width: 100%;
+						height: 100%;
+					}
+					svg:hover{
+						-webkit-animation: spin 0.4s;
+		      			-moz-animation: spin 0.4s;
+		      			-o-animation: spin 0.4s;
+		      			-ms-animation: spin 0.4s;
+		      			animation: spin 0.4s;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 640px) {
+	#icon-questions{
+		.answer-container{
+			position: relative;
+			width: 70%;
+			height: 180px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 1%;
+			margin-top: -2%;
+			text-align: center;
+			background-color: white;
+			border-radius: 30px;
+			.ac-header{
+				padding-top: 10px;
+				text-align: center;
+				color: #24B7EA;
+				font-size: 3.5vw;
+			}
+			.row.holder{
+				padding-top: 5%;
+				width: 100%;
+				.icon-holder{
+					position: relative;
+					margin-left: auto;
+					margin-right: auto;
+					text-align: center;
+					width: 70px;
+					height: 70px;
+					padding-top: 18px;
+					border-radius: 150px;
+					border: 3px dotted #24B7EA;
+					color: #24B7EA;
+					font-size: 30px;
+					.next-btn{
+						display: none;
+					}
+					.clone-container{
+						position: absolute;
+						svg{
+							cursor: pointer;
+							width: 100%;
+							height: 100%;
+						}
+					}
+					.icon-remove{
+						// display: none;
+						&.show{
+							display: block;
+						}
+						position: absolute;
+						width: 30px;
+						height: 30px;
+						top: -15%;
+						right: -10%;
+						svg{
+							cursor: pointer;
+							position: relative;
+							margin: 0 auto;
+							width: 100%;
+							height: 100%;
+						}
+					}
+				}
+			}
+
+			.next-btn{
+				visibility: hidden;
+				&.show{
+					visibility: visible;
+				}
+				cursor: pointer;
+				position: relative;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 2%;
+				margin-bottom: 5%;
+				padding: 10px;
+				width: 150px;
+				font-size: 20px;
+				background-color: #EE4444;
+				color: white;
+			}
+			.next-btn:hover{
+				opacity: 0.7;
+			}
+
+		}
+
+
+		.icon-container{
+			padding-right: 0;
+			width: 60%;
+			position: relative;
+			margin: 0 auto;
+			.row{
+				margin-bottom: 3.8%;
+				.icon-holder{
+					width: 80px; 
+					height: 80px; 
+					position: relative; 
+					margin-left: auto; 
+					margin-right: auto;
+					svg{
+						cursor: pointer;
+						width: 100%;
+						height: 100%;
+					}
+					.wiggle:hover{
+						-webkit-animation: wiggle 0.4s infinite;
+	          			-moz-animation: wiggle 0.4s infinite;
+	          			-o-animation: wiggle 0.4s infinite;
+	          			-ms-animation: wiggle 0.4s infinite;
+	          			animation: wiggle 0.4s infinite;
+					}
+				}
+			}
+
+			.selection-container{
+				position: absolute;
+				top: 1%;
+				width: 100%;
+				height: 98%;
+				padding-top: 10%;
+				background-color: white;
+				border-radius: 40px;
+				text-align: center;
+				color: #24B7EA;
+				font-size: 3vw;
+				.needy{
+					font-size: 7vw;
+				}
+				.selection{
+					width: 100%;
+					padding: 0;
+					margin: 0;
+					svg {
+						position: relative;
+						margin: 0 auto;
+						cursor: pointer;
+						width: 100%;
+						height: 100%;
+					}
+					svg:hover{
+						-webkit-animation: spin 0.4s;
+		      			-moz-animation: spin 0.4s;
+		      			-o-animation: spin 0.4s;
+		      			-ms-animation: spin 0.4s;
+		      			animation: spin 0.4s;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 450px) {
+	.skip{
+		margin-top: 5%;
+	}
+	#icon-questions{
+		.answer-container{
+			position: relative;
+			width: 100%;
+			height: 140px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 1%;
+			margin-top: -2%;
+			text-align: center;
+			background-color: white;
+			border-radius: 15px;
+			.ac-header{
+				padding-top: 5px;
+				text-align: center;
+				color: #24B7EA;
+				font-size: 5vw;
+			}
+			.row.holder{
+				width: 100%;
+				.icon-holder{
+					position: relative;
+					margin: 0 auto;
+					text-align: center;
+					width: 60px;
+					height: 60px;
+					border-radius: 150px;
+					border: 3px dotted #24B7EA;
+					color: #24B7EA;
+					font-size: 30px;
+					padding-top: 13px;
+					.next-btn{
+						display: none;
+					}
+					.clone-container{
+						position: absolute;
+						top: -15%;
+						left: -14%;
+						width: 127%;
+						height: 127%;
+						svg{
+							cursor: pointer;
+							width: 100%;
+							height: 100%;
+						}
+					}
+					// .icon-remove{
+					// 	// display: none;
+					// 	&.show{
+					// 		display: block;
+					// 	}
+					// 	position: absolute;
+					// 	width: 30px;
+					// 	height: 10px;
+					// 	top: -5%;
+					// 	right: -2%;
+					// 	svg{
+					// 		cursor: pointer;
+					// 		width: 100%;
+					// 		height: 100%;
+					// 	}
+					// }
+				}
+			}
+
+			.next-btn{
+				visibility: hidden;
+				&.show{
+					visibility: visible;
+				}
+				cursor: pointer;
+				position: relative;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 1%;
+				margin-bottom: 5%;
+				padding: 3px;
+				width: 150px;
+				font-size: 15px;
+				background-color: #EE4444;
+				color: white;
+			}
+			.next-btn:hover{
+				opacity: 0.7;
+			}
+
+		}
+
+
+		.icon-container{
+			padding-left: 10%;
+			width: 100%;
+			position: relative;
+			margin: 0 auto;
+			text-align: center;
+			.row{
+				margin-bottom: 0;
+				width: 100%;
+				.icon-holder{
+					width: 100%; 
+					height: 100%; 
+					position: relative; 
+					margin: 0 auto;
+					svg{
+						cursor: pointer;
+						width: 100%;
+						height: 100%;
+					}
+					.wiggle:hover{
+						-webkit-animation: wiggle 0.4s infinite;
+	          			-moz-animation: wiggle 0.4s infinite;
+	          			-o-animation: wiggle 0.4s infinite;
+	          			-ms-animation: wiggle 0.4s infinite;
+	          			animation: wiggle 0.4s infinite;
+					}
+				}
+			}
+
+			.selection-container{
+				position: absolute;
+				top: 1%;
+				width: 100%;
+				height: 98%;
+				margin-left: -10%;
+				background-color: white;
+				border-radius: 15px;
+				text-align: center;
+				color: #24B7EA;
+				font-size: 5vw;
+				.needy{
+					font-size: 9vw;
+				}
+				.selection{
+					width: 100%;
+					padding: 0;
+					margin: 0;
+					svg {
+						position: relative;
+						margin: 0 auto;
+						cursor: pointer;
+						width: 100%;
+						height: 100%;
+					}
+					svg:hover{
+						-webkit-animation: spin 0.4s;
+		      			-moz-animation: spin 0.4s;
+		      			-o-animation: spin 0.4s;
+		      			-ms-animation: spin 0.4s;
+		      			animation: spin 0.4s;
+					}
+				}
+			}
+		}
+	}
+}
 
