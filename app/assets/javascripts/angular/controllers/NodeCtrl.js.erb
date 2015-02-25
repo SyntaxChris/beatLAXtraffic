@@ -454,6 +454,8 @@ angular.module('lawaApp')
           $scope.addTimeElapsed(0);
         }
 
+        // determine which dashboard shows
+
         // time should count down for plane landing and up for total time elapsed
         // for this submit click:
         if(decreaseTime){
@@ -498,9 +500,21 @@ angular.module('lawaApp')
         });
       };
 
+
+
+
+
+
+
+
       $scope.delaySubmit = function(decisionId, decreaseTime){
         _.delay($scope.submit, 800, decisionId, decreaseTime);
       }
+
+
+
+
+
 
       // set up object with all template names from database:
       var templates = {}
