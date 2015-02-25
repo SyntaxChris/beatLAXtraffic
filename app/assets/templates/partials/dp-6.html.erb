@@ -186,7 +186,7 @@
         </div>
 
         <div ng-if="decision.decision.indexOf('train') > -1">
-          <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
+          <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision); landPlane()" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
             <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
             <span ng-include="'<%= asset_path 'svgs/_newTram.html' %>'" class="path-letter"></span>
           </a>
