@@ -178,7 +178,6 @@ angular.module('lawaApp')
       };
 
       $scope.setCarDash = function(value){
-        debugger;
         $scope.showCarDash = value;
       };
 
@@ -199,10 +198,10 @@ angular.module('lawaApp')
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
           $scope.addOneToCircling();
-        } else if($scope.currentNode.template_name === "dp-6"){
-          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
-          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
-          $scope.addOneToCircling();
+        //} else if($scope.currentNode.template_name === "dp-6"){
+        //  var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
+        //  $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+        //  $scope.addOneToCircling();
         } else if($scope.currentNode.template_name === "dp-3"){
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Continue circling around terminal"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
@@ -353,6 +352,12 @@ angular.module('lawaApp')
         };
       };
 
+      $scope.resetCurrentOther = function(){
+        $scope.currentOther.present = false;
+        $scope.currentOther.answerId = null;
+        $scope.currentOther.text = null;
+      }
+
       $scope.landPlane = function(){
         $scope.variables.flight_time_remaining = 0;
       }
@@ -424,10 +429,10 @@ angular.module('lawaApp')
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
           $scope.addOneToCircling();
-        } else if ($scope.currentNode.template_name === "dp-6"){
-          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
-          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
-          $scope.addOneToCircling();
+        //} else if ($scope.currentNode.template_name === "dp-6"){
+        //  var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
+        //  $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+        //  $scope.addOneToCircling();
         } else if($scope.currentNode.template_name === "dp-3"){
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Continue circling around terminal"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);

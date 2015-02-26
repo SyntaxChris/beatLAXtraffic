@@ -111,6 +111,9 @@
 <%
 =end
 %>
+<%
+=begin
+%>
 <!-- remove style for final template -->
 <div id="interactive-map">
   <div class="top-half">
@@ -136,7 +139,7 @@
               <div>{{ decision.decision }}</div>
             </div>
           </div>
-          <div ng-if="decision.decision.indexOf('train') > -1">
+          <div ng-if="decision.decision.indexOf('tram') > -1">
             <div class="path-blue path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
               <div>{{ decision.decision }}</div>
             </div>
@@ -185,7 +188,7 @@
           </div>
         </div>
 
-        <div ng-if="decision.decision.indexOf('train') > -1">
+        <div ng-if="decision.decision.indexOf('tram') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision); landPlane()" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
             <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
             <span ng-include="'<%= asset_path 'svgs/_newTram.html' %>'" class="path-letter"></span>
@@ -200,4 +203,32 @@
       </div>
     </div>
   </div>
+</div>
+<%
+=end
+%>
+<div class="skip" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
+<div id="after-parking-questions">
+  <h3 class="main-question">{{ currentNode.decision_point.situation }}</h3>
+  <!-- <h3 id="pole">What do you do next?</h3> -->
+
+  <div class="pole">
+    <div ng-include="'<%= asset_path 'svgs/_signPole.html' %>'"></div>
+  </div>
+
+    <button ng-click="addOneToCircling(); setCurrentDecision(decision)" ng-repeat="decision in currentNode.decisions" class="sign plane-advance" ng-id="{{ 'cntr-' + $index+1 }}">
+      <div class="holder">
+        <div ng-include="'<%= asset_path 'svgs/_signHolder.html' %>'"></div>
+      </div>
+      <div class="inner-content" ng-class="signColors[$index+1]">
+        <div class="icon-c">
+          <div class="arrow-c">
+            <div ng-include="'<%= asset_path 'svgs/_signArrow.html' %>'"></div>
+          </div>
+        </div>
+        <div class="text">
+          {{ decision.decision }}
+        </div>
+      </div>
+    </button>
 </div>
