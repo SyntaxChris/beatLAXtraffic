@@ -80,6 +80,7 @@
 		}
 
 		input[type="text"], textarea {
+			display: none;
 			position:absolute;
 			top: 0;
 			color: black;
@@ -100,9 +101,9 @@
 			display:none;
 			position: relative;
 			margin: 0 auto;
-			margin-top: 22%;
-			padding: 10px 0;
-			width: 150px;
+			margin-top: 25%;
+			padding: 7px 0;
+			width: 140px;
 			color: white;
 			background-color: #079BED;
 		}
@@ -128,14 +129,149 @@
 }
 
 
+@media only screen and (max-width : 740px) and (min-width: 641px) {
+	#why-park-car{
+		.unchecked{
+			position: absolute;
+			z-index: 3;
+			right: 0;
+			top: 20px;
+			svg{
+				width: 45px;
+				height: 45px;
+			}
+		}
+		.parking-bbl{
+			cursor: pointer;
+			position: relative;
+			width: 100%;
+			padding-bottom: 30%;
+			background-color: white;
+			border-radius: 30px;
+			margin-top: 20%;
+			text-align: center;
+
+			.bbl-icon svg{
+				fill: #A0A0A0;
+				padding-top: 5%;
+				width: 85%;
+				height: 85%;
+			}
+			.bbl-title{
+				position: absolute;
+				margin-top: -10%;
+				width: 100%;
+				font-weight: 700;
+				font-size: 1.5vw;
+				padding: 10px;
+				color: #A0A0A0;
+			}
+		}
+		.parking-bbl:before {
+			content:"";
+			position: absolute;
+			top: 100%;
+			left: 42%;
+			width: 0;
+			height: 0;
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			border-top: 30px solid white;
+		}
+		.parking-bbl.other-bbl{
+			height: 130px;
+		}
+
+
+		.other-bbl{
+			.row{
+				margin: 0;
+				padding: 0;
+			}
+			.unchecked{
+				position: absolute;
+				z-index: 40;
+				right: -5%;
+				top: -7%;
+				svg{
+					width: 45px;
+					height: 45px;
+				}
+			} 
+
+			.bbl-icon svg{
+				fill: #A0A0A0;
+				width: 40%;
+				height: 40%;
+			}
+
+			.bbl-title{
+				text-align: center;
+				margin-top: -5px; 
+				margin-bottom: 20px;
+			}
+
+			input[type="text"], textarea {
+				display: none;
+				position:absolute;
+				top: 0;
+				color: black;
+				border-radius: 15px 15px 0 0;
+				resize: none;
+			}
+			.text-counter{
+				display: none;
+				// position: absolute;
+				// top: 60%;
+				margin-top: -10px;
+				width: 100%;
+				text-align: center;
+	        	color: #A0A0A0;
+			}
+			.ok-btn{
+				cursor: pointer;
+				display:none;
+				position: relative;
+				margin: 0 auto;
+				margin-top: 15%;
+				padding: 7px 0;
+				width: 140px;
+				color: white;
+				background-color: #079BED;
+			}
+			// .ok-btn:hover{
+			// 	opacity: 0.8;
+			// }
+		}
+		.park-btn-next{
+			display: none;
+			cursor: pointer;
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+			color: white;
+			// border-radius: 5px;
+			margin-top: 5%;
+			width: 150px;
+			padding: 7px 0 7px 0;
+			background-color: #EE4444;
+
+		}
+	}
+} 
+
 
 
 
 
 @media only screen and (max-width : 640px) { 
 	#why-park-car{
+		h3.main-question{
+			font-size: 5vw;
+		}
 		.sub-header{
-			font-size: 4vw;
+			font-size: 3vw;
 		}
 		.row.bbl-top{
 			margin-top: -5%;
@@ -240,7 +376,7 @@
 				display:none;
 				position: relative;
 				margin: 0 auto;
-				margin-top: 30%;
+				margin-top: 45%;
 				padding: 10px 0;
 				width: 80%;
 				color: white;
@@ -269,9 +405,12 @@
 
 
 @media only screen and (max-width : 465px) { 
+	.skip{
+		top: 2%;
+	}
 	#why-park-car{
 		.sub-header{
-			font-size: 4vw;
+			font-size: 3.5vw;
 		}
 		.row.bbl-top{
 			margin-top: -5%;
@@ -376,7 +515,7 @@
 				display:none;
 				position: relative;
 				margin: 0 auto;
-				margin-top: 30%;
+				margin-top: 45%;
 				padding: 10px 0;
 				width: 80%;
 				color: white;
