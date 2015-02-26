@@ -353,6 +353,31 @@ RSpec.describe Response, :type => :model do
             Response.create_all_from_node_interaction(argument_params, respondent)
             expect(Respondent.last.current_node_id).to eq further_node.id
           end
+
+          it "advances to the next decision point if already on a decision point!" do
+            alternate_start = create(:node, next_node_id: seen_node.id, is_decision_point: true)
+            # create seen nodes
+            [seen_node, further_node, first_dp].each do |node|
+              respondent.seen_nodes.create(node_id: node.id)
+            end
+            respondent.update(current_node_id: alternate_start.id)
+
+            argument_params = {
+              is_decision: false,
+              respondent_id: respondent.id,
+              node_id: alternate_start.id,
+              next_node_id: seen_node.id,
+              answers: [
+                { id: answer.id,
+                  rank: nil
+              }
+              ],
+                time_elapsed: 10
+            }
+
+            Response.create_all_from_node_interaction(argument_params, respondent)
+            expect(respondent.current_node_id).to eq first_dp.id
+          end
         end
 
         it "adds the current_node_id to respondent's 'seen nodes'" do
