@@ -103,7 +103,7 @@ describe Respondent do
   end
 
   describe "Features" do
-    let!(:starting_node) { FactoryGirl.create(:node, template_name: 'splash') }
+    let!(:starting_node) { FactoryGirl.create(:node, template_name: 'splash', next_node_id: 100) }
     context "on create hooks" do
       # not doing the below. see comment in Respondent#set_starting_node
       # before :each do
@@ -203,6 +203,69 @@ describe Respondent do
             expect(["Coworker", "Parent", "Friend"]).to include(Respondent.evenly_distributed_pickup_target)
           end
         end
+      end
+
+      describe "update_node_history" do
+        let!(:respondent) { create(:respondent) }
+        let!(:answer) { create(:answer) }
+        context "when next node hasn't been seen" do
+          let!(:first_dp) { create(:node, is_decision_point: true) }
+          let!(:further_node) { create(:node, next_node_id: first_dp.id) }
+          let!(:next_node) { create(:node, next_node_id: further_node.id) }
+          let!(:current_node) { create(:node, next_node_id: next_node.id) }
+
+          it "advances to the next node" do
+            # don't create seen nodes
+            #
+            argument_params = {
+              is_decision: false,
+              respondent_id: respondent.id,
+              node_id: current_node.id,
+              next_node_id: next_node.id,
+              answers: [
+                { id: answer.id,
+                  rank: nil
+              }
+              ],
+                time_elapsed: 10
+            }
+
+            respondent.update_node_history(argument_params)
+            expect(respondent.current_node_id).to eq next_node.id
+          end
+        end
+
+        context "when next node has been seen" do
+          let!(:first_dp) { create(:node, is_decision_point: true) }
+          let!(:further_node) { create(:node, next_node_id: first_dp.id) }
+          let!(:seen_node) { create(:node, next_node_id: further_node.id) }
+          let!(:current_node) { create(:node, next_node_id: seen_node.id) }
+
+          it "advances to the next decision point" do
+            # create seen nodes
+            [seen_node, further_node, first_dp].each do |node|
+              respondent.seen_nodes.create(node_id: node.id)
+            end
+            respondent.update(current_node_id: current_node.id)
+
+            argument_params = {
+              is_decision: false,
+              respondent_id: respondent.id,
+              node_id: current_node.id,
+              next_node_id: seen_node.id,
+              answers: [
+                { id: answer.id,
+                  rank: nil
+              }
+              ],
+                time_elapsed: 10
+            }
+
+            respondent.update_node_history(argument_params)
+            expect(respondent.current_node_id).to eq first_dp.id
+          end
+        end
+
       end
     end
 

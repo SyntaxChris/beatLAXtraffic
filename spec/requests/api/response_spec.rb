@@ -147,6 +147,7 @@ describe "responses API" do
       expect(response).to be_success
       expect(Response.last.decision_id).to eq 2
     end
+
     it "records a decision point response for a respondent with nil answers" do
       params = {
         response: {

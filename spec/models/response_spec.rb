@@ -276,25 +276,59 @@ RSpec.describe Response, :type => :model do
           expect(respondent.responses.last.times_seen).to eq 2
         end
 
-        it "updates the respondent's current_node_id to be the next_node" do
-          argument_params = {
-            is_decision: false,
-            respondent_id: respondent.id,
-            node_id: node.id,
-            next_node_id: next_node.id,
-            answers: [
-              { id: answer.id,
-                rank: nil
+        context "when the next_node hasn't been seen" do
+          it "updates the respondent's current_node_id to be the next_node" do
+            # don't create seen nodes
+            #
+            argument_params = {
+              is_decision: false,
+              respondent_id: respondent.id,
+              node_id: node.id,
+              next_node_id: next_node.id,
+              answers: [
+                { id: answer.id,
+                  rank: nil
               }
-            ],
-            time_elapsed: 10
-          }
-          response_count = respondent.responses.count
-          Response.create_all_from_node_interaction(argument_params, respondent)
-          expect(respondent.responses.count).to eq response_count + 1
-          expect(respondent.responses.last.node_id).to eq node.id
-          expect(respondent.responses.last.answer_id).to eq answer.id
-          expect(Respondent.last.current_node_id).to eq next_node.id
+              ],
+                time_elapsed: 10
+            }
+            response_count = respondent.responses.count
+            Response.create_all_from_node_interaction(argument_params, respondent)
+            expect(respondent.responses.count).to eq response_count + 1
+            expect(respondent.responses.last.node_id).to eq node.id
+            expect(respondent.responses.last.answer_id).to eq answer.id
+            expect(Respondent.last.current_node_id).to eq next_node.id
+          end
+        end
+
+        context "when the next_node has already been seen" do
+          let!(:first_dp) { create(:node, is_decision_point: true) }
+          let!(:further_node) { create(:node, next_node_id: first_dp.id) }
+          let!(:seen_node) { create(:node, next_node_id: further_node.id) }
+          let!(:current_node) { create(:node, next_node_id: seen_node.id) }
+
+          it "advances to the next decision point" do
+            # create seen nodes
+            [seen_node, further_node, first_dp].each do |node|
+              respondent.seen_nodes.create(node_id: node.id)
+            end
+
+            argument_params = {
+              is_decision: false,
+              respondent_id: respondent.id,
+              node_id: current_node.id,
+              next_node_id: seen_node.id,
+              answers: [
+                { id: answer.id,
+                  rank: nil
+              }
+              ],
+                time_elapsed: 10
+            }
+
+            Response.create_all_from_node_interaction(argument_params, respondent)
+            expect(Respondent.last.current_node_id).to eq first_dp.id
+          end
         end
 
         it "adds the current_node_id to respondent's 'seen nodes'" do
@@ -447,6 +481,7 @@ RSpec.describe Response, :type => :model do
           expect(respondent.responses.last.decision_id).to eq decision.id
           expect(respondent.responses.last.skipped).to eq nil
         end
+
         it "updates the respondent's current_node_id to be the next_node" do
           argument_params = {
             is_decision: true,

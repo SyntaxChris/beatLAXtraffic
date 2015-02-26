@@ -31,8 +31,46 @@ class Respondent < ActiveRecord::Base
   end
 
   def update_node_history(response_params)
-    self.update(current_node_id: response_params[:next_node_id])
     self.seen_nodes.create(node_id: response_params[:node_id])
+
+    next_node_id = response_params[:next_node_id]
+    if self.seen_nodes.pluck(:node_id).include?(next_node_id)
+      next_node_id = find_id_of_next_unseen_or_decision_point
+    else
+      next_node_id = response_params[:next_node_id]
+    end
+
+    self.update(current_node_id: next_node_id)
+  end
+
+  def find_id_of_next_unseen_or_decision_point
+    nodes_with_id_next_dp_boolean = Node.all.map do |n|
+      { id: n.id,
+        next: Node.find_by_id(n.next_node_id),
+        dp: n.is_decision_point
+      }
+    end
+    all_nodes = Node.all
+
+    start = all_nodes.find(current_node_id)
+
+    return walk_nodes_until_unseen_or_dp(all_nodes, start).id
+    # we have current_node
+    # we have seen nodes
+    # start at current_node,
+    # walk to Node.find(current_node).next_node
+    # is THIS unseen or a decision point?
+    # return this id
+    # otherwise, walk to THIS.next_node
+  end
+
+  def walk_nodes_until_unseen_or_dp(all_nodes, this_node)
+    if this_node.is_decision_point? || !seen_nodes.pluck(:node_id).include?(this_node.id)
+      return this_node
+    else
+      next_node = all_nodes.find(this_node.next_node_id)
+      walk_nodes_until_unseen_or_dp(all_nodes, next_node)
+    end
   end
 
   private
