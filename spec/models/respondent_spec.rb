@@ -266,6 +266,7 @@ describe Respondent do
           end
 
           it "advances to the next decision point if already on a decision point!" do
+            decision = create(:decision)
             alternate_start = create(:node, is_decision_point: true)
             # create seen nodes
             [seen_node, further_node, first_dp].each do |node|
@@ -277,6 +278,7 @@ describe Respondent do
               is_decision: false,
               respondent_id: respondent.id,
               node_id: alternate_start.id,
+              decision_id: decision.id,
               next_node_id: seen_node.id,
               answers: [
                 { id: answer.id,
