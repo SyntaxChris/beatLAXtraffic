@@ -18,30 +18,6 @@ angular.module('lawaApp')
             $scope.planeProgress = $scope.calculatePlaneProgress($scope.variables.flight_time_remaining);
             $scope.currentFlightTimeRemaining = $scope.variables.landing_time;
 
-            // if current node is the first one, don't show dashboard
-            // TODO: pls no:
-
-            if(
-                $scope.currentNode.template_name === "splash" ||
-                $scope.currentNode.template_name === "sq-2-2" ||
-                $scope.currentNode.template_name === "sq-1" ||
-                $scope.currentNode.template_name === "e-1" ||
-                $scope.currentNode.template_name === "e-2" ||
-                $scope.currentNode.template_name === "e-3" ||
-                $scope.currentNode.template_name === "e-4" ||
-                $scope.currentNode.template_name === "e-5" ||
-                $scope.currentNode.template_name === "e-6" ||
-                $scope.currentNode.template_name === "e-7"
-              ){
-              $scope.setShowDashboard(false);
-            // else if the home dashboard should be seen, show that.
-            } else {
-              $scope.setShowDashboard(true);
-            };
-
-
-
-            ///////////
             // for development purposes only. add fully-working nodes here
             // to remove debugging printing out on front end:
             $scope.nodesWorking = [
@@ -140,6 +116,7 @@ angular.module('lawaApp')
         $scope.amenities = [];
       };
 
+
       $scope.restart = function(){
         // TODO: post to some api restart route that clears cookies, etc.
       }
@@ -173,14 +150,13 @@ angular.module('lawaApp')
         return (answer.answer.indexOf(string) > -1)
       };
 
-      $scope.setShowDashboard = function(value){
-        $scope.showDashboard = value;
-      };
+      // $scope.setShowDashboard = function(value){
+      //   $scope.showDashboard = value;
+      // };
 
-      $scope.setCarDash = function(value){
-        debugger;
-        $scope.showCarDash = value;
-      };
+      // $scope.setCarDash = function(value){
+      //   $scope.showCarDash = value;
+      // };
 
       $scope.setCurrentNodeBySession = function() {
         $scope.currentNode = $scope.fetchNodeById(sessionCurrentNodeId);
@@ -500,21 +476,9 @@ angular.module('lawaApp')
         });
       };
 
-
-
-
-
-
-
-
       $scope.delaySubmit = function(decisionId, decreaseTime){
         _.delay($scope.submit, 800, decisionId, decreaseTime);
       }
-
-
-
-
-
 
       // set up object with all template names from database:
       var templates = {}

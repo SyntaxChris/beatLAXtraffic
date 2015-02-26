@@ -1,39 +1,13 @@
 <div ng-controller="NodeCtrl">
-  <!-- <% if Rails.env.development? %>
-    <div ng-if="!inWhitelist">
-      current template: {{ getTemplateName(currentNode.node_id)}} |
-      current nodeId: {{ currentNode.node_id }}
-      in whitelist? {{ inWhitelist }}
-      <br>
-      <div ng-if="!currentNode.is_decision_point">
-        next node template name: {{ getTemplateName(currentNode.next_node_id) }}
-      </div>
-      <div ng-if="currentNode.is_decision_point">
-        selected choice's template: {{ getTemplateName(currentDecisionDestination.node_id) }}
-      </div>
-    </div>
-  <% end %> -->
-  <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))">
-    <!--
-    <div class="current-node-container" style="background-color:white">
-      <div ng-if="!currentNode.is_decision_point">
-        <div ng-include="'<#%= asset_path 'partials/question.html' %>'"></div>
-      </div>
-      <div ng-if="currentNode.is_decision_point">
-        <div ng-include="'<#%= asset_path 'partials/decision.html' %>'"></div>
-      </div>
-    </div>
-    -->
-  </div>
+  <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))"></div>
   <div class="row">
     <div ng-include="currentTemplateName">
     </div>
   </div>
-
-  <div ng-if="showDashboard">
+  <div ng-if="currentNode.dashboard_type === 'plane'">
     <div ng-include="'<%= asset_path 'partials/dashboard.html' %>'"></div>
   </div>
-  <div ng-if="showCarDash">
+  <div ng-if="currentNode.dashboard_type === 'car'">
     <div ng-include="'<%= asset_path 'partials/dashboard-car.html' %>'"></div>
   </div>
 </div>
