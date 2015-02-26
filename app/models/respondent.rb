@@ -53,15 +53,13 @@ class Respondent < ActiveRecord::Base
     all_nodes = Node.all
 
     start = all_nodes.find(current_node_id)
+    # if already on a decision point, start at the next node,
+    # or else you never step off the starting node :)
+    if start.is_decision_point?
+      start = all_nodes.find(start.next_node_id)
+    end
 
     return walk_nodes_until_unseen_or_dp(all_nodes, start).id
-    # we have current_node
-    # we have seen nodes
-    # start at current_node,
-    # walk to Node.find(current_node).next_node
-    # is THIS unseen or a decision point?
-    # return this id
-    # otherwise, walk to THIS.next_node
   end
 
   def walk_nodes_until_unseen_or_dp(all_nodes, this_node)
