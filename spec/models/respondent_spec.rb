@@ -96,6 +96,10 @@ describe Respondent do
     it "has many responses" do
       expect(respondent).to have_many(:responses)
     end
+
+    it "has many seen nodes" do
+      expect(respondent).to have_many(:seen_nodes)
+    end
   end
 
   describe "Features" do

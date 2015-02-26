@@ -17,6 +17,7 @@ class Respondent < ActiveRecord::Base
   TRAFFIC_LEVELS = ["slow", "medium", "fast"]
 
   has_many :responses
+  has_many :seen_nodes
   after_create :set_starting_node
   after_create :set_variables
 
