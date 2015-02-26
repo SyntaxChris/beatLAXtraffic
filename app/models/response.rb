@@ -29,21 +29,12 @@ class Response < ActiveRecord::Base
     response.calculate_seen_before
 
     if response.save
-      # response.update_respondent_node_history(response_params)
       respondent.update_node_history(response_params)
-      # Respondent.find(response_params[:respondent_id]).update(current_node_id: response_params[:next_node_id])
       return {status: "success"}
     else
       return {status: "fail", message: response.errors.messages}
     end
   end
-
-  # this has been moved to the Respondent model
-  #def update_respondent_node_history(response_params, respondent)
-  #  respondent.update_node_history(response_params)
-  #  # respondent.update(current_node_id: response_params[:next_node_id])
-  #  # respondent.seen_nodes.create(node_id: node_id)
-  #end
 
   def self.create_multi_from_options!(response_params, answers_array, respondent)
     previous = Response.where(
@@ -80,9 +71,6 @@ class Response < ActiveRecord::Base
     end
     if successes == answers_array.count
       respondent.update_node_history(response_params)
-      # respondent.update(current_node_id: response_params[:next_node_id])
-      # respondent.seen_nodes.create(node_id: response_params[:node_id])
-      # Respondent.find(response_params[:respondent_id]).update(current_node_id: response_params[:next_node_id])
       return {status: "success"}
     else
       return {status: "fail", message: "one of the multiple choice anwers had a problem"}

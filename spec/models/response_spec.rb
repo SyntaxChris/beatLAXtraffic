@@ -334,52 +334,6 @@ RSpec.describe Response, :type => :model do
           expect(Respondent.last.current_node_id).to eq next_node.id
         end
 
-        # this method has moved to the Respondent model
-        #describe "update_respondent_node_history" do
-        #  let!(:respondent) { create(:respondent) }
-        #  let!(:next_node) { create(:node) }
-        #  let!(:node) { create(:node, next_node_id: next_node.id) }
-        #  let!(:answer) { create(:answer) }
-        #  let!(:answer_2) { create(:answer) }
-        #  let!(:answer_3) { create(:answer) }
-        #  let!(:answer_4) { create(:answer) }
-
-        #  it "finds the correct respondent" do
-        #    argument_params = {
-        #      is_decision: false,
-        #      respondent_id: respondent.id,
-        #      node_id: node.id,
-        #      next_node_id: next_node.id,
-        #      answers: [
-        #        { id: answer.id,
-        #          rank: nil
-        #        }
-        #      ],
-        #      time_elapsed: 10
-        #    }
-
-        #    expect(Respondent).to receive(:find).with(argument_params[:respondent_id])
-        #  end
-
-        #  it "updates the respondent's current_node_id and nodes_seen" do
-        #    argument_params = {
-        #      is_decision: false,
-        #      respondent_id: respondent.id,
-        #      node_id: node.id,
-        #      next_node_id: next_node.id,
-        #      answers: [
-        #        { id: answer.id,
-        #          rank: nil
-        #        }
-        #      ],
-        #      time_elapsed: 10
-        #    }
-
-        #    expect(Respondent.last.seen_nodes.pluck(:node_id)).to include(node.id)
-        #    expect(Respondent.last.current_node_id).to eq next_node.id
-        #  end
-        #end
-
         it "creates a separate response for each multiple choice answer" do
           Response.create(node_id: node.id, answer_id: answer.id, respondent_id: 123)
           argument_params = {
