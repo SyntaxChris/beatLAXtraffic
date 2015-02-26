@@ -30,12 +30,18 @@ describe "respondents API" do
         expect(json['variables']['luggage_type']).to eq new_respondent.luggage_type
         expect(json['variables']['original_who_picking_up']).to eq new_respondent.original_who_picking_up
         expect(json['variables']['landing_time']).to eq new_respondent.landing_time
+        expect(json['seen_nodes']).to be_empty
       end
     end
 
     context "when a respondent is returning" do
-      it "returns an existing respondent's id, session id and random variables" do
+      it "returns an existing respondent's id, session id, previously seen nodes and random variables" do
         existing = create(:respondent, session_id: "10abc")
+        node_1 = create(:node)
+        node_2 = create(:node)
+        existing.seen_nodes.create(node_id: node_1.id)
+        existing.seen_nodes.create(node_id: node_2.id)
+
         previous_count = Respondent.count
         cookies["survey_session_id"] = existing.session_id
         get '/api/respondents/get_or_create', format: :json
@@ -53,6 +59,7 @@ describe "respondents API" do
         expect(json['variables']['luggage_type']).to eq existing.luggage_type
         expect(json['variables']['original_who_picking_up']).to eq existing.original_who_picking_up
         expect(json['variables']['landing_time']).to eq existing.landing_time
+        expect(json['seen_nodes']).to include(node_1.id, node_2.id)
       end
 
       it "returns respondent's current_node_id" do
