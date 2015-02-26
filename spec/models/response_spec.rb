@@ -312,6 +312,7 @@ RSpec.describe Response, :type => :model do
             [seen_node, further_node, first_dp].each do |node|
               respondent.seen_nodes.create(node_id: node.id)
             end
+            respondent.update(current_node_id: current_node.id)
 
             argument_params = {
               is_decision: false,
