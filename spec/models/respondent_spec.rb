@@ -164,8 +164,11 @@ describe Respondent do
         context "when session exists" do
         let!(:respondent) { FactoryGirl.create(:respondent, session_id: "1234") }
           it "returns that active session" do
+            node_1 = create(:node)
+            seen_node = respondent.seen_nodes.create(node_id: node_1.id)
+
             expect(Respondent.all.count).to eq 1
-            expect(Respondent.get_or_create_by_session("1234")).to eq respondent
+            expect(Respondent.get_or_create_by_session("1234")[:respondent]).to eq respondent
             expect(Respondent.all.count).to eq 1
           end
         end
@@ -173,7 +176,7 @@ describe Respondent do
         context "when session doesn't exist" do
           it "creates a session and returns it" do
             expect(Respondent.all.count).to eq 0
-            expect(Respondent.get_or_create_by_session("1234")).to eq Respondent.last
+            expect(Respondent.get_or_create_by_session("1234")[:respondent]).to eq Respondent.last
             expect(Respondent.all.count).to eq 1
           end
         end

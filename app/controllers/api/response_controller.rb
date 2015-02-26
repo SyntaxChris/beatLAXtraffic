@@ -1,12 +1,17 @@
 module Api
   class ResponseController < ApplicationController
+    before_filter :set_respondent
 
     def create
-      result = Response.create_all_from_node_interaction(response_params)
-      if result[:status] == "success"
-        render json: result, status: 200
+      if @respondent
+        result = Response.create_all_from_node_interaction(response_params, @respondent)
+        if result[:status] == "success"
+          render json: result, status: 200
+        else
+          render json: result, status: 422
+        end
       else
-        render json: result, status: 422
+        render json: {error: "no respondent present"}, status: 422
       end
     end
 
@@ -22,6 +27,10 @@ module Api
         freeform_response: [:response, :answer_id],
         answers: [[:id, :rank]]
       )
+    end
+
+    def set_respondent
+      @respondent = Respondent.find_by_id(response_params[:respondent_id])
     end
 
   end

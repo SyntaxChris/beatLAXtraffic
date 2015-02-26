@@ -1,6 +1,7 @@
 json.respondent_id @respondent.id
 json.session_id @respondent.session_id
 json.current_node_id @respondent.current_node_id
+json.seen_nodes @seen_nodes.pluck(:node_id)
 json.variables do
   json.flight_code @respondent.flight_code
   json.picking_up_number @respondent.picking_up_number

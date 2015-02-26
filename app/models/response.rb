@@ -9,7 +9,7 @@ class Response < ActiveRecord::Base
   validates :node_id, presence: true
   validates :respondent_id, presence: true
 
-  def self.create_from_options!(response_params, answers_array = [])
+  def self.create_from_options!(response_params, answers_array = [], respondent)
     response = Response.new(response_params.except(:next_node_id, :freeform_response))
     if answers_array.empty? || answers_array.nil?
       response.skipped = true unless response_params[:decision_id].present?
@@ -29,14 +29,23 @@ class Response < ActiveRecord::Base
     response.calculate_seen_before
 
     if response.save
-      Respondent.find(response_params[:respondent_id]).update(current_node_id: response_params[:next_node_id])
+      # response.update_respondent_node_history(response_params)
+      respondent.update_node_history(response_params)
+      # Respondent.find(response_params[:respondent_id]).update(current_node_id: response_params[:next_node_id])
       return {status: "success"}
     else
       return {status: "fail", message: response.errors.messages}
     end
   end
 
-  def self.create_multi_from_options!(response_params, answers_array)
+  # this has been moved to the Respondent model
+  #def update_respondent_node_history(response_params, respondent)
+  #  respondent.update_node_history(response_params)
+  #  # respondent.update(current_node_id: response_params[:next_node_id])
+  #  # respondent.seen_nodes.create(node_id: node_id)
+  #end
+
+  def self.create_multi_from_options!(response_params, answers_array, respondent)
     previous = Response.where(
       respondent_id: response_params[:respondent_id]
     ).where(
@@ -70,8 +79,10 @@ class Response < ActiveRecord::Base
       end
     end
     if successes == answers_array.count
-      # TODO: update current_node_id for respondent
-      Respondent.find(response_params[:respondent_id]).update(current_node_id: response_params[:next_node_id])
+      respondent.update_node_history(response_params)
+      # respondent.update(current_node_id: response_params[:next_node_id])
+      # respondent.seen_nodes.create(node_id: response_params[:node_id])
+      # Respondent.find(response_params[:respondent_id]).update(current_node_id: response_params[:next_node_id])
       return {status: "success"}
     else
       return {status: "fail", message: "one of the multiple choice anwers had a problem"}
@@ -90,18 +101,18 @@ class Response < ActiveRecord::Base
     end
   end
 
-  def self.create_all_from_node_interaction(node_interaction_params)
+  def self.create_all_from_node_interaction(node_interaction_params, respondent)
     is_decision = node_interaction_params[:is_decision]
     answers_array = node_interaction_params[:answers]
     time_elapsed = node_interaction_params[:time_elapsed]
     response_params = node_interaction_params.except(:is_decision, :answers, :time_elapsed)
 
     if answers_array && answers_array.count < 2 # single choice
-      Response.create_from_options!(response_params, answers_array)
+      Response.create_from_options!(response_params, answers_array, respondent)
     elsif answers_array && answers_array.count > 1 # multiple choice
-      Response.create_multi_from_options!(response_params, answers_array)
+      Response.create_multi_from_options!(response_params, answers_array, respondent)
     else # no answers, a decision point
-      Response.create_from_options!(response_params)
+      Response.create_from_options!(response_params, respondent)
     end
 
   end

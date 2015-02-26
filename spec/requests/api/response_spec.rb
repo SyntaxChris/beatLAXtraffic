@@ -41,6 +41,29 @@ describe "responses API" do
       expect(response).to be_success
     end
 
+    it "when a response is recorded, also adds current node to 'seen nodes'" do
+      Response.create(node_id: node.id, answer_id: answer.id, respondent_id: respondent.id)
+      params = {
+        response: {
+          is_decision: false,
+          respondent_id: respondent.id,
+          node_id: node.id,
+          decision_id: nil,
+          answers: [
+            {
+              id: answer.id,
+              rank: 2
+            }
+          ],
+          time_remaining: nil
+        }
+      }
+      xhr :post, '/api/response', params
+
+      expect(response).to be_success
+      expect(respondent.seen_nodes.pluck(:node_id)).to include(node.id)
+    end
+
     it "is ok with an empty answers array" do
       Response.create(node_id: node.id, answer_id: answer.id, respondent_id: 123)
       Response.create(node_id: node.id, answer_id: answer.id, respondent_id: respondent.id)

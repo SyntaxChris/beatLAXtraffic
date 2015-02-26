@@ -25,7 +25,14 @@ class Respondent < ActiveRecord::Base
     respondent = Respondent.find_by_session_id(searched_session_id) ||
       Respondent.create(session_id: searched_session_id)
 
-    return respondent
+    seen_nodes = respondent.seen_nodes
+
+    return { respondent: respondent, seen_nodes: seen_nodes }
+  end
+
+  def update_node_history(response_params)
+    self.update(current_node_id: response_params[:next_node_id])
+    self.seen_nodes.create(node_id: response_params[:node_id])
   end
 
   private
