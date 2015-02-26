@@ -355,7 +355,7 @@ RSpec.describe Response, :type => :model do
           end
 
           it "advances to the next decision point if already on a decision point!" do
-            alternate_start = create(:node, next_node_id: seen_node.id, is_decision_point: true)
+            alternate_start = create(:node, is_decision_point: true)
             # create seen nodes
             [seen_node, further_node, first_dp].each do |node|
               respondent.seen_nodes.create(node_id: node.id)

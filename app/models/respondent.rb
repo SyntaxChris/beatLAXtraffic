@@ -35,28 +35,27 @@ class Respondent < ActiveRecord::Base
 
     next_node_id = response_params[:next_node_id]
     if self.seen_nodes.pluck(:node_id).include?(next_node_id)
-      next_node_id = find_id_of_next_unseen_or_decision_point
+      if response_params[:decision_id].present? # a decision point
+        next_node_id = find_id_of_next_unseen_or_decision_point(next_node_id)
+      else # an already seen question
+        next_node_id = find_id_of_next_unseen_or_decision_point
+      end
     else
+      # a new question
       next_node_id = response_params[:next_node_id]
     end
 
     self.update(current_node_id: next_node_id)
   end
 
-  def find_id_of_next_unseen_or_decision_point
-    nodes_with_id_next_dp_boolean = Node.all.map do |n|
-      { id: n.id,
-        next: Node.find_by_id(n.next_node_id),
-        dp: n.is_decision_point
-      }
-    end
+  def find_id_of_next_unseen_or_decision_point(dp_next = nil)
     all_nodes = Node.all
 
     start = all_nodes.find(current_node_id)
     # if already on a decision point, start at the next node,
     # or else you never step off the starting node :)
     if start.is_decision_point?
-      start = all_nodes.find(start.next_node_id)
+      start = all_nodes.find(dp_next)
     end
 
     return walk_nodes_until_unseen_or_dp(all_nodes, start).id

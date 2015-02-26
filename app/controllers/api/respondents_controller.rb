@@ -12,7 +12,7 @@ module Api
     def update
       @respondent = Respondent.find_by_session_id(cookies[:survey_session_id])
       if @respondent.update(session_params)
-        render json: {}, status: 200
+        render json: @respondent, status: 200
       else
         render json: @respondent.errors, status: 402
       end

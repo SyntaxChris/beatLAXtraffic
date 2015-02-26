@@ -55,13 +55,13 @@ namespace :populate do
     #  sq35q = Question.create(node_id: sq35.id, question: "There is a friend in the car helping you with this pick-up ", question_type_id: single_choice.id)
       # ^ This will either say this or an alternate based on a random generation
 
-    gq1 = Node.create(nickname: "GQ 1", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "gq-1")
-      gq1q = Question.create(node_id: gq1.id, question: "Why do you choose this strategy?", question_type_id: many_choice.id)
-        gq1a1 = Answer.create(question_id: gq1q.id, answer: "To minimize the hassle for me", icon_name: nil)
-        gq1a2 = Answer.create(question_id: gq1q.id, answer: "To make it convenient for my passenger", icon_name: nil)
-        gq1a3 = Answer.create(question_id: gq1q.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil)
-        gq1a4 = Answer.create(question_id: gq1q.id, answer: "To avoid paying for parking", icon_name: nil)
-        gq1a5 = Answer.create(question_id: gq1q.id, answer: "Other (Explain)", icon_name: nil)
+    #gq1 = Node.create(nickname: "GQ 1", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "gq-1")
+    #  gq1q = Question.create(node_id: gq1.id, question: "Why do you choose this strategy?", question_type_id: many_choice.id)
+    #    gq1a1 = Answer.create(question_id: gq1q.id, answer: "To minimize the hassle for me", icon_name: nil)
+    #    gq1a2 = Answer.create(question_id: gq1q.id, answer: "To make it convenient for my passenger", icon_name: nil)
+    #    gq1a3 = Answer.create(question_id: gq1q.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil)
+    #    gq1a4 = Answer.create(question_id: gq1q.id, answer: "To avoid paying for parking", icon_name: nil)
+    #    gq1a5 = Answer.create(question_id: gq1q.id, answer: "Other (Explain)", icon_name: nil)
 
     ns4 = Node.create(nickname: "NS 4", is_decision_point: false , branch_id: scenario_questions_branch.id, template_name: "ns-4")
       ns4q = Question.create(node_id: ns4.id, question: "Nice! This location is part of the largest improvement project ever at LAX.\nWe'd love to hear how this project can help you and your passengers navigate LAX better", question_type_id: single_choice.id)
@@ -322,6 +322,7 @@ namespace :populate do
     e4.update(next_node_id: e5.id)
     e5.update(next_node_id: e6.id)
     e6.update(next_node_id: e7.id)
+    e7.update(next_node_id: splash.id)
     itf2.update(next_node_id: e1.id)
     ns4.update(next_node_id: itf2.id)
     ns5.update(next_node_id: itf2.id)
