@@ -150,14 +150,6 @@ angular.module('lawaApp')
         return (answer.answer.indexOf(string) > -1)
       };
 
-      // $scope.setShowDashboard = function(value){
-      //   $scope.showDashboard = value;
-      // };
-
-      // $scope.setCarDash = function(value){
-      //   $scope.showCarDash = value;
-      // };
-
       $scope.setCurrentNodeBySession = function() {
         $scope.currentNode = $scope.fetchNodeById(sessionCurrentNodeId);
       };
