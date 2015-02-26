@@ -59,7 +59,7 @@
     </div>
 
 
-    <div id="stage-2" style="display: none">
+    <div id="stage-2" style="display: none;">
 
       <div id="stage-2-header">
         <div class="row" style="text-align: center; margin: 0">
@@ -68,7 +68,9 @@
         </div>
         <div class="row" style="text-align: center; margin: 0">
           <div class="large-5 medium-5 small-5 columns from"><span>{{ variables.originating_airport_code }}</span></div>
-          <div class="large-2 medium-2 small-2 columns" style="padding:0"><div ng-include="'<%= asset_path 'svgs/_introplane.html' %>'"></div></div>
+          <div class="large-2 medium-2 small-2 columns plane" style="padding:0">
+            <div ng-include="'<%= asset_path 'svgs/_introplane.html' %>'"></div>
+          </div>
           <div class="large-5 medium-5 small-5 columns to">LAX</div>
         </div>
         <div class="row" style="text-align: center; margin: 0">
@@ -79,7 +81,7 @@
       </div>
 
       <div id="stage-2-body">
-        <div class="row" style="text-align: center; margin: 0; padding-top: 7px">
+        <div class="row" style="text-align: center; margin: 0; padding-top: 5px">
           <div id="pickup-person" class="large-6 medium-6 small-6 columns">
             <div
               ng-show="variables.original_who_picking_up === 'Coworker' ||
@@ -103,7 +105,7 @@
             <div ng-include="'<%= asset_path 'svgs/_briefcase.html' %>'"></div>
           </div>
         </div>
-        <div class="row" style="text-align: center; margin: 0;">
+        <div class="row pickup-info" style="text-align: center; margin: 0;">
           <div class="large-6 medium-6 small-6 columns"><span>{{ variables.picking_up_number }}</span> <span>{{ variables.original_who_picking_up }}</span></div>
           <div class="large-6 medium-6 small-6 columns" style="padding: 0">
             with <span>{{ variables.luggage_count }}</span> <span>{{ variables.luggage_type }}</span>
