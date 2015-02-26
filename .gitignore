@@ -25,3 +25,6 @@
 
 # Ignore fingerprinted public assets
 public/assets/**
+
+# Ingore vim swapfiles
+**.swp
