@@ -56,7 +56,7 @@
     </div>
     <div class="row" style="text-align: center; margin-top: 10px">
       <div class="large-3 medium-3 small-5 large-centered medium-centered small-centered columns">
-        <div ng-click="submit()" class="next emergency-next" id="last-question-set">
+        <div ng-click="delaySubmit(null, false); advanceCar()" class="next emergency-next car-progress finish" id="last-question-set">
           NEXT
         </div>
       </div>
@@ -64,24 +64,3 @@
   </div>
   <!-- end set 3 -->
 </div>
-
-<!-- <div id="car-slider">
-  <div style="height: 50px; width: 100%; background-color: #ABD9F4; margin-top: 15px">
-    <div id="car-start-tag">
-      LAX
-    </div>
-    <div id="progression-bar"></div>
-    <div id="car-container">
-      <div ng-include="'<%= asset_path 'svgs/_car.html' %>'"></div>
-    </div>
-    <div id="car-end-tag">
-      <div id="home-container">
-        <div ng-include="'<%= asset_path 'svgs/_home.html' %>'"></div>
-        <div class="row" id="end">
-          FINISH
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
- -->
