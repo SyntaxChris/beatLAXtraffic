@@ -117,6 +117,18 @@ angular.module('lawaApp')
         $scope.amenities = [];
       };
 
+      
+      // ADVANCE CAR
+      $scope.carProgress = 7;
+      $scope.advanceCar = function(){
+        if($scope.currentNode.template_name === 'e-6'){
+          $scope.carProgress = 87;
+        }
+        else{
+          $scope.carProgress += 10;
+        }
+      };
+      // END ADVANCE CAR
 
       $scope.restart = function(){
         // TODO: post to some api restart route that clears cookies, etc.
