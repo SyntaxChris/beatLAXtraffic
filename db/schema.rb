@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226192918) do
+ActiveRecord::Schema.define(version: 20150302220241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20150226192918) do
     t.string   "icon_name"
     t.integer  "custom_order"
   end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
 
   create_table "branches", force: true do |t|
     t.datetime "created_at"
@@ -40,6 +42,9 @@ ActiveRecord::Schema.define(version: 20150226192918) do
     t.integer  "question_type_id"
   end
 
+  add_index "decision_points", ["node_id"], name: "index_decision_points_on_node_id", using: :btree
+  add_index "decision_points", ["question_type_id"], name: "index_decision_points_on_question_type_id", using: :btree
+
   create_table "decisions", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -48,12 +53,17 @@ ActiveRecord::Schema.define(version: 20150226192918) do
     t.integer  "destination_node_id"
   end
 
+  add_index "decisions", ["decision_point_id"], name: "index_decisions_on_decision_point_id", using: :btree
+  add_index "decisions", ["destination_node_id"], name: "index_decisions_on_destination_node_id", using: :btree
+
   create_table "freeform_responses", force: true do |t|
     t.text     "response_text"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "response_id"
   end
+
+  add_index "freeform_responses", ["response_id"], name: "index_freeform_responses_on_response_id", using: :btree
 
   create_table "nodes", force: true do |t|
     t.datetime "created_at"
@@ -66,6 +76,9 @@ ActiveRecord::Schema.define(version: 20150226192918) do
     t.string   "template_name"
     t.string   "dashboard_type"
   end
+
+  add_index "nodes", ["branch_id"], name: "index_nodes_on_branch_id", using: :btree
+  add_index "nodes", ["decision_id"], name: "index_nodes_on_decision_id", using: :btree
 
   create_table "question_types", force: true do |t|
     t.datetime "created_at"
@@ -80,6 +93,9 @@ ActiveRecord::Schema.define(version: 20150226192918) do
     t.text     "question"
     t.integer  "question_type_id"
   end
+
+  add_index "questions", ["node_id"], name: "index_questions_on_node_id", using: :btree
+  add_index "questions", ["question_type_id"], name: "index_questions_on_question_type_id", using: :btree
 
   create_table "respondents", force: true do |t|
     t.datetime "created_at"
@@ -119,5 +135,10 @@ ActiveRecord::Schema.define(version: 20150226192918) do
     t.integer  "rank"
     t.integer  "user_interaction"
   end
+
+  add_index "responses", ["answer_id"], name: "index_responses_on_answer_id", using: :btree
+  add_index "responses", ["decision_id"], name: "index_responses_on_decision_id", using: :btree
+  add_index "responses", ["node_id"], name: "index_responses_on_node_id", using: :btree
+  add_index "responses", ["respondent_id"], name: "index_responses_on_respondent_id", using: :btree
 
 end
