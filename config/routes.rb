@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     resources :response, only: [:create]
     get '/respondents/get_or_create/' => 'respondents#get_or_create'
     post '/respondents/update' => 'respondents#update'
+    get '/respondents/restart' => 'respondents#restart'
   end
 end

@@ -28,6 +28,7 @@ class Respondent < ActiveRecord::Base
   end
 
   private
+
   def set_starting_node
     # I think this way would be better and result in fewer database calls:
     # self.update(current_node_id: Node::STARTING_NODE.id)
@@ -83,4 +84,5 @@ class Respondent < ActiveRecord::Base
       return winner.first
     end
   end
+
 end

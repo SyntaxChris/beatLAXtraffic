@@ -3,6 +3,8 @@ module Api
 
     def index
       @nodes = Node.all_with_content
+      expires_in 1.minute, public: true
+      fresh_when etag: @nodes
     end
 
     def show

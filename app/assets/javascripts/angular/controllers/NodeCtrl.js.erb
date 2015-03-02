@@ -54,8 +54,9 @@ angular.module('lawaApp')
               '/assets/partials/ns-5.html',
               '/assets/partials/ns-4.html'
             ];
-            
-            $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
+
+
+            //$scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
             ///////////template_name
 
             $scope.variables["text_from"] = null;
@@ -117,7 +118,7 @@ angular.module('lawaApp')
         $scope.amenities = [];
       };
 
-      
+
       // ADVANCE CAR
       $scope.carProgress = 7;
       $scope.advanceCar = function(){
@@ -131,7 +132,7 @@ angular.module('lawaApp')
       // END ADVANCE CAR
 
       $scope.restart = function(){
-        // TODO: post to some api restart route that clears cookies, etc.
+        window.location.href = "/api/respondents/restart";
       }
       $scope.nodeIncludedInWhitelist = function(template_name){
         return _.contains($scope.nodesWorking, template_name);
@@ -219,7 +220,7 @@ angular.module('lawaApp')
             return;
           }else{
             $scope.currentlyConsideredAmenity = answer;
-            
+
           }
         }
       };
@@ -351,7 +352,7 @@ angular.module('lawaApp')
 
       $scope.addTimeElapsed = function(elapsedAmount) {
         // this one doesn't actually change the time_elapsed variable in the session,
-        // it only posts the change to the responses api so we can record it for 
+        // it only posts the change to the responses api so we can record it for
         // survey puposes. it's good to keep both to compare
         if($scope.adjustedTimeElapsed === undefined){
           $scope.adjustedTimeElapsed = Math.max(0, ($scope.variables.time_elapsed + elapsedAmount));
@@ -395,7 +396,7 @@ angular.module('lawaApp')
         $scope.currentTimeInterval = 0;
 
         //for debugging:
-        $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
+        // $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
 
 
         // TODO: this is gross and should be handled in a better way. not least of all
@@ -413,8 +414,8 @@ angular.module('lawaApp')
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Continue circling around terminal"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
           $scope.addOneToCircling();
-        } else if($scope.currentNode.template_name === "e-1"){
-          $scope.setShowDashboard(false);
+        //} else if($scope.currentNode.template_name === "e-1"){
+          // $scope.setShowDashboard(false);
         }
       };
 
@@ -488,27 +489,31 @@ angular.module('lawaApp')
       // set up object with all template names from database:
       var templates = {}
       <% Node.all.each do |node| %>
-          <% if !node.is_decision_point %>
-            <%= "templates['#{node.id}'] = {template: '#{asset_path "partials/#{node.clean_template_name}.html"}'}" %>
-          <% elsif node.is_decision_point %>
-            <%= "templates['#{node.id}'] = {template: '#{asset_path "partials/#{node.clean_template_name}.html"}'}" %>
-          <% end %>
+        <%= "templates['#{node.id}'] = {template: '#{asset_path "partials/#{node.clean_template_name}.html"}'}" %>
       <% end %>
-      
+
 
       $scope.getTemplateName = function(nodeId){
-        return templates[nodeId].template;
+        try {
+          return templates[nodeId].template;
+        } catch(e) {
+          return "";
+        }
       }
 
       var iconPaths = {}
       <% Answer.all.each do |a| %>
-        <%= "iconPaths['#{a.id}'] = {iconPath: '#{asset_path "svgs/_#{a.icon_name}.html"}'}" %>
+        <%= "iconPaths['#{a.id}'] = {iconPath: '#{asset_path "svgs/_#{a.icon_name}.html"}'}" unless a.icon_name.nil? %>
       <% end%>
 
       $scope.getAnswerIconPath = function(answerId){
-        return iconPaths[answerId].iconPath;
+        try {
+          return iconPaths[answerId].iconPath;
+        } catch(e) {
+          return "";
+        }
       }
-      
+
 
       //get all icon paths for answers
       // go through all answers in RUBY, create an icon path from their icon-name
