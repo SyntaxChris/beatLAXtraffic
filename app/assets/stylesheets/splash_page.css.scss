@@ -4,17 +4,23 @@
 	h2{
 		margin-top: -2%;
 		color: white;
-		font-size: 5vw;
+		font-size: 4vw;
 		text-shadow: 0 3px 5px rgba(0,0,0,.5);
 		span{
 			font-weight: 700;
 		}
+	}
+	h4{
+		color: white;
+		font-size: 2vw;
+		text-shadow: 0 3px 5px rgba(0,0,0,.5);
 	}
 	.btn-ctnr{
 		position: absolute;
 		z-index: 50;
 		width: 100%;
 		left: 0;
+		top: 25%;
 		.start-btn{
 			cursor: pointer;
 			position: relative;
@@ -57,12 +63,16 @@
 				font-weight: 700;
 			}
 		}
+		h4{
+			color: white;
+			font-size: 2vw;
+			text-shadow: 0 3px 5px rgba(0,0,0,.5);
+		}
 		.btn-ctnr{
 			position: absolute;
 			z-index: 50;
 			width: 100%;
 			left: 0;
-			top: 15%;
 			.start-btn{
 				cursor: pointer;
 				position: relative;
@@ -103,12 +113,16 @@
 				font-weight: 700;
 			}
 		}
+		h4{
+			color: white;
+			font-size: 4vw;
+			text-shadow: 0 3px 5px rgba(0,0,0,.5);
+		}
 		.btn-ctnr{
 			position: absolute;
 			z-index: 50;
 			width: 100%;
 			left: 0;
-			top: 20%;
 			.start-btn{
 				cursor: pointer;
 				position: relative;

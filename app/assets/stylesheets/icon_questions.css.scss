@@ -496,9 +496,6 @@
 
 
 @media screen and (max-width: 450px) {
-	.skip{
-		bottom: -60%;
-	}
 	#icon-questions{
 		h3.main-question{
 			font-size: 6vw;
@@ -654,6 +651,9 @@
 					}
 				}
 			}
+		}
+		.skip{
+			bottom: -100%;
 		}
 	}
 }

@@ -23,10 +23,12 @@
 }
 
 #circle-pickup {
+  overflow-x: hidden;
+  overflow-y: hidden;
   text-align: center;
   position: absolute;
   left: 0;
-  top: 9%;
+  // top: 9%;
   height: 100%;
   width: 100%;
   &:after {
@@ -274,12 +276,30 @@
       width: 275px;
     }
     .count-c {
-      //margin-top: -30px;
+      // margin-top: -30px;
     }
     .circle-number {
       font-size: 7em;
       height: 60px;
     }
+  }
+}
+
+@media only screen and (max-width : 450px) {
+  #circle-pickup{
+    overflow-y: hidden;
+    height: 90%;
+  .content-c {
+    margin-top: -5%;
+    // position: relative;
+    // color: white;
+    // text-shadow: 0 3px 5px rgba(0,0,0,.5);
+    .inner-question{
+      // font-size: 18px;
+      // padding-bottom: 20px;
+      // padding-top: 0px;
+    }
+  }
   }
 }
 

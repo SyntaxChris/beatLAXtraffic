@@ -230,6 +230,14 @@
 			}
 		}
 	}
+	#question-set-1,
+	#question-set-2,
+	#question-set-3{
+		h3.main-question{
+			font-size: 5vw;
+		}
+	}
+
 	#last-other-cancel{
 		cursor: pointer;
 		font-size: 3vw;
@@ -255,6 +263,13 @@
 					}
 				}
 			}
+		}
+	}
+	#question-set-1,
+	#question-set-2,
+	#question-set-3{
+		h3.main-question{
+			font-size: 5vw;
 		}
 	}
 	#last-other-cancel{
