@@ -1,6 +1,9 @@
 $(document).ready(function(){
 	var $body = $('body');
+
 	
+		// $('.ferrari-container svg').animate({marginLeft: "200%"}, 2000);
+
 	$body
 		.on('keypress', "#zip-input", function(e){
 			if(e.which >= 48 && e.which <= 57){
