@@ -1,10 +1,13 @@
+
+# usage: rake populate:create_nodes
+
 namespace :populate do
   desc "creates all the nodes for the flow map"
   task create_nodes: :environment do
     # Drop, create and migrate database
-    Rake::Task['db:drop'].invoke 
-    Rake::Task['db:create'].invoke 
-    Rake::Task['db:migrate'].invoke 
+    Rake::Task['db:drop'].invoke
+    Rake::Task['db:create'].invoke
+    Rake::Task['db:migrate'].invoke
 
     # create branches
     scenario_questions_branch = Branch.create(name: "scenario questions")
@@ -325,6 +328,23 @@ namespace :populate do
     itf2.update(next_node_id: e1.id)
     ns4.update(next_node_id: itf2.id)
     ns5.update(next_node_id: itf2.id)
+
+    # populate Answer.codebook_identifier scoped to each Question
+    Question.all.each do |q|
+      i = 0
+      q.answers.order('id').each do |a|
+        i += 1
+        a.update(codebook_identifier: i)
+      end
+    end
+
+    DecisionPoint.all.each do |dp|
+      i = 0
+      dp.decisions.order('id').each do |d|
+        i += 1
+        d.update(codebook_identifier: i)
+      end
+    end
 
   end
 
