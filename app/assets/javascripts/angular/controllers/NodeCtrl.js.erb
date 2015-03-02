@@ -19,29 +19,6 @@ angular.module('lawaApp')
             $scope.currentFlightTimeRemaining = $scope.variables.landing_time;
             $scope.respondentCurrentNodeId = data.current_node_id;
 
-            // if current node is the first one, don't show dashboard
-            // TODO: pls no:
-
-            if(
-                $scope.currentNode.template_name === "splash" ||
-                $scope.currentNode.template_name === "sq-2-2" ||
-                $scope.currentNode.template_name === "sq-1" ||
-                $scope.currentNode.template_name === "e-1" ||
-                $scope.currentNode.template_name === "e-2" ||
-                $scope.currentNode.template_name === "e-3" ||
-                $scope.currentNode.template_name === "e-4" ||
-                $scope.currentNode.template_name === "e-5" ||
-                $scope.currentNode.template_name === "e-6" ||
-                $scope.currentNode.template_name === "e-7"
-              ){
-              $scope.setShowDashboard(false);
-            // else if the home dashboard should be seen, show that.
-            } else {
-              $scope.setShowDashboard(true);
-            };
-
-
-            ///////////
             // for development purposes only. add fully-working nodes here
             // to remove debugging printing out on front end:
             $scope.nodesWorking = [
@@ -78,6 +55,7 @@ angular.module('lawaApp')
               '/assets/partials/ns-5.html',
               '/assets/partials/ns-4.html'
             ];
+            
             $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
             ///////////template_name
 
@@ -140,6 +118,19 @@ angular.module('lawaApp')
         $scope.amenities = [];
       };
 
+      
+      // ADVANCE CAR
+      $scope.carProgress = 7;
+      $scope.advanceCar = function(){
+        if($scope.currentNode.template_name === 'e-6'){
+          $scope.carProgress = 87;
+        }
+        else{
+          $scope.carProgress += 10;
+        }
+      };
+      // END ADVANCE CAR
+
       $scope.restart = function(){
         // TODO: post to some api restart route that clears cookies, etc.
       }
@@ -171,14 +162,6 @@ angular.module('lawaApp')
 
       $scope.matchAnswerString = function(answer, string){
         return (answer.answer.indexOf(string) > -1)
-      };
-
-      $scope.setShowDashboard = function(value){
-        $scope.showDashboard = value;
-      };
-
-      $scope.setCarDash = function(value){
-        $scope.showCarDash = value;
       };
 
       $scope.setCurrentNodeBySession = function() {

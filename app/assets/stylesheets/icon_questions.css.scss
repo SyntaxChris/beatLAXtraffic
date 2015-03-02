@@ -131,7 +131,7 @@
 			position: absolute;
 			top: 1%;
 			width: 94%;
-			padding-top: 15%;
+			padding-top: 20%;
 			background-color: white;
 			border-radius: 40px;
 			text-align: center;
@@ -495,16 +495,14 @@
 
 
 
-
-
-
-
-
 @media screen and (max-width: 450px) {
 	.skip{
-		margin-top: 5%;
+		bottom: -60%;
 	}
 	#icon-questions{
+		h3.main-question{
+			font-size: 6vw;
+		}
 		.answer-container{
 			position: relative;
 			width: 100%;

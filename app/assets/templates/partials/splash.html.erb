@@ -1,8 +1,12 @@
 <div id="splash-page">
   <div class="row" style="text-align: center; margin-top: 3%">
     <h2>Are you an LAX <span>Pick Up Artist?</span></h2>
-    <div id="start-button" ng-click="submit()" class="emergency-next">START</div>
+    <div class="btn-ctnr">
+    	<div class="start-btn" ng-click="submit()">START</div>
+    </div>
+    <!-- <div id="start-button" ng-click="submit()" class="emergency-next">START</div> -->
   </div>
-  <div ng-include="'<%= asset_path 'svgs/_splashPage.html' %>'" id="splash-page-container">
+  <div class="splash-ctnr">
+  	<div ng-include="'<%= asset_path 'svgs/_splashPage.html' %>'"></div> 
   </div>
 </div>

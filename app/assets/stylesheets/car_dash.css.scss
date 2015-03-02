@@ -1,3 +1,7 @@
+#car-progress-num{
+	display: none;
+}
+
 #car-slider {
 	height: 80px; 
 	width: 100%; 
@@ -6,13 +10,12 @@
 	bottom:0; 
 	left:0; 
 	z-index: 30;
-	#slider-bg{
+	.slider-bg{
 		height: 50px; 
 		width: 100%; 
 		background-color: #ABD9F4; 
 		margin-top: 15px;
 	}
-
 }
 
 #car-start-tag {
@@ -54,7 +57,7 @@
 	top: 2px;;
 	position: absolute;
 	z-index: 32; 
-	margin-left:7%;
+	margin-left: 7%;
 	margin-right: auto;
 	bottom: -23px;
 }
@@ -103,7 +106,7 @@
 		bottom:0; 
 		left:0; 
 		z-index: 30;
-		#slider-bg{
+		.slider-bg{
 			height: 30px; 
 			width: 100%; 
 			background-color: #ABD9F4; 

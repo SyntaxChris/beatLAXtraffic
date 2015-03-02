@@ -2,6 +2,7 @@ json.array! @nodes do |node|
   json.node_id node.id
   json.template_name node.template_name
   json.is_decision_point node.is_decision_point
+  json.dashboard_type node.dashboard_type
 
   if node.is_decision_point
     json.decision_point do

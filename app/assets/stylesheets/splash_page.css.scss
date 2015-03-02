@@ -2,43 +2,139 @@
 	overflow-y: hidden;
 	overflow-x: hidden;
 	h2{
+		margin-top: -2%;
 		color: white;
+		font-size: 5vw;
 		text-shadow: 0 3px 5px rgba(0,0,0,.5);
 		span{
 			font-weight: 700;
 		}
 	}
-}
-
-#start-button {
-	cursor: pointer;
-	font-size: 25px; 
-	color:white; 
-	padding: 15px; 
-	background-color: #F05759; 
-	width: 30%; 
-	margin-left: auto; 
-	margin-right: auto; 
-	margin-top: 5%;
-	margin-bottom: 50px;
-}
-
-#splash-page-container {
-	position: absolute;
-  	left: 0;
-	top: 30px;
-	width: 100%;
-	top: 28%;
-}
-
-@media screen and (max-width: 500px) and (min-width: 0px) and (orientation : portrait) {
-	#splash-page-container {
-		text-align: center;
-		position: relative;
-		margin: 0 auto;
-		margin-left: -45%;
-		margin-top: 5%;
-		width: 200%;
+	.btn-ctnr{
+		position: absolute;
+		z-index: 50;
+		width: 100%;
+		left: 0;
+		.start-btn{
+			cursor: pointer;
+			position: relative;
+			width: 30%;
+			margin: 0 auto;
+			color: white;
+			background-color: #F05759;
+			padding: 15px;
+			font-size: 2.5vw;
+		}
+	}
+	.splash-ctnr{
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom: -13%;
+		div[ng-include]{
+			position: relative;
+			margin: 0 auto;	
+			svg{
+				width: 100%;
+				height: 100%;
+			}	
+		}
 	}
 }
+
+
+
+@media screen and (orientation : portrait) {
+	#splash-page {
+		overflow-y: hidden;
+		overflow-x: hidden;
+		h2{
+			margin-top: -2%;
+			color: white;
+			font-size: 6vw;
+			text-shadow: 0 3px 5px rgba(0,0,0,.5);
+			span{
+				font-weight: 700;
+			}
+		}
+		.btn-ctnr{
+			position: absolute;
+			z-index: 50;
+			width: 100%;
+			left: 0;
+			top: 15%;
+			.start-btn{
+				cursor: pointer;
+				position: relative;
+				width: 50%;
+				margin: 0 auto;
+				color: white;
+				background-color: #F05759;
+				padding: 15px;
+				font-size: 5vw;
+			}
+		}
+		.splash-ctnr{
+			position: absolute;
+			width: 170%;
+			left: -30%;
+			bottom: -5%;
+			div[ng-include]{
+				position: relative;
+				margin: 0 auto;	
+				svg{
+					width: 100%;
+					height: 100%;
+				}	
+			}
+		}
+	}
+}
+
+@media screen and (max-width : 450px) {
+	#splash-page {
+
+		h2{
+			margin-top: -2%;
+			color: white;
+			font-size: 8vw;
+			text-shadow: 0 3px 5px rgba(0,0,0,.5);
+			span{
+				font-weight: 700;
+			}
+		}
+		.btn-ctnr{
+			position: absolute;
+			z-index: 50;
+			width: 100%;
+			left: 0;
+			top: 20%;
+			.start-btn{
+				cursor: pointer;
+				position: relative;
+				width: 70%;
+				margin: 0 auto;
+				color: white;
+				background-color: #F05759;
+				padding: 15px;
+				font-size: 7vw;
+			}
+		}
+		.splash-ctnr{
+			position: absolute;
+			width: 200%;
+			left: -50%;
+			bottom: -5%;
+			div[ng-include]{
+				position: relative;
+				margin: 0 auto;	
+				svg{
+					width: 100%;
+					height: 100%;
+				}	
+			}
+		}
+	}
+}
+
 

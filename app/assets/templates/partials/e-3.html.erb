@@ -25,35 +25,11 @@
          <button ng-click="addTimeElapsed(5)" id="x-btn-timer-more" class="counter-btn">+</button> 
       </div>
       <div>
-        <div ng-if="!adjustedTimeElapsed">
-          <div ng-click="submit()" id="x-btn-timer-next">NEXT</div>
-        </div>
-        <div ng-if="adjustedTimeElapsed">
-          <div ng-click="submit()" id="x-btn-timer-next">NEXT</div>
-        </div>
+        <div ng-click="submit(); advanceCar()" id="x-btn-timer-next" class="car-progress">NEXT</div>
       </div>
     </div>
   </div>
 </div>
 <!-- END TIMER PICKUP QUESTIONS -->
 
-<!-- <div id="car-slider">
-  <div style="height: 50px; width: 100%; background-color: #ABD9F4; margin-top: 15px">
-    <div id="car-start-tag">
-      LAX
-    </div>
-    <div id="progression-bar"></div>
-    <div id="car-container">
-      <div ng-include="'<%= asset_path 'svgs/_car.html' %>'"></div>
-    </div>
-    <div id="car-end-tag">
-      <div id="home-container">
-        <div ng-include="'<%= asset_path 'svgs/_home.html' %>'"></div>
-        <div class="row" id="end">
-          FINISH
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
 
