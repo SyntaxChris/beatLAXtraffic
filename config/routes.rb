@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/superadmin', as: 'rails_admin'
-  root 'example#index'
-
-  # short-circuit rails routes and hand control off to angular:
-  get 'example' => 'example#index'
-  get 'test' => 'static#private'
+  root 'static#private'
 
   namespace :api, defaults: { format: 'json' } do
     resources :nodes, only: [:index, :show]
