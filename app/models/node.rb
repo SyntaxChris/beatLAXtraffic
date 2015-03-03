@@ -12,6 +12,7 @@ class Node < ActiveRecord::Base
     all_nodes = Node
       .includes(
         { question: :answers },
+        { question: :question_type },
         { decision_point: { decisions: :destination_node } }
       )
   end

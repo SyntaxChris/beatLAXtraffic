@@ -1,4 +1,3 @@
-<div class="skip" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
 <!-- 17. ICON QUESTIONS -->
 <div id="icon-questions">
 
@@ -24,14 +23,14 @@
                 <div class="small-4 columns">
                   <div ng-click="addToAmenities(amenities[0])" class="icon-holder">
                     1
-                    <div 
-                      ng-show="amenities[0] != null" 
+                    <div
+                      ng-show="amenities[0] != null"
                       ng-include="getAnswerIconPath(amenities[0].id)" class="clone-container">
                     </div>
-                    <div 
-                      ng-show="amenities[0] != null" 
+                    <div
+                      ng-show="amenities[0] != null"
                       class="icon-remove">
-                      <svg 
+                      <svg
                         ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'">
                       </svg>
                     </div>
@@ -40,14 +39,14 @@
                 <div class="small-4 columns">
                   <div ng-click="addToAmenities(amenities[1])" class="icon-holder">
                     2
-                    <div 
-                      ng-show="amenities[1] != null" 
-                      ng-include="getAnswerIconPath(amenities[1].id)" 
+                    <div
+                      ng-show="amenities[1] != null"
+                      ng-include="getAnswerIconPath(amenities[1].id)"
                       class="clone-container">
                     </div>
-                    <div 
+                    <div
                       ng-show="amenities[1] != null" class="icon-remove">
-                      <svg 
+                      <svg
                         ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'">
                       </svg>
                     </div>
@@ -77,13 +76,13 @@
             <div ng-repeat="answer in currentNode.answers.slice(0, 3)">
               <div ng-click="setCurrentlyConsideredAmenity(answer)">
                 <div class="small-4 columns">
-                  <div class="icon-holder">
-                    <div 
-                      ng-include="getAnswerIconPath(answer.id)" 
+                  <div class="icon-holder answer-{{answer.id}}">
+                    <div
+                      ng-include="getAnswerIconPath(answer.id)"
                       ng-class="
                         {
-                          'amenity-selected': amenitySelected(answer) == false, 
-                          'wiggle': amenitySelected(answer) != false 
+                          'amenity-selected': amenitySelected(answer) == false,
+                          'wiggle': amenitySelected(answer) != false
                         }
                       ">
                     </div>
@@ -97,12 +96,12 @@
               <div ng-click="setCurrentlyConsideredAmenity(answer)">
                 <div class="small-4 columns">
                   <div class="icon-holder">
-                    <div 
-                      ng-include="getAnswerIconPath(answer.id)" 
+                    <div
+                      ng-include="getAnswerIconPath(answer.id)"
                       ng-class="
                         {
-                          'amenity-selected': amenitySelected(answer) == false, 
-                          'wiggle': amenitySelected(answer) != false 
+                          'amenity-selected': amenitySelected(answer) == false,
+                          'wiggle': amenitySelected(answer) != false
                         }
                       ">
                     </div>
@@ -116,12 +115,12 @@
               <div ng-click="setCurrentlyConsideredAmenity(answer)">
                 <div class="small-4 columns">
                   <div class="icon-holder">
-                    <div 
+                    <div
                       ng-include="getAnswerIconPath(answer.id)"
                       ng-class="
                         {
-                          'amenity-selected': amenitySelected(answer) == false, 
-                          'wiggle': amenitySelected(answer) != false 
+                          'amenity-selected': amenitySelected(answer) == false,
+                          'wiggle': amenitySelected(answer) != false
                         }
                       ">
                     </div>
@@ -151,5 +150,6 @@
       </div>
 
     </div>
+    <div class="skip" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
   </div>
 <!-- END ICON QUESTIONS -->
