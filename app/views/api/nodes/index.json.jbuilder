@@ -2,6 +2,7 @@ json.cache! ["nodes","version_2"] do
   json.array! @nodes do |node|
     json.node_id node.id
     json.template_name node.template_name
+    json.background_class node.branch.name
     json.is_decision_point node.is_decision_point
     json.dashboard_type node.dashboard_type
 
