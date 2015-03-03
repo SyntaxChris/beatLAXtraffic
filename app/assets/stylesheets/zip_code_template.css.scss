@@ -7,13 +7,19 @@
 	}
 	.ferrari-container{
 		position: relative;
-		margin-left: auto;
-		margin-right: auto;
+		margin: 0 auto;
+		// margin-left: -50%;
 		width: 90%;
 		text-align: center;
 		svg{
 			width: 90%;
 			height: 90%;
+		}
+		&.animate-large{
+			-webkit-animation: large-car 0.3s; 
+		    -webkit-animation-iteration-count: 1;
+		    -webkit-animation-timing-function: linear;
+		    -webkit-animation-fill-mode: forwards;
 		}
 		.zip-container{
 			position: absolute;
@@ -327,4 +333,31 @@
 			}
 		}
 	}
+}
+
+
+
+
+
+
+
+@keyframes large-car{
+    0%{ margin-left: -50%;}
+    100%{ margin-left: 5%;}
+}
+@-webkit-keyframes large-car{
+    0%{ margin-left: -50%;}
+    100%{ margin-left: 5%;}
+}
+@-moz-keyframes large-car{
+    0%{ margin-left: -50%;}
+    100%{ margin-left: 5%;}
+}
+@-o-keyframes large-car{
+    0%{ margin-left: -50%;}
+    100%{ margin-left: 5%;}
+}
+@-ms-keyframes large-car{
+    0%{ margin-left: -50%;}
+    100%{ margin-left: 5%;}
 }
