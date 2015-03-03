@@ -57,7 +57,7 @@ end
 task :staging do
   set :rails_env, 'staging'
   set :deploy_to, '/var/www/lawa_staging'
-  set :domain, '104.236.197.176'
+  set :domain, 'staging.dopa.mn'
   set :port, '22'
   set :branch, 'staging'
   set :deployed_string, "curl -X POST --data-urlencode 'payload={\"channel\": \"#lawa\", \"username\": \"Disapproving Deploy Bot\", \"text\": \"Lawa Staging deployed.\", \"icon_emoji\": \":monocle:\"}' https://hooks.slack.com/services/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"
