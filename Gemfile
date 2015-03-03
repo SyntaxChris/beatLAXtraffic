@@ -71,6 +71,9 @@ group :test do
   gem 'simplecov', '~> 0.9.0', :require => false
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'selenium-webdriver', '>=2.45.0.dev3'
+
 end
 
 group :development do
