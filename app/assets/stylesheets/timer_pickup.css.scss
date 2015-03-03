@@ -6,6 +6,9 @@
   height: 100%;
   width: 100%;
   margin-top: 7%;
+  .skip{
+    margin-top: -8%;
+  }
   .content {
     position: relative;
     z-index: 2;
@@ -178,8 +181,16 @@
 
 @media only screen and (max-width : 400px) {
   #timer-pickup {
+    margin-top: -4%;
     .skip{
       margin-top: 100%;
+    }
+    .content-c{
+      .timer-c {
+        line-height: .9;
+        font-size: 1.2em;
+        padding-top: 2%;
+      }
     }
   }
 }
@@ -187,7 +198,10 @@
 
 @media only screen and (max-width : 640px) {
   #timer-pickup {
-    margin-top: -4%;
+    margin-top: -2%;
+    .skip{
+      margin-top: 80%;
+    }
     .sudo-header{
       text-shadow: 0 3px 5px rgba(0,0,0,.5);
       font-weight: 700;
@@ -211,7 +225,8 @@
     }
     .timer-c {
       line-height: .9;
-      font-size: 1.2em;
+      font-size: 1.4em;
+      padding-top: 2%;
     }
 
     .counter-btn {

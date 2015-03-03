@@ -62,7 +62,7 @@
           </div>
         </div>
 
-        <div ng-if="decision.decision.indexOf('Central') > -1">
+        <div ng-if="decision.decision.indexOf('ready') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="orange">
             <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
             <span ng-include="'<%= asset_path 'svgs/_burger.html' %>'" class="path-letter"></span>
@@ -72,7 +72,7 @@
           </div>
         </div>
 
-        <div ng-if="decision.decision.indexOf('offsite') > -1">
+        <div ng-if="decision.decision.indexOf('tram') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision); landPlane()" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
             <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
             <span ng-include="'<%= asset_path 'svgs/itfIcon.html' %>'" class="path-letter"></span>
