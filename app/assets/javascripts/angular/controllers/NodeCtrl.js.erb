@@ -118,9 +118,9 @@ angular.module('lawaApp')
 
         $scope.amenities = [];
       };
+      // end setup function
 
-
-      // ADVANCE CAR
+      // Car dashboard animation
       $scope.carProgress = 7;
       $scope.advanceCar = function(){
         if($scope.currentNode.template_name === 'e-6'){
@@ -130,7 +130,7 @@ angular.module('lawaApp')
           $scope.carProgress += 10;
         }
       };
-      // END ADVANCE CAR
+      // end car dashboard animation
 
       $scope.restart = function(){
         window.location.href = "/api/respondents/restart";
@@ -444,6 +444,11 @@ angular.module('lawaApp')
 
         if($scope.currentNode.template_name === 'e-3' && $scope.adjustedTimeElapsed === undefined){
           $scope.addTimeElapsed(0);
+        }
+
+        // trigger zip-code car animation when template loads
+        if($scope.currentNode.template_name === "sq-1"){
+          debugger;
         }
 
         // determine which dashboard shows
