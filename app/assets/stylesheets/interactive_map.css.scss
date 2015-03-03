@@ -225,6 +225,7 @@
   }
   .path-message {
     text-align: center;
+    font-size: 2vw;
     h5 {
       font-weight: 700;
       font-size: .95em;
@@ -242,7 +243,6 @@
     }
     >div {
       text-align: center;
-      font-size: 1.2em;
       font-size: 1.6vw;
       margin-top: 6px;
     }
@@ -267,6 +267,7 @@
     text-align: left;
   }
   .confirm-map-choice-btn {
+    font-family: 'Quicksand', sans-serif;
     background: #F06465;
     color: white;
     width: 100%;
@@ -381,7 +382,9 @@
     }
     .select-path-btn .path-letter {
       top: -3px;
+
     }
+
   }
 }
 
@@ -417,26 +420,104 @@
   }
 }
 
-@media only screen and (min-width : 768px) {
-  #circle-pickup {
-    h3 {
-      margin-top: 80px;
-      margin-bottom: 40px;
-      font-size: 1.6em;
+// @media only screen and (min-width : 768px) {
+//   #circle-pickup {
+//     h3 {
+//       margin-top: 80px;
+//       margin-bottom: 40px;
+//       font-size: 1.6em;
+//     }
+//     .content-c {
+//       display: inline-block;
+//       vertical-align: middle;
+//     }
+//     .buttons-c {
+//       width: 275px;
+//     }
+//     .count-c {
+//       //margin-top: -30px;
+//     }
+//     .circle-number {
+//       font-size: 7em;
+//       height: 60px;
+//     }
+//   }
+// }
+
+@media only screen and (max-width: 450px){
+  #interactive-map{
+    .bottom-half{
+      .instructions{
+        // margin-top: -10%;
+        &:after {
+          content: "";
+          border-width: 0;
+        }
+        .path-message {
+          text-align: center;
+          font-size: 5vw;
+          h5 {
+            font-weight: 700;
+            font-size: .95em;
+            font-size: 1.2vw;
+            text-align: center;
+            margin: 2px 0 0;
+          }
+          svg {
+            height: 100%;
+            width: 100%;
+          }
+          .icon {
+            height: auto;
+            width: auto;
+          }
+          >div {
+            text-align: center;
+            font-size: 4vw;
+            margin-top: 6px;
+          }
+        }
+      }
     }
-    .content-c {
-      display: inline-block;
-      vertical-align: middle;
-    }
-    .buttons-c {
-      width: 275px;
-    }
-    .count-c {
-      //margin-top: -30px;
-    }
-    .circle-number {
-      font-size: 7em;
-      height: 60px;
+  }
+}
+
+
+@media only screen and (max-width: 400px){
+  #interactive-map{
+    .bottom-half{
+      .instructions{
+        margin-top: -10%;
+        margin-left: -47%;;
+        &:after {
+          content: "";
+          border-width: 0;
+        }
+        .path-message {
+          text-align: center;
+          font-size: 5vw;
+          h5 {
+            font-weight: 700;
+            font-size: .95em;
+            font-size: 1.2vw;
+            text-align: center;
+            margin: 2px 0 0;
+          }
+          svg {
+            height: 100%;
+            width: 100%;
+          }
+          .icon {
+            height: auto;
+            width: auto;
+          }
+          >div {
+            text-align: center;
+            font-size: 4vw;
+            margin-top: 6px;
+          }
+        }
+      }
     }
   }
 }
