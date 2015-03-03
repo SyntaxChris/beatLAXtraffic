@@ -120,7 +120,7 @@
 //   }
 // }
 
-@media only screen and (min-width : 360px) { 
+@media only screen and (min-width : 320px) { 
   #willing-to-wait {
     .timer-c {
       height: 250px;
@@ -142,12 +142,25 @@
 
 @media only screen and (max-width: 400px){
   #willing-to-wait {
+    .skip{
+      margin-top: 100%;
+    }
     h3.main-question{
       color: white;
       text-shadow: 0 3px 5px rgba(0,0,0,.5);
       font-weight: 700;
       text-align: center;
-      font-size: 6vw;
+      font-size: 4vw;
+    }
+    .timer-c {
+      margin: 0 auto;
+      margin-top: -12%;
+      position: relative;
+      background-image: image_url('timer_stopwatch.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-weight: 600;
+      color: white;
     }
   }
 }
