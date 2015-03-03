@@ -292,10 +292,10 @@ namespace :populate do
 
     dp3 = Node.create(nickname: "DP 3", is_decision_point: true , branch_id: hope_to_catch_curb_branch.id, template_name: "dp-3", dashboard_type: "plane")
       dp3dp = DecisionPoint.create(node_id: dp3.id, situation: "What do you do now?")
-        dp3d1 = Decision.create(decision_point_id: dp3dp.id, decision: "Park", destination_node_id: b1.id)
+        dp3d1 = Decision.create(decision_point_id: dp3dp.id, decision: "Park and meet your passenger inside the terminal", destination_node_id: b1.id)
         dp3d2 = Decision.create(decision_point_id: dp3dp.id, decision: "Continue circling around terminal") # destination for this relies on dp2 below
-        dp3d3 = Decision.create(decision_point_id: dp3dp.id, decision: "Leave the Central Terminal and wait off site until passenger is ready to be picked up at the curb", destination_node_id: c1.id)
-        dp3d4 = Decision.create(decision_point_id: dp3dp.id, decision: "Go to an offsite location", destination_node_id: itf2.id)
+        dp3d3 = Decision.create(decision_point_id: dp3dp.id, decision: "Wait off site until passenger is ready to be picked up at the curb", destination_node_id: c1.id)
+        dp3d4 = Decision.create(decision_point_id: dp3dp.id, decision: "Meet at a new facility that has a 10 min connecting tram to the terminals", destination_node_id: itf2.id)
 
     dp2 = Node.create(nickname: "DP 2", is_decision_point: true , branch_id: hope_to_catch_curb_branch.id, template_name: "dp-2", dashboard_type: "plane")
       dp2dp = DecisionPoint.create(node_id: dp2.id, situation: "You're trying to pull-over and pick up your passenger in traffic. Are you successful?")
