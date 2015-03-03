@@ -1,8 +1,7 @@
 $(document).ready(function(){
 	var $body = $('body');
 
-	
-		// $('.ferrari-container svg').animate({marginLeft: "200%"}, 2000);
+	$body.on('animateFerrari', animateFerrari);
 
 	$body
 		.on('keypress', "#zip-input", function(e){
@@ -36,6 +35,12 @@ $(document).ready(function(){
 			$('.ferrari-container svg').animate({marginTop: "200%"}, 1000);
 		}
 	});
+
+	function animateFerrari(){
+		$('.ferrari-container svg').animate({marginLeft: "200%"}, 2000);
+		console.log("Ferrari animating!")	
+	};
+	
 });
 
 

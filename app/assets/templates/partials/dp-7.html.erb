@@ -1,13 +1,17 @@
 <!-- Pickup spinner  -->
   <div id="pickup-spinner-question">
-    <div class="testing-controls">
-      <div ng-click="submit(findDecisionByString('Yes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
-        Yes
+
+    <% unless Rails.env.production? %>
+      <div class="testing-controls">
+        <div ng-click="submit(findDecisionByString('Yes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
+          Yes
+        </div>
+        <div ng-click="submit(findDecisionByString('No').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-lose" data-result="no">
+          No
+        </div>
       </div>
-      <div ng-click="submit(findDecisionByString('No').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-lose" data-result="no">
-        No
-      </div>
-    </div>
+    <% end %>
+
     <div class="chance-time">
       <h3 class="main-question">
         {{ currentNode.decision_point.situation }}
@@ -33,7 +37,7 @@
     <div class="spin-button" id="pickup">
       TEST YOUR LUCK
     </div>
-    
+
     <div class="spinner-components">
       <div class="row">
         <div class="large-7 medium-8 small-12 large-centered medium-centered small-centered columns">

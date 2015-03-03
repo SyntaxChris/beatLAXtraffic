@@ -67,7 +67,7 @@ end
 task :production do
   set :rails_env, 'production'
   set :deploy_to, '/var/www/lawa_production'
-  set :domain, 'beatlaxtraffic.com'
+  set :domain, 'direct.beatlaxtraffic.com'  # don't use naked domain because of cloudflare varnish layer
   set :branch, 'production'
   set :deployed_string, "curl -X POST --data-urlencode 'payload={\"channel\": \"#lawa\", \"username\": \"Disapproving Deploy Bot\", \"text\": \"Lawa Production deployed.\", \"icon_emoji\": \":monocle:\"}' https://hooks.slack.com/services/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"
 end
