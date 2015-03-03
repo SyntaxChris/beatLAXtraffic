@@ -4,6 +4,41 @@
 
 body, html,button,pre { 
 	font-family: 'Quicksand', sans-serif;
+	&.blue {
+		background: #82D3EF;
+	}
+	&.purple {
+		// purple sky...?
+		background: #A3CAFF;
+	}
+	&.green {
+		// parking lot
+		background: #A0E1CB;
+		svg.bg{
+			width: 100%;
+			height: 100%;
+			z-index: -2;
+			position: absolute;
+			bottom: 0;	
+		}
+		#cloud-5{
+			display: none;
+		}
+	}
+	&.orange {
+		// buildings
+		background: #EFC9B4;
+		svg.bg{
+			width: 100%;
+			height: 100%;
+			z-index: -2;
+			position: absolute;
+			bottom: 0;
+		}
+		#cloud-5{
+			display: none;
+		}
+	}
 }
 
 .skip{

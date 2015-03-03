@@ -11,7 +11,8 @@
     <%= stylesheet_link_tag    "application" %>
   </head>
 
-  <body style="background-color: #82D3EF"><!-- change background color here -->
+  <body class="{{$root.bodyClass}}"><!-- change background color here -->
+    <!-- {{ $root.bodyClass }} -->
     <div id="fb-root"></div>
     <%= render 'example/clouds' %>
     <%= render 'example/middleplane' %>

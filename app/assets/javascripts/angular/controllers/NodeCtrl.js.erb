@@ -1,12 +1,12 @@
 angular.module('lawaApp')
   .controller("NodeCtrl", [
-    '$scope','$http','_', '$timeout', function($scope,$http,_,$timeout) {
+    '$rootScope','$scope','$http','_', '$timeout', function($rootScope,$scope,$http,_,$timeout) {
 
       $scope.setup = function(){
         // get and set up all nodes
         $http.get('/api/nodes').success(function(data){
           $scope.nodes = data;
-          
+
           // find or create a respondent with session and current node data
           $http.get('/api/respondents/get_or_create/').success(function(data){
             $scope.surveySessionId = data.session_id;
@@ -56,7 +56,6 @@ angular.module('lawaApp')
               '/assets/partials/ns-4.html'
             ];
 
-
             //$scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
             ///////////template_name
 
@@ -87,13 +86,17 @@ angular.module('lawaApp')
                 'en-US', { hour12: true, hour:"numeric", minute:"numeric"}
               );
 
-
             var tenMinutesBack = new Date();
             tenMinutesBack.setTime(tenMinutesBack.getTime() - (10*60*1000));
             $scope.tenMinutesAgo = tenMinutesBack.toLocaleTimeString(
                 'en-US', { hour12: true, hour:"numeric", minute:"numeric"}
               );
           });
+
+          $scope.setRootBodyClass = function(className){
+            var colors = ["red", "green", "pink"];
+            $rootScope.setBodyClass(_.sample(colors, 1)[0]);
+          };
 
           $scope.currentDecisionDestination = null;
           $scope.currentAnswers = [];
@@ -177,6 +180,8 @@ angular.module('lawaApp')
       $scope.setCurrentNodeById = function(nodeId){
         $scope.currentNode = $scope.fetchNodeById(nodeId);
         $scope.currentTemplateName = $scope.getTemplateName(nodeId);
+        // set body background class in root scope:
+        $scope.setBodyClass($scope.currentNode.background_class);
         // set default for gps questions
         if ($scope.currentNode.template_name === "dp-1") {
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
