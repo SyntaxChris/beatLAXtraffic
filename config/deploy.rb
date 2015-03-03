@@ -96,14 +96,14 @@ end
 
 task :populate => :environment do
   populate do
-    queue %[cd #{deploy_to}/current; bundle exec rake populate:create_nodes]
-    queue %[cd #{deploy_to}/current; bundle exec rake cache:clear]
+    queue! %[cd #{deploy_to}/current; bundle exec rake populate:create_nodes]
+    queue! %[cd #{deploy_to}/current; bundle exec rake cache:clear]
   end
 end
 
 task :clear_cache => :environment do
   clear_cache do
-    queue %[cd #{deploy_to}/current; bundle exec rake cache:clear]
+    queue! %[cd #{deploy_to}/current; bundle exec rake cache:clear]
   end
 end
 
