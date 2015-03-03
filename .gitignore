@@ -22,6 +22,7 @@
 
 # Ignore user-speciic files
 /config/database.yml
+/config/secrets.yml
 
 # Ignore fingerprinted public assets
 public/assets/**
