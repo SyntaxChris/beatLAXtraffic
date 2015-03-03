@@ -2,6 +2,6 @@ namespace :cache do
   desc "Clears Rails cache"
   task :clear => :environment do
     Rails.cache.clear
-    logger.info "Rails cache cleared."
+    puts "Rails cache cleared!"
   end
 end

@@ -347,6 +347,7 @@ namespace :populate do
       end
     end
 
+    # clear any cached files after all data is loaded
+    Rake::Task['cache:clear'].invoke
   end
-
 end
