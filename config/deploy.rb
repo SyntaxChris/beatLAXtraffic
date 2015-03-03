@@ -84,6 +84,8 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
+    # queue %[cd #{deploy_to}/current; bundle exec rake cache:clear]
+
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
@@ -91,6 +93,21 @@ task :deploy => :environment do
     end
   end
 end
+
+task :populate => :environment do
+  populate do
+    queue %[cd #{deploy_to}/current; bundle exec rake populate:create_nodes]
+    queue %[cd #{deploy_to}/current; bundle exec rake cache:clear]
+  end
+end
+
+task :clear_cache => :environment do
+  clear_cache do
+    queue %[cd #{deploy_to}/current; bundle exec rake cache:clear]
+  end
+end
+
+
 
 set :ports, %w[40801 40802 40803 40804]
 
