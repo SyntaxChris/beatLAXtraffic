@@ -1,4 +1,4 @@
-json.cache! ["nodes","version_1"] do
+json.cache! ["nodes","version_2"] do
   json.array! @nodes do |node|
     json.node_id node.id
     json.template_name node.template_name
