@@ -96,10 +96,14 @@ describe Respondent do
     it "has many responses" do
       expect(respondent).to have_many(:responses)
     end
+
+    it "has many seen nodes" do
+      expect(respondent).to have_many(:seen_nodes)
+    end
   end
 
   describe "Features" do
-    let!(:starting_node) { FactoryGirl.create(:node, template_name: 'splash') }
+    let!(:starting_node) { FactoryGirl.create(:node, template_name: 'splash', next_node_id: 100) }
     context "on create hooks" do
       # not doing the below. see comment in Respondent#set_starting_node
       # before :each do
@@ -160,8 +164,11 @@ describe Respondent do
         context "when session exists" do
         let!(:respondent) { FactoryGirl.create(:respondent, session_id: "1234") }
           it "returns that active session" do
+            node_1 = create(:node)
+            seen_node = respondent.seen_nodes.create(node_id: node_1.id)
+
             expect(Respondent.all.count).to eq 1
-            expect(Respondent.get_or_create_by_session("1234")).to eq respondent
+            expect(Respondent.get_or_create_by_session("1234")[:respondent]).to eq respondent
             expect(Respondent.all.count).to eq 1
           end
         end
@@ -169,7 +176,7 @@ describe Respondent do
         context "when session doesn't exist" do
           it "creates a session and returns it" do
             expect(Respondent.all.count).to eq 0
-            expect(Respondent.get_or_create_by_session("1234")).to eq Respondent.last
+            expect(Respondent.get_or_create_by_session("1234")[:respondent]).to eq Respondent.last
             expect(Respondent.all.count).to eq 1
           end
         end
@@ -196,6 +203,120 @@ describe Respondent do
             expect(["Coworker", "Parent", "Friend"]).to include(Respondent.evenly_distributed_pickup_target)
           end
         end
+      end
+
+      describe "update_node_history" do
+        let!(:respondent) { create(:respondent) }
+        let!(:answer) { create(:answer) }
+        context "when next node hasn't been seen" do
+          let!(:first_dp) { create(:node, is_decision_point: true) }
+          let!(:further_node) { create(:node, next_node_id: first_dp.id) }
+          let!(:next_node) { create(:node, next_node_id: further_node.id) }
+          let!(:current_node) { create(:node, next_node_id: next_node.id) }
+
+          it "advances to the next node" do
+            # don't create seen nodes
+            #
+            argument_params = {
+              is_decision: false,
+              respondent_id: respondent.id,
+              node_id: current_node.id,
+              next_node_id: next_node.id,
+              answers: [
+                { id: answer.id,
+                  rank: nil
+              }
+              ],
+                time_elapsed: 10
+            }
+
+            respondent.update_node_history(argument_params)
+            expect(respondent.current_node_id).to eq next_node.id
+          end
+        end
+
+        context "when next node has been seen" do
+          let!(:first_dp) { create(:node, is_decision_point: true) }
+          let!(:further_node) { create(:node, next_node_id: first_dp.id) }
+          let!(:seen_node) { create(:node, next_node_id: further_node.id) }
+          let!(:current_node) { create(:node, next_node_id: seen_node.id) }
+
+          it "advances to the next decision point" do
+            # create seen nodes
+            [seen_node, further_node, first_dp].each do |node|
+              respondent.seen_nodes.create(node_id: node.id)
+            end
+            respondent.update(current_node_id: current_node.id)
+
+            argument_params = {
+              is_decision: false,
+              respondent_id: respondent.id,
+              node_id: current_node.id,
+              next_node_id: seen_node.id,
+              answers: [
+                { id: answer.id,
+                  rank: nil
+              }
+              ],
+                time_elapsed: 10
+            }
+
+            respondent.update_node_history(argument_params)
+            expect(respondent.current_node_id).to eq first_dp.id
+          end
+
+          it "advances to the next decision point if already on a decision point!" do
+            decision = create(:decision)
+            alternate_start = create(:node, is_decision_point: true)
+            # create seen nodes
+            [seen_node, further_node, first_dp].each do |node|
+              respondent.seen_nodes.create(node_id: node.id)
+            end
+            respondent.update(current_node_id: alternate_start.id)
+
+            argument_params = {
+              is_decision: false,
+              respondent_id: respondent.id,
+              node_id: alternate_start.id,
+              decision_id: decision.id,
+              next_node_id: seen_node.id,
+              answers: [
+                { id: answer.id,
+                  rank: nil
+              }
+              ],
+                time_elapsed: 10
+            }
+
+            respondent.update_node_history(argument_params)
+            expect(respondent.current_node_id).to eq first_dp.id
+          end
+
+          it "advances to the next unseen node" do
+            # create seen nodes
+            [seen_node, first_dp].each do |node|
+              respondent.seen_nodes.create(node_id: node.id)
+            end
+            respondent.update(current_node_id: current_node.id)
+
+            argument_params = {
+              is_decision: false,
+              respondent_id: respondent.id,
+              node_id: current_node.id,
+              next_node_id: seen_node.id,
+              answers: [
+                { id: answer.id,
+                  rank: nil
+              }
+              ],
+                time_elapsed: 10
+            }
+
+            respondent.update_node_history(argument_params)
+            expect(respondent.current_node_id).to eq further_node.id
+          end
+        end
+
       end
     end
 

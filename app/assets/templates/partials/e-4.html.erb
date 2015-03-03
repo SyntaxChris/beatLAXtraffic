@@ -20,7 +20,7 @@
       <div ng-if="answer.answer.indexOf('Specify') > -1">
         <div class="row" style="margin-bottom: 1.5%; margin-top: 3%"  id="other-last">
           <div class="large-5 medium-5 small-9 large-centered medium-centered small-centered columns last-questions">
-            <div class="question-wrapper-1-other">
+            <div class="question-wrapper-1-other" ng-click="addAnswerToCurrentAnswers(answer)">
               <div class="question-text">
                 {{ answer.answer }}
               </div>
@@ -32,7 +32,7 @@
 
     <div class="free-form-popup">
       <div class="free-form-bg">
-        <textarea id="other-info-last-questions" cols="1" rows="5" maxlength="140" placeholder="Please write here." ng-model="currentOther.text" ng-change="determineOtherText(currentOther.text, answer.id)" ></textarea>
+        <textarea id="other-info-last-questions" cols="1" rows="5" maxlength="140" placeholder="Please write here." ng-model="currentOther.text" ng-change="determineOtherText(currentOther.text, currentAnswers[0].id)" ></textarea>
         <div class="flextainer">
           <div class="item-1">
             <div id="char-count-last-questions" style="color: #B2C4D4"></div>
@@ -41,7 +41,7 @@
             <div class="other-btn car-progress" id="last-other-save" ng-click="immediateSubmitAnswer(answer); advanceCar()">Save</div>
           </div>
           <div class="item-3">
-            <div class="other-btn" id="last-other-cancel">Cancel</div>
+            <div class="other-btn" id="last-other-cancel" ng-click="resetCurrentOther()">Cancel</div>
           </div>
         </div>
       </div>

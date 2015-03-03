@@ -17,6 +17,7 @@ angular.module('lawaApp')
             $scope.minutes_elapsed = $scope.variables.time_elapsed % 60;
             $scope.planeProgress = $scope.calculatePlaneProgress($scope.variables.flight_time_remaining);
             $scope.currentFlightTimeRemaining = $scope.variables.landing_time;
+            $scope.respondentCurrentNodeId = data.current_node_id;
 
             // for development purposes only. add fully-working nodes here
             // to remove debugging printing out on front end:
@@ -181,10 +182,10 @@ angular.module('lawaApp')
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
           $scope.addOneToCircling();
-        } else if($scope.currentNode.template_name === "dp-6"){
-          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
-          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
-          $scope.addOneToCircling();
+        //} else if($scope.currentNode.template_name === "dp-6"){
+        //  var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
+        //  $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+        //  $scope.addOneToCircling();
         } else if($scope.currentNode.template_name === "dp-3"){
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Continue circling around terminal"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
@@ -335,6 +336,12 @@ angular.module('lawaApp')
         };
       };
 
+      $scope.resetCurrentOther = function(){
+        $scope.currentOther.present = false;
+        $scope.currentOther.answerId = null;
+        $scope.currentOther.text = null;
+      }
+
       $scope.landPlane = function(){
         $scope.variables.flight_time_remaining = 0;
       }
@@ -375,15 +382,18 @@ angular.module('lawaApp')
 
       // a bunch of things to do in between nodes:
       $scope.goToNextNode = function(){
-        if(!$scope.currentNode.is_decision_point){
-          // go to next node based on current Q's destination
-          var destinationNodeId = $scope.currentNode.next_node_id;
-        }else if($scope.currentNode.is_decision_point){
-          // go to node based on decision
-          var destinationNodeId = $scope.currentDecisionDestination.node_id;
-        }
+        // TODO: commenting out and trying to use db's information:
+        //if(!$scope.currentNode.is_decision_point){
+        //  // go to next node based on current Q's destination
+        //  var destinationNodeId = $scope.currentNode.next_node_id;
+        //}else if($scope.currentNode.is_decision_point){
+        //  // go to node based on decision
+        //  var destinationNodeId = $scope.currentDecisionDestination.node_id;
+        //}
+        //$scope.setCurrentNodeById(destinationNodeId);
 
-        $scope.setCurrentNodeById(destinationNodeId);
+        // using current node from database, set at submit() and setup():
+        $scope.setCurrentNodeById($scope.respondentCurrentNodeId);
 
         // clear decision prepping for next question (can move to own method)
         $scope.currentDecisionDestination = null;
@@ -406,10 +416,10 @@ angular.module('lawaApp')
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
           $scope.addOneToCircling();
-        } else if ($scope.currentNode.template_name === "dp-6"){
-          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
-          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
-          $scope.addOneToCircling();
+        //} else if ($scope.currentNode.template_name === "dp-6"){
+        //  var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
+        //  $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+        //  $scope.addOneToCircling();
         } else if($scope.currentNode.template_name === "dp-3"){
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Continue circling around terminal"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
@@ -475,9 +485,15 @@ angular.module('lawaApp')
         }
         $http.post('/api/response', { response: responseParams }).success(function(data){
           // post to response to API and then on success update session flight information:
-          $http.post('/api/respondents/update', respondentParams).success(function(){
-            // finally, go to the next node:
-            $scope.goToNextNode();
+          $http.post('/api/respondents/update', respondentParams).success(function(data){
+            // THEN get the next node, based on DB's truth...
+            $http.get('/api/respondents/get_or_create/').success(function(data){
+              // ...and set it in the scope:
+              $scope.respondentCurrentNodeId = data.current_node_id;
+
+              // finally, go to the next node:
+              $scope.goToNextNode();
+            })
           })
         });
       };
@@ -491,7 +507,6 @@ angular.module('lawaApp')
       <% Node.all.each do |node| %>
         <%= "templates['#{node.id}'] = {template: '#{asset_path "partials/#{node.clean_template_name}.html"}'}" %>
       <% end %>
-
 
       $scope.getTemplateName = function(nodeId){
         try {

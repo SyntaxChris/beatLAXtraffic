@@ -3,6 +3,7 @@ class Node < ActiveRecord::Base
   has_one :question
   has_one :decision_point
   has_many :responses
+  has_many :seen_nodes
   has_many :incoming_decisions, foreign_key: 'destination_node_id', class_name: "Decision"
   belongs_to :branch
   # belongs_to :decision
