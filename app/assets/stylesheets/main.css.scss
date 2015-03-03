@@ -4,6 +4,18 @@
 
 body, html,button,pre { 
 	font-family: 'Quicksand', sans-serif;
+  &.red {
+    background: red;
+  }
+  &.green {
+    background: green;
+  }
+  &.pink {
+    background: pink;
+  }
+  &.default {
+    background: #82D3EF;
+  }
 }
 
 .skip{
