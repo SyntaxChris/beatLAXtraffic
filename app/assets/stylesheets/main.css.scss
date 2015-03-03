@@ -4,16 +4,19 @@
 
 body, html,button,pre { 
 	font-family: 'Quicksand', sans-serif;
-  &.red {
-    background: red;
+  &.blue {
+    background: #82D3EF;
+  }
+  &.purple {
+    // purple sky...?
+    background: purple;
   }
   &.green {
+    // parking lot
     background: green;
   }
-  &.pink {
-    background: pink;
-  }
-  &.default {
+  &.orange {
+    // buildings
     background: #82D3EF;
   }
 }
