@@ -84,7 +84,7 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
-    queue %[cd #{deploy_to}/current; bundle exec rake cache:clear]
+    # queue %[cd #{deploy_to}/current; bundle exec rake cache:clear]
 
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
