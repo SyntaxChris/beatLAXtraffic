@@ -182,6 +182,7 @@ angular.module('lawaApp')
       $scope.setCurrentNodeById = function(nodeId){
         $scope.currentNode = $scope.fetchNodeById(nodeId);
         $scope.currentTemplateName = $scope.getTemplateName(nodeId);
+        // currentNode.branch.color
         // set default for gps questions
         if ($scope.currentNode.template_name === "dp-1") {
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
