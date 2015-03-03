@@ -60,6 +60,16 @@ task :staging do
   set :domain, '104.236.197.176'
   set :port, '22'
   set :branch, 'staging'
+  set :deployed_string, "curl -X POST --data-urlencode 'payload={\"channel\": \"#lawa\", \"username\": \"Disapproving Deploy Bot\", \"text\": \"Lawa Staging deployed.\", \"icon_emoji\": \":monocle:\"}' https://hooks.slack.com/services/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"
+end
+
+# mina production deploy
+task :production do
+  set :rails_env, 'production'
+  set :deploy_to, '/var/www/lawa_production'
+  set :domain, 'beatlaxtraffic.com'
+  set :branch, 'production'
+  set :deployed_string, "curl -X POST --data-urlencode 'payload={\"channel\": \"#lawa\", \"username\": \"Disapproving Deploy Bot\", \"text\": \"Lawa Production deployed.\", \"icon_emoji\": \":monocle:\"}' https://hooks.slack.com/services/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"
 end
 
 desc "Deploys the current version to the server."
@@ -77,7 +87,31 @@ task :deploy => :environment do
     to :launch do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "touch #{deploy_to}/#{current_path}/tmp/restart.txt"
-      queue "curl -X POST --data-urlencode 'payload={\"channel\": \"#lawa\", \"username\": \"Disapproving Deploy Bot\", \"text\": \"Lawa Staging deployed.\", \"icon_emoji\": \":monocle:\"}' https://hooks.slack.com/services/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"
+      queue "#{deployed_string}"
+    end
+  end
+end
+
+set :ports, %w[40801 40802 40803 40804]
+
+desc "Sets up multiple servers."
+task :multi_setup do
+  isolate do
+    ports.each do |p|
+      set :port, p
+      invoke :setup
+      run!
+    end
+  end
+end
+
+desc "Deploys to multiple servers."
+task :multi_deploy do
+  isolate do
+    ports.each do |p|
+      set :port, p
+      invoke :deploy
+      run!
     end
   end
 end
