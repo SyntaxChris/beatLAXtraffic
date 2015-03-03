@@ -39,9 +39,9 @@
  *= require foundation_and_overrides
 
  */
-body, html { 
+body, html {
 	font-family: 'Quicksand', sans-serif;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     overflow-y: auto;
 }
 
@@ -54,3 +54,5 @@ h6,
 p {
 	font-family: 'Quicksand', sans-serif;
 }
+
+
