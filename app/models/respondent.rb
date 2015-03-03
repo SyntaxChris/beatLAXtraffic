@@ -86,7 +86,7 @@ class Respondent < ActiveRecord::Base
     self.luggage_count = [1,2,3].sample
     self.luggage_type = LUGGAGE_TYPES.sample
     self.traffic_level = TRAFFIC_LEVELS.sample
-    self.picking_up_number = [1,2,3].sample
+    self.picking_up_number = [1,2].sample
     self.originating_airport_code = ORIGINATING_LOCATIONS.sample[:code]
     self.originating_location = ORIGINATING_LOCATIONS.find do |location|
       location[:code] == self.originating_airport_code
