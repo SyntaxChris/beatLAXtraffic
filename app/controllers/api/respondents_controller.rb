@@ -10,7 +10,7 @@ module Api
     end
 
     def restart
-      new_respondent = Respondent.get_or_create_by_session(new_survey_session_id)
+      new_respondent = Respondent.create(session_id: new_survey_session_id)
       new_respondent.update(current_node_id: Node.find_by_template_name('sq-2-2').id)
 
       cookies[:survey_session_id] = new_respondent.session_id
