@@ -1,8 +1,16 @@
 <div ng-controller="NodeCtrl">
   <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))"></div>
-  <button ng-click="setRootBodyClass()">RANDOM BODY CLASS!</button>
-  <div class="row">
+  <!-- <button ng-click="setRootBodyClass()" style="postition:absolute">RANDOM BODY CLASS!</button> -->
+  <div class="row" style="z-index: 1">
     <div ng-include="currentTemplateName"></div>
+  </div>
+
+
+  <div ng-show="bodyClass === 'green'">
+    <div ng-include="'<%= asset_path 'svgs/greenBg.html' %>'"></div>
+  </div>
+  <div ng-show="bodyClass === 'orange'">
+    <div ng-include="'<%= asset_path 'svgs/orangeBg.html' %>'"></div>
   </div>
   <div ng-show="currentNode.dashboard_type === 'plane'">
     <div ng-include="'<%= asset_path 'partials/dashboard.html' %>'"></div>

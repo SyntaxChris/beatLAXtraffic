@@ -56,7 +56,6 @@ angular.module('lawaApp')
               '/assets/partials/ns-4.html'
             ];
 
-
             //$scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
             ///////////template_name
 
@@ -86,7 +85,6 @@ angular.module('lawaApp')
             $scope.oneHourFromNow = oneHourAhead.toLocaleTimeString(
                 'en-US', { hour12: true, hour:"numeric", minute:"numeric"}
               );
-
 
             var tenMinutesBack = new Date();
             tenMinutesBack.setTime(tenMinutesBack.getTime() - (10*60*1000));
