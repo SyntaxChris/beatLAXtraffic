@@ -2,8 +2,51 @@
   display: none !important;
 }
 
-body, html,button,pre { 
+// hide testing controls in production
+body.env-production {
+	.testing-controls { display: none; }
+	// &.env-development {
+	// 	.testing-controls { display: block; }
+	// }
+}
+
+body, html,button,pre {
 	font-family: 'Quicksand', sans-serif;
+	&.blue {
+		background: #82D3EF;
+	}
+	&.purple {
+		// purple sky...?
+		background: #A3CAFF;
+	}
+	&.green {
+		// parking lot
+		background: #A0E1CB;
+		svg.bg{
+			width: 100%;
+			height: 100%;
+			z-index: -2;
+			position: absolute;
+			bottom: 0;
+		}
+		#cloud-5{
+			display: none;
+		}
+	}
+	&.orange {
+		// buildings
+		background: #EFC9B4;
+		svg.bg{
+			width: 100%;
+			height: 100%;
+			z-index: -2;
+			position: absolute;
+			bottom: 0;
+		}
+		#cloud-5{
+			display: none;
+		}
+	}
 }
 
 .skip{
@@ -46,7 +89,7 @@ h3{
 
 .sub-header{
 	text-align: center;
-	color: #079BED; 
+	color: #079BED;
 	padding-top: 0;
 	font-weight: 700;
 }
@@ -82,16 +125,16 @@ h3{
 	svg {
 		cursor: pointer;
 	}
-	
+
 }
 
 #toggle-questions {
 	position: absolute;
 	z-index: 50;
 	cursor: pointer;
-	font-size: 5px; 
-	width: 50px; 
-	height: 30px; 
+	font-size: 5px;
+	width: 50px;
+	height: 30px;
 	padding: 5px 5px 10px 0;
 	text-align: center;
 	background-color: #079BED;
@@ -115,7 +158,7 @@ h3{
 		font-size: 4vw;
 		width: 100%;
 	}
-} 
+}
 
 @media only screen and (max-width : 400px) {
 	h3.main-question{
@@ -126,4 +169,4 @@ h3{
 		font-size: 5vw;
 		width: 100%;
 	}
-} 
+}

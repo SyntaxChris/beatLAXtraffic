@@ -1,0 +1,43 @@
+
+
+Version
+----
+Version goes here
+
+Requirements
+---
+
+Get access to [Flood IO](https://flood.io/dashboard/floods) from Justin  
+* An email will be sent to you for access to these resources
+
+[JMeter](http://jmeter.apache.org/)
+```sh
+brew install jmeter
+```
+
+Set Up for Performance Tests
+---
+    
+### Flood IO
+
+1. Sign into Flood IO
+
+### Run the test
+1. Open up your favorite command line tool
+2. Select the JMeter test you want to run
+  * Test scripts are locate in /local/path/perftest/jmeter
+  ```sh
+  cd /local/path/perftest/jmeter
+  ```
+  * The name of the script describes the test
+    * The number of in the file name represents the number of threads (simulated users) that will be run during the test
+  * A Flood IO URL is gven to watch the testprogress in a web browser  
+```sh
+ruby name_of_script.rb
+```
+3. Let the test run until completion
+4. Copy the reults from the test (can befound by going to the provided FLood IO URL) into the [Google Spreadsheet](https://docs.google.com/a/stevens.edu/spreadsheets/d/1AqxAVfsld0GyCkTwwNOGD1ip4Gxvik5hvMMNWOOHqXA/edit#gid=0)
+  * Access to this spreadsheets will be provided by Justin
+
+
+[@justinschier]:http://twitter.com/justinschier
