@@ -143,4 +143,13 @@ ActiveRecord::Schema.define(version: 20150302232419) do
   add_index "responses", ["node_id"], name: "index_responses_on_node_id", using: :btree
   add_index "responses", ["respondent_id"], name: "index_responses_on_respondent_id", using: :btree
 
+  create_table "seen_nodes", force: true do |t|
+    t.integer  "node_id"
+    t.integer  "respondent_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+
 end
+

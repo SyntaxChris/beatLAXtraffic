@@ -54,6 +54,11 @@ describe Node do
       expect(question_node).to have_many(:responses)
       expect(decision_point_node).to have_many(:responses)
     end
+
+    it "has many seen_nodes" do
+      expect(question_node).to have_many(:seen_nodes)
+    end
+
   end
 
   describe "Features" do

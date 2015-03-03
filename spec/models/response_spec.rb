@@ -208,7 +208,7 @@ RSpec.describe Response, :type => :model do
           time_elapsed: 10
         }
           response_count = respondent.responses.count
-          Response.create_all_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params, respondent)
           expect(respondent.responses.count).to eq response_count + 1
           expect(respondent.responses.last.node_id).to eq node.id
           expect(respondent.responses.last.answer_id).to eq answer.id
@@ -230,7 +230,7 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_all_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params, respondent)
           expect(respondent.responses.count).to eq response_count + 1
           expect(respondent.responses.last.node_id).to eq node.id
           expect(respondent.responses.last.answer_id).to eq answer.id
@@ -248,7 +248,7 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_all_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params, respondent)
           expect(respondent.responses.count).to eq response_count + 1
           expect(respondent.responses.last.node_id).to eq node.id
           expect(respondent.responses.last.answer_id).to eq nil
@@ -268,7 +268,7 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_all_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params, respondent)
           expect(respondent.responses.count).to eq response_count + 1
           expect(respondent.responses.last.node_id).to eq node.id
           expect(respondent.responses.last.answer_id).to eq nil
@@ -276,7 +276,113 @@ RSpec.describe Response, :type => :model do
           expect(respondent.responses.last.times_seen).to eq 2
         end
 
-        it "updates the respondent's current_node_id to be the next_node" do
+        context "when the next_node hasn't been seen" do
+          it "updates the respondent's current_node_id to be the next_node" do
+            # don't create seen nodes
+            #
+            argument_params = {
+              is_decision: false,
+              respondent_id: respondent.id,
+              node_id: node.id,
+              next_node_id: next_node.id,
+              answers: [
+                { id: answer.id,
+                  rank: nil
+              }
+              ],
+                time_elapsed: 10
+            }
+            response_count = respondent.responses.count
+            Response.create_all_from_node_interaction(argument_params, respondent)
+            expect(respondent.responses.count).to eq response_count + 1
+            expect(respondent.responses.last.node_id).to eq node.id
+            expect(respondent.responses.last.answer_id).to eq answer.id
+            expect(Respondent.last.current_node_id).to eq next_node.id
+          end
+        end
+
+        context "when the next_node has already been seen" do
+          let!(:first_dp) { create(:node, is_decision_point: true) }
+          let!(:further_node) { create(:node, next_node_id: first_dp.id) }
+          let!(:seen_node) { create(:node, next_node_id: further_node.id) }
+          let!(:current_node) { create(:node, next_node_id: seen_node.id) }
+
+          it "advances to the next decision point" do
+            # create seen nodes
+            [seen_node, further_node, first_dp].each do |node|
+              respondent.seen_nodes.create(node_id: node.id)
+            end
+            respondent.update(current_node_id: current_node.id)
+
+            argument_params = {
+              is_decision: false,
+              respondent_id: respondent.id,
+              node_id: current_node.id,
+              next_node_id: seen_node.id,
+              answers: [
+                { id: answer.id,
+                  rank: nil
+              }
+              ],
+                time_elapsed: 10
+            }
+
+            Response.create_all_from_node_interaction(argument_params, respondent)
+            expect(Respondent.last.current_node_id).to eq first_dp.id
+          end
+          it "advances to the next unseen node" do
+            # create seen nodes
+            [seen_node, first_dp].each do |node|
+              respondent.seen_nodes.create(node_id: node.id)
+            end
+            respondent.update(current_node_id: current_node.id)
+
+            argument_params = {
+              is_decision: false,
+              respondent_id: respondent.id,
+              node_id: current_node.id,
+              next_node_id: seen_node.id,
+              answers: [
+                { id: answer.id,
+                  rank: nil
+              }
+              ],
+                time_elapsed: 10
+            }
+
+            Response.create_all_from_node_interaction(argument_params, respondent)
+            expect(Respondent.last.current_node_id).to eq further_node.id
+          end
+
+          it "advances to the next decision point if already on a decision point!" do
+            decision = create(:decision)
+            alternate_start = create(:node, is_decision_point: true)
+            # create seen nodes
+            [seen_node, further_node, first_dp].each do |node|
+              respondent.seen_nodes.create(node_id: node.id)
+            end
+            respondent.update(current_node_id: alternate_start.id)
+
+            argument_params = {
+              is_decision: false,
+              respondent_id: respondent.id,
+              decision_id: decision.id,
+              node_id: alternate_start.id,
+              next_node_id: seen_node.id,
+              answers: [
+                { id: answer.id,
+                  rank: nil
+              }
+              ],
+                time_elapsed: 10
+            }
+
+            Response.create_all_from_node_interaction(argument_params, respondent)
+            expect(respondent.current_node_id).to eq first_dp.id
+          end
+        end
+
+        it "adds the current_node_id to respondent's 'seen nodes'" do
           argument_params = {
             is_decision: false,
             respondent_id: respondent.id,
@@ -289,11 +395,27 @@ RSpec.describe Response, :type => :model do
             ],
             time_elapsed: 10
           }
-          response_count = respondent.responses.count
-          Response.create_all_from_node_interaction(argument_params)
-          expect(respondent.responses.count).to eq response_count + 1
-          expect(respondent.responses.last.node_id).to eq node.id
-          expect(respondent.responses.last.answer_id).to eq answer.id
+
+          Response.create_all_from_node_interaction(argument_params, respondent)
+          expect(respondent.seen_nodes.pluck(:node_id)).to include(node.id)
+        end
+
+        it "updates current_node and adds to seen_nodes for a respondent" do
+          argument_params = {
+            is_decision: false,
+            respondent_id: respondent.id,
+            node_id: node.id,
+            next_node_id: next_node.id,
+            answers: [
+              { id: answer.id,
+                rank: nil
+              }
+            ],
+            time_elapsed: 10
+          }
+
+          Response.create_all_from_node_interaction(argument_params, respondent)
+          expect(Respondent.last.seen_nodes.pluck(:node_id)).to include(node.id)
           expect(Respondent.last.current_node_id).to eq next_node.id
         end
 
@@ -321,7 +443,7 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_all_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params, respondent)
           expect(respondent.responses.count).to eq response_count + 3
           expect(respondent.responses.where(answer_id: answer.id).first.rank).to eq 2
           expect(respondent.responses.where(answer_id: answer_2.id).first.rank).to eq 3
@@ -353,7 +475,7 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_all_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params, respondent)
           expect(respondent.responses.count).to eq response_count + 3
           expect(respondent.responses.where(answer_id: answer.id).last.rank).to eq 2
           expect(respondent.responses.where(answer_id: answer.id).last.times_seen).to eq 2
@@ -388,7 +510,7 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_all_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params, respondent)
           expect(respondent.responses.count).to eq response_count + 1
           expect(respondent.responses.last.node_id).to eq node.id
           expect(respondent.responses.last.decision_id).to eq decision.id
@@ -404,12 +526,13 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_all_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params, respondent)
           expect(respondent.responses.count).to eq response_count + 1
           expect(respondent.responses.last.node_id).to eq node.id
           expect(respondent.responses.last.decision_id).to eq decision.id
           expect(respondent.responses.last.skipped).to eq nil
         end
+
         it "updates the respondent's current_node_id to be the next_node" do
           argument_params = {
             is_decision: true,
@@ -421,7 +544,7 @@ RSpec.describe Response, :type => :model do
           }
 
           response_count = respondent.responses.count
-          Response.create_all_from_node_interaction(argument_params)
+          Response.create_all_from_node_interaction(argument_params, respondent)
           expect(respondent.responses.count).to eq response_count + 1
           expect(respondent.responses.last.node_id).to eq node.id
           expect(respondent.responses.last.decision_id).to eq decision.id
