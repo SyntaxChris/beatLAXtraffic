@@ -99,7 +99,7 @@ namespace :populate do
     # meet offsite at train ride
     # what is this?
 
-    itf2 = Node.create(nickname: "ITF 2", is_decision_point: false , branch_id: orange.id, template_name: "itf-2", dashboard_type: "car")
+    itf2 = Node.create(nickname: "ITF 2", is_decision_point: false , branch_id: orange.id, template_name: "itf-2")
       itf2q = Question.create(
         node_id: itf2.id,
         question: "Which of these amenities would you prioritize having? Select your top 3.",
@@ -114,6 +114,22 @@ namespace :populate do
         itf2a7= Answer.create(question_id: itf2q.id, answer: "Wheelchair/Disabled Assistants", icon_name: "helpdesk")
         itf2a8= Answer.create(question_id: itf2q.id, answer: "Dog run/relief area", icon_name: "dog")
         itf2a9= Answer.create(question_id: itf2q.id, answer: "Children’s Play Area", icon_name: "family")
+
+    itf3 = Node.create(nickname: "ITF 3", is_decision_point: false , branch_id: orange.id, template_name: "itf-3")
+      itf3q = Question.create(
+        node_id: itf3.id,
+        question: "Which of these amenities would you prioritize having? Select your top 3.",
+        question_type_id: many_choice.id
+      )
+        itf3a1= Answer.create(question_id: itf3q.id, answer: "Free short-term parking", icon_name: "parking")
+        itf3a2= Answer.create(question_id: itf3q.id, answer: "A way to make sure I know the status of my passenger’s flight.", icon_name: "computer")
+        itf3a3= Answer.create(question_id: itf3q.id, answer: "A place to get food or a drink", icon_name: "food")
+        itf3a4= Answer.create(question_id: itf3q.id, answer: "Easy ways to get in and out of the location", icon_name: "exit")
+        itf3a5= Answer.create(question_id: itf3q.id, answer: "WIFi", icon_name: "wifi")
+        itf3a6= Answer.create(question_id: itf3q.id, answer: "A comfortable waiting area", icon_name: "couch")
+        itf3a7= Answer.create(question_id: itf3q.id, answer: "Wheelchair/Disabled Assistants", icon_name: "helpdesk")
+        itf3a8= Answer.create(question_id: itf3q.id, answer: "Valet Parking", icon_name: "valet")
+        itf3a9= Answer.create(question_id: itf3q.id, answer: "Bag Check-in/Drop Off", icon_name: "bagcheck")
 
     # wait offsite
     c1 = Node.create(nickname: "C 1", is_decision_point: false , branch_id: orange.id, template_name: "c-1", dashboard_type: "plane")
@@ -352,7 +368,8 @@ namespace :populate do
     e5.update(next_node_id: e6.id)
     e6.update(next_node_id: e7.id)
     e7.update(next_node_id: splash.id)
-    itf2.update(next_node_id: e1.id)
+    itf2.update(next_node_id: itf3.id)
+    itf3.update(next_node_id: e1.id)
     ns4.update(next_node_id: itf2.id)
     ns5.update(next_node_id: itf2.id)
 
