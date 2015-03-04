@@ -4,6 +4,10 @@
     <div ng-include="currentTemplateName"></div>
   </div>
 
+  <!-- var from 0-85 -->
+  <div id="plane-progress" style="display: block; position: absolute; top: 0; right: 0">
+    {{ planeProgress + flightScenario }}
+  </div>
 
   <div ng-show="bodyClass === 'green'">
     <div ng-include="'<%= asset_path 'svgs/greenBg.html' %>'"></div>

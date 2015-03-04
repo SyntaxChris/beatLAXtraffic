@@ -15,9 +15,9 @@ $(document).ready(function(){
             $('.plane-cntr').addClass("land-ze-plane");
             $('svg circle#timer-fill').attr("class", "clock-pulse");
 
-            window.setTimeout(function () {
-                $("span#flight-status").text('Arrived');
-            }, 5000);
+            // window.setTimeout(function () {
+            //     $("span#flight-status").text('Arrived');
+            // }, 5000);
         } 
     
       var currentProgress = parseInt($('#plane-progress').text());
