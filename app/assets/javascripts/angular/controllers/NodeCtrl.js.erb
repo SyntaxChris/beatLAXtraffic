@@ -18,7 +18,6 @@ angular.module('lawaApp')
             $scope.planeProgress = $scope.calculatePlaneProgress($scope.variables.flight_time_remaining);
             $scope.currentFlightTimeRemaining = $scope.variables.landing_time;
             $scope.respondentCurrentNodeId = data.current_node_id;
-
             // for development purposes only. add fully-working nodes here
             // to remove debugging printing out on front end:
             $scope.nodesWorking = [
@@ -442,10 +441,30 @@ angular.module('lawaApp')
         })
       }
 
+      
+          
+      $scope.flightScenario;
+
+      $scope.initializeDash = function(){
+        $scope.initialize = $scope.flightScenario;
+      };
+
       $scope.submit = function(decisionId, decreaseTime){
         // console.log('flight time remaining variable: '+ $scope.variables.flight_time_remaining);
         // console.log('calculated plane progress: '+ $scope.planeProgress);
         // user doesn't add time to time elapsed guess, but we need to record the answer anyway:
+        
+        if($scope.flightScenario === undefined){
+          if($scope.variables.flight_time_remaining === 15){
+            $scope.flightScenario = 45;
+          }else if($scope.variables.flight_time_remaining === 30){
+            $scope.flightScenario = 30;
+          }else if($scope.variables.flight_time_remaining === 45){
+            $scope.flightScenario = 15;
+          } else if($scope.variables.flight_time_remaining === 60){
+            $scope.flightScenario = 0;
+          }
+        }
 
         if($scope.currentNode.template_name === 'e-3' && $scope.adjustedTimeElapsed === undefined){
           $scope.addTimeElapsed(0);
