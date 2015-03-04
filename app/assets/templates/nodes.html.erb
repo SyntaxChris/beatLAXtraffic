@@ -3,12 +3,12 @@
   <div class="row" style="z-index: 1">
     <div ng-include="currentTemplateName"></div>
   </div>
-
+  
+  <!-- far plane element -->
+  <div class="distant-plane" ng-include="'<%= asset_path 'svgs/_farplane.html' %>'"></div>
   <!-- var from 0-85 -->
-  <div id="plane-progress" style="display: block; position: absolute; top: 0; right: 0">
-    {{ planeProgress + flightScenario }}
-  </div>
-
+  <div id="plane-progress">{{ planeProgress + flightScenario }}</div>
+  <!-- body bg color -->
   <div ng-show="bodyClass === 'green'">
     <div ng-include="'<%= asset_path 'svgs/greenBg.html' %>'"></div>
   </div>

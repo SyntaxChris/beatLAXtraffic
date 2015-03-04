@@ -11,6 +11,31 @@
     }
 }
 
+.distant-plane{
+    border: 1px solid white;
+    width: 15%;
+    -webkit-animation: far-plane 3s;
+    -moz-animation: far-plane 3s;
+    animation: far-plane 3s;
+    svg{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@-webkit-keyframes far-plane{
+   0% { -webkit-transform: translate3d(0, 0, 0); }
+   100% {-webkit-transform: translate3d(100%, 0, 0);}
+}
+// @-moz-keyframes far-plane{
+//    0% { transform: translate3d(0, 0, 0); }
+//    100% {transform: translate3d(1000%, 0, 0);}
+// }
+// keyframes far-plane{
+//    0% { transform: translate3d(0, 0, 0); }
+//    100% {transform: translate3d(1000%, 0, 0);}
+// }
+
 .far-plane{
     position: absolute;
     width: 30%;
