@@ -412,7 +412,7 @@ namespace :populate do
     e4.update(next_node_id: e5.id)
     e5.update(next_node_id: e6.id)
     e6.update(next_node_id: e7.id)
-    e7.update(next_node_id: splash.idj
+    e7.update(next_node_id: splash.id)
     itf2.update(next_node_id: itf3.id)
     itf3.update(next_node_id: e1itf.id)
     itf2noitf.update(next_node_id: itf3noitf.id)
