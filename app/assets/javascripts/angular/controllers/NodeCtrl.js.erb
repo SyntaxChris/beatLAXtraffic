@@ -11,8 +11,8 @@ angular.module('lawaApp')
           $http.get('/api/respondents/get_or_create/').success(function(data){
             $scope.surveySessionId = data.session_id;
             $scope.respondentId = data.respondent_id;
-            $scope.setCurrentNodeById(data.current_node_id);
             $scope.variables = data.variables;
+            $scope.setCurrentNodeById(data.current_node_id);
             $scope.hours_elapsed = Math.floor($scope.variables.time_elapsed / 60);
             $scope.minutes_elapsed = $scope.variables.time_elapsed % 60;
             $scope.planeProgress = $scope.calculatePlaneProgress($scope.variables.flight_time_remaining);
@@ -455,10 +455,7 @@ angular.module('lawaApp')
 
         // trigger zip-code car animation when template loads
         if($scope.currentNode.template_name === "sq-1"){
-          debugger;
         }
-
-        // determine which dashboard shows
 
         // time should count down for plane landing and up for total time elapsed
         // for this submit click:
