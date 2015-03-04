@@ -31,7 +31,6 @@ class Respondent < ActiveRecord::Base
   end
 
   def update_node_history(response_params)
-    # might need to mark all similar 'why did you choose this' templates as seen here:
     self.seen_nodes.create(node_id: response_params[:node_id])
 
     next_node_id = response_params[:next_node_id]

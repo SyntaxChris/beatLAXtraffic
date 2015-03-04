@@ -1,6 +1,5 @@
 <div ng-controller="NodeCtrl">
   <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))"></div>
-  <!-- <button ng-click="setRootBodyClass()" style="postition:absolute">RANDOM BODY CLASS!</button> -->
   <div class="row" style="z-index: 1">
     <div ng-include="currentTemplateName"></div>
   </div>
