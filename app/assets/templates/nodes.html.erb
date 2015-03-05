@@ -5,21 +5,22 @@
   <!-- background svg container -->
   <div class="bg-animations">
     <!-- landing plane -->
-    <div class="landing-plane" ng-include="'<%= asset_path 'svgs/_landingPlane.html' %>'"></div>
+    <!-- <div class="landing-plane" ng-include="'<%= asset_path 'svgs/_landingplane.html' %>'"></div> -->
     <!-- middle plane -->
     <div class="middle-plane" ng-include="'<%= asset_path 'svgs/_middleplane.html' %>'"></div>
     <!-- far plane -->
     <div class="distant-plane" ng-include="'<%= asset_path 'svgs/_farplane.html' %>'"></div>
     <!-- clouds -->
     <div class="cloud-cntr" ng-include="'<%= asset_path 'svgs/_clouds.html' %>'"></div>
+    <div id="cloud-9" ng-include="'<%= asset_path 'svgs/dopaCloud.html' %>'"></div>
   </div>
-      <!-- body scene changes -->
-    <div class="lot" ng-show="bodyClass === 'green'">
-      <div ng-include="'<%= asset_path 'svgs/greenBg.html' %>'"></div>
-    </div>
-    <div class="skyline" ng-show="bodyClass === 'orange'">
-      <div ng-include="'<%= asset_path 'svgs/orangeBg.html' %>'"></div>
-    </div>
+  <!-- body scene changes -->
+  <div class="lot" ng-show="bodyClass === 'green'">
+    <div ng-include="'<%= asset_path 'svgs/greenBg.html' %>'"></div>
+  </div>
+  <div class="skyline" ng-show="bodyClass === 'orange'">
+    <div ng-include="'<%= asset_path 'svgs/orangeBg.html' %>'"></div>
+  </div>
   <!-- dashboards -->
   <div ng-show="currentNode.dashboard_type === 'plane'">
     <div ng-include="'<%= asset_path 'partials/dashboard.html' %>'"></div>

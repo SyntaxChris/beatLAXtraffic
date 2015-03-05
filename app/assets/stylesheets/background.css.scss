@@ -201,6 +201,30 @@ body {
             }
 
         }
+        #cloud-9{
+            position: absolute;
+            width: 30%;
+            top: 10%;
+            left: -50%;
+            &.dopa-cloud{
+                -webkit-animation: dopa-cloud 5s;
+                -moz-animation: dopa-cloud 5s;
+                animation: dopa-cloud 5s;
+
+                -webkit-animation-iteration-count: 1;
+                -moz-animation-iteration-count: 1;
+                animation-iteration-count: 1;
+
+                -webkit-animation-timing-function: linear;
+                -moz-animation-timing-function: linear;
+                animation-timing-function: linear;
+            }
+            svg{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
         .lot{
             position: absolute;
             z-index: -1;
@@ -230,6 +254,10 @@ body {
 
 
 @-webkit-keyframes slow-cloud{
+   0% {transform: translate3d(0, 0, 0); }
+   100% {transform: translate3d(500%, 0, 0);}
+}
+@-webkit-keyframes dopa-cloud{
    0% {transform: translate3d(0, 0, 0); }
    100% {transform: translate3d(500%, 0, 0);}
 }

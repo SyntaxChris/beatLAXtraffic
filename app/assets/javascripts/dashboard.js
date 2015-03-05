@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var $body = $('body');
-  
+    var initiateDopaCloud = 0;
     var movePlane = function(n){
         var currentProgress = parseInt($('#plane-progress').text());
 
@@ -134,6 +134,19 @@ $(document).ready(function(){
 
     $body.on('click', '.land-ze-plane', function(){
         completeLanding();
+    });
+
+    $body.on('click', '.dopa-cloud', function(){
+        initiateDopaCloud += 1;
+        if(initiateDopaCloud > 19){
+            console.log('DOPA CLOUD!');
+            $('#cloud-9').addClass('dopa-cloud');
+            window.setTimeout(function () {
+                initiateDopaCloud = 0;
+                $('#cloud-9').removeClass('dopa-cloud');
+            }, 5000);  
+        
+        }
     });
 
 });
