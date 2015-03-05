@@ -581,7 +581,7 @@ angular.module('lawaApp')
           return "";
         }
       }
-
+      
       var iconPaths = {}
       <% Answer.all.each do |a| %>
         <%= "iconPaths['#{a.id}'] = {iconPath: '#{asset_path "svgs/_#{a.icon_name}.html"}'}" unless a.icon_name.nil? %>
