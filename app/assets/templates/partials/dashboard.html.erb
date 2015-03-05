@@ -72,8 +72,8 @@
   <div id="progress-bar">
   <div id="ord">{{ variables.originating_airport_code }}</div>
     <div id="bar-back">
-      <div id="plane-bar"></div>
-      <div id="filler">
+      <div id="plane-bar" style="width: {{initialize}}%"></div>
+      <div id="filler" style="margin-left: {{initialize}}%">
         <div id="circular-plane">
           <div ng-include="'<%= asset_path 'svgs/_progressplane.html' %>'"></div>
         </div>
@@ -83,7 +83,6 @@
   </div>
 </div>
 
-<!-- pass in var from 0-85 -->
-<div id="plane-progress">{{ planeProgress }}</div>
+
 
 

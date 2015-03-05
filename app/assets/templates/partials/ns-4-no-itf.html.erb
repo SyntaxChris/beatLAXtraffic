@@ -1,0 +1,15 @@
+<div id="rail-system">
+  <div class="rail-bg">
+    <div class="row">
+      <div class="rail-car-svg" ng-include="'<%= asset_path 'svgs/_railCar.html' %>'"></div>
+    </div>
+    <div class="row">
+      <p class="question">
+        {{ currentNode.question.question }}
+      </p>  
+    </div>
+    <div class="row">
+      <div class="car-progress" ng-click="submit(); advanceCar()"  id="x-btn-rail-system-next" style="margin-bottom: 2%;">NEXT</div>
+    </div>
+  </div>
+</div>

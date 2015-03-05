@@ -1,117 +1,129 @@
 <div class="skip" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
 <!-- STRATEGY questions -->
-<div id="strategy-questions">
+  <div id="strategy-questions">
+  <!-- <div id="strategy-questions"> -->
 
-  <div class="row" style="text-align: center;">
-    <h3 class="main-question">Why do you choose this strategy?</h3>
-    <h5 class="sub-header">Select all that apply</h5>
-  </div>
-
-
-  <!-- large screen view -->
-  <div id="large-strategy">
-    <div class="row">
-      <div class="large-12 medium-12 small-12 columns">
-        <div class="row">
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="bubble-icon-container" id="container-1">
-              <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch' %>'"></div>
-              <div class="strategy-answer" id="stopwatch-answer">
-                To get in and out of the airport as quickly as possible
-              </div>
-            </div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="bubble-icon-container" id="container-2">
-              <div ng-include="'<%= asset_path 'svgs/_grayParking' %>'"></div>
-              <div class="strategy-answer" id="parking-answer">
-                To avoid paying for parking
-              </div>
-            </div>
-            <div class="next emergency-next" id="strategy-large-temp" style="z-index: 10;">Next</div>
-          </div>
-          <div class="large-4 medium-4 small-4 columns">
-            <div class="bubble-icon-container" id="container-3">
-              <div ng-include="'<%= asset_path 'svgs/_hassle' %>'"></div>
-              <div class="strategy-answer" id="hassle-answer">
-                To minimize the hassle for me
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="row" style="text-align: center;">
+      <h3 class="main-question">{{ currentNode.question.question }}</h3>
+      <h5 class="sub-header">Select all that apply</h5>
     </div>
-    <div class="row" style="margin-top: 40px;">
-      <div class="large-12 medium-12 small-12 columns">
+
+    <div class="row">
+      <div class="large-12 medium-12 small-12 large-centered medium-centered small-centered columns">
+
+        <div class="row boxster">
+          <div ng-include="'<%= asset_path 'svgs/_boxster.html' %>'"></div>
+        </div>
+
         <div class="row">
-          <div class="large-3 medium-3 small-3 columns">
-            <div class="bubble-icon-container" id="container-4">
-              <div ng-include="'<%= asset_path 'svgs/_guy' %>'"></div>
-              <div class="strategy-answer" id="guy-answer" style="margin-top: -10px">
-                To make it convenient for my passengers
-              </div>
-            </div>
-          </div>
-          <div class="large-6 medium-6 columns">
-            <div id="boxter-cntnr">
-              <div ng-include="'<%= asset_path 'svgs/_boxster' %>'"></div>
-            </div>
-          </div>
-          <div class="large-3 medium-3 small-3 columns">
 
-            <div class="bubble-icon-container" id="container-5">
-              <div ng-include="'<%= asset_path 'svgs/_strategyOther' %>'"></div>
-              <div class="strategy-answer" id="other-strategy-answer">
-                Other (Explain)
-              </div>
-            </div>
-
-            <!-- other text container -->
-            <div id="strategy-other-container">
-              <div id="container-positioner">
-                <div id="text-container-filler"></div>
-                <div id="text-container">
-                  <div id="other-strategy-buttons">
-                    <div class="row" id="slide-content" style="display: none">
-                      <div class="large-3 medium-3 small-3 columns">
-                        <div class="save-large" style="margin-top: 15px; text-align: center; color: white; background-color: #F25053; padding: 5%; margin-left: 25px; margin-right: 15px; font-size: 1.5vw; border-radius: 5px">
-                          Save
-                        </div>
-
-                        <div class="cancel-large" style="margin-top: 15px; text-align: center; color: white; background-color: #C1C1C1; padding: 5%; margin-left: 25px; margin-right: 15px; font-size: 1.5vw; border-radius: 5px">
-                          Cancel
-                        </div>
-
-                        <div id="char-count-strategy" style="text-align:center; color: #C1C1C1; font-size: 12px; margin-left: 8%"></div>
-                      </div>
-                      <div class="large-7 medium-7 columns">
-                        <textarea class="other-strategy" placeholder="Please write here." cols="1" rows="6" maxlength="140" style="margin-top: 3%; background-color: #F0943F; color: white; postion: absolute; left: 40px; top: 20px"></textarea>
-                      </div>
-                      <div class="large-2 medium-2 small-2 columns"></div>
-                    </div>
+          <!-- left row -->
+          <div class="large-4 medium-4 small-4 columns">
+              <div ng-repeat="answer in currentNode.answers" ng-if="answer.answer.indexOf('quickly') > -1" class="row rt tp">
+                <div class="checkmark">
+                  <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
+                </div>
+                <div class="strategy-bbl">
+                  <div class="strategy-icon">
+                    <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch.html' %>'"></div>
+                  </div>
+                  <div class="bbl-title">
+                    {{ answer.answer }}
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- end other text container -->
-
+              <div ng-repeat="answer in currentNode.answers" ng-if="answer.answer.indexOf('convenient') > -1" class="row lft btm">
+                <div class="checkmark">
+                  <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
+                </div>
+                <div class="strategy-bbl">
+                  <div class="strategy-icon">
+                    <div ng-include="'<%= asset_path 'svgs/_guy.html' %>'"></div>
+                  </div>
+                  <div class="bbl-title">
+                    {{ answer.answer }}
+                  </div>
+                </div>
+              </div>
           </div>
+          <!-- end left row -->
+
+          <!-- middle row -->
+          <div class="large-4 medium-4 small-4 columns">
+            <div ng-repeat="answer in currentNode.answers" ng-if="answer.answer.indexOf('parking') > -1" class="row">
+              <div class="checkmark">
+                <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
+              </div>
+              <div class="strategy-bbl">
+                <div class="strategy-icon">
+                  <div ng-include="'<%= asset_path 'svgs/_grayParking.html' %>'"></div>
+                </div>
+                <div class="bbl-title">
+                  {{ answer.answer }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end middle row -->
+
+          <!-- right row -->
+          <div class="large-4 medium-4 small-4 columns">
+            <div ng-repeat="answer in currentNode.answers">
+              <div ng-if="answer.answer.indexOf('hassle') > -1" class="row lft tp">
+                <div class="checkmark">
+                  <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
+                </div>
+                <div class="strategy-bbl">
+                  <div class="strategy-icon">
+                    <div ng-include="'<%= asset_path 'svgs/_hassle.html' %>'"></div>
+                  </div>
+                  <div class="bbl-title">
+                    {{ answer.answer }}
+                  </div>
+                </div>
+              </div>
+              <div ng-if="answer.answer.indexOf('Other') > -1" class="row rt btm">
+                <div class="checkmark">
+                  <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
+                </div>
+                <div class="strategy-bbl other-bbl">
+                  <div class="strategy-icon">
+                    <div ng-include="'<%= asset_path 'svgs/_strategyOther.html' %>'"></div>
+                  </div>
+                  <div class="bbl-title">
+                    {{ answer.answer }}
+                  </div>
+                  <div class="other-text-form"> <!-- text form with buttons -->
+                    <div class="row">
+                      <div class="large-3 medium-3 small-3 columns">
+                        <div class="text-form-btn" id="save">Save</div>
+                        <div class="text-form-btn" id="cancel">Cancel</div>
+                        <div class="char-counter"></div>
+                      </div>
+                      <div class="large-9 medium-9 small-9 columns">
+                        <textarea id="strategy-text" cols="1" rows="7" maxlength="140" placeholder="Please write here."></textarea>
+                      </div>
+                    </div>
+                  </div> <!-- end text form -->
+                </div>
+              </div> <!-- end Other answer -->
+            </div> <!-- end ng-repeat -->
+          </div> <!-- end right row -->
         </div>
       </div>
+
     </div>
+
+    <div class="next-container">
+      <div ng-click="submit(null, true)" class="strategy-next plane-advance">
+        Next
+      </div>
+    </div>
+
   </div>
   <!-- large screen view -->
 
-
-
-
-
-
-
-
-
-
-
+  <% if false %> <!-- commenting out small screen because 's' svgs are missing -->
   <!-- small screen view -->
   <div id="small-strategy">
     <div class="row">
@@ -277,6 +289,7 @@
     </div>
   </div>
   <!-- end small screen view -->
+  <% end %>
 
 </div>
 <!-- END STRATEGY QUESTIONS -->

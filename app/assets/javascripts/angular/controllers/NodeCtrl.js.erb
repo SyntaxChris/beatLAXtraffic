@@ -11,14 +11,13 @@ angular.module('lawaApp')
           $http.get('/api/respondents/get_or_create/').success(function(data){
             $scope.surveySessionId = data.session_id;
             $scope.respondentId = data.respondent_id;
-            $scope.setCurrentNodeById(data.current_node_id);
             $scope.variables = data.variables;
+            $scope.setCurrentNodeById(data.current_node_id);
             $scope.hours_elapsed = Math.floor($scope.variables.time_elapsed / 60);
             $scope.minutes_elapsed = $scope.variables.time_elapsed % 60;
             $scope.planeProgress = $scope.calculatePlaneProgress($scope.variables.flight_time_remaining);
             $scope.currentFlightTimeRemaining = $scope.variables.landing_time;
             $scope.respondentCurrentNodeId = data.current_node_id;
-
             // for development purposes only. add fully-working nodes here
             // to remove debugging printing out on front end:
             $scope.nodesWorking = [
@@ -233,6 +232,7 @@ angular.module('lawaApp')
 
 
 
+      // used for ITF-2 arrivals amenities
       $scope.amenitySelected = function(answer){
         if(_.findWhere($scope.amenities, answer))
           return false;
@@ -267,7 +267,50 @@ angular.module('lawaApp')
         }
       };
 
+      $scope.addAmenitiesToAnswers = function(){
+        $scope.currentAnswers = $scope.amenities;
+      };
 
+      // used for ITF-3 departing amenities
+      // will actually just null out the previous amenties after submit, rather than 
+      // creating an additional set of functions that do the same thing.
+      //$scope.departingAmenitySelected = function(answer){
+      //  if(_.findWhere($scope.departingAmenities, answer))
+      //    return false;
+      //};
+
+      //// show numbers 1, 2, 3
+      //$scope.addToDepartingAmenities = function(answer){
+      //  $scope.setCurrentlyConsideredDepartingAmenity(null);
+      //  // if user is clicking an empty circle:
+
+      //  if(answer === null || answer === undefined){
+      //    return;
+      //  };
+
+      //  if($scope.departingAmenities.length === 3){
+      //    if (_.findWhere($scope.departingAmenities, answer)){
+      //      // amenity is already in current list, remove it.
+      //      $scope.departingAmenities = _.without($scope.departingAmenities, _.findWhere($scope.departingAmenities, answer));
+      //    }
+      //    // if it's not in the list, don't do anything
+      //    return
+      //  }else{
+      //    // add it if it's not present
+      //    $scope.departingAmenitySelected(answer);
+
+      //    if (_.findWhere($scope.amenities, answer)){
+      //      // amenity is already in current list, remove it.
+      //      $scope.amenities = _.without($scope.amenities, _.findWhere($scope.amenities, answer));
+      //    } else {
+      //      $scope.amenities.push(answer);
+      //    }
+      //  }
+      //};
+      //
+      //$scope.addDepartingAmenitiesToAnswers = function(){
+      //  $scope.currentAnswers = $scope.departingAmenities;
+      //};
 
       $scope.incrementOutcome = function(){
         $scope.parkingTimeSpent += 5;
@@ -276,10 +319,6 @@ angular.module('lawaApp')
           $scope.parkingTextIndex += 1
         else
           $scope.parkingTextIndex = 0;
-      };
-
-      $scope.addAmenitiesToAnswers = function(){
-        $scope.currentAnswers = $scope.amenities;
       };
 
       $scope.addMultipleChoice = function(answer){
@@ -409,6 +448,7 @@ angular.module('lawaApp')
         $scope.currentOther.text = null;
         $scope.currentOther.answerId = null;
         $scope.currentTimeInterval = 0;
+        $scope.amenities = [];
 
         //for debugging:
         // $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
@@ -442,13 +482,37 @@ angular.module('lawaApp')
         })
       }
 
+      
+          
+      $scope.flightScenario;
+
+      $scope.initializeDash = function(){
+        $scope.initialize = $scope.flightScenario;
+      };
+
       $scope.submit = function(decisionId, decreaseTime){
         // console.log('flight time remaining variable: '+ $scope.variables.flight_time_remaining);
         // console.log('calculated plane progress: '+ $scope.planeProgress);
         // user doesn't add time to time elapsed guess, but we need to record the answer anyway:
+        
+        if($scope.flightScenario === undefined){
+          if($scope.variables.flight_time_remaining === 15){
+            $scope.flightScenario = 45;
+          }else if($scope.variables.flight_time_remaining === 30){
+            $scope.flightScenario = 30;
+          }else if($scope.variables.flight_time_remaining === 45){
+            $scope.flightScenario = 15;
+          } else if($scope.variables.flight_time_remaining === 60){
+            $scope.flightScenario = 0;
+          }
+        }
 
         if($scope.currentNode.template_name === 'e-3' && $scope.adjustedTimeElapsed === undefined){
           $scope.addTimeElapsed(0);
+        }
+
+        // trigger zip-code car animation when template loads
+        if($scope.currentNode.template_name === "sq-1"){
         }
 
         // time should count down for plane landing and up for total time elapsed

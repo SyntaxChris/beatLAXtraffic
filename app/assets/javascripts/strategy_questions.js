@@ -92,7 +92,7 @@ $(document).ready(function(){
 
 
  	$body.on('click', '.strategy-bbl', function(){
- 		var bubbleId = $(this).find('.strategy-icon').children().attr('id'),
+    var bubbleId = $(this).find('.strategy-icon').find('.bubble-logo').attr('id'),
         	checkmark = $(this).parents().eq(0).find('.checkmark'),
         	font = $('.bbl-title', this);
 
