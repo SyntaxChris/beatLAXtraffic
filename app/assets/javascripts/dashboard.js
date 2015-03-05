@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var $body = $('body');
-  
+    var initiateDopaCloud = 0;
     var movePlane = function(n){
         var currentProgress = parseInt($('#plane-progress').text());
 
@@ -14,10 +14,9 @@ $(document).ready(function(){
             $("#plane-alert").attr("class", "clock-pulse");
             $('.plane-cntr').addClass("land-ze-plane");
             $('svg circle#timer-fill').attr("class", "clock-pulse");
-
-            // window.setTimeout(function () {
-            //     $("span#flight-status").text('Arrived');
-            // }, 5000);
+            if($('#landing-plane').hasClass("land-ze-plane") === false){
+                $('#landing-plane').addClass("land-ze-plane")
+            }
         } 
     
       var currentProgress = parseInt($('#plane-progress').text());
@@ -134,6 +133,19 @@ $(document).ready(function(){
 
     $body.on('click', '.land-ze-plane', function(){
         completeLanding();
+    });
+
+    $body.on('click', '.dopa-cloud', function(){
+        initiateDopaCloud += 1;
+        if(initiateDopaCloud > 19){
+            console.log('DOPA CLOUD!');
+            $('#cloud-9').addClass('dopa-cloud');
+            window.setTimeout(function () {
+                initiateDopaCloud = 0;
+                $('#cloud-9').removeClass('dopa-cloud');
+            }, 5000);  
+        
+        }
     });
 
 });
