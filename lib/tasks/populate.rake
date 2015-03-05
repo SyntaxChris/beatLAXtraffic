@@ -119,7 +119,7 @@ namespace :populate do
         itf2a8= Answer.create(question_id: itf2q.id, answer: "Dog run/relief area", icon_name: "dog")
         itf2a9= Answer.create(question_id: itf2q.id, answer: "Children’s Play Area", icon_name: "family")
 
-    itf3 = Node.create(nickname: "ITF 3", is_decision_point: false , branch_id: orange.id, template_name: "itf-3")
+    itf3 = Node.create(nickname: "ITF 3", is_decision_point: false , branch_id: orange.id, template_name: "itf-3", dashboard_type: "car")
       itf3q = Question.create(
         node_id: itf3.id,
         question: "Which of these amenities would you prioritize having? Select your top 3.",
@@ -323,7 +323,7 @@ namespace :populate do
       dp1dp = DecisionPoint.create(node_id: dp1.id, situation: "What is your strategy for picking up your passenger?")
         dp1d1 = Decision.create(decision_point_id: dp1dp.id, decision: "Park and meet your passenger inside the terminal", destination_node_id: gq1b.id)
         dp1d2 = Decision.create(decision_point_id: dp1dp.id, decision: "Hope to catch your passenger at the curb", destination_node_id: gq1a.id)
-        dp1d3 = Decision.create(decision_point_id: dp1dp.id, decision: "Wait off site until passenger is ready to be picked up at the curb", destination_node_id: gq1c.id)
+        dp1d3 = Decision.create(decision_point_id: dp1dp.id, decision: "Leave and wait off site until passenger is ready to be picked up at the curb", destination_node_id: gq1c.id)
         dp1d4 = Decision.create(decision_point_id: dp1dp.id, decision: "Meet at a new facility that has a 10 min connecting tram to the terminals", destination_node_id: gq1itf.id)
         dp1d5 = Decision.create(decision_point_id: dp1dp.id, decision: "Default view", destination_node_id: b1.id)
 
@@ -363,7 +363,7 @@ namespace :populate do
       dp6dp = DecisionPoint.create(node_id: dp6.id, situation: "You finally arrive at the lot and the parking lot is full. What do you do next?")
         dp6d1 = Decision.create(decision_point_id: dp6dp.id, decision: "Go to another parking structure", destination_node_id: dp10.id)
         dp6d2 = Decision.create(decision_point_id: dp6dp.id, decision: "Hope to catch your passenger at the curb", destination_node_id: a1.id)
-        dp6d3 = Decision.create(decision_point_id: dp6dp.id, decision: "Wait off site until passenger is ready to be picked up at the curb", destination_node_id: c1.id)
+        dp6d3 = Decision.create(decision_point_id: dp6dp.id, decision: "Leave and wait off site until passenger is ready to be picked up at the curb", destination_node_id: c1.id)
         dp6d4 = Decision.create(decision_point_id: dp6dp.id, decision: "Meet at a new facility that has a 10 min connecting tram to the terminals", destination_node_id: ns4.id)
     ## end weird intertwined DPs
 
