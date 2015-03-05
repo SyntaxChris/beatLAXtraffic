@@ -8,12 +8,36 @@
 		margin-left: auto;
 		margin-right: auto;
 		width: 100%;
+		.next-cntr{
+			position: relative;
+			margin: 0 auto;
+			width: 150px;
+			.next#timer-question {
+				display:none;
+				position: absolute;
+				z-index: 20;
+				cursor: pointer;
+				width: 150px; 
+				height: 50px;
+				top: 0; 
+				text-align: center;
+				font-size: 20px;
+				background-color: #EE4444;
+				// margin-top: -22px;
+				margin-right: auto;
+				margin-left: auto;
+				padding-top: 12px;
+				bottom: 0px;
+				color: white;
+			}
+		}
 		#q-pnl{
 			position: relative;
 			z-index: 5;
 			width: 30%;
 			margin-left: auto;
 			margin-right: auto;
+			padding-top: 7%;
 			#inner-cnr{
 				position: absolute;
 				margin-top: 53%;
@@ -62,24 +86,6 @@
 			}
 
 		}
-	}
-
-	.next#timer-question {
-		display:none;
-		position: relative;
-		z-index: 20;
-		cursor: pointer;
-		width: 150px; 
-		height: 50px; 
-		text-align: center;
-		font-size: 20px;
-		background-color: #EE4444;
-		// margin-top: -22px;
-		margin-right: auto;
-		margin-left: auto;
-		padding-top: 12px;
-		bottom: 0px;
-		color: white;
 	}
 }
 
