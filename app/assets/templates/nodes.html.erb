@@ -2,10 +2,10 @@
   <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))"></div>
   <!-- template -->
   <div class="row" id="lawa-template"><div ng-include="currentTemplateName"></div></div>
+  <!-- landing plane -->
+  <div id="landing-plane" ng-include="'<%= asset_path 'svgs/_landingplane.html' %>'"></div>
   <!-- background svg container -->
   <div class="bg-animations">
-    <!-- landing plane -->
-    <!-- <div class="landing-plane" ng-include="'<%= asset_path 'svgs/_landingplane.html' %>'"></div> -->
     <!-- middle plane -->
     <div class="middle-plane" ng-include="'<%= asset_path 'svgs/_middleplane.html' %>'"></div>
     <!-- far plane -->

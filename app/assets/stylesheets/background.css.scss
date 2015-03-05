@@ -31,21 +31,49 @@ body {
             display: none;
         }
     }
+    #landing-plane{
+            position: absolute;
+            z-index: 10;
+            top: -30%;;
+            right: -70%;
+            width: 70%;
+            height: 70%;
+            svg{
+                width: 100%;
+                height: 100%;
+            }
+            &.land-ze-plane { 
+                animation: landing 7s;
+                animation-iteration-count: 1;
+                animation-timing-function: linear;
+
+                -webkit-animation: landing 7s; 
+                -webkit-animation-iteration-count: 1;
+                -webkit-animation-timing-function: linear;
+
+                // -moz-animation: landing 7s; 
+                // -moz-animation-iteration-count: 1;
+                // -moz-animation-timing-function: linear;
+
+                // -o-animation: landing 7s; 
+                // -o-animation-iteration-count: 1;
+                // -o-animation-timing-function: linear;
+
+                // -ms-animation: landing 7s; 
+                // -ms-animation-iteration-count: 1;
+                // -ms-animation-timing-function: linear;
+            }
+            svg{
+                width: 100%;
+                height: 100%;
+            }
+        }
     .bg-animations{
         position: absolute;
         z-index: -4;
         top: 0%;
         width: 100%;
         height: 100%;
-        .landing-plane{
-            position: relative;
-            top: 0;
-            left: 0;
-            svg{
-                width: 100%;
-                height: 100%;
-            }
-        }
         .middle-plane{
             position: absolute;
             top: 35%;
@@ -109,9 +137,9 @@ body {
             #cloud-2{
                 position: absolute; 
                 z-index: -3; 
-                top: 20%; 
+                top: 18%; 
                 left: -25%;
-                width: 25%;
+                width: 20%;
                 height: 20%;
                 svg{
                     height: 100%;
@@ -199,6 +227,27 @@ body {
                 -moz-animation-timing-function: linear;
                 animation-timing-function: linear;
             }
+            #cloud-6{
+                position: absolute; 
+                z-index: -4; 
+                width: 12%;
+                height: 10%;
+                svg{
+                    height: 100%;
+                    width: 100%;
+                }
+                -webkit-animation: slow-cloud 1000s;
+                -moz-animation: slow-cloud 1000s;
+                animation: slow-cloud 1000s;
+
+                -webkit-animation-iteration-count: infinite;
+                -moz-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+
+                -webkit-animation-timing-function: linear;
+                -moz-animation-timing-function: linear;
+                animation-timing-function: linear;
+            }
 
         }
         #cloud-9{
@@ -237,6 +286,13 @@ body {
     }  
 }
 
+
+@-webkit-keyframes landing{
+   0% {transform: translate3d(0,0,0)rotate(-5deg);}
+   100% {transform: translate3d(-300%,100%,0) rotate(5deg);}
+}
+
+
 @-webkit-keyframes far-plane{
    0% {transform: translate3d(0, 0, 0) rotate(0deg); }
    35% {transform: translate3d(1000%, -80%, 0) rotate(-3deg);}
@@ -250,9 +306,6 @@ body {
 }
 
 
-
-
-
 @-webkit-keyframes slow-cloud{
    0% {transform: translate3d(0, 0, 0); }
    100% {transform: translate3d(500%, 0, 0);}
@@ -261,24 +314,6 @@ body {
    0% {transform: translate3d(0, 0, 0); }
    100% {transform: translate3d(500%, 0, 0);}
 }
-
-
-// @-webkit-keyframes middle-plane{
-//    0% {transform: translate3d(0,0,0) rotate(10deg);}
-//    4% {transform: translate3d(-500%,-300%,0) rotate(15deg);}
-//    100% {transform: translate3d(-510%,-310%,0) rotate(15deg);}
-// }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -306,50 +341,6 @@ body {
            100% {transform: translate3d(-910%,-210%,0) rotate(15deg);}
         } 
     }
-}
-
-
-.land-ze-plane { 
-    animation: landing 7s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-
-    -webkit-animation: landing 7s; 
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: linear;
-
-    -moz-animation: landing 7s; 
-    -moz-animation-iteration-count: 1;
-    -moz-animation-timing-function: linear;
-
-    -o-animation: landing 7s; 
-    -o-animation-iteration-count: 1;
-    -o-animation-timing-function: linear;
-
-    -ms-animation: landing 7s; 
-    -ms-animation-iteration-count: 1;
-    -ms-animation-timing-function: linear;
-}
-
-@-webkit-keyframes landing {
-    0%   {left:100%; top:-30%;}
-    100% {left:-90%; top: 35%;}
-}
-@-moz-keyframes landing {
-    0%   {left:100%; top:-30%;}
-    100% {left:-90%; top: 35%;}
-}
-@-o-keyframes landing {
-    0%   {left:100%; top:-30%;}
-    100% {left:-90%; top: 35%;}
-}
-@-ms-keyframes landing {
-    0%   {left:100%; top:-30%;}
-    100% {left:-90%; top: 35%;}
-}
-@keyframes landing {
-    0%   {left:100%; top:-30%;}
-    100% {left:-90%; top: 35%;}
 }
 
 
