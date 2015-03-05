@@ -14,10 +14,9 @@ $(document).ready(function(){
             $("#plane-alert").attr("class", "clock-pulse");
             $('.plane-cntr').addClass("land-ze-plane");
             $('svg circle#timer-fill').attr("class", "clock-pulse");
-
-            // window.setTimeout(function () {
-            //     $("span#flight-status").text('Arrived');
-            // }, 5000);
+            if($('#landing-plane').hasClass("land-ze-plane") === false){
+                $('#landing-plane').addClass("land-ze-plane")
+            }
         } 
     
       var currentProgress = parseInt($('#plane-progress').text());
