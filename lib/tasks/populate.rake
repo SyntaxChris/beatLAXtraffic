@@ -99,7 +99,7 @@ namespace :populate do
     # meet offsite at train ride
     # what is this?
 
-    itf2 = Node.create(nickname: "ITF 2", is_decision_point: false , branch_id: orange.id, template_name: "itf-2")
+    itf2 = Node.create(nickname: "ITF 2", is_decision_point: false , branch_id: orange.id, template_name: "itf-2", dashboard_type: "car")
       itf2q = Question.create(
         node_id: itf2.id,
         question: "Which of these amenities would you prioritize having? Select your top 3.",
