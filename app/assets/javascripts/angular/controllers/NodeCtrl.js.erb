@@ -483,9 +483,9 @@ angular.module('lawaApp')
       }
 
       
-          
+      // set larger scope variable for flight scenario   
       $scope.flightScenario;
-
+      // initialize in template before dashboard template is rendered (2-2)
       $scope.initializeDash = function(){
         $scope.initialize = $scope.flightScenario;
       };

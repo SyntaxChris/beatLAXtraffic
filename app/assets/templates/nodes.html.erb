@@ -1,24 +1,33 @@
 <div ng-controller="NodeCtrl">
   <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))"></div>
-  <div class="row" style="z-index: 1">
-    <div ng-include="currentTemplateName"></div>
+  <!-- template -->
+  <div class="row" id="lawa-template"><div ng-include="currentTemplateName"></div></div>
+  <!-- background svg container -->
+  <div class="bg-animations">
+    <!-- landing plane -->
+    <!-- <div class="landing-plane" ng-include="'<%= asset_path 'svgs/_landingplane.html' %>'"></div> -->
+    <!-- middle plane -->
+    <div class="middle-plane" ng-include="'<%= asset_path 'svgs/_middleplane.html' %>'"></div>
+    <!-- far plane -->
+    <div class="distant-plane" ng-include="'<%= asset_path 'svgs/_farplane.html' %>'"></div>
+    <!-- clouds -->
+    <div class="cloud-cntr" ng-include="'<%= asset_path 'svgs/_clouds.html' %>'"></div>
+    <div id="cloud-9" ng-include="'<%= asset_path 'svgs/dopaCloud.html' %>'"></div>
   </div>
-
-  <!-- var from 0-85 -->
-  <div id="plane-progress" style="display: block; position: absolute; top: 0; right: 0">
-    {{ planeProgress + flightScenario }}
-  </div>
-
-  <div ng-show="bodyClass === 'green'">
+  <!-- body scene changes -->
+  <div class="lot" ng-show="bodyClass === 'green'">
     <div ng-include="'<%= asset_path 'svgs/greenBg.html' %>'"></div>
   </div>
-  <div ng-show="bodyClass === 'orange'">
+  <div class="skyline" ng-show="bodyClass === 'orange'">
     <div ng-include="'<%= asset_path 'svgs/orangeBg.html' %>'"></div>
   </div>
+  <!-- dashboards -->
   <div ng-show="currentNode.dashboard_type === 'plane'">
     <div ng-include="'<%= asset_path 'partials/dashboard.html' %>'"></div>
   </div>
   <div ng-show="currentNode.dashboard_type === 'car'">
     <div ng-include="'<%= asset_path 'partials/dashboard-car.html' %>'"></div>
-  </div>
+  </div>  
+  <!-- dashboard var from 0-85 -->
+  <div id="plane-progress">{{ planeProgress + flightScenario }}</div>
 </div>
