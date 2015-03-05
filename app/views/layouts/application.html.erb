@@ -13,13 +13,7 @@
 
   <body class="{{$root.bodyClass}} env-<%= Rails.env %>"><!-- change background color here -->
     <div id="fb-root"></div>
-    <%= render 'example/clouds' %>
-    <%= render 'example/middleplane' %>
-    <div class="plane-cntr">
-      <%= render 'example/landingplane'%>
-    </div>
     <%= yield %>
-
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
     <%= javascript_include_tag "application" %>
