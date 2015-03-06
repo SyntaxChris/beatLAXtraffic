@@ -1,3 +1,13 @@
+#confetti{
+  background: none;
+  height: 100%;
+  left: 0px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: -1;
+}
+
 #congrats {
   margin-top: -50px;
   h3 {
