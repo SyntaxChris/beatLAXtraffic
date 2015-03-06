@@ -60,7 +60,7 @@ $(document).ready(function(){
 
 	            setTimeout(
 			 		function(){
-			   			$(".win.parking").css('fill', 'red');
+			   			$(".win.parking").css('fill', '#00FF00');
 			   			$(".yes-font").css('fill', 'white');
 			  		}, 3000
 			  	);
@@ -110,7 +110,7 @@ $(document).ready(function(){
 
 	            setTimeout(
 			 		function(){
-			   			$(".win").css('fill', 'red');
+			   			$(".win").css('fill', '#00FF00');
 			   			$(".yes-font").css('fill', 'white');
 			  		}, 3000
 			  	);
