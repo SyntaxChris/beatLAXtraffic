@@ -37,6 +37,7 @@
 //= require 'willing_to_wait'
 //= require 'think_strategy'
 //= require 'congrats'
+
 //
 //= require angular
 //= require angular-route
