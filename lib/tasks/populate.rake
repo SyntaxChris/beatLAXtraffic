@@ -190,10 +190,10 @@ namespace :populate do
     b1 = Node.create(nickname: "B 1", is_decision_point: false , branch_id: green.id, template_name: "b-1", dashboard_type: "plane")
       b1q = Question.create(node_id: b1.id, question: "Why do you choose to park your car?", question_type_id: many_choice.id)
       # ^ this will need alt question text
-        b1a1= Answer.create(question_id: b1q.id, answer: "When convenient parking is available", icon_name: nil)
-        b1a2= Answer.create(question_id: b1q.id, answer: "To avoid driving in traffic", icon_name: nil)
-        b1a3= Answer.create(question_id: b1q.id, answer: "To meet my passenger in the terminal", icon_name: nil)
-        b1a4= Answer.create(question_id: b1q.id, answer: "Other (Specify)", icon_name: nil)
+        b1a1= Answer.create(question_id: b1q.id, answer: "When convenient parking is available", icon_name: nil, custom_order: 1)
+        b1a2= Answer.create(question_id: b1q.id, answer: "To avoid driving in traffic", icon_name: nil, custom_order: 2)
+        b1a3= Answer.create(question_id: b1q.id, answer: "To meet my passenger in the terminal", icon_name: nil, custom_order: 3)
+        b1a4= Answer.create(question_id: b1q.id, answer: "Other (Specify)", icon_name: nil, custom_order: 4)
 
     b2 = Node.create(nickname: "B 2", is_decision_point: false , branch_id: green.id, template_name: "b-2",  dashboard_type: "plane")
       b2q = Question.create(node_id: b2.id, question: "You need to time your parking correctly. How much time will you put in the meter?", question_type_id: single_choice.id)

@@ -29,9 +29,6 @@ $(document).ready(function(){
 
 		// var parkingLogic = Math.floor(Math.random()*2);
 
-
-
-
 		// parking spinner
 		if(spinButtonId === 'parking'){
 			if (parkingLogic === 1){
