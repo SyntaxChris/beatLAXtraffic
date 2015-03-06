@@ -332,7 +332,7 @@ namespace :populate do
         dp8d1 = Decision.create(decision_point_id: dp8dp.id, decision: "Go park in the terminal parking area", destination_node_id: b1.id)
         dp8d2 = Decision.create(decision_point_id: dp8dp.id, decision: "Hope to catch your passenger at the curb", destination_node_id: a1.id)
         dp8d3 = Decision.create(decision_point_id: dp8dp.id, decision: "Keep waiting", destination_node_id: c4.id)
-        dp8d4 = Decision.create(decision_point_id: dp8dp.id, decision: "Go to an offsite location", destination_node_id: ns4.id)
+        dp8d4 = Decision.create(decision_point_id: dp8dp.id, decision: "Meet at a new facility that has a 10 min connecting tram to the terminals", destination_node_id: ns4.id)
 
     # TODO: need to re-do 7s. consult updated map
     dp7 = Node.create(nickname: "DP 7", is_decision_point: true , branch_id: orange.id, template_name: "dp-7", dashboard_type: "plane")
