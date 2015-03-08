@@ -1,6 +1,10 @@
 <div ng-controller="NodeCtrl">
-  <div class="skip plane-advance" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
   <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))"></div>
+CURRENT QUESTION TITLE: {{ currentNode.question.question }}
+  <!-- skip button -->
+  <div ng-show="currentNode.skippable">
+    <div class="skip plane-advance" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>  
+  </div>
   <!-- template -->
   <div class="row" id="lawa-template"><div ng-include="currentTemplateName"></div></div>
   <!-- landing plane -->

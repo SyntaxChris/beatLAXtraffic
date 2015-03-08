@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302232419) do
+ActiveRecord::Schema.define(version: 20150308014026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20150302232419) do
     t.integer  "next_node_id"
     t.string   "template_name"
     t.string   "dashboard_type"
+    t.boolean  "skippable",         default: true
   end
 
   add_index "nodes", ["branch_id"], name: "index_nodes_on_branch_id", using: :btree
