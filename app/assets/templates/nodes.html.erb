@@ -1,4 +1,5 @@
 <div ng-controller="NodeCtrl">
+  <div class="skip plane-advance" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
   <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))"></div>
   <!-- template -->
   <div class="row" id="lawa-template"><div ng-include="currentTemplateName"></div></div>

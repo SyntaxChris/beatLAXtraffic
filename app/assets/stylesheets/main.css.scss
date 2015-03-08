@@ -53,11 +53,11 @@ body, html,button,pre {
 	cursor: pointer;
 	position: absolute;
 	z-index: 100;
-	right: -2%;
-	top: 5%;
-	width: 10%;
+	right: 0;
+	top: 0;
+	width: 5%;
 	min-width: 50px;
-	padding-right: 0;
+	padding:0;
 	svg{
 		width: 100%;
 		height: 100%;
