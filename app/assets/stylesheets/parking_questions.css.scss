@@ -107,9 +107,6 @@
 			color: white;
 			background-color: #079BED;
 		}
-		// .ok-btn:hover{
-		// 	opacity: 0.8;
-		// }
 	}
 	.park-btn-next{
 		display: none;
@@ -119,12 +116,10 @@
 		margin-right: auto;
 		text-align: center;
 		color: white;
-		// border-radius: 5px;
 		margin-top: 5%;
 		width: 150px;
-		padding: 7px 0 7px 0;
+		padding: 10px 0 10px 0;
 		background-color: #EE4444;
-
 	}
 }
 
@@ -405,9 +400,6 @@
 
 
 @media only screen and (max-width : 465px) { 
-	.skip{
-		top: 2%;
-	}
 	#why-park-car{
 		.sub-header{
 			font-size: 3.5vw;

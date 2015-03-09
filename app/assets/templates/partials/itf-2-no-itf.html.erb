@@ -66,7 +66,7 @@
               </div>
             </div>
           </div>
-          <div ng-class="{show: amenities.length === 3}" ng-click="addAmenitiesToAnswers(); submit(); advanceCar()" class="next-btn car-progress">NEXT</div>
+          <button ng-class="{show: amenities.length === 3}" ng-click="addAmenitiesToAnswers(); submit(); advanceCar()" class="next-btn car-progress">NEXT</button>
         </div>
       </div>
 
@@ -148,9 +148,7 @@
           </div>
         </div>
       </div>
-
     </div>
-    <div class="skip" ng-click="submit(); advanceCar()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
   </div>
 <!-- END ICON QUESTIONS -->
 

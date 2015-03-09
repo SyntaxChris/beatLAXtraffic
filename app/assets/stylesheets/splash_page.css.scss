@@ -1,37 +1,25 @@
+#lax-start-cntr{
+	position: relative;
+	z-index: 30;
+	margin: 0 auto;
+	width: 35%;
+	min-width: 200px;
+	button{
+		background-color: #F05759;
+		font-family: 'Quicksand', sans-serif;
+		width: 100%;
+		font-size: 3vw;
+	}
+}
+#lax-sub-header{
+	color: white;
+	font-size: 2vw;
+	position: relative;
+	margin: 0 auto;
+}
 #splash-page {
 	overflow-y: hidden;
 	overflow-x: hidden;
-	h2{
-		margin-top: -2%;
-		color: white;
-		font-size: 4vw;
-		text-shadow: 0 3px 5px rgba(0,0,0,.5);
-		span{
-			font-weight: 700;
-		}
-	}
-	h4{
-		color: white;
-		font-size: 2vw;
-		text-shadow: 0 3px 5px rgba(0,0,0,.5);
-	}
-	.btn-ctnr{
-		position: absolute;
-		z-index: 50;
-		width: 100%;
-		left: 0;
-		top: 25%;
-		.start-btn{
-			cursor: pointer;
-			position: relative;
-			width: 30%;
-			margin: 0 auto;
-			color: white;
-			background-color: #F05759;
-			padding: 15px;
-			font-size: 2.5vw;
-		}
-	}
 	.splash-ctnr{
 		position: absolute;
 		width: 100%;

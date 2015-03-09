@@ -29,13 +29,17 @@
     <div class="fail" style="display:none">
       <h3 class="main-question">Dang!</h3>
       <h3 class="main-question">You haven't heard from your passenger yet..</h3>
-      <div ng-click="submit(findDecisionByString('No').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-lose" data-result="no">
-        NEXT
+      <div class="nxt-ctnr">
+        <button ng-click="submit(findDecisionByString('No').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-lose" data-result="no">
+          NEXT
+        </button>
       </div>
     </div>
 
-    <div class="spin-button" id="pickup">
-      TEST YOUR LUCK
+    <div class="btn-ctnr">
+      <button class="spin-button" id="pickup">
+        TEST YOUR LUCK
+      </button> 
     </div>
 
     <div class="spinner-components">

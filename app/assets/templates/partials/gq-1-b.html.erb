@@ -1,4 +1,3 @@
-<div class="skip plane-advance" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
 <!-- STRATEGY questions -->
   <div id="strategy-questions">
   <!-- <div id="strategy-questions"> -->
@@ -115,9 +114,9 @@
     </div>
 
     <div class="next-container">
-      <div ng-click="submit(null, true)" class="strategy-next plane-advance">
+      <button ng-click="submit(null, true)" class="strategy-next plane-advance">
         Next
-      </div>
+      </button>
     </div>
 
   </div>
@@ -182,7 +181,11 @@
                   <div ng-include="'<%= asset_path 'svgs/_boxster' %>'"></div>
                 </div>
 
-                <div class="next emergency-next" id="strategy-small-temp" style="display: none; z-index: 10;">Next</div>
+                <div class="next-container">
+                  <button ng-click="submit(null, true)" class="strategy-next plane-advance">
+                    NEXT
+                  </button>
+                </div>
 
             </div>
 
