@@ -1,102 +1,94 @@
-#pickup-spinner-question, #parking-spinner-questions {
-  .testing-controls {
-    position: absolute;
-    right: 0;
-    top: 0;
-    .spinner-continue-btn {
-      width: 75px;
-      margin-bottom: 3px;
-    }
-  }
-}
-h1{
-	color:white;
-	font-weight: 700;
-}
-h3{
-	color:white;
-}
-h3.main-question{
-	margin-top: 0;
-	font-weight: 700;
-}
-
-
-.spin-button {
-	cursor: pointer;
-	width: 250px;
-	font-size: 25px;
-	margin-left: auto;
-	margin-right: auto;
-	
-	text-align: center;
-	padding: 14px 0 14px 0;
-	color: white;
-	background-color: #EE4444;
-}
-
-.spin-button::hover {
-	opacity: 0.5;
-}
-
-.wheel#num-1{
-	padding: 7px 0 0 0;
-}
-
-.wheel#num-2{
-	padding: 5px 0 0 0;
-}
-
-.fail {
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.next#spin-parking-win,
-.next#spin-parking-lose,
-.next#spin-pickup-win,
-.next#spin-pickup-lose {
-	display: block;
-	position: relative;
-	cursor: pointer;
-	margin-left: auto;
-	margin-right: auto;
-	font-size: 25px;
-	text-align: center;
-	width: 200px;
-	padding: 10px 15px 10px 15px;
-	color: white;
-	background-color: #EE4444; 
-
-}
-
-
-.spinner-components {
-	// margin-top: 10px;
-	position: absolute;
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
-	// top: 20%;
-}
-
-.trophey {
-	text-align: center;
-	margin-top: 4%;
-	svg {
-		width: 100%;
-		height: 100%;
+#pickup-spinner-question,
+#parking-spinner-questions {
+	.testing-controls {
+		position: absolute;
+		right: 0;
+		top: 0;
+		.spinner-continue-btn {
+		  width: 75px;
+		  margin-bottom: 3px;
+		}
 	}
 }
 
-.failed-spin {
-	position: relative;
-	// margin-top: -40px;
-	text-align: center;
-	svg {
-		width: 90%;
-		height: 90%;
+#pickup-spinner-question{
+	button{
+		font-family: 'Quicksand', sans-serif;
+	}
+	h1{
+		color:white;
+		font-weight: 700;
+	}
+	h3{
+		color:white;
+	}
+	h3.main-question{
+		margin-top: 0;
+		font-weight: 700;
+	}
+	.next#spin-parking-win,
+	.next#spin-parking-lose,
+	.next#spin-pickup-win,
+	.next#spin-pickup-lose {
+		display: block;
+		position: relative;
+		cursor: pointer;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 25px;
+		text-align: center;
+		width: 200px;
+		padding: 10px 15px 10px 15px;
+		color: white;
+		background-color: #EE4444; 
+	}
+	.btn-ctnr{
+		width: 100%;
+		text-align: center;
+		button.spin-button {
+			position: relative;
+			margin: 0 auto;
+			cursor: pointer;
+			width: 250px;
+			font-size: 25px;
+			padding: 14px 0 14px 0;
+			color: white;
+			background-color: #EE4444;
+		}
+	}
+	.fail {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.spinner-components {
+		position: absolute;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		.wheel#num-1{
+			padding: 7px 0 0 0;
+		}
+
+		.wheel#num-2{
+			padding: 5px 0 0 0;
+		}
+	}
+	.trophey {
+		text-align: center;
+		margin-top: 4%;
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.failed-spin {
+		position: relative;
+		text-align: center;
+		svg {
+			width: 90%;
+			height: 90%;
+		}
 	}
 }
 
@@ -269,18 +261,22 @@ h3.main-question{
 }
 
 @media screen and (min-width: 1000px) {
-	.spinner-components {
-		position: relative;
-		margin-left: auto;
-		margin-right: auto;
-		width: 100%;
-		margin-top: 0;
+	#pickup-spinner-question{
+		.spinner-components {
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+			margin-top: 0;
+		}
 	}
 }
 
 @media screen and (max-width: 1000px) {
-	.continue-btn {
-		margin-bottom: 10%;
+	#pickup-spinner-question{
+		.continue-btn {
+			margin-bottom: 10%;
+		}
 	}
 }
 
