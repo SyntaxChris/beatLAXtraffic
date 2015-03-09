@@ -1,166 +1,226 @@
+
 #think-strategy {
   text-align: center;
-  button {
-    outline: none;
-  }
-  .thought-button {
-    background: none;
-    padding: 0;
-    opacity: .5;
-    width: 60%;
-    margin: -20px auto 0;
-    display: block;
-    &.selected, &:hover {
-      opacity: 1;
-    }
-    .text {
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 700;
-      z-index: 3;
-      position: absolute;
-      color: #333;
-      text-align: center;
-      width: 80%;
-      left: 50%;
-      margin-left: -40%;
-      top: 50%;
-      margin-top: -30px;
-    }
-  }
-  .center-button .text {
-    width: 75%;
-    margin-left: -35%;
-    margin-top: -40px;
-  }
-  .center-button, .right-button {
-    margin-top: -40px;
-  }
-  .thought-head {
-    position: relative;
-    .think-next-btn{
-      cursor: pointer;
+  .think-nxt-btn-ctnr{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 20%;
+    margin-top: 15%;
+    width: 100%;
+    .think-nxt-btn{
       display: none;
-      position: absolute;
-      background-color: #EE4444;
-      color: white;
-      padding: 10px;
-      width: 100%;
-      top: 30%;
+      position: relative;
+      z-index: 3;
+      padding: 14px;
       font-size: 20px;
+      width: 20%;
+      border-radius: 5px;
+      background-color: #F05759;
+      opacity: 1;
+      font-family: 'Quicksand', sans-serif;
     }
   }
-}
-
-@media only screen and (min-width : 360px) { 
-  #think-strategy {
-
-    .thought-button {
-      margin-top: -10px;
-    }
-    .next-thought-btn {
-      margin-top: 0px;
-    }
-  }
-}
-
-@media only screen and (max-width : 400px) {
-  #think-strategy {
-    overflow: hidden;
-    overflow-y: scroll;
-    .content-c {
-      position: absolute;
-      width: 100%;
-      height: 60%;
-    }
-    .thought-button {
-      margin-top: -10px;
-      width: 60%;
-      svg {
-        width: 75%;
-        height: 115px;
-      }
-      font-size: .8em;
-    }
-    .next-thought-btn {
-      margin-top: 0px;
-    }
-    .thought-head {
-      svg {
-        display: none;
-      }
-    }
-  }
-} 
-
-@media only screen and (min-width : 768px) { 
-  #think-strategy {
-    .content-c {
-      max-width: 1024px;
-      position: absolute;
-      height: 100%;
-      width: 100%;
-    }
-    .thought-button {
-      position: absolute;
-      width: 33%;
-    }
-    .thought-head {
-      svg {
-        display: block;
-      }
-      display: block;
-      max-width: 200px;
-      margin: 225px auto 10px;
-    }
-    .left-button {
-      left: 10px;
-      top: 20%;
-      svg {
-        filter: FlipH;
-        -ms-filter: "FlipH";
-        -webkit-transform: rotate(-25deg) scaleX(-1);
-        -moz-transform: rotate(-25deg) scaleX(-1);
-        -ms-transform: rotate(-25deg) scaleX(-1);
-        -o-transform: rotate(-25deg) scaleX(-1);
-        transform: rotate(-25deg) scaleX(-1);
-      }
-    }
-    .center-button {
-      left: 50%;
-      margin-left: -16%;
-    }
-    .right-button {
-      right: 10px;
-      top: 20%;
-      svg {
-        -webkit-transform: rotate(25deg);
-        -moz-transform: rotate(25deg);
-        -ms-transform: rotate(25deg);
-        -o-transform: rotate(25deg);
-        transform: rotate(25deg);
-      }
-    }
-    .next-thought-btn {
-      margin-top: -150px;
-      width: 140px;
-    }
-  }
-}
-
-@media only screen and (max-width : 768px) {
-    #think-strategy {
-      overflow: hidden;
-      overflow-y: scroll;
-      .content-c {
-        position: absolute;
+  .thought-q-ctnr{
+    display: flex;
+    flex-direction: row;
+    .thought-bbl{
+      flex-grow: 1;
+      button{
         width: 100%;
-        height: 70%;
-      }
-      .thought-button {
-        margin-top: -10px;
-      }
-      .next-thought-btn {
-        margin-top: 0px;
+        height: 100%;
+        outline: none;
+        background: none;
+        padding: 0;
+        opacity: 0.6;
+        font-family: 'Quicksand', sans-serif;
+        &.left-button{
+          margin-top: 40%;
+        }
+        &.right-button{
+          margin-top: 40%;
+        }
+        .text-ctnr{
+          position: absolute;
+          padding: 10%;
+          top: 23%;
+          z-index: 1;
+          width: 100%;
+          .text{
+            position: relative;
+            margin: 0 auto;
+            width: 80%;
+            font-size: 1.5vw;
+            font-weight: 700;
+            font-family: 'Quicksand', sans-serif;
+            color: black;
+          }
+        }
+        div>svg{
+          width: 90%;
+          height: 90%;
+          -webkit-animation: shrink 0.1s;
+          -webkit-animation-iteration-count: 1;
+          -webkit-animation-timing-function: linear;
+          -webkit-animation-fill-mode: forwards;
+        }
+        &:hover{
+          opacity: 1;
+          div>svg{
+            -webkit-animation: grow 0.2s;
+            -webkit-animation-iteration-count: 1;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-fill-mode: forwards;
+          }
+        }
+      } 
+    }
+  }
+  .head-ctnr{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 15%;
+    z-index: -1;
+    .thought-head{
+      position: relative;
+      width: 30%;
+      margin: 0 auto;
+      // margin-top: 10%;
+      svg{
+        width: 100%;
+        height: 100%;
       }
     }
+  }
+
+}
+
+@media only screen and (max-width : 460px) {
+  #think-strategy {
+    text-align: center;
+    h3.main-question{
+      font-size: 4vw;
+    }
+    .think-nxt-btn-ctnr{
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 40%;
+        margin-top: 40%;
+        width: 100%;
+        .think-nxt-btn{
+          position: relative;
+          z-index: 3;
+          padding: 14px;
+          font-size: 20px;
+          width: 45%;
+          border-radius: 5px;
+          background-color: #F05759;
+          opacity: 1;
+        }
+      }
+    .thought-q-ctnr{
+      display: flex;
+      flex-direction: column;
+      .thought-bbl{
+        flex-grow: 1;
+        button{
+          margin-top: -30%;
+          margin-left: -40%;
+          width: 60%;
+          height: 60%;
+          outline: none;
+          background: none;
+          padding: 0;
+          opacity: 0.6;
+          &.left-button{
+            margin-top: 0%;
+            margin-left: 35%;
+          }
+          &.right-button{
+            margin-top: -30%;
+            margin-left: 40%;
+          }
+          &.think-nxt-btn{
+            position: absolute;
+            margin-left: 0%;
+            left: 25%;
+            top: 85%;
+            height: 60px;
+            font-size: 20px;
+            width: 50%;
+            background-color: #F05759;
+            opacity: 0.8;
+          }
+          .text-ctnr{
+            position: absolute;
+            padding: 10%;
+            // border: 1px solid white;
+            top: 20%;
+            z-index: 1;
+            width: 100%;
+            .text{
+              position: relative;
+              margin: 0 auto;
+              width: 80%;
+              // border: 1px solid red;
+              font-size: 3.4vw;
+              font-weight: 700;
+              font-family: 'Quicksand', sans-serif;
+              color: black;
+            }
+          }
+          .mid-bbl{
+            -webkit-transform: scale(-1, 1);
+          }
+          div>svg{
+            width: 90%;
+            height: 90%;
+            -webkit-animation: shrink 0.1s;
+            -webkit-animation-iteration-count: 1;
+            -webkit-animation-timing-function: linear;
+            -webkit-animation-fill-mode: forwards;
+          }
+          &:hover{
+            opacity: 1;
+            div>svg{
+              -webkit-animation: grow 0.2s;
+              -webkit-animation-iteration-count: 1;
+              -webkit-animation-timing-function: linear;
+              -webkit-animation-fill-mode: forwards;
+            }
+          }
+        } 
+      }
+    }
+    .head-ctnr{
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 30%;
+      z-index: -1;
+      .thought-head{
+        position: relative;
+        width: 70%;
+        margin: 0 auto;
+        // margin-top: 10%;
+        svg{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
 } 
+
+
+@-webkit-keyframes grow{
+   0% {width: 90%; height: 90%}
+   100% {width: 100%; height: 100%}
+}
+
+@-webkit-keyframes shrink{
+   0% {width: 100%; height: 100%}
+   100% {width: 90%; height: 90%}
+}

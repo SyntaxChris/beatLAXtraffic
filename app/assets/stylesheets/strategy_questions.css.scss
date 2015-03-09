@@ -45,11 +45,13 @@
 	.next-container{
 		position: absolute; 
 		margin-top: 1%;
-		left: 50%;
+		width: 78.5%;
+		text-align: center;
 		.strategy-next{
+			text-align:center;
 			display: none;
-			position: relative; 
-			left: -50%;
+			position: relative;
+			margin: 0 auto; 
 			cursor: pointer;
 			text-align: center;
 			top: 70%;	
@@ -58,7 +60,7 @@
 			color: white;
 			padding: 10px;
 			width: 150px;
-			background-color: #079BED;
+			background-color: #F84048;
 		}
 	}
 	
@@ -219,6 +221,9 @@
 
 @media screen and (max-width: 640px) {
 	#strategy-questions{
+		.boxster{
+			display: none;
+		}
 		.strategy-bbl{
 			position: relative;
 			width: 80%;

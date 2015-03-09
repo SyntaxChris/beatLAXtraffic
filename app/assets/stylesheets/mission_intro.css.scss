@@ -1,4 +1,7 @@
 #mission-intro{
+  .main-question{
+    font-size: 3vw;
+  }
   h1{
     color: white;
   }
@@ -113,7 +116,8 @@
         color: #85878B; 
       }
 
-      #phone-next-btn{
+      button#phone-next-btn{
+        font-family: 'Quicksand', sans-serif;
         cursor: pointer; 
         position: relative;
         width: 100%;
@@ -280,17 +284,16 @@
         padding-left: 0;
       }
     }
-    #stage-2-btn{
-      position: absolute;
+    button#stage-2-btn{
+      font-family: 'Quicksand', sans-serif;
+      cursor: pointer; 
+      position: relative;
       width: 100%;
-      bottom: 0;
+      margin-top: 2px;
+      padding: 20px;
+      font-size: 25px;
+      color: white;
       background-color: #F84048; 
-      color: white; 
-      text-align: center; 
-      font-size: 25px; 
-      font-weight: 700; 
-      padding: 20px 0 20px 0; 
-      cursor: pointer;
     }
   }
 
@@ -465,15 +468,17 @@
         }
       }
     }
-    #stage-4-btn{
-      margin-top: 50px;
+    button#stage-4-btn{
+      font-family: 'Quicksand', sans-serif;
+      cursor: pointer; 
+      position: relative;
+      width: 100%;
+      margin-top: 45px;
+      margin-bottom: 0;
+      padding: 20px;
+      font-size: 25px;
+      color: white;
       background-color: #F84048; 
-      color: white; 
-      text-align: center; 
-      font-size: 25px; 
-      font-weight: 700; 
-      padding: 20px 0 20px 0; 
-      cursor: pointer;
     }
   }
 }

@@ -155,34 +155,37 @@
             </div>
 
             <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px; text-align: center">
-                <div class="bubble-container-small" id="stop-watch">
-                  <div class="check-ctnr" style="position: absolute; z-index: 5; right: -5% ; top: -5%">
-                    <div ng-include="'<%= asset_path 'svgs/_sUnchecked'%>'"></div>
+              <div class="bubble-container-small" id="stop-watch">
+                <div class="check-ctnr" style="position: absolute; z-index: 5; right: -5% ; top: -5%">
+                  <div ng-include="'<%= asset_path 'svgs/_sUnchecked'%>'"></div>
+                </div>
+                <div class="row" >
+                  <div class="small-5 small-centered columns">
+                    <div class="logo-cntr" style="position: absolute; left:0">
+                      <div ng-include="'<%= asset_path 'svgs/_sStopWatch' %>'"></div>
+                    </div> 
                   </div>
-                  <div class="row" >
-                    <div class="small-5 small-centered columns">
-                      <div class="logo-cntr" style="position: absolute; left:0">
-                        <div ng-include="'<%= asset_path 'svgs/_sStopWatch' %>'"></div>
-                      </div> 
-                    </div>
-                  </div>
-                  <div style="position:absolute; width: 100%; margin-top: 75%; left:0;">
-                    <div class="row">
-                      <div class="small-11 small-centered columns">
-                        <div class="strategy-answer" style="font-size: 2.6vw;">
-                          To get in and out of the airport as quickly as possible
-                        </div>
+                </div>
+                <div style="position:absolute; width: 100%; margin-top: 75%; left:0;">
+                  <div class="row">
+                    <div class="small-11 small-centered columns">
+                      <div class="strategy-answer" style="font-size: 2.6vw;">
+                        To get in and out of the airport as quickly as possible
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div id="boxster-ctnr">
-                  <div ng-include="'<%= asset_path 'svgs/_boxster' %>'"></div>
-                </div>
-
-                <div class="next emergency-next" id="strategy-small-temp" style="display: none; z-index: 10;">Next</div>
-
+              <div id="boxster-ctnr">
+                <div ng-include="'<%= asset_path 'svgs/_boxster' %>'"></div>
+              </div>
+              
+              <div class="next-container">
+                <button ng-click="submit(null, true)" class="strategy-next plane-advance">
+                  NEXT
+                </button>
+              </div>
             </div>
 
             <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
