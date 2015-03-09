@@ -181,7 +181,11 @@
                   <div ng-include="'<%= asset_path 'svgs/_boxster' %>'"></div>
                 </div>
 
-                <div class="next emergency-next" id="strategy-small-temp" style="display: none; z-index: 10;">Next</div>
+                <div class="next-container">
+                  <button ng-click="submit(null, true)" class="strategy-next plane-advance">
+                    NEXT
+                  </button>
+                </div>
 
             </div>
 

@@ -20,10 +20,12 @@
   </div>
 
   <div class="congrats" style="display:none;">
-    <h1>Congratulations!</h1>
+    <h1 class="main-question">Congratulations!</h1>
     <h3 class="main-question">You got a parking spot!</h3>
-    <div ng-click="submit(findDecisionByString('Yes').id, true)" class="next plane-advance" id="spin-parking-win">
-      Continue
+    <div class="continue-btn-ctnr">
+      <button ng-click="submit(findDecisionByString('Yes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
+        CONTINUE
+      </button>
     </div>
   </div>
 
@@ -35,9 +37,11 @@
     </div>
   </div>
 
-  <div class="spin-button" id="pickup">
-    SPIN
-  </div>
+    <div class="btn-ctnr">
+      <button class="spin-button" id="pickup">
+        TEST YOUR LUCK
+      </button> 
+    </div>
 
   <div class="spinner-components">
     <div class="row">

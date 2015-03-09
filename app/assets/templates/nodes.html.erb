@@ -3,7 +3,7 @@
 <!-- CURRENT QUESTION TITLE: {{ currentNode.question.question }} -->
   <!-- skip button -->
   <div ng-show="currentNode.skippable">
-    <div class="skip plane-advance" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>  
+    <button class="skip plane-advance" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></button>  
   </div>
   <!-- template -->
   <div class="row" id="lawa-template"><div ng-include="currentTemplateName"></div></div>
