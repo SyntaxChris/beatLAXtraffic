@@ -138,11 +138,11 @@
   #stage-2{
     position: relative; 
     width: 330px; 
-    height: 465px;
+    height: 463px;
     margin-left:auto; 
     margin-right:auto; 
     background-color: white; 
-    margin-top: 85px;
+    margin-top: 87px;
     border: 1px solid black; 
     #stage-2-header{
       background-color: #00B8E5; 
@@ -288,7 +288,7 @@
       cursor: pointer; 
       position: relative;
       width: 100%;
-      margin-top: 2px;
+      bottom: 0;
       padding: 20px;
       font-size: 25px;
       color: white;
