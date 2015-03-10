@@ -36,8 +36,6 @@
 	}
 }
 
-
-
 @media screen and (orientation : portrait) {
 	#lax-start-cntr{
 		position: relative;
@@ -55,20 +53,6 @@
 	#splash-page {
 		overflow-y: hidden;
 		overflow-x: hidden;
-		h2{
-			margin-top: -2%;
-			color: white;
-			font-size: 6vw;
-			text-shadow: 0 3px 5px rgba(0,0,0,.5);
-			span{
-				font-weight: 700;
-			}
-		}
-		h4{
-			color: white;
-			font-size: 2vw;
-			text-shadow: 0 3px 5px rgba(0,0,0,.5);
-		}
 		.btn-ctnr{
 			position: absolute;
 			z-index: 50;
@@ -118,20 +102,6 @@
 		}
 	}
 	#splash-page {
-		h2{
-			// margin-top: -2%;
-			color: white;
-			font-size: 8vw;
-			text-shadow: 0 3px 5px rgba(0,0,0,.5);
-			span{
-				font-weight: 700;
-			}
-		}
-		h4{
-			color: white;
-			font-size: 4vw;
-			text-shadow: 0 3px 5px rgba(0,0,0,.5);
-		}
 		.btn-ctnr{
 			position: absolute;
 			z-index: 50;

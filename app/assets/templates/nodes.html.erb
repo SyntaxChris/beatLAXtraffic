@@ -1,6 +1,6 @@
 <div ng-controller="NodeCtrl">
   <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))"></div>
-<!-- CURRENT QUESTION TITLE: {{ currentNode.question.question }} -->
+  <!-- CURRENT QUESTION TITLE: {{ currentNode.question.question }} -->
   <!-- skip button -->
   <div ng-show="currentNode.skippable">
     <div ng-if="currentNode.dashboard_type === 'plane'">

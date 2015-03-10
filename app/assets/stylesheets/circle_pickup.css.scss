@@ -44,14 +44,6 @@
     position: relative;
     z-index: 2;
   }
-  h3.main-question {
-    color: white;
-    text-shadow: 0 3px 5px rgba(0,0,0,.5);
-    font-weight: 700;
-    text-align: center;
-    font-size: 3vw;
-    // width: 100%;
-  }
   button {
     font-family: 'Quicksand', sans-serif;
     outline: none;
@@ -158,9 +150,6 @@
     -ms-transform: scale(.6);
     -o-transform: scale(.6);
     transform: scale(.6);
-    // &.animate {
-    //   @include animate(drive-car-small, 1.5s, linear, 1);
-    // }
   }
   .counter-btn {
     -moz-border-radius: 25px;
@@ -212,9 +201,6 @@
 
 @media only screen and (min-width : 360px) { 
   #circle-pickup {
-    h3 {
-      font-size: 1.2em;
-    }
     .red-circle {
       height: 275px;
       width: 275px;
@@ -249,9 +235,6 @@
       -ms-transform: scale(1);
       -o-transform: scale(1);
       transform: scale(1);
-      // &.animate {
-      //   @include animate(drive-car, 2s, linear, 1);
-      // }
     }
   }
 }
@@ -259,11 +242,6 @@
 @media only screen and (max-width : 640px) {
   #circle-pickup {
     top: 0;
-    h3.main-question {
-      // margin-top: 10px;
-      margin-bottom: 40px;
-      font-size: 6vw;
-    }
   }
 }
 
@@ -275,9 +253,6 @@
     }
     .buttons-c {
       width: 275px;
-    }
-    .count-c {
-      // margin-top: -30px;
     }
     .circle-number {
       font-size: 7em;
@@ -292,14 +267,6 @@
     height: 90%;
     .content-c {
       margin-top: -5%;
-      // position: relative;
-      // color: white;
-      // text-shadow: 0 3px 5px rgba(0,0,0,.5);
-      .inner-question{
-        // font-size: 18px;
-        // padding-bottom: 20px;
-        // padding-top: 0px;
-      }
     }
   }
 }

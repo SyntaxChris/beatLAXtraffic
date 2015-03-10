@@ -1,10 +1,8 @@
 <div id="zip-code-template">
-  <div class="row">
-    <h3 class="main-question">
-      {{ currentNode.question.question }}
-    </h3>
-    <div class="sub-header">Enter your zip code</div>
-  </div>
+  <h3 class="main-question">
+    {{ currentNode.question.question }}
+  </h3>
+  <div class="sub-header">Enter your zip code</div>
   <div class="row">
     <div class="ferrari-container">
       <div ng-include="'<%= asset_path 'svgs/_ferrari.html' %>'"></div>

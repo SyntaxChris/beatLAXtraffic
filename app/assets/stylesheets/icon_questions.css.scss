@@ -8,9 +8,6 @@
 		padding: 0;
 		margin: 0;
 	}
-	h3.main-question{
-		margin-bottom: 2%;
-	}
 	.answer-container{
 		position: relative;
 		width: 90%;
@@ -168,57 +165,13 @@
 	}
 }
 
-
-@-webkit-keyframes wiggle {
-  0% {-webkit-transform:rotate(7deg);}
-  50% {-webkit-transform:rotate(-7deg);}
-  100% {-webkit-transform:rotate(7deg);}
-}
-@-moz-keyframes wiggle {
-  0% {-webkit-transform:rotate(7deg);}
-  50% {-webkit-transform:rotate(-7deg);}
-  100% {-webkit-transform:rotate(7deg);}
-}
-@-o-keyframes wiggle {
-  0% {-webkit-transform:rotate(7deg);}
-  50% {-webkit-transform:rotate(-7deg);}
-  100% {-webkit-transform:rotate(7deg);}
-}
-@-ms-keyframes wiggle {
-  0% {-webkit-transform:rotate(7deg);}
-  50% {-webkit-transform:rotate(-7deg);}
-  100% {-webkit-transform:rotate(7deg);}
-}
-@keyframes wiggle {
-  0% {-webkit-transform:rotate(7deg);}
-  50% {-webkit-transform:rotate(-7deg);}
-  100% {-webkit-transform:rotate(7deg);}
-}
-
-@-webkit-keyframes spin {
-  0% {-webkit-transform:rotate(0deg);}
-  100% {-webkit-transform:rotate(360deg);}
-}
-@-moz-keyframes spin {
-  0% {-webkit-transform:rotate(0deg);}
-  100% {-webkit-transform:rotate(360deg);}
-}
-@-o-keyframes spin {
-  0% {-webkit-transform:rotate(0deg);}
-  100% {-webkit-transform:rotate(360deg);}
-}
-@-ms-keyframes spin {
-  0% {-webkit-transform:rotate(0deg);}
-  100% {-webkit-transform:rotate(360deg);}
-}
-@keyframes spin {
-  0% {-webkit-transform:rotate(0deg);}
-  100% {-webkit-transform:rotate(360deg);}
-}
-
-
 @media screen and (max-width: 750px) {
 	#icon-questions{
+		// h3.main-question{
+		// 	font-size: 3.5vw;
+		// 	font-weight: 700;
+		// 	margin-bottom: 2%;
+		// }
 		.answer-container{
 			text-align: center;
 			// padding: 20%;
@@ -545,22 +498,6 @@
 							height: 100%;
 						}
 					}
-					// .icon-remove{
-					// 	// display: none;
-					// 	&.show{
-					// 		display: block;
-					// 	}
-					// 	position: absolute;
-					// 	width: 30px;
-					// 	height: 10px;
-					// 	top: -5%;
-					// 	right: -2%;
-					// 	svg{
-					// 		cursor: pointer;
-					// 		width: 100%;
-					// 		height: 100%;
-					// 	}
-					// }
 				}
 			}
 
@@ -653,5 +590,54 @@
 			}
 		}
 	}
+}
+
+
+
+@-webkit-keyframes wiggle {
+  0% {-webkit-transform:rotate(7deg);}
+  50% {-webkit-transform:rotate(-7deg);}
+  100% {-webkit-transform:rotate(7deg);}
+}
+@-moz-keyframes wiggle {
+  0% {-webkit-transform:rotate(7deg);}
+  50% {-webkit-transform:rotate(-7deg);}
+  100% {-webkit-transform:rotate(7deg);}
+}
+@-o-keyframes wiggle {
+  0% {-webkit-transform:rotate(7deg);}
+  50% {-webkit-transform:rotate(-7deg);}
+  100% {-webkit-transform:rotate(7deg);}
+}
+@-ms-keyframes wiggle {
+  0% {-webkit-transform:rotate(7deg);}
+  50% {-webkit-transform:rotate(-7deg);}
+  100% {-webkit-transform:rotate(7deg);}
+}
+@keyframes wiggle {
+  0% {-webkit-transform:rotate(7deg);}
+  50% {-webkit-transform:rotate(-7deg);}
+  100% {-webkit-transform:rotate(7deg);}
+}
+
+@-webkit-keyframes spin {
+  0% {-webkit-transform:rotate(0deg);}
+  100% {-webkit-transform:rotate(360deg);}
+}
+@-moz-keyframes spin {
+  0% {-webkit-transform:rotate(0deg);}
+  100% {-webkit-transform:rotate(360deg);}
+}
+@-o-keyframes spin {
+  0% {-webkit-transform:rotate(0deg);}
+  100% {-webkit-transform:rotate(360deg);}
+}
+@-ms-keyframes spin {
+  0% {-webkit-transform:rotate(0deg);}
+  100% {-webkit-transform:rotate(360deg);}
+}
+@keyframes spin {
+  0% {-webkit-transform:rotate(0deg);}
+  100% {-webkit-transform:rotate(360deg);}
 }
 
