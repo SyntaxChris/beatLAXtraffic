@@ -284,11 +284,11 @@
       }
     }
     button#stage-2-btn{
+      position: absolute;
       font-family: 'Quicksand', sans-serif;
       cursor: pointer; 
-      position: relative;
       width: 100%;
-      bottom: 0;
+      bottom: -20px;
       padding: 20px;
       font-size: 25px;
       color: white;
