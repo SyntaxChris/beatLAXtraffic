@@ -3,7 +3,12 @@
 <!-- CURRENT QUESTION TITLE: {{ currentNode.question.question }} -->
   <!-- skip button -->
   <div ng-show="currentNode.skippable">
-    <button class="skip plane-advance" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></button>  
+    <div ng-if="currentNode.dashboard_type === 'plane'">
+      <button class="skip plane-advance" ng-click="submit(null, true)" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'" class="plane-advance"></button> 
+    </div>
+    <div ng-if="currentNode.dashboard_type === 'car'">
+      <button class="skip car-progress" ng-click="submit(); advanceCar()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></button> 
+    </div>
   </div>
   <!-- template -->
   <div class="row" id="lawa-template"><div ng-include="currentTemplateName"></div></div>

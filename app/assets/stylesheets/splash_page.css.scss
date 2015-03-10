@@ -39,6 +39,19 @@
 
 
 @media screen and (orientation : portrait) {
+	#lax-start-cntr{
+		position: relative;
+		z-index: 30;
+		margin: 0 auto;
+		width: 35%;
+		min-width: 200px;
+		button{
+			background-color: #F05759;
+			font-family: 'Quicksand', sans-serif;
+			width: 100%;
+			font-size: 5vw;
+		}
+	}
 	#splash-page {
 		overflow-y: hidden;
 		overflow-x: hidden;
@@ -90,10 +103,23 @@
 }
 
 @media screen and (max-width : 450px) {
+	#lax-start-cntr{
+		position: relative;
+		z-index: 30;
+		margin: 0 auto;
+		width: 35%;
+		min-width: 200px;
+		button{
+			background-color: #F05759;
+			font-family: 'Quicksand', sans-serif;
+			width: 100%;
+			font-size: 5vw;
+			font-weight: 700;
+		}
+	}
 	#splash-page {
-
 		h2{
-			margin-top: -2%;
+			// margin-top: -2%;
 			color: white;
 			font-size: 8vw;
 			text-shadow: 0 3px 5px rgba(0,0,0,.5);
