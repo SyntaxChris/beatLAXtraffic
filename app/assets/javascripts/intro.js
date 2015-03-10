@@ -28,14 +28,14 @@ $(document).ready(function(){
 
     })
     .on('click', '#stage-2-btn', function(){
-      $('#intro-phone').hide();
+      $('.phone').hide();
       $('#stage-2').hide();
       $('#stage-2-header').hide();
       $('#stage-3, #stage-3-header').delay(400).fadeIn();
       $("#speeding-car").animate({left: "110%"}, 5000);
       window.setTimeout(function () {
         $('#stage-3, #stage-3-header').fadeOut();
-        $('#stage-4, #stage-4-header, #intro-phone').delay(400).fadeIn();
+        $('#stage-4, #stage-4-header, .phone').delay(400).fadeIn();
       }, 5500);
       
     });

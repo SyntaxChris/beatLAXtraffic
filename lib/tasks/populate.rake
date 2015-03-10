@@ -92,11 +92,11 @@ namespace :populate do
       ns4q = Question.create(node_id: ns4.id, question: "Nice! This location is part of the largest improvement project ever at LAX.\nWe'd love to hear how this project can help you and your passengers navigate LAX better", question_type_id: single_choice.id)
         ns4qa1 = Answer.create(question_id: ns4q.id, answer: "NS 4 answer", icon_name: nil)
 
-    ns4noitf = Node.create(nickname: "NS 4 NO ITF", is_decision_point: false , branch_id: orange.id, template_name: "ns-4-no-itf", dashboard_type: "plane", skippable: false)
+    ns4noitf = Node.create(nickname: "NS 4 NO ITF", is_decision_point: false , branch_id: orange.id, template_name: "ns-4-no-itf", dashboard_type: "car", skippable: false)
       ns4noitfq = Question.create(node_id: ns4noitf.id, question: "Nice! This location is part of the largest improvement project ever at LAX.\nWe'd love to hear how this project can help you and your passengers navigate LAX better", question_type_id: single_choice.id)
         ns4noitfqa1 = Answer.create(question_id: ns4noitfq.id, answer: "NS 4 NO ITF answer", icon_name: nil)
 
-    ns5noitf = Node.create(nickname: "NS 5 NO ITF", is_decision_point: false , branch_id: orange.id, template_name: "ns-5-no-itf", dashboard_type: "plane", skippable: false)
+    ns5noitf = Node.create(nickname: "NS 5 NO ITF", is_decision_point: false , branch_id: orange.id, template_name: "ns-5-no-itf", dashboard_type: "car", skippable: false)
       ns5noitfq = Question.create(node_id: ns5noitf.id, question: "We're actually currently working on building this new location and want to make sure you find it as useful as possible. We want your input on how we should build this location.", question_type_id: single_choice.id)
         ns5noitfqa1 = Answer.create(question_id: ns5noitfq.id, answer: "NS 5 NO ITF answer", icon_name: nil)
 

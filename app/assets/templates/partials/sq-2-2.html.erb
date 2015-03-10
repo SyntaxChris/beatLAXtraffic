@@ -12,11 +12,11 @@
     You made it! Looks like the flight's not here yet
   </h3>
 
-  <div class="stage-container">
-    <div class="container-contents" id="intro-phone" style="width: 100%">
-       <div ng-include="'<%= asset_path 'svgs/_introPhone.html' %>'"></div> 
-    </div>
+  <div class="phone">
+    <div ng-include="'<%= asset_path 'svgs/_introPhone.html' %>'"></div> 
   </div>
+    
+
 
 
   <div id="stage-1">
@@ -36,7 +36,7 @@
 
         <div class="row" id="txt-bbl-content" style="margin: 0; background-color: white">
           <div id="recieved-txt">
-            Hey buddy! DON'T FORGET TO PICK ME UP AT LAX!!
+            Hey! DON'T FORGET TO PICK ME UP AT LAX!!
           </div>
           <div id="sent-txt">
              Uhh... yeah of course!
@@ -44,18 +44,16 @@
         </div>
 
         <div class="row" id="txt-footer-container">
-          
-            <div id="phone-txt-input">
-              I FORGOT D:
-            </div>
-            <button id="phone-next-btn">
-              LETS GO!
-            </button>
-        
+          <div id="phone-txt-input">
+            I FORGOT D:
+          </div>
+          <button id="phone-next-btn">
+            LETS GO!
+          </button>
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 
 
   <div id="stage-2" style="display: none;">
@@ -77,7 +75,7 @@
         <div class="large-4 medium-4 small-4 columns flight">Flight <span>{{ variables.flight_code }}</span></div>
         <div class="large-4 medium-4 small-4 columns to-name">Los Angeles</div>
       </div>
-    </div>
+    </div> 
 
     <div id="stage-2-body">
       <div class="row" style="text-align: center; margin: 0; padding-top: 5px">
@@ -117,8 +115,6 @@
           <div ng-include="'<%= asset_path 'svgs/_home.html' %>'"></div>
         </div>
 
-        <!-- class names for car colors: .fast, .medium, .slow -->
-
         <div class="large-2 medium-2 small-2 columns traffic-level"><div ng-class="variables.traffic_level" id="level-1"></div></div>
         <div class="large-2 medium-2 small-2 columns traffic-level"><div ng-class="variables.traffic_level" id="level-2"></div></div>
         <div class="large-2 medium-2 small-2 columns traffic-level"><div ng-class="variables.traffic_level" id="level-3"></div></div>
@@ -143,7 +139,7 @@
     <button id="stage-2-btn">
       LET'S GO!
     </button>
-  </div>   
+  </div> 
 
 
   <div id="stage-3" style="display: none">

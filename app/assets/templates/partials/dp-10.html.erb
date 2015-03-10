@@ -20,7 +20,7 @@
   </div>
 
   <div class="congrats" style="display:none;">
-    <h1 class="main-question">Congratulations!</h1>
+    <h3 class="main-question">Congratulations!</h1>
     <h3 class="main-question">You got a parking spot!</h3>
     <div class="continue-btn-ctnr">
       <button ng-click="submit(findDecisionByString('Yes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
@@ -30,7 +30,7 @@
   </div>
 
   <div class="fail" style="display:none">
-    <h1 style="color: white; text-align: center;">Dang!</h1>
+    <h3 class="main-question">Dang!</h1>
     <h3 class="main-question">The parking lot is full.</h3>
     <div ng-click="submit(findDecisionByString('No').id, true)" class="next plane-advance" id="spin-parking-lose">
       NEXT

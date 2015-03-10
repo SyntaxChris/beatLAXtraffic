@@ -12,6 +12,23 @@
     text-shadow: 0 0 10px rgba(0,0,0,.3);
   }
 
+  .phone{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 10%;
+    div[ng-include]{
+      position: relative;
+      width: 30%;
+      height: 100%;
+      margin: 0 auto;
+      svg{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
   .stage-container{
     position: absolute; left: 50%;
     .container-contents{
@@ -51,7 +68,7 @@
         background-color: #E5E5EA; 
         text-align: left;
         width: 60%; 
-        font-size: 13px; 
+        font-size: 16px; 
         margin-top: 15px; 
         margin-bottom: 5px; 
         margin-left: 5%; 
@@ -75,13 +92,14 @@
       #sent-txt {
         position: absolute;
         right: 0;
+        padding: 5px;
         margin-right: 15px;
         margin-top: 30px;
         background-color: #49B9FB; 
         width: 55%; 
         border-radius: 10px; 
         color: white; 
-        font-size: 13px; 
+        font-size: 16px; 
       }
 
       #sent-txt:before {
@@ -321,18 +339,17 @@
         }
       }
 
-
       #palm-1{
         position: absolute;
         z-index: 1;
         width: 10%;
         top: -40%;
         right: -10%;
-        -webkit-animation: palm-far 3s linear infinite;
-        -moz-animation: palm-far 3s linear infinite;
-        -o-animation: palm-far 3s linear infinite;
-        -ms-animation: palm-far 3s linear infinite;
-        animation: palm-far 3s linear infinite;
+        -webkit-animation: palm 3s linear infinite;
+        -moz-animation: palm 3s linear infinite;
+        -o-animation: palm 3s linear infinite;
+        -ms-animation: palm 3s linear infinite;
+        animation: palm 3s linear infinite;
         svg{
           width: 60%;
           height: 60%;
@@ -389,6 +406,12 @@
           -o-animation: car-rumble 0.5s infinite;
           -ms-animation: car-rumble 0.5s infinite;
           animation: car-rumble 0.5s infinite;
+
+          // -webkit-animation: car-drive 4s linear infinite;
+          // -moz-animation: car-drive 4s linear infinite;
+          // -o-animation: car-drive 4s linear infinite;
+          // -ms-animation: car-drive 4s linear infinite;
+          // animation: car-drive 4s linear infinite;
           svg{
             width: 100%;
           }
@@ -399,11 +422,11 @@
           width: 20%;
           top: -80px;
           right: -20%;
-          -webkit-animation: palm-near 0.5s linear infinite;
-          -moz-animation: palm-near 0.5s linear infinite;
-          -o-animation: palm-near 0.5s linear infinite;
-          -ms-animation: palm-near 0.5s linear infinite;
-          animation: palm-near 0.5s linear infinite;
+          -webkit-animation: palm 0.7s linear infinite;
+          -moz-animation: palm 0.7s linear infinite;
+          -o-animation: palm 0.7s linear infinite;
+          -ms-animation: palm 0.7s linear infinite;
+          animation: palm 0.7s linear infinite;
           svg {
             width: 100%;
             height: 100%;
@@ -483,131 +506,17 @@
 }
 
 
-@-webkit-keyframes run-to-car {
-    0% {background-color: #FF999D;}
-    50% {background-color: #FF000B;}
-    100% {background-color: #FF999D;}
-}
-@-moz-keyframes run-to-car {
-    0% {background-color: #FF999D;}
-    50% {background-color: #FF000B;}
-    100% {background-color: #FF999D;}
-}
-@-o-keyframes run-to-car {
-    0% {background-color: #FF999D;}
-    50% {background-color: #FF000B;}
-    100% {background-color: #FF999D;}
-}
-@-ms-keyframes run-to-car {
-    0% {background-color: #FF999D;}
-    50% {background-color: #FF000B;}
-    100% {background-color: #FF999D;}
-}
-@keyframes run-to-car {
-    0% {background-color: #FF999D;}
-    50% {background-color: #FF000B;}
-    100% {background-color: #FF999D;}
-}
-
-
-@-webkit-keyframes traffic-car {
-  0% {left: -163px;}
-  100% {left: 5px;}
-}
 
 
 
-@-webkit-keyframes car-race {
-  0% {left: -20%;}
-  100% {left: 120%;}
-}
-@-moz-keyframes car-race {
-  0% {left: -20%;}
-  100% {left: 120%;}
-}
-@-o-keyframes car-race {
-  0% {left: -20%;}
-  100% {left: 120%;}
-}
-@-ms-keyframes car-race {
-  0% {left: -20%;}
-  100% {left: 120%;}
-}
-@keyframes car-race {
-  0% {left: -20%;}
-  100% {left: 120%;}
-}
 
 
-@-webkit-keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
-}
-@-moz-keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
-}
-@-o-keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
-}
-@-ms-keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
-}
-@keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
-}
 
 
-@-webkit-keyframes palm-near {
-  0% {right: -10%;}
-  100% {right: 100%;}
-}
-@-moz-keyframes palm-near {
-  0% {right: -10%;}
-  100% {right: 100%;}
-}
-@-o-keyframes palm-near {
-  0% {right: -10%;}
-  100% {right: 100%;}
-}
-@-ms-keyframes palm-near {
-  0% {right: -10%;}
-  100% {right: 100%;}
-}
-@keyframes palm-near {
-  0% {right: -10%;}
-  100% {right: 100%;}
-}
 
 
-@-webkit-keyframes palm-far {
-  0% {right: -20%;}
-  100% {right: 100%;}
-}
-@-moz-keyframes palm-far {
-  0% {right: -20%;}
-  100% {right: 100%;}
-}
-@-o-keyframes palm-far {
-  0% {right: -20%;}
-  100% {right: 100%;}
-}
-@-ms-keyframes palm-far {
-  0% {right: -20%;}
-  100% {right: 100%;}
-}
-@keyframes palm-far {
-  0% {right: -20%;}
-  100% {right: 100%;}
-}
+
+
 
 
 @media only screen and (max-width : 460px) { 
@@ -842,70 +751,189 @@
       }
     }
 
-  #stage-4{
-    position: relative; 
-    // bottom: 10%;
-    margin-top: 0;
-    height: 439px;
-    #timer-backdrop{
-      position: relative;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 40px;
-      width: 90%;
-      height: 120px;
-      background-color: #F2F2F2;
-      border-radius: 60px;
-      svg {
-        position: absolute;
-        top: -20px;
-        left: 60px;
-        width: 120%;
-        height: 120%;
-      }
-      #bd-content{
-        #flight-display{
-          margin:0; 
-          padding-top: 35px; 
-          font-size: 20px; 
-          font-weight: 700; 
-          padding-left: 30px; 
-          opacity: 0.6;
-        }
-      }
-      #display-time{
-        position: absolute;
-        top: 45px;
-        left: 140px;
-        width: 120px;
-        color: white;
-        text-align: right;
-        span#mn-time{
-          padding-right: 5px;
-          font-size: 50px;
-        }
-        span#mn-unit{
+    #stage-4{
+      position: relative; 
+      // bottom: 10%;
+      margin-top: 0;
+      height: 439px;
+      #timer-backdrop{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        width: 90%;
+        height: 120px;
+        background-color: #F2F2F2;
+        border-radius: 60px;
+        svg {
           position: absolute;
-          margin-top: 20px;
-          font-size: 18px;
-          top: -15px;
-          left: 115px;
+          top: -20px;
+          left: 60px;
+          width: 120%;
+          height: 120%;
+        }
+        #bd-content{
+          #flight-display{
+            margin:0; 
+            padding-top: 35px; 
+            font-size: 20px; 
+            font-weight: 700; 
+            padding-left: 30px; 
+            opacity: 0.6;
+          }
+        }
+        #display-time{
+          position: absolute;
+          top: 45px;
+          left: 140px;
+          width: 120px;
+          color: white;
+          text-align: right;
+          span#mn-time{
+            padding-right: 5px;
+            font-size: 50px;
+          }
+          span#mn-unit{
+            position: absolute;
+            margin-top: 20px;
+            font-size: 18px;
+            top: -15px;
+            left: 115px;
+          }
         }
       }
+      #stage-4-btn{
+        margin-top: 7%;
+        width: 100%;
+        background-color: #F84048; 
+        color: white; 
+        text-align: center; 
+        font-size: 25px; 
+        font-weight: 700; 
+        padding: 20px 0 20px 0; 
+        cursor: pointer;
+      }
     }
-    #stage-4-btn{
-      margin-top: 7%;
-      width: 100%;
-      background-color: #F84048; 
-      color: white; 
-      text-align: center; 
-      font-size: 25px; 
-      font-weight: 700; 
-      padding: 20px 0 20px 0; 
-      cursor: pointer;
-    }
-  }
   }
 
 }
+
+
+
+
+@-webkit-keyframes run-to-car {
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
+}
+@-moz-keyframes run-to-car {
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
+}
+@-o-keyframes run-to-car {
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
+}
+@-ms-keyframes run-to-car {
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
+}
+@keyframes run-to-car {
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
+}
+
+
+@-webkit-keyframes traffic-car {
+  0% {left: -163px;}
+  100% {left: 5px;}
+}
+
+
+
+@-webkit-keyframes car-race {
+  0% {left: -20%;}
+  100% {left: 120%;}
+}
+@-moz-keyframes car-race {
+  0% {left: -20%;}
+  100% {left: 120%;}
+}
+@-o-keyframes car-race {
+  0% {left: -20%;}
+  100% {left: 120%;}
+}
+@-ms-keyframes car-race {
+  0% {left: -20%;}
+  100% {left: 120%;}
+}
+@keyframes car-race {
+  0% {left: -20%;}
+  100% {left: 120%;}
+}
+
+
+@-webkit-keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+@-moz-keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+@-o-keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+@-ms-keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+@keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+
+@-webkit-keyframes car-drive {
+   0% {transform: translate3d(0,0,0);
+       -webkit-transform:translate3d(0,0,0);
+     }
+   100% {transform: translate3d(1100%,0,0);
+       -webkit-transform:translate3d(1100%,0,0);}
+}
+
+
+@-webkit-keyframes palm {
+   0% {transform: translate3d(0,0,0);
+       -webkit-transform:translate3d(0,0,0);}
+   100% {transform: translate3d(-1100%,0,0);
+       -webkit-transform:translate3d(-1100%,0,0);}
+}
+@-moz-keyframes palm {
+  0% {right: -10%;}
+  100% {right: 100%;}
+}
+@-o-keyframes palm {
+  0% {right: -10%;}
+  100% {right: 100%;}
+}
+@-ms-keyframes palm {
+  0% {right: -10%;}
+  100% {right: 100%;}
+}
+@keyframes palm {
+  0% {right: -10%;}
+  100% {right: 100%;}
+}
+
+
 

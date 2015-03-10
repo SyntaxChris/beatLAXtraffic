@@ -13,13 +13,13 @@
   <% end %>
 
   <div class="chance-time">
-    <h3>
+    <h3 class="main-question">
       {{ currentNode.decision_point.situation }}
     </h3>
   </div>
 
   <div class="congrats" style="display:none;">
-    <h1>Congratulations!</h1>
+    <h3 class="main-question">Congratulations!</h1>
     <h3 class="main-question">You got a parking spot!</h3>
     <div ng-click="submit(findDecisionByString('Not Full').id, true)" class="next plane-advance" id="spin-parking-win">
       CONTINUE
@@ -27,7 +27,7 @@
   </div>
 
   <div class="fail" style="display:none">
-    <h1 class="main-question">Dang!</h1>
+    <h3 class="main-question">Dang!</h1>
     <h3 class="main-question">The parking lot is full.</h3>
     <button ng-click="submit(findDecisionByString('Full').id, true)" class="next plane-advance" id="spin-parking-lose">
       NEXT
