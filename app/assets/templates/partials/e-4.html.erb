@@ -5,14 +5,16 @@
     <div ng-repeat="answer in currentNode.answers">
       <div class="btn-wrapper">
         <div ng-if="answer.answer.indexOf('Specify') === -1">
-          <button class="question-1-btn car-progress" 
-                  ng-click="immediateSubmitAnswer(answer); advanceCar()">
+          <button 
+            class="question-1-btn car-progress" 
+            ng-click="immediateSubmitAnswer(answer); advanceCar()">
             {{ answer.answer }}
           </button> 
         </div>
         <div ng-if="answer.answer.indexOf('Specify') > -1">
-          <button class="question-1-btn-other" 
-                  ng-click="addAnswerToCurrentAnswers(answer)">
+          <button 
+            class="question-1-btn-other" 
+            ng-click="addAnswerToCurrentAnswers(answer)">
             {{ answer.answer }}
           </button> 
         </div>  
