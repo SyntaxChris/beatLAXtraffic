@@ -376,9 +376,6 @@
 @media screen and (max-width: 400px) and (min-width: 0px) and (orientation: landscape) {
   #interactive-map {
     .top-half{
-      h3.main-question{
-        font-size: 10px;
-      }
     }
     .select-path-btn .path-letter {
       top: -3px;
@@ -420,35 +417,10 @@
   }
 }
 
-// @media only screen and (min-width : 768px) {
-//   #circle-pickup {
-//     h3 {
-//       margin-top: 80px;
-//       margin-bottom: 40px;
-//       font-size: 1.6em;
-//     }
-//     .content-c {
-//       display: inline-block;
-//       vertical-align: middle;
-//     }
-//     .buttons-c {
-//       width: 275px;
-//     }
-//     .count-c {
-//       //margin-top: -30px;
-//     }
-//     .circle-number {
-//       font-size: 7em;
-//       height: 60px;
-//     }
-//   }
-// }
-
 @media only screen and (max-width: 450px){
   #interactive-map{
     .bottom-half{
       .instructions{
-        // margin-top: -10%;
         &:after {
           content: "";
           border-width: 0;

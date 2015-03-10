@@ -1,32 +1,21 @@
 <div id="last-question-set">
-  <!-- set 1 -->
+  <h3 class="main-question">{{ currentNode.question.question }}</h3>
   <div id="question-set-1">
-    <div class="large-8 medium-8 small-12 larger-centered medium-centered small-centered columns">
-      <h3 class="main-question">{{ currentNode.question.question }}</h3>
-    </div>
 
     <div ng-repeat="answer in currentNode.answers">
-      <div ng-if="answer.answer.indexOf('Specify') === -1">
-        <div class="row" style="margin-bottom: 1.5%">
-          <div class="large-5 medium-5 small-9 large-centered medium-centered small-centered columns last-questions">
-            <div class="question-wrapper-1 car-progress" ng-click="immediateSubmitAnswer(answer); advanceCar()">
-              <div class="question-text" ng-id="{{ 'q' + $index }}">
-                {{ answer.answer }}
-              </div>
-            </div>
-          </div>
+      <div class="btn-wrapper">
+        <div ng-if="answer.answer.indexOf('Specify') === -1">
+          <button class="question-1-btn car-progress" 
+                  ng-click="immediateSubmitAnswer(answer); advanceCar()">
+            {{ answer.answer }}
+          </button> 
         </div>
-      </div>
-      <div ng-if="answer.answer.indexOf('Specify') > -1">
-        <div class="row" style="margin-bottom: 1.5%; margin-top: 3%"  id="other-last">
-          <div class="large-5 medium-5 small-9 large-centered medium-centered small-centered columns last-questions">
-            <div class="question-wrapper-1-other" ng-click="addAnswerToCurrentAnswers(answer)">
-              <div class="question-text">
-                {{ answer.answer }}
-              </div>
-            </div>
-          </div>
-        </div>
+        <div ng-if="answer.answer.indexOf('Specify') > -1">
+          <button class="question-1-btn-other" 
+                  ng-click="addAnswerToCurrentAnswers(answer)">
+            {{ answer.answer }}
+          </button> 
+        </div>  
       </div>
     </div>
 
@@ -38,10 +27,14 @@
             <div id="char-count-last-questions" style="color: #B2C4D4"></div>
           </div>
           <div class="item-2">
-            <div class="other-btn car-progress" id="last-other-save" ng-click="immediateSubmitAnswer(answer); advanceCar()">Save</div>
+            <button class="other-btn car-progress" id="last-other-save" ng-click="immediateSubmitAnswer(answer); advanceCar()">
+              Save
+            </button>
           </div>
           <div class="item-3">
-            <div class="other-btn" id="last-other-cancel" ng-click="resetCurrentOther()">Cancel</div>
+            <button class="other-btn" id="last-other-cancel" ng-click="resetCurrentOther()">
+              Cancel
+            </button>
           </div>
         </div>
       </div>
@@ -49,4 +42,5 @@
 
   </div>
 </div>
+
 

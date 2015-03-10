@@ -2,7 +2,7 @@ $(document).ready(function(){
   var $body = $('body');
 
   $body
-    .on('click',".question-wrapper-1-other", function(){
+    .on('click',".question-1-btn-other", function(){
       if($(".free-form-popup").css('display') === "none")
         $(".free-form-popup").show();
       else
@@ -15,9 +15,11 @@ $(document).ready(function(){
       }
       $(".free-form-popup").hide();
     })
-    .on('click', '.question-wrapper-3', function(){
-      $('.question-wrapper-3').removeClass('q3-clicked');
-      $(this).addClass('q3-clicked');
-      $('.next').fadeIn();
+    .on('click',".question-3-btn", function(){
+      $(".question-3-btn").removeClass("selected");
+      $(this).addClass("selected");
+
+      if($(".finish-lawa").css('display') === "none")
+        $(".finish-lawa").fadeIn();
     })
 });

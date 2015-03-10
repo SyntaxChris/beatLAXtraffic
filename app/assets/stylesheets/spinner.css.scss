@@ -12,17 +12,6 @@
 	button{
 		font-family: 'Quicksand', sans-serif;
 	}
-	h1{
-		color:white;
-		font-weight: 700;
-	}
-	h3{
-		color:white;
-	}
-	h3.main-question{
-		margin-top: 0;
-		font-weight: 700;
-	}
 	.next#spin-parking-win,
 	.next#spin-parking-lose,
 	.next#spin-pickup-win,
@@ -85,6 +74,26 @@
 		svg {
 			width: 90%;
 			height: 90%;
+		}
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	#pickup-spinner-question{
+		.spinner-components {
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+			margin-top: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	#pickup-spinner-question{
+		.continue-btn {
+			margin-bottom: 10%;
 		}
 	}
 }
@@ -257,25 +266,7 @@
     100%{ transform: rotate(1597deg);}
 }
 
-@media screen and (min-width: 1000px) {
-	#pickup-spinner-question{
-		.spinner-components {
-			position: relative;
-			margin-left: auto;
-			margin-right: auto;
-			width: 100%;
-			margin-top: 0;
-		}
-	}
-}
 
-@media screen and (max-width: 1000px) {
-	#pickup-spinner-question{
-		.continue-btn {
-			margin-bottom: 10%;
-		}
-	}
-}
 
 
 
