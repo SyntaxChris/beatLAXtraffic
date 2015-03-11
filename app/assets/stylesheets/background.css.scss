@@ -313,12 +313,12 @@ body {
 }
 
 
-@-webkit-keyframes slow-cloud{
-   0% {transform: translate3d(0, 0, 0); 
-       -webkit-transform:translate3d(0, 0, 0); }
-   100% {transform: translate3d(500%, 0, 0);
-       -webkit-transform:translate3d(500%, 0, 0);}
-}
+// @-webkit-keyframes slow-cloud{
+//    0% {transform: translate3d(0, 0, 0); 
+//        -webkit-transform:translate3d(0, 0, 0); }
+//    100% {transform: translate3d(500%, 0, 0);
+//        -webkit-transform:translate3d(500%, 0, 0);}
+// }
 @-webkit-keyframes dopa-cloud{
    0% {transform: translate3d(0, 0, 0); 
        -webkit-transform:translate3d(0, 0, 0); }
