@@ -182,8 +182,39 @@ body, html,button,pre {
 
 }
 
+@media only screen and (max-width: 500px){
+	.skip{
+		&.upper{
+			top: 0%;
+		}	
+	}
+}
+
 @media only screen and (max-width : 400px) {
 	body{
+		.skip{
+			cursor: pointer;
+			position: absolute;
+			z-index: 100;
+			right: 0;
+			top: 70%;
+			width: 5%;
+			min-width: 50px;
+			max-width: 100px;
+			padding:0;
+			background: none !important;
+			outline: none !important;
+			svg{
+				width: 115%;
+				height: 115%;
+			}
+			&:hover{
+				background: none;
+			}
+			&.upper{
+				top: 0%;
+			}	
+		}
 		h3.main-question{
 			color: white;
 			font-weight: 700;

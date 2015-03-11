@@ -1,13 +1,31 @@
 <div ng-controller="NodeCtrl">
   <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))"></div>
-  <!-- CURRENT QUESTION TITLE: {{ currentNode.question.question }} -->
   <!-- skip button -->
+
+<!--   <button ng-class="{
+   14           'left-button' : $index === 0,
+   15           'center-button' : $index === 1,
+   ..
+   22          </div> -->
   <div ng-show="currentNode.skippable">
     <div ng-if="currentNode.dashboard_type === 'plane'">
-      <button class="skip plane-advance" ng-click="submit(null, true)" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'" class="plane-advance"></button> 
+    <!-- sorry....this is gross -->
+      <button class="skip plane-advance" 
+              ng-click="submit(null, true)" 
+              ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"
+              ng-class="{
+                   
+              }">
+      </button> 
     </div>
     <div ng-if="currentNode.dashboard_type === 'car'">
-      <button class="skip car-progress" ng-click="submit(); advanceCar()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></button> 
+      <button class="skip car-progress" 
+              ng-click="submit(); advanceCar()" 
+              ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"
+              ng-class="{
+                
+              }">
+      </button> 
     </div>
   </div>
   <!-- template -->

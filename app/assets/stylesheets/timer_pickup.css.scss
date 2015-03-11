@@ -10,23 +10,6 @@
     position: relative;
     z-index: 2;
   }
-  h3 {
-    color: white;
-    width: 80%;
-    margin: 0px auto 10px;
-    text-align: center;
-    font-size: 1.1em;
-    letter-spacing: .8px;
-  }
-  .sudo-header{
-    color: white;
-    text-shadow: 0 3px 5px rgba(0,0,0,.5);
-    font-weight: 700;
-    text-align: center;
-    font-size: 3vw;
-    width: 200%;
-    margin-left: -50%;
-  }
   .bottom-question{
     color: white;
     margin-top: 10%;
@@ -178,9 +161,9 @@
 
 @media only screen and (max-width : 400px) {
   #timer-pickup {
-    margin-top: -4%;
-    .skip{
-      margin-top: 100%;
+    h3.main-question{
+      margin-top: 5%;
+      margin-bottom: 5%;
     }
     .content-c{
       .timer-c {
@@ -196,9 +179,6 @@
 @media only screen and (max-width : 640px) {
   #timer-pickup {
     margin-top: -2%;
-    .skip{
-      margin-top: 80%;
-    }
     .sudo-header{
       text-shadow: 0 3px 5px rgba(0,0,0,.5);
       font-weight: 700;

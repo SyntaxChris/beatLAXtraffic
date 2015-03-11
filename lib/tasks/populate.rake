@@ -196,7 +196,7 @@ namespace :populate do
         b1a4= Answer.create(question_id: b1q.id, answer: "Other (Specify)", icon_name: nil, custom_order: 4)
 
     b2 = Node.create(nickname: "B 2", is_decision_point: false , branch_id: green.id, template_name: "b-2",  dashboard_type: "plane")
-      b2q = Question.create(node_id: b2.id, question: "You need to time your parking correctly. How much time will you put in the meter?", question_type_id: single_choice.id)
+      b2q = Question.create(node_id: b2.id, question: "You need to time your parking correctly. How long are you going to park for?", question_type_id: single_choice.id)
       # ^ this will need alt question text
         b2a1= Answer.create(question_id: b2q.id, answer: "Less than 30 minutes", icon_name: nil, custom_order: 2)
         b2a2= Answer.create(question_id: b2q.id, answer: "30 - 60 minutes", icon_name: nil, custom_order: 4)
@@ -360,7 +360,7 @@ namespace :populate do
         dp10d1 = Decision.create(decision_point_id: dp10dp.id, decision: "Yes", destination_node_id: b4.id)
         dp10d2 = Decision.create(decision_point_id: dp10dp.id, decision: "No", destination_node_id: dp11.id)
 
-      dp6dp = DecisionPoint.create(node_id: dp6.id, situation: "You finally arrive at the lot and the parking lot is full. What do you do next?")
+      dp6dp = DecisionPoint.create(node_id: dp6.id, situation: "There is no parking anywhere! Where to now?")
         dp6d1 = Decision.create(decision_point_id: dp6dp.id, decision: "Go to another parking structure", destination_node_id: dp10.id)
         dp6d2 = Decision.create(decision_point_id: dp6dp.id, decision: "Hope to catch your passenger at the curb", destination_node_id: a1.id)
         dp6d3 = Decision.create(decision_point_id: dp6dp.id, decision: "Leave and wait off site until passenger is ready to be picked up at the curb", destination_node_id: c1.id)
@@ -373,7 +373,7 @@ namespace :populate do
         dp5d2 = Decision.create(decision_point_id: dp5dp.id, decision: "Full", destination_node_id: dp6.id)
 
     dp3 = Node.create(nickname: "DP 3", is_decision_point: true , branch_id: purple.id, template_name: "dp-3", dashboard_type: "plane", skippable: false)
-      dp3dp = DecisionPoint.create(node_id: dp3.id, situation: "What do you do now?")
+      dp3dp = DecisionPoint.create(node_id: dp3.id, situation: "That didn't work.  Where to now?")
         dp3d1 = Decision.create(decision_point_id: dp3dp.id, decision: "Park and meet your passenger inside the terminal", destination_node_id: b1.id)
         dp3d2 = Decision.create(decision_point_id: dp3dp.id, decision: "Continue circling around terminal") # destination for this relies on dp2 below
         dp3d3 = Decision.create(decision_point_id: dp3dp.id, decision: "Leave and wait off site until passenger is ready to be picked up at the curb", destination_node_id: c1.id)
