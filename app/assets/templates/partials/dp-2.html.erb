@@ -15,8 +15,6 @@
   <div class="chance-time">
     <h3 class="main-question">
       {{ currentNode.decision_point.situation }}
-      {{ outcome = 1; }}
-      outcome = {{ outcome }}
     </h3>
   </div>
 
@@ -84,6 +82,6 @@
   </div>
 
   <!-- pickup logic -->
-  <div id="pickup-chance" data-outcome={{outcome}}></div>
+  <div id="pickup-chance" data-outcome={{spinnerOutcome}}></div>
 </div>
   <!-- end pickup spinner
