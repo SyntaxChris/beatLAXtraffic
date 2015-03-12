@@ -29,6 +29,7 @@ public/assets/**
 
 # Ingore vim swapfiles
 **.swp
+**.swo
 
 # Rails Best Practices Gem
 rails_best_practices_output.html

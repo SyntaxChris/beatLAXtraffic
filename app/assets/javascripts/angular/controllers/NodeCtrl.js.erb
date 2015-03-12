@@ -117,6 +117,8 @@ angular.module('lawaApp')
         }
 
         $scope.amenities = [];
+
+        // TODO: need to set up the spinner outcome here as well, in the case of a refresh
       };
       // end setup function
 
@@ -454,6 +456,7 @@ angular.module('lawaApp')
 
         // TODO: this is gross and should be handled in a better way. not least of all
         //       because it needs to be replicated up in the setup in the case of reloads
+
         // set default for gps question and other templates-specific settings
         if ($scope.currentNode.template_name === "dp-1") {
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
@@ -467,8 +470,19 @@ angular.module('lawaApp')
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Continue circling around terminal"});
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
           $scope.addOneToCircling();
-        //} else if($scope.currentNode.template_name === "e-1"){
-          // $scope.setShowDashboard(false);
+        // for spinner setups:
+        } else if($scope.currentNode.template_name === "dp-2"){
+          // if never been to this node before,
+          //   return a random selection of 0/1
+          // if have been here before,
+          //   return 0
+          // set `$scope.spinnerOutcome` to the above
+        }
+        } else if($scope.currentNode.template_name === "dp-5"){
+        }
+        } else if($scope.currentNode.template_name === "dp-7"){
+        }
+        } else if($scope.currentNode.template_name === "dp-10"){
         }
       };
 
@@ -480,8 +494,7 @@ angular.module('lawaApp')
         })
       }
 
-      
-      // set larger scope variable for flight scenario   
+      // set larger scope variable for flight scenario
       $scope.flightScenario;
       // initialize in template before dashboard template is rendered (2-2)
       $scope.initializeDash = function(){

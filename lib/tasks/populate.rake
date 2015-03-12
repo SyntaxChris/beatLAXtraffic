@@ -327,6 +327,7 @@ namespace :populate do
         dp1d4 = Decision.create(decision_point_id: dp1dp.id, decision: "Meet at a new facility that has a 10 min connecting tram to the terminals", destination_node_id: gq1itf.id)
         dp1d5 = Decision.create(decision_point_id: dp1dp.id, decision: "Default view", destination_node_id: b1.id)
 
+    # TODO: will be removed!
     dp8 = Node.create(nickname: "DP 8", is_decision_point: true , branch_id: orange.id, template_name: "dp-8", dashboard_type: "plane", skippable: false)
       dp8dp = DecisionPoint.create(node_id: dp8.id, situation: "Your pick-up isn't calling and you can't reach them. What do you do now?")
         dp8d1 = Decision.create(decision_point_id: dp8dp.id, decision: "Go park in the terminal parking area", destination_node_id: b1.id)
@@ -334,13 +335,12 @@ namespace :populate do
         dp8d3 = Decision.create(decision_point_id: dp8dp.id, decision: "Keep waiting", destination_node_id: c4.id)
         dp8d4 = Decision.create(decision_point_id: dp8dp.id, decision: "Meet at a new facility that has a 10 min connecting tram to the terminals", destination_node_id: ns4.id)
 
-    # TODO: need to re-do 7s. consult updated map
+    # spinner
     dp7 = Node.create(nickname: "DP 7", is_decision_point: true , branch_id: orange.id, template_name: "dp-7", dashboard_type: "plane", skippable: false)
-      dp7dp = DecisionPoint.create(node_id: dp7.id, situation: "Has your passenger called to be picked up?")
-        dp7d1 = Decision.create(decision_point_id: dp7dp.id, decision: "Yes", destination_node_id: e1.id)
-        dp7d2 = Decision.create(decision_point_id: dp7dp.id, decision: "No", destination_node_id: dp8.id)
+      dp7dp = DecisionPoint.create(node_id: dp7.id, situation: "Okay now you're parked. How long will you wait for?")
+        dp7d1 = Decision.create(decision_point_id: dp7dp.id, decision: "5 Minutes", destination_node_id: e1.id)
+        dp7d2 = Decision.create(decision_point_id: dp7dp.id, decision: "An eternity", destination_node_id: e1.id)
 
-    # i think this is no longer used?
     # TODO: remove
     dp7a = Node.create(nickname: "DP 7a", is_decision_point: true , branch_id: orange.id, template_name: "dp-7a", dashboard_type: "plane", skippable: false)
       dp7adp = DecisionPoint.create(node_id: dp7a.id, situation: "Is the passenger late?")
@@ -349,6 +349,7 @@ namespace :populate do
 
     ## start weird intertwined DPs
     dp11 = Node.create(nickname: "DP 11", is_decision_point: true , branch_id: green.id, template_name: "dp-11", dashboard_type: "plane", skippable: false)
+    # spinner
     dp10 = Node.create(nickname: "DP 10", is_decision_point: true , branch_id: green.id, template_name: "dp-10", dashboard_type: "plane", skippable: false)
     dp6 = Node.create(nickname: "DP 6", is_decision_point: true , branch_id: green.id, template_name: "dp-6", dashboard_type: "plane", skippable: false)
 
@@ -356,6 +357,7 @@ namespace :populate do
         dp11d1 = Decision.create(decision_point_id: dp11dp.id, decision: "Keep trying", destination_node_id: dp10.id)
         dp11d2 = Decision.create(decision_point_id: dp11dp.id, decision: "Give up", destination_node_id: dp6.id)
 
+      # spinner
       dp10dp = DecisionPoint.create(node_id: dp10.id, situation: "Do you find parking?")
         dp10d1 = Decision.create(decision_point_id: dp10dp.id, decision: "Yes", destination_node_id: b4.id)
         dp10d2 = Decision.create(decision_point_id: dp10dp.id, decision: "No", destination_node_id: dp11.id)
@@ -367,6 +369,7 @@ namespace :populate do
         dp6d4 = Decision.create(decision_point_id: dp6dp.id, decision: "Meet at a new facility that has a 10 min connecting tram to the terminals", destination_node_id: ns4.id)
     ## end weird intertwined DPs
 
+    # spinner
     dp5 = Node.create(nickname: "DP 5", is_decision_point: true , branch_id: green.id, template_name: "dp-5", dashboard_type: "plane", skippable: false)
       dp5dp = DecisionPoint.create(node_id: dp5.id, situation: "You arrive at the parking garage and find it is...")
         dp5d1 = Decision.create(decision_point_id: dp5dp.id, decision: "Not Full", destination_node_id: b4.id)
@@ -379,6 +382,7 @@ namespace :populate do
         dp3d3 = Decision.create(decision_point_id: dp3dp.id, decision: "Leave and wait off site until passenger is ready to be picked up at the curb", destination_node_id: c1.id)
         dp3d4 = Decision.create(decision_point_id: dp3dp.id, decision: "Meet at a new facility that has a 10 min connecting tram to the terminals", destination_node_id: ns4.id)
 
+    # spinner
     dp2 = Node.create(nickname: "DP 2", is_decision_point: true , branch_id: purple.id, template_name: "dp-2", dashboard_type: "plane", skippable: false)
       dp2dp = DecisionPoint.create(node_id: dp2.id, situation: "You're trying to pull-over and pick up your passenger in traffic. Are you successful?")
         dp2d1 = Decision.create(decision_point_id: dp2dp.id, decision: "Yes", destination_node_id: e1.id)
@@ -403,8 +407,10 @@ namespace :populate do
     b3.update(next_node_id: dp5.id)
     b4.update(next_node_id: e1.id)
     c1.update(next_node_id: c2.id)
-    c2.update(next_node_id: dp7.id)
-    c4.update(next_node_id: e1.id)
+    c2.update(next_node_id: c4.id) # chopping out NO branch of DP7
+    c4.update(next_node_id: dp7.id)
+    #c2.update(next_node_id: dp7.id) <-- old map.
+    #c4.update(next_node_id: e1.id)
     e1.update(next_node_id: noitf1.id)
     e1itf.update(next_node_id: e2.id)
     e2.update(next_node_id: e3.id)
