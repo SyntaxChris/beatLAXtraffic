@@ -9,7 +9,7 @@ $(document).ready(function(){
 	$body.on('click', '.tile svg', function(){
 		var tile = $(this).parents().eq(0).attr('id');
 		var checkMark = $(this).parents().eq(3).find('.tile-checkmark div svg');
-	
+		
 		switch(tile){
 			case 'phone':
 				if(phone === 0){

@@ -374,9 +374,7 @@
 }
 
 @media screen and (max-width: 400px) and (min-width: 0px) and (orientation: landscape) {
-  #interactive-map {
-    .top-half{
-    }
+  #interactive-map {    
     .select-path-btn .path-letter {
       top: -3px;
 
@@ -419,6 +417,11 @@
 
 @media only screen and (max-width: 450px){
   #interactive-map{
+    h3.main-question{
+      font-size: 5vw;
+      text-shadow: 0 2px 2px rgba(0,0,0,.6);
+      -webkit-text-shadow: 0 2px 2px rgba(0,0,0,.6);
+    }
     .bottom-half{
       .instructions{
         &:after {

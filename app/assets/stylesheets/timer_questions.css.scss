@@ -242,7 +242,7 @@
 			#q-pnl{
 				position: relative;
 				z-index: 5;
-				top: -10px;
+				top: -5px;
 				width: 48%;
 				margin-left: auto;
 				margin-right: auto;
@@ -253,6 +253,7 @@
 					color: white;
 					font-weight: 700;
 					font-size: 4vw;
+					line-height: 1;
 					text-shadow: 0 0 10px rgba(0,0,0,.3);
 					text-align: center;
 					#text-0,
@@ -270,6 +271,7 @@
 							text-align: center;
 							margin-bottom: 50%;
 							position: absolute;
+
 						}
 					}
 					.btm{

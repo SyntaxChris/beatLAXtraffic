@@ -451,7 +451,7 @@
 @media screen and (max-width: 450px) {
 	#icon-questions{
 		h3.main-question{
-			font-size: 6vw;
+			font-size: 3.5vw;
 		}
 		.answer-container{
 			position: relative;
@@ -485,6 +485,7 @@
 					padding-top: 13px;
 					.next-btn{
 						display: none;
+						font-weight: 700;
 					}
 					.clone-container{
 						position: absolute;
@@ -510,10 +511,10 @@
 				position: relative;
 				margin-left: auto;
 				margin-right: auto;
-				margin-top: 1%;
+				margin-top: 3%;
 				margin-bottom: 5%;
-				padding: 3px;
-				width: 150px;
+				padding: 5px;
+				width: 200px;
 				font-size: 15px;
 				background-color: #EE4444;
 				color: white;
@@ -558,7 +559,7 @@
 				position: absolute;
 				top: 1%;
 				width: 100%;
-				height: 98%;
+				height: 94%;
 				margin-left: -10%;
 				background-color: white;
 				border-radius: 15px;
@@ -575,6 +576,7 @@
 					svg {
 						position: relative;
 						margin: 0 auto;
+						margin-top: -15%;
 						cursor: pointer;
 						width: 100%;
 						height: 100%;
