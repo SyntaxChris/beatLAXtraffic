@@ -58,11 +58,11 @@ namespace :populate do
 
     gq1a = Node.create(nickname: "GQ 1 A", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-a", dashboard_type: "plane")
       gq1aq = Question.create(node_id: gq1a.id, question: "Why do you choose this strategy?", question_type_id: many_choice.id)
-        gq1aa1 = Answer.create(question_id: gq1aq.id, answer: "To minimize the hassle for me", icon_name: nil)
-        gq1aa2 = Answer.create(question_id: gq1aq.id, answer: "To make it convenient for my passenger", icon_name: nil)
+        gq1aa1 = Answer.create(question_id: gq1aq.id, answer: "To make it convenient for my passenger", icon_name: nil)
+        gq1aa2 = Answer.create(question_id: gq1aq.id, answer: "Other (Explain)", icon_name: nil)
         gq1aa3 = Answer.create(question_id: gq1aq.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil)
         gq1aa4 = Answer.create(question_id: gq1aq.id, answer: "To avoid paying for parking", icon_name: nil)
-        gq1aa5 = Answer.create(question_id: gq1aq.id, answer: "Other (Explain)", icon_name: nil)
+        gq1aa5 = Answer.create(question_id: gq1aq.id, answer: "To minimize the hassle for me", icon_name: nil)
 
     gq1b = Node.create(nickname: "GQ 1 B", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-b", dashboard_type: "plane")
       gq1bq = Question.create(node_id: gq1b.id, question: "Why do you choose this strategy?", question_type_id: many_choice.id)
