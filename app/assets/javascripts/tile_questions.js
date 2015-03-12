@@ -9,7 +9,15 @@ $(document).ready(function(){
 	$body.on('click', '.tile svg', function(){
 		var tile = $(this).parents().eq(0).attr('id');
 		var checkMark = $(this).parents().eq(3).find('.tile-checkmark div svg');
-		
+		var tileBbl = $(this).parent().parent();
+		debugger;
+		if(tileBbl.hasClass('selected')){
+			tileBbl.removeClass('selected');
+		}
+		else{
+			tileBbl.addClass('selected');
+		}
+
 		switch(tile){
 			case 'phone':
 				if(phone === 0){
