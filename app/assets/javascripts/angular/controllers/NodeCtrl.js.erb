@@ -109,6 +109,9 @@ angular.module('lawaApp')
         $scope.currentTimeInterval = 0;
         $scope.amenities = [];
 
+        // for spinner setups:
+        var randomSpinners = ["dp-2", "dp-5", "dp-10"];
+        var forcedSuccessSpinners = ["dp-7"]
         // template-specific details:
         if ($scope.currentNode.template_name === "dp-1") {
           var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
@@ -123,15 +126,10 @@ angular.module('lawaApp')
           $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
           $scope.addOneToCircling();
         // for spinner setups:
-        // TODO: refactor this goat's nest you horrible, horrible person:
-        } else if($scope.currentNode.template_name === "dp-2"){
+        } else if(_.include(randomSpinners, $scope.currentNode.template_name)){
           $scope.spinnerOutcome = $scope.getSpinnerOutcomeByHistory();
-        } else if($scope.currentNode.template_name === "dp-5"){
-          $scope.spinnerOutcome = $scope.getSpinnerOutcomeByHistory();
-        } else if($scope.currentNode.template_name === "dp-7"){
+        } else if(_.include(forcedSuccessSpinners, $scope.currentNode.template_name)){
           $scope.spinnerOutcome = 0; // force success for this spinner
-        } else if($scope.currentNode.template_name === "dp-10"){
-          $scope.spinnerOutcome = $scope.getSpinnerOutcomeByHistory();
         }
       };
 
@@ -281,7 +279,7 @@ angular.module('lawaApp')
       };
 
       // used for ITF-3 departing amenities
-      // will actually just null out the previous amenties after submit, rather than 
+      // will actually just null out the previous amenties after submit, rather than
       // creating an additional set of functions that do the same thing.
       //$scope.departingAmenitySelected = function(answer){
       //  if(_.findWhere($scope.departingAmenities, answer))
@@ -472,7 +470,7 @@ angular.module('lawaApp')
         // console.log('flight time remaining variable: '+ $scope.variables.flight_time_remaining);
         // console.log('calculated plane progress: '+ $scope.planeProgress);
         // user doesn't add time to time elapsed guess, but we need to record the answer anyway:
-        
+
         if($scope.flightScenario === undefined){
           if($scope.variables.flight_time_remaining === 15){
             $scope.flightScenario = 45;
@@ -562,7 +560,7 @@ angular.module('lawaApp')
           return "";
         }
       }
-      
+
       var iconPaths = {}
       <% Answer.all.each do |a| %>
         <%= "iconPaths['#{a.id}'] = {iconPath: '#{asset_path "svgs/_#{a.icon_name}.html"}'}" unless a.icon_name.nil? %>
@@ -575,23 +573,6 @@ angular.module('lawaApp')
           return "";
         }
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       //get all icon paths for answers
       // go through all answers in RUBY, create an icon path from their icon-name
