@@ -10,51 +10,13 @@ angular.module('lawaApp')
             $scope.surveySessionId = data.session_id;
             $scope.respondentId = data.respondent_id;
             $scope.variables = data.variables;
+            $scope.seenNodes = data.seen_nodes;
             $scope.setCurrentNodeById(data.current_node_id);
             $scope.hours_elapsed = Math.floor($scope.variables.time_elapsed / 60);
             $scope.minutes_elapsed = $scope.variables.time_elapsed % 60;
             $scope.planeProgress = $scope.calculatePlaneProgress($scope.variables.flight_time_remaining);
             $scope.currentFlightTimeRemaining = $scope.variables.landing_time;
             $scope.respondentCurrentNodeId = data.current_node_id;
-            // for development purposes only. add fully-working nodes here
-            // to remove debugging printing out on front end:
-            $scope.nodesWorking = [
-              // add the clean template name, like this:
-              '/assets/partials/splash.html',
-              '/assets/partials/sq-2-2.html',
-              '/assets/partials/sq-1.html',
-              '/assets/partials/dp-1.html',
-              '/assets/partials/a-1.html',
-              '/assets/partials/a-2.html',
-              '/assets/partials/dp-2.html',
-              '/assets/partials/dp-3.html',
-              '/assets/partials/b-1.html',
-              '/assets/partials/b-2.html',
-              '/assets/partials/b-3.html',
-              '/assets/partials/dp-5.html',
-              '/assets/partials/b-4.html',
-              '/assets/partials/c-1.html',
-              '/assets/partials/c-2.html',
-              '/assets/partials/c-4.html',
-              '/assets/partials/dp-7.html',
-              '/assets/partials/dp-6.html',
-              '/assets/partials/dp-10.html',
-              '/assets/partials/dp-11.html',
-              '/assets/partials/dp-8.html',
-              '/assets/partials/e-1.html',
-              '/assets/partials/e-2.html',
-              '/assets/partials/e-3.html',
-              '/assets/partials/e-4.html',
-              '/assets/partials/e-5.html',
-              '/assets/partials/e-6.html',
-              '/assets/partials/itf-2.html',
-              '/assets/partials/no-itf-1.html',
-              '/assets/partials/ns-5.html',
-              '/assets/partials/ns-4.html'
-            ];
-
-            //$scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
-            ///////////template_name
 
             $scope.variables["text_from"] = null;
             if($scope.variables.original_who_picking_up === "Coworker"){
@@ -88,26 +50,24 @@ angular.module('lawaApp')
             $scope.tenMinutesAgo = tenMinutesBack.toLocaleTimeString(
                 'en-US', { hour12: true, hour:"numeric", minute:"numeric"}
               );
-          });
 
-          $scope.setRootBodyClass = function(className){
-            var colors = ["red", "green", "pink"];
-            $rootScope.setBodyClass(_.sample(colors, 1)[0]);
-          };
+            // set default-selected for gps question, spinner outcome other
+            // templates-specific settings. also clears out any current data:
+            $scope.setUpTemplateDefaults();
+          }); // end of respondent.get success
 
           $scope.currentDecisionDestination = null;
           $scope.currentAnswers = [];
-          $scope.currentOther = {
-            present: false,
-            text: null, answerId: null
-          };
+          //$scope.currentOther = {
+          //  present: false,
+          //  text: null, answerId: null
+          //};
           $scope.currentTimeInterval = 0;
 
           $scope.parkingTimeSpent = 5;
           $scope.parkingTextOutcome = ["Nope, no parking", "This lot's all full", "Completely packed", "None here either", "No spaces", "Can't fit there"];
           $scope.parkingTextIndex = 0;
-        });
-        // end get and set up all nodes
+        }); // end get and set up all nodes
 
         $scope.signColors = {
           1: 'blue',
@@ -116,7 +76,8 @@ angular.module('lawaApp')
           4: 'magenta'
         }
 
-        $scope.amenities = [];
+        // $scope.amenities = []; removing this since it's in setUpTemplateDefaults now
+
       };
       // end setup function
 
@@ -131,6 +92,54 @@ angular.module('lawaApp')
         }
       };
       // end car dashboard animation
+
+      $scope.setUpTemplateDefaults = function() {
+        // clear decision prepping for next question (can move to own method)
+        $scope.currentDecisionDestination = null;
+        $scope.currentDecision = null;
+        // clear answers prepping for next question (can move into above-mentioned)
+        $scope.currentAnswers = [];
+        $scope.currentOther = {
+          present: false,
+          text: null, answerId: null
+        };
+        // $scope.currentOther.present = false;
+        // $scope.currentOther.text = null;
+        // $scope.currentOther.answerId = null;
+        $scope.currentTimeInterval = 0;
+        $scope.amenities = [];
+
+        // for spinner setups:
+        var randomSpinners = ["dp-2", "dp-5", "dp-10"];
+        var forcedSuccessSpinners = ["dp-7"]
+        // template-specific details:
+        if ($scope.currentNode.template_name === "dp-1") {
+          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
+          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+          $scope.addOneToCircling();
+        //} else if ($scope.currentNode.template_name === "dp-6"){
+        //  var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
+        //  $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+        //  $scope.addOneToCircling();
+        } else if($scope.currentNode.template_name === "dp-3"){
+          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Continue circling around terminal"});
+          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
+          $scope.addOneToCircling();
+        // for spinner setups:
+        } else if(_.include(randomSpinners, $scope.currentNode.template_name)){
+          $scope.spinnerOutcome = $scope.getSpinnerOutcomeByHistory();
+        } else if(_.include(forcedSuccessSpinners, $scope.currentNode.template_name)){
+          $scope.spinnerOutcome = 0; // force success for this spinner
+        }
+      };
+
+      $scope.getSpinnerOutcomeByHistory = function(){
+        if(_.find($scope.seenNodes, $scope.currentNode.node_id)){
+          return 0;
+        } else {
+          return _.sample([0,1]);
+        }
+      };
 
       $scope.restart = function(){
         window.location.href = "/api/respondents/restart";
@@ -270,7 +279,7 @@ angular.module('lawaApp')
       };
 
       // used for ITF-3 departing amenities
-      // will actually just null out the previous amenties after submit, rather than 
+      // will actually just null out the previous amenties after submit, rather than
       // creating an additional set of functions that do the same thing.
       //$scope.departingAmenitySelected = function(answer){
       //  if(_.findWhere($scope.departingAmenities, answer))
@@ -437,39 +446,9 @@ angular.module('lawaApp')
         // using current node from database, set at submit() and setup():
         $scope.setCurrentNodeById($scope.respondentCurrentNodeId);
 
-        // clear decision prepping for next question (can move to own method)
-        $scope.currentDecisionDestination = null;
-        $scope.currentDecision = null;
-        // clear answers prepping for next question (can move into above-mentioned)
-        $scope.currentAnswers = [];
-        $scope.currentOther.present = false;
-        $scope.currentOther.text = null;
-        $scope.currentOther.answerId = null;
-        $scope.currentTimeInterval = 0;
-        $scope.amenities = [];
-
-        //for debugging:
-        // $scope.inWhitelist = $scope.nodeIncludedInWhitelist($scope.getTemplateName($scope.currentNode.node_id));
-
-
-        // TODO: this is gross and should be handled in a better way. not least of all
-        //       because it needs to be replicated up in the setup in the case of reloads
-        // set default for gps question and other templates-specific settings
-        if ($scope.currentNode.template_name === "dp-1") {
-          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Default view"});
-          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
-          $scope.addOneToCircling();
-        //} else if ($scope.currentNode.template_name === "dp-6"){
-        //  var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Hope to catch your passenger at the curb"});
-        //  $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
-        //  $scope.addOneToCircling();
-        } else if($scope.currentNode.template_name === "dp-3"){
-          var curbGpsDecision = _.findWhere($scope.currentNode.decisions, {decision: "Continue circling around terminal"});
-          $scope.setCurrentDecisionNoSubmit(curbGpsDecision);
-          $scope.addOneToCircling();
-        //} else if($scope.currentNode.template_name === "e-1"){
-          // $scope.setShowDashboard(false);
-        }
+        // set default-selected for gps question, spinner outcome other
+        // templates-specific settings. also clears out any current data:
+        $scope.setUpTemplateDefaults();
       };
 
       var answersForParams = function(answersArray) {
@@ -480,8 +459,7 @@ angular.module('lawaApp')
         })
       }
 
-      
-      // set larger scope variable for flight scenario   
+      // set larger scope variable for flight scenario
       $scope.flightScenario;
       // initialize in template before dashboard template is rendered (2-2)
       $scope.initializeDash = function(){
@@ -492,7 +470,7 @@ angular.module('lawaApp')
         // console.log('flight time remaining variable: '+ $scope.variables.flight_time_remaining);
         // console.log('calculated plane progress: '+ $scope.planeProgress);
         // user doesn't add time to time elapsed guess, but we need to record the answer anyway:
-        
+
         if($scope.flightScenario === undefined){
           if($scope.variables.flight_time_remaining === 15){
             $scope.flightScenario = 45;
@@ -555,6 +533,8 @@ angular.module('lawaApp')
             $http.get('/api/respondents/get_or_create/').success(function(data){
               // ...and set it in the scope:
               $scope.respondentCurrentNodeId = data.current_node_id;
+              // ...along with a refresh of the previously seen nodes (for spinners and such)
+              $scope.seenNodes = data.seen_nodes;
 
               // finally, go to the next node:
               $scope.goToNextNode();
@@ -580,7 +560,7 @@ angular.module('lawaApp')
           return "";
         }
       }
-      
+
       var iconPaths = {}
       <% Answer.all.each do |a| %>
         <%= "iconPaths['#{a.id}'] = {iconPath: '#{asset_path "svgs/_#{a.icon_name}.html"}'}" unless a.icon_name.nil? %>
@@ -593,23 +573,6 @@ angular.module('lawaApp')
           return "";
         }
       }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       //get all icon paths for answers
       // go through all answers in RUBY, create an icon path from their icon-name
