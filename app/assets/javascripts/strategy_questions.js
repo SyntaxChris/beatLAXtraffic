@@ -16,9 +16,13 @@ $(document).ready(function(){
 			
 	}).on('click', '.save, .cancel', function(){
 		if($(this).hasClass('save'))
-			$('.bbl.other').addClass('selected')
+			if($('#strat-txt').val() !== "")
+				$('.bbl.other').addClass('selected')
+			else
+				$('.bbl.other').removeClass('selected');
 		if($(this).hasClass('cancel'))
-			$('.bbl.other').removeClass('selected');
+			if($('#strat-txt').val() === "")
+				$('.bbl.other').removeClass('selected');
 
 		$('.other-ctnr').hide();
 
@@ -26,5 +30,8 @@ $(document).ready(function(){
 			$('.next-ctnr').fadeIn()
 		else
 			$('.next-ctnr').fadeOut();
-	});
+	}).on('keyup', '#strat-txt', function(){
+		var cs = 140 - $(this).val().length;
+	    $('.counter').text(cs + " characters left");
+	})
 });

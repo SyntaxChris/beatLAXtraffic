@@ -10,18 +10,15 @@
     <div class="boxster-ctnr">
       <div ng-include="'<%= asset_path 'svgs/_boxster.html' %>'"></div>
     </div>
-    <div class="next-ctnr">
-      <button ng-click="submit(null, true)" class="strategy-next plane-advance">
-        NEXT
-      </button>
-    </div>
     <div class="bbl-ctnr" ng-repeat="answer in currentNode.answers | orderBy:'custom_order'">
-      <div class="bbl" ng-class="{
-        'outter left' : $index === 0,
-        'inner left' : $index === 1,
-        'center' : $index === 2,
-        'inner right' : $index === 3,
-        'outter right other' : $index === 4
+      <div class="bbl" 
+        ng-click="addAnswerToCurrentAnswers(answer)"
+        ng-class="{
+          'outter left' : $index === 0,
+          'inner left' : $index === 1,
+          'center' : $index === 2,
+          'inner right' : $index === 3,
+          'outter right other' : $index === 4
       }">
         <div class="icon">
           <div class="checkmark-ctnr">
@@ -50,13 +47,18 @@
     </div>
     <div class="other-ctnr">
       <div class="other-bbl">
-        <textarea name="" id="" cols="1" rows="6" placeholder="Please write here."></textarea>
+        <textarea id="strat-txt" cols="1" rows="6" placeholder="Please write here." maxlength="140" model="currentOther.text" ng-change="determineOtherText(currentOther.text, currentAnswers[0].id)"></textarea>
         <div class="btn-ctnr">
-          <div class="counter">123 words remaining</div>
+          <div class="counter"></div>
           <button class="save">SAVE</button>
           <button class="cancel">CANCEL</button>
         </div>
       </div>    
+    </div>
+    <div class="next-ctnr">
+      <button ng-click="submit(null, true)" class="strategy-next plane-advance">
+        NEXT
+      </button>
     </div>   
   </div>
 </div>
