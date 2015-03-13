@@ -9,10 +9,6 @@
         {{ currentNode.question.question }}
       </div>
     </h3>
-<!-- 
-    <div class="header">
-      {{ currentNode.question.question }}
-    </div> -->
 
     <div ng-repeat="answer in currentNode.answers" ng-click="addAnswerToCurrentAnswers(answer)" class="dIB vAT button-c">
       <div ng-if="answer.answer.indexOf('reach') > -1">

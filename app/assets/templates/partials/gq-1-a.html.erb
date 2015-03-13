@@ -1,268 +1,64 @@
 <!-- STRATEGY questions -->
-  <div id="strategy-questions">
+<div id="strategy-questions">
 
-    <div class="row" style="text-align: center;">
-      <h3 class="main-question">{{ currentNode.question.question }}</h3>
-      <h5 class="sub-header">Select all that apply</h5>
+  <div class="row" style="text-align: center;">
+    <h3 class="main-question">{{ currentNode.question.question }}</h3>
+    <h5 class="sub-header">Select all that apply</h5>
+  </div>
+
+  <div class="strategy-ctnr">
+    <div class="boxster-ctnr">
+      <div ng-include="'<%= asset_path 'svgs/_boxster.html' %>'"></div>
     </div>
-
-    <div class="strategy-ctnr">
-      <div class="boxster-ctnr">
-        <div ng-include="'<%= asset_path 'svgs/_boxster.html' %>'"></div>
-      </div>
-
-      <div class="bbl-ctnr" ng-repeat="answer in currentNode.answers">
-        <div class="bbl" ng-class="{
-          'inner right' : answer.answer.indexOf('Other') > -1,
-          'outter left' : answer.answer.indexOf('hassle') > -1,
-          'center' : answer.answer.indexOf('parking') > -1,
-          'outter right' : answer.answer.indexOf('convenient') > -1,
-          'inner left' : answer.answer.indexOf('quickly') > -1
-        }">
-          <div class="icon">
-            <div ng-if="answer.answer.indexOf('Other') > -1">
-              <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch.html' %>'"></div>  
-            </div>
-            <div ng-if="answer.answer.indexOf('hassle') > -1">
-              <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch.html' %>'"></div>  
-            </div>
-            <div ng-if="answer.answer.indexOf('parking') > -1">
-              <div ng-include="'<%= asset_path 'svgs/_grayParking.html' %>'"></div>  
-            </div>
-            <div ng-if="answer.answer.indexOf('convenient') > -1">
-              <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch.html' %>'"></div>  
-            </div>
-            <div ng-if="answer.answer.indexOf('quickly') > -1">
-              <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch.html' %>'"></div>  
-            </div>
-          </div>
-          <div class="text">
-            {{ answer.answer  }}
-          </div>
-        </div>
-      </div>   
-      <!-- <div class="bbl-ctnr" ng-repeat="answer in currentNode.answers" ng-if="answer.answer.indexOf('quickly') > -1">
-        <div class="bbl outter left">
-          <div class="icon">
-            <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch.html' %>'"></div>
-            <div class="text">{{ answer.answer}}</div>
-          </div>
-        </div>
-      </div>
-      <div class="bbl-ctnr" ng-repeat="answer in currentNode.answers" ng-if="answer.answer.indexOf('convenient') > -1">
-        <div class="bbl inner left">
-          <div class="icon">
-            <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch.html' %>'"></div>
-            <div class="text">{{ answer.answer }}</div>
-          </div>
-        </div>
-      </div>
-      <div class="bbl-ctnr" ng-repeat="answer in currentNode.answers" ng-if="answer.answer.indexOf('parking') > -1">
-        <div class="bbl center">
-          <div class="icon">
-            <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch.html' %>'"></div>
-            <div class="text">{{ answer.answer }}</div>
-          </div>
-        </div>
-      </div>
-      <div class="bbl-ctnr" ng-repeat="answer in currentNode.answers" ng-if="answer.answer.indexOf('hassle') > -1">
-        <div class="bbl inner right">
-          <div class="icon">
-            <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch.html' %>'"></div>
-            <div class="text">{{ answer.answer}}</div>
-          </div>
-        </div>
-      </div>
-      <div class="bbl-ctnr" ng-repeat="answer in currentNode.answers" ng-if="answer.answer.indexOf('Other') > -1">
-        <div class="bbl outter right">
-          <div class="icon">
-            <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch.html' %>'"></div>
-            <div class="text">{{ answer.answer}}</div>
-          </div>
-        </div>
-      </div> -->
-    </div>
-  
-   <!--  <div class="next-container">
+    <div class="next-ctnr">
       <button ng-click="submit(null, true)" class="strategy-next plane-advance">
         NEXT
       </button>
-    </div> -->
-
-  </div>
-  <!-- large screen view -->
-
-  <% if false %> <!-- commenting out small screen because 's' svgs are missing -->
-  <!-- small screen view -->
-  <div id="small-strategy">
-    <div class="row">
-      <div id="main-ctnr">
-        <div class="medium-11 small-11 medium-centered small-centered columns">
-
-          <div class="row" style="margin-bottom: 5%">
-            <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
-              <div class="bubble-container-small" id="passenger">
-                <div class="check-ctnr" style="position: absolute; z-index: 5; right: 0; top: -5%">
-                  <div ng-include="'<%= asset_path 'svgs/_sUnchecked'%>'"></div>
-                </div>
-                <div class="row" style="padding-top: 5px">
-                  <div class="small-5 small-centered columns">
-                    <div class="logo-cntr" style="position: absolute; left:0">
-                      <div ng-include="'<%= asset_path 'svgs/_sPassenger' %>'"></div>
-                    </div> 
-                  </div>
-                </div>
-                <div style="position:absolute; width: 100%; margin-top: 65%; left:0;">
-                   <div class="row">
-                    <div class="small-11 small-centered columns">
-                      <div class="strategy-answer" style="font-size: 3vw; padding-left: 5px; padding-right: 5px">
-                        To make it convienient for my passengers
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px; text-align: center">
-              <div class="bubble-container-small" id="stop-watch">
-                <div class="check-ctnr" style="position: absolute; z-index: 5; right: -5% ; top: -5%">
-                  <div ng-include="'<%= asset_path 'svgs/_sUnchecked'%>'"></div>
-                </div>
-                <div class="row" >
-                  <div class="small-5 small-centered columns">
-                    <div class="logo-cntr" style="position: absolute; left:0">
-                      <div ng-include="'<%= asset_path 'svgs/_sStopWatch' %>'"></div>
-                    </div> 
-                  </div>
-                </div>
-                <div style="position:absolute; width: 100%; margin-top: 75%; left:0;">
-                  <div class="row">
-                    <div class="small-11 small-centered columns">
-                      <div class="strategy-answer" style="font-size: 2.6vw;">
-                        To get in and out of the airport as quickly as possible
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div id="boxster-ctnr">
-                <div ng-include="'<%= asset_path 'svgs/_boxster' %>'"></div>
-              </div>
-              
-              <div class="next-container">
-                <button ng-click="submit(null, true)" class="strategy-next plane-advance">
-                  NEXT
-                </button>
-              </div>
-            </div>
-
-            <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
-              <div class="bubble-container-small" id="parking">
-                <div class="check-ctnr" style="position: absolute; z-index: 5; right: 0; top: -5%">
-                  <div ng-include="'<%= asset_path 'svgs/_sUnchecked'%>'"></div>
-                </div>
-                <div class="row">
-                  <div class="small-5 small-centered columns" style="padding-top: 3px">
-                    <div class="logo-cntr" style="position: absolute; left:0">
-                      <div ng-include="'<%= asset_path 'svgs/_sParking' %>'"></div>
-                    </div> 
-                  </div>
-                </div>
-                <div style="position:absolute; width: 100%; margin-top: 70%; left:0;">
-                   <div class="row">
-                    <div class="small-11 small-centered columns">
-                      <div class="strategy-answer" style="font-size: 3vw; padding-left: 5px; padding-right: 5px">
-                        To avoid paying for parking
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    </div>
+    <div class="bbl-ctnr" ng-repeat="answer in currentNode.answers | orderBy:'custom_order'">
+      <div class="bbl" ng-class="{
+        'outter left' : $index === 0,
+        'inner left' : $index === 1,
+        'center' : $index === 2,
+        'inner right' : $index === 3,
+        'outter right other' : $index === 4
+      }">
+        <div class="icon">
+          <div class="checkmark-ctnr">
+            <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
           </div>
-
-          <div class="row">
-            <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
-              <div class="bubble-container-small" id="hassle">
-                <div class="check-ctnr" style="position: absolute; z-index: 5; right: 0; top: -5%">
-                  <div ng-include="'<%= asset_path 'svgs/_sUnchecked'%>'"></div>
-                </div>
-                <div class="row">
-                  <div class="small-5 small-centered columns" style="padding-top: 3px">
-                    <div class="logo-cntr" style="position: absolute; left:0">
-                      <div ng-include="'<%= asset_path 'svgs/_sHassle' %>'"></div>
-                    </div> 
-                  </div>
-                </div>
-                <div style="position:absolute; width: 100%; margin-top: 70%; left:0;">
-                   <div class="row">
-                    <div class="small-11 small-centered columns">
-                      <div class="strategy-answer" style="font-size: 3vw; padding-left: 5px; padding-right: 5px">
-                        To minimize the hassle for me
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="medium-4 small-4 columns"></div style="padding-left: 10px; padding-right: 10px">
-
-            <div class="medium-4 small-4 columns" style="padding-left: 10px; padding-right: 10px">
-              <div class="bubble-container-small" id="s-other">
-                <div class="check-ctnr" style="position: absolute; z-index: 5; right:0; top: -5%">
-                  <div ng-include="'<%= asset_path 'svgs/_sUnchecked'%>'"></div>
-                </div>
-                <div class="row">
-                  <div class="small-5 small-centered columns" style="padding-top: 3px">
-                    <div class="logo-cntr" style="position: absolute; left:0">
-                      <div ng-include="'<%= asset_path 'svgs/_sOther' %>'"></div>
-                    </div> 
-                  </div>
-                </div>
-                <div style="position:absolute; width: 100%; margin-top: 75%; left:0;">
-                   <div class="row">
-                    <div class="small-11 small-centered columns">
-                      <div class="strategy-answer" style="font-size: 3vw; padding-left: 5px; padding-right: 5px">
-                        Other (Explain)
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div ng-if="$index === 0">
+            <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch.html' %>'"></div>  
           </div>
-
+          <div ng-if="$index === 1">
+            <div ng-include="'<%= asset_path 'svgs/_guy.html' %>'"></div>  
+          </div>
+          <div ng-if="$index === 2">
+            <div ng-include="'<%= asset_path 'svgs/_grayParking.html' %>'"></div>  
+          </div>
+          <div ng-if="$index === 3">
+            <div ng-include="'<%= asset_path 'svgs/_hassle.html' %>'"></div>  
+          </div>
+          <div ng-if="$index === 4">
+            <div ng-include="'<%= asset_path 'svgs/_strategyOther.html' %>'"></div>  
+          </div>
+        </div>
+        <div class="text">
+          {{ answer.answer  }}
         </div>
       </div>
     </div>
-    <div id="s-other-ctnr" style="display: none; position: absolute; z-index: 6; top: 0; margin-top: 25%; left: 8%; width: 85%; background-color: white; padding-top: 15px; border: 1px solid #C1C1C1; border-radius: 10px">
-        <div class="small-3 columns">
-          <div class="row">
-            <div class="save" style="text-align: center; color: white; background-color: #F25053; padding: 8%; margin-left: 10px; font-size: 2.8vw; border-radius: 5px">
-              Save
-            </div>
-          </div>
-          <div class="row" style="margin-top: 15px">
-            <div class="cancel" style="text-align: center; color: white; background-color: #C1C1C1; padding: 8%; margin-left: 10px; font-size: 2.8vw; border-radius: 5px">
-              Cancel
-            </div>
-          </div>
-          <div class="row" style="text-align: center; color">
-            <div id="char-count-strategy" style="color: #C1C1C1; padding:0; margin:0; font-size: 2vw; text-align: center"></div>
-          </div>
+    <div class="other-ctnr">
+      <div class="other-bbl">
+        <textarea name="" id="" cols="1" rows="6" placeholder="Please write here."></textarea>
+        <div class="btn-ctnr">
+          <div class="counter">123 words remaining</div>
+          <button class="save">SAVE</button>
+          <button class="cancel">CANCEL</button>
         </div>
-        <div class="small-9 columns">
-          <textarea class="other-strategy" cols="1" rows="7" maxlength="140" style="background-color: #F0943F; color: white" placeholder="Please write here"></textarea>
-        </div>
-
-    </div>
+      </div>    
+    </div>   
   </div>
-  <!-- end small screen view -->
-  <% end %>
-
 </div>
 <!-- END STRATEGY QUESTIONS -->
  
