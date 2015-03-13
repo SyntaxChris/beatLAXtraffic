@@ -19,7 +19,7 @@
           'center' : $index === 2,
           'inner right' : $index === 3,
           'outter right other' : $index === 4
-      }">
+        }">
         <div class="icon">
           <div class="checkmark-ctnr">
             <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
@@ -45,6 +45,7 @@
         </div>
       </div>
     </div>
+
     <div class="other-ctnr">
       <div class="other-bbl">
         <textarea id="strat-txt" cols="1" rows="6" placeholder="Please write here." maxlength="140"></textarea>
@@ -55,11 +56,13 @@
         </div>
       </div>    
     </div>
+
     <div class="next-ctnr">
       <button ng-click="submit(null, true)" class="strategy-next plane-advance">
         NEXT
       </button>
     </div>   
+    
   </div>
 </div>
 <!-- END STRATEGY QUESTIONS -->
