@@ -433,7 +433,6 @@
 								color: #D25D47;
 							}
 						}
-
 					}
 					&.outter.right{
 						top: 45%;
@@ -933,7 +932,7 @@
 				top: 115%;
 				text-align: center;
 				padding: 2%;
-				z-index: -1;
+				z-index: 0;
 				button{
 					background: none;
 					outline: none;

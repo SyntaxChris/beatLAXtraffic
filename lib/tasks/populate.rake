@@ -135,7 +135,7 @@ namespace :populate do
         itf3a8= Answer.create(question_id: itf3q.id, answer: "Valet Parking", icon_name: "valet")
         itf3a9= Answer.create(question_id: itf3q.id, answer: "Bag Check-in/Drop Off", icon_name: "bagcheck")
 
-    itf2noitf = Node.create(nickname: "ITF 2 NO ITF", is_decision_point: false , branch_id: orange.id, template_name: "itf-2-no-itf", dashboard_type: "plane")
+    itf2noitf = Node.create(nickname: "ITF 2 NO ITF", is_decision_point: false , branch_id: orange.id, template_name: "itf-2-no-itf", dashboard_type: "car")
       itf2noitfq = Question.create(
         node_id: itf2noitf.id,
         question: "Which of these amenities would you prioritize having? Select your top 3.",
@@ -151,7 +151,7 @@ namespace :populate do
         itf2noitfa8= Answer.create(question_id: itf2noitfq.id, answer: "Dog run/relief area", icon_name: "dog")
         itf2noitfa9= Answer.create(question_id: itf2noitfq.id, answer: "Children’s Play Area", icon_name: "family")
 
-    itf3noitf = Node.create(nickname: "ITF 3 NO ITF", is_decision_point: false , branch_id: orange.id, template_name: "itf-3-no-itf", dashboard_type: "plane")
+    itf3noitf = Node.create(nickname: "ITF 3 NO ITF", is_decision_point: false , branch_id: orange.id, template_name: "itf-3-no-itf", dashboard_type: "car")
       itf3noitfq = Question.create(
         node_id: itf3noitf.id,
         question: "Which of these amenities would you prioritize having? Select your top 3.",
