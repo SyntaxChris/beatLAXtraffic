@@ -1,5 +1,5 @@
 <div ng-controller="NodeCtrl">
-  <div ng-show="!nodeIncludedInWhitelist(getTemplateName(currentNode.node_id))"></div>
+  times circled: {{ variables.times_circled }}
   <!-- skip button -->
 
 <!--   <button ng-class="{
@@ -10,22 +10,22 @@
   <div ng-show="currentNode.skippable">
     <div ng-if="currentNode.dashboard_type === 'plane'">
     <!-- sorry....this is gross -->
-      <button class="skip plane-advance" 
-              ng-click="submit(null, true)" 
+      <button class="skip plane-advance"
+              ng-click="submit(null, true)"
               ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"
               ng-class="{
-                   
+
               }">
-      </button> 
+      </button>
     </div>
     <div ng-if="currentNode.dashboard_type === 'car'">
-      <button class="skip car-progress" 
-              ng-click="submit(); advanceCar()" 
+      <button class="skip car-progress"
+              ng-click="submit(); advanceCar()"
               ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"
               ng-class="{
-                
+
               }">
-      </button> 
+      </button>
     </div>
   </div>
   <!-- template -->
@@ -55,7 +55,7 @@
   </div>
   <div ng-show="currentNode.dashboard_type === 'car'">
     <div ng-include="'<%= asset_path 'partials/dashboard-car.html' %>'"></div>
-  </div>  
+  </div>
   <!-- dashboard var from 0-85 -->
   <div id="plane-progress">{{ planeProgress + flightScenario }}</div>
 </div>
