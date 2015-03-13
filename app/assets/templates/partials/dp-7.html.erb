@@ -20,7 +20,7 @@
 
     <div class="congrats" style="display:none;">
       <h3 class="main-question">Nice!</h3>
-      <h3 class="main-question">You only had to wait 5 minutes before your passenger called from the curb.</h3>
+      <h4 class="main-question">You only had to wait 5 minutes before your passenger called from the curb.</h3>
       <div ng-click="submit(findDecisionByString('5 Minutes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
         CONTINUE
       </div>
@@ -28,7 +28,7 @@
 
     <div class="fail" style="display:none">
       <h3 class="main-question">Dang!</h3>
-      <h3 class="main-question">You haven't heard from your passenger yet..</h3>
+      <h4 class="main-question">You haven't heard from your passenger yet..</h3>
       <div class="nxt-ctnr">
         <button ng-click="submit(findDecisionByString('5 Minutes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-lose" data-result="no">
           NEXT
@@ -37,7 +37,7 @@
     </div>
 
     <div class="btn-ctnr">
-      <button class="spin-button" id="pickup">
+      <button class="spin-button" id="parking">
         TEST YOUR LUCK
       </button> 
     </div>
@@ -59,7 +59,7 @@
             </div>
             <div style="position: relative; z-index: 1; width: 100%; padding-top: 4%; margin: 0">
               <div class="wheel" id="num-2">
-                <div ng-include="'<%= asset_path 'svgs/_pickupWheel.html' %>'"></div>
+                <div ng-include="'<%= asset_path 'svgs/dp-7-spinner.html' %>'"></div>
               </div>
             </div>
           </div>
