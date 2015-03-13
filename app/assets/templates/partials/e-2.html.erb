@@ -7,7 +7,7 @@
 
     <div class="content-c">
       <div class="count-c">
-        <div class="circle-number">{{ variables.times_circled }}</div>
+        <div class="circle-number">{{ adjustedTimesCircled || variables.times_circled }}</div>
         <div>times</div>
       </div>
       <div class="red-circle">
@@ -24,6 +24,8 @@
     <div class="content-c buttons-c">
       <div class="inner-question">
         How many times do you typically circle around LAX when picking up somebody?
+        variables times circled: {{ variables.times_circled }}
+        adjusted: {{ adjustedTimesCircled }}
       </div>
       <div>
          <button ng-click="addTimesCircled(-1)" id="x-btn-circle-less" class="counter-btn">-</button>

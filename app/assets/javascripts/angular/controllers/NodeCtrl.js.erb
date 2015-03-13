@@ -408,8 +408,12 @@ angular.module('lawaApp')
         $scope.variables.flight_time_remaining = 0;
       }
 
-      $scope.addTimesCircled = function(circleAmount) {
-        $scope.variables.times_circled = Math.max(0, ($scope.variables.times_circled += circleAmount));
+      $scope.addTimesCircled = function(amount) {
+        if($scope.adjustedTimesCircled === undefined){
+          $scope.adjustedTimesCircled = Math.max(0, amount);
+        }else{
+          $scope.adjustedTimesCircled = Math.max(0, ($scope.adjustedTimesCircled += amount));
+        };
         $scope.addSingleChoice($scope.currentNode.answers[0])
         $scope.determineOtherText($scope.variables.times_circled, $scope.currentAnswers[0].id);
         $scope.currentOther.text = $scope.variables.times_circled;
