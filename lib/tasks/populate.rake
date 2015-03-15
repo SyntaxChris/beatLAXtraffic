@@ -205,10 +205,10 @@ namespace :populate do
 
     b3 = Node.create(nickname: "B 3", is_decision_point: false , branch_id: green.id, template_name: "b-3", dashboard_type: "plane")
       b3q = Question.create(node_id: b3.id, question: "What are you doing while you're parked?", question_type_id: many_choice.id)
-        b3a1= Answer.create(question_id: b3q.id, answer: "Waiting in my car", icon_name: nil)
-        b3a2= Answer.create(question_id: b3q.id, answer: "Waiting in the terminal", icon_name: nil)
-        b3a3= Answer.create(question_id: b3q.id, answer: "Shopping in the terminal", icon_name: nil)
-        b3a4= Answer.create(question_id: b3q.id, answer: "Getting food or a drink in the terminal", icon_name: nil)
+        b3a1= Answer.create(question_id: b3q.id, answer: "Waiting in my car", icon_name: nil, custom_order: 1)
+        b3a2= Answer.create(question_id: b3q.id, answer: "Waiting in the terminal", icon_name: nil, custom_order: 2)
+        b3a3= Answer.create(question_id: b3q.id, answer: "Shopping in the terminal", icon_name: nil, custom_order: 3)
+        b3a4= Answer.create(question_id: b3q.id, answer: "Getting food or a drink in the terminal", icon_name: nil, custom_order: 4)
 
     b4 = Node.create(nickname: "B 4", is_decision_point: false , branch_id: green.id, template_name: "b-4", dashboard_type: "plane")
       b4q = Question.create(node_id: b4.id, question: "What is the longest you are willing to look for parking?", question_type_id: single_choice.id)
