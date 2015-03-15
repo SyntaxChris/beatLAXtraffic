@@ -6,8 +6,13 @@
 		margin-top: -1%;
 	}
 	.strategy-ctnr{
-		display: flex;
+		display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	    display: -ms-flexbox;      /* TWEENER - IE 10 */
+	    display: -webkit-flex;     /* NEW - Chrome */
+	    display: flex;
 		flex-flow: row no-wrap;
+		-webkit-flex-flow: row no-wrap;
 		padding: 0;
 		margin-left: 1%;
 		margin-right: 1%;
@@ -31,6 +36,7 @@
 		}
 		.bbl-ctnr{
 			order: 1;
+			-webkit-order: 1;
 			width: 20%;
 			padding-bottom: 52%;
 			text-align: center;
@@ -267,9 +273,11 @@
 				}
 				.btn-ctnr{
 					display: flex;
+					-webkit-display: flex;
 					text-align: center;
 					.counter{
 						flex-grow: 2;
+						-webkit-flex-grow: 2;
 						padding-top: 2%;
 						font-size: 1.3vw;
 						font-weight: 700;
@@ -281,6 +289,7 @@
 						outline: none;
 						&.save{
 							flex-grow: 1;
+							-webkit-flex-grow: 1;
 							background-color: #F3B43C; 
 							padding: 2% 5% 2% 5%;
 							border-radius: 5px;
@@ -288,6 +297,7 @@
 						}
 						&.cancel{
 							flex-grow: 1;
+							-webkit-flex-grow: 1;
 							background-color: black;
 							opacity: 0.3;
 							margin-left: 10px;
@@ -332,7 +342,9 @@
 		}
 		.strategy-ctnr{
 			display: flex;
+			-webkit-display: flex;
 			flex-flow: row no-wrap;
+			-webkit-flex-flow: row no-wrap;
 			padding: 0;
 			margin-left: 1%;
 			margin-right: 1%;
@@ -354,6 +366,7 @@
 			}
 			.bbl-ctnr{
 				order: 1;
+				-webkit-order: 1;
 				width: 20%;
 				padding-bottom: 52%;
 				text-align: center;
@@ -581,9 +594,11 @@
 					}
 					.btn-ctnr{
 						display: flex;
+						-webkit-display: flex;
 						text-align: center;
 						.counter{
 							flex-grow: 2;
+							-webkit-flex-grow: 2;
 							padding-top: 2%;
 							font-size: 3vw;
 							font-weight: 700;
@@ -595,6 +610,7 @@
 							outline: none;
 							&.save{
 								flex-grow: 1;
+								-webkit-flex-grow: 1;
 								background-color: #F3B43C; 
 								padding: 2% 3% 2% 3%;
 								border-radius: 5px;
@@ -602,6 +618,7 @@
 							}
 							&.cancel{
 								flex-grow: 1;
+								-webkit-flex-grow: 1;
 								background-color: black;
 								opacity: 0.3;
 								margin-left: 10px;
@@ -642,6 +659,7 @@
 		}
 		.strategy-ctnr{
 			display: flex;
+			-webkit-display: flex;
 			flex-flow: row no-wrap;
 			padding: 0;
 			margin-left: 1%;
@@ -664,6 +682,7 @@
 			}
 			.bbl-ctnr{
 				order: 1;
+				-webkit-order: 1;
 				width: 20%;
 				padding-bottom: 52%;
 				text-align: center;
@@ -893,9 +912,11 @@
 					}
 					.btn-ctnr{
 						display: flex;
+						-webkit-display: flex;
 						text-align: center;
 						.counter{
 							flex-grow: 2;
+							-webkit-flex-grow: 2;
 							padding-top: 2%;
 							font-size: 3vw;
 							font-weight: 700;
@@ -907,6 +928,7 @@
 							outline: none;
 							&.save{
 								flex-grow: 1;
+								-webkit-flex-grow: 1;
 								background-color: #F3B43C; 
 								padding: 4% 3% 4% 3%;
 								border-radius: 5px;
@@ -914,6 +936,7 @@
 							}
 							&.cancel{
 								flex-grow: 1;
+								-webkit-flex-grow: 1;
 								background-color: black;
 								opacity: 0.3;
 								margin-left: 10px;
