@@ -1,4 +1,6 @@
 <div ng-controller="NodeCtrl">
+  <!-- <div id="between-template-buffer" ng-if="!templatesReady">
+  </div> -->
   <!-- times circled: {{ variables.times_circled }} -->
   <!-- skip button -->
 
@@ -14,7 +16,6 @@
               ng-click="submit(null, true)"
               ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"
               ng-class="{
-
               }">
       </button>
     </div>
@@ -23,13 +24,19 @@
               ng-click="submit(); advanceCar()"
               ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"
               ng-class="{
-
               }">
       </button>
     </div>
   </div>
+
   <!-- template -->
-  <div class="row" id="lawa-template"><div ng-include="currentTemplateName"></div></div>
+  <!-- <div class="row" id="lawa-template"><div ng-include="currentTemplateName"></div></div> -->
+  <div ng-if="templatesReady">
+    <div class="row" id="lawa-template">
+      <div ng-include="currentTemplateName"></div>
+    </div>
+  </div>
+
   <!-- landing plane -->
   <div id="landing-plane" ng-include="'<%= asset_path 'svgs/_landingplane.html' %>'"></div>
   <!-- background svg container -->
@@ -42,20 +49,23 @@
     <div class="cloud-cntr" ng-include="'<%= asset_path 'svgs/_clouds.html' %>'"></div>
     <div id="cloud-9" ng-include="'<%= asset_path 'svgs/dopaCloud.html' %>'"></div>
   </div>
+
   <!-- body scene changes -->
-  <div class="lot" ng-show="bodyClass === 'green'">
-    <div ng-include="'<%= asset_path 'svgs/greenBg.html' %>'"></div>
-  </div>
-  <div class="skyline" ng-show="bodyClass === 'orange'">
-    <div ng-include="'<%= asset_path 'svgs/orangeBg.html' %>'"></div>
-  </div>
-  <!-- dashboards -->
-  <div ng-show="currentNode.dashboard_type === 'plane'">
-    <div ng-include="'<%= asset_path 'partials/dashboard.html' %>'"></div>
-  </div>
-  <div ng-show="currentNode.dashboard_type === 'car'">
-    <div ng-include="'<%= asset_path 'partials/dashboard-car.html' %>'"></div>
-  </div>
-  <!-- dashboard var from 0-85 -->
-  <div id="plane-progress">{{ planeProgress + flightScenario }}</div>
+  <!-- <div ng-if="templatesReady"> -->
+    <div class="lot" ng-show="bodyClass === 'green'">
+      <div ng-include="'<%= asset_path 'svgs/greenBg.html' %>'"></div>
+    </div>
+    <div class="skyline" ng-show="bodyClass === 'orange'">
+      <div ng-include="'<%= asset_path 'svgs/orangeBg.html' %>'"></div>
+    </div>
+    <!-- dashboards -->
+    <div ng-show="currentNode.dashboard_type === 'plane'">
+      <div ng-include="'<%= asset_path 'partials/dashboard.html' %>'"></div>
+    </div>
+    <div ng-show="currentNode.dashboard_type === 'car'">
+      <div ng-include="'<%= asset_path 'partials/dashboard-car.html' %>'"></div>
+    </div>
+    <!-- dashboard var from 0-85 -->
+    <div id="plane-progress">{{ planeProgress + flightScenario }}</div>
+    <!-- </div> -->
 </div>

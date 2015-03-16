@@ -3,6 +3,7 @@ angular.module('lawaApp')
     '$rootScope','$scope','$http','_', '$timeout', function($rootScope,$scope,$http,_,$timeout) {
 
       $scope.setup = function(){
+        $scope.templatesReady = false;
         // get and set up all nodes
         $http.get('/api/nodes').success(function(data){
           $scope.nodes = data;
@@ -54,6 +55,7 @@ angular.module('lawaApp')
 
             // set default-selected for gps question, spinner outcome other
             // templates-specific settings. also clears out any current data:
+            // also sets 'templatesReady' to true
             $scope.setUpTemplateDefaults();
           }); // end of respondent.get success
 
@@ -81,6 +83,8 @@ angular.module('lawaApp')
 
       };
       // end setup function
+
+      $scope.templatesReady = false;
 
       // Car dashboard animation
       $scope.carProgress = 7;
@@ -139,6 +143,7 @@ angular.module('lawaApp')
         if(_.include(increaseCircling, $scope.currentNode.template_name)){
           $scope.addOneToCircling();
         }
+        $scope.templatesReady = true;
       };
 
       $scope.getSpinnerOutcomeByHistory = function(){
@@ -247,8 +252,6 @@ angular.module('lawaApp')
           }
         }
       };
-
-
 
       // used for ITF-2 arrivals amenities
       $scope.amenitySelected = function(answer){
@@ -485,6 +488,7 @@ angular.module('lawaApp')
       };
 
       $scope.submit = function(decisionId, decreaseTime){
+        $scope.templatesReady = false;
         // console.log('flight time remaining variable: '+ $scope.variables.flight_time_remaining);
         // console.log('calculated plane progress: '+ $scope.planeProgress);
         // user doesn't add time to time elapsed guess, but we need to record the answer anyway:
