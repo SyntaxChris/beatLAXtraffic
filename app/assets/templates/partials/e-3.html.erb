@@ -1,27 +1,23 @@
 <!-- 14. TIMER PICKUP QUESTIONS -->
 <div id="timer-pickup">
-  <h3 class="main-question">You would have spent:</h3>
+  <h3 class="main-question">
+    You have spent {{ variables.time_elapsed }} minutes picking up your passenger in this game
+  </h3>
   <div class="content">
     <div class="content-c">
       <div class="timer-c">
-        <div ng-if="!adjustedTimeElapsed && adjustedTimeElapsed != 0">
-          <div class="timer-number" id="min">{{ variables.time_elapsed }}</div>
-        </div>
-        <div ng-if="adjustedTimeElapsed != undefined">
-          <div class="timer-number" id="min">{{ adjustedTimeElapsed }}</div>
-        </div>
+          <div class="timer-number" id="min">{{ adjustedTimeElapsed || 0 }}</div>
         <div>min</div>
       </div>
-      <div class="bottom-question">Picking up your passenger at LAX</div>
     </div>
 
     <div class="content-c buttons-c">
       <div class="inner-question" id="how-long">
-        How long does it typically take you to pick up your passenger at LAX?
+        How long does it typically take for you to pick up your passenger once you're at LAX?
       </div>
       <div>
-         <button ng-click="addTimeElapsed(-5)" id="x-btn-timer-less" class="counter-btn">-</button>
-         <button ng-click="addTimeElapsed(5)" id="x-btn-timer-more" class="counter-btn">+</button> 
+         <button ng-click="adjustTime(-5)" id="x-btn-timer-less" class="counter-btn">-</button>
+         <button ng-click="adjustTime(5)" id="x-btn-timer-more" class="counter-btn">+</button> 
       </div>
       <div>
         <div ng-click="submit(); advanceCar()" id="x-btn-timer-next" class="car-progress">NEXT</div>

@@ -7,7 +7,8 @@
 
     <div class="content-c">
       <div class="count-c">
-        <div class="circle-number">{{ variables.times_circled }}</div>
+        <div class="circle-number" ng-if="adjustedTimesCircled === 0">0</div>
+        <div class="circle-number" ng-if="adjustedTimesCircled !== 0">{{ adjustedTimesCircled || variables.times_circled }}</div>
         <div>times</div>
       </div>
       <div class="red-circle">
