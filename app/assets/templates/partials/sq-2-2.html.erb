@@ -166,7 +166,6 @@
 
 
   <div id="stage-4" style="display: none">
-
       <div class="row" style="margin: 0; background-color: #E5E5EA; text-align: center; padding: 10px">
         Flight Status
       </div>
@@ -183,23 +182,17 @@
           <div id="display-time"><span id="mn-time">{{ variables.landing_time }}</span><span id="mn-unit">min</span></div>
         </div>
       </div>
-
-      <div class="row" style="margin:0; padding-top: 30px">
-        <div class="small-11 small-centered columns" style="text-align:center; font-size: 20px; color: #59CFEF">
-          You now need to make some choices to get your passenger on time.
-        </div>
+      <div class="choices">
+        You now need to make some choices to get your passenger on time.
       </div>
-
-      <div class="row" style="margin:0">
-        <div class="small-11 small-centered columns" style="text-align:center; font-size: 30px; padding-top: 20px; color: #59CFEF">
-          Good Luck!
-        </div>
+      <div class="good-luck">
+        Good Luck!
       </div>
-
-      <button id="stage-4-btn" ng-click="submit(null, false); initializeDash()">
-        LET'S GO!
-      </button>
-
+      <div class="btn-row">
+        <button id="stage-4-btn" ng-click="submit(null, false); initializeDash()">
+          LET'S GO!
+        </button>
+      </div>
     </div>
   </div>
 </div>
