@@ -410,13 +410,15 @@ angular.module('lawaApp')
 
       $scope.addTimesCircled = function(amount) {
         if($scope.adjustedTimesCircled === undefined){
-          $scope.adjustedTimesCircled = Math.max(0, amount);
+          // start at the estimated amount and adjust from there:
+          $scope.adjustedTimesCircled = Math.max(0, ($scope.variables.times_circled + amount));
         }else{
           $scope.adjustedTimesCircled = Math.max(0, ($scope.adjustedTimesCircled += amount));
         };
+        // add this adjusted amount as a freeform answer without changing times_circled
         $scope.addSingleChoice($scope.currentNode.answers[0])
-        $scope.determineOtherText($scope.variables.times_circled, $scope.currentAnswers[0].id);
-        $scope.currentOther.text = $scope.variables.times_circled;
+        $scope.determineOtherText($scope.adjustedTimesCircled, $scope.currentAnswers[0].id);
+        $scope.currentOther.text = $scope.adjustedTimesCircled;
       }
 
       $scope.addOneToCircling = function(){
@@ -432,9 +434,10 @@ angular.module('lawaApp')
         }else{
           $scope.adjustedTimeElapsed = Math.max(0, ($scope.adjustedTimeElapsed += amount));
         };
-          $scope.addSingleChoice($scope.currentNode.answers[0])
-          $scope.determineOtherText($scope.adjustedTimeElapsed, $scope.currentAnswers[0].id);
-          $scope.currentOther.text = $scope.adjustedTimeElapsed;
+        // add this time as a freeform answer without changing time_elapsed
+        $scope.addSingleChoice($scope.currentNode.answers[0])
+        $scope.determineOtherText($scope.adjustedTimeElapsed, $scope.currentAnswers[0].id);
+        $scope.currentOther.text = $scope.adjustedTimeElapsed;
       }
 
       $scope.addTimeInterval = function(timeAmount) {
