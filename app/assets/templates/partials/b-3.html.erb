@@ -5,8 +5,8 @@
   <div class="tile-ctnr">
     <div 
       class="tile"
-      ng-repeat="answer in currentNode.answers"
-      ng-click="addAnswerToCurrentAnswers(answer) | orderBy:'custom_order'" 
+      ng-repeat="answer in currentNode.answers | orderBy:'custom_order'"
+      ng-click="addAnswerToCurrentAnswers(answer)" 
 
       ng-class="{
         'tile-1' : $index === 0,

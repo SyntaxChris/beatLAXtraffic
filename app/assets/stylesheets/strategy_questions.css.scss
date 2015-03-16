@@ -656,9 +656,10 @@
 @media screen and (max-width: 460px){
 	#strategy-questions{
 		.sub-header{
-			font-size: 3vw;
-			text-shadow: 0 2px 1px rgba(255,255,255,.8);
-			-webkit-text-shadow: 0 2px 1px rgba(255,255,255,.8);
+			font-size: 3.5vw;
+			font-weight: 700;
+			text-shadow: 0 1px 1px rgba(255,255,255,.8);
+			-webkit-text-shadow: 0 1px 1px rgba(255,255,255,.8);
 		}
 		.strategy-ctnr{
 			display: flex;
@@ -723,14 +724,14 @@
 					}
 					.text{
 						position: relative;
-						line-height: 1.5;
+						line-height: 1.2;
 						width: 100%;
 						padding-left: 5%;
 						padding-right: 5%;
 						margin: 0 auto;
-						font-size: 2.6vw;
+						font-size: 2.7vw;
 						font-weight: 700;
-						text-shadow: 0 2px 3px rgba(0,0,0,.3);
+						text-shadow: 0 0px 0px rgba(0,0,0,.0);
 						-webkit-text-shadow: 0 1px 1px rgba(0,0,0,.3);
 					}
 					&.outter.left{
