@@ -1,24 +1,28 @@
 <div id="after-parking-questions">
   <h3 class="main-question">{{ currentNode.question.question }}</h3>
-  <!-- <h3 id="pole">What do you do next?</h3> -->
-
+  
   <div class="pole">
     <div ng-include="'<%= asset_path 'svgs/_signPole.html' %>'"></div>
   </div>
 
-    <button ng-click="immediateSubmitAnswer(answer)" ng-repeat="answer in currentNode.answers" class="sign plane-advance" ng-id="{{ 'cntr-' + $index+1 }}">
-      <div class="holder">
-        <div ng-include="'<%= asset_path 'svgs/_signHolder.html' %>'"></div>
-      </div>
-      <div class="inner-content" ng-class="signColors[$index+1]">
-        <div class="icon-c">
-          <div class="arrow-c">
-            <div ng-include="'<%= asset_path 'svgs/_signArrow.html' %>'"></div>
-          </div>
-        </div>
-        <div class="text">
-          {{ answer.answer }}
+  <button ng-click="immediateSubmitAnswer(answer)" ng-repeat="answer in currentNode.answers" class="sign plane-advance" ng-id="{{ 'cntr-' + $index+1 }}">
+    <div class="holder">
+      <div ng-include="'<%= asset_path 'svgs/_signHolder.html' %>'"></div>
+    </div>
+    <div class="inner-content" ng-class="signColors[$index+1]">
+      <div class="icon-c">
+        <div class="arrow-c">
+          <div ng-include="'<%= asset_path 'svgs/_signArrow.html' %>'"></div>
         </div>
       </div>
+      <div class="text">
+        {{ answer.answer }}
+      </div>
+    </div>
+  </button>
+  <div class="next-row">
+    <button class="next">
+      NEXT
     </button>
+  </div>
 </div>
