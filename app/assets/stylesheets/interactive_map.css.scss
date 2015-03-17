@@ -31,6 +31,11 @@
     width: 50%;
     height: 50%;
   }
+  .arrow-bundle{
+    &.animate{
+      @include animate(bounce, 1s, ease-in-quad, infinite);
+    }
+  }
   .select-path-btn {
     position: absolute;
     display: block;
@@ -414,8 +419,6 @@
     bottom: 200px;
   }
 }
-
-
 
 
 @media only screen and (max-width: 640px){
