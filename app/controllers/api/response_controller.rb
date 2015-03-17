@@ -8,6 +8,7 @@ module Api
         if result[:status] == "success"
           render json: result, status: 200
         else
+          @respondent.try(:mark_as_corrupted!)
           render json: result, status: 422
         end
       else

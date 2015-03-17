@@ -22,6 +22,7 @@ module Api
       if @respondent.update(session_params)
         render json: @respondent, status: 200
       else
+        @respondent.try(:mark_as_corrupted!)
         render json: @respondent.errors, status: 402
       end
     end

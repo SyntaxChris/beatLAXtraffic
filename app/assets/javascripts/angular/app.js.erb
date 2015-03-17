@@ -12,6 +12,11 @@ lawaApp.config([
         templateUrl: '<%= asset_path 'nodes.html' %>',
         controller: 'NodeCtrl'
     });
+
+    $routeProvider.when('/error',{
+        templateUrl: '<%= asset_path 'error.html' %>',
+        controller: 'NodeCtrl'
+    });
   }
 
 ]);

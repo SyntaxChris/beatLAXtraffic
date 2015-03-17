@@ -88,6 +88,10 @@ describe Respondent do
     it "has an active boolean" do
       expect(respondent.active).to eq true
     end
+
+    it "has an experienced_error boolean that defaults to false" do
+      expect(respondent.experienced_error).to eq false
+    end
   end
 
   describe "Associations" do
@@ -155,6 +159,15 @@ describe Respondent do
 
       it "on creation, 'landing_time' is set" do
         expect(Respondent::TIME_TILL_LANDS).to include(new_respondent.landing_time)
+      end
+    end
+
+    describe "mark_as_corrupted!" do
+      let!(:respondent) { create(:respondent) }
+      it "sets the experienced_error boolean to true" do
+        expect(respondent.experienced_error?).to eq false
+        respondent.mark_as_corrupted!
+        expect(respondent.experienced_error?).to eq true
       end
     end
 
