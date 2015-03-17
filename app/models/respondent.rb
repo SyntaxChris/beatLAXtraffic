@@ -70,6 +70,10 @@ class Respondent < ActiveRecord::Base
     end
   end
 
+  def mark_as_corrupted!
+    self.update(experienced_error: true)
+  end
+
   private
 
   def set_starting_node
