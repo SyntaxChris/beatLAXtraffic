@@ -1,5 +1,20 @@
 require 'rails_helper'
 
+describe "Todos:" do
+  describe "unique identifier - " do
+    pending "create users table"
+    pending "user has many respondents"
+    describe "\n\twhen starting a session:" do
+      pending "\n\tfirst see if one exists by respondent session id (continue)" +
+              "\n\t\t- if so, continue as normal" +
+              "\n\t\t- if not, create one (new game)" +
+              "\n\t\t--> check if user exists by looking up rails session id" +
+              "\n\t\t\t- if so, create a new respondent for this user" +
+              "\n\t\t\t- if not, create a user, then create a respondent for them"
+    end
+  end
+end
+
 describe Respondent do
   let(:starting_node) { FactoryGirl.create(:node, template_name: 'splash')}
   describe "Attributes" do
