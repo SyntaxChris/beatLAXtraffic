@@ -145,9 +145,8 @@
 			display: -webkit-flex;     /* NEW - Chrome */
 			display: flex;
 			flex-direction: row;
-			flex-wrap: nowrap;
-			flex-direction: row;
 			flex-wrap: wrap;
+			flex-wrap: no-wrap;
 			width: 80%;
 			button.question-3-btn{
 				flex-grow: 1;
