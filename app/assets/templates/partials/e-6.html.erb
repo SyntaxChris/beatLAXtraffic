@@ -5,7 +5,7 @@
         <button 
           ng-repeat="answer in currentNode.answers" id="btn-{{$index}}" 
           class="question-3-btn car-progress" 
-          ng-click="addAnswerToCurrentAnswers(currentNode.answers[{{$index}}])">
+          ng-click="addAnswerToCurrentAnswers(answer)">
           {{ answer.answer }}
         </button>
     </div>
