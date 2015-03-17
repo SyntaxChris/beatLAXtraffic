@@ -10,6 +10,8 @@ describe "Todos:" do
               "\n\t\t- if not, create one (new game)" +
               "\n\t\t--> check if user exists by looking up rails session id" +
               "\n\t\t\t- if so, create a new respondent for this user" +
+              "\n\t\t\t  (make note to increase play count in this situation)" +
+              "\n\t\t\t  (will also need to add play_count to repondent if not exists)" +
               "\n\t\t\t- if not, create a user, then create a respondent for them"
     end
   end
