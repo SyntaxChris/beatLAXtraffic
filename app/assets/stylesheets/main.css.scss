@@ -117,6 +117,40 @@ body, html,button,pre {
 	font-weight: 700;
 }
 
+.error {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  color: white;
+  h1,p{
+    margin: 30px auto;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    text-shadow: 0 3px 5px rgba(0,0,0,.5);
+    -webkit-text-shadow: 0 3px 5px rgba(0,0,0,.5);
+  }
+  h1{
+    color: white;
+    font-size: 4vw;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .sub-header{
+    p {
+      line-height: 1;
+      color: white;
+      font-size: 1.5vw;
+      font-weight: 700;
+      margin: 20px 0;
+    }
+  }
+  .button {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+}
+
 .btcf:after {
   content:"";
   display:table;

@@ -557,11 +557,14 @@ angular.module('lawaApp')
               $scope.respondentCurrentNodeId = data.current_node_id;
               // ...along with a refresh of the previously seen nodes (for spinners and such)
               $scope.seenNodes = data.seen_nodes;
-
               // finally, go to the next node:
               $scope.goToNextNode();
             })
-          })
+          }).error(function(data){ // respondent update failure
+            window.location.href = "/error";
+          });
+        }).error(function(data){ // response post failure
+          window.location.href = "/error";
         });
       };
 

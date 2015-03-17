@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/superadmin', as: 'rails_admin'
   root 'static#private'
+  get '/error' => 'static#private'
 
   namespace :api, defaults: { format: 'json' } do
     resources :nodes, only: [:index, :show]
