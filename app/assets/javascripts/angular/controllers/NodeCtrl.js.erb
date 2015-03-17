@@ -548,10 +548,17 @@ angular.module('lawaApp')
           flight_time_remaining: $scope.variables.flight_time_remaining,
           times_circled: $scope.variables.times_circled
         }
-        $http.post('/api/response', { response: responseParams }).success(function(data){
-          // post to response to API and then on success update session flight information:
-          $http.post('/api/respondents/update', respondentParams).success(function(data){
-            // THEN get the next node, based on DB's truth...
+        // post these responses
+        $http.post('/api/response', { response: responseParams }).error(function(data){ // response post failure
+          // if this post breaks, send them to the error page
+          window.location.href = "/error";
+        }).success(function(data){
+          // otherwise, update session flight information
+          $http.post('/api/respondents/update', respondentParams).error(function(data){ // respondent update failure
+            // if the respondent doesn't update properly, send to erro
+            window.location.href = "/error";
+          }).success(function(data){
+            // Otherwise, get the next node, based on DB's truth...
             $http.get('/api/respondents/get_or_create/').success(function(data){
               // ...and set it in the scope:
               $scope.respondentCurrentNodeId = data.current_node_id;
@@ -559,14 +566,10 @@ angular.module('lawaApp')
               $scope.seenNodes = data.seen_nodes;
               // finally, go to the next node:
               $scope.goToNextNode();
-            })
-          }).error(function(data){ // respondent update failure
-            window.location.href = "/error";
+            });
           });
-        }).error(function(data){ // response post failure
-          window.location.href = "/error";
         });
-      };
+      }; // end submit function
 
       $scope.delaySubmit = function(decisionId, decreaseTime){
         _.delay($scope.submit, 800, decisionId, decreaseTime);
