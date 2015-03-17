@@ -41,7 +41,7 @@
 
         <div ng-if="decision.decision.indexOf('catch') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="yellow">
-            <div class="arrow-bundle">
+            <div class="arrow-bundle animate">
               <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
               <span ng-include="'<%= asset_path 'svgs/_racetrack.html' %>'" class="path-letter"></span>
             </div>
@@ -53,7 +53,7 @@
 
         <div ng-if="decision.decision.indexOf('meet') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="green">
-            <div class="arrow-bundle">
+            <div class="arrow-bundle animate">
               <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
               <span ng-include="'<%= asset_path 'svgs/_parking.html' %>'" class="path-letter"></span>
             </div>
@@ -65,7 +65,7 @@
 
         <div ng-if="decision.decision.indexOf('ready') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="orange">
-            <div class="arrow-bundle">
+            <div class="arrow-bundle animate">
               <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
               <span ng-include="'<%= asset_path 'svgs/_burger.html' %>'" class="path-letter"></span>
             </div>
@@ -77,7 +77,7 @@
 
         <div ng-if="decision.decision.indexOf('tram') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision); landPlane()" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
-            <div class="arrow-bundle">
+            <div class="arrow-bundle animate">
               <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
               <span ng-include="'<%= asset_path 'svgs/itfIcon.html' %>'" class="path-letter"></span>
             </div>
