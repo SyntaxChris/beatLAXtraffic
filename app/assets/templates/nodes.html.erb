@@ -6,23 +6,21 @@
     <div ng-if="currentNode.dashboard_type === 'plane'">
       <button class="skip plane-advance"
               ng-click="submit(null, true)"
-              ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"
+              ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'">
       </button>
     </div>
     <div ng-if="currentNode.dashboard_type === 'car'">
       <button class="skip car-progress"
               ng-click="submit(); advanceCar()"
-              ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"
+              ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'">
       </button>
     </div>
   </div>
 
   <!-- template -->
   <!-- <div class="row" id="lawa-template"><div ng-include="currentTemplateName"></div></div> -->
-  <div ng-if="templatesReady">
-    <div class="row" id="lawa-template">
-      <div ng-include="currentTemplateName"></div>
-    </div>
+  <div ng-if="templatesReady" class="row" id="lawa-template">
+    <div ng-include="currentTemplateName"></div>
   </div>
 
   <!-- landing plane -->
