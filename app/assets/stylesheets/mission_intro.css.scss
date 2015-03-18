@@ -566,6 +566,12 @@
       .stage-container{
         #txt-msg-container{
           height: 400px;
+          width: 280px;
+        }
+        #txt-bbl-content{
+          #sent-txt{
+            margin-top: 0%;
+          }
         }
       }
     }
@@ -574,6 +580,7 @@
       // bottom: 0;
       margin-top: 0;
       height: 400px;
+      width: 280px;
       #stage-2-header{
         background-color: #00B8E5; 
         color: white; 
@@ -595,7 +602,7 @@
           margin-top: -2%;
         }
         .from{
-          font-size: 30px; 
+          font-size: 28px; 
           padding-top: 10px; 
           text-align: left; 
           font-weight: 700;
@@ -613,22 +620,22 @@
           }
         }
         .to{
-          font-size: 30px; 
+          font-size: 28px; 
           padding-top: 10px; 
           text-align: right; 
           font-weight: 700;
           margin-top: -4%;
         }
         .from-name{
-          font-size: 12px; 
+          font-size: 10px; 
           text-align: left;
           padding-left: 20px;
           // margin-top: -2%;
         }
         .flight{
           position: absolute;
-          left: 105px;
-          font-size: 12px; 
+          left: 95px;
+          font-size: 9px; 
           text-align: center;
           // margin-top: -2%;
           padding:0;
@@ -638,7 +645,7 @@
           }
         }
         .to-name{
-          font-size: 12px; 
+          font-size: 9px; 
           text-align: right;
           // margin-top: -2%;
           // padding:0;
@@ -781,6 +788,7 @@
       // bottom: 10%;
       margin-top: 0;
       height: 400px;
+      width: 280px;
       #timer-backdrop{
         position: relative;
         margin-left: auto;
@@ -792,16 +800,16 @@
         border-radius: 60px;
         svg {
           position: absolute;
-          top: -20px;
-          left: 60px;
-          width: 120%;
-          height: 120%;
+          top: -15px;
+          left: 50px;
+          width: 115%;
+          height: 115%;
         }
         #bd-content{
           #flight-display{
             margin:0; 
             padding-top: 35px; 
-            font-size: 20px; 
+            font-size: 15px; 
             font-weight: 700; 
             padding-left: 30px; 
             opacity: 0.6;
@@ -810,13 +818,13 @@
         #display-time{
           position: absolute;
           top: 45px;
-          left: 140px;
+          left: 92px;
           width: 120px;
           color: white;
           text-align: right;
           span#mn-time{
             padding-right: 5px;
-            font-size: 50px;
+            font-size: 40px;
           }
           span#mn-unit{
             position: absolute;
@@ -835,7 +843,7 @@
         color: #59CFEF;
       }
       .btn-row{
-        margin-top: -5%;
+        margin-top: -3.5%;
         #stage-4-btn{
           margin-top: 7%;
           width: 100%;

@@ -168,7 +168,7 @@ namespace :populate do
         itf3noitfa9= Answer.create(question_id: itf3noitfq.id, answer: "Bag Check-in/Drop Off", icon_name: "bagcheck")
 
     # wait offsite
-    c1 = Node.create(nickname: "C 1", is_decision_point: false , branch_id: orange.id, template_name: "c-1", dashboard_type: "plane", skippable: false)
+    c1 = Node.create(nickname: "C 1", is_decision_point: false , branch_id: orange.id, template_name: "c-1", dashboard_type: "plane")
       c1q = Question.create(node_id: c1.id, question: "Where do you usually wait for your passenger?", question_type_id: single_choice.id)
         c1a1= Answer.create(question_id: c1q.id, answer: "Cellphone waiting lot", icon_name: nil)
         c1a2= Answer.create(question_id: c1q.id, answer: "Roadside near the airport", icon_name: nil)

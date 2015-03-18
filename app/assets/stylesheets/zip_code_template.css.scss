@@ -2,7 +2,7 @@
 	h3.main-question{
 		font-size: 4vw;
 	}
-	div.sub-header{
+	.sub-header{
 		margin-bottom: 0;
 		font-size: 2.5vw;
 		text-shadow: 0 2px 4px rgba(255,255,255,.7);
@@ -257,6 +257,13 @@
 		h3.main-question{
 			font-size: 7vw;
 			width: 95%;
+		}
+		.sub-header{
+			margin-bottom: 0;
+			font-size: 5vw;
+			font-weight: 700;
+			text-shadow: 0 1px 2px rgba(255,255,255,.7);
+			-webkit-text-shadow: 0 2px 2px rgba(255,255,255,.7);
 		}
 		.ferrari-container{
 			position: relative;

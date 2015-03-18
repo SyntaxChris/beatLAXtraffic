@@ -1,25 +1,38 @@
-#lax-start-cntr{
-	position: relative;
-	z-index: 30;
-	margin: 0 auto;
-	width: 35%;
-	min-width: 200px;
-	button{
-		background-color: #F05759;
-		font-family: 'Quicksand', sans-serif;
-		width: 100%;
-		font-size: 3vw;
-	}
-}
-#lax-sub-header{
-	color: white;
-	font-size: 2vw;
-	position: relative;
-	margin: 0 auto;
-}
 #splash-page {
 	overflow-y: hidden;
 	overflow-x: hidden;
+	.splash-header{
+		font-family: 'Quicksand', sans-serif;
+		text-shadow: 0 3px 5px rgba(0,0,0,.5);
+		-webkit-text-shadow: 0 3px 5px rgba(0,0,0,.5);
+		position: relative;
+		text-align: center;
+		font-size: 4vw;
+		font-weight: 700;
+		width: 100%;
+		color: white;
+		line-height: 1;
+		margin: 0 auto;
+		.sub-header{
+			color: white;
+			font-size: 2vw;
+			font-weight: 700;
+			padding: 2%;
+		}
+	}
+	.lax-start-cntr{
+		position: relative;
+		z-index: 30;
+		margin: 0 auto;
+		width: 35%;
+		min-width: 200px;
+		button{
+			background-color: #F05759;
+			font-family: 'Quicksand', sans-serif;
+			width: 100%;
+			font-size: 3vw;
+		}
+	}
 	.splash-ctnr{
 		position: absolute;
 		width: 100%;
@@ -37,35 +50,19 @@
 }
 
 @media screen and (orientation : portrait) {
-	#lax-start-cntr{
-		position: relative;
-		z-index: 30;
-		margin: 0 auto;
-		width: 35%;
-		min-width: 200px;
-		button{
-			background-color: #F05759;
-			font-family: 'Quicksand', sans-serif;
-			width: 100%;
-			font-size: 5vw;
-		}
-	}
 	#splash-page {
 		overflow-y: hidden;
 		overflow-x: hidden;
-		.btn-ctnr{
-			position: absolute;
-			z-index: 50;
-			width: 100%;
-			left: 0;
-			.start-btn{
-				cursor: pointer;
-				position: relative;
-				width: 50%;
-				margin: 0 auto;
-				color: white;
+		.lax-start-cntr{
+			position: relative;
+			z-index: 30;
+			margin: 0 auto;
+			width: 35%;
+			min-width: 200px;
+			button{
 				background-color: #F05759;
-				padding: 15px;
+				font-family: 'Quicksand', sans-serif;
+				width: 100%;
 				font-size: 5vw;
 			}
 		}
@@ -87,35 +84,43 @@
 }
 
 @media screen and (max-width : 450px) {
-	#lax-start-cntr{
-		position: relative;
-		z-index: 30;
-		margin: 0 auto;
-		width: 35%;
-		min-width: 200px;
-		button{
-			background-color: #F05759;
-			font-family: 'Quicksand', sans-serif;
-			width: 100%;
-			font-size: 5vw;
-			font-weight: 700;
-		}
-	}
 	#splash-page {
-		.btn-ctnr{
-			position: absolute;
-			z-index: 50;
-			width: 100%;
-			left: 0;
-			.start-btn{
-				cursor: pointer;
-				position: relative;
-				width: 70%;
-				margin: 0 auto;
+		.splash-header{
+			font-family: 'Quicksand', sans-serif;
+			text-shadow: 0 2px 3px rgba(0,0,0,.5);
+			-webkit-text-shadow: 0 2px 3px rgba(0,0,0,.5);
+			position: relative;
+			text-align: center;
+			font-size: 7vw;
+			font-weight: 700;
+			width: 95%;
+			color: white;
+			line-height: 1;
+			margin: 0 auto;
+			.sub-header{
+				margin-top: 2%;
+				text-shadow: 0 2px 3px rgba(0,0,0,.7);
+				-webkit-text-shadow: 0 2px 3px rgba(0,0,0,.7);
 				color: white;
+				font-size: 4vw;
+				font-weight: 700;
+				padding: 2%;
+			}
+		}
+		.lax-start-cntr{
+			position: relative;
+			z-index: 30;
+			margin: 0 auto;
+			width: 35%;
+			min-width: 200px;
+			button{
 				background-color: #F05759;
-				padding: 15px;
+				font-family: 'Quicksand', sans-serif;
+				width: 100%;
+				margin-top: 13%;
+				padding: 10px 0 10px 0;
 				font-size: 7vw;
+				font-weight: 700;
 			}
 		}
 		.splash-ctnr{
