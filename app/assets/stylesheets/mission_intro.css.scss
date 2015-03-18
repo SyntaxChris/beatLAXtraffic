@@ -388,18 +388,12 @@
           z-index: 4;
           top: -35%;
           width: 20%;
-          left: -20%;
+          left: -40%;
           -webkit-animation: car-rumble 0.5s infinite;
           -moz-animation: car-rumble 0.5s infinite;
           -o-animation: car-rumble 0.5s infinite;
           -ms-animation: car-rumble 0.5s infinite;
           animation: car-rumble 0.5s infinite;
-
-          // -webkit-animation: car-drive 4s linear infinite;
-          // -moz-animation: car-drive 4s linear infinite;
-          // -o-animation: car-drive 4s linear infinite;
-          // -ms-animation: car-drive 4s linear infinite;
-          // animation: car-drive 4s linear infinite;
           svg{
             width: 100%;
           }
@@ -508,44 +502,6 @@
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -745,18 +701,28 @@
         }
       }
     }
+
     #stage-3{
       #speeding-bg{
+        padding-bottom: 70%;
         #palm-1{
+          top: -15%;
+          // right: 10%;
           svg{
 
           }
         }
         #road{
+          padding-bottom: 10%; 
           #line{
 
           }
           #speeding-bbl{
+            bottom: 115%;
+            left: -10%;
+            width: 200%;
+            border-radius: 10px;
+            font-size: 20px;
 
           }
           #speeding-bbl:before {
@@ -771,12 +737,17 @@
             border-right: 5px solid transparent;
           }
           #speeding-car{
+            left: -40%;
             svg{
-              
+              width: 180%;
             }
           }
           #palm-2{
+            // right: 10%;
+            top: 100%;
             svg {
+              width: 150%;
+              height: 150%;
             }
           }
         } 
@@ -859,6 +830,28 @@
     }
   }
 
+
+  @-webkit-keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
+  }
+  @-moz-keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
+  }
+  @-o-keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
+  }
+  @-ms-keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
+  }
+  @keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
+  }
+
 }
 
 
@@ -899,23 +892,23 @@
 
 
 @-webkit-keyframes car-race {
-  0% {left: -20%;}
+  0% {left: -40%;}
   100% {left: 120%;}
 }
 @-moz-keyframes car-race {
-  0% {left: -20%;}
+  0% {left: -40%;}
   100% {left: 120%;}
 }
 @-o-keyframes car-race {
-  0% {left: -20%;}
+  0% {left: -40%;}
   100% {left: 120%;}
 }
 @-ms-keyframes car-race {
-  0% {left: -20%;}
+  0% {left: -40%;}
   100% {left: 120%;}
 }
 @keyframes car-race {
-  0% {left: -20%;}
+  0% {left: -40%;}
   100% {left: 120%;}
 }
 
