@@ -109,6 +109,10 @@ describe Respondent do
     it "has an experienced_error boolean that defaults to false" do
       expect(respondent.experienced_error).to eq false
     end
+
+    it "has a gameplay_number, defaulting to 1" do
+      expect(respondent.gameplay_number).to eq 1
+    end
   end
 
   describe "Associations" do
@@ -220,8 +224,6 @@ describe Respondent do
             let!(:user) {
               FactoryGirl.create(:unique_user, browser_identifier: "uniqueperson")
             }
-            pending "create play count for respondent"
-            pending "increase respondent's play count"
             it "creates a new respondent for this user" do
               prior_respondent_count = Respondent.count
               prior_user_count = UniqueUser.count
@@ -231,6 +233,20 @@ describe Respondent do
               expect(Respondent.count).to eq prior_respondent_count + 1
               expect(Respondent.last.session_id).to eq "someNewSession"
               expect(Respondent.last.unique_user).to eq user
+            end
+
+            it "increases the new respondent's gameplay_number by 1" do
+              new_session_id = "someNewSession"
+              existing_respondent = FactoryGirl.create(
+                :respondent,
+                session_id: "5678",
+                unique_user_id: user.id
+              )
+              previous_number = existing_respondent.gameplay_number
+              Respondent.get_or_create_by_session(new_session_id, user.browser_identifier)
+              expect(
+                Respondent.find_by_session_id(new_session_id)
+                  .gameplay_number).to eq previous_number + 1
             end
           end
 

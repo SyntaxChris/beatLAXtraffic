@@ -29,9 +29,11 @@ class Respondent < ActiveRecord::Base
   end
 
   def self.create_new_respondent_with_user(respondent_session_id, unique_identifier)
+    result = UniqueUser.get_or_create_by_identifier(unique_identifier)
     Respondent.create(
       session_id: respondent_session_id,
-      unique_user_id: UniqueUser.get_or_create_by_identifier(unique_identifier).id
+      gameplay_number: result[:gameplay_number],
+      unique_user_id: result[:user_id]
     )
   end
 
