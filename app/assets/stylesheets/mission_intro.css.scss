@@ -388,18 +388,12 @@
           z-index: 4;
           top: -35%;
           width: 20%;
-          left: -20%;
+          left: -40%;
           -webkit-animation: car-rumble 0.5s infinite;
           -moz-animation: car-rumble 0.5s infinite;
           -o-animation: car-rumble 0.5s infinite;
           -ms-animation: car-rumble 0.5s infinite;
           animation: car-rumble 0.5s infinite;
-
-          // -webkit-animation: car-drive 4s linear infinite;
-          // -moz-animation: car-drive 4s linear infinite;
-          // -o-animation: car-drive 4s linear infinite;
-          // -ms-animation: car-drive 4s linear infinite;
-          // animation: car-drive 4s linear infinite;
           svg{
             width: 100%;
           }
@@ -511,44 +505,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media only screen and (max-width : 460px) { 
   #mission-intro{
     h3.main-question{
@@ -566,6 +522,12 @@
       .stage-container{
         #txt-msg-container{
           height: 400px;
+          width: 280px;
+        }
+        #txt-bbl-content{
+          #sent-txt{
+            margin-top: 0%;
+          }
         }
       }
     }
@@ -574,6 +536,7 @@
       // bottom: 0;
       margin-top: 0;
       height: 400px;
+      width: 280px;
       #stage-2-header{
         background-color: #00B8E5; 
         color: white; 
@@ -595,7 +558,7 @@
           margin-top: -2%;
         }
         .from{
-          font-size: 30px; 
+          font-size: 28px; 
           padding-top: 10px; 
           text-align: left; 
           font-weight: 700;
@@ -613,22 +576,22 @@
           }
         }
         .to{
-          font-size: 30px; 
+          font-size: 28px; 
           padding-top: 10px; 
           text-align: right; 
           font-weight: 700;
           margin-top: -4%;
         }
         .from-name{
-          font-size: 12px; 
+          font-size: 10px; 
           text-align: left;
           padding-left: 20px;
           // margin-top: -2%;
         }
         .flight{
           position: absolute;
-          left: 105px;
-          font-size: 12px; 
+          left: 95px;
+          font-size: 9px; 
           text-align: center;
           // margin-top: -2%;
           padding:0;
@@ -638,7 +601,7 @@
           }
         }
         .to-name{
-          font-size: 12px; 
+          font-size: 9px; 
           text-align: right;
           // margin-top: -2%;
           // padding:0;
@@ -738,18 +701,28 @@
         }
       }
     }
+
     #stage-3{
       #speeding-bg{
+        padding-bottom: 70%;
         #palm-1{
+          top: -15%;
+          // right: 10%;
           svg{
 
           }
         }
         #road{
+          padding-bottom: 10%; 
           #line{
 
           }
           #speeding-bbl{
+            bottom: 115%;
+            left: -10%;
+            width: 200%;
+            border-radius: 10px;
+            font-size: 20px;
 
           }
           #speeding-bbl:before {
@@ -764,12 +737,17 @@
             border-right: 5px solid transparent;
           }
           #speeding-car{
+            left: -40%;
             svg{
-              
+              width: 180%;
             }
           }
           #palm-2{
+            // right: 10%;
+            top: 100%;
             svg {
+              width: 150%;
+              height: 150%;
             }
           }
         } 
@@ -781,6 +759,7 @@
       // bottom: 10%;
       margin-top: 0;
       height: 400px;
+      width: 280px;
       #timer-backdrop{
         position: relative;
         margin-left: auto;
@@ -792,16 +771,16 @@
         border-radius: 60px;
         svg {
           position: absolute;
-          top: -20px;
-          left: 60px;
-          width: 120%;
-          height: 120%;
+          top: -15px;
+          left: 50px;
+          width: 115%;
+          height: 115%;
         }
         #bd-content{
           #flight-display{
             margin:0; 
             padding-top: 35px; 
-            font-size: 20px; 
+            font-size: 15px; 
             font-weight: 700; 
             padding-left: 30px; 
             opacity: 0.6;
@@ -810,13 +789,13 @@
         #display-time{
           position: absolute;
           top: 45px;
-          left: 140px;
+          left: 92px;
           width: 120px;
           color: white;
           text-align: right;
           span#mn-time{
             padding-right: 5px;
-            font-size: 50px;
+            font-size: 40px;
           }
           span#mn-unit{
             position: absolute;
@@ -835,7 +814,7 @@
         color: #59CFEF;
       }
       .btn-row{
-        margin-top: -5%;
+        margin-top: -3.5%;
         #stage-4-btn{
           margin-top: 7%;
           width: 100%;
@@ -849,6 +828,28 @@
         }
       }
     }
+  }
+
+
+  @-webkit-keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
+  }
+  @-moz-keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
+  }
+  @-o-keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
+  }
+  @-ms-keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
+  }
+  @keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
   }
 
 }
@@ -891,23 +892,23 @@
 
 
 @-webkit-keyframes car-race {
-  0% {left: -20%;}
+  0% {left: -40%;}
   100% {left: 120%;}
 }
 @-moz-keyframes car-race {
-  0% {left: -20%;}
+  0% {left: -40%;}
   100% {left: 120%;}
 }
 @-o-keyframes car-race {
-  0% {left: -20%;}
+  0% {left: -40%;}
   100% {left: 120%;}
 }
 @-ms-keyframes car-race {
-  0% {left: -20%;}
+  0% {left: -40%;}
   100% {left: 120%;}
 }
 @keyframes car-race {
-  0% {left: -20%;}
+  0% {left: -40%;}
   100% {left: 120%;}
 }
 
