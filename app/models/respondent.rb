@@ -18,6 +18,7 @@ class Respondent < ActiveRecord::Base
 
   has_many :responses
   has_many :seen_nodes
+  belongs_to :unique_user
   after_create :set_starting_node
   after_create :set_variables
 

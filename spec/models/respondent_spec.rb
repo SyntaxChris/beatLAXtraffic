@@ -121,6 +121,10 @@ describe Respondent do
     it "has many seen nodes" do
       expect(respondent).to have_many(:seen_nodes)
     end
+
+    it "belongs to a unique_user" do
+      expect(respondent).to belong_to(:unique_user)
+    end
   end
 
   describe "Features" do
