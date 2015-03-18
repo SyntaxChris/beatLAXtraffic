@@ -36,7 +36,12 @@ module Api
     end
 
     def session_params
-      params.permit(:time_elapsed, :flight_time_remaining, :times_circled)
+      params.permit(
+        :time_elapsed,
+        :flight_time_remaining,
+        :times_circled,
+        :first_path_chosen
+      )
     end
 
   end

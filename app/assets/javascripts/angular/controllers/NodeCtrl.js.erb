@@ -543,11 +543,32 @@ angular.module('lawaApp')
           next_node_id: $scope.currentNode.next_node_id || $scope.currentDecisionDestination.node_id,
           freeform_response: { response: freeformResponse, answer_id: freeformAnswerId } || null
         }
+
         var respondentParams = {
           time_elapsed: $scope.variables.time_elapsed,
           flight_time_remaining: $scope.variables.flight_time_remaining,
           times_circled: $scope.variables.times_circled
         }
+
+        // when on dp-1, set up friendly name for first_path_chosen data:
+        if($scope.currentNode.template_name === "dp-1"){
+          debugger;
+          switch($scope.currentDecisionDestination.template_name){
+            case 'gq-1-a':
+              respondentParams['first_path_chosen'] = 'curb';
+              break;
+            case 'gq-1-b':
+              respondentParams['first_path_chosen'] = 'park';
+              break;
+            case 'gq-1-c':
+              respondentParams['first_path_chosen'] = 'offsite';
+              break;
+            case 'gq-1-itf':
+              respondentParams['first_path_chosen'] = 'itf';
+              break;
+          }
+        }
+
         // post these responses
         $http.post('/api/response', { response: responseParams }).error(function(data){ // response post failure
           // if this post breaks, send them to the error page
