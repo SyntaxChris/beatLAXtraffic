@@ -127,7 +127,6 @@ $(document).ready(function(){
     }
 
     $body.on('click', '.plane-advance', function(){
-        debugger;
         movePlane();
         moveClock();
     });
