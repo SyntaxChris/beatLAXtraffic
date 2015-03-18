@@ -22,9 +22,22 @@ class Respondent < ActiveRecord::Base
   after_create :set_starting_node
   after_create :set_variables
 
-  def self.get_or_create_by_session(searched_session_id)
-    respondent = Respondent.find_by_session_id(searched_session_id) ||
-      Respondent.create(session_id: searched_session_id)
+  def self.get_or_create_by_session(respondent_session_id, unique_identifier)
+    respondent = Respondent.find_by_session_id(respondent_session_id)
+    if !respondent.present?
+      # TODO: create a UU get_or_create and refactor here:
+      existing_unique_user = UniqueUser.find_by_browser_identifier(unique_identifier)
+      if existing_unique_user.present?
+        respondent = Respondent.create(
+          session_id: respondent_session_id, unique_user_id: existing_unique_user.id
+        )
+      else
+        new_unique_user = UniqueUser.create(browser_identifier: unique_identifier)
+        respondent = Respondent.create(
+          session_id: respondent_session_id, unique_user_id: new_unique_user.id
+        )
+      end
+    end
 
     seen_nodes = respondent.seen_nodes
 

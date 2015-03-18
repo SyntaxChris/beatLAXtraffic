@@ -3,14 +3,14 @@ module Api
     respond_to :json
 
     def get_or_create
-      result = Respondent.get_or_create_by_session(@survey_session_id)
+      result = Respondent.get_or_create_by_session(@survey_session_id, @user_identifier)
       @respondent = result[:respondent]
       @seen_nodes = result[:seen_nodes]
       # render json: @respondent_result, status: 200
     end
 
     def restart
-      new_respondent = Respondent.create(session_id: new_survey_session_id)
+      new_respondent = Respondent.create(session_id: new_random_id)
       new_respondent.update(current_node_id: Node.find_by_template_name('sq-2-2').id)
 
       cookies[:survey_session_id] = new_respondent.session_id
