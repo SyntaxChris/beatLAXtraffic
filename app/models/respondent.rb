@@ -19,19 +19,27 @@ class Respondent < ActiveRecord::Base
   has_many :responses
   has_many :seen_nodes
   belongs_to :unique_user
-  after_create :set_starting_node
+  # after_create :set_starting_node
   after_create :set_variables
 
-  def self.get_or_create_by_session(respondent_session_id, unique_identifier)
+  def self.get_or_create_by_session(respondent_session_id, unique_identifier, restarting = false)
     respondent = Respondent.find_by_session_id(respondent_session_id) ||
-      Respondent.create_new_respondent_with_user(respondent_session_id, unique_identifier)
+      Respondent.create_new_respondent_with_user(respondent_session_id, unique_identifier, restarting)
     return { respondent: respondent, seen_nodes: respondent.seen_nodes }
   end
 
-  def self.create_new_respondent_with_user(respondent_session_id, unique_identifier)
+  def self.create_new_respondent_with_user(respondent_session_id, unique_identifier, restarting = false)
+    result = UniqueUser.get_or_create_by_identifier(unique_identifier)
+    if restarting
+      current_node_id = Node.find_by_template_name('sq-2-2').id
+    else
+      current_node_id = Node.find_by_template_name('splash').id
+    end
     Respondent.create(
       session_id: respondent_session_id,
-      unique_user_id: UniqueUser.get_or_create_by_identifier(unique_identifier).id
+      current_node_id: current_node_id,
+      gameplay_number: result[:gameplay_number],
+      unique_user_id: result[:user_id]
     )
   end
 
