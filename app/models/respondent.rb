@@ -18,16 +18,21 @@ class Respondent < ActiveRecord::Base
 
   has_many :responses
   has_many :seen_nodes
+  belongs_to :unique_user
   after_create :set_starting_node
   after_create :set_variables
 
-  def self.get_or_create_by_session(searched_session_id)
-    respondent = Respondent.find_by_session_id(searched_session_id) ||
-      Respondent.create(session_id: searched_session_id)
+  def self.get_or_create_by_session(respondent_session_id, unique_identifier)
+    respondent = Respondent.find_by_session_id(respondent_session_id) ||
+      Respondent.create_new_respondent_with_user(respondent_session_id, unique_identifier)
+    return { respondent: respondent, seen_nodes: respondent.seen_nodes }
+  end
 
-    seen_nodes = respondent.seen_nodes
-
-    return { respondent: respondent, seen_nodes: seen_nodes }
+  def self.create_new_respondent_with_user(respondent_session_id, unique_identifier)
+    Respondent.create(
+      session_id: respondent_session_id,
+      unique_user_id: UniqueUser.get_or_create_by_identifier(unique_identifier).id
+    )
   end
 
   def update_node_history(response_params)

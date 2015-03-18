@@ -1,5 +1,22 @@
 require 'rails_helper'
 
+describe "Todos:" do
+  describe "unique identifier - " do
+    #pending "create users table"
+    #pending "user has many respondents"
+    #describe "\n\twhen starting a session:" do
+    #  pending "\n\tfirst see if one exists by respondent session id (continue)" +
+    #          "\n\t\t- if so, continue as normal" +
+    #          "\n\t\t- if not, create one (new game)" +
+    #          "\n\t\t--> check if user exists by looking up rails session id" +
+    #          "\n\t\t\t- if so, create a new respondent for this user" +
+    #          "\n\t\t\t  (make note to increase play count in this situation)" +
+    #          "\n\t\t\t  (will also need to add play_count to repondent if not exists)" +
+    #          "\n\t\t\t- if not, create a user, then create a respondent for them"
+    #end
+  end
+end
+
 describe Respondent do
   let(:starting_node) { FactoryGirl.create(:node, template_name: 'splash')}
   describe "Attributes" do
@@ -104,6 +121,10 @@ describe Respondent do
     it "has many seen nodes" do
       expect(respondent).to have_many(:seen_nodes)
     end
+
+    it "belongs to a unique_user" do
+      expect(respondent).to belong_to(:unique_user)
+    end
   end
 
   describe "Features" do
@@ -174,23 +195,64 @@ describe Respondent do
     describe "get_or_create_by_session(session_id)" do
     let!(:starting_node) { FactoryGirl.create(:node, template_name: 'splash') }
       describe "looks up a session to see if it has an active respondent session" do
-        context "when session exists" do
+        context "when session exists (this is continuing a game)" do
         let!(:respondent) { FactoryGirl.create(:respondent, session_id: "1234") }
           it "returns that active session" do
             node_1 = create(:node)
             seen_node = respondent.seen_nodes.create(node_id: node_1.id)
 
             expect(Respondent.all.count).to eq 1
-            expect(Respondent.get_or_create_by_session("1234")[:respondent]).to eq respondent
+            expect(Respondent.get_or_create_by_session("1234", "xyz")[:respondent]).to eq respondent
             expect(Respondent.all.count).to eq 1
           end
         end
 
-        context "when session doesn't exist" do
-          it "creates a session and returns it" do
-            expect(Respondent.all.count).to eq 0
-            expect(Respondent.get_or_create_by_session("1234")[:respondent]).to eq Respondent.last
-            expect(Respondent.all.count).to eq 1
+        context "when survey session doesn't exist (this is starting a new game)" do
+          it "checks if this unique user already has a respondent" do
+            session_id = "somenewone"
+            user_ident = "auniqueuser"
+
+            expect(Respondent).to receive(:find_by_session_id).with(session_id)
+            expect(UniqueUser).to receive(:find_by_browser_identifier).with(user_ident)
+            Respondent.get_or_create_by_session(session_id, user_ident)
+          end
+          context "when unique user already exists" do
+            let!(:user) {
+              FactoryGirl.create(:unique_user, browser_identifier: "uniqueperson")
+            }
+            pending "create play count for respondent"
+            pending "increase respondent's play count"
+            it "creates a new respondent for this user" do
+              prior_respondent_count = Respondent.count
+              prior_user_count = UniqueUser.count
+
+              Respondent.get_or_create_by_session("someNewSession", user.browser_identifier)
+              expect(UniqueUser.count).to eq prior_user_count
+              expect(Respondent.count).to eq prior_respondent_count + 1
+              expect(Respondent.last.session_id).to eq "someNewSession"
+              expect(Respondent.last.unique_user).to eq user
+            end
+          end
+
+          context "when unique user doesn't already exist" do
+            it "creates a unique_user" do
+              prior_user_count = UniqueUser.count
+
+              Respondent.get_or_create_by_session("someNewSession", "abc")
+              expect(UniqueUser.count).to eq prior_user_count + 1
+              expect(UniqueUser.last.browser_identifier).to eq "abc"
+            end
+
+            it "then creates a respondent for this user" do
+              prior_respondent_count = Respondent.all.count
+              prior_user_count = UniqueUser.count
+
+              Respondent.get_or_create_by_session("someNewSession", "abc")
+              expect(Respondent.count).to eq prior_respondent_count + 1
+              expect(UniqueUser.count).to eq prior_user_count + 1
+              expect(Respondent.last.session_id).to eq "someNewSession"
+              expect(Respondent.last.unique_user.browser_identifier).to eq "abc"
+            end
           end
         end
       end

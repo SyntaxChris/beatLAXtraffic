@@ -15,10 +15,15 @@ class ApplicationController < ActionController::Base
   private
 
   def soft_sign_in
-    @survey_session_id ||= cookies[:survey_session_id] ||= new_survey_session_id
+    # if user has a survey cookie already, use it (continuing)
+    # otherwise, give them a new random one
+    @survey_session_id ||= cookies[:survey_session_id] ||= new_random_id
+    # similarly, give them a unique identifier if they don't have one.
+    # this wont change with every game session
+    @user_identifier ||= cookies[:user_identifier] ||= new_random_id
   end
 
-  def new_survey_session_id
+  def new_random_id
     return SecureRandom.hex
   end
 
