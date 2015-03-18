@@ -65,43 +65,37 @@
 
 
 <div id="congrats-share-overlay">
-  <div class="inner">
-    <div class="top-section">
-      <div class="title-text-c">
-        <!-- Share your pickup skills -->
-        <div class="row">
-          <div class="small-12 columns" id="skills">Share your pickup skills</div>
+  <div class="tile-ctnr">
+    <div class="tile">
+      <button id="x-btn-close-share-overlay" class="close-share-overlay-btn" style="text-align: right">x</button>
+      <div class="title">Share this survey to help LAX!</div>
+      <div class="url">
+        <div class="mail">
+          <a href="mailto:?body=Take this game survey and help LAX! http://beatLAXtraffic.com&subject=Beat LAX Traffic!" target="_top" ng-include="'<%= asset_path 'svgs/mail.html' %>'"></a>
+        </div>
+        <div class="link">
+          http://beatLAXtraffic.com  
         </div>
       </div>
-      <div class="close-btn-c">
-        <button id="x-btn-close-share-overlay" class="close-share-overlay-btn" style="text-align: right">x</button>
-      </div>
-    </div>
-
-    <div class="share-url">
-      http://beatLAXtraffic.com
-    </div>
-
-    <div class="share-btns">
-      <div class="large-6 medium-6 small-6 columns" id="tweet">
-        <a class="twitter-share-button" 
-          href="https://twitter.com/share"
-          data-url="https://someawesomewebapp.com"
-          data-text="I just played the LAX Pickup Artist Survey Game. Check it out!"
-          data-count="horizontal">
+      <div class="social-media-row">
+        <div class="twitter">
+          <a class="twitter-share-button" 
+            href="https://twitter.com/share"
+            data-url="http://beatLAXtraffic.com"
+            data-text="I just beat LAX traffic in this survey game. Check it out!"
+            data-count="horizontal">
+          </a>
+        </div>
+        <a class="facebook">
+          <div class="fb-share-button" 
+            data-href="http://beatLAXtraffic.com" 
+            data-layout="button_count">
+          </div>
         </a>
       </div>
-      <div class="large-6 medium-6 small-6 columns">
-        <div class="fb-share-button" 
-          data-href="https://someawesomewebapp.com" 
-          data-layout="button_count">
-        </div>
-      </div>
-    </div>
     </div>
   </div>
 </div>
-
 
 
 <script>
