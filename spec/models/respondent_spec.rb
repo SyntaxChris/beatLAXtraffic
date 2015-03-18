@@ -113,6 +113,10 @@ describe Respondent do
     it "has a gameplay_number, defaulting to 1" do
       expect(respondent.gameplay_number).to eq 1
     end
+
+    it "has a first_path_chosen" do
+      expect(respondent).to respond_to(:first_path_chosen)
+    end
   end
 
   describe "Associations" do
@@ -142,9 +146,12 @@ describe Respondent do
       # end
       let!(:new_respondent) { FactoryGirl.create(:respondent) }
 
-      it "on creation, current_node_id equals the starting node" do
-        expect(new_respondent.current_node_id).to eq Node.find_by_template_name("splash").id
-      end
+      # respondents are only ever created through the get_or_create_by_session method,
+      # which handles setting the starting node based on if the user is restarting or
+      # playing a first game.
+      #it "on creation, current_node_id equals the starting node" do
+      #  expect(new_respondent.current_node_id).to eq Node.find_by_template_name("splash").id
+      #end
 
       it "on creation, 'flight_code' is set" do
         expect(new_respondent.flight_code).to be_between(Respondent::FLIGHT_NUMBERS.min, Respondent::FLIGHT_NUMBERS.max)
