@@ -1,7 +1,7 @@
 class Respondent < ActiveRecord::Base
   FLIGHT_NUMBERS = *(100..999)
   TIME_TILL_LANDS = [15, 30, 45, 60]
-  LUGGAGE_TYPES = ["Carry-on bag", "Large suitcase"]
+  LUGGAGE_TYPES = ["Small bag", "Large suitcase"]
   ORIGINATING_LOCATIONS = [
     { code: "JFK", city: "New York"},
     { code: "DFW", city: "Dallas" },
