@@ -17,14 +17,14 @@ $(document).ready(function(){
             if($('#landing-plane').hasClass("land-ze-plane") === false){
                 $('#landing-plane').addClass("land-ze-plane")
             }
-        } 
-    
+        }
+
       var currentProgress = parseInt($('#plane-progress').text());
     }
 
     var completeLanding = function(){
         var currentProgress = $('#plane-progress').text("85");
-        
+
         $("#plane-bar").animate({width: "85%"}, 200);
         $("#filler").animate({marginLeft: "85%"}, 200);
         $("#plane-alert").attr("class", "clock-pulse");
@@ -83,7 +83,7 @@ $(document).ready(function(){
             else{
                 $('svg circle#timer-fill').css("opacity", o);
                 $('#clock-face').data('opac', o);
-            } 
+            }
         }
         else{
             $('svg circle#timer-fill').css("opacity", 1);
@@ -106,7 +106,7 @@ $(document).ready(function(){
 
         // minute logic
         $('span#min').text(Math.round(currentMin/60 % 1 * 60));
-        
+
         // hour logic
         if(currentHour < 1){
            $('#hr').empty();
@@ -143,8 +143,7 @@ $(document).ready(function(){
             window.setTimeout(function () {
                 initiateDopaCloud = 0;
                 $('#cloud-9').removeClass('dopa-cloud');
-            }, 5000);  
-        
+            }, 5000);
         }
     });
 
