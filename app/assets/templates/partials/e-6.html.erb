@@ -4,13 +4,13 @@
     <div class="btn-wrapper">
         <button 
           ng-repeat="answer in currentNode.answers" id="btn-{{$index}}" 
-          class="question-3-btn car-progress" 
+          class="question-3-btn" 
           ng-click="addAnswerToCurrentAnswers(answer)">
           {{ answer.answer }}
         </button>
     </div>
     <div class="finish-wrapper">
-      <button class="finish-lawa car-progress" ng-click="delaySubmit(null, false); advanceCar()">FINISH</button>  
+      <button class="finish-lawa car-progress" ng-click="delaySubmit(null, false); advanceCar(); advancePlane()">FINISH</button>  
     </div>    
   </div>
 </div>
