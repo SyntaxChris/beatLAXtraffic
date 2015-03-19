@@ -25,11 +25,11 @@ namespace :populate do
     # scenario questions
     # TODO: add icon names for all
 
-    splash = Node.create(nickname: "Splash", is_decision_point: false, branch_id: blue.id, template_name: "splash", skippable: false)
+    splash = Node.create(nickname: "splash", is_decision_point: false, branch_id: blue.id, template_name: "splash", skippable: false)
       splashq = Question.create(node_id: splash.id, question: "", question_type_id: single_choice.id)
         splashqa1 = Answer.create(question_id: splashq.id, answer: "Splash screen seen", icon_name: nil)
 
-    sq1 = Node.create(nickname: "SQ 1", is_decision_point: false, branch_id: blue.id, template_name: "sq-1", skippable: false)
+    sq1 = Node.create(nickname: "zipcode", is_decision_point: false, branch_id: blue.id, template_name: "sq-1", skippable: false)
       sq1q = Question.create(node_id: sq1.id, question: "Where in LA are you coming from?", question_type_id: single_choice.id)
       # ^ needs a question type
         # sq1a1 = Answer.create(question_id: sq1q.id, answer: "Less than 30 minute drive away", icon_name: nil)
@@ -38,7 +38,7 @@ namespace :populate do
         # sq1a4 = Answer.create(question_id: sq1q.id, answer: "2 - 4 hours away", icon_name: nil)
         # sq1a5 = Answer.create(question_id: sq1q.id, answer: "More than 4 hours away", icon_name: nil)
 
-    sq22 = Node.create(nickname: "SQ 2.2", is_decision_point: false , branch_id: blue.id, template_name: "sq-2-2", skippable: false)
+    sq22 = Node.create(nickname: "passengers", is_decision_point: false , branch_id: blue.id, template_name: "sq-2-2", skippable: false)
       sq22q = Question.create(
         node_id: sq22.id,
         question: "You are the chosen one, selected to pick up XXX. There will be X passengers you need to pick up. They will have XXX with them",
@@ -56,7 +56,7 @@ namespace :populate do
     #  sq35q = Question.create(node_id: sq35.id, question: "There is a friend in the car helping you with this pick-up ", question_type_id: single_choice.id)
       # ^ This will either say this or an alternate based on a random generation
 
-    gq1a = Node.create(nickname: "GQ 1 A", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-a", dashboard_type: "plane")
+    gq1a = Node.create(nickname: "a_whyuchoose", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-a", dashboard_type: "plane")
       gq1aq = Question.create(node_id: gq1a.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id)
         gq1aa1 = Answer.create(question_id: gq1aq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1)
         gq1aa2 = Answer.create(question_id: gq1aq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5)
@@ -64,7 +64,7 @@ namespace :populate do
         gq1aa4 = Answer.create(question_id: gq1aq.id, answer: "To avoid paying for parking", icon_name: nil, custom_order: 3)
         gq1aa5 = Answer.create(question_id: gq1aq.id, answer: "To minimize the hassle for me", icon_name: nil, custom_order: 4)
 
-    gq1b = Node.create(nickname: "GQ 1 B", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-b", dashboard_type: "plane")
+    gq1b = Node.create(nickname: "b_whyuchoose", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-b", dashboard_type: "plane")
       gq1bq = Question.create(node_id: gq1b.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id)
         gq1ba1 = Answer.create(question_id: gq1bq.id, answer: "To minimize the hassle for me", icon_name: nil, custom_order: 4)
         gq1ba2 = Answer.create(question_id: gq1bq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1)
@@ -72,7 +72,7 @@ namespace :populate do
         gq1ba4 = Answer.create(question_id: gq1bq.id, answer: "To avoid paying for parking", icon_name: nil, custom_order: 3)
         gq1ba5 = Answer.create(question_id: gq1bq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5)
 
-    gq1c = Node.create(nickname: "GQ 1 C", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-c", dashboard_type: "plane")
+    gq1c = Node.create(nickname: "c_whyuchoose", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-c", dashboard_type: "plane")
       gq1cq = Question.create(node_id: gq1c.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id)
         gq1ca1 = Answer.create(question_id: gq1cq.id, answer: "To minimize the hassle for me", icon_name: nil, custom_order: 4)
         gq1ca2 = Answer.create(question_id: gq1cq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1)
@@ -80,7 +80,7 @@ namespace :populate do
         gq1ca4 = Answer.create(question_id: gq1cq.id, answer: "To avoid paying for parking", icon_name: nil, custom_order: 3)
         gq1ca5 = Answer.create(question_id: gq1cq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5)
 
-    gq1itf = Node.create(nickname: "GQ 1 ITF", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-itf", dashboard_type: "plane")
+    gq1itf = Node.create(nickname: "d_whyuchoose", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-itf", dashboard_type: "plane")
       gq1itfq = Question.create(node_id: gq1itf.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id)
         gq1itfa1 = Answer.create(question_id: gq1itfq.id, answer: "To minimize the hassle for me", icon_name: nil, custom_order: 4)
         gq1itfa2 = Answer.create(question_id: gq1itfq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1)
@@ -88,22 +88,22 @@ namespace :populate do
         gq1itfa4 = Answer.create(question_id: gq1itfq.id, answer: "To avoid paying for parking", icon_name: nil, custom_order: 3)
         gq1itfa5 = Answer.create(question_id: gq1itfq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5)
 
-    ns4 = Node.create(nickname: "NS 4", is_decision_point: false , branch_id: orange.id, template_name: "ns-4", dashboard_type: "plane", skippable: false)
+    ns4 = Node.create(nickname: "itf_1stchoice", is_decision_point: false , branch_id: orange.id, template_name: "ns-4", dashboard_type: "plane", skippable: false)
       ns4q = Question.create(node_id: ns4.id, question: "Nice! This location is part of the largest improvement project ever at LAX.\nWe'd love to hear how this project can help you and your passengers navigate LAX better", question_type_id: single_choice.id)
         ns4qa1 = Answer.create(question_id: ns4q.id, answer: "NS 4 answer", icon_name: nil)
 
-    ns4noitf = Node.create(nickname: "NS 4 NO ITF", is_decision_point: false , branch_id: orange.id, template_name: "ns-4-no-itf", dashboard_type: "car", skippable: false)
+    ns4noitf = Node.create(nickname: "itf_yes", is_decision_point: false , branch_id: orange.id, template_name: "ns-4-no-itf", dashboard_type: "car", skippable: false)
       ns4noitfq = Question.create(node_id: ns4noitf.id, question: "Nice! This location is part of the largest improvement project ever at LAX.\nWe'd love to hear how this project can help you and your passengers navigate LAX better", question_type_id: single_choice.id)
         ns4noitfqa1 = Answer.create(question_id: ns4noitfq.id, answer: "NS 4 NO ITF answer", icon_name: nil)
 
-    ns5noitf = Node.create(nickname: "NS 5 NO ITF", is_decision_point: false , branch_id: orange.id, template_name: "ns-5-no-itf", dashboard_type: "car", skippable: false)
+    ns5noitf = Node.create(nickname: "itf_no", is_decision_point: false , branch_id: orange.id, template_name: "ns-5-no-itf", dashboard_type: "car", skippable: false)
       ns5noitfq = Question.create(node_id: ns5noitf.id, question: "We're actually currently working on building this new location and want to make sure you find it as useful as possible. We want your input on how we should build this location.", question_type_id: single_choice.id)
         ns5noitfqa1 = Answer.create(question_id: ns5noitfq.id, answer: "NS 5 NO ITF answer", icon_name: nil)
 
     # meet offsite at train ride
     # what is this?
 
-    itf2 = Node.create(nickname: "ITF 2", is_decision_point: false , branch_id: orange.id, template_name: "itf-2", dashboard_type: "plane")
+    itf2 = Node.create(nickname: "itf1st_pickup", is_decision_point: false , branch_id: orange.id, template_name: "itf-2", dashboard_type: "plane")
       itf2q = Question.create(
         node_id: itf2.id,
         question: "What is most important to you when picking up somebody at LAX?",
@@ -119,7 +119,7 @@ namespace :populate do
         itf2a8= Answer.create(question_id: itf2q.id, answer: "Dog run/relief area", icon_name: "dog")
         itf2a9= Answer.create(question_id: itf2q.id, answer: "Children’s Play Area", icon_name: "family")
 
-    itf3 = Node.create(nickname: "ITF 3", is_decision_point: false , branch_id: orange.id, template_name: "itf-3", dashboard_type: "plane")
+    itf3 = Node.create(nickname: "itf1st_depart", is_decision_point: false , branch_id: orange.id, template_name: "itf-3", dashboard_type: "plane")
       itf3q = Question.create(
         node_id: itf3.id,
         question: "Which of these amenities would you prioritize having? Select your top 3.",
@@ -135,7 +135,7 @@ namespace :populate do
         itf3a8= Answer.create(question_id: itf3q.id, answer: "Valet Parking", icon_name: "valet")
         itf3a9= Answer.create(question_id: itf3q.id, answer: "Bag Check-in/Drop Off", icon_name: "bagcheck")
 
-    itf2noitf = Node.create(nickname: "ITF 2 NO ITF", is_decision_point: false , branch_id: orange.id, template_name: "itf-2-no-itf", dashboard_type: "car")
+    itf2noitf = Node.create(nickname: "itf_pickup", is_decision_point: false , branch_id: orange.id, template_name: "itf-2-no-itf", dashboard_type: "car")
       itf2noitfq = Question.create(
         node_id: itf2noitf.id,
         question: "What is most important to you when picking up somebody at LAX?",
@@ -151,7 +151,7 @@ namespace :populate do
         itf2noitfa8= Answer.create(question_id: itf2noitfq.id, answer: "Dog run/relief area", icon_name: "dog")
         itf2noitfa9= Answer.create(question_id: itf2noitfq.id, answer: "Children’s Play Area", icon_name: "family")
 
-    itf3noitf = Node.create(nickname: "ITF 3 NO ITF", is_decision_point: false , branch_id: orange.id, template_name: "itf-3-no-itf", dashboard_type: "car")
+    itf3noitf = Node.create(nickname: "itf_depart", is_decision_point: false , branch_id: orange.id, template_name: "itf-3-no-itf", dashboard_type: "car")
       itf3noitfq = Question.create(
         node_id: itf3noitf.id,
         question: "Which of these amenities would you prioritize having? Select your top 3.",
@@ -168,26 +168,26 @@ namespace :populate do
         itf3noitfa9= Answer.create(question_id: itf3noitfq.id, answer: "Bag Check-in/Drop Off", icon_name: "bagcheck")
 
     # wait offsite
-    c1 = Node.create(nickname: "C 1", is_decision_point: false , branch_id: orange.id, template_name: "c-1", dashboard_type: "plane")
+    c1 = Node.create(nickname: "whereuwait", is_decision_point: false , branch_id: orange.id, template_name: "c-1", dashboard_type: "plane")
       c1q = Question.create(node_id: c1.id, question: "Where do you usually wait for your passenger?", question_type_id: single_choice.id)
         c1a1= Answer.create(question_id: c1q.id, answer: "Cellphone waiting lot", icon_name: nil)
         c1a2= Answer.create(question_id: c1q.id, answer: "Roadside near the airport", icon_name: nil)
         c1a3= Answer.create(question_id: c1q.id, answer: "Nearby Store", icon_name: nil)
         c1a4= Answer.create(question_id: c1q.id, answer: "Nearby Restaurant", icon_name: nil)
 
-    c2 = Node.create(nickname: "C 2", is_decision_point: false , branch_id: orange.id, template_name: "c-2", dashboard_type: "plane")
+    c2 = Node.create(nickname: "expect2wait", is_decision_point: false , branch_id: orange.id, template_name: "c-2", dashboard_type: "plane")
       c2q = Question.create(node_id: c2.id, question: "How long do you expect to wait before driving into the terminal area?", question_type_id: single_choice.id)
         c2a1= Answer.create(question_id: c2q.id, answer: "Less than 15 minutes", icon_name: nil, custom_order: 2)
         c2a2= Answer.create(question_id: c2q.id, answer: "15 - 30 minutes", icon_name: nil, custom_order: 4)
         c2a3= Answer.create(question_id: c2q.id, answer: "30 - 60 minutes", icon_name: nil, custom_order: 3)
         c2a4= Answer.create(question_id: c2q.id, answer: "More than 60 minutes", icon_name: nil, custom_order: 1)
 
-    c4 = Node.create(nickname: "C 4", is_decision_point: false , branch_id: orange.id, template_name: "c-4", dashboard_type: "plane")
+    c4 = Node.create(nickname: "longestwait", is_decision_point: false , branch_id: orange.id, template_name: "c-4", dashboard_type: "plane")
       c4q = Question.create(node_id: c4.id, question: "What is the longest you are willing to wait for your passenger?", question_type_id: single_choice.id)
         c4a1= Answer.create(question_id: c4q.id, answer: "Set duration...", icon_name: nil)
 
     # park and meet
-    b1 = Node.create(nickname: "B 1", is_decision_point: false , branch_id: green.id, template_name: "b-1", dashboard_type: "plane")
+    b1 = Node.create(nickname: "whypark", is_decision_point: false , branch_id: green.id, template_name: "b-1", dashboard_type: "plane")
       b1q = Question.create(node_id: b1.id, question: "Why do you choose to park your car?", question_type_id: many_choice.id)
       # ^ this will need alt question text
         b1a1= Answer.create(question_id: b1q.id, answer: "When convenient parking is available", icon_name: nil, custom_order: 1)
@@ -195,7 +195,7 @@ namespace :populate do
         b1a3= Answer.create(question_id: b1q.id, answer: "To meet my passenger in the terminal", icon_name: nil, custom_order: 3)
         b1a4= Answer.create(question_id: b1q.id, answer: "Other (Specify)", icon_name: nil, custom_order: 4)
 
-    b2 = Node.create(nickname: "B 2", is_decision_point: false , branch_id: green.id, template_name: "b-2",  dashboard_type: "plane")
+    b2 = Node.create(nickname: "howlongpark", is_decision_point: false , branch_id: green.id, template_name: "b-2",  dashboard_type: "plane")
       b2q = Question.create(node_id: b2.id, question: "You need to time your parking correctly. How long are you going to park for?", question_type_id: single_choice.id)
       # ^ this will need alt question text
         b2a1= Answer.create(question_id: b2q.id, answer: "Less than 30 minutes", icon_name: nil, custom_order: 2)
@@ -203,25 +203,25 @@ namespace :populate do
         b2a3= Answer.create(question_id: b2q.id, answer: "60 - 90 minutes", icon_name: nil, custom_order: 3)
         b2a4= Answer.create(question_id: b2q.id, answer: "More than 90 minutes", icon_name: nil, custom_order: 1)
 
-    b3 = Node.create(nickname: "B 3", is_decision_point: false , branch_id: green.id, template_name: "b-3", dashboard_type: "plane")
+    b3 = Node.create(nickname: "watdoingparked", is_decision_point: false , branch_id: green.id, template_name: "b-3", dashboard_type: "plane")
       b3q = Question.create(node_id: b3.id, question: "What are you doing while you're parked?", question_type_id: many_choice.id)
         b3a1= Answer.create(question_id: b3q.id, answer: "Waiting in my car", icon_name: nil, custom_order: 1)
         b3a2= Answer.create(question_id: b3q.id, answer: "Waiting in the terminal", icon_name: nil, custom_order: 2)
         b3a3= Answer.create(question_id: b3q.id, answer: "Shopping in the terminal", icon_name: nil, custom_order: 3)
         b3a4= Answer.create(question_id: b3q.id, answer: "Getting food or a drink in the terminal", icon_name: nil, custom_order: 4)
 
-    b4 = Node.create(nickname: "B 4", is_decision_point: false , branch_id: green.id, template_name: "b-4", dashboard_type: "plane")
+    b4 = Node.create(nickname: "parkinglooktime", is_decision_point: false , branch_id: green.id, template_name: "b-4", dashboard_type: "plane")
       b4q = Question.create(node_id: b4.id, question: "What is the longest you are willing to look for parking?", question_type_id: single_choice.id)
         b4a1 = Answer.create(question_id: b4q.id, answer: "Set duration...", icon_name: nil)
 
     # hope to catch
-    a1 = Node.create(nickname: "A 1", is_decision_point: false , branch_id: purple.id, template_name: "a-1", dashboard_type: "plane")
+    a1 = Node.create(nickname: "howwellwork", is_decision_point: false , branch_id: purple.id, template_name: "a-1", dashboard_type: "plane")
       a1q = Question.create(node_id: a1.id, question: "How well do you think this strategy will work?", question_type_id: single_choice.id)
         a1a1 = Answer.create(question_id: a1q.id, answer: "Works like a charm every time", icon_name: nil)
         a1a2 = Answer.create(question_id: a1q.id, answer: "I might have to circle a few times, but it will eventually work", icon_name: nil)
         a1a3 = Answer.create(question_id: a1q.id, answer: "It's always bad, but it's better than parking", icon_name: nil)
 
-    a2 = Node.create(nickname: "A 2", is_decision_point: false , branch_id: purple.id, template_name: "a-2", dashboard_type: "plane")
+    a2 = Node.create(nickname: "latecheck", is_decision_point: false , branch_id: purple.id, template_name: "a-2", dashboard_type: "plane")
       a2q = Question.create(
         node_id: a2.id,
         question: "You have a feeling your passenger will be late.\n How do you check for that?",
@@ -234,16 +234,16 @@ namespace :populate do
 
     # ending questions
     # success via A/B/C branch win
-    e1 = Node.create(nickname: "E 1", is_decision_point: false , branch_id: blue.id, template_name: "e-1", skippable: false)
+    e1 = Node.create(nickname: "success1", is_decision_point: false , branch_id: blue.id, template_name: "e-1", skippable: false)
       e1q = Question.create(node_id: e1.id, question: "Passenger Pick Up Success!", question_type_id: single_choice.id)
         e1a1 = Answer.create(question_id: e1q.id, answer: "Next", icon_name: nil)
 
     # success via choice to go to an offsite tram
-    e1itf = Node.create(nickname: "E 1 ITF", is_decision_point: false , branch_id: blue.id, template_name: "e-1-itf", skippable: false)
+    e1itf = Node.create(nickname: "success2", is_decision_point: false , branch_id: blue.id, template_name: "e-1-itf", skippable: false)
       e1itfq = Question.create(node_id: e1itf.id, question: "Passenger Pick Up Success!", question_type_id: single_choice.id)
         e1itfa1 = Answer.create(question_id: e1itfq.id, answer: "Next", icon_name: nil)
 
-    e2 = Node.create(nickname: "E 2", is_decision_point: false , branch_id: blue.id, template_name: "e-2", dashboard_type: "car")
+    e2 = Node.create(nickname: "times_circled", is_decision_point: false , branch_id: blue.id, template_name: "e-2", dashboard_type: "car")
       e2q = Question.create(
         node_id: e2.id,
         question: "Based on this scenario, we estimated you have circled around the terminal [X] times before picking up your passenger.\nIs this typical?",
@@ -252,7 +252,7 @@ namespace :populate do
         e2a1 = Answer.create(question_id: e2q.id, answer: "Yes", icon_name: nil)
         e2a2 = Answer.create(question_id: e2q.id, answer: "No", icon_name: nil)
 
-    e3 = Node.create(nickname: "E 3", is_decision_point: false , branch_id: blue.id, template_name: "e-3", dashboard_type: "car")
+    e3 = Node.create(nickname: "time_spent", is_decision_point: false , branch_id: blue.id, template_name: "e-3", dashboard_type: "car")
       e3q = Question.create(
         node_id: e3.id,
         question: "Based on this game, we estimated you spent [Calculated Game Time in Minutes] getting your passenger at the airport.\nIs this typical?",
@@ -261,7 +261,7 @@ namespace :populate do
         e3a1 = Answer.create(question_id: e3q.id, answer: "Yes", icon_name: nil)
         e3a2 = Answer.create(question_id: e3q.id, answer: "No", icon_name: nil)
 
-    e4 = Node.create(nickname: "E 4", is_decision_point: false , branch_id: blue.id, template_name: "e-4", dashboard_type: "car", skippable: false)
+    e4 = Node.create(nickname: "LAX_reason", is_decision_point: false , branch_id: blue.id, template_name: "e-4", dashboard_type: "car", skippable: false)
       e4q = Question.create(
         node_id: e4.id,
         question: "What was the reason for your last trip to LAX?",
@@ -273,7 +273,7 @@ namespace :populate do
         e4a4 = Answer.create(question_id: e4q.id, answer: "Not travelling: Dropping-off passenger", icon_name: nil)
         e4a5 = Answer.create(question_id: e4q.id, answer: "Another reason (Specify)", icon_name: nil)
 
-    e5 = Node.create(nickname: "E 5", is_decision_point: false , branch_id: blue.id, template_name: "e-5", dashboard_type: "car", skippable: false)
+    e5 = Node.create(nickname: "LAX_howoften", is_decision_point: false , branch_id: blue.id, template_name: "e-5", dashboard_type: "car", skippable: false)
       e5q = Question.create(
         node_id: e5.id,
         question: "About how often do you go to LAX?",
@@ -285,7 +285,7 @@ namespace :populate do
         e5a4 = Answer.create(question_id: e5q.id, answer: "6 - 9 times a year", icon_name: nil)
         e5a5 = Answer.create(question_id: e5q.id, answer: "More than 9 times a year", icon_name: nil)
 
-    e6 = Node.create(nickname: "E 6", is_decision_point: false , branch_id: blue.id, template_name: "e-6", dashboard_type: "car", skippable: false)
+    e6 = Node.create(nickname: "how_old", is_decision_point: false , branch_id: blue.id, template_name: "e-6", dashboard_type: "car", skippable: false)
       e6q = Question.create(
         node_id: e6.id,
         question: "And finally, my esteemed driver: How old are you?",
@@ -299,7 +299,7 @@ namespace :populate do
         e6a6 = Answer.create(question_id: e6q.id, answer: "65 - 74", icon_name: nil)
         e6a7 = Answer.create(question_id: e6q.id, answer: "75+", icon_name: nil)
 
-    e7 = Node.create(nickname: "E 7", is_decision_point: false , branch_id: blue.id, template_name: "e-7", skippable: false)
+    e7 = Node.create(nickname: "congrats", is_decision_point: false , branch_id: blue.id, template_name: "e-7", skippable: false)
       e7q = Question.create(
         node_id: e7.id,
         question: "You made it home!\nThank you for playing. All this information will help LAX better serve you in the future. If you want to keep in touch with our progress towards the new location please join our mailing list or visit us at http://connectinglax.com",
@@ -311,7 +311,7 @@ namespace :populate do
     # itf1 = Node.create(nickname: "ITF 1", is_decision_point: false , branch_id: ending_questions_branch.id)
 
     # Decision Points
-    noitf1 = Node.create(nickname: "No-ITF 1", is_decision_point: true , branch_id: orange.id, template_name: "no-itf-1", dashboard_type: "car", skippable: false)
+    noitf1 = Node.create(nickname: "itf_yes_no", is_decision_point: true , branch_id: orange.id, template_name: "no-itf-1", dashboard_type: "car", skippable: false)
       noitf1dp = DecisionPoint.create(
         node_id: noitf1.id,
         situation: "To avoid all of this, we're trying to build an airport rail system that would make it easy for a passenger to meet you at a nearby location outside of the airport! \nIn the real world, would you consider picking up passengers at this new location for a better experience?"
@@ -319,7 +319,7 @@ namespace :populate do
         noitf1d1 = Decision.create(decision_point_id: noitf1dp.id, decision: "Yes", destination_node_id: ns4noitf.id)
         noitf1d2 = Decision.create(decision_point_id: noitf1dp.id, decision: "No", destination_node_id: ns5noitf.id)
 
-    dp1 = Node.create(nickname: "DP 1", is_decision_point: true , branch_id: blue.id, template_name: "dp-1", dashboard_type: "plane", skippable: false)
+    dp1 = Node.create(nickname: "strategy", is_decision_point: true , branch_id: blue.id, template_name: "dp-1", dashboard_type: "plane", skippable: false)
       dp1dp = DecisionPoint.create(node_id: dp1.id, situation: "What is your strategy for picking up your passenger at LAX?")
         dp1d1 = Decision.create(decision_point_id: dp1dp.id, decision: "Park and meet your passenger inside the terminal", destination_node_id: gq1b.id)
         dp1d2 = Decision.create(decision_point_id: dp1dp.id, decision: "Circle and catch your passenger at the curb", destination_node_id: gq1a.id)
@@ -328,7 +328,7 @@ namespace :populate do
         dp1d5 = Decision.create(decision_point_id: dp1dp.id, decision: "Default view", destination_node_id: b1.id)
 
     # TODO: will be removed!
-    dp8 = Node.create(nickname: "DP 8", is_decision_point: true , branch_id: orange.id, template_name: "dp-8", dashboard_type: "plane", skippable: false)
+    dp8 = Node.create(nickname: "cant_reach", is_decision_point: true , branch_id: orange.id, template_name: "dp-8", dashboard_type: "plane", skippable: false)
       dp8dp = DecisionPoint.create(node_id: dp8.id, situation: "Your pick-up isn't calling and you can't reach them. What do you do now?")
         dp8d1 = Decision.create(decision_point_id: dp8dp.id, decision: "Go park in the terminal parking area", destination_node_id: b1.id)
         dp8d2 = Decision.create(decision_point_id: dp8dp.id, decision: "Circle and catch your passenger at the curb", destination_node_id: a1.id)
@@ -336,22 +336,22 @@ namespace :populate do
         dp8d4 = Decision.create(decision_point_id: dp8dp.id, decision: "Meet at a new facility that has a 10 min connecting tram to the terminals", destination_node_id: ns4.id)
 
     # spinner
-    dp7 = Node.create(nickname: "DP 7", is_decision_point: true , branch_id: orange.id, template_name: "dp-7", dashboard_type: "plane", skippable: false)
+    dp7 = Node.create(nickname: "park_howlong", is_decision_point: true , branch_id: orange.id, template_name: "dp-7", dashboard_type: "plane", skippable: false)
       dp7dp = DecisionPoint.create(node_id: dp7.id, situation: "Okay now you're parked. How long will you wait for?")
         dp7d1 = Decision.create(decision_point_id: dp7dp.id, decision: "5 Minutes", destination_node_id: e1.id)
         dp7d2 = Decision.create(decision_point_id: dp7dp.id, decision: "An eternity", destination_node_id: e1.id)
 
     # TODO: remove
-    dp7a = Node.create(nickname: "DP 7a", is_decision_point: true , branch_id: orange.id, template_name: "dp-7a", dashboard_type: "plane", skippable: false)
+    dp7a = Node.create(nickname: "late_passenger", is_decision_point: true , branch_id: orange.id, template_name: "dp-7a", dashboard_type: "plane", skippable: false)
       dp7adp = DecisionPoint.create(node_id: dp7a.id, situation: "Is the passenger late?")
         dp7ad1 = Decision.create(decision_point_id: dp7adp.id, decision: "Yes", destination_node_id: dp7.id)
         dp7ad2 = Decision.create(decision_point_id: dp7adp.id, decision: "No", destination_node_id: noitf1.id)
 
     ## start weird intertwined DPs
-    dp11 = Node.create(nickname: "DP 11", is_decision_point: true , branch_id: green.id, template_name: "dp-11", dashboard_type: "plane", skippable: false)
+    dp11 = Node.create(nickname: "park_looking", is_decision_point: true , branch_id: green.id, template_name: "dp-11", dashboard_type: "plane", skippable: false)
     # spinner
-    dp10 = Node.create(nickname: "DP 10", is_decision_point: true , branch_id: green.id, template_name: "dp-10", dashboard_type: "plane", skippable: false)
-    dp6 = Node.create(nickname: "DP 6", is_decision_point: true , branch_id: green.id, template_name: "dp-6", dashboard_type: "plane", skippable: false)
+    dp10 = Node.create(nickname: "find_park", is_decision_point: true , branch_id: green.id, template_name: "dp-10", dashboard_type: "plane", skippable: false)
+    dp6 = Node.create(nickname: "no_park_gps", is_decision_point: true , branch_id: green.id, template_name: "dp-6", dashboard_type: "plane", skippable: false)
 
       dp11dp = DecisionPoint.create(node_id: dp11.id, situation: "You've been looking for XX minutes with no luck. What now?")
         dp11d1 = Decision.create(decision_point_id: dp11dp.id, decision: "Keep trying", destination_node_id: dp10.id)
@@ -370,12 +370,12 @@ namespace :populate do
     ## end weird intertwined DPs
 
     # spinner
-    dp5 = Node.create(nickname: "DP 5", is_decision_point: true , branch_id: green.id, template_name: "dp-5", dashboard_type: "plane", skippable: false)
+    dp5 = Node.create(nickname: "park_full", is_decision_point: true , branch_id: green.id, template_name: "dp-5", dashboard_type: "plane", skippable: false)
       dp5dp = DecisionPoint.create(node_id: dp5.id, situation: "You arrive at the parking garage and find it is...")
         dp5d1 = Decision.create(decision_point_id: dp5dp.id, decision: "Not Full", destination_node_id: b4.id)
         dp5d2 = Decision.create(decision_point_id: dp5dp.id, decision: "Full", destination_node_id: dp6.id)
 
-    dp3 = Node.create(nickname: "DP 3", is_decision_point: true , branch_id: purple.id, template_name: "dp-3", dashboard_type: "plane", skippable: false)
+    dp3 = Node.create(nickname: "no_circle_gps", is_decision_point: true , branch_id: purple.id, template_name: "dp-3", dashboard_type: "plane", skippable: false)
       dp3dp = DecisionPoint.create(node_id: dp3.id, situation: "That didn't work.  Where to now?")
         dp3d1 = Decision.create(decision_point_id: dp3dp.id, decision: "Park and meet your passenger inside the terminal", destination_node_id: b1.id)
         dp3d2 = Decision.create(decision_point_id: dp3dp.id, decision: "Continue circling around terminal") # destination for this relies on dp2 below
@@ -383,7 +383,7 @@ namespace :populate do
         dp3d4 = Decision.create(decision_point_id: dp3dp.id, decision: "Meet at a new facility that has a 10 min connecting tram to the terminals", destination_node_id: ns4.id)
 
     # spinner
-    dp2 = Node.create(nickname: "DP 2", is_decision_point: true , branch_id: purple.id, template_name: "dp-2", dashboard_type: "plane", skippable: false)
+    dp2 = Node.create(nickname: "circle_win", is_decision_point: true , branch_id: purple.id, template_name: "dp-2", dashboard_type: "plane", skippable: false)
       dp2dp = DecisionPoint.create(node_id: dp2.id, situation: "You're trying to pull-over and pick up your passenger in traffic. Are you successful?")
         dp2d1 = Decision.create(decision_point_id: dp2dp.id, decision: "Yes", destination_node_id: e1.id)
         dp2d2 = Decision.create(decision_point_id: dp2dp.id, decision: "No", destination_node_id: dp3.id)
