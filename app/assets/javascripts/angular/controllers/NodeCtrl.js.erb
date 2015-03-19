@@ -433,9 +433,9 @@ angular.module('lawaApp')
         // it only posts the change to the responses api so we can record it for
         // survey puposes. it's good to keep both to compare
         if($scope.adjustedTimeElapsed === undefined){
-          $scope.adjustedTimeElapsed = Math.max(0, amount);
+          $scope.adjustedTimeElapsed = Math.max(5, 5 + amount);
         }else{
-          $scope.adjustedTimeElapsed = Math.max(0, ($scope.adjustedTimeElapsed += amount));
+          $scope.adjustedTimeElapsed = Math.max(5, ($scope.adjustedTimeElapsed += amount));
         };
         // add this time as a freeform answer without changing time_elapsed
         $scope.addSingleChoice($scope.currentNode.answers[0])
