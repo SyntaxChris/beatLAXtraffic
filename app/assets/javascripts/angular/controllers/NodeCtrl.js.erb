@@ -89,6 +89,7 @@ angular.module('lawaApp')
       // Car dashboard animation
       $scope.carProgress = 7;
       $scope.advanceCar = function(){
+        window.advanceCar(); // calls the global js function for animations
         if($scope.currentNode.template_name === 'e-6'){
           $scope.carProgress = 87;
         }
@@ -479,6 +480,17 @@ angular.module('lawaApp')
           }
         })
       }
+
+      // functions that call global functions inside specific js files:
+      $scope.advancePlane = function(){
+        window.movePlane();
+        window.moveClock();
+      }
+
+      $scope.completeLanding = function(){
+        window.completeLanding();
+      }
+      // end global functions
 
       // set larger scope variable for flight scenario
       $scope.flightScenario;

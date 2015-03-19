@@ -60,7 +60,7 @@
           </div>
         </div><!-- end angular iterator for instructions -->
 
-        <button ng-click="submit(currentDecision.id, true)" id="x-btn-confirm-map-choice" class="confirm-map-choice-btn show plane-advance">
+        <button ng-click="advancePlane(); submit(currentDecision.id, true)" id="x-btn-confirm-map-choice" class="confirm-map-choice-btn show plane-advance">
           CONFIRM
         </button>
       </div>
@@ -146,7 +146,7 @@
           </div>
         </div><!-- end angular iterator for instructions -->
 
-        <button ng-click="submit(currentDecision.id, true)" id="x-btn-confirm-map-choice" class="plane-advance confirm-map-choice-btn">
+        <button ng-click="advancePlane(); submit(currentDecision.id, true)" id="x-btn-confirm-map-choice" class="plane-advance confirm-map-choice-btn">
           GO!
         </button>
       </div>
@@ -215,7 +215,7 @@
     <div ng-include="'<%= asset_path 'svgs/_signPole.html' %>'"></div>
   </div>
 
-    <button ng-click="setCurrentDecision(decision)" ng-repeat="decision in currentNode.decisions" class="sign plane-advance" ng-id="{{ 'cntr-' + $index+1 }}">
+    <button ng-click="advancePlane(); setCurrentDecision(decision)" ng-repeat="decision in currentNode.decisions" class="sign plane-advance" ng-id="{{ 'cntr-' + $index+1 }}">
       <div class="holder">
         <div ng-include="'<%= asset_path 'svgs/_signHolder.html' %>'"></div>
       </div>

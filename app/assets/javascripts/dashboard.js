@@ -1,7 +1,7 @@
 $(document).ready(function(){
     var $body = $('body');
     var initiateDopaCloud = 0;
-    var movePlane = function(n){
+    window.movePlane = function(n){
         var currentProgress = parseInt($('#plane-progress').text());
 
         if( currentProgress < 85){
@@ -22,17 +22,7 @@ $(document).ready(function(){
       var currentProgress = parseInt($('#plane-progress').text());
     }
 
-    var completeLanding = function(){
-        var currentProgress = $('#plane-progress').text("85");
-
-        $("#plane-bar").animate({width: "85%"}, 200);
-        $("#filler").animate({marginLeft: "85%"}, 200);
-        $("#plane-alert").attr("class", "clock-pulse");
-        $('#landing-plane').addClass("land-ze-plane");
-        $('svg circle#timer-fill').attr("class", "clock-pulse");
-    }
-
-    var moveClock = function(){
+    window.moveClock = function(){
         var clockState = $('#clock-hand-cntr').data('rot');
         var r = $('#clock-hand-cntr').data('rot') + 45;
 
@@ -99,6 +89,17 @@ $(document).ready(function(){
 
         $('#clock-hand-cntr').data('rot', r);
     }
+
+    window.completeLanding = function(){
+        var currentProgress = $('#plane-progress').text("85");
+
+        $("#plane-bar").animate({width: "85%"}, 200);
+        $("#filler").animate({marginLeft: "85%"}, 200);
+        $("#plane-alert").attr("class", "clock-pulse");
+        $('#landing-plane').addClass("land-ze-plane");
+        $('svg circle#timer-fill').attr("class", "clock-pulse");
+    }
+
 
     var counterDisplay = function(num){
         var currentMin = $('#counter-num').data('counter-number') + num;

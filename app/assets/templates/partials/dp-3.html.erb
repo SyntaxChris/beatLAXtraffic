@@ -28,7 +28,7 @@
           </div>
         </div><!-- end angular iterator for instructions -->
 
-        <button ng-click="submit(currentDecision.id, true)" id="x-btn-confirm-map-choice" class="plane-advance confirm-map-choice-btn">
+        <button ng-click="advancePlane(); submit(currentDecision.id, true)" id="x-btn-confirm-map-choice" class="plane-advance confirm-map-choice-btn">
           GO!
         </button>
       </div>
@@ -77,7 +77,7 @@
         </div>
 
         <div ng-if="decision.decision.indexOf('tram') > -1">
-          <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision); landPlane()" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
+          <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision); landPlane(); completeLanding()" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
             <div class="arrow-bundle animate">
               <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
               <span ng-include="'<%= asset_path 'svgs/itfIcon.html' %>'" class="path-letter"></span>
