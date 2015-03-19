@@ -9,7 +9,8 @@
       <div class="count-c">
         <div class="circle-number" ng-if="adjustedTimesCircled === 0">0</div>
         <div class="circle-number" ng-if="adjustedTimesCircled !== 0">{{ adjustedTimesCircled || variables.times_circled }}</div>
-        <div>times</div>
+        <div ng-show="adjustedTimesCircled > 1 || adjustedTimesCircled === 0">times</div>
+        <div ng-hide="adjustedTimesCircled > 1 || adjustedTimesCircled === 0">time</div>
       </div>
       <div class="red-circle">
         <div class="circle-car">
