@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'static#private'
   get '/error' => 'static#private'
 
+  get '/export' => 'export#home'
+  get '/export/responses' => 'export#response_index', as: 'responses'
+
   namespace :api, defaults: { format: 'json' } do
     resources :nodes, only: [:index, :show]
     resources :response, only: [:create]
