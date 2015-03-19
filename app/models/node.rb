@@ -19,6 +19,7 @@ class Node < ActiveRecord::Base
   end
 
   def clean_template_name
+    # no longer used now that we have 'template_name'
     nickname.downcase.gsub(/[\s\.]/, "-")
   end
 end
