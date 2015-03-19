@@ -57,7 +57,7 @@ namespace :populate do
       # ^ This will either say this or an alternate based on a random generation
 
     gq1a = Node.create(nickname: "GQ 1 A", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-a", dashboard_type: "plane")
-      gq1aq = Question.create(node_id: gq1a.id, question: "Why do you choose this strategy?", question_type_id: many_choice.id)
+      gq1aq = Question.create(node_id: gq1a.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id)
         gq1aa1 = Answer.create(question_id: gq1aq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1)
         gq1aa2 = Answer.create(question_id: gq1aq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5)
         gq1aa3 = Answer.create(question_id: gq1aq.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil, custom_order: 2)
@@ -65,7 +65,7 @@ namespace :populate do
         gq1aa5 = Answer.create(question_id: gq1aq.id, answer: "To minimize the hassle for me", icon_name: nil, custom_order: 4)
 
     gq1b = Node.create(nickname: "GQ 1 B", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-b", dashboard_type: "plane")
-      gq1bq = Question.create(node_id: gq1b.id, question: "Why do you choose this strategy?", question_type_id: many_choice.id)
+      gq1bq = Question.create(node_id: gq1b.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id)
         gq1ba1 = Answer.create(question_id: gq1bq.id, answer: "To minimize the hassle for me", icon_name: nil, custom_order: 4)
         gq1ba2 = Answer.create(question_id: gq1bq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1)
         gq1ba3 = Answer.create(question_id: gq1bq.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil, custom_order: 2)
@@ -73,7 +73,7 @@ namespace :populate do
         gq1ba5 = Answer.create(question_id: gq1bq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5)
 
     gq1c = Node.create(nickname: "GQ 1 C", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-c", dashboard_type: "plane")
-      gq1cq = Question.create(node_id: gq1c.id, question: "Why do you choose this strategy?", question_type_id: many_choice.id)
+      gq1cq = Question.create(node_id: gq1c.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id)
         gq1ca1 = Answer.create(question_id: gq1cq.id, answer: "To minimize the hassle for me", icon_name: nil, custom_order: 4)
         gq1ca2 = Answer.create(question_id: gq1cq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1)
         gq1ca3 = Answer.create(question_id: gq1cq.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil, custom_order: 2)
@@ -81,7 +81,7 @@ namespace :populate do
         gq1ca5 = Answer.create(question_id: gq1cq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5)
 
     gq1itf = Node.create(nickname: "GQ 1 ITF", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-itf", dashboard_type: "plane")
-      gq1itfq = Question.create(node_id: gq1itf.id, question: "Why do you choose this strategy?", question_type_id: many_choice.id)
+      gq1itfq = Question.create(node_id: gq1itf.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id)
         gq1itfa1 = Answer.create(question_id: gq1itfq.id, answer: "To minimize the hassle for me", icon_name: nil, custom_order: 4)
         gq1itfa2 = Answer.create(question_id: gq1itfq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1)
         gq1itfa3 = Answer.create(question_id: gq1itfq.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil, custom_order: 2)
@@ -106,7 +106,7 @@ namespace :populate do
     itf2 = Node.create(nickname: "ITF 2", is_decision_point: false , branch_id: orange.id, template_name: "itf-2", dashboard_type: "plane")
       itf2q = Question.create(
         node_id: itf2.id,
-        question: "Which of these amenities would you prioritize having? Select your top 3.",
+        question: "What is most important to you when picking up somebody at LAX?",
         question_type_id: many_choice.id
       )
         itf2a1= Answer.create(question_id: itf2q.id, answer: "Free short-term parking", icon_name: "parking")
@@ -138,7 +138,7 @@ namespace :populate do
     itf2noitf = Node.create(nickname: "ITF 2 NO ITF", is_decision_point: false , branch_id: orange.id, template_name: "itf-2-no-itf", dashboard_type: "car")
       itf2noitfq = Question.create(
         node_id: itf2noitf.id,
-        question: "Which of these amenities would you prioritize having? Select your top 3.",
+        question: "What is most important to you when picking up somebody at LAX?",
         question_type_id: many_choice.id
       )
         itf2noitfa1= Answer.create(question_id: itf2noitfq.id, answer: "Free short-term parking", icon_name: "parking")
@@ -320,9 +320,9 @@ namespace :populate do
         noitf1d2 = Decision.create(decision_point_id: noitf1dp.id, decision: "No", destination_node_id: ns5noitf.id)
 
     dp1 = Node.create(nickname: "DP 1", is_decision_point: true , branch_id: blue.id, template_name: "dp-1", dashboard_type: "plane", skippable: false)
-      dp1dp = DecisionPoint.create(node_id: dp1.id, situation: "What is your strategy for picking up your passenger?")
+      dp1dp = DecisionPoint.create(node_id: dp1.id, situation: "What is your strategy for picking up your passenger at LAX?")
         dp1d1 = Decision.create(decision_point_id: dp1dp.id, decision: "Park and meet your passenger inside the terminal", destination_node_id: gq1b.id)
-        dp1d2 = Decision.create(decision_point_id: dp1dp.id, decision: "Hope to catch your passenger at the curb", destination_node_id: gq1a.id)
+        dp1d2 = Decision.create(decision_point_id: dp1dp.id, decision: "Circle and catch your passenger at the curb", destination_node_id: gq1a.id)
         dp1d3 = Decision.create(decision_point_id: dp1dp.id, decision: "Wait off site until passenger is ready to be picked up at the curb", destination_node_id: gq1c.id)
         dp1d4 = Decision.create(decision_point_id: dp1dp.id, decision: "Meet at a new facility that has a 10 min connecting tram to the terminals", destination_node_id: gq1itf.id)
         dp1d5 = Decision.create(decision_point_id: dp1dp.id, decision: "Default view", destination_node_id: b1.id)
@@ -331,7 +331,7 @@ namespace :populate do
     dp8 = Node.create(nickname: "DP 8", is_decision_point: true , branch_id: orange.id, template_name: "dp-8", dashboard_type: "plane", skippable: false)
       dp8dp = DecisionPoint.create(node_id: dp8.id, situation: "Your pick-up isn't calling and you can't reach them. What do you do now?")
         dp8d1 = Decision.create(decision_point_id: dp8dp.id, decision: "Go park in the terminal parking area", destination_node_id: b1.id)
-        dp8d2 = Decision.create(decision_point_id: dp8dp.id, decision: "Hope to catch your passenger at the curb", destination_node_id: a1.id)
+        dp8d2 = Decision.create(decision_point_id: dp8dp.id, decision: "Circle and catch your passenger at the curb", destination_node_id: a1.id)
         dp8d3 = Decision.create(decision_point_id: dp8dp.id, decision: "Keep waiting", destination_node_id: c4.id)
         dp8d4 = Decision.create(decision_point_id: dp8dp.id, decision: "Meet at a new facility that has a 10 min connecting tram to the terminals", destination_node_id: ns4.id)
 
@@ -364,7 +364,7 @@ namespace :populate do
 
       dp6dp = DecisionPoint.create(node_id: dp6.id, situation: "There is no parking anywhere! Where to now?")
         dp6d1 = Decision.create(decision_point_id: dp6dp.id, decision: "Go to another parking structure", destination_node_id: dp10.id)
-        dp6d2 = Decision.create(decision_point_id: dp6dp.id, decision: "Hope to catch your passenger at the curb", destination_node_id: a1.id)
+        dp6d2 = Decision.create(decision_point_id: dp6dp.id, decision: "Circle and catch your passenger at the curb", destination_node_id: a1.id)
         dp6d3 = Decision.create(decision_point_id: dp6dp.id, decision: "Leave and wait off site until passenger is ready to be picked up at the curb", destination_node_id: c1.id)
         dp6d4 = Decision.create(decision_point_id: dp6dp.id, decision: "Meet at a new facility that has a 10 min connecting tram to the terminals", destination_node_id: ns4.id)
     ## end weird intertwined DPs

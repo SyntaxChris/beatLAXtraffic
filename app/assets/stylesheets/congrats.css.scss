@@ -155,6 +155,12 @@
           svg{
             width: 100%;
             height: 100%;
+            &:hover{
+              width: 110%;
+              path{
+                fill: #58D3F7;
+              }
+            }
           }
         }
         .link{
@@ -580,6 +586,7 @@
     }
     .title-text-c {
       width: 260px;
+      text-align: center;
     }
   }
 }
