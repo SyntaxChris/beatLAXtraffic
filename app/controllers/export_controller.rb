@@ -7,9 +7,8 @@ class ExportController < ApplicationController
       { :respondent => :unique_user },
       :answer,
       :decision,
-      { :node => :question }
-        #:question,
-        #:decision_point => :situation
+      { :node => :question },
+      { :node => :decision_point }
     )
     respond_to do |format|
       format.html do
