@@ -1,0 +1,35 @@
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>Respondent ID</th>
+    <th>Playthrough Number</th>
+    <th>Skipped?</th>
+    <th>Node Nickname</th>
+    <th>Decision Presented</th>
+    <th>Choice</th>
+    <th>Question</th>
+    <th>Answer</th>
+    <th>Freeform Response</th>
+  </tr>
+  <% @responses.each do |response| %>
+    <tr>
+      <td><%= response.respondent.unique_user.id %></td>
+      <td><%= response.respondent.id %></td>
+      <td><%= response.respondent.gameplay_number %></td>
+      <td><%= response.skipped %></td>
+      <td><%= response.node.nickname %></td>
+      <% if response.node.is_decision_point? %>
+        <td><%= response.node.decision_point.situation %></td>
+        <td><%= response.decision.decision %></td>
+        <td><!-- 'Question' column intentionally blank for formatting --></td>
+        <td><!-- 'Answer' column intentionally blank for formatting --></td>
+      <% else %>
+        <td><!-- 'Decision Presented' column intentionally blank for formatting --></td>
+        <td><!-- 'Choice' column intentionally blank for formatting --></td>
+        <td><%= response.node.question.question %></td>
+        <td><%= response.answer.answer if response.answer.present? %></td>
+        <td><%= response.freeform_response.response_text if response.freeform_response.present? %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
