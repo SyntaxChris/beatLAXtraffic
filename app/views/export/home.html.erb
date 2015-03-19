@@ -1,3 +1,6 @@
-<h1>Exporting of the datums herein</h1>
+<h1>...In which the data shall be exported...</h1>
 
-<%= link_to :responses %>
+<ul>
+  <li><%= link_to 'view table of responses', responses_path %></li>
+  <li><%= link_to 'download responses CSV', responses_path(format: :csv) %></li>
+</ul>
