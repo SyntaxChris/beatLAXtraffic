@@ -81,7 +81,7 @@ group :development do
   gem 'rack-livereload'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'brakeman'
+  gem 'brakeman', require: false
 end
 
 
