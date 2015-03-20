@@ -3,8 +3,14 @@ Rails.application.routes.draw do
   root 'static#private'
   get '/error' => 'static#private'
 
-  get '/export' => 'export#home'
+  devise_for :admins, path: 'export/admin'
+
+  get '/export/home' => 'export#home', as: 'export_home'
+  get '/export' => 'export#login'
   get '/export/responses' => 'export#response_index', as: 'responses'
+  get '/export/responses_with_variables' => 'export#responses_with_variables', as: 'responses_with_variables'
+  get '/export/codified_responses' => 'export#codified_response_index', as: 'codified_responses'
+  get '/export/codebook_reference' => 'export#codebook_reference', as: 'codebook_reference'
 
   namespace :api, defaults: { format: 'json' } do
     resources :nodes, only: [:index, :show]
@@ -13,4 +19,5 @@ Rails.application.routes.draw do
     post '/respondents/update' => 'respondents#update'
     get '/respondents/restart' => 'respondents#restart'
   end
+
 end

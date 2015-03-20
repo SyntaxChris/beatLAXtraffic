@@ -1,0 +1,12 @@
+<div class="admin-tools">
+  <h1>Data export admin home</h1>
+
+  <% if admin_signed_in? %>
+    You are signed in with: <%= current_admin.email %>.
+    <p>
+    <%= link_to 'continue', export_home_path %> to export interface. Or
+    <%= link_to 'sign out', destroy_admin_session_path, method: :delete %>?
+  <% else %>
+      You are not signed in.  <%= link_to "sign in now", new_admin_session_path %>
+  <% end %>
+</div>

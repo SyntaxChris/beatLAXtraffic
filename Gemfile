@@ -19,6 +19,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'rails_admin'
+gem 'devise'
 
 # Use Zurb Foundation
 gem 'foundation-rails'
@@ -82,6 +83,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'brakeman', require: false
+  gem 'letter_opener'
 end
 
 
