@@ -83,15 +83,12 @@ $(document).ready(function(){
 		else if (spinButtonId === 'pickup'){
 			if (pickupLogic === 1){
 		 		$(".wheel").addClass("not-there");
-
-
 				setTimeout(
 			 		function(){
 			   			$(".lose").css('fill', 'red');
+			   			$(".lose-txt").css('fill', 'white');
 			  		}, 3000
 			  	);
-
-
 			 	setTimeout(
 			 		function(){
 			   			$(".spin-button").hide();
@@ -104,15 +101,11 @@ $(document).ready(function(){
 		 	}
 		 	else {
 		 		$(".wheel").addClass("there");
-
 	            setTimeout(
 			 		function(){
 			   			$(".win").css('fill', '#00FF00');
-			   			$(".yes-font").css('fill', 'white');
 			  		}, 3000
 			  	);
-
-		 		
 		 		setTimeout(
 			 		function(){
 			 			$(".chance-time").hide();
