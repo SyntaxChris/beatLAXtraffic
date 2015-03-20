@@ -378,7 +378,7 @@ namespace :populate do
 
     # spinner
     dp5 = Node.where(nickname: "park_full", is_decision_point: true , branch_id: green.id, template_name: "dp-5", dashboard_type: "plane", skippable: false).first_or_create
-      dp5dp = DecisionPoint.where(node_id: dp5.id, situation: "You arrive at the parking garage and find it is...").first_or_create
+      dp5dp = DecisionPoint.where(node_id: dp5.id, situation: "You arrive at the parking lot and you...").first_or_create
         dp5d1 = Decision.where(decision_point_id: dp5dp.id, decision: "Not Full", destination_node_id: b4.id).first_or_create
         dp5d2 = Decision.where(decision_point_id: dp5dp.id, decision: "Full", destination_node_id: dp6.id).first_or_create
 
