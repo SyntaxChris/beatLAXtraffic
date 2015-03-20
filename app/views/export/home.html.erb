@@ -4,3 +4,5 @@
   <li><%= link_to 'view table of responses', responses_path %></li>
   <li><%= link_to 'download responses CSV', responses_path(format: :csv) %></li>
 </ul>
+
+<%= link_to 'sign out', destroy_admin_session_path, method: :delete %>
