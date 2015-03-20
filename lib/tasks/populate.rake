@@ -59,7 +59,7 @@ namespace :populate do
     gq1a = Node.where(nickname: "a_whyuchoose", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-a", dashboard_type: "plane").first_or_create
       gq1aq = Question.where(node_id: gq1a.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id).first_or_create
         gq1aa1 = Answer.where(question_id: gq1aq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1).first_or_create
-        gq1aa2 = Answer.where(question_id: gq1aq.id, answer: "Other (Explain).first_or_create", icon_name: nil, custom_order: 5)
+        gq1aa2 = Answer.where(question_id: gq1aq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5).first_or_create
         gq1aa3 = Answer.where(question_id: gq1aq.id, answer: "To enter/exit the airport as quickly as possible", icon_name: nil, custom_order: 2).first_or_create
         gq1aa4 = Answer.where(question_id: gq1aq.id, answer: "To avoid paying for parking", icon_name: nil, custom_order: 3).first_or_create
         gq1aa5 = Answer.where(question_id: gq1aq.id, answer: "To minimize the hassle for me", icon_name: nil, custom_order: 4).first_or_create
@@ -70,7 +70,7 @@ namespace :populate do
         gq1ba2 = Answer.where(question_id: gq1bq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1).first_or_create
         gq1ba3 = Answer.where(question_id: gq1bq.id, answer: "To enter/exit the airport as quickly as possible", icon_name: nil, custom_order: 2).first_or_create
         gq1ba4 = Answer.where(question_id: gq1bq.id, answer: "To avoid paying for parking", icon_name: nil, custom_order: 3).first_or_create
-        gq1ba5 = Answer.where(question_id: gq1bq.id, answer: "Other (Explain).first_or_create", icon_name: nil, custom_order: 5)
+        gq1ba5 = Answer.where(question_id: gq1bq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5).first_or_create
 
     gq1c = Node.where(nickname: "c_whyuchoose", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-c", dashboard_type: "plane").first_or_create
       gq1cq = Question.where(node_id: gq1c.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id).first_or_create
@@ -78,7 +78,7 @@ namespace :populate do
         gq1ca2 = Answer.where(question_id: gq1cq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1).first_or_create
         gq1ca3 = Answer.where(question_id: gq1cq.id, answer: "To enter/exit the airport as quickly as possible", icon_name: nil, custom_order: 2).first_or_create
         gq1ca4 = Answer.where(question_id: gq1cq.id, answer: "To avoid paying for parking", icon_name: nil, custom_order: 3).first_or_create
-        gq1ca5 = Answer.where(question_id: gq1cq.id, answer: "Other (Explain).first_or_create", icon_name: nil, custom_order: 5)
+        gq1ca5 = Answer.where(question_id: gq1cq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5).first_or_create
 
     gq1itf = Node.where(nickname: "d_whyuchoose", is_decision_point: false , branch_id: blue.id, template_name: "gq-1-itf", dashboard_type: "plane").first_or_create
       gq1itfq = Question.where(node_id: gq1itf.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id).first_or_create
@@ -86,7 +86,7 @@ namespace :populate do
         gq1itfa2 = Answer.where(question_id: gq1itfq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1).first_or_create
         gq1itfa3 = Answer.where(question_id: gq1itfq.id, answer: "To enter/exit the airport as quickly as possible", icon_name: nil, custom_order: 2).first_or_create
         gq1itfa4 = Answer.where(question_id: gq1itfq.id, answer: "To avoid paying for parking", icon_name: nil, custom_order: 3).first_or_create
-        gq1itfa5 = Answer.where(question_id: gq1itfq.id, answer: "Other (Explain).first_or_create", icon_name: nil, custom_order: 5)
+        gq1itfa5 = Answer.where(question_id: gq1itfq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5).first_or_create
 
     ns4 = Node.where(nickname: "itf_1stchoice", is_decision_point: false , branch_id: orange.id, template_name: "ns-4", dashboard_type: "plane", skippable: false).first_or_create
       ns4q = Question.where(node_id: ns4.id, question: "Nice! This location is part of the largest improvement project ever at LAX.\nWe'd love to hear how this project can help you and your passengers navigate LAX better", question_type_id: single_choice.id).first_or_create
@@ -193,7 +193,7 @@ namespace :populate do
         b1a1= Answer.where(question_id: b1q.id, answer: "When convenient parking is available", icon_name: nil, custom_order: 1).first_or_create
         b1a2= Answer.where(question_id: b1q.id, answer: "To avoid driving in traffic", icon_name: nil, custom_order: 2).first_or_create
         b1a3= Answer.where(question_id: b1q.id, answer: "To meet my passenger in the terminal", icon_name: nil, custom_order: 3).first_or_create
-        b1a4= Answer.where(question_id: b1q.id, answer: "Other (Specify).first_or_create", icon_name: nil, custom_order: 4)
+        b1a4= Answer.where(question_id: b1q.id, answer: "Other (Specify)", icon_name: nil, custom_order: 4).first_or_create
 
     b2 = Node.where(nickname: "howlongpark", is_decision_point: false , branch_id: green.id, template_name: "b-2",  dashboard_type: "plane").first_or_create
       b2q = Question.where(node_id: b2.id, question: "You need to time your parking correctly. How long are you going to park for?", question_type_id: single_choice.id).first_or_create
@@ -271,7 +271,7 @@ namespace :populate do
         e4a2 = Answer.where(question_id: e4q.id, answer: "Leisure/vacation/visiting", icon_name: nil).first_or_create
         e4a3 = Answer.where(question_id: e4q.id, answer: "Not travelling: Picking-up passenger", icon_name: nil).first_or_create
         e4a4 = Answer.where(question_id: e4q.id, answer: "Not travelling: Dropping-off passenger", icon_name: nil).first_or_create
-        e4a5 = Answer.where(question_id: e4q.id, answer: "Another reason (Specify).first_or_create", icon_name: nil)
+        e4a5 = Answer.where(question_id: e4q.id, answer: "Another reason (Specify)", icon_name: nil).first_or_create
 
     e5 = Node.where(nickname: "LAX_howoften", is_decision_point: false , branch_id: blue.id, template_name: "e-5", dashboard_type: "car", skippable: false).first_or_create
       e5q = Question.where(
