@@ -1,8 +1,22 @@
-<h1>...In which the data shall be exported...</h1>
+<div class="admin-tools">
+  <h1>Data Export</h1>
 
-<ul>
-  <li><%= link_to 'view table of responses', responses_path %></li>
-  <li><%= link_to 'download responses CSV', responses_path(format: :csv) %></li>
-</ul>
+  <h2>Survey Responses</h2>
+  <ul>
+    <li><%= link_to 'view table of responses', responses_path %></li>
+    <li><%= link_to 'download responses CSV', responses_path(format: :csv) %></li>
+  </ul>
 
-<%= link_to 'sign out', destroy_admin_session_path, method: :delete %>
+  <h2>Codebook Reference</h2>
+  <ul>
+    <li>etc...</li>
+  </ul>
+
+  <h2>Unique User details</h2>
+  <ul>
+    <li>All users</li>
+    <li>Playthrough sessions</li>
+  </ul>
+
+  <%= link_to 'sign out', destroy_admin_session_path, method: :delete %>
+</div>

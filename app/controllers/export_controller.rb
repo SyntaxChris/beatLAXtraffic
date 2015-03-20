@@ -1,5 +1,8 @@
 class ExportController < ApplicationController
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, except: :login
+
+  def login
+  end
 
   def home
   end

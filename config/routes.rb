@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   devise_for :admins, path: 'export/admin'
 
-  get '/export' => 'export#home'
+  get '/export/home' => 'export#home', as: 'export_home'
+  get '/export' => 'export#login'
   get '/export/responses' => 'export#response_index', as: 'responses'
 
   namespace :api, defaults: { format: 'json' } do
