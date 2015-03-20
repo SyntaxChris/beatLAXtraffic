@@ -1,0 +1,27 @@
+<%= link_to "back to export tools", export_home_path %>
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>Respondent ID</th>
+    <th>Playthrough Number</th>
+    <th>Node Nickname</th>
+    <th>Skipped?</th>
+    <th>Answer/Choice Code</th>
+    <th>Freeform Response</th>
+  </tr>
+  <% @responses.each do |response| %>
+    <tr>
+      <td><%= response.respondent.unique_user.id %></td>
+      <td><%= response.respondent.id %></td>
+      <td><%= response.respondent.gameplay_number %></td>
+      <td><%= response.node.nickname %></td>
+      <td><%= response.skipped %></td>
+      <% if response.node.is_decision_point? %>
+        <td><%= response.decision.codebook_identifier %></td>
+      <% else %>
+        <td><%= response.answer.codebook_identifier if response.answer.present? %></td>
+      <% end %>
+      <td><%= response.freeform_response.response_text if response.freeform_response.present? %></td>
+    </tr>
+  <% end %>
+</table>

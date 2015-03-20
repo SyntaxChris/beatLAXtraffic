@@ -13,6 +13,8 @@
 
   <body class="{{$root.bodyClass}} env-<%= Rails.env %>"><!-- change background color here -->
     <div id="fb-root"></div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>

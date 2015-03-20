@@ -32,6 +32,7 @@
  *= require 'willing_to_wait'
  *= require 'think_strategy'
  *= require 'congrats'
+ *= require 'admin'
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
