@@ -371,7 +371,7 @@ namespace :populate do
 
     # spinner
     dp5 = Node.create(nickname: "park_full", is_decision_point: true , branch_id: green.id, template_name: "dp-5", dashboard_type: "plane", skippable: false)
-      dp5dp = DecisionPoint.create(node_id: dp5.id, situation: "You arrive at the parking garage and find it is...")
+      dp5dp = DecisionPoint.create(node_id: dp5.id, situation: "You arrive at the parking lot and you...")
         dp5d1 = Decision.create(decision_point_id: dp5dp.id, decision: "Not Full", destination_node_id: b4.id)
         dp5d2 = Decision.create(decision_point_id: dp5dp.id, decision: "Full", destination_node_id: dp6.id)
 
