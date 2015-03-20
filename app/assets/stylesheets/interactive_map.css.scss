@@ -33,7 +33,7 @@
   }
   .arrow-bundle{
     &.animate{
-      @include animate(bounce, 1s, ease-in-quad, infinite);
+      @include animate(bounce, 1.5s, ease-in-quad, infinite);
     }
   }
   .select-path-btn {
@@ -43,7 +43,7 @@
     width: 80px;
     z-index: 3;
     &.animate {
-      @include animate(bounce, 1s, ease-in-quad, 1);
+      @include animate(bounce, 1.5s, ease-in-quad, 1);
     }
     div {
       height: 100%;

@@ -133,7 +133,7 @@ namespace :populate do
         question_type_id: many_choice.id
       ).first_or_create
         itf3a1= Answer.where(question_id: itf3q.id, answer: "Free short-term parking", icon_name: "parking").first_or_create
-        itf3a2= Answer.where(question_id: itf3q.id, answer: "A way to make sure I know the status of my passenger’s flight.", icon_name: "computer").first_or_create
+        itf3a2= Answer.where(question_id: itf3q.id, answer: "A way to make sure I know the status of my flight.", icon_name: "computer").first_or_create
         itf3a3= Answer.where(question_id: itf3q.id, answer: "A place to get food or a drink", icon_name: "food").first_or_create
         itf3a4= Answer.where(question_id: itf3q.id, answer: "Easy ways to get in and out of the location", icon_name: "exit").first_or_create
         itf3a5= Answer.where(question_id: itf3q.id, answer: "WIFi", icon_name: "wifi").first_or_create
@@ -197,7 +197,7 @@ namespace :populate do
     b1 = Node.where(nickname: "whypark", is_decision_point: false , branch_id: green.id, template_name: "b-1", dashboard_type: "plane").first_or_create
       b1q = Question.where(node_id: b1.id, question: "Why do you choose to park your car?", question_type_id: many_choice.id).first_or_create
       # ^ this will need alt question text
-        b1a1= Answer.where(question_id: b1q.id, answer: "When convenient parking is available", icon_name: nil, custom_order: 1).first_or_create
+        b1a1= Answer.where(question_id: b1q.id, answer: "Convenient parking is available", icon_name: nil, custom_order: 1).first_or_create
         b1a2= Answer.where(question_id: b1q.id, answer: "To avoid driving in traffic", icon_name: nil, custom_order: 2).first_or_create
         b1a3= Answer.where(question_id: b1q.id, answer: "To meet my passenger in the terminal", icon_name: nil, custom_order: 3).first_or_create
         b1a4= Answer.where(question_id: b1q.id, answer: "Other (Specify)", icon_name: nil, custom_order: 4).first_or_create
@@ -378,7 +378,7 @@ namespace :populate do
 
     # spinner
     dp5 = Node.where(nickname: "park_full", is_decision_point: true , branch_id: green.id, template_name: "dp-5", dashboard_type: "plane", skippable: false).first_or_create
-      dp5dp = DecisionPoint.where(node_id: dp5.id, situation: "You arrive at the parking lot and you...").first_or_create
+      dp5dp = DecisionPoint.where(node_id: dp5.id, situation: "You arrive at the parking garage and you...").first_or_create
         dp5d1 = Decision.where(decision_point_id: dp5dp.id, decision: "Not Full", destination_node_id: b4.id).first_or_create
         dp5d2 = Decision.where(decision_point_id: dp5dp.id, decision: "Full", destination_node_id: dp6.id).first_or_create
 

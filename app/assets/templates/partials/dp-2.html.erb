@@ -1,7 +1,7 @@
 <!-- Pickup spinner  -->
 <div id="pickup-spinner-question">
 
-  <% unless Rails.env.production? %>
+  <% if Rails.env.development? %>
     <div class="testing-controls">
       <div ng-click="advancePlane(); submit(findDecisionByString('Yes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
         YES
@@ -20,7 +20,7 @@
 
   <div class="congrats" style="display:none;">
     <h3 class="main-question">Nice!</h1>
-    <h4>You pick up your passenger and speed off like a boss</h4>
+    <h4>You pick up your passenger at the curb and speed away!</h4>
     <div class="continue-btn-ctnr">
       <button ng-click="advancePlane(); submit(findDecisionByString('Yes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
         CONTINUE

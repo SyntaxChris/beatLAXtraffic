@@ -1,7 +1,7 @@
 <!-- Parking spinner -->
 <div id="parking-spinner-questions">
 
-  <% unless Rails.env.production? %>
+  <% if Rails.env.development? %>
     <div class="testing-controls">
       <div ng-click="advancePlane(); submit(findDecisionByString('Not Full').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
         Not Full
@@ -28,7 +28,7 @@
 
   <div class="fail" style="display:none">
     <h3 class="main-question">Dang!</h1>
-    <h4>You were late to the free parking party</h4>
+    <h4>You were late to the easy-parking party</h4>
     <button ng-click="advancePlane(); submit(findDecisionByString('Full').id, true)" class="next plane-advance" id="spin-parking-lose">
       NEXT
     </button>
