@@ -42,6 +42,7 @@ GEM
       multi_json
     angularjs-rails (1.3.8)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.7)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -81,6 +82,13 @@ GEM
     dalli (2.7.2)
     database_cleaner (1.4.0)
     debug_inspector (0.0.2)
+    devise (3.4.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      responders
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
     em-websocket (0.5.1)
@@ -163,6 +171,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     open4 (1.3.4)
+    orm_adapter (0.5.0)
     pg (0.18.1)
     phantomjs (1.9.7.1)
     pry (0.10.1)
@@ -213,6 +222,8 @@ GEM
     rdoc (4.2.0)
       json (~> 1.4)
     remotipart (1.2.1)
+    responders (1.1.1)
+      railties (>= 3.2, < 4.2)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
@@ -291,6 +302,8 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     underscore-rails (1.7.0)
+    warden (1.2.3)
+      rack (>= 1.0)
     websocket (1.2.1)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -308,6 +321,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   dalli
   database_cleaner
+  devise
   factory_girl_rails
   foundation-rails
   guard

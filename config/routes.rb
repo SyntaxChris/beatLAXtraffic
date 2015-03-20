@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'static#private'
   get '/error' => 'static#private'
 
+  devise_for :admins, path: 'export'
+
   get '/export' => 'export#home'
   get '/export/responses' => 'export#response_index', as: 'responses'
 
@@ -13,4 +15,5 @@ Rails.application.routes.draw do
     post '/respondents/update' => 'respondents#update'
     get '/respondents/restart' => 'respondents#restart'
   end
+
 end

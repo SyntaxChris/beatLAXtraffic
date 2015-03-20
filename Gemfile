@@ -19,6 +19,7 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer',  platforms: :ruby
 
 gem 'rails_admin'
+gem 'devise'
 
 # Use Zurb Foundation
 gem 'foundation-rails'
