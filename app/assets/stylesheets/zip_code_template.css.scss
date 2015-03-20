@@ -1,7 +1,7 @@
 #zip-code-template{
-	h3.main-question{
-		font-size: 4vw;
-	}
+	// h3.main-question{
+	// 	font-size: 4vw;
+	// }
 	.sub-header{
 		margin-bottom: 0;
 		font-size: 2.5vw;
@@ -86,9 +86,9 @@
 
 @media only screen and (min-width: 1340px){
 	#zip-code-template{
-		h3.main-question{
-			font-size: 80px;
-		}
+		// h3.main-question{
+		// 	font-size: 80px;
+		// }
 		.ferrari-container{
 			position: relative;
 			margin-left: auto;
@@ -103,68 +103,63 @@
 
 			}
 			.zip-container{
+			position: absolute;
+			top:0;
+			width: 100%;
+			height: 100%;
+			.text-container{
 				position: absolute;
-				top:0;
+				margin-left: auto;
+				margin-right: auto;
 				width: 100%;
-				height: 100%;
-				.text-container{
-					position: relative;
-					margin-left: auto;
-					margin-right: auto;
-					width: 30%;
-					top: 35%;
-					text-align: center;
-					input[type="text"], textarea {
-						background-color : rgba(255, 255, 255, 0); 
-						color: white;
-						font-size: 80px;
-						text-align: center;
-						border-radius: 5px;
-					}
-					::-webkit-input-placeholder { /* WebKit browsers */
-					    background-color : rgba(255, 255, 255, 0); 
-						color: white;
-						font-size: 80px;
-						text-align: center;
-						border-radius: 5px;
-					}
-					:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-					    background-color : rgba(255, 255, 255, 0); 
-						color: white;
-						font-size: 80px;
-						text-align: center;
-						border-radius: 5px;
-					}
-					::-moz-placeholder { /* Mozilla Firefox 19+ */
-					   	background-color : rgba(255, 255, 255, 0); 
-						color: white;
-						font-size: 80px;
-						text-align: center;
-						border-radius: 5px;
-					}
-					:-ms-input-placeholder { /* Internet Explorer 10+ */
-					   	background-color : rgba(255, 255, 255, 0); 
-						color: white;
-						font-size: 80px;
-						text-align: center;
-						border-radius: 5px;
-					}
+				top: 35%;
+				text-align: center;
+				input[type="text"], textarea {
+					 background-color : rgba(255, 255, 255, 0); 
+					 color: white;
+					 position: relative;
+					 margin: 0 auto;
+					 top: 90%;
+					 width: 30%;
+					 font-size: 6vw;
+					 text-align: center;
+					 border-radius: 5px;
+					 resize: none;
 				}
+				::-webkit-input-placeholder { /* WebKit browsers */
+				    color: white;
+				}
+				:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+				   color: white;
+				   opacity:  1;
+				}
+				::-moz-placeholder { /* Mozilla Firefox 19+ */
+				   color: white;
+				   opacity:  1;
+				}
+				:-ms-input-placeholder { /* Internet Explorer 10+ */
+				   color: white;
+				}
+			}
+			.btn-ctnr{
+				position: absolute;
+				width: 100%;
+				bottom: 110%;
 				button.zip-next{
 					font-family: 'Quicksand', sans-serif;
 					cursor: pointer;
 					display: none;
 					position: relative;
-					margin-left: auto;
-					margin-right: auto;
+					margin: 0 auto;
 					background-color: #079BED;
 					border-radius: 5px;
 					color: white;
-					font-size: 30px ;
-					padding: 5%;
-					width: 50%;
+					font-size: 2vw;
+					padding: 2%;
+					width: 20%;
 				}
 			}
+		}
 		}
 	}
 }
