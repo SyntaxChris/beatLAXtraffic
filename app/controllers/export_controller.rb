@@ -27,6 +27,26 @@ class ExportController < ApplicationController
     end
   end
 
+  def responses_with_variables
+    @responses = Response.includes(
+      { :respondent => :unique_user },
+      :freeform_response,
+      :answer,
+      :decision,
+      { :node => :question },
+      { :node => :decision_point }
+    )
+    respond_to do |format|
+      format.html do
+        render 'responses_with_variables'
+      end
+      format.csv do
+        headers['Content-Disposition'] = "attachment; filename=\"responses-with-variables.csv\""
+        headers['Content-Type'] ||= 'text/csv'
+      end
+    end
+  end
+
   def codified_response_index
     @responses = Response.includes(
       { :respondent => :unique_user },

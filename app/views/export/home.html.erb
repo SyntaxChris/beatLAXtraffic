@@ -5,6 +5,9 @@
   <ul>
     <li><%= link_to 'view table of responses', responses_path %> | <%= link_to 'download responses CSV', responses_path(format: :csv) %></li>
     <li><%= link_to 'view table of codified responses', codified_responses_path %> | <%= link_to 'download codified responses CSV', codified_responses_path(format: :csv) %></li>
+    <% if false %>
+      <li><%= link_to 'view table of responses including variables', responses_with_variables_path %> | <%= link_to 'download responses with variables CSV', responses_with_variables_path(format: :csv) %></li>
+    <% end %>
   </ul>
 
   <h2>Codebook Reference</h2>
