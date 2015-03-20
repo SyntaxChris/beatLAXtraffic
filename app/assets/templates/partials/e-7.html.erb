@@ -13,7 +13,6 @@
       <h3 class="main-question">Congratulations!</h3>
 
       <h4>You conquered the traffic!</h4>
-
       <p>
         If you want to get updates on the new access plan for LAX, visit us at
       </p>
@@ -45,8 +44,15 @@
 
 
 <div id="share-story-overlay">
-  <div class="inner">
-    <div class="top-section">
+  <div class="story-popup">
+    <div class="talk-bbl" ng-include="'<%= asset_path 'svgs/_congratsStoryBubble.html' %>'"></div>
+    <button id="x-btn-close-story-overlay" class="close-story-overlay-btn">x</button>
+    <div class="title">
+      Tell us about your best or worst experience. We will use your stories to make LAX a better place.
+    </div>
+    <textarea name="" id="" cols="1" rows="5" placeholder="Dont hold back"></textarea>
+    <button id="x-btn-submit-story" class="submit-btn">SEND</button>
+    <!-- <div class="top-section">
       <div class="icon-c" style="height: 25px; width: 25px; display: inline-block; vertical-align: middle;" ng-include="'<%= asset_path 'svgs/_congratsStoryBubble.html' %>'">
       </div>
       <div class="title-text-c" style="text-align:center">Tell us about your best or worst experience. We will use your stories to make LAX a better place.</div>
@@ -59,7 +65,7 @@
     </div>
     <div>
       <button id="x-btn-submit-story" class="submit-story-btn">SEND</button>
-    </div>
+    </div> -->
   </div>
 </div>
 

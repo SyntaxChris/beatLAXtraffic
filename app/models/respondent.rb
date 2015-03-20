@@ -13,7 +13,7 @@ class Respondent < ActiveRecord::Base
     { code: "LHR", city: "London"},
     { code: "SYD", city: "Sydney"}
   ]
-  PICKUP_TARGETS = ["Friend", "Coworker", "Parent"]
+  PICKUP_TARGETS = ["friend", "coworker", "parent"]
   TRAFFIC_LEVELS = ["slow", "medium", "fast"]
 
   has_many :responses
