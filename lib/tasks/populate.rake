@@ -60,7 +60,7 @@ namespace :populate do
       gq1aq = Question.create(node_id: gq1a.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id)
         gq1aa1 = Answer.create(question_id: gq1aq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1)
         gq1aa2 = Answer.create(question_id: gq1aq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5)
-        gq1aa3 = Answer.create(question_id: gq1aq.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil, custom_order: 2)
+        gq1aa3 = Answer.create(question_id: gq1aq.id, answer: "To enter/exit the airport as quickly as possible", icon_name: nil, custom_order: 2)
         gq1aa4 = Answer.create(question_id: gq1aq.id, answer: "To avoid paying for parking", icon_name: nil, custom_order: 3)
         gq1aa5 = Answer.create(question_id: gq1aq.id, answer: "To minimize the hassle for me", icon_name: nil, custom_order: 4)
 
@@ -68,7 +68,7 @@ namespace :populate do
       gq1bq = Question.create(node_id: gq1b.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id)
         gq1ba1 = Answer.create(question_id: gq1bq.id, answer: "To minimize the hassle for me", icon_name: nil, custom_order: 4)
         gq1ba2 = Answer.create(question_id: gq1bq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1)
-        gq1ba3 = Answer.create(question_id: gq1bq.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil, custom_order: 2)
+        gq1ba3 = Answer.create(question_id: gq1bq.id, answer: "To enter/exit the airport as quickly as possible", icon_name: nil, custom_order: 2)
         gq1ba4 = Answer.create(question_id: gq1bq.id, answer: "To avoid paying for parking", icon_name: nil, custom_order: 3)
         gq1ba5 = Answer.create(question_id: gq1bq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5)
 
@@ -76,7 +76,7 @@ namespace :populate do
       gq1cq = Question.create(node_id: gq1c.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id)
         gq1ca1 = Answer.create(question_id: gq1cq.id, answer: "To minimize the hassle for me", icon_name: nil, custom_order: 4)
         gq1ca2 = Answer.create(question_id: gq1cq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1)
-        gq1ca3 = Answer.create(question_id: gq1cq.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil, custom_order: 2)
+        gq1ca3 = Answer.create(question_id: gq1cq.id, answer: "To enter/exit the airport as quickly as possible", icon_name: nil, custom_order: 2)
         gq1ca4 = Answer.create(question_id: gq1cq.id, answer: "To avoid paying for parking", icon_name: nil, custom_order: 3)
         gq1ca5 = Answer.create(question_id: gq1cq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5)
 
@@ -84,7 +84,7 @@ namespace :populate do
       gq1itfq = Question.create(node_id: gq1itf.id, question: "Why did you choose this strategy?", question_type_id: many_choice.id)
         gq1itfa1 = Answer.create(question_id: gq1itfq.id, answer: "To minimize the hassle for me", icon_name: nil, custom_order: 4)
         gq1itfa2 = Answer.create(question_id: gq1itfq.id, answer: "To make it convenient for my passenger", icon_name: nil, custom_order: 1)
-        gq1itfa3 = Answer.create(question_id: gq1itfq.id, answer: "To get in and out of the airport as quickly as possible", icon_name: nil, custom_order: 2)
+        gq1itfa3 = Answer.create(question_id: gq1itfq.id, answer: "To enter/exit the airport as quickly as possible", icon_name: nil, custom_order: 2)
         gq1itfa4 = Answer.create(question_id: gq1itfq.id, answer: "To avoid paying for parking", icon_name: nil, custom_order: 3)
         gq1itfa5 = Answer.create(question_id: gq1itfq.id, answer: "Other (Explain)", icon_name: nil, custom_order: 5)
 

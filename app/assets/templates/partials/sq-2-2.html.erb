@@ -3,7 +3,7 @@
     Un oh, did you forget?
   </h3>
   <h3 class="main-question" id="stage-2-header" style="display:none">
-    As you rush to the car, your phone displays...
+    As you rush to the car, your phone displays the task
   </h3>
   <h3 class="main-question" id="stage-3-header" style="display: none">
     You then calmly drive towards LAX...
@@ -29,7 +29,6 @@
         <div class="row" id="recieved-txt-time" style="font-size: 12px; color: #979A9C; margin:0 ">
           Today <span>{{ tenMinutesAgo }}</span>
         </div>
-
 
         <div class="row" id="txt-bbl-content" style="margin: 0; background-color: white">
           <div id="recieved-txt">
@@ -100,7 +99,7 @@
         </div>
       </div>
       <div class="row pickup-info" style="text-align: center; margin: 0;">
-        <div class="large-6 medium-6 small-6 columns"><span>{{ variables.picking_up_number }}</span> <span>{{ variables.original_who_picking_up }}</span></div>
+        <div class="large-6 medium-6 small-6 columns">Pickup <span>{{ variables.picking_up_number }}</span> <span>{{ variables.original_who_picking_up }}</span></div>
         <div class="large-6 medium-6 small-6 columns" style="padding: 0">
           with <span>{{ variables.luggage_count }}</span> <span>{{ variables.luggage_type }}</span>
         </div>
