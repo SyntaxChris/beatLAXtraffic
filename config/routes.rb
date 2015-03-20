@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'static#private'
   get '/error' => 'static#private'
 
-  devise_for :admins, path: 'export'
+  devise_for :admins, path: 'export/admin'
 
   get '/export' => 'export#home'
   get '/export/responses' => 'export#response_index', as: 'responses'

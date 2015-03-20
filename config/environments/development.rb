@@ -10,6 +10,7 @@ Rails.application.configure do
   config.eager_load = false
 
   # mailer for Devise:
+  config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Show full error reports and disable caching.
