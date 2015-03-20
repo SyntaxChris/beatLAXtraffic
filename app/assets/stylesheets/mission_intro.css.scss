@@ -127,7 +127,7 @@
         position: relative;
         width: 100%;
         margin-top: 10px;
-        margin-bottom: -14px;
+        margin-bottom: -16px;
         padding: 20px;
         font-size: 25px;
         color: white;
@@ -528,6 +528,24 @@
           #sent-txt{
             margin-top: 0%;
           }
+        }
+      }
+      #txt-footer-container{
+        button#phone-next-btn{
+          cursor: pointer; 
+          position: relative;
+          width: 100%;
+          margin-top: 10px;
+          margin-bottom: -14px;
+          padding: 20px;
+          font-size: 25px;
+          color: white;
+          background-color: #F84048; 
+          -webkit-animation: run-to-car 2s linear infinite;
+          -moz-animation: run-to-car 2s linear infinite;
+          -o-animation: run-to-car 2s linear infinite;
+          -ms-animation: run-to-car 2s linear infinite;
+          animation: run-to-car 2s linear infinite;
         }
       }
     }
