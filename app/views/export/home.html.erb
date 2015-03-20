@@ -3,14 +3,14 @@
 
   <h2>Survey Responses</h2>
   <ul>
-    <li><%= link_to 'view table of responses', responses_path %></li>
-    <li><%= link_to 'download responses CSV', responses_path(format: :csv) %></li>
+    <li><%= link_to 'view table of responses', responses_path %> | <%= link_to 'download responses CSV', responses_path(format: :csv) %></li>
+    <li><%= link_to 'view table of codified responses', codified_responses_path %> | <%= link_to 'download codified responses CSV', codified_responses_path(format: :csv) %></li>
   </ul>
 
-  <%#<h2>Codebook Reference</h2>%>
-  <%#<ul>%>
-  <%#  <li>etc...</li>%>
-  <%#</ul>%>
+  <h2>Codebook Reference</h2>
+  <ul>
+    <li><%= link_to 'view codebook table', codebook_reference_path %> | <%= link_to 'download codebook CSV', codebook_reference_path(format: :csv) %></li>
+  </ul>
 
   <h2>Unique User details</h2>
   <i>pending!</i>
