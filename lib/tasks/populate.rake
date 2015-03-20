@@ -5,9 +5,16 @@ namespace :populate do
   desc "creates all the nodes for the flow map"
   task create_nodes: :environment do
     # Drop, create and migrate database
-    Rake::Task['db:drop'].invoke
-    Rake::Task['db:create'].invoke
-    Rake::Task['db:migrate'].invoke
+    # Rake::Task['db:drop'].invoke
+    # Rake::Task['db:create'].invoke
+    # Rake::Task['db:migrate'].invoke
+    Branch.destroy_all
+    QuestionType.destroy_all
+    Node.destroy_all
+    Question.destroy_all
+    Answer.destroy_all
+    DecisionPoint.destroy_all
+    Decision.destroy_all
 
     # create branches
     blue = Branch.where(name: "blue").first_or_create
