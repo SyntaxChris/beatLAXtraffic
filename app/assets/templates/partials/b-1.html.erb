@@ -2,6 +2,11 @@
 <div id="why-park-car">
   <h3 class="main-question">{{ currentNode.question.question }}</h3>
   <h5 class="sub-header">Select all that apply</h5>
+  ohther {{ currentOther }}
+  <p>
+  answers {{ currentAnswers }}
+  <p>
+  node: {{ currentNode.answers }}
   <div class="tile-ctnr">
     <div 
       class="tile-bbl"
@@ -41,7 +46,15 @@
 
   <div class="other-ctnr">
     <div class="other-bbl">
-      <textarea id="park-txt" cols="1" rows="6" placeholder="Please write here." maxlength="140"></textarea>
+      <textarea
+        id="park-txt"
+        cols="1"
+        rows="6"
+        placeholder="Please write here."
+        ng-model="currentOther.text"
+        ng-change="determineOtherText(currentOther.text, null, 'Other (Specify)')"
+        maxlength="140">
+      </textarea>
       <div class="btn-ctnr">
         <div class="counter"></div>
         <button class="save">SAVE</button>

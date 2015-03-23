@@ -2,12 +2,31 @@
 # usage: rake populate:create_nodes
 
 namespace :populate do
+  desc "creates admin accounts from ENV variables"
+  task create_admins: :environment do
+
+    a = 0
+    Rails.application.secrets["admin_count"].times do
+      a += 1
+
+      admin = Admin.where(email: Rails.application.secrets["admin_email_#{a}"])
+      if admin.count == 0
+        admin = Admin.new({email: Rails.application.secrets["admin_email_#{a}"], password: Rails.application.secrets["admin_password_#{a}"], password_confirmation: Rails.application.secrets["admin_password_#{a}"]}).save(validate: false)
+      end
+    end
+
+  end
+
   desc "creates all the nodes for the flow map"
   task create_nodes: :environment do
     # Drop, create and migrate database
     # Rake::Task['db:drop'].invoke
     # Rake::Task['db:create'].invoke
     # Rake::Task['db:migrate'].invoke
+
+    Rake::Task['populate:create_admins'].invoke
+
+
     Branch.destroy_all
     QuestionType.destroy_all
     Node.destroy_all
@@ -38,6 +57,7 @@ namespace :populate do
 
     sq1 = Node.where(nickname: "zipcode", is_decision_point: false, branch_id: blue.id, template_name: "sq-1", skippable: false).first_or_create
       sq1q = Question.where(node_id: sq1.id, question: "Where in LA are you coming from?", question_type_id: single_choice.id).first_or_create
+        sq1a1 = Answer.where(question_id: sq1q.id, answer: "Zipcode", icon_name: nil).first_or_create
       # ^ needs a question type
         # sq1a1 = Answer.create(question_id: sq1q.id, answer: "Less than 30 minute drive away", icon_name: nil)
         # sq1a2 = Answer.create(question_id: sq1q.id, answer: "30 - 60 minutes away", icon_name: nil)
@@ -312,7 +332,7 @@ namespace :populate do
         question: "You made it home!\nThank you for playing. All this information will help LAX better serve you in the future. If you want to keep in touch with our progress towards the new location please join our mailing list or visit us at http://connectinglax.com",
         question_type_id: single_choice.id
       ).first_or_create
-        e7a1 = Answer.where(question_id: e7q.id, answer: "Email Input", icon_name: nil).first_or_create
+        e7a1 = Answer.where(question_id: e7q.id, answer: "Story share", icon_name: nil).first_or_create
 
     # where does this go/branch name?
     # itf1 = Node.create(nickname: "ITF 1", is_decision_point: false , branch_id: ending_questions_branch.id)
