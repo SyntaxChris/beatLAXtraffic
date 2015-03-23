@@ -2,12 +2,31 @@
 # usage: rake populate:create_nodes
 
 namespace :populate do
+  desc "creates admin accounts from ENV variables"
+  task create_admins: :environment do
+
+    a = 0
+    Rails.application.secrets["admin_count"].times do
+      a += 1
+
+      admin = Admin.where(email: Rails.application.secrets["admin_email_#{a}"])
+      if admin.count == 0
+        admin = Admin.new({email: Rails.application.secrets["admin_email_#{a}"], password: Rails.application.secrets["admin_password_#{a}"], password_confirmation: Rails.application.secrets["admin_password_#{a}"]}).save(validate: false)
+      end
+    end
+
+  end
+
   desc "creates all the nodes for the flow map"
   task create_nodes: :environment do
     # Drop, create and migrate database
     # Rake::Task['db:drop'].invoke
     # Rake::Task['db:create'].invoke
     # Rake::Task['db:migrate'].invoke
+
+    Rake::Task['populate:create_admins'].invoke
+
+
     Branch.destroy_all
     QuestionType.destroy_all
     Node.destroy_all
