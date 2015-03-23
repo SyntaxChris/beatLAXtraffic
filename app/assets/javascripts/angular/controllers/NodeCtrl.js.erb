@@ -391,6 +391,10 @@ angular.module('lawaApp')
 
       // for freeform responses:
       $scope.determineOtherText = function(currentOtherText, answerId) {
+        // this is for the 'gq-1' questions that have an 'other' along with other questions:
+        if(typeof answerId === 'undefined' ){
+          var answerId = _.findWhere($scope.currentAnswers, {answer: 'Other (Explain)'}).id
+        }
         if($scope.currentOtherText === null){
           $scope.currentOther.present = false;
         }else if (currentOtherText.length === 0){
