@@ -16,6 +16,20 @@ module Api
       end
     end
 
+    def story_share
+      if @respondent
+        result = Response.create_story(response_params, @respondent)
+        if result[:status] == "success"
+          render json: result, status: 200
+        else
+          @respondent.try(:mark_as_corrupted!)
+          render json: result, status: 422
+        end
+      else
+        render json: {error: "no respondent present"}, status: 422
+      end
+    end
+
     private
     def response_params
       params[:response][:answers] ||= [] if params[:response].has_key?(:answers)
