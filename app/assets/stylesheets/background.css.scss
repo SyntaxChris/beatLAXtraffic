@@ -14,9 +14,6 @@ body {
             position: absolute;
             bottom: 0;
         }
-        #cloud-5{
-            display: none;
-        }
     }
     &.orange {
         background: #EFC9B4;
@@ -26,9 +23,6 @@ body {
             z-index: -2;
             position: absolute;
             bottom: 0;
-        }
-        #cloud-5{
-            display: none;
         }
     }
     #landing-plane{
@@ -179,7 +173,7 @@ body {
             #cloud-4{
                 position: absolute; 
                 z-index: -7; 
-                left: 10%; 
+                left: -20%; 
                 top: 10%;
                 opacity: 0.5;
                 width: 30%;
