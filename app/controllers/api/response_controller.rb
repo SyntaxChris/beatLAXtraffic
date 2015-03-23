@@ -3,6 +3,7 @@ module Api
     before_filter :set_respondent
 
     def create
+      binding.pry
       if @respondent
         result = Response.create_all_from_node_interaction(response_params, @respondent)
         if result[:status] == "success"

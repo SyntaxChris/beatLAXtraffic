@@ -3,6 +3,8 @@
     {{ currentNode.question.question }}
   </h3>
   <div class="sub-header">Enter your zip code</div>
+  {{ currentOther }}
+  ans: {{ currentNode.answers }}
   <div class="row">
     <div class="ferrari-container">
       <div ng-include="'<%= asset_path 'svgs/_ferrari.html' %>'"></div>
@@ -11,7 +13,14 @@
           <div class="btn-ctnr">
             <button class="zip-next" ng-click="delaySubmit(null, false)">NEXT</button>
           </div>
-          <textarea id="zip-input" cols="1" rows="1" maxlength="5"></textarea>
+          <textarea
+            id="zip-input"
+            cols="1"
+            rows="1"
+            maxlength="5"
+            ng-model="currentOther.text"
+            ng-change="determineOtherText(currentOther.text, currentNode.answers[0].id); addAnswerToCurrentAnswers(currentNode.answers[0])">
+          </textarea>
         </div>
       </div>
     </div>

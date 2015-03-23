@@ -38,6 +38,7 @@ namespace :populate do
 
     sq1 = Node.where(nickname: "zipcode", is_decision_point: false, branch_id: blue.id, template_name: "sq-1", skippable: false).first_or_create
       sq1q = Question.where(node_id: sq1.id, question: "Where in LA are you coming from?", question_type_id: single_choice.id).first_or_create
+        sq1a1 = Answer.where(question_id: sq1q.id, answer: "Zipcode", icon_name: nil).first_or_create
       # ^ needs a question type
         # sq1a1 = Answer.create(question_id: sq1q.id, answer: "Less than 30 minute drive away", icon_name: nil)
         # sq1a2 = Answer.create(question_id: sq1q.id, answer: "30 - 60 minutes away", icon_name: nil)
