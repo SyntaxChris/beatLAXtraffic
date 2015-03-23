@@ -19,7 +19,7 @@
 
       <a href="http://connectinglax.com" target="_blank">connectinglax.com</a>
 
-      <button class="share-story-btn" id="x-btn-share-story">
+      <button class="share-story-btn" id="x-btn-share-story" ng-click="addAnswerToCurrentAnswers(currentNode.answers[0])">
         <span class="" style="height: 25px; width: 25px; display: inline-block; vertical-align: middle;" ng-include="'<%= asset_path 'svgs/_congratsStoryBubble.html' %>'"></span> <span>Tell us your LAX story!</span>
       </button>
 
@@ -48,8 +48,16 @@
     <div class="title">
       Tell us about your best or worst experience. We will use your stories to make LAX a better place.
     </div>
-    <textarea name="" id="" cols="1" rows="5" placeholder="Don't hold back!"></textarea>
-    <button id="x-btn-submit-story" class="submit-btn">SEND</button>
+    <textarea
+      name=""
+      id=""
+      cols="1"
+      rows="5"
+      placeholder="Don't hold back!"
+      ng-model="currentOther.text"
+      ng-change="determineOtherText(currentOther.text, currentAnswers[0].id)">
+    </textarea>
+    <button id="x-btn-submit-story" class="submit-btn" ng-click="sendStory()">SEND</button>
   </div>
 </div>
 

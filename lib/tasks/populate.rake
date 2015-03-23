@@ -57,6 +57,7 @@ namespace :populate do
 
     sq1 = Node.where(nickname: "zipcode", is_decision_point: false, branch_id: blue.id, template_name: "sq-1", skippable: false).first_or_create
       sq1q = Question.where(node_id: sq1.id, question: "Where in LA are you coming from?", question_type_id: single_choice.id).first_or_create
+        sq1a1 = Answer.where(question_id: sq1q.id, answer: "Zipcode", icon_name: nil).first_or_create
       # ^ needs a question type
         # sq1a1 = Answer.create(question_id: sq1q.id, answer: "Less than 30 minute drive away", icon_name: nil)
         # sq1a2 = Answer.create(question_id: sq1q.id, answer: "30 - 60 minutes away", icon_name: nil)
@@ -331,7 +332,7 @@ namespace :populate do
         question: "You made it home!\nThank you for playing. All this information will help LAX better serve you in the future. If you want to keep in touch with our progress towards the new location please join our mailing list or visit us at http://connectinglax.com",
         question_type_id: single_choice.id
       ).first_or_create
-        e7a1 = Answer.where(question_id: e7q.id, answer: "Email Input", icon_name: nil).first_or_create
+        e7a1 = Answer.where(question_id: e7q.id, answer: "Story share", icon_name: nil).first_or_create
 
     # where does this go/branch name?
     # itf1 = Node.create(nickname: "ITF 1", is_decision_point: false , branch_id: ending_questions_branch.id)

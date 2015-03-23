@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     resources :nodes, only: [:index, :show]
     resources :response, only: [:create]
+    post '/response/story' => 'response#story_share'
     get '/respondents/get_or_create/' => 'respondents#get_or_create'
     post '/respondents/update' => 'respondents#update'
     get '/respondents/restart' => 'respondents#restart'

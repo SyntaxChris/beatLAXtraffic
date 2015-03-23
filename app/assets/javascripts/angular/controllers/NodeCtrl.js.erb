@@ -336,7 +336,6 @@ angular.module('lawaApp')
 
       $scope.incrementOutcome = function(){
         $scope.parkingTimeSpent += 5;
-
         if($scope.parkingTextIndex <= 4)
           $scope.parkingTextIndex += 1
         else
@@ -391,7 +390,13 @@ angular.module('lawaApp')
       };
 
       // for freeform responses:
-      $scope.determineOtherText = function(currentOtherText, answerId) {
+      $scope.determineOtherText = function(currentOtherText, answerId, otherString) {
+        // this is for the 'gq-1' and 'b-1' questions that have an 'other' as
+        // part of mulitple choice where there is not only 1 single answer ID:
+        if(answerId === null){
+          var answerId = _.findWhere($scope.currentAnswers, {answer: otherString}).id
+          // ^ the string of the 'Other' answer text is passed in and that answer is found
+        }
         if($scope.currentOtherText === null){
           $scope.currentOther.present = false;
         }else if (currentOtherText.length === 0){
@@ -497,6 +502,32 @@ angular.module('lawaApp')
       // initialize in template before dashboard template is rendered (2-2)
       $scope.initializeDash = function(){
         $scope.initialize = $scope.flightScenario;
+      };
+
+      $scope.sendStory = function(){
+        if($scope.currentOther.present){
+          var freeformResponse = $scope.currentOther.text;
+          var freeformAnswerId = $scope.currentOther.answerId;
+        }else {
+          var freeformResponse = null;
+        };
+        var paramSafeAnswers = answersForParams($scope.currentAnswers);
+
+        var responseParams = {
+          is_decision: false,
+          respondent_id: $scope.respondentId,
+          node_id: $scope.currentNode.node_id,
+          decision_id: null,
+          answers: paramSafeAnswers || null,
+          next_node_id: $scope.currentNode.next_node_id || $scope.currentDecisionDestination.node_id,
+          freeform_response: { response: freeformResponse, answer_id: freeformAnswerId } || null
+        }
+        $http.post('/api/response/story', { response: responseParams }).error(function(data){ // response post failure
+          // if this post breaks, send them to the error page
+          window.location.href = "/error";
+        }).success(function(data){
+          $scope.respondentCurrentNodeId = $scope.currentNode.node_id;
+        });
       };
 
       $scope.submit = function(decisionId, decreaseTime){
