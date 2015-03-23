@@ -15,7 +15,7 @@ class ExportController < ApplicationController
       :decision,
       { :node => :question },
       { :node => :decision_point }
-    )
+    ).order(:respondent_id)
     respond_to do |format|
       format.html do
         render 'response_index'
@@ -35,7 +35,7 @@ class ExportController < ApplicationController
       :decision,
       { :node => :question },
       { :node => :decision_point }
-    )
+    ).order(:respondent_id)
     respond_to do |format|
       format.html do
         render 'responses_with_variables'
@@ -55,7 +55,7 @@ class ExportController < ApplicationController
       :decision,
       { :node => :question },
       { :node => :decision_point }
-    )
+    ).order(:respondent_id)
     respond_to do |format|
       format.html do
         render 'codified_response_index'
