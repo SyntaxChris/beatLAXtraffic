@@ -14,9 +14,6 @@ body {
             position: absolute;
             bottom: 0;
         }
-        #cloud-5{
-            display: none;
-        }
     }
     &.orange {
         background: #EFC9B4;
@@ -26,9 +23,6 @@ body {
             z-index: -2;
             position: absolute;
             bottom: 0;
-        }
-        #cloud-5{
-            display: none;
         }
     }
     #landing-plane{
@@ -141,9 +135,9 @@ body {
                     height: 100%;
                     width: 100%;
                 }
-                -webkit-animation: slow-cloud 60s;
-                -moz-animation: slow-cloud 60s;
-                animation: slow-cloud 60s;
+                -webkit-animation: slow-cloud 100s;
+                -moz-animation: slow-cloud 100s;
+                animation: slow-cloud 100s;
 
                 -webkit-animation-iteration-count: infinite;
                 -moz-animation-iteration-count: infinite;
@@ -179,7 +173,7 @@ body {
             #cloud-4{
                 position: absolute; 
                 z-index: -7; 
-                left: 10%; 
+                left: -20%; 
                 top: 10%;
                 opacity: 0.5;
                 width: 30%;
@@ -312,8 +306,8 @@ body {
 @-webkit-keyframes slow-cloud{
    0% {transform: translate3d(0, 0, 0); 
        -webkit-transform:translate3d(0, 0, 0); }
-   100% {transform: translate3d(500%, 0, 0);
-       -webkit-transform:translate3d(500%, 0, 0);}
+   100% {transform: translate3d(700%, 0, 0);
+       -webkit-transform:translate3d(700%, 0, 0);}
 }
 @-webkit-keyframes dopa-cloud{
    0% {transform: translate3d(0, 0, 0); 
@@ -338,8 +332,8 @@ body {
         }
         @-webkit-keyframes far-plane{
            0% {transform: translate3d(0, 0, 0) rotate(0deg); }
-           15% {transform: translate3d(800%, -80%, 0) rotate(-3deg);}
-           100% {transform: translate3d(810%, -80%, 0) rotate(-3deg);}
+           15% {transform: translate3d(1000%, -80%, 0) rotate(-3deg);}
+           100% {transform: translate3d(1010%, -80%, 0) rotate(-3deg);}
         }
 
         @-webkit-keyframes middle-plane{
