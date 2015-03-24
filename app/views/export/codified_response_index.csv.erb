@@ -6,6 +6,7 @@
     'Node Nickname',
     'Skipped?',
     'Answer/Choice Code',
+    'Rank',
     'Freeform Response'
   ]
 %>
@@ -25,6 +26,7 @@
       response.node.nickname,
       response.skipped,
       code,
+      !response.node.is_decision_point? ? (response.rank) : nil,
       !response.node.is_decision_point? ? (response.freeform_response.present? ? response.freeform_response.response_text : nil) : nil
     ]).html_safe
   %>
