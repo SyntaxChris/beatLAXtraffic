@@ -7,6 +7,7 @@
     <th>Node Nickname</th>
     <th>Skipped?</th>
     <th>Answer/Choice Code</th>
+    <th>Rank</th>
     <th>Freeform Response</th>
   </tr>
   <% @responses.each do |response| %>
@@ -18,8 +19,10 @@
       <td><%= response.skipped %></td>
       <% if response.node.is_decision_point? %>
         <td><%= response.decision.codebook_identifier %></td>
+        <td><%= nil %></td>
       <% else %>
         <td><%= response.answer.codebook_identifier if response.answer.present? %></td>
+        <td><%= response.rank %></td>
       <% end %>
       <td><%= response.freeform_response.response_text if response.freeform_response.present? %></td>
     </tr>

@@ -290,49 +290,13 @@ angular.module('lawaApp')
       };
 
       $scope.addAmenitiesToAnswers = function(){
-        $scope.currentAnswers = $scope.amenities;
+        //$scope.currentAnswers = $scope.amenities;
+        $scope.currentAnswers = _.map(
+          $scope.amenities, function(thing, index){
+            return {index: index, answerObject: thing};
+          }
+        )
       };
-
-      // used for ITF-3 departing amenities
-      // will actually just null out the previous amenties after submit, rather than
-      // creating an additional set of functions that do the same thing.
-      //$scope.departingAmenitySelected = function(answer){
-      //  if(_.findWhere($scope.departingAmenities, answer))
-      //    return false;
-      //};
-
-      //// show numbers 1, 2, 3
-      //$scope.addToDepartingAmenities = function(answer){
-      //  $scope.setCurrentlyConsideredDepartingAmenity(null);
-      //  // if user is clicking an empty circle:
-
-      //  if(answer === null || answer === undefined){
-      //    return;
-      //  };
-
-      //  if($scope.departingAmenities.length === 3){
-      //    if (_.findWhere($scope.departingAmenities, answer)){
-      //      // amenity is already in current list, remove it.
-      //      $scope.departingAmenities = _.without($scope.departingAmenities, _.findWhere($scope.departingAmenities, answer));
-      //    }
-      //    // if it's not in the list, don't do anything
-      //    return
-      //  }else{
-      //    // add it if it's not present
-      //    $scope.departingAmenitySelected(answer);
-
-      //    if (_.findWhere($scope.amenities, answer)){
-      //      // amenity is already in current list, remove it.
-      //      $scope.amenities = _.without($scope.amenities, _.findWhere($scope.amenities, answer));
-      //    } else {
-      //      $scope.amenities.push(answer);
-      //    }
-      //  }
-      //};
-      //
-      //$scope.addDepartingAmenitiesToAnswers = function(){
-      //  $scope.currentAnswers = $scope.departingAmenities;
-      //};
 
       $scope.incrementOutcome = function(){
         $scope.parkingTimeSpent += 5;
@@ -479,11 +443,26 @@ angular.module('lawaApp')
       };
 
       var answersForParams = function(answersArray) {
-        return _.map(answersArray, function(answerObject){
-          return {
-            id: answerObject.id
-          }
-        })
+        var rankedTemplates = [
+          "itf-2",
+          "itf-3",
+          "itf-2-no-itf",
+          "itf-3-no-itf"
+        ]
+        if(_.include(rankedTemplates, $scope.currentNode.template_name)){
+          return _.map(answersArray, function(answerAndRank){
+            return {
+              rank: answerAndRank.index + 1,
+              id: answerAndRank.answerObject.id
+            }
+          })
+        }else{
+          return _.map(answersArray, function(answerObject){
+            return {
+              id: answerObject.id
+            }
+          })
+        }
       }
 
       // functions that call global functions inside specific js files:
