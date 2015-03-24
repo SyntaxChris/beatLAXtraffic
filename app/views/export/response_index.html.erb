@@ -10,6 +10,7 @@
     <th>Choice</th>
     <th>Question</th>
     <th>Answer</th>
+    <th>Rank</th>
     <th>Freeform Response</th>
   </tr>
   <% @responses.each do |response| %>
@@ -29,6 +30,7 @@
         <td><!-- 'Choice' column intentionally blank for formatting --></td>
         <td><%= response.node.question.question %></td>
         <td><%= response.answer.answer if response.answer.present? %></td>
+        <td><%= response.rank %></td>
         <td><%= response.freeform_response.response_text if response.freeform_response.present? %></td>
       <% end %>
     </tr>
