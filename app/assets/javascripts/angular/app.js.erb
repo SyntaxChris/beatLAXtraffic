@@ -12,9 +12,19 @@ lawaApp.config([
         templateUrl: '<%= asset_path 'nodes.html' %>',
         controller: 'NodeCtrl'
     });
+
+    $routeProvider.when('/error',{
+        templateUrl: '<%= asset_path 'error.html' %>',
+        controller: 'NodeCtrl'
+    });
   }
 
 ]);
 
-lawaApp.run(function() {
-});
+
+lawaApp.run(['$rootScope',function($rootScope){
+  $rootScope.bodyClass = "default";
+  $rootScope.setBodyClass = function(className){
+    $rootScope.bodyClass = className;
+  };
+}]);

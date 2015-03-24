@@ -11,14 +11,10 @@
     <div id="dash-contents">
       <div id="section-1">
         <div id="time-container">
-
           <span ng-show="hours_elapsed >= 1" id="hr">{{ hours_elapsed }}</span><span ng-show="hours_elapsed >= 1" id="hr-unit">hr</span>
           <span id="min">{{ minutes_elapsed }}</span><span id="min-unit">min</span>
-
-          <div id="landing-label">Spent picking up</div>
-
+          <div id="landing-label">Spent at LAX</div>
         </div>
-
       </div>
       <div id="section-2">
         <div class="content-size">
@@ -36,7 +32,7 @@
         <div class="content-size">
           <div class="row main-icn-rw">
             <div class="large-6 medium-6 small-6 columns icon-row">
-              <div ng-include="'<%= asset_path 'svgs/_briefcase.html' %>'"></div>
+              <div class="dopa-cloud" ng-include="'<%= asset_path 'svgs/_briefcase.html' %>'"></div>
             </div>
             <div class="large-6 medium-6 small-6 columns count-row">
             <div class="dash-count">X<span id="luggage-count">{{ variables.luggage_count }}</span></div>
@@ -72,8 +68,8 @@
   <div id="progress-bar">
   <div id="ord">{{ variables.originating_airport_code }}</div>
     <div id="bar-back">
-      <div id="plane-bar"></div>
-      <div id="filler">
+      <div id="plane-bar" style="width: {{initialize}}%"></div>
+      <div id="filler" style="margin-left: {{initialize}}%">
         <div id="circular-plane">
           <div ng-include="'<%= asset_path 'svgs/_progressplane.html' %>'"></div>
         </div>
@@ -83,7 +79,6 @@
   </div>
 </div>
 
-<!-- pass in var from 0-85 -->
-<div id="plane-progress">{{ planeProgress }}</div>
+
 
 

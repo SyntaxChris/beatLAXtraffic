@@ -1,13 +1,17 @@
 <!-- Pickup spinner  -->
   <div id="pickup-spinner-question">
-    <div class="testing-controls">
-      <div ng-click="submit(findDecisionByString('Yes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
-        Yes
+
+    <% if Rails.env.development? %>
+      <div class="testing-controls">
+        <div ng-click="advancePlane(); submit(findDecisionByString('5 Minutes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
+          Yes
+        </div>
+        <div ng-click="advancePlane(); submit(findDecisionByString('An eternity').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-lose" data-result="no">
+          No
+        </div>
       </div>
-      <div ng-click="submit(findDecisionByString('No').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-lose" data-result="no">
-        No
-      </div>
-    </div>
+    <% end %>
+
     <div class="chance-time">
       <h3 class="main-question">
         {{ currentNode.decision_point.situation }}
@@ -16,24 +20,28 @@
 
     <div class="congrats" style="display:none;">
       <h3 class="main-question">Nice!</h3>
-      <h3 class="main-question">Your passenger called and is ready to be picked up!</h3>
-      <div ng-click="submit(findDecisionByString('Yes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
+      <h4 class="main-question">You only had to wait 5 minutes before your passenger called from the curb.</h3>
+      <div ng-click="advancePlane(); submit(findDecisionByString('5 Minutes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
         CONTINUE
       </div>
     </div>
 
     <div class="fail" style="display:none">
       <h3 class="main-question">Dang!</h3>
-      <h3 class="main-question">You haven't heard from your passenger yet..</h3>
-      <div ng-click="submit(findDecisionByString('No').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-lose" data-result="no">
-        NEXT
+      <h4 class="main-question">You haven't heard from your passenger yet..</h3>
+      <div class="nxt-ctnr">
+        <button ng-click="advancePlane(); submit(findDecisionByString('5 Minutes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-lose" data-result="no">
+          NEXT
+        </button>
       </div>
     </div>
 
-    <div class="spin-button" id="pickup">
-      TEST YOUR LUCK
+    <div class="btn-ctnr">
+      <button class="spin-button" id="parking">
+        TEST YOUR LUCK
+      </button> 
     </div>
-    
+
     <div class="spinner-components">
       <div class="row">
         <div class="large-7 medium-8 small-12 large-centered medium-centered small-centered columns">
@@ -51,7 +59,7 @@
             </div>
             <div style="position: relative; z-index: 1; width: 100%; padding-top: 4%; margin: 0">
               <div class="wheel" id="num-2">
-                <div ng-include="'<%= asset_path 'svgs/_pickupWheel.html' %>'"></div>
+                <div ng-include="'<%= asset_path 'svgs/dp-7-spinner.html' %>'"></div>
               </div>
             </div>
           </div>
@@ -71,6 +79,6 @@
     </div>
 
     <!-- pickup logic -->
-    <div id="pickup-chance" data-outcome=1></div>
+    <div id="pickup-chance" data-outcome={{spinnerOutcome}}></div>
   </div>
   <!-- end pickup spinner

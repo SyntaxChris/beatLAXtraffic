@@ -1,3 +1,13 @@
+#confetti{
+  background: none;
+  height: 100%;
+  left: 0px;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: -1;
+}
+
 #congrats {
   margin-top: -50px;
   h3 {
@@ -5,13 +15,17 @@
     font-weight: 700;
   }
   h4 {
-    color: #8D8D8D;
+    color: white;
     line-height: 1;
-    font-size: .9em;
+    font-size: 2em;
+    font-weight: 700;
+    text-shadow: 0 2px 2px rgba(0,0,0,.7);
+    -webkit-text-shadow: 0 2px 2px rgba(0,0,0,.7);
   }
   p {
-    color: #545554;
+    color: white;
     line-height: 1;
+    text-shadow: 0 2px 2px rgba(0,0,0,.5);
     font-size: .8em;
     margin-bottom: 6px;
   }
@@ -45,73 +59,149 @@
   .trophy-c {
     width: 52%;
     margin: 0 auto;
+    margin-bottom: -10%;
   }
 }
 
 #share-story-overlay {
-  .inner {
+  .story-popup {
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 1% 2%;
+    width: 50%;
     background: #8066AB;
-  }
-  .close-story-overlay-btn {
-    padding: 0;
-    margin: 0;
-    background: none;
+    text-align: center;
     color: white;
-    width: 100%;
-  }
-  textarea {
-    resize: none;
-    border: none;
-    height: 200px;
-    padding: 10px 20px;
-    &::-webkit-input-placeholder {
-      color: #333;
+    border-radius: 20px;
+    .talk-bbl{
+      position: absolute;
+      width: 10%;
+      left: 2%;
+      top: 2%;
     }
-    :-moz-placeholder { /* Firefox 18- */
-      color: #333;  
+    button#x-btn-close-story-overlay{
+      position: absolute;
+      top: 2%;;
+      right: 2%;
+      background: none;
+      padding: 0;
+      margin: 0;
     }
-    ::-moz-placeholder {  /* Firefox 19+ */
-      color: #333;  
+    .title{
+      position: relative;
+      margin: 0 auto;
+      width: 70%;
+      font-size: 1.2vw;
+      font-weight: 700;
+      text-shadow: 0 2px 2px rgba(0,0,0,.3);
+      -webkit-text-shadow: 0 2px 2px rgba(0,0,0,.3);
     }
-    :-ms-input-placeholder {  
-      color: #333;  
+    textarea{
+      position: relative;
+      margin: 0 auto;
+      margin-top: 5%;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 1.3vw;
     }
-  }
-  .submit-story-btn {
-    width: 60%;
-    margin: 10px auto;
-    display: block;
-    padding: 6px;
-    background: #472E85;
-    font-size: .8em;
+    .submit-btn {
+      position: relative;
+      width: 40%;
+      margin: 10px auto;
+      padding: 6px;
+      background: #472E85;
+      font-size: 2vw;
+    }
   }
 }
 #congrats-share-overlay {
-  .inner {
-    background: #E96768;
-  }
-  .close-share-overlay-btn {
-    padding: 0;
-    margin: 0;
-    background: none;
-    color: white;
+  background: #E96768;
+  .tile-ctnr{
+    position: absolute;
     width: 100%;
-  }
-  .share-url {
-    border: 1px solid white;
-    border-radius: 4px;
-    color: white;
-    word-wrap: break-word;
-    font-size: .8em;
-    padding: 6px;
-    margin-bottom: 8px;
-  }
-  .share-btns{
-    position: relative;
-    width: 60%;
-    margin: 0 auto;
-    #tweet{
-      margin-top: 2.5%;
+    height: 25%;
+    top: 15%;
+    text-shadow: 0 2px 2px rgba(0,0,0,.3);
+    -webkit-text-shadow: 0 2px 2px rgba(0,0,0,.3);
+    .tile{
+      position: relative;
+      width: 30%;
+      min-width: 300px;
+      height: 100%;
+      margin: 0 auto;
+      background: #E96768;
+      border-radius: 15px;
+      color: white;
+      text-align: center;
+      button#x-btn-close-share-overlay{
+        position: absolute;
+        z-index: 10;
+        right: 0;
+        top: 0;
+        background: none;
+        padding: 3px 10px 3px 10px;
+        font-size: 25px;
+        font-weight: 700;
+      }
+      .title{
+        padding-top: 2.5%;
+        font-size: 1.3vw;
+        font-weight: 700;
+      }
+      .url{
+        font-size: 1.2vw;
+        border: 2px solid white;
+        padding-top: 2%;
+        width: 70%;
+        margin: 0 auto;
+        margin-top: 5%;
+        border-radius: 5px;
+        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;      /* TWEENER - IE 10 */
+        display: -webkit-flex;     /* NEW - Chrome */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: no-wrap;
+        .mail{
+          width: 15%;
+          padding-left: 2%;
+          svg{
+            width: 100%;
+            height: 100%;
+            &:hover{
+              width: 110%;
+              path{
+                fill: #58D3F7;
+              }
+            }
+          }
+        }
+        .link{
+          width: 85%;
+
+        }
+      }
+      .social-media-row{
+        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;      /* TWEENER - IE 10 */
+        display: -webkit-flex;     /* NEW - Chrome */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: no-wrap;
+        margin-top: 6%;
+        .twitter{
+          width: 50%;
+          padding-top: 1%;
+          text-align: right;
+        }
+        .facebook{
+          width: 50%;
+          text-align: left;
+          padding-left: 8%;
+        }
+      }
     }
   }
 }
@@ -123,7 +213,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  z-index: 4;
+  z-index: 51;
   background: rgba(0,0,0,.4);
   &.show {
     display: block;
@@ -231,8 +321,559 @@
   }
 }
 
+@media only screen and (max-width : 768px) {
+  #congrats {
+    margin-top: 10%;
+  }
+}
+
+
+
+
+
+
+@media only screen and (max-width: 640px) {
+
+  #congrats-share-overlay {
+    background: #E96768;
+    .tile-ctnr{
+      position: absolute;
+      width: 100%;
+      height: 25%;
+      top: 15%;
+          text-shadow: 0 2px 2px rgba(0,0,0,.3);
+      -webkit-text-shadow: 0 2px 2px rgba(0,0,0,.3);
+      .tile{
+        position: relative;
+        width: 30%;
+        min-width: 300px;
+        height: 100%;
+        margin: 0 auto;
+        background: #E96768;
+        border-radius: 15px;
+        color: white;
+        text-align: center;
+        button#x-btn-close-share-overlay{
+          position: absolute;
+          z-index: 10;
+          right: 0;
+          top: 0;
+          background: none;
+          padding: 3px 10px 3px 10px;
+          font-size: 25px;
+          font-weight: 700;
+        }
+        .title{
+          padding-top: 2.5%;
+          font-size: 2.3vw;
+          font-weight: 700;
+        }
+        .url{
+          font-size: 2vw;
+          border: 2px solid white;
+          padding-top: 2%;
+          padding-bottom: 1%;
+          width: 70%;
+          margin: 0 auto;
+          margin-top: 5%;
+          border-radius: 5px;
+          display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+          display: -ms-flexbox;      /* TWEENER - IE 10 */
+          display: -webkit-flex;     /* NEW - Chrome */
+          display: flex;
+          flex-direction: row;
+          flex-wrap: no-wrap;
+          .mail{
+            width: 15%;
+            padding-left: 2%;
+            svg{
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .link{
+            width: 85%;
+
+          }
+        }
+        .social-media-row{
+          display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+          display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+          display: -ms-flexbox;      /* TWEENER - IE 10 */
+          display: -webkit-flex;     /* NEW - Chrome */
+          display: flex;
+          flex-direction: row;
+          flex-wrap: no-wrap;
+          margin-top: 6%;
+          .twitter{
+            width: 50%;
+            padding-top: 1%;
+            text-align: right;
+          }
+          .facebook{
+            width: 50%;
+            text-align: left;
+            padding-left: 8%;
+          }
+        }
+      }
+    }
+  }
+  #share-story-overlay {
+    .story-popup {
+      position: relative;
+      margin: 0 auto;
+      margin-top: 10%;
+      padding: 1% 2%;
+      width: 80%;
+      background: #8066AB;
+      text-align: center;
+      color: white;
+      border-radius: 20px;
+      .talk-bbl{
+        position: absolute;
+        width: 10%;
+        left: 2%;
+        top: 2%;
+      }
+      button#x-btn-close-story-overlay{
+        position: absolute;
+        top: 2%;;
+        right: 2%;
+        background: none;
+        padding: 0;
+        margin: 0;
+      }
+      .title{
+        position: relative;
+        margin: 0 auto;
+        width: 70%;
+        font-size: 2.2vw;
+      }
+      textarea{
+        position: relative;
+        margin: 0 auto;
+        margin-top: 5%;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 2.3vw;
+        resize: none;
+      }
+      .submit-btn {
+        position: relative;
+        width: 40%;
+        margin: 10px auto;
+        padding: 6px;
+        background: #472E85;
+        font-size: 3vw;
+      }
+    }
+  }
+
+  #share-story-overlay, #congrats-share-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 51;
+    background: rgba(0,0,0,.4);
+    &.show {
+      display: block;
+    }
+    .inner {
+      border-radius: 10px;
+      padding: 10px;
+      position: absolute;
+      top: 35%;
+      width: 300px;
+      margin-top: -25%;
+      left: 50%;
+      margin-left: -150px;
+    }
+    .top-section {
+      margin-bottom: 10px;
+      >div {
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+    .icon-c, .close-btn-c {
+      width: 20px;
+      color: white;
+    }
+    .title-text-c {
+      width: 100%;
+      font-size: .8em;
+      color: white;
+      line-height: 1;
+      padding:0;
+      button{
+        position: absolute;
+        text-align: right;
+        padding-right: 0;
+        margin-right: -10px;
+      }
+      #skills{
+        position: absolute;
+        left: 20%;
+        margin-top: 1%;
+        font-weight: 700;
+      }
+    }
+    .close-btn-c {
+      text-align: right;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width : 450px) {
   #congrats {
-    margin-top: 0px;
+    margin-top: -13px;
+    .inner-c{
+      h3.main-question{
+        font-size: 7vw;
+      }
+    }
+  }
+  #congrats-share-overlay {
+    background: #E96768;
+    .tile-ctnr{
+      position: absolute;
+      width: 100%;
+      height: 25%;
+      top: 15%;
+      text-shadow: 0 2px 2px rgba(0,0,0,.3);
+      -webkit-text-shadow: 0 2px 2px rgba(0,0,0,.3);
+      .tile{
+        position: relative;
+        width: 30%;
+        min-width: 300px;
+        height: 100%;
+        margin: 0 auto;
+        background: #E96768;
+        border-radius: 15px;
+        color: white;
+        text-align: center;
+        button#x-btn-close-share-overlay{
+          position: absolute;
+          z-index: 10;
+          right: 0;
+          top: 0;
+          background: none;
+          padding: 3px 10px 3px 10px;
+          font-size: 25px;
+          font-weight: 700;
+        }
+        .title{
+          padding-top: 2.5%;
+          font-size: 3.5vw;
+          font-weight: 700;
+        }
+        .url{
+          font-size: 3vw;
+          border: 2px solid white;
+          padding-top: 2%;
+          padding-bottom: 0%;
+          width: 70%;
+          margin: 0 auto;
+          margin-top: 5%;
+          border-radius: 5px;
+          display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+          display: -ms-flexbox;      /* TWEENER - IE 10 */
+          display: -webkit-flex;     /* NEW - Chrome */
+          display: flex;
+          flex-direction: row;
+          flex-wrap: no-wrap;
+          .mail{
+            width: 15%;
+            padding-left: 2%;
+            svg{
+              width: 120%;
+              height: 120%;
+            }
+          }
+          .link{
+            width: 85%;
+
+          }
+        }
+        .social-media-row{
+          display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+          display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+          display: -ms-flexbox;      /* TWEENER - IE 10 */
+          display: -webkit-flex;     /* NEW - Chrome */
+          display: flex;
+          flex-direction: row;
+          flex-wrap: no-wrap;
+          margin-top: 2%;
+          .twitter{
+            width: 50%;
+            padding-top: 1.4%;
+            text-align: right;
+          }
+          .facebook{
+            width: 50%;
+            text-align: left;
+            padding-left: 8%;
+          }
+        }
+      }
+    }
+  }
+  #share-story-overlay {
+    .story-popup {
+      position: relative;
+      margin: 0 auto;
+      margin-top: 30%;
+      padding: 1% 2%;
+      width: 95%;
+      background: #8066AB;
+      text-align: center;
+      color: white;
+      border-radius: 10px;
+      .talk-bbl{
+        position: absolute;
+        width: 10%;
+        left: 2%;
+        top: 2%;
+      }
+      button#x-btn-close-story-overlay{
+        position: absolute;
+        top: 2%;;
+        right: 3%;
+        background: none;
+        padding: 0;
+        margin: 0;
+      }
+      .title{
+        position: relative;
+        margin: 0 auto;
+        width: 77%;
+        font-size: 2.5vw;
+        line-height: 1.5;
+      }
+      textarea{
+        position: relative;
+        margin: 0 auto;
+        margin-top: 3%;
+        width: 100%;
+        border-radius: 0px;
+        font-size: 2.3vw;
+        resize: none;
+      }
+      .submit-btn {
+        position: relative;
+        width: 40%;
+        margin: 10px auto;
+        padding: 6px;
+        background: #472E85;
+        font-size: 3vw;
+      }
+    }
+  }
+  #share-story-overlay, #congrats-share-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 51;
+    background: rgba(0,0,0,.4);
+    .inner {
+      width: 340px;
+    }
+    .icon-c, .close-btn-c {
+      width: 20px;
+    }
+    .title-text-c {
+      width: 260px;
+      text-align: center;
+    }
+  }
+}
+
+
+
+
+
+
+
+@media only screen and (max-width : 400px) {
+  #congrats {
+    margin-top: -13px;
+    .inner-c{
+      h3.main-question{
+        font-size: 7vw;
+      }
+    }
+  }
+  #congrats-share-overlay {
+    background: #E96768;
+    .tile-ctnr{
+      position: absolute;
+      width: 100%;
+      height: 30%;
+      top: 30%;
+      text-shadow: 0 2px 2px rgba(0,0,0,.3);
+      -webkit-text-shadow: 0 2px 2px rgba(0,0,0,.3);
+      .tile{
+        position: relative;
+        width: 30%;
+        min-width: 300px;
+        height: 100%;
+        margin: 0 auto;
+        background: #E96768;
+        border-radius: 15px;
+        color: white;
+        text-align: center;
+        button#x-btn-close-share-overlay{
+          position: absolute;
+          z-index: 10;
+          right: 0;
+          top: 0;
+          background: none;
+          padding: 3px 10px 3px 10px;
+          font-size: 25px;
+          font-weight: 700;
+        }
+        .title{
+          padding-top: 2.5%;
+          font-size: 3.5vw;
+          font-weight: 700;
+        }
+        .url{
+          font-size: 3vw;
+          border: 2px solid white;
+          padding-top: 2%;
+          padding-bottom: 0%;
+          width: 70%;
+          margin: 0 auto;
+          margin-top: 5%;
+          border-radius: 5px;
+          display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+          display: -ms-flexbox;      /* TWEENER - IE 10 */
+          display: -webkit-flex;     /* NEW - Chrome */
+          display: flex;
+          flex-direction: row;
+          flex-wrap: no-wrap;
+          .mail{
+            width: 15%;
+            padding-left: 2%;
+            svg{
+              width: 120%;
+              height: 120%;
+            }
+          }
+          .link{
+            width: 85%;
+
+          }
+        }
+        .social-media-row{
+          display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+          display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+          display: -ms-flexbox;      /* TWEENER - IE 10 */
+          display: -webkit-flex;     /* NEW - Chrome */
+          display: flex;
+          flex-direction: row;
+          flex-wrap: no-wrap;
+          margin-top: 2%;
+          .twitter{
+            width: 50%;
+            padding-top: 1.4%;
+            text-align: right;
+          }
+          .facebook{
+            width: 50%;
+            text-align: left;
+            padding-left: 8%;
+          }
+        }
+      }
+    }
+  }
+  #share-story-overlay {
+    .story-popup {
+      position: relative;
+      margin: 0 auto;
+      margin-top: 35%;
+      padding: 2% 2%;
+      width: 95%;
+      background: #8066AB;
+      text-align: center;
+      color: white;
+      border-radius: 10px;
+      .talk-bbl{
+        position: absolute;
+        width: 10%;
+        left: 2%;
+        top: 2%;
+      }
+      button#x-btn-close-story-overlay{
+        position: absolute;
+        top: 2%;;
+        right: 3%;
+        background: none;
+        padding: 0;
+        margin: 0;
+      }
+      .title{
+        position: relative;
+        margin: 0 auto;
+        width: 77%;
+        font-size: 2.5vw;
+        line-height: 1.5;
+      }
+      textarea{
+        position: relative;
+        margin: 0 auto;
+        margin-top: 3%;
+        width: 100%;
+        border-radius: 0px;
+        font-size: 2.3vw;
+        resize: none;
+      }
+      .submit-btn {
+        position: relative;
+        width: 40%;
+        margin: 10px auto;
+        padding: 6px;
+        background: #472E85;
+        font-size: 3vw;
+      }
+    }
+  }
+  #share-story-overlay, #congrats-share-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 51;
+    background: rgba(0,0,0,.4);
+    .inner {
+      width: 340px;
+    }
+    .icon-c, .close-btn-c {
+      width: 20px;
+    }
+    .title-text-c {
+      width: 260px;
+      text-align: center;
+    }
   }
 }

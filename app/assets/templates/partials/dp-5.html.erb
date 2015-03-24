@@ -1,37 +1,43 @@
 <!-- Parking spinner -->
 <div id="parking-spinner-questions">
+
+  <% if Rails.env.development? %>
     <div class="testing-controls">
-      <div ng-click="submit(findDecisionByString('Not Full').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
+      <div ng-click="advancePlane(); submit(findDecisionByString('Not Full').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
         Not Full
       </div>
-      <div ng-click="submit(findDecisionByString('Full').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-lose" data-result="no">
+      <div ng-click="advancePlane(); submit(findDecisionByString('Full').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-lose" data-result="no">
         Full
       </div>
     </div>
+  <% end %>
+
   <div class="chance-time">
-    <h3>
+    <h3 class="main-question">
       {{ currentNode.decision_point.situation }}
     </h3>
   </div>
 
   <div class="congrats" style="display:none;">
-    <h1>Congratulations!</h1>
-    <h3 class="main-question">You got a parking spot!</h3>
-    <div ng-click="submit(findDecisionByString('Not Full').id, true)" class="next plane-advance" id="spin-parking-win">
+    <h3 class="main-question">Nice!</h1>
+    <h4>The parking gods smile upon you today</h4>
+    <div ng-click="advancePlane(); submit(findDecisionByString('Not Full').id, true)" class="next plane-advance" id="spin-parking-win">
       CONTINUE
     </div>
   </div>
 
   <div class="fail" style="display:none">
-    <h1 style="color: white; text-align: center;">Dang!</h1>
-    <h3 class="main-question">The parking lot is full.</h3>
-    <div ng-click="submit(findDecisionByString('Full').id, true)" class="next plane-advance" id="spin-parking-lose">
+    <h3 class="main-question">Dang!</h1>
+    <h4>You were late to the easy-parking party</h4>
+    <button ng-click="advancePlane(); submit(findDecisionByString('Full').id, true)" class="next plane-advance" id="spin-parking-lose">
       NEXT
-    </div>
+    </button>
   </div>
 
-  <div class="spin-button" id="parking">
-    TEST YOUR LUCK
+  <div class="btn-ctnr">
+    <button class="spin-button" id="parking">
+      TEST YOUR LUCK
+    </button> 
   </div>
 
   <div class="spinner-components">
@@ -50,7 +56,7 @@
             </div>
           </div>
           <div style="position: relative; z-index: 1; width: 100%; padding-top: 4%; margin: 0">
-            <div class="wheel" id="num-1">
+            <div class="wheel" id="num-2">
               <div ng-include="'<%= asset_path 'svgs/_parkingWheel.html' %>'"></div>
             </div>
           </div>
@@ -70,6 +76,6 @@
     </div>
   </div>
   <!-- spinner logic -->
-  <div id="parking-chance" data-outcome=1></div>
+  <div id="parking-chance" data-outcome={{spinnerOutcome}}></div>
 </div>
 <!-- end parking spinner

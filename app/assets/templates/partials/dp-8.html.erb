@@ -1,13 +1,12 @@
 <div id="after-parking-questions">
 
   <h3 class="main-question">{{ currentNode.decision_point.situation }}</h3>
-  <!-- <h3 id="pole">What do you do next?</h3> -->
 
   <div class="pole">
     <div ng-include="'<%= asset_path 'svgs/_signPole.html' %>'"></div>
   </div>
 
-    <button ng-click="setCurrentDecision(decision)" ng-repeat="decision in currentNode.decisions" class="sign plane-advance" ng-id="{{ 'cntr-' + $index+1 }}">
+  <button ng-click="advancePlane(); setCurrentDecision(decision)" ng-repeat="decision in currentNode.decisions" class="sign plane-advance" ng-id="{{ 'cntr-' + $index+1 }}">
       <div class="holder">
         <div ng-include="'<%= asset_path 'svgs/_signHolder.html' %>'"></div>
       </div>

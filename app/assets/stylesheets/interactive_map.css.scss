@@ -31,6 +31,11 @@
     width: 50%;
     height: 50%;
   }
+  .arrow-bundle{
+    &.animate{
+      @include animate(bounce, 1.5s, ease-in-quad, infinite);
+    }
+  }
   .select-path-btn {
     position: absolute;
     display: block;
@@ -38,7 +43,7 @@
     width: 80px;
     z-index: 3;
     &.animate {
-      @include animate(bounce, 1s, ease-in-quad, 1);
+      @include animate(bounce, 1.5s, ease-in-quad, 1);
     }
     div {
       height: 100%;
@@ -130,7 +135,7 @@
           fill: #F08B48;
         }
       }
-      div {
+      div[ng-include] {
         -webkit-transform: rotate(180deg);
         -moz-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
@@ -374,12 +379,7 @@
 }
 
 @media screen and (max-width: 400px) and (min-width: 0px) and (orientation: landscape) {
-  #interactive-map {
-    .top-half{
-      h3.main-question{
-        font-size: 10px;
-      }
-    }
+  #interactive-map {    
     .select-path-btn .path-letter {
       top: -3px;
 
@@ -420,35 +420,69 @@
   }
 }
 
-// @media only screen and (min-width : 768px) {
-//   #circle-pickup {
-//     h3 {
-//       margin-top: 80px;
-//       margin-bottom: 40px;
-//       font-size: 1.6em;
-//     }
-//     .content-c {
-//       display: inline-block;
-//       vertical-align: middle;
-//     }
-//     .buttons-c {
-//       width: 275px;
-//     }
-//     .count-c {
-//       //margin-top: -30px;
-//     }
-//     .circle-number {
-//       font-size: 7em;
-//       height: 60px;
-//     }
-//   }
-// }
+
+@media only screen and (max-width: 640px){
+  #interactive-map{
+    .arrow-bundle{
+      svg#race-track{
+        width: 100%;
+        height: 100%;
+        margin-top: 5%;
+        margin-left: 15%;
+      }
+      svg#parking{
+        width: 200%;
+        height: 200%;
+        margin-top: 10%;
+        margin-left: 27%;
+      }
+      svg#burger{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 40%;
+        margin-left: -30%;
+      }
+      svg#itf{
+        width: 80%;
+        height: 80%;
+        margin-top: 10%;
+        margin-left: 27%;
+      }
+      svg.map-arrow{
+        height: 120%;
+        width: 120%;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 450px){
   #interactive-map{
+    h3.main-question{
+      font-size: 5vw;
+      text-shadow: 0 2px 2px rgba(0,0,0,.6);
+      -webkit-text-shadow: 0 2px 2px rgba(0,0,0,.6);
+    }
     .bottom-half{
       .instructions{
-        // margin-top: -10%;
         &:after {
           content: "";
           border-width: 0;
@@ -485,6 +519,36 @@
 
 @media only screen and (max-width: 400px){
   #interactive-map{
+    .arrow-bundle{
+      svg#race-track{
+        width: 100%;
+        height: 100%;
+        margin-top: 5%;
+        margin-left: 15%;
+      }
+      svg#parking{
+        width: 200%;
+        height: 200%;
+        margin-top: 10%;
+        margin-left: 27%;
+      }
+      svg#burger{
+        width: 100%;
+        height: 100%;
+        margin-bottom: 80%;
+        margin-left: -40%;
+      }
+      svg#itf{
+        width: 80%;
+        height: 80%;
+        margin-top: 10%;
+        margin-left: 27%;
+      }
+      svg.map-arrow{
+        height: 120%;
+        width: 120%;
+      }
+    }
     .bottom-half{
       .instructions{
         margin-top: -10%;

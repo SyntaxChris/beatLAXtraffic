@@ -1,0 +1,37 @@
+<%
+  headers = [
+    'Nickname',
+    'Decisions',
+    'Decision Code',
+    'Answers',
+    'Answer Code'
+  ]
+%>
+<%= CSV.generate_line headers %>
+<% @nodes.each do |node| %>
+  <% if node.is_decision_point? %>
+    <% node.decision_point.decisions.each do |decision| %>
+      <%=
+        CSV.generate_line([
+          decision.decision_point.node.nickname,
+          decision.decision,
+          decision.codebook_identifier,
+          nil,
+          nil
+        ]).html_safe
+      %>
+    <% end %>
+  <% else %>
+    <% node.question.answers.each do |answer| %>
+      <%=
+        CSV.generate_line([
+          answer.question.node.nickname,
+          nil,
+          nil,
+          answer.answer,
+          answer.codebook_identifier
+        ]).html_safe
+      %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,20 +1,15 @@
 <!-- 17. ICON QUESTIONS -->
 <div id="icon-questions">
-
+  <h3 class="main-question">
+    What is most important to you when picking up somebody at LAX?
+  </h3>
   <div class="large-12 medium-12 small-12 columns">
-
-    <div class="row">
-      <h3 class="main-question">
-        Imagine that you could customize this future location
-      </h3>
-    </div>
-
     <div class="row">
       <div class="large-7 medium-7 small-12 columns">
         <div class="answer-container">
           <div class="row no-gutter">
             <div class="ac-header">
-              Pick your top 3 desired amenities
+              Pick your top 3 amenities
             </div>
           </div>
           <div class="row">
@@ -66,7 +61,7 @@
               </div>
             </div>
           </div>
-          <div ng-class="{show: amenities.length === 3}" ng-click="addAmenitiesToAnswers(); submit(); advanceCar()" class="next-btn car-progress">NEXT</div>
+          <button ng-class="{show: amenities.length === 3}" ng-click="addAmenitiesToAnswers(); submit(); advanceCar()" class="next-btn car-progress">NEXT</button>
         </div>
       </div>
 
@@ -148,8 +143,6 @@
           </div>
         </div>
       </div>
-
     </div>
-    <div class="skip" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
   </div>
 <!-- END ICON QUESTIONS -->

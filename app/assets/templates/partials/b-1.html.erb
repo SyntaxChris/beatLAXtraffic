@@ -1,47 +1,62 @@
-<div class="skip" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
 <!-- Why do you choose to park your car? -->
 <div id="why-park-car">
-  <div class="row" style="text-align:center">
-    <h3 class="main-question">{{ currentNode.question.question }}</h3>
-    <h6 class="sub-header">(Select all that apply)</h6>
-  </div>
-  <div class="row bbl-top">
-    <div ng-repeat="answer in currentNode.answers" ng-click="addMultipleChoice(answer)">
-      <div class="large-3 medium-3 small-6 columns">
-        <div class="unchecked">
-          <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"></div>
-        </div>
-
-        <div class="parking-bbl" ng-class="{'other-bbl': answer.answer.indexOf('Other') > -1}">
-          <div class="bbl-icon">
-            <div ng-if="answer.answer.indexOf('convenient') > -1" ng-include="'<%= asset_path 'svgs/_carParkBubble.html' %>'"></div>
-            <div ng-if="answer.answer.indexOf('avoid') > -1" ng-include="'<%= asset_path 'svgs/_avoidTraffic.html' %>'"></div>
-            <div ng-if="answer.answer.indexOf('terminal') > -1" ng-include="'<%= asset_path 'svgs/_peopleParkBubble.html' %>'"></div>
-            <div ng-if="answer.answer.indexOf('Other') > -1" ng-include="'<%= asset_path 'svgs/_questionBubble.html' %>'"></div>
-          </div>
-          <div class="bbl-title">
-            {{ answer.answer }}
-          </div>
-          <div ng-if="answer.answer.indexOf('Other') > -1">
-            <div class="row" style="padding-top: 50px">
-              <textarea placeholder="Please write here." ng-model="currentOther.text" ng-change="determineOtherText(currentOther.text, answer.id)" id="park-bbl" cols="30" rows="5" maxlength="140"></textarea>
-              <div class="text-counter"></div>
-            </div>
-            <div class="row">
-              <div class="ok-btn">
-                Ok
-              </div>
-            </div>
-          </div>
-        </div>
+  <h3 class="main-question">{{ currentNode.question.question }}</h3>
+  <h5 class="sub-header">Select all that apply</h5>
+  <div class="tile-ctnr">
+    <div 
+      class="tile-bbl"
+      ng-repeat="answer in currentNode.answers | orderBy:'custom_order'"
+      ng-click="addAnswerToCurrentAnswers(answer)"
+      ng-class="{
+        'tile-1' : $index === 0,
+        'tile-2' : $index === 1,
+        'tile-3' : $index === 2,
+        'tile-4 other' : $index === 3
+    }">
+      <div class="checkmark-ctnr">
+        <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
       </div>
-    </div><!-- end answer iterator -->
+      <div class="icon" ng-if="$index === 0">
+        <div ng-include="'<%= asset_path 'svgs/_carParkBubble.html' %>'"></div>
+      </div>
+      <div class="icon" ng-if="$index === 1">
+        <div ng-include="'<%= asset_path 'svgs/_avoidTraffic.html' %>'"></div>
+      </div>
+      <div class="icon" ng-if="$index === 2">
+        <div ng-include="'<%= asset_path 'svgs/_peopleParkBubble.html' %>'"></div>
+      </div>
+      <div class="icon" ng-if="$index === 3">
+        <div ng-include="'<%= asset_path 'svgs/_questionBubble.html' %>'"></div>
+      </div>
+      <div class="title">
+        {{ answer.answer }}
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <div ng-click="addOneToCircling(); submit(null, true)" class="park-btn-next plane-advance">
+  <div class="btn-row">
+    <button ng-click="advancePlane(); submit(null, true)" class="tile-next plane-advance">
       NEXT
+    </button>
+  </div>
+
+  <div class="other-ctnr">
+    <div class="other-bbl">
+      <textarea
+        id="park-txt"
+        cols="1"
+        rows="6"
+        placeholder="Please write here."
+        ng-model="currentOther.text"
+        ng-change="determineOtherText(currentOther.text, null, 'Other (Specify)')"
+        maxlength="140">
+      </textarea>
+      <div class="btn-ctnr">
+        <div class="counter"></div>
+        <button class="save">SAVE</button>
+        <button class="cancel">CANCEL</button>
+      </div>
     </div>
   </div>
 </div>
-<!-- END TODO: 5. Why do you choose to park your car? -->
+
 

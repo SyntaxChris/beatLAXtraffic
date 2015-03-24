@@ -15,8 +15,6 @@
  *= require 'splash_page'
  *= require 'dashboard'
  *= require 'car_dash'
- *= require 'parking_lot'
- *= require 'distance_questions'
  *= require 'zip_code_template'
  *= require 'tiles'
  *= require 'late_flight'
@@ -34,14 +32,15 @@
  *= require 'willing_to_wait'
  *= require 'think_strategy'
  *= require 'congrats'
+ *= require 'admin'
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
 
  */
-body, html { 
+body, html {
 	font-family: 'Quicksand', sans-serif;
-    overflow-x: hidden; 
+    overflow-x: hidden;
     overflow-y: auto;
 }
 

@@ -8,6 +8,21 @@ module Api
         if result[:status] == "success"
           render json: result, status: 200
         else
+          @respondent.try(:mark_as_corrupted!)
+          render json: result, status: 422
+        end
+      else
+        render json: {error: "no respondent present"}, status: 422
+      end
+    end
+
+    def story_share
+      if @respondent
+        result = Response.create_story(response_params, @respondent)
+        if result[:status] == "success"
+          render json: result, status: 200
+        else
+          @respondent.try(:mark_as_corrupted!)
           render json: result, status: 422
         end
       else

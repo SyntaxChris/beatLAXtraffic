@@ -13,11 +13,13 @@ class Node < ActiveRecord::Base
       .includes(
         { question: :answers },
         { question: :question_type },
-        { decision_point: { decisions: :destination_node } }
+        { decision_point: { decisions: :destination_node } },
+        :branch
       )
   end
 
   def clean_template_name
+    # no longer used now that we have 'template_name'
     nickname.downcase.gsub(/[\s\.]/, "-")
   end
 end

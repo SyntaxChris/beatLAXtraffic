@@ -1,6 +1,3 @@
-
-<div class="skip" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
-
 <!-- LATE FLIGHT -->
 <div id="late-flight">
   <div class="content-c">
@@ -12,10 +9,6 @@
         {{ currentNode.question.question }}
       </div>
     </h3>
-<!-- 
-    <div class="header">
-      {{ currentNode.question.question }}
-    </div> -->
 
     <div ng-repeat="answer in currentNode.answers" ng-click="addAnswerToCurrentAnswers(answer)" class="dIB vAT button-c">
       <div ng-if="answer.answer.indexOf('reach') > -1">
@@ -48,7 +41,9 @@
     </div>
 
     <div>
-      <button id="x-btn-late-flight-next" class="late-flight-next-btn plane-advance" ng-click="submit(null, true)">NEXT</button>
+      <button id="x-btn-late-flight-next" class="late-flight-next-btn plane-advance" ng-click="advancePlane(); submit(null, true)">
+        NEXT
+      </button>
     </div>
 
   </div>

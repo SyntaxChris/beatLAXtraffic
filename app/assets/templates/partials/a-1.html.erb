@@ -1,42 +1,34 @@
 <!--  WHY DO YOU THINK THIS STRATEGY WILL WORK -->
-<div class="skip" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
 <div id="think-strategy">
   <h3 class="main-question">
     {{ currentNode.question.question }}
   </h3>
-  <div class="content-c">
-    <div ng-click="addAnswerToCurrentAnswers(answer)" ng-repeat="answer in currentNode.answers">
-      <button class="thought-button"
-        ng-class="{
+  <div class="think-nxt-btn-ctnr">
+    <button ng-click="advancePlane(); submit(null, true)" class="plane-advance think-nxt-btn">
+      NEXT
+    </button>
+  </div>
+  <div class="thought-q-ctnr">
+    <div class="thought-bbl" ng-click="addAnswerToCurrentAnswers(answer)" ng-repeat="answer in currentNode.answers">
+      <button ng-class="{
          'left-button' : $index === 0,
          'center-button' : $index === 1,
          'right-button' : $index === 2
-        }">
-              <div class="text">{{ answer.answer }}</div>
-        <div ng-include="'<%= asset_path 'svgs/_thoughtBubble.html' %>'"></div>
+      }">
+        <div class="text-ctnr">
+          <div class="text">
+            {{ answer.answer }}
+          </div>
+        </div>
+        <div 
+          ng-class="{ 'mid-bbl' : $index === 1}"
+          ng-include="'<%= asset_path 'svgs/_thoughtBubble.html' %>'">
+        </div>
       </button>
     </div>
-    <!-- TODO: remove. this is angular-ed
-    <button class="thought-button left-button">
-      <div class="text">Works like a charm every time</div>
-      <div ng-include="'<%#= asset_path 'svgs/_thoughtBubble.html' %>'"></div>
-    </button>
-    <button class="thought-button center-button">
-      <div class="text">I might have to  circle a few times, but it will eventually work</div>
-      <div ng-include="'<%#= asset_path 'svgs/_thoughtBubble.html' %>'"></div>
-    </button>
-    <button class="thought-button right-button">
-      <div class="text">It’s always bad,  but it’s better than parking</div>
-      <div ng-include="'<%#= asset_path 'svgs/_thoughtBubble.html' %>'"></div>
-    </button>
-    -->
-
-    <div class="thought-head">
-      <div ng-include="'<%= asset_path 'svgs/_head.html' %>'"></div>
-        <div ng-click="addOneToCircling(); submit(null, true)" class="think-next-btn plane-advance">
-          NEXT
-        </div>
-    </div>
+  </div>
+  <div class="head-ctnr">
+    <div class="thought-head" ng-include="'<%= asset_path 'svgs/_head.html' %>'"></div>
   </div>
 </div>
 <!-- END WHY DO YOU THINK THIS STRATEGY WILL WORK -->

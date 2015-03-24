@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  require 'csv'
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
 # Turn on request forgery protection
@@ -15,14 +16,29 @@ class ApplicationController < ActionController::Base
   private
 
   def soft_sign_in
-    @survey_session_id ||= cookies[:survey_session_id] ||= new_survey_session_id
+    # if user has a survey cookie already, use it (continuing)
+    # otherwise, give them a new random one
+    @survey_session_id ||= cookies[:survey_session_id] ||= new_random_id
+    # similarly, give them a unique identifier if they don't have one.
+    # this wont change with every game session
+    @user_identifier ||= cookies[:user_identifier] ||= new_random_id
   end
 
-  def new_survey_session_id
+  def new_random_id
     return SecureRandom.hex
   end
 
   def verified_request?
     super || valid_authenticity_token?(session, request.headers['X-XSRF-TOKEN'])
+  end
+
+  protected
+
+  def after_sign_in_path_for(admin)
+    "/export/home"
+  end
+
+  def after_sign_out_path_for(admin)
+    "/export"
   end
 end

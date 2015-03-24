@@ -13,14 +13,13 @@ $(document).ready(function(){
       toggleShareOverlay(e,'open');
     });
 
-  $body.on('click', '#x-btn-close-story-overlay', function(e){
+  $body.on('click', '#x-btn-close-story-overlay, .submit-btn', function(e){
     toggleShareStoryOverlay(e,'close');
   });
 
   $body.on('click', '#x-btn-close-share-overlay', function(e){
     toggleShareOverlay(e,'close');
   });
-  
 
   function toggleShareStoryOverlay(e,action){
     e.preventDefault();

@@ -1,0 +1,154 @@
+<!-- 17. ICON QUESTIONS -->
+<div id="icon-questions">
+
+  <div class="large-12 medium-12 small-12 columns">
+
+    <div class="row">
+      <h3 class="main-question">
+        What is most important to you when catching a DEPARTING flight at LAX?
+      </h3>
+    </div>
+
+    <div class="row">
+      <div class="large-7 medium-7 small-12 columns">
+        <div class="answer-container">
+          <div class="row no-gutter">
+            <div class="ac-header">
+              Pick your top 3 amenities
+            </div>
+          </div>
+          <div class="row">
+            <div class="small-9 small-centered columns">
+              <div class="row holder">
+                <div class="small-4 columns">
+                  <div ng-click="addToAmenities(amenities[0])" class="icon-holder">
+                    1
+                    <div
+                      ng-show="amenities[0] != null"
+                      ng-include="getAnswerIconPath(amenities[0].id)" class="clone-container">
+                    </div>
+                    <div
+                      ng-show="amenities[0] != null"
+                      class="icon-remove">
+                      <svg
+                        ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'">
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-4 columns">
+                  <div ng-click="addToAmenities(amenities[1])" class="icon-holder">
+                    2
+                    <div
+                      ng-show="amenities[1] != null"
+                      ng-include="getAnswerIconPath(amenities[1].id)"
+                      class="clone-container">
+                    </div>
+                    <div
+                      ng-show="amenities[1] != null" class="icon-remove">
+                      <svg
+                        ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'">
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="small-4 columns">
+                  <div ng-click="addToAmenities(amenities[2])" class="icon-holder">
+                    3
+                    <div ng-show="amenities[2] != null" ng-include="getAnswerIconPath(amenities[2].id)" class="clone-container">
+                      <!-- <svg ng-show="amenities[2] != null" ng-include="getAnswerIconPath(amenities[2].id)"></svg> -->
+                    </div>
+                    <div ng-show="amenities[2] != null" class="icon-remove">
+                      <svg ng-include="'<%= asset_path 'svgs/_removeIcon.html' %>'"></svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button ng-class="{show: amenities.length === 3}" ng-click="addAmenitiesToAnswers(); submit(); advanceCar()" class="next-btn car-progress">NEXT</button>
+        </div>
+      </div>
+
+      <div class="large-5 medium-5 small-12 columns">
+        <div class="icon-container">
+          <div class="row">
+            <div ng-repeat="answer in currentNode.answers.slice(0, 3)">
+              <div ng-click="setCurrentlyConsideredAmenity(answer)">
+                <div class="small-4 columns">
+                  <div class="icon-holder answer-{{answer.id}}">
+                    <div
+                      ng-include="getAnswerIconPath(answer.id)"
+                      ng-class="
+                        {
+                          'amenity-selected': amenitySelected(answer) == false,
+                          'wiggle': amenitySelected(answer) != false
+                        }
+                      ">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div ng-repeat="answer in currentNode.answers.slice(3, 6)">
+              <div ng-click="setCurrentlyConsideredAmenity(answer)">
+                <div class="small-4 columns">
+                  <div class="icon-holder">
+                    <div
+                      ng-include="getAnswerIconPath(answer.id)"
+                      ng-class="
+                        {
+                          'amenity-selected': amenitySelected(answer) == false,
+                          'wiggle': amenitySelected(answer) != false
+                        }
+                      ">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div ng-repeat="answer in currentNode.answers.slice(6, 9)">
+              <div ng-click="setCurrentlyConsideredAmenity(answer)">
+                <div class="small-4 columns">
+                  <div class="icon-holder">
+                    <div
+                      ng-include="getAnswerIconPath(answer.id)"
+                      ng-class="
+                        {
+                          'amenity-selected': amenitySelected(answer) == false,
+                          'wiggle': amenitySelected(answer) != false
+                        }
+                      ">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div ng-show="currentlyConsideredAmenity && amenities.length < 3" class="selection-container">
+            <div class="row no-gutter needy">I want...</div>
+            <div class="row no-gutter">{{ currentlyConsideredAmenity.answer }}</div>
+            <div class="row no-gutter">
+              <div class="large-10 medium-10 small-10 large-centered medium-centered small-centered columns">
+                <div class="row selection">
+                  <div ng-click="addToAmenities(currentlyConsideredAmenity)" class="large-6 medium-6 small-6 columns">
+                    <div class="yea" ng-include="'<%= asset_path 'svgs/_yea.html' %>'"></div>
+                  </div>
+                  <div ng-click="setCurrentlyConsideredAmenity(null)" class="large-6 medium-6 small-6 columns">
+                    <div class="nah" ng-include="'<%= asset_path 'svgs/_nah.html' %>'"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END ICON QUESTIONS -->
+

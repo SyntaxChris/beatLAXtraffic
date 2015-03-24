@@ -1,11 +1,9 @@
 <div id="interactive-map">
-  <div class="top-half">
-    <h3 class="main-question">{{ currentNode.decision_point.situation }}</h3>
-  </div>
+  <h3 class="main-question">{{ currentNode.decision_point.situation }}</h3>
   <div class="bottom-half">
     <div style="display: inline-block; position: relative;" class="map-container-inside">
       <div class="instructions">
-        <div class="path-message showing">Pick your path!</div>
+        <div class="path-message showing">Pick a strategy!</div>
         <div ng-repeat="decision in currentNode.decisions">
           <div ng-if="decision.decision.indexOf('catch') > -1">
             <div class="path-yellow path-message btcf" ng-class="{showing: thisDecisionIsSelected(decision)}">
@@ -29,7 +27,7 @@
           </div>
         </div><!-- end angular iterator for instructions -->
 
-        <button ng-click="submit(currentDecision.id, true)" id="x-btn-confirm-map-choice" class="plane-advance confirm-map-choice-btn">
+        <button ng-click="advancePlane(); submit(currentDecision.id, true)" id="x-btn-confirm-map-choice" class="plane-advance confirm-map-choice-btn">
           GO!
         </button>
       </div>
@@ -37,47 +35,55 @@
       <div ng-repeat="decision in currentNode.decisions">
         <div ng-if="decision.decision.indexOf('Default') > -1">
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path all">
-            <%= image_tag('map_all-04.jpg', width: '100%') %>
+            <%= image_tag('map_all-06.jpg', width: '100%') %>
           </div>
         </div>
 
         <div ng-if="decision.decision.indexOf('catch') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="yellow">
-            <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
-            <span ng-include="'<%= asset_path 'svgs/_racetrack.html' %>'" class="path-letter"></span>
+            <div class="arrow-bundle animate">
+              <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
+              <span ng-include="'<%= asset_path 'svgs/_racetrack.html' %>'" class="path-letter"></span>
+            </div>
           </a>
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path yellow">
-            <%= image_tag('map_yellow-04.jpg', width: '100%') %>
+            <%= image_tag('map_yellow-06.jpg', width: '100%') %>
           </div>
         </div>
 
         <div ng-if="decision.decision.indexOf('meet') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="green">
-            <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
-            <span ng-include="'<%= asset_path 'svgs/_parking.html' %>'" class="path-letter"></span>
+            <div class="arrow-bundle animate">
+              <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
+              <span ng-include="'<%= asset_path 'svgs/_parking.html' %>'" class="path-letter"></span>
+            </div>
           </a>
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path green">
-            <%= image_tag('map_green-04.jpg', width: '100%') %>
+            <%= image_tag('map_green-06.jpg', width: '100%') %>
           </div>
         </div>
 
         <div ng-if="decision.decision.indexOf('ready') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision)" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="orange">
-            <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
-            <span ng-include="'<%= asset_path 'svgs/_burger.html' %>'" class="path-letter"></span>
+            <div class="arrow-bundle animate">
+              <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
+              <span ng-include="'<%= asset_path 'svgs/_burger.html' %>'" class="path-letter"></span>
+            </div>
           </a>
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path orange">
-            <%= image_tag('map_orange-04.jpg', width: '100%') %>
+            <%= image_tag('map_orange-06.jpg', width: '100%') %>
           </div>
         </div>
 
         <div ng-if="decision.decision.indexOf('tram') > -1">
           <a ng-class="{selected: thisDecisionIsSelected(decision)}" ng-click="setCurrentDecisionNoSubmit(decision); landPlane()" href="javascript:void(0)" class="x-btn-select-path select-path-btn" data-path="blue">
-            <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
-            <span ng-include="'<%= asset_path 'svgs/itfIcon.html' %>'" class="path-letter"></span>
+            <div class="arrow-bundle animate">
+              <div ng-include="'<%= asset_path 'svgs/_mapArrow.html' %>'"></div>
+              <span ng-include="'<%= asset_path 'svgs/itfIcon.html' %>'" class="path-letter"></span>
+            </div>
           </a>
           <div ng-class="{selected: thisDecisionIsSelected(decision)}" class="map-path blue">
-            <%= image_tag('map_blue-04.jpg', width: '100%') %>
+            <%= image_tag('map_blue-06.jpg', width: '100%') %>
           </div>
         </div>
       </div> <!-- end angular iterator for images -->

@@ -20,15 +20,24 @@ $(document).ready(function(){
         path = $btn.data('path'),
         $confirmPathBtn = $body.find('#interactive-map #x-btn-confirm-map-choice');
 
-    $btn.toggleClass('animate', true);
-    setTimeout(function(){
-      $btn.toggleClass('animate', false);
-    },2000);
+    $('.arrow-bundle').toggleClass('animate', false);
+    $('.arrow-bundle', $btn).toggleClass('animate', true);
+    
+    // $('#interactive-map .x-btn-select-path').toggleClass('animate', false);
+    // $btn.toggleClass('animate', true);
+    
+
+    // $btn.toggleClass('animate', true);
+    // setTimeout(function(){
+    //   $btn.toggleClass('animate', false);
+    // },2000);
 
     if ( !$confirmPathBtn.hasClass('show') ) {
-      $confirmPathBtn.toggleClass('show', true);
+      $confirmPathBtn.toggleClass('show', true)
+      $('.path-message').toggleClass('showing', false);
+      
+      $body.find('#interactive-map .instructions .path-'+path).toggleClass('showing', true);
     }
-
     //check if this one is selected already
     if ($btn.hasClass('selected')) { return; }
 

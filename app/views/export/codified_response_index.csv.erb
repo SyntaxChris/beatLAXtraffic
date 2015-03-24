@@ -1,0 +1,31 @@
+<%
+  headers = [
+    'User ID',
+    'Respondent ID',
+    'Playthrough Number',
+    'Node Nickname',
+    'Skipped?',
+    'Answer/Choice Code',
+    'Freeform Response'
+  ]
+%>
+<%= CSV.generate_line headers %>
+<% @responses.each do |response| %>
+  <% if response.node.is_decision_point? %>
+    <% code = response.decision.codebook_identifier %>
+  <% else %>
+    <% code = response.answer.present? ? response.answer.codebook_identifier : nil %>
+  <% end %>
+
+  <%=
+    CSV.generate_line([
+      response.respondent.unique_user.id,
+      response.respondent.id,
+      response.respondent.gameplay_number,
+      response.node.nickname,
+      response.skipped,
+      code,
+      !response.node.is_decision_point? ? (response.freeform_response.present? ? response.freeform_response.response_text : nil) : nil
+    ]).html_safe
+  %>
+<% end %>
