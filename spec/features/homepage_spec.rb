@@ -1,5 +1,14 @@
 require 'rails_helper'
 
+def click_loop(index, eleID)
+    $i = 0
+    while $i < index do
+      page.all(eleID)[$i].click
+      $i += 1
+    end
+end
+
+
 describe "Homepage", :js => true do
 
   before(:each) do
@@ -7,12 +16,14 @@ describe "Homepage", :js => true do
     #visit "http://www.beatlaxtraffic.com"
   	expect(page).to have_content('START')
 
-  	page.find('.start-btn').click
+  	click_button "START"
+    #page.find('.start-btn').click
+
     sleep 2 # Animation delay
   	expect(page).to have_content('LETS GO!')
 
   	page.find('#phone-next-btn').click
-  	expect(page).to have_content('As you rush to the car, your phone displays...')
+  	#expect(page).to have_content('As you rush to the car, your phone displays...')
 
   	page.find('#stage-2-btn').click
 
@@ -42,26 +53,48 @@ describe "Homepage", :js => true do
     click_button 'GO!'
 
     sleep 1 # animation delay
+
+    click_loop(5, '.bbl')
     
-    $i = 0
-    while $i < 4 do
-      page.all('.parking-bbl')[$i].click
-      $i += 1
-    end
+    # $i = 0
+    # while $i < 5 do
+    #   page.all('.bbl')[$i].click
+    #   $i += 1
+    # end
     # sleep 1
     # page.all('.bbl-icon')[0].click
+
+    #page.all('.bbl.outter.left').click
     
 
-    fill_in 'park-bbl', :with => "Totally tubular tenacious test text that's tight"
-    page.find('.ok-btn').click
-    sleep 3
-    page.find('.park-btn-next.plane-advance').click
+    fill_in 'strat-txt', :with => "Totally tubular tenacious test text that's tight"
+    #page.find('.ok-btn').click
+    click_button "SAVE"
+    click_button "NEXT"
+    #page.find('.park-btn-next.plane-advance').click
 
     sleep 1
-    page.find('#text-1').click
-    page.find('#timer-question').click
 
-    sleep 10
+    click_loop(4, '.checkmark-ctnr')
+
+    # $i = 0
+    # while $i < 4 do
+    #   page.all('.checkmark-ctnr')[$i].click
+    #   $i += 1
+    # end
+
+    sleep 1
+    # page.find('#text-1').click
+    fill_in 'park-txt', :with => "Even more text."
+    # page.find('#timer-question').click
+    click_button "SAVE"
+    click_button "NEXT"
+
+    sleep 2
+
+    page.all(".text-test.ng-binding")[1].click
+    click_button "NEXT"
+
     page.find('#phone-background').click
     page.find('#hang-out-background').click
     page.find('#shop-background').click
@@ -134,8 +167,8 @@ end
 
 # Noteable errors with beatlaxtraffic.com
 
-# 1. After select method of picking up passenger clicking "GO!" does nothing in the Chrom browser
+# 1. After selecting the "Parking lot" option then following menus have graphical errors: Images shifted
 
-# 2. After selecting the "Parking lot" option then following menus have graphical errors: Images shifted, buttons covered by other graphcis (next button is unclickable  when the window is not maximized), text box shifted
+# 2. "why do you think this strategy will work?" (thought bubble page) has some graphical errors and no options are clickable
 
 # 3. On the "What are you doing while you're parked?" page consider moving or changing the animation of the plane fly by, it disables user input onto what ever it is over and covers a large area for a noticable amount of time.
