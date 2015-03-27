@@ -3,8 +3,8 @@ require 'rails_helper'
 describe "Homepage", :js => true do
 
   before(:each) do
-  	#visit "localhost:3000"
-    visit "http://www.beatlaxtraffic.com"
+  	visit "http://localhost:3000"
+    #visit "http://www.beatlaxtraffic.com"
   	expect(page).to have_content('START')
 
   	page.find('.start-btn').click
@@ -83,7 +83,6 @@ describe "Homepage", :js => true do
     page.find('.think-next-btn.plane-advance').click
     sleep 5
     
-    #within('.ng-scope') do
     page.find('.select-btn.check-phone').click
     page.find('#x-btn-late-flight-next.late-flight-next-btn.plane-advance').click
 
