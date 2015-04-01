@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/export/home' => 'export#home', as: 'export_home'
   get '/export' => 'export#login'
   get '/export/responses' => 'export#response_index', as: 'responses'
+  get '/export/respondents' => 'export#respondents_index', as: 'respondents'
   get '/export/responses_with_variables' => 'export#responses_with_variables', as: 'responses_with_variables'
   get '/export/codified_responses' => 'export#codified_response_index', as: 'codified_responses'
   get '/export/codebook_reference' => 'export#codebook_reference', as: 'codebook_reference'

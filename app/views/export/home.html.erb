@@ -3,23 +3,36 @@
 
   <h2>Survey Responses</h2>
   <ul>
-    <li><%= link_to 'view table of responses', responses_path %> | <%= link_to 'download responses CSV', responses_path(format: :csv) %></li>
-    <li><%= link_to 'view table of codified responses', codified_responses_path %> | <%= link_to 'download codified responses CSV', codified_responses_path(format: :csv) %></li>
+    <li>
+      <%= link_to 'view table of responses', responses_path %> |
+      <%= link_to 'download responses CSV', responses_path(format: :csv) %>
+    </li>
+    <li>
+      <%= link_to 'view table of codified responses', codified_responses_path %> |
+      <%= link_to 'download codified responses CSV', codified_responses_path(format: :csv) %>
+    </li>
     <% if false %>
-      <li><%= link_to 'view table of responses including variables', responses_with_variables_path %> | <%= link_to 'download responses with variables CSV', responses_with_variables_path(format: :csv) %></li>
+      <li>
+        <%= link_to 'view table of responses including variables', responses_with_variables_path %> |
+        <%= link_to 'download responses with variables CSV', responses_with_variables_path(format: :csv) %>
+      </li>
     <% end %>
   </ul>
 
   <h2>Codebook Reference</h2>
   <ul>
-    <li><%= link_to 'view codebook table', codebook_reference_path %> | <%= link_to 'download codebook CSV', codebook_reference_path(format: :csv) %></li>
+    <li>
+      <%= link_to 'view codebook table', codebook_reference_path %> |
+      <%= link_to 'download codebook CSV', codebook_reference_path(format: :csv) %>
+    </li>
   </ul>
 
   <h2>Unique User details</h2>
-  <i>pending!</i>
   <ul>
-    <li>All users</li>
-    <li>Playthrough sessions</li>
+    <li>
+    <%= link_to 'view table of playthrough sessions', respondents_path %> |
+    <%= link_to 'download playthrough sessions CSV', respondents_path(format: :csv) %>
+    </li>
   </ul>
 
   <%= link_to 'sign out', destroy_admin_session_path, method: :delete %>

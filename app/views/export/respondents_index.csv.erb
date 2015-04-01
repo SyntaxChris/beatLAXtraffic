@@ -1,0 +1,45 @@
+<%
+  headers = [
+    'Respondent ID',
+    'Created',
+    'Unique User ID',
+    'Playthrough number',
+    'First Path Chosen',
+    'Estimated Time Elapsed',
+    'Estimated Times Circled',
+    'Presented Time until Landing',
+    'Traffic Fevel',
+    'Flight Code',
+    'Luggage Count',
+    'Luggage Type',
+    'Picking Up',
+    'Number Arriving',
+    'Originating Location',
+    'Originating Airport Code',
+    'Experienced Error?'
+  ]
+%>
+<%= CSV.generate_line headers %>
+<% @respondents.each do |respondent| %>
+  <%=
+    CSV.generate_line([
+      respondent.id,
+      respondent.created_at,
+      respondent.unique_user_id,
+      respondent.gameplay_number,
+      respondent.first_path_chosen,
+      respondent.time_elapsed,
+      respondent.times_circled,
+      respondent.landing_time,
+      respondent.traffic_level,
+      respondent.flight_code,
+      respondent.luggage_count,
+      respondent.luggage_type,
+      respondent.original_who_picking_up,
+      respondent.picking_up_number,
+      respondent.originating_location,
+      respondent.originating_airport_code,
+      respondent.experienced_error,
+    ]).html_safe
+  %>
+<% end %>
