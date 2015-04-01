@@ -21,7 +21,7 @@ class ExportController < ApplicationController
         render 'response_index'
       end
       format.csv do
-        headers['Content-Disposition'] = "attachment; filename=\"response-list.csv\""
+        headers['Content-Disposition'] = "attachment; filename=\"response-list-#{file_timestamp}.csv\""
         headers['Content-Type'] ||= 'text/csv'
       end
     end
@@ -41,7 +41,7 @@ class ExportController < ApplicationController
         render 'responses_with_variables'
       end
       format.csv do
-        headers['Content-Disposition'] = "attachment; filename=\"responses-with-variables.csv\""
+        headers['Content-Disposition'] = "attachment; filename=\"responses-with-variables-#{file_timestamp}.csv\""
         headers['Content-Type'] ||= 'text/csv'
       end
     end
@@ -54,7 +54,7 @@ class ExportController < ApplicationController
         render 'respondents_index'
       end
       format.csv do
-        headers['Content-Disposition'] = "attachment; filename=\"respondents.csv\""
+        headers['Content-Disposition'] = "attachment; filename=\"respondents-#{file_timestamp}.csv\""
         headers['Content-Type'] ||= 'text/csv'
       end
     end
@@ -74,7 +74,7 @@ class ExportController < ApplicationController
         render 'codified_response_index'
       end
       format.csv do
-        headers['Content-Disposition'] = "attachment; filename=\"codified-response-list.csv\""
+        headers['Content-Disposition'] = "attachment; filename=\"codified-response-list-#{file_timestamp}.csv\""
         headers['Content-Type'] ||= 'text/csv'
       end
     end
@@ -87,10 +87,16 @@ class ExportController < ApplicationController
         render 'codebook_reference'
       end
       format.csv do
-        headers['Content-Disposition'] = "attachment; filename=\"codebook-reference.csv\""
+        headers['Content-Disposition'] = "attachment; filename=\"codebook-reference-#{file_timestamp}.csv\""
         headers['Content-Type'] ||= 'text/csv'
       end
     end
+  end
+
+  private
+
+  def file_timestamp
+    Time.now.strftime('%Y%m%d_%H%M%S')
   end
 
 end
