@@ -47,6 +47,19 @@ class ExportController < ApplicationController
     end
   end
 
+  def respondents_index
+    @respondents = Respondent.all.order(:unique_user_id)
+    respond_to do |format|
+      format.html do
+        render 'respondents_index'
+      end
+      format.csv do
+        headers['Content-Disposition'] = "attachment; filename=\"respondents.csv\""
+        headers['Content-Type'] ||= 'text/csv'
+      end
+    end
+  end
+
   def codified_response_index
     @responses = Response.includes(
       { :respondent => :unique_user },
