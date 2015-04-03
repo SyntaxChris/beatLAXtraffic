@@ -273,20 +273,20 @@ namespace :populate do
     e2 = Node.where(nickname: "times_circled", is_decision_point: false , branch_id: blue.id, template_name: "e-2", dashboard_type: "car").first_or_create
       e2q = Question.where(
         node_id: e2.id,
-        question: "Based on this scenario, we estimated you have circled around the terminal [X] times before picking up your passenger.\nIs this typical?",
+        question: "How many times do you typically circle around LAX when picking up somebody?",
         question_type_id: single_choice.id
       ).first_or_create
-        e2a1 = Answer.where(question_id: e2q.id, answer: "Yes", icon_name: nil).first_or_create
-        e2a2 = Answer.where(question_id: e2q.id, answer: "No", icon_name: nil).first_or_create
+        e2a1 = Answer.where(question_id: e2q.id, answer: "user specifies", icon_name: nil).first_or_create
+        e2a2 = Answer.where(question_id: e2q.id, answer: "user specifies", icon_name: nil).first_or_create
 
     e3 = Node.where(nickname: "time_spent", is_decision_point: false , branch_id: blue.id, template_name: "e-3", dashboard_type: "car").first_or_create
       e3q = Question.where(
         node_id: e3.id,
-        question: "Based on this game, we estimated you spent [Calculated Game Time in Minutes] getting your passenger at the airport.\nIs this typical?",
+        question: "How long does it typically take for you to pick up your passenger once you're at LAX?",
         question_type_id: single_choice.id
       ).first_or_create
-        e3a1 = Answer.where(question_id: e3q.id, answer: "Yes", icon_name: nil).first_or_create
-        e3a2 = Answer.where(question_id: e3q.id, answer: "No", icon_name: nil).first_or_create
+        e3a1 = Answer.where(question_id: e3q.id, answer: "user specifies", icon_name: nil).first_or_create
+        e3a2 = Answer.where(question_id: e3q.id, answer: "user specifies", icon_name: nil).first_or_create
 
     e4 = Node.where(nickname: "LAX_reason", is_decision_point: false , branch_id: blue.id, template_name: "e-4", dashboard_type: "car", skippable: false).first_or_create
       e4q = Question.where(
