@@ -26,7 +26,10 @@ class Response < ActiveRecord::Base
       end
       response.answer_id = answers_array.first[:id]
     end
+
     response.calculate_seen_before
+    response.time_spent = respondent.time_elapsed
+    response.time_remaining = respondent.flight_time_remaining
 
     if response.save
       respondent.update_node_history(response_params)
@@ -64,6 +67,9 @@ class Response < ActiveRecord::Base
         response.rank = answer_hash[:rank]
         response.times_seen = multi_times_seen
       end
+
+      response.time_spent = respondent.time_elapsed
+      response.time_remaining = respondent.flight_time_remaining
 
       if response.save
         successes += 1
