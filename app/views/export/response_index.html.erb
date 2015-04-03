@@ -12,6 +12,8 @@
     <th>Answer</th>
     <th>Rank</th>
     <th>Freeform Response</th>
+    <th>Flight Time Remaining</th>
+    <th>Time Spent so Far</th>
   </tr>
   <% @responses.each do |response| %>
     <tr>
@@ -25,6 +27,8 @@
         <td><%= response.decision.decision %></td>
         <td><!-- 'Question' column intentionally blank for formatting --></td>
         <td><!-- 'Answer' column intentionally blank for formatting --></td>
+        <td><!-- 'Rank' column intentionally blank for formatting --></td>
+        <td><!-- 'Freeform Response' column intentionally blank for formatting --></td>
       <% else %>
         <td><!-- 'Decision Presented' column intentionally blank for formatting --></td>
         <td><!-- 'Choice' column intentionally blank for formatting --></td>
@@ -33,6 +37,8 @@
         <td><%= response.rank %></td>
         <td><%= response.freeform_response.response_text if response.freeform_response.present? %></td>
       <% end %>
+      <td><%= response.time_remaining %></td>
+      <td><%= response.time_spent %></td>
     </tr>
   <% end %>
 </table>
