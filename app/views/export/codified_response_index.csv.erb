@@ -7,7 +7,9 @@
     'Skipped?',
     'Answer/Choice Code',
     'Rank',
-    'Freeform Response'
+    'Freeform Response',
+    'Flight Time Remaining',
+    'Time Spent so Far'
   ]
 %>
 <%= CSV.generate_line headers %>
@@ -27,7 +29,9 @@
       response.skipped,
       code,
       !response.node.is_decision_point? ? (response.rank) : nil,
-      !response.node.is_decision_point? ? (response.freeform_response.present? ? response.freeform_response.response_text : nil) : nil
+      !response.node.is_decision_point? ? (response.freeform_response.present? ? response.freeform_response.response_text : nil) : nil,
+      response.time_remaining,
+      response.time_spent
     ]).html_safe
   %>
 <% end %>
