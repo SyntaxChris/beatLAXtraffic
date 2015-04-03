@@ -9,6 +9,8 @@
     <th>Answer/Choice Code</th>
     <th>Rank</th>
     <th>Freeform Response</th>
+    <th>Flight Time Remaining</th>
+    <th>Time Spent so Far</th>
   </tr>
   <% @responses.each do |response| %>
     <tr>
@@ -25,6 +27,8 @@
         <td><%= response.rank %></td>
       <% end %>
       <td><%= response.freeform_response.response_text if response.freeform_response.present? %></td>
+      <td><%= response.time_remaining %></td>
+      <td><%= response.time_spent %></td>
     </tr>
   <% end %>
 </table>
