@@ -1,7 +1,7 @@
 <!-- Parking spinner -->
 <div id="parking-spinner-questions">
 
-  <% unless Rails.env.production? %>
+  <% if Rails.env.development? %>
     <div class="testing-controls">
       <div ng-click="advancePlane(); submit(findDecisionByString('Yes').id, true)" class="next spinner-continue-btn plane-advance" id="spin-pickup-win" data-result="yes">
         Yes
@@ -60,7 +60,7 @@
           </div>
           <div style="position: relative; z-index: 1; width: 100%; padding-top: 4%; margin: 0">
             <div class="wheel" id="num-1">
-              <div ng-include="'<%= asset_path 'svgs/_pickupWheel.html' %>'"></div>
+              <div ng-include="'<%= asset_path 'svgs/_yesNoWheel.html' %>'"></div>
             </div>
           </div>
         </div>
