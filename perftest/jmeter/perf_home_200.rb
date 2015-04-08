@@ -1,7 +1,7 @@
 require 'ruby-jmeter'
 
 test do
-	defaults domain: 'beatlaxtraffic.com'
+	defaults domain: '/'
 	cache CLear_each_iteration: true
 	cookies
 
@@ -12,4 +12,7 @@ test do
 			visit '/'
 		end
 	end
-end.flood('XRK8AE7soYvuLXk3x3cX', name: 'Demo', grid: 'pmmi24XaSMnKjGVEtutroQ')
+end.grid 'XRK8AE7soYvuLXk3x3cX', {
+  region: 'us-west-1',
+  name: "Full #{NUM_THREADS}"
+}

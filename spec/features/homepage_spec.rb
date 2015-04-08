@@ -12,9 +12,10 @@ end
 describe "Homepage", :js => true do
 
   before(:each) do
-  	visit "http://localhost:3000"
+    %x[rake populate:create_nodes]
+  	visit "/"
     #visit "http://www.beatlaxtraffic.com"
-  	expect(page).to have_content('START')
+  	#expect(page).to have_content('START')
 
   	click_button "START"
     #page.find('.start-btn').click
