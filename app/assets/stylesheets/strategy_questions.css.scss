@@ -184,6 +184,9 @@
 							opacity: 1;
 						}
 					}
+					&.disabled{
+						cursor: default;
+					}
 					
 				}
 				&.inner.left{
