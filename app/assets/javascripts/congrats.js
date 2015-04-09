@@ -28,7 +28,7 @@ $(document).ready(function(){
   });
 
   $body.on('click', '.submit-btn', function(){
-    $('textarea[name="share-story"]').val("THANKS FOR YOUR FEEDBACK!");
+    $('textarea[name="share-story"]').val("Thanks for your feedback!");
     $(this).addClass("disabled");
     $('input[type="submit"], input[type="button"], button', this).disable(true);
   });
