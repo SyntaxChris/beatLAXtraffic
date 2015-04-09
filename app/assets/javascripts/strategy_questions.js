@@ -2,7 +2,6 @@ $(document).ready(function(){
 	var	$body = $('body');
 
 	$body.on('click', '.bbl', function(){
-		debugger;
 		if($(this).hasClass('other'))
 			$('.other-ctnr').show();
 		else
