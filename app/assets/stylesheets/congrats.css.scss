@@ -112,6 +112,9 @@
       padding: 6px;
       background: #472E85;
       font-size: 2vw;
+      &.disabled{
+        opacity: 0.4;
+      }
     }
   }
 }
