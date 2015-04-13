@@ -12,10 +12,12 @@
 	    <div ng-include="'<%= asset_path 'svgs/_highFive.html' %>'"></div>
 	  </div>
 
-	  <p>
-	    Now we're going to make some guesses about your typical trip to LAX based on your game experience
-	  </p>
+	  <div class="calculate">
+	  	Now we're going to make some guesses about your typical trip to LAX based on your game experience
+	  </div>
 
-	  <div class="red-car" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_redCar.html' %>'"></div>
+	  <div class="btn-cntr">
+	  	<button class="red-car" ng-click="submit()">NEXT</button>
+	  </div>
 	</div>
 </div>
