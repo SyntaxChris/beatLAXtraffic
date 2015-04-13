@@ -4,16 +4,16 @@ $(document).ready(function(){
       $body = $('body');
 
   //listeners
-  $body.on('click', '#successful-pickup .red-car', animateRedCar);
+  // $body.on('click', '#successful-pickup .red-car', animateRedCar);
 
-  function animateRedCar(e){
-    e.preventDefault();
-    e.stopImmediatePropagation();
+  // function animateRedCar(e){
+  //   e.preventDefault();
+  //   e.stopImmediatePropagation();
 
-    $(this).toggleClass('animate', true);
-    setTimeout(function(){
-      $body.trigger('findNextNode');
-    },1200);
-  }
+  //   $(this).toggleClass('animate', true);
+  //   setTimeout(function(){
+  //     $body.trigger('findNextNode');
+  //   },1200);
+  // }
 
 });
