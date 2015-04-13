@@ -1,7 +1,7 @@
 $(document).ready(function(){
   //set some vars
-  var $successfulPickup = $('#successful-pickup'),
-      $body = $('body');
+  // var $successfulPickup = $('#successful-pickup'),
+  //     $body = $('body');
 
   //listeners
   // $body.on('click', '#successful-pickup .red-car', animateRedCar);
