@@ -353,10 +353,20 @@ angular.module('lawaApp')
         $scope.submit(null, timeAdvanceBoolean);
       };
 
+      // $scope.inputLength = false; 
       // for freeform responses:
       $scope.determineOtherText = function(currentOtherText, answerId, otherString) {
         // this is for the 'gq-1' and 'b-1' questions that have an 'other' as
         // part of mulitple choice where there is not only 1 single answer ID:
+        
+
+        // if(currentOtherText.length === 5){
+        //   $scope.inputLength = false;
+        // }
+        // else{
+        //   $scope.inputLength = true;
+        // }
+
         if(answerId === null){
           var answerId = _.findWhere($scope.currentAnswers, {answer: otherString}).id
           // ^ the string of the 'Other' answer text is passed in and that answer is found

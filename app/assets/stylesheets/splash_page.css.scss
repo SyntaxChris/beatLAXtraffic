@@ -32,6 +32,16 @@
 			width: 100%;
 			font-size: 3vw;
 		}
+		.optimized{
+			position:absolute;
+			top: 80%;
+			left: 0;
+			color: white;
+			font-size: 0.8vw;
+			width: 100%;
+			text-align: center;
+			text-shadow: 0 3px 5px rgba(0,0,0,.5);
+		}
 	}
 	.splash-ctnr{
 		position: absolute;
@@ -121,6 +131,17 @@
 				padding: 10px 0 10px 0;
 				font-size: 7vw;
 				font-weight: 700;
+			}
+			.optimized{
+				position:absolute;
+				top: 80%;
+				left: 0;
+				color: white;
+				font-size: 2vw;
+				font-weight: 500;
+				width: 100%;
+				text-align: center;
+				text-shadow: 0 2px 3px rgba(0,0,0,.5);
 			}
 		}
 		.splash-ctnr{
