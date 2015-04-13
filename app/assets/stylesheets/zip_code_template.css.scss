@@ -80,83 +80,97 @@
 	}
 }
 
-@media only screen and (min-width: 1340px){
+@media only screen and (min-width: 1300px){
 	#zip-code-template{
 		.ferrari-container{
-			position: relative;
-			margin-left: auto;
-			margin-right: auto;
-			width: 100%;
-			margin-top: -5%;
-			text-align: center;
-			svg{
-				width: 100%;
-				height: 100%;
-
-			}
 			.zip-container{
-			position: absolute;
-			top:0;
-			width: 100%;
-			height: 100%;
-			.text-container{
-				position: absolute;
-				margin-left: auto;
-				margin-right: auto;
-				width: 100%;
-				top: 35%;
-				text-align: center;
-				input[type="text"], textarea {
-					 background-color : rgba(255, 255, 255, 0); 
-					 color: white;
-					 position: relative;
-					 margin: 0 auto;
-					 top: 90%;
-					 width: 30%;
-					 font-size: 6vw;
-					 text-align: center;
-					 border-radius: 5px;
-					 resize: none;
-				}
-				::-webkit-input-placeholder { /* WebKit browsers */
-				    color: white;
-				}
-				:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-				   color: white;
-				   opacity:  1;
-				}
-				::-moz-placeholder { /* Mozilla Firefox 19+ */
-				   color: white;
-				   opacity:  1;
-				}
-				:-ms-input-placeholder { /* Internet Explorer 10+ */
-				   color: white;
+				.text-container{
+					input[type="text"], textarea {
+						 font-size: 80px;
+					}
 				}
 			}
-			.btn-ctnr{
-				position: absolute;
-				width: 100%;
-				bottom: 110%;
-				button.zip-next{
-					font-family: 'Quicksand', sans-serif;
-					cursor: pointer;
-					display: none;
-					position: relative;
-					margin: 0 auto;
-					background-color: #079BED;
-					border-radius: 5px;
-					color: white;
-					font-size: 2vw;
-					padding: 2%;
-					width: 20%;
-				}
-			}
-		}
 		}
 	}
 }
 
-@media only screen and (max-width: 640px) and (min-width: 401px){
+// @media only screen and (min-width: 1340px){
+// 	#zip-code-template{
+// 		.ferrari-container{
+// 			position: relative;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			width: 100%;
+// 			margin-top: -5%;
+// 			text-align: center;
+// 			svg{
+// 				width: 100%;
+// 				height: 100%;
+
+// 			}
+// 			.zip-container{
+// 			position: absolute;
+// 			top:0;
+// 			width: 100%;
+// 			height: 100%;
+// 			.text-container{
+// 				position: absolute;
+// 				margin-left: auto;
+// 				margin-right: auto;
+// 				width: 100%;
+// 				top: 35%;
+// 				text-align: center;
+// 				input[type="text"], textarea {
+// 					 background-color : rgba(255, 255, 255, 0); 
+// 					 color: white;
+// 					 position: relative;
+// 					 margin: 0 auto;
+// 					 top: 90%;
+// 					 width: 30%;
+// 					 font-size: 6vw;
+// 					 text-align: center;
+// 					 border-radius: 5px;
+// 					 resize: none;
+// 				}
+// 				::-webkit-input-placeholder { /* WebKit browsers */
+// 				    color: white;
+// 				}
+// 				:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+// 				   color: white;
+// 				   opacity:  1;
+// 				}
+// 				::-moz-placeholder { /* Mozilla Firefox 19+ */
+// 				   color: white;
+// 				   opacity:  1;
+// 				}
+// 				:-ms-input-placeholder { /* Internet Explorer 10+ */
+// 				   color: white;
+// 				}
+// 			}
+// 			.btn-ctnr{
+// 				position: absolute;
+// 				width: 100%;
+// 				bottom: 110%;
+// 				button.zip-next{
+// 					font-family: 'Quicksand', sans-serif;
+// 					cursor: pointer;
+// 					display: none;
+// 					position: relative;
+// 					margin: 0 auto;
+// 					background-color: #079BED;
+// 					border-radius: 5px;
+// 					color: white;
+// 					font-size: 2vw;
+// 					padding: 2%;
+// 					width: 20%;
+// 				}
+// 			}
+// 		}
+// 		}
+// 	}
+// }
+
+@media only screen and (max-width: 640px){
 	#zip-code-template{
 		h3.main-question{
 			font-size: 7vw;
@@ -225,15 +239,14 @@
 					button.zip-next{
 						font-family: 'Quicksand', sans-serif;
 						cursor: pointer;
-						display: none;
 						position: relative;
 						margin: 0 auto;
 						background-color: #079BED;
 						border-radius: 5px;
 						color: white;
-						font-size: 2vw;
+						font-size: 4vw;
 						padding: 2%;
-						width: 20%;
+						width: 30%;
 					}
 				}
 			}
@@ -241,97 +254,97 @@
 	}
 }
 
-@media only screen and (max-width: 400px){
-	#zip-code-template{
-		h3.main-question{
-			font-size: 7vw;
-			width: 95%;
-		}
-		.sub-header{
-			margin-bottom: 0;
-			font-size: 5vw;
-			font-weight: 700;
-			text-shadow: 0 1px 2px rgba(255,255,255,.7);
-			-webkit-text-shadow: 0 2px 2px rgba(255,255,255,.7);
-		}
-		.ferrari-container{
-			position: relative;
-			margin-left: auto;
-			margin-right: auto;
-			width: 100%;
-			margin-top: -5%;
-			text-align: center;
-			// border: 1px solid black;
-			svg{
-				margin-top: 25%;
-				width: 100%;
-				height: 100%;
-				-ms-transform: rotate(89deg); /* IE 9 */
-	    		-webkit-transform: rotate(89deg); /* Chrome, Safari, Opera */
-	    		-moz-transform: rotate(89deg);
-	    		transform: rotate(89deg);
-			}
-			.zip-container{
-				position: absolute;
-				top:0;
-				width: 100%;
-				height: 100%;
-				.text-container{
-					position: absolute;
-					margin-left: auto;
-					margin-right: auto;
-					width: 100%;
-					top: 35%;
-					text-align: center;
-					input[type="text"], textarea {
-						 background-color : rgba(255, 255, 255, 0); 
-						 color: white;
-						 position: relative;
-						 margin: 0 auto;
-						 top: 90%;
-						 width: 30%;
-						 font-size: 6vw;
-						 text-align: center;
-						 border-radius: 5px;
-						 resize: none;
-					}
-					::-webkit-input-placeholder { /* WebKit browsers */
-					    color: white;
-					}
-					:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-					   color: white;
-					   opacity:  1;
-					}
-					::-moz-placeholder { /* Mozilla Firefox 19+ */
-					   color: white;
-					   opacity:  1;
-					}
-					:-ms-input-placeholder { /* Internet Explorer 10+ */
-					   color: white;
-					}
-				}
-				.btn-ctnr{
-					position: absolute;
-					width: 100%;
-					bottom: 110%;
-					button.zip-next{
-						font-family: 'Quicksand', sans-serif;
-						cursor: pointer;
-						display: none;
-						position: relative;
-						margin: 0 auto;
-						background-color: #079BED;
-						border-radius: 5px;
-						color: white;
-						font-size: 4.5vw;
-						padding: 2%;
-						width: 20%;
-					}
-				}
-			}
-		}
-	}
-}
+// @media only screen and (max-width: 400px){
+// 	#zip-code-template{
+// 		h3.main-question{
+// 			font-size: 7vw;
+// 			width: 95%;
+// 		}
+// 		.sub-header{
+// 			margin-bottom: 0;
+// 			font-size: 5vw;
+// 			font-weight: 700;
+// 			text-shadow: 0 1px 2px rgba(255,255,255,.7);
+// 			-webkit-text-shadow: 0 2px 2px rgba(255,255,255,.7);
+// 		}
+// 		.ferrari-container{
+// 			position: relative;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			width: 100%;
+// 			margin-top: -5%;
+// 			text-align: center;
+// 			// border: 1px solid black;
+// 			svg{
+// 				margin-top: 25%;
+// 				width: 100%;
+// 				height: 100%;
+// 				-ms-transform: rotate(89deg); /* IE 9 */
+// 	    		-webkit-transform: rotate(89deg); /* Chrome, Safari, Opera */
+// 	    		-moz-transform: rotate(89deg);
+// 	    		transform: rotate(89deg);
+// 			}
+// 			.zip-container{
+// 				position: absolute;
+// 				top:0;
+// 				width: 100%;
+// 				height: 100%;
+// 				.text-container{
+// 					position: absolute;
+// 					margin-left: auto;
+// 					margin-right: auto;
+// 					width: 100%;
+// 					top: 35%;
+// 					text-align: center;
+// 					input[type="text"], textarea {
+// 						 background-color : rgba(255, 255, 255, 0); 
+// 						 color: white;
+// 						 position: relative;
+// 						 margin: 0 auto;
+// 						 top: 90%;
+// 						 width: 30%;
+// 						 font-size: 6vw;
+// 						 text-align: center;
+// 						 border-radius: 5px;
+// 						 resize: none;
+// 					}
+// 					::-webkit-input-placeholder { /* WebKit browsers */
+// 					    color: white;
+// 					}
+// 					:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+// 					   color: white;
+// 					   opacity:  1;
+// 					}
+// 					::-moz-placeholder { /* Mozilla Firefox 19+ */
+// 					   color: white;
+// 					   opacity:  1;
+// 					}
+// 					:-ms-input-placeholder { /* Internet Explorer 10+ */
+// 					   color: white;
+// 					}
+// 				}
+// 				.btn-ctnr{
+// 					position: absolute;
+// 					width: 100%;
+// 					bottom: 110%;
+// 					button.zip-next{
+// 						font-family: 'Quicksand', sans-serif;
+// 						cursor: pointer;
+// 						display: none;
+// 						position: relative;
+// 						margin: 0 auto;
+// 						background-color: #079BED;
+// 						border-radius: 5px;
+// 						color: white;
+// 						font-size: 4.5vw;
+// 						padding: 2%;
+// 						width: 20%;
+// 					}
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 
 @keyframes large-car{
     0%{ margin-left: -50%;}
