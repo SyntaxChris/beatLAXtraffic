@@ -1,7 +1,4 @@
 #zip-code-template{
-	// h3.main-question{
-	// 	font-size: 4vw;
-	// }
 	.sub-header{
 		margin-bottom: 0;
 		font-size: 2.5vw;
@@ -240,69 +237,6 @@
 					}
 				}
 			}
-			// .zip-container{
-			// 	position: absolute;
-			// 	top:0;
-			// 	width: 100%;
-			// 	height: 100%;
-			// 	.text-container{
-			// 		position: relative;
-			// 		margin-left: auto;
-			// 		margin-right: auto;
-			// 		width: 30%;
-			// 		top: 35%;
-			// 		text-align: center;
-			// 		input[type="text"], textarea {
-			// 			background-color : rgba(255, 255, 255, 0); 
-			// 			color: white;
-			// 			font-size: 6vw;
-			// 			text-align: center;
-			// 			border-radius: 5px;
-			// 		}
-			// 		::-webkit-input-placeholder { /* WebKit browsers */
-			// 		    background-color : rgba(255, 255, 255, 0); 
-			// 			color: white;
-			// 			font-size: 6vw;
-			// 			text-align: center;
-			// 			border-radius: 5px;
-			// 		}
-			// 		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-			// 		    background-color : rgba(255, 255, 255, 0); 
-			// 			color: white;
-			// 			font-size: 6vw;
-			// 			text-align: center;
-			// 			border-radius: 5px;
-			// 		}
-			// 		::-moz-placeholder { /* Mozilla Firefox 19+ */
-			// 		    background-color : rgba(255, 255, 255, 0); 
-			// 			color: white;
-			// 			font-size: 6vw;
-			// 			text-align: center;
-			// 			border-radius: 5px;
-			// 		}
-			// 		:-ms-input-placeholder { /* Internet Explorer 10+ */
-			// 		    background-color : rgba(255, 255, 255, 0); 
-			// 			color: white;
-			// 			font-size: 6vw;
-			// 			text-align: center;
-			// 			border-radius: 5px;
-			// 		}
-			// 	}
-			// 	button.zip-next{
-			// 		font-family: 'Quicksand', sans-serif;
-			// 		cursor: pointer;
-			// 		display: none;
-			// 		position: relative;
-			// 		margin-left: auto;
-			// 		margin-right: auto;
-			// 		background-color: #079BED;
-			// 		border-radius: 5px;
-			// 		color: white;
-			// 		font-size: 4vw;
-			// 		padding: 5%;
-			// 		width: 50%;
-			// 	}
-			// }
 		}
 	}
 }
@@ -398,12 +332,6 @@
 		}
 	}
 }
-
-
-
-
-
-
 
 @keyframes large-car{
     0%{ margin-left: -50%;}
