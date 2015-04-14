@@ -161,4 +161,22 @@
 	}
 }
 
+@media screen and (max-width : 400px) {
+	#splash-page {
+		.lax-start-cntr{
+			.optimized{
+				position:absolute;
+				top: 80%;
+				left: 0;
+				color: white;
+				font-size: 3vw;
+				font-weight: 500;
+				width: 100%;
+				text-align: center;
+				text-shadow: 0 2px 3px rgba(0,0,0,.5);
+			}
+		}
+	}
+}
+
 
