@@ -1,303 +1,384 @@
-.plane-cntr{
-    position: absolute;
-    z-index: 20;
-    top:-30%;
-    left:100%;
-    width: 70%;
-    height: 70%;
-    svg{
+body {
+    &.blue {
+        background: #82D3EF;
+    }
+    &.purple {
+        background: #A3CAFF;
+    }
+    &.green {
+        background: #A0E1CB;
+        svg.bg{
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    &.orange {
+        background: #EFC9B4;
+        svg.bg{
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    #landing-plane{
+        position: absolute;
+        z-index: 10;
+        top: -30%;;
+        right: -70%;
+        width: 70%;
+        height: 70%;
+        svg{
+            width: 100%;
+            height: 100%;
+        }
+        &.land-ze-plane { 
+            animation: landing 7s;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+
+            -webkit-animation: landing 7s; 
+            -webkit-animation-iteration-count: 1;
+            -webkit-animation-timing-function: linear;
+
+            -moz-animation: landing 7s; 
+            -moz-animation-iteration-count: 1;
+            -moz-animation-timing-function: linear;
+
+            -o-animation: landing 7s; 
+            -o-animation-iteration-count: 1;
+            -o-animation-timing-function: linear;
+
+            -ms-animation: landing 7s; 
+            -ms-animation-iteration-count: 1;
+            -ms-animation-timing-function: linear;
+        }
+    }
+    .bg-animations{
+        position: absolute;
+        z-index: -4;
+        top: 0%;
         width: 100%;
         height: 100%;
-    }
+        .middle-plane{
+            position: absolute;
+            top: 35%;
+            right: -20%;
+            width: 20%;
+            height: 20%;
+            -webkit-animation: middle-plane 35s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-delay: 8s;
+            -webkit-animation-timing-function: linear;
+            svg{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .distant-plane{
+            position: absolute;
+            top: 20%;
+            left: -20%;
+            width: 12%;
+            z-index: -5;
+            -webkit-animation: far-plane 20s;
+            -moz-animation: far-plane 20s;
+            animation: far-plane 20s;
+
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+
+            -webkit-animation-timing-function: linear;
+            -moz-animation-timing-function: linear;
+            animation-timing-function: linear;
+            svg{
+                width: 100%;
+                height: 100%;
+            }
+        } 
+        .cloud-cntr{
+            #cloud-1{
+                position: absolute;
+                z-index: -4;
+                width: 30%;
+                height: 25%;
+                left: -30%;
+                svg{
+                    width: 100%;
+                    height: 100%;
+                }
+                -webkit-animation: slow-cloud 600s;
+                -moz-animation: slow-cloud 600s;
+                animation: slow-cloud 600s;
+
+                -webkit-animation-iteration-count: infinite;
+                -moz-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+
+                -webkit-animation-timing-function: linear;
+                -moz-animation-timing-function: linear;
+                animation-timing-function: linear;
+            }
+            #cloud-2{
+                position: absolute; 
+                z-index: -3; 
+                top: 18%; 
+                left: -25%;
+                width: 20%;
+                height: 20%;
+                svg{
+                    height: 100%;
+                    width: 100%;
+                }
+                -webkit-animation: slow-cloud 100s;
+                -moz-animation: slow-cloud 100s;
+                animation: slow-cloud 100s;
+
+                -webkit-animation-iteration-count: infinite;
+                -moz-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+
+                -webkit-animation-timing-function: linear;
+                -moz-animation-timing-function: linear;
+                animation-timing-function: linear;
+            }
+            #cloud-3{
+                position: absolute; 
+                z-index: -7; 
+                left: 55%; 
+                top: 0;
+                width: 25%;
+                height: 20%;
+                svg{
+                    height: 100%;
+                    width: 100%;
+                }
+                -webkit-animation: slow-cloud 1000s;
+                -moz-animation: slow-cloud 1000s;
+                animation: slow-cloud 1000s;
+
+                -webkit-animation-iteration-count: infinite;
+                -moz-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+
+                -webkit-animation-timing-function: linear;
+                -moz-animation-timing-function: linear;
+                animation-timing-function: linear;
+            }
+            #cloud-4{
+                position: absolute; 
+                z-index: -7; 
+                left: -20%; 
+                top: 10%;
+                opacity: 0.5;
+                width: 30%;
+                height: 20%;
+                svg{
+                    height: 100%;
+                    width: 100%;
+                }
+                -webkit-animation: slow-cloud 300s;
+                -moz-animation: slow-cloud 300s;
+                animation: slow-cloud 300s;
+
+                -webkit-animation-iteration-count: infinite;
+                -moz-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+
+                -webkit-animation-timing-function: linear;
+                -moz-animation-timing-function: linear;
+                animation-timing-function: linear;
+            }
+            #cloud-5{
+                position: absolute; 
+                z-index: -4; 
+                left: 80%; 
+                top: 35%;
+                width: 12%;
+                height: 10%;
+                svg{
+                    height: 100%;
+                    width: 100%;
+                }
+                -webkit-animation: slow-cloud 1000s;
+                -moz-animation: slow-cloud 1000s;
+                animation: slow-cloud 1000s;
+
+                -webkit-animation-iteration-count: infinite;
+                -moz-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+
+                -webkit-animation-timing-function: linear;
+                -moz-animation-timing-function: linear;
+                animation-timing-function: linear;
+            }
+            #cloud-6{
+                position: absolute; 
+                z-index: -4; 
+                width: 12%;
+                height: 10%;
+                svg{
+                    height: 100%;
+                    width: 100%;
+                }
+                -webkit-animation: slow-cloud 1000s;
+                -moz-animation: slow-cloud 1000s;
+                animation: slow-cloud 1000s;
+
+                -webkit-animation-iteration-count: infinite;
+                -moz-animation-iteration-count: infinite;
+                animation-iteration-count: infinite;
+
+                -webkit-animation-timing-function: linear;
+                -moz-animation-timing-function: linear;
+                animation-timing-function: linear;
+            }
+
+        }
+        #cloud-9{
+            position: absolute;
+            width: 30%;
+            top: 10%;
+            left: -50%;
+            &.dopa-cloud{
+                -webkit-animation: dopa-cloud 5s;
+                -moz-animation: dopa-cloud 5s;
+                animation: dopa-cloud 5s;
+
+                -webkit-animation-iteration-count: 1;
+                -moz-animation-iteration-count: 1;
+                animation-iteration-count: 1;
+
+                -webkit-animation-timing-function: linear;
+                -moz-animation-timing-function: linear;
+                animation-timing-function: linear;
+            }
+            svg{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+        .lot{
+            position: absolute;
+            z-index: -1;
+        }
+        .skyline{
+            position: absolute;
+            z-index: -1; 
+        } 
+
+    }  
 }
 
-.far-plane{
-    position: absolute;
-    width: 30%;
-    height: 30%;
-    border: 1px solid white;
-
-    animation: far-plane;
-    -webkit-animation: far-plane;
-    -moz-animation: far-plane;
-    -o-animation: far-plane;
-    -ms-animation: far-plane;
-
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite;
-    -moz-animation-iteration-count: infinite;
-    -o-animation-iteration-count: infinite;
-    -ms-animation-iteration-count: infinite;
-
-    animation-timing-function: linear;
-    -webkit-animation-timing-function: linear;
-    -moz-animation-timing-function: linear;
-    -o-animation-timing-function: linear;
-    -ms-animation-timing-function: linear;
-
-    animation-delay: 2s; 
-    -webkit-animation-delay: 2s;  
-    -moz-animation-delay: 2s; 
-    -o-animation-delay: 2s; 
-    -ms-animation-delay: 2s; 
+@-webkit-keyframes landing{
+   0% {transform: translate3d(0,0,0)rotate(-5deg);
+       -webkit-transform:translate3d(0,0,0)rotate(-5deg);}
+   100% {transform: translate3d(-300%,100%,0) rotate(5deg);
+       -webkit-transform:translate3d(-300%,100%,0) rotate(5deg);}
 }
 
-@keyframes far-plane{
-    0%   {
-        -webkit-transform: translate3d(0,0,0);
-    }
-    100% {
-        -webkit-transform: translate3d(30%,0,0);
-    }
-}
+
 @-webkit-keyframes far-plane{
-    0%   {
-        -webkit-transform: translate3d(0,0,0);
+   0% {transform: translate3d(0, 0, 0) rotate(0deg); 
+       -webkit-transform:translate3d(0, 0, 0) rotate(0deg); }
+   35% {transform: translate3d(1000%, -80%, 0) rotate(-3deg);
+       -webkit-transform:translate3d(1000%, -80%, 0) rotate(-3deg);}
+   100% {transform: translate3d(1010%, -80%, 0) rotate(-3deg);
+       -webkit-transform:translate3d(1010%, -80%, 0) rotate(-3deg);}
+}
+
+@-webkit-keyframes middle-plane{
+   0% {transform: translate3d(0,0,0) rotate(10deg);
+       -webkit-transform:translate3d(0,0,0) rotate(10deg);}
+   4% {transform: translate3d(-500%,-300%,0) rotate(15deg);
+       -webkit-transform:translate3d(-500%,-300%,0) rotate(15deg);}
+   100% {transform: translate3d(-510%,-310%,0) rotate(15deg);
+       -webkit-transform:translate3d(-510%,-310%,0) rotate(15deg);}
+}
+
+
+@-webkit-keyframes slow-cloud{
+   0% {transform: translate3d(0, 0, 0); 
+       -webkit-transform:translate3d(0, 0, 0); }
+   100% {transform: translate3d(700%, 0, 0);
+       -webkit-transform:translate3d(700%, 0, 0);}
+}
+@-webkit-keyframes dopa-cloud{
+   0% {transform: translate3d(0, 0, 0); 
+       -webkit-transform:translate3d(0, 0, 0); }
+   100% {transform: translate3d(500%, 0, 0);
+       -webkit-transform:translate3d(500%, 0, 0);}
+}
+
+
+
+
+
+@media only screen and (max-width : 640px) { 
+    .index-cntr{
+        .distant-plane{
+            position: absolute;
+            top: 10%;
+            left: -20%;
+        }
+        .middle-plane{
+            top: 25%;
+        }
+        @-webkit-keyframes far-plane{
+           0% {transform: translate3d(0, 0, 0) rotate(0deg); }
+           15% {transform: translate3d(1000%, -80%, 0) rotate(-3deg);}
+           100% {transform: translate3d(1010%, -80%, 0) rotate(-3deg);}
+        }
+
+        @-webkit-keyframes middle-plane{
+           0% {transform: translate3d(0,0,0) rotate(10deg);}
+           12% {transform: translate3d(-900%,-200%,0) rotate(15deg);}
+           100% {transform: translate3d(-910%,-210%,0) rotate(15deg);}
+        } 
     }
-    100% {
-        -webkit-transform: translate3d(30%,0,0);
+    body{
+        #landing-plane{
+            position: absolute;
+            z-index: 10;
+            top: -70%;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            svg{
+                width: 150%;
+                height: 150%;
+            }
+            &.land-ze-plane { 
+                animation: landing 7s;
+                animation-iteration-count: 1;
+                animation-timing-function: linear;
+
+                -webkit-animation: landing 7s; 
+                -webkit-animation-iteration-count: 1;
+                -webkit-animation-timing-function: linear;
+
+                -moz-animation: landing 7s; 
+                -moz-animation-iteration-count: 1;
+                -moz-animation-timing-function: linear;
+
+                -o-animation: landing 7s; 
+                -o-animation-iteration-count: 1;
+                -o-animation-timing-function: linear;
+
+                -ms-animation: landing 7s; 
+                -ms-animation-iteration-count: 1;
+                -ms-animation-timing-function: linear;
+            }
+        }
     }
 }
-@-moz-keyframes far-plane{
-    0%   {
-        -webkit-transform: translate3d(0,0,0);
-    }
-    100% {
-        -webkit-transform: translate3d(30%,0,0);
-    }
-}
-@-o-keyframes far-plane{
-    0%   {
-        -webkit-transform: translate3d(0,0,0);
-    }
-    100% {
-        -webkit-transform: translate3d(30%,0,0);
-    }
-}
-@-ms-keyframes far-plane{
-    0%   {
-        -webkit-transform: translate3d(0,0,0);
-    }
-    100% {
-        -webkit-transform: translate3d(30%,0,0);
-    }
-}
 
-div#plane { 
-    position: absolute;
-    animation: plane 35s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-delay: 35s;  
-
-    -webkit-animation: plane 35s; 
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    -webkit-animation-delay: 25s;
-
-    -moz-animation: plane 35s; 
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: linear;
-    -moz-animation-delay: 25s;
-
-    -o-animation: plane 35s; 
-    -o-animation-iteration-count: infinite;
-    -o-animation-timing-function: linear;
-    -o-animation-delay: 25s;
-
-    -ms-animation: plane 35s; 
-    -ms-animation-iteration-count: infinite;
-    -ms-animation-timing-function: linear;
-    -ms-animation-delay: 25s;  
-}
-
-.land-ze-plane { 
-    animation: landing 7s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-
-    -webkit-animation: landing 7s; 
-    -webkit-animation-iteration-count: 1;
-    -webkit-animation-timing-function: linear;
-
-    -moz-animation: landing 7s; 
-    -moz-animation-iteration-count: 1;
-    -moz-animation-timing-function: linear;
-
-    -o-animation: landing 7s; 
-    -o-animation-iteration-count: 1;
-    -o-animation-timing-function: linear;
-
-    -ms-animation: landing 7s; 
-    -ms-animation-iteration-count: 1;
-    -ms-animation-timing-function: linear;
-}
-
-@-webkit-keyframes landing {
-    0%   {left:100%; top:-30%;}
-    100% {left:-90%; top: 35%;}
-}
-@-moz-keyframes landing {
-    0%   {left:100%; top:-30%;}
-    100% {left:-90%; top: 35%;}
-}
-@-o-keyframes landing {
-    0%   {left:100%; top:-30%;}
-    100% {left:-90%; top: 35%;}
-}
-@-ms-keyframes landing {
-    0%   {left:100%; top:-30%;}
-    100% {left:-90%; top: 35%;}
-}
-@keyframes landing {
-    0%   {left:100%; top:-30%;}
-    100% {left:-90%; top: 35%;}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// div#far-plane { 
-//     position: absolute;
-//     animation: far 40s;
-//     animation-iteration-count: infinite;
-//     animation-timing-function: linear;
-
-//     -webkit-animation: far 40s; 
-//     -webkit-animation-iteration-count: infinite;
-//     -webkit-animation-timing-function: linear;
-
-//     -moz-animation: far 40s; 
-//     -moz-animation-iteration-count: infinite;
-//     -moz-animation-timing-function: linear;
-
-//     -o-animation: far 40s; 
-//     -o-animation-iteration-count: infinite;
-//     -o-animation-timing-function: linear;
-
-//     -ms-animation: far 40s; 
-//     -ms-animation-iteration-count: infinite;
-//     -ms-animation-timing-function: linear;
-// }
-
-// @keyframes plane {
-//     0%   {left:110%; top:15%;}
-//     8%  {left:10%; top:-25%;}
-//     100% {left:0%; top:-25%;}
-// }
-
-// @keyframes landing {
-//     0%   {left:1%; top:-25%;}
-//     100% {left:-90%; top: 35%;}
-// }
-
-// @keyframes far {
-//     0%   {left:-20%; top:15%;}
-//     30%  {left:110%; top: 5%;}
-//     100% {left:120%; top:-15%;}
-// }
-
-
-// @-webkit-keyframes plane {
-//     0%   {left:110%; top:15%;}
-//     15%  {left:-50%; top:-25%;}
-//     100% {left:0%; top:-25%;}
-// }
-// @-webkit-keyframes landing {
-//     0%   {left:1%; top:-25%;}
-//     100% {left:-90%; top: 35%;}
-// }
-// @-webkit-keyframes far {
-//     0%   {left:-20%; top:15%;}
-//     30%  {left:110%; top: 5%;}
-//     100% {left:120%; top:-15%;}
-// }
-
-
-// @-moz-keyframes plane {
-//     0%   {left:110%; top:15%;}
-//     8%  {left:10%; top:-25%;}
-//     100% {left:0%; top:-25%;}
-// }
-// @-moz-keyframes landing {
-//     0%   {left:1%; top:-25%;}
-//     100% {left:-90%; top: 35%;}
-// }
-// @-moz-keyframes far {
-//     0%   {left:-20%; top:15%;}
-//     30%  {left:110%; top: 5%;}
-//     100% {left:120%; top:-15%;}
-// }
-// @-o-keyframes plane {
-//     0%   {left:110%; top:15%;}
-//     8%  {left:10%; top:-25%;}
-//     100% {left:0%; top:-25%;}
-// }
-
-// @-o-keyframes landing {
-//     0%   {left:1%; top:-25%;}
-//     100% {left:-90%; top: 35%;}
-// }
-// @-o-keyframes far {
-//     0%   {left:-20%; top:15%;}
-//     30%  {left:110%; top: 5%;}
-//     100% {left:120%; top:-15%;}
-// }
-
-// @-ms-keyframes plane {
-//     0%   {left:110%; top:15%;}
-//     8%  {left:10%; top:-25%;}
-//     100% {left:0%; top:-25%;}
-// }
-// @-ms-keyframes landing {
-//     0%   {left:1%; top:-25%;}
-//     100% {left:-90%; top: 35%;}
-// }
-// @-ms-keyframes far {
-//     0%   {left:-20%; top:15%;}
-//     30%  {left:110%; top: 5%;}
-//     100% {left:120%; top:-15%;}
-// }
 
 
 

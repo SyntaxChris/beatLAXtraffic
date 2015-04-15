@@ -17,7 +17,7 @@
           <div class="rail-answer-font yes">
             YES
           </div>
-          <div class="car-progress" ng-click="submit(findDecisionByString('Yes').id); landPlane(); advanceCar()" id="x-btn-upvote" ng-include="'<%= asset_path 'svgs/_thumbsDown.html' %>'"></div>
+          <button class="car-progress" ng-click="submit(findDecisionByString('Yes').id); landPlane(); advanceCar()" id="x-btn-upvote" ng-include="'<%= asset_path 'svgs/_thumbsDown.html' %>'"></button>
         </div>
       </div>  
       <div class="large-6 medium-6 small-6 columns">
@@ -25,7 +25,7 @@
           <div class="rail-answer-font">
             NO
           </div>
-          <div class="thumbs-down car-progress" ng-click="submit(findDecisionByString('No').id)" id="x-btn-downvote" ng-include="'<%= asset_path 'svgs/_thumbsUp.html' %>'"></div>
+          <button class="thumbs-down car-progress" ng-click="submit(findDecisionByString('No').id)" id="x-btn-downvote" ng-include="'<%= asset_path 'svgs/_thumbsUp.html' %>'"></button>
         </div>
       </div>
     </div>

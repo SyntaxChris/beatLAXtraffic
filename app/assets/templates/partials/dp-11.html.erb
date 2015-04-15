@@ -24,8 +24,8 @@
       </h1>
 
       <div ng-repeat="decision in currentNode.decisions" class="buttons-c">
-        <button ng-click="setCurrentDecision(decision)" ng-if="decision.decision.indexOf('Give') > -1" id="x-btn-give-up" class="give-up-btn plane-advance">{{ decision.decision }}</button>
-        <button ng-click="setCurrentDecision(decision); incrementOutcome()" ng-if="decision.decision.indexOf('Keep') > -1" id="x-btn-keep-looking" class="keep-looking-btn plane-advance">{{ decision.decision }}</button> 
+        <button ng-click="advancePlane(); setCurrentDecision(decision)" ng-if="decision.decision.indexOf('Give') > -1" id="x-btn-give-up" class="give-up-btn plane-advance">{{ decision.decision }}</button>
+        <button ng-click="advancePlane(); setCurrentDecision(decision); incrementOutcome()" ng-if="decision.decision.indexOf('Keep') > -1" id="x-btn-keep-looking" class="keep-looking-btn plane-advance">{{ decision.decision }}</button> 
       </div>
       <div class="parking-result">{{ parkingTextOutcome[parkingTextIndex] }}</div>
     </div>

@@ -1,39 +1,44 @@
-<div class="skip" ng-click="submit()" ng-include="'<%= asset_path 'svgs/_skipbutton.html' %>'"></div>
 <!-- 7. TILE QUESTIONS -->
 <div id="tile-questions">
-  <div class="row">
-  <h3 class="main-question" id="main-landscape">{{ currentNode.question.question }}</h3>
-    <h5 class="sub-header">Select all that apply</h5>
-  </div>
+  <h3 class="main-question">{{ currentNode.question.question }}</h3>
+  <h5 class="sub-header">Select all that apply</h5>
+  <div class="tile-ctnr">
+    <div 
+      class="tile"
+      ng-repeat="answer in currentNode.answers | orderBy:'custom_order'"
+      ng-click="addAnswerToCurrentAnswers(answer)" 
 
-  <div class="row">
-    <div ng-repeat="answer in currentNode.answers">
-      <div class="large-3 medium-3 small-6 columns">
-        <div class="row">
-          <div class="tile-bbl">
-            <div class="tile-checkmark">
-              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
-            </div>
-            <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'car')" ng-include="'<%= asset_path 'svgs/_phone.html' %>'" class="tile"></div>
-            <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'Shop')" ng-include="'<%= asset_path 'svgs/_shop.html' %>'" class="tile"></div>
-            <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'Waiting') && matchAnswerString(answer, 'terminal')" ng-include="'<%= asset_path 'svgs/_hangout.html' %>'" class="tile"></div>
-            <div ng-click="addAnswerToCurrentAnswers(answer)" ng-if="matchAnswerString(answer, 'Getting')" ng-include="'<%= asset_path 'svgs/_eat.html' %>'" class="tile"></div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="tile-title">
-            {{ answer.answer }}
-          </div>
-        </div>
+      ng-class="{
+        'tile-1' : $index === 0,
+        'tile-2' : $index === 1,
+        'tile-3' : $index === 2,
+        'tile-4' : $index === 3
+    }">
+      <div class="checkmark-ctnr">
+        <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'"%></div>
+      </div>
+      <div ng-if="$index === 0">
+        <div ng-include="'<%= asset_path 'svgs/_phone.html' %>'"></div>
+      </div>
+      <div ng-if="$index === 1">
+        <div ng-include="'<%= asset_path 'svgs/_hangout.html' %>'"></div>
+      </div>
+      <div ng-if="$index === 2">
+        <div ng-include="'<%= asset_path 'svgs/_shop.html' %>'"></div>
+      </div>
+      <div ng-if="$index === 3">
+        <div ng-include="'<%= asset_path 'svgs/_eat.html' %>'"></div>
+      </div>
+      <div class="title">
+        {{ answer.answer }}
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <div ng-click="submit(null, true)" class="tile-next plane-advance">
+  <div class="btn-row">
+    <button ng-click="advancePlane(); submit(null, true)" class="tile-next plane-advance">
       NEXT
-    </div>
+    </button>
   </div>
-
 </div>
+
 <!-- END TILE QUESTIONS -->

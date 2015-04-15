@@ -1,6 +1,8 @@
 [experience flow map](http://gxle8i.axshare.com/#p=web_user_flow_with_updated_visuals)
 
+creating an admin user from the Ruby console:
 
+`Admin.new({email: "addresss@domain.tld", password: "password", password_confirmation: "password"}).save(validate: false)`
 
 Version
 ----

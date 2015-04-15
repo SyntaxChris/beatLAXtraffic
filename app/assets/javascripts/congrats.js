@@ -1,6 +1,13 @@
 $(document).ready(function(){
   // window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
   //set some vars
+  jQuery.fn.extend({
+    disable: function(state) {
+        return this.each(function() {
+            this.disabled = state;
+        });
+    }
+});
   var $congrats = $('#congrats'),
       $body = $('body');
 
@@ -15,12 +22,21 @@ $(document).ready(function(){
 
   $body.on('click', '#x-btn-close-story-overlay', function(e){
     toggleShareStoryOverlay(e,'close');
+    $('textarea[name="share-story"]').val('');
+    $('.submit-btn').removeClass("disabled");
+    $('input[type="submit"], input[type="button"], button', '.submit-btn').disable(false);
+  });
+
+  $body.on('click', '.submit-btn', function(){
+    $('textarea[name="share-story"]').val("Thanks for your feedback!");
+    $(this).addClass("disabled");
+    $('input[type="submit"], input[type="button"], button', this).disable(true);
   });
 
   $body.on('click', '#x-btn-close-share-overlay', function(e){
     toggleShareOverlay(e,'close');
+    
   });
-  
 
   function toggleShareStoryOverlay(e,action){
     e.preventDefault();

@@ -1,0 +1,124 @@
+<!-- STRATEGY questions -->
+<div id="strategy-questions">
+  <div class="row" style="text-align: center;">
+    <h3 class="main-question">{{ currentNode.question.question }}</h3>
+    <h5 class="sub-header">Select all that apply</h5>
+  </div>
+
+  <div class="strategy-ctnr">
+    <div class="boxster-ctnr">
+      <div ng-include="'<%= asset_path 'svgs/_boxster.html' %>'"></div>
+    </div>
+    <div class="bbl-ctnr" ng-repeat="answer in currentNode.answers | orderBy:'custom_order'">
+      <div class="bbl"
+        ng-if="currentNode.template_name !== 'gq-1-b'"
+        ng-click="addAnswerToCurrentAnswers(answer)"
+        ng-class="{
+          'outter left' : $index === 0,
+          'inner left' : $index === 1,
+          'center' : $index === 2,
+          'inner right' : $index === 3,
+          'outter right other' : $index === 4
+        }">
+
+        <div class="icon">
+          <div class="checkmark-ctnr">
+             <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'" ng-if="currentNode.template_name !== 'gq-1-b'"></div>    
+              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'" ng-if="currentNode.template_name === 'gq-1-b' && $index !== 2"></div>
+          </div>
+          <div ng-if="$index === 0">
+            <div ng-include="'<%= asset_path 'svgs/_guy.html' %>'"></div>
+          </div>
+          <div ng-if="$index === 1">
+            <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch.html' %>'"></div>
+          </div>
+          <div ng-if="$index === 2">
+            <div ng-include="'<%= asset_path 'svgs/_grayParking.html' %>'"></div>
+          </div>
+          <div ng-if="$index === 3">
+            <div ng-include="'<%= asset_path 'svgs/_hassle.html' %>'"></div>
+          </div>
+          <div ng-if="$index === 4">
+            <div ng-include="'<%= asset_path 'svgs/_strategyOther.html' %>'"></div>
+          </div>
+        </div>
+        <div class="text">
+          {{ answer.answer  }}
+        </div>
+      </div>
+
+      <div class="bbl"
+        ng-if="currentNode.template_name === 'gq-1-b' && $index !== 2"
+        ng-click="addAnswerToCurrentAnswers(answer)"
+        ng-class="{
+          'outter left' : $index === 0,
+          'inner left' : $index === 1,
+          'center disabled' : $index === 2,
+          'inner right' : $index === 3,
+          'outter right other' : $index === 4
+        }">
+        
+        <div class="icon">
+          <div class="checkmark-ctnr">
+             <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'" ng-if="currentNode.template_name !== 'gq-1-b'"></div>    
+              <div ng-include="'<%= asset_path 'svgs/_bblCheck.html' %>'" ng-if="currentNode.template_name === 'gq-1-b' && $index !== 2"></div>
+          </div>
+          <div ng-if="$index === 0">
+            <div ng-include="'<%= asset_path 'svgs/_guy.html' %>'"></div>
+          </div>
+          <div ng-if="$index === 1">
+            <div ng-include="'<%= asset_path 'svgs/_strategyStopWatch.html' %>'"></div>
+          </div>
+          <div ng-if="$index === 2">
+            <div ng-include="'<%= asset_path 'svgs/_grayParking.html' %>'"></div>
+          </div>
+          <div ng-if="$index === 3">
+            <div ng-include="'<%= asset_path 'svgs/_hassle.html' %>'"></div>
+          </div>
+          <div ng-if="$index === 4">
+            <div ng-include="'<%= asset_path 'svgs/_strategyOther.html' %>'"></div>
+          </div>
+        </div>
+        <div class="text">
+          {{ answer.answer  }}
+        </div>
+      </div>
+
+      <div class="bbl center disabled" ng-if="currentNode.template_name === 'gq-1-b' && $index === 2">
+        <div class="icon">
+          <div ng-include="'<%= asset_path 'svgs/_grayParking.html' %>'"></div>
+        </div>
+        <div class="text">
+          {{ answer.answer  }}
+        </div>
+      </div>
+    </div>
+
+    <div class="other-ctnr">
+      <div class="other-bbl">
+        <textarea
+          id="strat-txt"
+          cols="1"
+          rows="6"
+          placeholder="Please write here."
+          maxlength="140"
+          ng-model="currentOther.text"
+          ng-change="determineOtherText(currentOther.text, null, 'Other (Explain)')">
+        </textarea>
+        <div class="btn-ctnr">
+          <div class="counter"></div>
+          <button class="save">SAVE</button>
+          <button class="cancel">CANCEL</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="next-ctnr">
+      <button ng-click="advancePlane(); submit(null, true)" class="strategy-next">
+        NEXT
+      </button>
+    </div>   
+
+  </div>
+</div>
+<!-- END STRATEGY QUESTIONS -->

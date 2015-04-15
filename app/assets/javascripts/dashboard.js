@@ -1,7 +1,7 @@
 $(document).ready(function(){
     var $body = $('body');
-  
-    var movePlane = function(n){
+    var initiateDopaCloud = 0;
+    window.movePlane = function(n){
         var currentProgress = parseInt($('#plane-progress').text());
 
         if( currentProgress < 85){
@@ -14,26 +14,15 @@ $(document).ready(function(){
             $("#plane-alert").attr("class", "clock-pulse");
             $('.plane-cntr').addClass("land-ze-plane");
             $('svg circle#timer-fill').attr("class", "clock-pulse");
+            if($('#landing-plane').hasClass("land-ze-plane") === false){
+                $('#landing-plane').addClass("land-ze-plane")
+            }
+        }
 
-            window.setTimeout(function () {
-                $("span#flight-status").text('Arrived');
-            }, 5000);
-        } 
-    
       var currentProgress = parseInt($('#plane-progress').text());
     }
 
-    var completeLanding = function(){
-        var currentProgress = $('#plane-progress').text("85");
-        
-        $("#plane-bar").animate({width: "85%"}, 200);
-        $("#filler").animate({marginLeft: "85%"}, 200);
-        $("#plane-alert").attr("class", "clock-pulse");
-        $('#landing-plane').addClass("land-ze-plane");
-        $('svg circle#timer-fill').attr("class", "clock-pulse");
-    }
-
-    var moveClock = function(){
+    window.moveClock = function(){
         var clockState = $('#clock-hand-cntr').data('rot');
         var r = $('#clock-hand-cntr').data('rot') + 45;
 
@@ -84,7 +73,7 @@ $(document).ready(function(){
             else{
                 $('svg circle#timer-fill').css("opacity", o);
                 $('#clock-face').data('opac', o);
-            } 
+            }
         }
         else{
             $('svg circle#timer-fill').css("opacity", 1);
@@ -101,13 +90,24 @@ $(document).ready(function(){
         $('#clock-hand-cntr').data('rot', r);
     }
 
+    window.completeLanding = function(){
+        var currentProgress = $('#plane-progress').text("85");
+
+        $("#plane-bar").animate({width: "85%"}, 200);
+        $("#filler").animate({marginLeft: "85%"}, 200);
+        $("#plane-alert").attr("class", "clock-pulse");
+        $('#landing-plane').addClass("land-ze-plane");
+        $('svg circle#timer-fill').attr("class", "clock-pulse");
+    }
+
+
     var counterDisplay = function(num){
         var currentMin = $('#counter-num').data('counter-number') + num;
         var currentHour = Math.floor(currentMin/60);
 
         // minute logic
         $('span#min').text(Math.round(currentMin/60 % 1 * 60));
-        
+
         // hour logic
         if(currentHour < 1){
            $('#hr').empty();
@@ -134,6 +134,18 @@ $(document).ready(function(){
 
     $body.on('click', '.land-ze-plane', function(){
         completeLanding();
+    });
+
+    $body.on('click', '.dopa-cloud', function(){
+        initiateDopaCloud += 1;
+        if(initiateDopaCloud > 19){
+            console.log('DOPA CLOUD!');
+            $('#cloud-9').addClass('dopa-cloud');
+            window.setTimeout(function () {
+                initiateDopaCloud = 0;
+                $('#cloud-9').removeClass('dopa-cloud');
+            }, 5000);
+        }
     });
 
 });

@@ -26,7 +26,10 @@ class Response < ActiveRecord::Base
       end
       response.answer_id = answers_array.first[:id]
     end
+
     response.calculate_seen_before
+    response.time_spent = respondent.time_elapsed
+    response.time_remaining = respondent.flight_time_remaining
 
     if response.save
       respondent.update_node_history(response_params)
@@ -65,6 +68,9 @@ class Response < ActiveRecord::Base
         response.times_seen = multi_times_seen
       end
 
+      response.time_spent = respondent.time_elapsed
+      response.time_remaining = respondent.flight_time_remaining
+
       if response.save
         successes += 1
       end
@@ -89,6 +95,25 @@ class Response < ActiveRecord::Base
     end
   end
 
+  def self.create_story(node_interaction_params, answers_array = [], respondent)
+    is_decision = node_interaction_params[:is_decision]
+    answers_array = node_interaction_params[:answers]
+    time_elapsed = node_interaction_params[:time_elapsed]
+    response_params = node_interaction_params.except(:is_decision, :answers, :time_elapsed)
+
+    response = Response.new(response_params.except(:next_node_id, :freeform_response))
+    response.create_freeform_response(
+      response_text: response_params[:freeform_response][:response]
+    )
+    response.answer_id = answers_array.first[:id]
+
+    if response.save
+      return {status: "success"}
+    else
+      return {status: "fail", message: response.errors.messages}
+    end
+  end
+
   def self.create_all_from_node_interaction(node_interaction_params, respondent)
     is_decision = node_interaction_params[:is_decision]
     answers_array = node_interaction_params[:answers]
@@ -102,7 +127,6 @@ class Response < ActiveRecord::Base
     else # no answers, a decision point
       Response.create_from_options!(response_params, respondent)
     end
-
   end
 
 end

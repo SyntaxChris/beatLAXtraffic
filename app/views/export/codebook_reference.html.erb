@@ -1,0 +1,35 @@
+<div class="admin-tools">
+  <%= link_to "back to export tools", export_home_path %>
+  <table>
+    <tr>
+      <th>Nickname</th>
+      <th>Decisions</th>
+      <th>Decision Code</th>
+      <th>Answers</th>
+      <th>Answer Code</th>
+    </tr>
+    <% @nodes.each do |node| %>
+        <% if node.is_decision_point? %>
+          <% node.decision_point.decisions.each do |decision| %>
+          <tr>
+            <td><%= decision.decision_point.node.nickname %></td>
+            <td><%= decision.decision %></td>
+            <td><%= decision.codebook_identifier %></td>
+            <td><!-- 'Question' column intentionally blank for formatting --></td>
+            <td><!-- 'Answer' column intentionally blank for formatting --></td>
+          </tr>
+          <% end %>
+        <% else %>
+          <% node.question.answers.each do |answer| %>
+          <tr>
+            <td><%= answer.question.node.nickname %></td>
+            <td><!-- 'Decision Presented' column intentionally blank for formatting --></td>
+            <td><!-- 'Choice' column intentionally blank for formatting --></td>
+            <td><%= answer.answer %></td>
+            <td><%= answer.codebook_identifier %></td>
+          </tr>
+          <% end %>
+        <% end %>
+    <% end %>
+  </table>
+</div>

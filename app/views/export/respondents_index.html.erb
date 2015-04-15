@@ -1,0 +1,45 @@
+<div style="overflow: auto">
+  <%= link_to "back to export tools", export_home_path %>
+  <table>
+    <tr>
+      <th>Respondent ID</th>
+      <th>Created</th>
+      <th>Unique User ID</th>
+      <th>Playthrough number</th>
+      <th>First Path Chosen</th>
+      <th>Estimated Time Elapsed</th>
+      <th>Estimated Times Circled</th>
+      <th>Presented Time until Landing</th>
+      <th>Traffic Fevel</th>
+      <th>Flight Code</th>
+      <th>Luggage Count</th>
+      <th>Luggage Type</th>
+      <th>Picking Up</th>
+      <th>Number Arriving</th>
+      <th>Originating Location</th>
+      <th>Originating Airport Code</th>
+      <th>Experienced Error</th>
+    </tr>
+    <% @respondents.each do |respondent| %>
+      <tr>
+        <td><%= respondent.id %></td>
+        <td><%= respondent.created_at %></td>
+        <td><%= respondent.unique_user_id %></td>
+        <td><%= respondent.gameplay_number %></td>
+        <td><%= respondent.first_path_chosen %></td>
+        <td><%= respondent.time_elapsed %></td>
+        <td><%= respondent.times_circled %></td>
+        <td><%= respondent.landing_time %></td>
+        <td><%= respondent.traffic_level %></td>
+        <td><%= respondent.flight_code %></td>
+        <td><%= respondent.luggage_count %></td>
+        <td><%= respondent.luggage_type %></td>
+        <td><%= respondent.original_who_picking_up %></td>
+        <td><%= respondent.picking_up_number %></td>
+        <td><%= respondent.originating_location %></td>
+        <td><%= respondent.originating_airport_code %></td>
+        <td><%= respondent.experienced_error %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

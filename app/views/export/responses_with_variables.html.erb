@@ -1,0 +1,55 @@
+<%= link_to "back to export tools", export_home_path %>
+<table>
+  <tr>
+    <th>User ID</th>
+    <th>Respondent ID</th>
+    <th>Playthrough Number</th>
+    <th>Node Nickname</th>
+    <th>Skipped?</th>
+    <th>Answer/Choice Code</th>
+    <th>Freeform Response</th>
+  </tr>
+  <% @responses.each do |response| %>
+    <tr>
+      <td><%= response.respondent.unique_user.id %></td>
+      <td><%= response.respondent.id %></td>
+      <td><%= response.respondent.gameplay_number %></td>
+      <td><%= response.node.nickname %></td>
+      <td><%= response.skipped %></td>
+      <% if response.node.is_decision_point? %>
+        <td><%= response.decision.codebook_identifier %></td>
+      <% else %>
+        <td><%= response.answer.codebook_identifier if response.answer.present? %></td>
+      <% end %>
+      <td><%= response.freeform_response.response_text if response.freeform_response.present? %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<%#<Respondent id: 1,%>
+<%#created_at: "2015-03-20 16:32:24",%>
+<%#updated_at: "2015-03-20 16:32:44",%>
+<%#session_id: "e09edbe860940742a15d75c0f6f84220",%>
+<%#flight_time_remaining: 45,%>
+<%#time_elapsed: 0,%>
+<%#current_node_id: 117,%>
+<%#flight_code: "760",%>
+<%#passenger_count: nil,%>
+<%#luggage_count: 1,%>
+<%#original_who_picking_up: "Friend",%>
+<%#times_circled: 0,%>
+<%#originating_location: "Hong Kong",%>
+<%#landing_time: 45,%>
+<%#travel_companion: true,%>
+<%#final_who_picking_up: nil,%>
+<%#active: nil,%>
+<%#luggage_type: "giant suitcase",%>
+<%#picking_up_number: 1,%>
+<%#traffic_level: "fast",%>
+<%#originating_airport_code: "HKG",%>
+<%#experienced_error: false,%>
+<%#unique_user_id: 1,%>
+<%#gameplay_number: 1,%>
+<%#first_path_chosen: nil>%>
+

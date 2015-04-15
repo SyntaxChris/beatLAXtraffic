@@ -1,9 +1,9 @@
 <div id="mission-intro">
   <h3 class="main-question" id="stage-1-header">
-    Don't you love when this happens?
+    Uh oh, did you forget?
   </h3>
   <h3 class="main-question" id="stage-2-header" style="display:none">
-    As you rush to the car, your phone displays...
+    As you rush to the car, your phone displays the task
   </h3>
   <h3 class="main-question" id="stage-3-header" style="display: none">
     You then calmly drive towards LAX...
@@ -12,13 +12,10 @@
     You made it! Looks like the flight's not here yet
   </h3>
 
-  <div class="stage-container">
-    <div class="container-contents" id="intro-phone" style="width: 100%">
-       <div ng-include="'<%= asset_path 'svgs/_introPhone.html' %>'"></div> 
-    </div>
+  <div class="phone">
+    <div ng-include="'<%= asset_path 'svgs/_introPhone.html' %>'"></div> 
   </div>
-
-
+    
   <div id="stage-1">
     <div class="stage-container">
       <div class="container-contents" id="txt-msg-container">
@@ -33,10 +30,9 @@
           Today <span>{{ tenMinutesAgo }}</span>
         </div>
 
-
         <div class="row" id="txt-bbl-content" style="margin: 0; background-color: white">
           <div id="recieved-txt">
-            Hey buddy! DON'T FORGET TO PICK ME UP AT LAX!!
+            Hey! DON'T FORGET TO PICK ME UP AT LAX!!
           </div>
           <div id="sent-txt">
              Uhh... yeah of course!
@@ -44,18 +40,16 @@
         </div>
 
         <div class="row" id="txt-footer-container">
-          
-            <div id="phone-txt-input">
-              I FORGOT D:
-            </div>
-            <div id="phone-next-btn">
-              LETS GO!
-            </div>
-        
+          <div id="phone-txt-input">
+            Yes, you did.
+          </div>
+          <button id="phone-next-btn">
+            LETS GO!
+          </button>
         </div>
       </div>
     </div>
-  </div>
+  </div> 
 
 
   <div id="stage-2" style="display: none;">
@@ -77,7 +71,7 @@
         <div class="large-4 medium-4 small-4 columns flight">Flight <span>{{ variables.flight_code }}</span></div>
         <div class="large-4 medium-4 small-4 columns to-name">Los Angeles</div>
       </div>
-    </div>
+    </div> 
 
     <div id="stage-2-body">
       <div class="row" style="text-align: center; margin: 0; padding-top: 5px">
@@ -105,7 +99,7 @@
         </div>
       </div>
       <div class="row pickup-info" style="text-align: center; margin: 0;">
-        <div class="large-6 medium-6 small-6 columns"><span>{{ variables.picking_up_number }}</span> <span>{{ variables.original_who_picking_up }}</span></div>
+        <div class="large-6 medium-6 small-6 columns">Pickup <span>{{ variables.picking_up_number }}</span> <span>{{ variables.original_who_picking_up | lowercase }}</span></div>
         <div class="large-6 medium-6 small-6 columns" style="padding: 0">
           with <span>{{ variables.luggage_count }}</span> <span>{{ variables.luggage_type }}</span>
         </div>
@@ -116,8 +110,6 @@
         <div class="large-3 medium-3 small-3 columns traffic-level-label">
           <div ng-include="'<%= asset_path 'svgs/_home.html' %>'"></div>
         </div>
-
-        <!-- class names for car colors: .fast, .medium, .slow -->
 
         <div class="large-2 medium-2 small-2 columns traffic-level"><div ng-class="variables.traffic_level" id="level-1"></div></div>
         <div class="large-2 medium-2 small-2 columns traffic-level"><div ng-class="variables.traffic_level" id="level-2"></div></div>
@@ -140,10 +132,10 @@
 
     </div>
 
-    <div id="stage-2-btn">
+    <button id="stage-2-btn">
       LET'S GO!
-    </div>
-  </div>   
+    </button>
+  </div> 
 
 
   <div id="stage-3" style="display: none">
@@ -170,40 +162,32 @@
 
 
   <div id="stage-4" style="display: none">
-
       <div class="row" style="margin: 0; background-color: #E5E5EA; text-align: center; padding: 10px">
         Flight Status
       </div>
-
       <div class="row" style="margin: 0">
         <div id="timer-backdrop">
           <div ng-include="'<%= asset_path 'svgs/_introstopwatch.html' %>'"></div>
           <div id="bd-content">
             <div class="row" id="flight-display">
               Flight <span>{{ variables.flight_code }}</span> <br>
-              Will Land In
+              will land In
             </div>
           </div>
           <div id="display-time"><span id="mn-time">{{ variables.landing_time }}</span><span id="mn-unit">min</span></div>
         </div>
       </div>
-
-      <div class="row" style="margin:0; padding-top: 30px">
-        <div class="small-11 small-centered columns" style="text-align:center; font-size: 20px; color: #59CFEF">
-          You now need to make some choices to get your passenger on time.
-        </div>
+      <div class="choices">
+        You now need to make some choices to get your passenger on time.
       </div>
-
-      <div class="row" style="margin:0">
-        <div class="small-11 small-centered columns" style="text-align:center; font-size: 30px; padding-top: 20px; color: #59CFEF">
-          Good Luck!
-        </div>
+      <div class="good-luck">
+        Good Luck!
       </div>
-
-      <div id="stage-4-btn" ng-click="submit(null, false)">
-        LET'S GO!
+      <div class="btn-row">
+        <button id="stage-4-btn" ng-click="submit(null, false); initializeDash()">
+          LET'S GO!
+        </button>
       </div>
-
     </div>
   </div>
 </div>

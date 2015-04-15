@@ -1,17 +1,25 @@
 <div id="zip-code-template">
-  <div class="row">
-    <h3 class="main-question">
-      {{ currentNode.question.question }}
-    </h3>
-    <div class="sub-header">Enter your zip code</div>
-  </div>
+  <h3 class="main-question">
+    {{ currentNode.question.question }}
+  </h3>
+  <div class="sub-header">Enter your zip code</div>
   <div class="row">
     <div class="ferrari-container">
       <div ng-include="'<%= asset_path 'svgs/_ferrari.html' %>'"></div>
       <div class="zip-container">
         <div class="text-container">
-          <textarea id="zip-input" cols="1" rows="1" maxlength="5"></textarea>
-          <div class="zip-next" ng-click="delaySubmit(null, false)">NEXT</div>
+          <div class="btn-ctnr">
+            <button class="zip-next" ng-click="delaySubmit(null, false)" ng-disabled="currentOther.text.length !== 5">NEXT</button>
+          </div>
+          <textarea
+            id="zip-input"
+            cols="1"
+            rows="1"
+            maxlength="5"
+            ng-model="currentOther.text"
+            ng-change="determineOtherText(currentOther.text, currentNode.answers[0].id); addAnswerToCurrentAnswers(currentNode.answers[0])"
+            >
+          </textarea>
         </div>
       </div>
     </div>

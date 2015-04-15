@@ -1,4 +1,7 @@
 #mission-intro{
+  .main-question{
+    font-size: 3vw;
+  }
   h1{
     color: white;
   }
@@ -9,21 +12,26 @@
     text-shadow: 0 0 10px rgba(0,0,0,.3);
   }
 
+  .phone{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    margin-top: 0;
+    div[ng-include]{
+      position: relative;
+      width: 390px;
+      margin: 0 auto;
+      svg{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
   .stage-container{
     position: absolute; left: 50%;
     .container-contents{
       position: relative; left: -50%;
-    }
-  }
-
-  #intro-phone{
-    #ear-piece{
-      position: absolute;
-      top: 20%;
-    }
-    svg {
-      width: 650px;
-      height: 650px;
     }
   }
 
@@ -32,7 +40,7 @@
     left: 50%;
 
     #txt-msg-container{
-      width: 330px;
+      width: 328px;
       height: 470px; 
       text-align: center; 
       margin-top: 75px; 
@@ -48,7 +56,7 @@
         background-color: #E5E5EA; 
         text-align: left;
         width: 60%; 
-        font-size: 13px; 
+        font-size: 16px; 
         margin-top: 15px; 
         margin-bottom: 5px; 
         margin-left: 5%; 
@@ -72,13 +80,14 @@
       #sent-txt {
         position: absolute;
         right: 0;
+        padding: 5px;
         margin-right: 15px;
         margin-top: 30px;
         background-color: #49B9FB; 
-        width: 55%; 
+        width: 65%; 
         border-radius: 10px; 
         color: white; 
-        font-size: 13px; 
+        font-size: 16px; 
       }
 
       #sent-txt:before {
@@ -113,7 +122,7 @@
         color: #85878B; 
       }
 
-      #phone-next-btn{
+      button#phone-next-btn{
         cursor: pointer; 
         position: relative;
         width: 100%;
@@ -135,11 +144,11 @@
   #stage-2{
     position: relative; 
     width: 330px; 
-    height: 465px;
+    height: 463px;
     margin-left:auto; 
     margin-right:auto; 
     background-color: white; 
-    margin-top: 85px;
+    margin-top: 87px;
     border: 1px solid black; 
     #stage-2-header{
       background-color: #00B8E5; 
@@ -280,17 +289,16 @@
         padding-left: 0;
       }
     }
-    #stage-2-btn{
+    button#stage-2-btn{
       position: absolute;
+      font-family: 'Quicksand', sans-serif;
+      cursor: pointer; 
       width: 100%;
-      bottom: 0;
+      bottom: -20px;
+      padding: 20px;
+      font-size: 25px;
+      color: white;
       background-color: #F84048; 
-      color: white; 
-      text-align: center; 
-      font-size: 25px; 
-      font-weight: 700; 
-      padding: 20px 0 20px 0; 
-      cursor: pointer;
     }
   }
 
@@ -319,18 +327,17 @@
         }
       }
 
-
       #palm-1{
         position: absolute;
         z-index: 1;
         width: 10%;
         top: -40%;
         right: -10%;
-        -webkit-animation: palm-far 3s linear infinite;
-        -moz-animation: palm-far 3s linear infinite;
-        -o-animation: palm-far 3s linear infinite;
-        -ms-animation: palm-far 3s linear infinite;
-        animation: palm-far 3s linear infinite;
+        -webkit-animation: palm 3s linear infinite;
+        -moz-animation: palm 3s linear infinite;
+        -o-animation: palm 3s linear infinite;
+        -ms-animation: palm 3s linear infinite;
+        animation: palm 3s linear infinite;
         svg{
           width: 60%;
           height: 60%;
@@ -381,7 +388,7 @@
           z-index: 4;
           top: -35%;
           width: 20%;
-          left: -20%;
+          left: -40%;
           -webkit-animation: car-rumble 0.5s infinite;
           -moz-animation: car-rumble 0.5s infinite;
           -o-animation: car-rumble 0.5s infinite;
@@ -397,11 +404,11 @@
           width: 20%;
           top: -80px;
           right: -20%;
-          -webkit-animation: palm-near 0.5s linear infinite;
-          -moz-animation: palm-near 0.5s linear infinite;
-          -o-animation: palm-near 0.5s linear infinite;
-          -ms-animation: palm-near 0.5s linear infinite;
-          animation: palm-near 0.5s linear infinite;
+          -webkit-animation: palm 0.7s linear infinite;
+          -moz-animation: palm 0.7s linear infinite;
+          -o-animation: palm 0.7s linear infinite;
+          -ms-animation: palm 0.7s linear infinite;
+          animation: palm 0.7s linear infinite;
           svg {
             width: 100%;
             height: 100%;
@@ -414,6 +421,7 @@
   #stage-4{
     position: relative; 
     width: 330px; 
+    height: 470px;
     margin-left:auto; 
     margin-right:auto; 
     background-color: white; 
@@ -465,145 +473,36 @@
         }
       }
     }
-    #stage-4-btn{
-      margin-top: 50px;
-      background-color: #F84048; 
-      color: white; 
-      text-align: center; 
-      font-size: 25px; 
-      font-weight: 700; 
-      padding: 20px 0 20px 0; 
-      cursor: pointer;
+    .choices{
+      margin-top: 5%;
+      text-align:center; 
+      font-size: 20px; 
+      color: #59CFEF
+    }
+    .good-luck{
+      text-align:center; 
+      font-size: 30px; 
+      padding-top: 20px; 
+      color: #59CFEF;
+    }
+    .btn-row{
+      margin-top: 5%;
+      button{
+        font-family: 'Quicksand', sans-serif;
+        cursor: pointer; 
+        position: relative;
+        width: 100%;
+        margin-top: 45px;
+        margin-bottom: 0;
+        padding: 20px;
+        font-size: 25px;
+        color: white;
+        background-color: #F84048; 
+      }
     }
   }
 }
 
-
-@-webkit-keyframes run-to-car {
-    0% {background-color: #FF999D;}
-    50% {background-color: #FF000B;}
-    100% {background-color: #FF999D;}
-}
-@-moz-keyframes run-to-car {
-    0% {background-color: #FF999D;}
-    50% {background-color: #FF000B;}
-    100% {background-color: #FF999D;}
-}
-@-o-keyframes run-to-car {
-    0% {background-color: #FF999D;}
-    50% {background-color: #FF000B;}
-    100% {background-color: #FF999D;}
-}
-@-ms-keyframes run-to-car {
-    0% {background-color: #FF999D;}
-    50% {background-color: #FF000B;}
-    100% {background-color: #FF999D;}
-}
-@keyframes run-to-car {
-    0% {background-color: #FF999D;}
-    50% {background-color: #FF000B;}
-    100% {background-color: #FF999D;}
-}
-
-
-@-webkit-keyframes traffic-car {
-  0% {left: -163px;}
-  100% {left: 5px;}
-}
-
-
-
-@-webkit-keyframes car-race {
-  0% {left: -20%;}
-  100% {left: 120%;}
-}
-@-moz-keyframes car-race {
-  0% {left: -20%;}
-  100% {left: 120%;}
-}
-@-o-keyframes car-race {
-  0% {left: -20%;}
-  100% {left: 120%;}
-}
-@-ms-keyframes car-race {
-  0% {left: -20%;}
-  100% {left: 120%;}
-}
-@keyframes car-race {
-  0% {left: -20%;}
-  100% {left: 120%;}
-}
-
-
-@-webkit-keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
-}
-@-moz-keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
-}
-@-o-keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
-}
-@-ms-keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
-}
-@keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
-}
-
-
-@-webkit-keyframes palm-near {
-  0% {right: -10%;}
-  100% {right: 100%;}
-}
-@-moz-keyframes palm-near {
-  0% {right: -10%;}
-  100% {right: 100%;}
-}
-@-o-keyframes palm-near {
-  0% {right: -10%;}
-  100% {right: 100%;}
-}
-@-ms-keyframes palm-near {
-  0% {right: -10%;}
-  100% {right: 100%;}
-}
-@keyframes palm-near {
-  0% {right: -10%;}
-  100% {right: 100%;}
-}
-
-
-@-webkit-keyframes palm-far {
-  0% {right: -20%;}
-  100% {right: 100%;}
-}
-@-moz-keyframes palm-far {
-  0% {right: -20%;}
-  100% {right: 100%;}
-}
-@-o-keyframes palm-far {
-  0% {right: -20%;}
-  100% {right: 100%;}
-}
-@-ms-keyframes palm-far {
-  0% {right: -20%;}
-  100% {right: 100%;}
-}
-@keyframes palm-far {
-  0% {right: -20%;}
-  100% {right: 100%;}
-}
 
 
 @media only screen and (max-width : 460px) { 
@@ -614,20 +513,39 @@
       padding: 0;
       margin: 0;
     }
-    h3.main-question#stage-2-header{
-      font-size: 4.3vw;
-    }
-    #intro-phone{
-      svg{
-        display: none;
-      }
+    .phone{
+      opacity: 0;
     }
     #stage-1{
       top: -6%;
       position: absolute;
       .stage-container{
         #txt-msg-container{
-          height: 450px;
+          height: 400px;
+          width: 280px;
+        }
+        #txt-bbl-content{
+          #sent-txt{
+            margin-top: 0%;
+          }
+        }
+      }
+      #txt-footer-container{
+        button#phone-next-btn{
+          cursor: pointer; 
+          position: relative;
+          width: 100%;
+          margin-top: 10px;
+          margin-bottom: -14px;
+          padding: 20px;
+          font-size: 25px;
+          color: white;
+          background-color: #F84048; 
+          -webkit-animation: run-to-car 2s linear infinite;
+          -moz-animation: run-to-car 2s linear infinite;
+          -o-animation: run-to-car 2s linear infinite;
+          -ms-animation: run-to-car 2s linear infinite;
+          animation: run-to-car 2s linear infinite;
         }
       }
     }
@@ -635,7 +553,8 @@
       position: relative;
       // bottom: 0;
       margin-top: 0;
-      height: 450px;
+      height: 400px;
+      width: 280px;
       #stage-2-header{
         background-color: #00B8E5; 
         color: white; 
@@ -657,7 +576,7 @@
           margin-top: -2%;
         }
         .from{
-          font-size: 30px; 
+          font-size: 28px; 
           padding-top: 10px; 
           text-align: left; 
           font-weight: 700;
@@ -675,22 +594,22 @@
           }
         }
         .to{
-          font-size: 30px; 
+          font-size: 28px; 
           padding-top: 10px; 
           text-align: right; 
           font-weight: 700;
           margin-top: -4%;
         }
         .from-name{
-          font-size: 12px; 
+          font-size: 10px; 
           text-align: left;
           padding-left: 20px;
           // margin-top: -2%;
         }
         .flight{
           position: absolute;
-          left: 105px;
-          font-size: 12px; 
+          left: 95px;
+          font-size: 9px; 
           text-align: center;
           // margin-top: -2%;
           padding:0;
@@ -700,7 +619,7 @@
           }
         }
         .to-name{
-          font-size: 12px; 
+          font-size: 9px; 
           text-align: right;
           // margin-top: -2%;
           // padding:0;
@@ -800,18 +719,28 @@
         }
       }
     }
+
     #stage-3{
       #speeding-bg{
+        padding-bottom: 70%;
         #palm-1{
+          top: -15%;
+          // right: 10%;
           svg{
 
           }
         }
         #road{
+          padding-bottom: 10%; 
           #line{
 
           }
           #speeding-bbl{
+            bottom: 115%;
+            left: -10%;
+            width: 200%;
+            border-radius: 10px;
+            font-size: 20px;
 
           }
           #speeding-bbl:before {
@@ -826,82 +755,239 @@
             border-right: 5px solid transparent;
           }
           #speeding-car{
+            left: -40%;
             svg{
-              
+              width: 180%;
             }
           }
           #palm-2{
+            // right: 10%;
+            top: 100%;
             svg {
+              width: 150%;
+              height: 150%;
             }
           }
         } 
       }
     }
 
-  #stage-4{
-    position: relative; 
-    // bottom: 10%;
-    margin-top: 0;
-    height: 439px;
-    #timer-backdrop{
-      position: relative;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 40px;
-      width: 90%;
-      height: 120px;
-      background-color: #F2F2F2;
-      border-radius: 60px;
-      svg {
-        position: absolute;
-        top: -20px;
-        left: 60px;
-        width: 120%;
-        height: 120%;
-      }
-      #bd-content{
-        #flight-display{
-          margin:0; 
-          padding-top: 35px; 
-          font-size: 20px; 
-          font-weight: 700; 
-          padding-left: 30px; 
-          opacity: 0.6;
-        }
-      }
-      #display-time{
-        position: absolute;
-        top: 45px;
-        left: 140px;
-        width: 120px;
-        color: white;
-        text-align: right;
-        span#mn-time{
-          padding-right: 5px;
-          font-size: 50px;
-        }
-        span#mn-unit{
+    #stage-4{
+      position: relative; 
+      // bottom: 10%;
+      margin-top: 0;
+      height: 400px;
+      width: 280px;
+      #timer-backdrop{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        width: 90%;
+        height: 120px;
+        background-color: #F2F2F2;
+        border-radius: 60px;
+        svg {
           position: absolute;
-          margin-top: 20px;
-          font-size: 18px;
           top: -15px;
-          left: 115px;
+          left: 50px;
+          width: 115%;
+          height: 115%;
+        }
+        #bd-content{
+          #flight-display{
+            margin:0; 
+            padding-top: 35px; 
+            font-size: 15px; 
+            font-weight: 700; 
+            padding-left: 30px; 
+            opacity: 0.6;
+          }
+        }
+        #display-time{
+          position: absolute;
+          top: 45px;
+          left: 92px;
+          width: 120px;
+          color: white;
+          text-align: right;
+          span#mn-time{
+            padding-right: 5px;
+            font-size: 40px;
+          }
+          span#mn-unit{
+            position: absolute;
+            margin-top: 20px;
+            font-size: 18px;
+            top: -15px;
+            left: 115px;
+          }
         }
       }
-    }
-    #stage-4-btn{
-      margin-top: 7%;
-      width: 100%;
-      background-color: #F84048; 
-      color: white; 
-      text-align: center; 
-      font-size: 25px; 
-      font-weight: 700; 
-      padding: 20px 0 20px 0; 
-      cursor: pointer;
+      .good-luck{
+        text-align:center; 
+        font-size: 25px;
+        font-weight: 700; 
+        padding-top: 5px; 
+        color: #59CFEF;
+      }
+      .btn-row{
+        margin-top: -3.5%;
+        #stage-4-btn{
+          margin-top: 7%;
+          width: 100%;
+          background-color: #F84048; 
+          color: white; 
+          text-align: center; 
+          font-size: 25px; 
+          font-weight: 700; 
+          padding: 20px 0 20px 0; 
+          cursor: pointer;
+        }
+      }
     }
   }
+
+
+  @-webkit-keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
+  }
+  @-moz-keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
+  }
+  @-o-keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
+  }
+  @-ms-keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
+  }
+  @keyframes car-race {
+    0% {left: -40%;}
+    100% {left: 120%;}
   }
 
 }
+
+
+
+
+@-webkit-keyframes run-to-car {
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
+}
+@-moz-keyframes run-to-car {
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
+}
+@-o-keyframes run-to-car {
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
+}
+@-ms-keyframes run-to-car {
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
+}
+@keyframes run-to-car {
+    0% {background-color: #FF999D;}
+    50% {background-color: #FF000B;}
+    100% {background-color: #FF999D;}
+}
+
+
+@-webkit-keyframes traffic-car {
+  0% {left: -163px;}
+  100% {left: 5px;}
+}
+
+
+
+@-webkit-keyframes car-race {
+  0% {left: -40%;}
+  100% {left: 120%;}
+}
+@-moz-keyframes car-race {
+  0% {left: -40%;}
+  100% {left: 120%;}
+}
+@-o-keyframes car-race {
+  0% {left: -40%;}
+  100% {left: 120%;}
+}
+@-ms-keyframes car-race {
+  0% {left: -40%;}
+  100% {left: 120%;}
+}
+@keyframes car-race {
+  0% {left: -40%;}
+  100% {left: 120%;}
+}
+
+
+@-webkit-keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+@-moz-keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+@-o-keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+@-ms-keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+@keyframes car-rumble {
+  0% {-webkit-transform:rotate(1deg);}
+  50% {-webkit-transform:rotate(-1deg);}
+  100% {-webkit-transform:rotate(1deg);}
+}
+
+@-webkit-keyframes car-drive {
+   0% {transform: translate3d(0,0,0);
+       -webkit-transform:translate3d(0,0,0);
+     }
+   100% {transform: translate3d(1100%,0,0);
+       -webkit-transform:translate3d(1100%,0,0);}
+}
+
+
+@-webkit-keyframes palm {
+   0% {transform: translate3d(0,0,0);
+       -webkit-transform:translate3d(0,0,0);}
+   100% {transform: translate3d(-1100%,0,0);
+       -webkit-transform:translate3d(-1100%,0,0);}
+}
+@-moz-keyframes palm {
+  0% {right: -10%;}
+  100% {right: 100%;}
+}
+@-o-keyframes palm {
+  0% {right: -10%;}
+  100% {right: 100%;}
+}
+@-ms-keyframes palm {
+  0% {right: -10%;}
+  100% {right: 100%;}
+}
+@keyframes palm {
+  0% {right: -10%;}
+  100% {right: 100%;}
+}
+
+
 

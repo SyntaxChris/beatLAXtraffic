@@ -29,9 +29,6 @@ $(document).ready(function(){
 
 		// var parkingLogic = Math.floor(Math.random()*2);
 
-
-
-
 		// parking spinner
 		if(spinButtonId === 'parking'){
 			if (parkingLogic === 1){
@@ -60,7 +57,7 @@ $(document).ready(function(){
 
 	            setTimeout(
 			 		function(){
-			   			$(".win.parking").css('fill', 'red');
+			   			$(".win.parking").css('fill', '#00FF00');
 			   			$(".yes-font").css('fill', 'white');
 			  		}, 3000
 			  	);
@@ -86,15 +83,12 @@ $(document).ready(function(){
 		else if (spinButtonId === 'pickup'){
 			if (pickupLogic === 1){
 		 		$(".wheel").addClass("not-there");
-
-
 				setTimeout(
 			 		function(){
 			   			$(".lose").css('fill', 'red');
+			   			$(".lose-txt").css('fill', 'white');
 			  		}, 3000
 			  	);
-
-
 			 	setTimeout(
 			 		function(){
 			   			$(".spin-button").hide();
@@ -107,15 +101,11 @@ $(document).ready(function(){
 		 	}
 		 	else {
 		 		$(".wheel").addClass("there");
-
 	            setTimeout(
 			 		function(){
-			   			$(".win").css('fill', 'red');
-			   			$(".yes-font").css('fill', 'white');
+			   			$(".win").css('fill', '#00FF00');
 			  		}, 3000
 			  	);
-
-		 		
 		 		setTimeout(
 			 		function(){
 			 			$(".chance-time").hide();
