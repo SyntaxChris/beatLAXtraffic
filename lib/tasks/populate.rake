@@ -152,7 +152,7 @@ namespace :populate do
         question: "Which of these amenities would you prioritize having? Select your top 3.",
         question_type_id: many_choice.id
       ).first_or_create
-        itf3a1= Answer.where(question_id: itf3q.id, answer: "Free short-term parking", icon_name: "parking").first_or_create
+        itf3a1= Answer.where(question_id: itf3q.id, answer: "Convenient Parking", icon_name: "parking").first_or_create
         itf3a2= Answer.where(question_id: itf3q.id, answer: "A way to make sure I know the status of my flight.", icon_name: "computer").first_or_create
         itf3a3= Answer.where(question_id: itf3q.id, answer: "A place to get food or a drink", icon_name: "food").first_or_create
         itf3a4= Answer.where(question_id: itf3q.id, answer: "Easy ways to get in and out of the location", icon_name: "exit").first_or_create
@@ -184,7 +184,7 @@ namespace :populate do
         question: "Which of these amenities would you prioritize having? Select your top 3.",
         question_type_id: many_choice.id
       ).first_or_create
-        itf3noitfa1= Answer.where(question_id: itf3noitfq.id, answer: "Free short-term parking", icon_name: "parking").first_or_create
+        itf3noitfa1= Answer.where(question_id: itf3noitfq.id, answer: "Convenient Parking", icon_name: "parking").first_or_create
         itf3noitfa2= Answer.where(question_id: itf3noitfq.id, answer: "A way to make sure I know the status of my passenger’s flight.", icon_name: "computer").first_or_create
         itf3noitfa3= Answer.where(question_id: itf3noitfq.id, answer: "A place to get food or a drink", icon_name: "food").first_or_create
         itf3noitfa4= Answer.where(question_id: itf3noitfq.id, answer: "Easy ways to get in and out of the location", icon_name: "exit").first_or_create
