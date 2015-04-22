@@ -247,3 +247,15 @@ body, html,button,pre {
 	}
 
 }
+
+
+@media only screen and (min-width : 1360px) {
+	body{
+		h3.main-question{
+			font-size: 40px;
+		}
+		.sub-header{
+			font-size: 30px;
+		}
+	}
+}
