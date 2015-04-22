@@ -184,6 +184,17 @@
 	#splash-page {
 		.splash-header{
 			font-size: 53px;
+			.sub-header{
+				font-size: 30px;
+			}
+		}
+		.lax-start-cntr{
+			button{
+				font-size: 50px;
+			}
+			.optimized{
+				font-size: 15px;
+			}
 		}
 	}
 }
