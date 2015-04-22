@@ -28,7 +28,7 @@
 				}
 			}
 		}
-		.bbl-ctnr{
+		.bbl-ctnr{              
 			position: relative;
 			display: inline-block;
 			float: left;
@@ -937,6 +937,20 @@
 				}
 			}
 		}
+	}
+}
+
+@media screen and (min-width: 1360px){
+	#strategy-questions{
+	    .strategy-ctnr{
+			.bbl-ctnr{
+				.bbl{
+					.text{
+						font-size: 18px;
+					}
+				}
+			}
+	    }
 	}
 }
 
