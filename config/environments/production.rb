@@ -34,7 +34,7 @@ Rails.application.configure do
   config.assets.digest = true
 
   # Version of your assets, change this if you want to expire all your assets.
-  config.assets.version = '0.8'
+  config.assets.version = '0.9'
   # attempting to use assets.rb to override the above
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
