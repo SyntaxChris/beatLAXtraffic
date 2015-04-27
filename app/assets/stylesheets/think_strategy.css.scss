@@ -1,10 +1,8 @@
 #think-strategy {
   .think-bbl-cntnr{
-    
     text-align: center;
     position: relative;
     padding-bottom: 15%;
-
     .btn-cntnr{
       position: absolute;
       cursor: pointer;
@@ -12,11 +10,11 @@
       height: 130%;
       margin: 0;
       padding: 6% 7% 7% 7%;
-  
       background: image_url('thoughtBbl.svg') no-repeat center;
       background-size: 100% 100%;
       font-size: 1.2vw;
       line-height: 1;
+      opacity: 0.8;
       &.left-button{
         left: 5%;  
         top: 50%;
@@ -29,18 +27,9 @@
         left: 65%;
         top: 50%;
       }
-      svg{
-          position: relative;
-          width: 100%;
-          height: 100%;
+      &:hover{
+        opacity: 1;       
       }
-      button{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: red;
-      }
-
     }
   }
   .head-ctnr{
@@ -59,12 +48,26 @@
       }
     }
   }
+  .next-btn-cntnr{
+    position: relative;
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 20%;
+    
+    button{
+      display: none;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      background: #F05759;
+      border-radius: 5px;
+    }
+  }
 }
 
 @media only screen and (max-width: 680px){
   #think-strategy {
     .think-bbl-cntnr{
-      
       text-align: center;
       position: relative;
       padding-bottom: 15%;
@@ -75,7 +78,6 @@
         height: 200%;
         margin: 0;
         padding: 10%;
-    
         background: image_url('thoughtBbl.svg') no-repeat center;
         background-size: 100% 100%;
         font-size: 2vw;
@@ -96,13 +98,6 @@
             width: 100%;
             height: 100%;
         }
-        button{
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background: red;
-        }
-
       }
     }
     .head-ctnr{
@@ -119,6 +114,21 @@
           width: 100%;
           height: 100%;
         }
+      }
+    }
+    .next-btn-cntnr{
+      position: relative;
+      width: 50%;
+      margin: 0 auto;
+      padding-top: 65%;
+      
+      button{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding: 7% 5% 7% 5%;
+        background: #F05759;
+        border-radius: 5px;
       }
     }
   }
@@ -216,12 +226,10 @@
 
 @media only screen and (max-width : 460px) {
   #think-strategy {
-    .think-bbl-cntnr{
-      
+    .think-bbl-cntnr{ 
       text-align: center;
       position: relative;
       padding-bottom: 15%;
-
       .btn-cntnr{
         position: absolute;
         cursor: pointer;
@@ -229,7 +237,6 @@
         height: 250%;
         margin: 0;
         padding: 10%;
-    
         background: image_url('thoughtBbl.svg') no-repeat center;
         background-size: 100% 100%;
         font-size: 3.8vw;
@@ -245,18 +252,7 @@
           left: 50%;
           top: 230%;
         }
-        svg{
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        button{
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          background: red;
-        }
-
+        
       }
     }
     .head-ctnr{
@@ -276,16 +272,22 @@
         }
       }
     }
+    .next-btn-cntnr{
+      position: relative;
+      width: 50%;
+      margin: 0 auto;
+      padding-top: 80%;
+      
+      button{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        padding: 7% 5% 7% 5%;
+        background: #F05759;
+        border-radius: 5px;
+      }
+    }
   }
 } 
 
 
-@-webkit-keyframes grow{
-   0% {width: 90%; height: 90%}
-   100% {width: 100%; height: 100%}
-}
-
-@-webkit-keyframes shrink{
-   0% {width: 100%; height: 100%}
-   100% {width: 90%; height: 90%}
-}

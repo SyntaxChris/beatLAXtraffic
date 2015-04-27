@@ -10,30 +10,17 @@
       ng-class="{
         'left-button'   : $index === 0,
         'center-button' : $index === 1,
-        'right-button'  : $index === 2 }"
-      >
+        'right-button'  : $index === 2 }">
         {{ answer.answer }}
     </div>
   </div>
-  <!-- <div class="think-nxt-btn-ctnr">
+  <div class="head-ctnr">
+    <div class="thought-head" ng-include="'<%= asset_path 'svgs/_head.html' %>'"></div>
+  </div>
+  <div class="next-btn-cntnr">
     <button ng-click="advancePlane(); submit(null, true)" class="plane-advance think-nxt-btn">
       NEXT
     </button>
-  </div>
-  <div class="bbl-cntnr">
-    <div class="thought-bbl" 
-      ng-class="{ 'left-bbl'   : $index === 0, 
-                  'center-bbl' : $index === 1, 
-                  'right-bbl'  : $index === 2 }"
-
-      ng-click="addAnswerToCurrentAnswers(answer)" 
-      ng-repeat="answer in currentNode.answers"
-    >
-
-    </div>
-  </div> -->
-  <div class="head-ctnr">
-    <div class="thought-head" ng-include="'<%= asset_path 'svgs/_head.html' %>'"></div>
   </div>
 </div>
 <!-- END WHY DO YOU THINK THIS STRATEGY WILL WORK -->
