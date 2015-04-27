@@ -3,8 +3,8 @@ $(document).ready(function(){
   // var $thinkStrategy = $('#think-strategy'),
   var $body = $('body');
 
-  $body.on("click", ".thought-bbl button", function(){
-    $(".thought-bbl button").css("opacity", 0.6);
+  $body.on("click", ".btn-cntnr", function(){
+    $(".btn-cntnr").css("opacity", 0.8);
     $(this).css("opacity", 1);
     $(".think-nxt-btn").fadeIn();
   });
