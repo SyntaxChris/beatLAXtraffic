@@ -1,5 +1,5 @@
 #splash-page {
-	overflow-y: hidden;
+	// overflow-y: hidden;
 	overflow-x: hidden;
 	.splash-header{
 		font-family: 'Quicksand', sans-serif;
@@ -24,7 +24,7 @@
 		position: relative;
 		z-index: 30;
 		margin: 0 auto;
-		width: 35%;
+		width: 50%;
 		min-width: 200px;
 		button{
 			background-color: #F05759;
@@ -33,11 +33,8 @@
 			font-size: 3vw;
 		}
 		.optimized{
-			position:absolute;
-			top: 80%;
-			left: 0;
 			color: white;
-			font-size: 0.8vw;
+			font-size: 16px;
 			width: 100%;
 			text-align: center;
 			text-shadow: 0 3px 5px rgba(0,0,0,.5);
@@ -61,21 +58,6 @@
 
 @media screen and (orientation : portrait) {
 	#splash-page {
-		overflow-y: hidden;
-		overflow-x: hidden;
-		.lax-start-cntr{
-			position: relative;
-			z-index: 30;
-			margin: 0 auto;
-			width: 35%;
-			min-width: 200px;
-			button{
-				background-color: #F05759;
-				font-family: 'Quicksand', sans-serif;
-				width: 100%;
-				font-size: 5vw;
-			}
-		}
 		.splash-ctnr{
 			position: absolute;
 			width: 170%;
@@ -118,30 +100,21 @@
 			}
 		}
 		.lax-start-cntr{
-			position: relative;
-			z-index: 30;
-			margin: 0 auto;
-			width: 35%;
-			min-width: 200px;
+			width: 80%;
 			button{
-				background-color: #F05759;
-				font-family: 'Quicksand', sans-serif;
-				width: 100%;
-				margin-top: 13%;
-				padding: 10px 0 10px 0;
 				font-size: 7vw;
-				font-weight: 700;
 			}
 			.optimized{
-				position:absolute;
-				top: 80%;
-				left: 0;
-				color: white;
-				font-size: 2vw;
-				font-weight: 500;
-				width: 100%;
-				text-align: center;
-				text-shadow: 0 2px 3px rgba(0,0,0,.5);
+				font-size: 3vw;
+				// position:absolute;
+				// top: 80%;
+				// left: 0;
+				// color: white;
+				// font-size: 2vw;
+				// font-weight: 500;
+				// width: 100%;
+				// text-align: center;
+				// text-shadow: 0 2px 3px rgba(0,0,0,.5);
 			}
 		}
 		.splash-ctnr{
@@ -161,17 +134,29 @@
 	}
 }
 
-@media screen and (max-width : 400px) {
+@media screen and (max-width : 760px) {
 	#splash-page {
 		.lax-start-cntr{
 			.optimized{
-				position:absolute;
-				top: 80%;
-				left: -20%;
+				color: white;
+				font-size: 2vw;
+				font-weight: 500;
+				width: 100%;
+				text-align: center;
+				text-shadow: 0 2px 3px rgba(0,0,0,.5);
+			}
+		}
+	}
+}
+
+@media screen and (max-width : 450px) {
+	#splash-page {
+		.lax-start-cntr{
+			.optimized{
 				color: white;
 				font-size: 3.3vw;
 				font-weight: 500;
-				width: 140%;
+				width: 100%;
 				text-align: center;
 				text-shadow: 0 2px 3px rgba(0,0,0,.5);
 			}
