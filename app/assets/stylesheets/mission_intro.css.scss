@@ -937,32 +937,24 @@
   100% {-webkit-transform:rotate(1deg);}
 }
 @-moz-keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
+  0% {-moz-transform:rotate(1deg);}
+  50% {-moz-transform:rotate(-1deg);}
+  100% {-moz-transform:rotate(1deg);}
 }
 @-o-keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
+  0% {-o-transform:rotate(1deg);}
+  50% {-o-transform:rotate(-1deg);}
+  100% {-o-transform:rotate(1deg);}
 }
 @-ms-keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
+  0% {-ms-transform:rotate(1deg);}
+  50% {-ms-transform:rotate(-1deg);}
+  100% {-ms-transform:rotate(1deg);}
 }
 @keyframes car-rumble {
-  0% {-webkit-transform:rotate(1deg);}
-  50% {-webkit-transform:rotate(-1deg);}
-  100% {-webkit-transform:rotate(1deg);}
-}
-
-@-webkit-keyframes car-drive {
-   0% {transform: translate3d(0,0,0);
-       -webkit-transform:translate3d(0,0,0);
-     }
-   100% {transform: translate3d(1100%,0,0);
-       -webkit-transform:translate3d(1100%,0,0);}
+  0% {transform:rotate(1deg);}
+  50% {transform:rotate(-1deg);}
+  100% {transform:rotate(1deg);}
 }
 
 
