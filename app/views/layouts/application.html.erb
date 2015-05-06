@@ -13,22 +13,42 @@
     <!-- Modified 4/24/15 -->
     <!-- change background color here -->
     <body class="{{$root.bodyClass}} env-<%= Rails.env %>">
-        <div id="fb-root"></div>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= yield %>
-        <%= javascript_include_tag "vendor/modernizr" %>
-        <%= csrf_meta_tags %>
-        <%= javascript_include_tag "application" %>
-        <% if Rails.env.production? %>
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-            ga('create', 'UA-61124503-1', 'auto');
-            ga('send', 'pageview');
-        </script>
-        <% end %>
+
+      <% if Rails.env.production? %>
+        <!--
+          Start of DoubleClick Floodlight Tag: Please do not remove
+          Activity name of this tag: RT - BeatLAXTraffic.com
+          URL of the webpage where the tag is expected to be placed: http://beatlaxtraffic.com/
+          This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
+          Creation Date: 04/28/2015
+          -->
+              <script type="text/javascript">
+          var axel = Math.random() + "";
+          var a = axel * 10000000000000;
+          document.write('<iframe src="http://4845407.fls.doubleclick.net/activityi;src=4845407;type=rt-be0;cat=rt-be0;ord=1;num=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+          </script>
+          <noscript>
+            <iframe src="http://4845407.fls.doubleclick.net/activityi;src=4845407;type=rt-be0;cat=rt-be0;ord=1;num=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+          </noscript>
+        <!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+      <% end %>
+
+      <div id="fb-root"></div>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+      <%= javascript_include_tag "vendor/modernizr" %>
+      <%= csrf_meta_tags %>
+      <%= javascript_include_tag "application" %>
+      <% if Rails.env.production? %>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-61124503-1', 'auto');
+          ga('send', 'pageview');
+      </script>
+      <% end %>
     </body>
 </html>
