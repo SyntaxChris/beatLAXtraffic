@@ -1,0 +1,186 @@
+#incompatible {
+	// overflow-y: hidden;
+	overflow-x: hidden;
+	.splash-header{
+		font-family: 'Quicksand', sans-serif;
+		text-shadow: 0 3px 5px rgba(0,0,0,.5);
+		-webkit-text-shadow: 0 3px 5px rgba(0,0,0,.5);
+		position: relative;
+		text-align: center;
+		font-size: 4vw;
+		font-weight: 700;
+		width: 100%;
+		color: white;
+		line-height: 1;
+		margin: 0 auto;
+		.sub-header{
+			color: white;
+			font-size: 2vw;
+			font-weight: 700;
+			padding: 2%;
+		}
+	}
+	.lax-start-cntr{
+		position: relative;
+		z-index: 30;
+		margin: 0 auto;
+		width: 50%;
+		min-width: 200px;
+		button{
+			background-color: #F05759;
+			font-family: 'Quicksand', sans-serif;
+			width: 100%;
+			font-size: 3vw;
+		}
+		.optimized{
+			color: white;
+			font-size: 16px;
+			width: 100%;
+			text-align: center;
+			text-shadow: 0 3px 5px rgba(0,0,0,.5);
+		}
+	}
+	.splash-ctnr{
+		position: absolute;
+		width: 100%;
+		left: 0;
+		bottom: -13%;
+		div[ng-include]{
+			position: relative;
+			margin: 0 auto;	
+			svg{
+				width: 100%;
+				height: 100%;
+			}	
+		}
+	}
+}
+
+@media screen and (orientation : portrait) {
+	#splash-page {
+		.splash-ctnr{
+			position: absolute;
+			width: 170%;
+			left: -30%;
+			bottom: -5%;
+			div[ng-include]{
+				position: relative;
+				margin: 0 auto;	
+				svg{
+					width: 100%;
+					height: 100%;
+				}	
+			}
+		}
+	}
+}
+
+@media screen and (max-width : 450px) {
+	#splash-page {
+		.splash-header{
+			font-family: 'Quicksand', sans-serif;
+			text-shadow: 0 2px 3px rgba(0,0,0,.5);
+			-webkit-text-shadow: 0 2px 3px rgba(0,0,0,.5);
+			position: relative;
+			text-align: center;
+			font-size: 7vw;
+			font-weight: 700;
+			width: 95%;
+			color: white;
+			line-height: 1;
+			margin: 0 auto;
+			.sub-header{
+				margin-top: 2%;
+				text-shadow: 0 2px 3px rgba(0,0,0,.7);
+				-webkit-text-shadow: 0 2px 3px rgba(0,0,0,.7);
+				color: white;
+				font-size: 4vw;
+				font-weight: 700;
+				padding: 2%;
+			}
+		}
+		.lax-start-cntr{
+			width: 80%;
+			button{
+				font-size: 7vw;
+			}
+			.optimized{
+				font-size: 3vw;
+				// position:absolute;
+				// top: 80%;
+				// left: 0;
+				// color: white;
+				// font-size: 2vw;
+				// font-weight: 500;
+				// width: 100%;
+				// text-align: center;
+				// text-shadow: 0 2px 3px rgba(0,0,0,.5);
+			}
+		}
+		.splash-ctnr{
+			position: absolute;
+			width: 200%;
+			left: -50%;
+			bottom: -5%;
+			div[ng-include]{
+				position: relative;
+				margin: 0 auto;	
+				svg{
+					width: 100%;
+					height: 100%;
+				}	
+			}
+		}
+	}
+}
+
+@media screen and (max-width : 760px) {
+	#splash-page {
+		.lax-start-cntr{
+			.optimized{
+				color: white;
+				font-size: 2vw;
+				font-weight: 500;
+				width: 100%;
+				text-align: center;
+				text-shadow: 0 2px 3px rgba(0,0,0,.5);
+			}
+		}
+	}
+}
+
+@media screen and (max-width : 450px) {
+	#splash-page {
+		.lax-start-cntr{
+			.optimized{
+				color: white;
+				font-size: 3.3vw;
+				font-weight: 500;
+				width: 100%;
+				text-align: center;
+				text-shadow: 0 2px 3px rgba(0,0,0,.5);
+			}
+		}
+	}
+}
+
+
+@media screen and (min-width : 1360px) {
+	#splash-page {
+		.splash-header{
+			font-size: 53px;
+			.sub-header{
+				font-size: 30px;
+			}
+		}
+		.lax-start-cntr{
+			button{
+				font-size: 50px;
+			}
+			.optimized{
+				font-size: 15px;
+			}
+		}
+	}
+}
+

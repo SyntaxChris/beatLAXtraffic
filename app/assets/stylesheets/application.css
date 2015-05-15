@@ -33,6 +33,7 @@
  *= require 'think_strategy'
  *= require 'congrats'
  *= require 'admin'
+ *= require 'incompatible'
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
