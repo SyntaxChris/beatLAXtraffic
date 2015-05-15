@@ -2,9 +2,10 @@ class ApplicationController < ActionController::Base
   require 'csv'
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-# Turn on request forgery protection
+  # Turn on request forgery protection
   protect_from_forgery
 
+  before_filter :redirect_ie_9_and_lower
   after_filter :set_csrf_cookie_for_ng
 
   def set_csrf_cookie_for_ng
@@ -40,5 +41,12 @@ class ApplicationController < ActionController::Base
 
   def after_sign_out_path_for(admin)
     "/export"
+  end
+
+  def redirect_ie_9_and_lower
+    user_agent = request.env["HTTP_USER_AGENT"]
+    if user_agent =~ /MSIE/ && user_agent.split('MSIE')[1].split(' ').first.to_i < 10
+      render "layouts/not_supported"
+    end
   end
 end
