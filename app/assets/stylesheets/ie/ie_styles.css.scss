@@ -48,8 +48,8 @@
       .tram svg {
         height: 77px;
       }
-      [data-path="green"].select-path-btn.path-letter svg {
-        height: 40px;
+      .path-letter svg#parking {
+        height: 40px !important;
       }
     }
     #strategy-questions .strategy-ctnr {
