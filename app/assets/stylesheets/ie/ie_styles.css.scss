@@ -67,7 +67,7 @@
       }
     }
     &.orange svg.bg {
-      height: 100px;
+      height: 600px;
     }
     #icon-questions .icon-container {
       .row .icon-holder svg {
@@ -76,6 +76,13 @@
       .selection-container .selection svg {
         height: 68px;
       }
+    }
+    .circle-car svg {
+      height: 70px;
+      width: 70px !important;
+    }
+    .trophy-c svg {
+      height: 475px;
     }
   }
 }
