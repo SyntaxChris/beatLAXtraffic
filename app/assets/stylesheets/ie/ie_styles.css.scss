@@ -48,6 +48,9 @@
       .tram svg {
         height: 77px;
       }
+      [data-path="green"].select-path-btn.path-letter svg {
+        height: 40px;
+      }
     }
     #strategy-questions .strategy-ctnr {
       .boxster-ctnr div[ng-include] svg {
@@ -100,6 +103,12 @@
         height: 35px;
         width: 35px !important;
       }
+    }
+    #clock-questions #clock-container svg {
+      height: 500px;
+    }
+    #after-parking-questions .pole svg {
+      width: 50px !important;
     }
   }
 }
