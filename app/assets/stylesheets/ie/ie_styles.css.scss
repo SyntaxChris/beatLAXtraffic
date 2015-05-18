@@ -35,11 +35,19 @@
     #mission-intro .phone div[ng-include] svg {
       height: 650px;
     }
+    #mission-intro #stage-4 #timer-backdrop svg {
+      left: 90px;
+    }
     #zip-code-template .ferrari-container svg {
       height: 388px;
     }
-    #interactive-map .tram svg {
-      height: 77px;
+    #interactive-map {
+      .path-letter svg {
+        height: 40px;
+      }
+      .tram svg {
+        height: 77px;
+      }
     }
     #strategy-questions .strategy-ctnr {
       .boxster-ctnr div[ng-include] svg {
@@ -83,6 +91,15 @@
     }
     .trophy-c svg {
       height: 475px;
+    }
+    #late-flight {
+      .select-btn svg {
+        height: 70px;
+      }
+      .checkmark svg {
+        height: 35px;
+        width: 35px !important;
+      }
     }
   }
 }
