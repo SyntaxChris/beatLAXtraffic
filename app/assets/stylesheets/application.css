@@ -10,33 +10,33 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require 'main'
- *= require 'background'
- *= require 'splash_page'
- *= require 'dashboard'
- *= require 'car_dash'
- *= require 'zip_code_template'
- *= require 'tiles'
- *= require 'late_flight'
- *= require 'timer_questions'
- *= require 'mission_intro'
- *= require 'interactive_map'
- *= require 'successful_pickup'
- *= require 'circle_pickup'
- *= require 'timer_pickup'
- *= require 'parking_questions'
- *= require 'last_series_questions'
- *= require 'after_parking'
- *= require 'time_spent'
- *= require 'rail_system'
- *= require 'willing_to_wait'
- *= require 'think_strategy'
- *= require 'congrats'
- *= require 'admin'
- *= require 'incompatible'
- *= require_tree .
+ * require 'main'
+ * require 'background'
+ * require 'splash_page'
+ * require 'dashboard'
+ * require 'car_dash'
+ * require 'zip_code_template'
+ * require 'tiles'
+ * require 'late_flight'
+ * require 'timer_questions'
+ * require 'mission_intro'
+ * require 'interactive_map'
+ * require 'successful_pickup'
+ * require 'circle_pickup'
+ * require 'timer_pickup'
+ * require 'parking_questions'
+ * require 'last_series_questions'
+ * require 'after_parking'
+ * require 'time_spent'
+ * require 'rail_system'
+ * require 'willing_to_wait'
+ * require 'think_strategy'
+ * require 'congrats'
+ * require 'admin'
+ * require 'incompatible'
+ *= require_tree ./all
  *= require_self
- *= require foundation_and_overrides
+ * require foundation_and_overrides
 
  */
 body, html {

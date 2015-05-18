@@ -1,0 +1,151 @@
+@media only screen and (max-width : 768px) {
+  svg {
+    width: auto !important;
+  }
+  #splash-page .splash-ctnr div[ng-include] svg {
+    height: 557px;
+  }
+  body .bg-animations {
+    .cloud-cntr {
+      #cloud-1 svg {
+        height: 256px;
+      }
+      #cloud-2, #cloud-3, #cloud-4{
+        svg {
+          height: 205px;
+        }
+      }
+      #cloud-5, #cloud-6 {
+        svg {
+          height: 102px;
+        }
+      }
+    }
+    .distant-plane svg {
+      height: 41px;
+    }
+    .middle-plane svg {
+      height: 205px;
+    }
+  }
+  body #landing-plane svg {
+    height: 717px;
+  }
+  #mission-intro .phone div[ng-include] svg {
+    height: 650px;
+  }
+  #zip-code-template .ferrari-container svg {
+    height: 388px;
+  }
+  #interactive-map .tram svg {
+    height: 77px;
+  }
+  #strategy-questions .strategy-ctnr {
+    .boxster-ctnr div[ng-include] svg {
+      height: 114px;
+    }
+    .bbl-ctnr .bbl .icon div[ng-include] svg {
+      height: 34px;
+    }
+  }
+  #think-strategy .head-ctnr .thought-head svg {
+    height: 256px;
+  }
+  #pickup-spinner-question .spinner-components .wheel svg, #parking-spinner-questions .spinner-components .wheel svg {
+    height: 492px;
+  }
+  #successful-pickup .high-five .high-five-cntr svg {
+    height: 269px;
+  }
+  #rail-system .rail-bg {
+    .rail-car-svg svg {
+      height: 118px;
+    }
+    .rail-answer svg {
+      height: 109px;
+    }
+  }
+  body.orange svg.bg {
+    height: 100px;
+  }
+  #icon-questions .icon-container {
+    .row .icon-holder svg {
+      height: 100px;
+    }
+    .selection-container .selection svg {
+      height: 68px;
+    }
+  }
+}
+
+@media only screen and (max-width : 1024px) {
+  #splash-page .splash-ctnr div[ng-include] svg {
+    height: 437px;
+  }
+  body .bg-animations {
+    .cloud-cntr {
+      #cloud-1 svg {
+        height: 192px;
+      }
+      #cloud-2, #cloud-3, #cloud-4{
+        svg {
+          height: 154px;
+        }
+      }
+      #cloud-5, #cloud-6 {
+        svg {
+          height: 77px;
+        }
+      }
+    }
+    .distant-plane svg {
+      height: 58px;
+    }
+    .middle-plane svg {
+      height: 154px;
+    }
+  }
+  body #landing-plane svg {
+    height: 538px;
+  }
+  #zip-code-template .ferrari-container svg {
+    height: 501px;
+  }
+  #strategy-questions .strategy-ctnr {
+    .boxster-ctnr div[ng-include] svg {
+      height: 152px;
+    }
+    .bbl-ctnr .bbl .icon div[ng-include] svg {
+      height: 44px;
+    }
+  }
+  #think-strategy .head-ctnr .thought-head svg {
+    height: 341px;
+  }
+  #pickup-spinner-question .spinner-components .wheel svg, #parking-spinner-questions .spinner-components .wheel svg {
+    height: 644px;
+  }
+  #successful-pickup .high-five .high-five-cntr svg {
+    height: 358px;
+  }
+  #rail-system .rail-bg {
+    .rail-car-svg svg {
+      height: 152px;
+    }
+    .rail-answer svg {
+      height: 144px;
+    }
+  }
+}
+
+@media only screen and (max-width : 1280px) {
+  #splash-page .splash-ctnr div[ng-include] svg {
+    height: 546px;
+  }
+}
+
+@media only screen and (max-width : 1600px) {
+  #splash-page .splash-ctnr div[ng-include] svg {
+    height: 683px;
+  }
+}
