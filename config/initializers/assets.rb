@@ -7,4 +7,4 @@ Rails.application.config.assets.version = '3.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
-Rails.application.config.assets.precompile += %w( application.css application-ie.css )
+Rails.application.config.assets.precompile += %w( application.css application_ie.css )
